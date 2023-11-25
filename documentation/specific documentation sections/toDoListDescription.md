@@ -20,9 +20,7 @@ Slučaj upotrebe: TO-DO Lista
 
         4. Kada korisnik obavi zadatak, može ga označiti kao završenog (check).
 
-        5. Dodati zadaci se automatski integrišu sa kalendarom i planerom aplikacije.
-
-        6. Podešavanja se primenjuju i čuvaju.
+        5. Podešavanja se primenjuju i čuvaju.
 
 
     Alternativni tokovi:

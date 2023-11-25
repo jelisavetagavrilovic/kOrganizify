@@ -1,0 +1,106 @@
+@startuml
+class User {
+  - m_username: String
+  - m_password: String
+  - m_friends: List <User>
+  + login(username: String, password: String): boolean
+  + logout(): void
+}
+
+class Event {
+  - m_name: String
+  - m_description: String
+  - m_date: Date
+  - m_time: Time
+  - m_priority: Priority
+  + setName(newName: String): void
+  + setDescription(newDescription: String): void
+  + setDate(newDate: Date): void
+  + setTime(newTime: Time): void
+  + setPriority(newPriority: Priority): void
+}
+
+class ExtendedEvent {
+  - m_friendResponse: boolean
+  + setFriendResponse(friendResponse: boolean): void
+}
+
+class Reminder {
+  - m_alarmTime: Time
+  + setAlarmTime(newAlarmTime: Time): void
+}
+
+class Task {
+  - m_name: String
+  + setName(newName: String): void
+}
+
+class Priority {
+  - m_level: int
+  + setLevel(newLevel: int): void
+}
+
+
+class Calendar {
+  - m_events: List<Event>
+  + addEvent(event: Event): void
+  + removeEvent(event: Event): void
+  + updateEvent(event: Event): void
+}
+
+class ToDoList {
+  - m_tasks: List<Task>
+  + addTask(task: Task): void
+  + removeTask(task: Task): void
+  + updateTask(task: Task): void
+}
+
+class SmartPlanning {
+  + generatePlan(): void
+}
+
+class Settings {
+  - m_theme: Theme
+  - m_notifications: boolean
+  - m_nightMode: boolean
+  + setTheme(newTheme: Theme): void
+  + toggleNotifications(): void
+  + toggleNightMode(): void
+}
+
+class Synchronization {
+  + syncData(user: User, friend: User, event: ExtendedEvent, friendResponse: boolean): void
+}
+
+class SaveLoad {
+  + saveData(): void
+  + loadData(): void
+}
+
+class Application {
+  - m_calendar: Calendar
+  - m_todoList: ToDoList
+  - m_settings: Settings
+  - m_smartPlanning: SmartPlanning
+  - m_saveLoad: SaveLoad
+  - m_synchronization: Synchronization
+  + login(username: String, password: String): boolean
+  + logout(): void
+  + runApp(): void
+}
+
+
+Event <|-- ExtendedEvent : extends 
+ExtendedEvent <|-- Synchronization : extends 
+Reminder --* Event : 0..1
+Priority --* Event: 0..1
+Calendar --- Application : 1..1
+Event --* Calendar : 0..*
+ToDoList --- Application : 1..1
+ToDoList *-- Task : 0..*
+SmartPlanning --- Application : 0..1
+Settings --- Application : 0..1
+Synchronization --- Application : 0..1
+SaveLoad --- Application : 0..1
+User --- Application : 1..1
+@enduml
