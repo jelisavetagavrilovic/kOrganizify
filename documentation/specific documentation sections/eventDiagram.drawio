@@ -1,0 +1,107 @@
+<mxfile host="app.diagrams.net" modified="2023-11-26T23:58:00.013Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="v5x4uJN6DwxFTIjAOXBx" version="22.1.4" type="device">
+  <diagram name="Page-1" id="UiXIXk1-inkHqsNSg-rq">
+    <mxGraphModel dx="1526" dy="788" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="VgmjnQRfWMadjgTwWMzj-30" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="80" y="20" width="660" height="670" as="geometry" />
+        </mxCell>
+        <mxCell id="VgmjnQRfWMadjgTwWMzj-1" value="Korisnik" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="50" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VgmjnQRfWMadjgTwWMzj-5" value="Glavni prozor" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="240" y="70" width="100" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="VgmjnQRfWMadjgTwWMzj-11" value="1. Korisnik pokreće aplikaciju" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="VgmjnQRfWMadjgTwWMzj-5" target="VgmjnQRfWMadjgTwWMzj-10">
+          <mxGeometry x="-0.0186" width="80" relative="1" as="geometry">
+            <mxPoint x="-90" y="80" as="sourcePoint" />
+            <mxPoint x="390" y="80" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VgmjnQRfWMadjgTwWMzj-7" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Prozor za dodavanje događaja&lt;/font&gt;" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="425" y="70" width="100" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="VgmjnQRfWMadjgTwWMzj-8" value="Aplikacija" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="610" y="70" width="100" height="570" as="geometry" />
+        </mxCell>
+        <mxCell id="VgmjnQRfWMadjgTwWMzj-10" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="VgmjnQRfWMadjgTwWMzj-8">
+          <mxGeometry x="45" y="70" width="10" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="VgmjnQRfWMadjgTwWMzj-9" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="140" y="140" width="10" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="VgmjnQRfWMadjgTwWMzj-12" value="2. Prikaz sadržaja glavnog prozora" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1" target="VgmjnQRfWMadjgTwWMzj-15">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="659.5" y="190" as="sourcePoint" />
+            <mxPoint x="310" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VgmjnQRfWMadjgTwWMzj-14" value="3. Korisnik bira dan" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1" target="VgmjnQRfWMadjgTwWMzj-5">
+          <mxGeometry x="-0.0074" width="80" relative="1" as="geometry">
+            <mxPoint x="150" y="219.23000000000002" as="sourcePoint" />
+            <mxPoint x="260" y="220" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VgmjnQRfWMadjgTwWMzj-16" value="alt" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=1;collapsible=0;width=170;" vertex="1" parent="1">
+          <mxGeometry x="100" y="250" width="610" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="VgmjnQRfWMadjgTwWMzj-17" value="[Događaj već postoji]" style="text;html=1;" vertex="1" parent="VgmjnQRfWMadjgTwWMzj-16">
+          <mxGeometry width="100" height="20" relative="1" as="geometry">
+            <mxPoint x="20" y="40" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VgmjnQRfWMadjgTwWMzj-18" value="[Događaj ne postoji]" style="line;strokeWidth=1;dashed=1;labelPosition=center;verticalLabelPosition=bottom;align=left;verticalAlign=top;spacingLeft=20;spacingTop=15;html=1;whiteSpace=wrap;" vertex="1" parent="VgmjnQRfWMadjgTwWMzj-16">
+          <mxGeometry y="170" width="610" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="VgmjnQRfWMadjgTwWMzj-20" value="4. Prikazuju se izabrani događaj" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="VgmjnQRfWMadjgTwWMzj-16" target="VgmjnQRfWMadjgTwWMzj-22">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="554.9499999999999" y="30.000000000000114" as="sourcePoint" />
+            <mxPoint x="369.997619047619" y="30.000000000000114" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VgmjnQRfWMadjgTwWMzj-22" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="VgmjnQRfWMadjgTwWMzj-16">
+          <mxGeometry x="370" y="20" width="10" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="VgmjnQRfWMadjgTwWMzj-15" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="VgmjnQRfWMadjgTwWMzj-16">
+          <mxGeometry x="185" y="-80" width="10" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="VgmjnQRfWMadjgTwWMzj-23" value="5. Korisnik vrši modifikaciju ili bira opciju brisanja" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="VgmjnQRfWMadjgTwWMzj-16">
+          <mxGeometry x="-0.125" width="80" relative="1" as="geometry">
+            <mxPoint x="50" y="90" as="sourcePoint" />
+            <mxPoint x="370" y="90" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VgmjnQRfWMadjgTwWMzj-24" value="5. Prikazuju se ažurirane izmene" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="VgmjnQRfWMadjgTwWMzj-16">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="555" y="130" as="sourcePoint" />
+            <mxPoint x="195.0000000000001" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VgmjnQRfWMadjgTwWMzj-26" value="6. Prikazuje se prazan prozor za&lt;br&gt;&amp;nbsp;unos novog događaja" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="VgmjnQRfWMadjgTwWMzj-16">
+          <mxGeometry x="-0.0286" relative="1" as="geometry">
+            <mxPoint x="555" y="210" as="sourcePoint" />
+            <mxPoint x="380" y="210" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VgmjnQRfWMadjgTwWMzj-28" value="7. Korisnik unosi osnovne informacije" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="VgmjnQRfWMadjgTwWMzj-16">
+          <mxGeometry x="0.125" width="80" relative="1" as="geometry">
+            <mxPoint x="50" y="230" as="sourcePoint" />
+            <mxPoint x="370" y="230" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VgmjnQRfWMadjgTwWMzj-29" value="8. Prikaz novog događaja u kalendaru" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="VgmjnQRfWMadjgTwWMzj-16">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="557.2499999999999" y="299.0000000000001" as="sourcePoint" />
+            <mxPoint x="192.75" y="299.0000000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
