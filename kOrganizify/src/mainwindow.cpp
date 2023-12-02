@@ -7,7 +7,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    connect(ui->pbAddTask, &QPushButton::clicked, this, &MainWindow::addTask);
+    connect(ui->leInput, &QLineEdit::returnPressed, this, &MainWindow::addTask); // for Enter button
+
 }
 
 MainWindow::~MainWindow()
