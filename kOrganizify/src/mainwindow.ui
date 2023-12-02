@@ -64,7 +64,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QTextEdit" name="textEdit"/>
+       <widget class="QListWidget" name="lwToDoList"/>
       </item>
       <item>
        <widget class="QLineEdit" name="leInput"/>

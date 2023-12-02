@@ -24,7 +24,6 @@ void ToDoList::addTask(const Task task){
 
 void ToDoList::removeTask(const Task task){
     this->m_tasks.removeOne(task);
-    destroyed();
 }
 
 QString ToDoList::toString()
