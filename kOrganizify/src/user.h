@@ -10,11 +10,12 @@ class User : public QObject
     Q_OBJECT
 public:
     explicit User(const QString &username, const QString &password, SaveLoad *saveLoad, QObject *parent = nullptr);
+    SaveLoad* getSaveLoad() const;
 
 public slots:
     bool login(const QString &password);
     void logout();
-    void registerUser();
+    bool registerUser();
 
 private:
     QString m_username;

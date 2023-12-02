@@ -25,15 +25,17 @@ bool User::login(const QString &password)
     }
 }
 
-void User::registerUser()
+bool User::registerUser()
 {
     if (m_saveLoad->userExists(m_username)) {
         qDebug() << "Registration failed. User already exists.";
+        return false;
     } else {
         // Implement registration logic
         m_saveLoad->saveData(m_username, QJsonObject()); // Save an empty object for now
         qDebug() << "User" << m_username << "successfully registered and logged in.";
         login(m_password); // Automatically log in after registration
+        return true;
     }
 }
 
@@ -52,6 +54,11 @@ void User::updateUserData(const QJsonObject &userData)
     // For example: m_calendar = userData["calendar"].toObject();
     //              m_todoList = userData["todoList"].toObject();
     //              m_settings = userData["settings"].toObject();
+}
+
+SaveLoad* User::getSaveLoad() const
+{
+    return m_saveLoad;
 }
 
 
