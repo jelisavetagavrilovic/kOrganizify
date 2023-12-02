@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "appwindow.h"
 
 #include <QApplication>
 
@@ -12,8 +13,11 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
+    AppWindow aw;
+    aw.show();
 
-    // TEST LOGIN USER!!!//
+
+    // TEST LOGIN USER!!! //
 
     // Create SaveLoad object
     SaveLoad saveLoad;
