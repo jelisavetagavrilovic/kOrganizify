@@ -1,8 +1,10 @@
 #include "task.h"
 
-Task::Task(QString name = "Add Task") {
-    this->m_name = name;
+//check
+Task::Task(QString name /*= "Add Task"*/)
+    : m_name(name) {
 }
+
 void Task::setName(const QString newName){
     this->m_name = newName;
 }
