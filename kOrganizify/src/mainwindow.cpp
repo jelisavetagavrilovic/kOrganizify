@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "appwindow.h"
 
 #include "user.h"
 #include "saveload.h"
@@ -25,9 +26,13 @@ void MainWindow::login()
     SaveLoad saveLoad;
     User user(username, password, &saveLoad);
 
-    if (user.login(password))
+    if (user.login(password)) {
         ui->lblStatus->setText("Login successful.");
-    else if (user.getSaveLoad()->userExists(username))
+
+        this->close();
+        AppWindow *app = new AppWindow(this);
+        app->show();
+    } else if (user.getSaveLoad()->userExists(username))
         ui->lblStatus->setText("Login failed. Check the password.");
     else
         ui->lblStatus->setText("Login failed. User doesn't exist.");
@@ -43,9 +48,13 @@ void MainWindow::registerUser()
     SaveLoad saveLoad;
     User user(username, password, &saveLoad);
 
-    if (user.registerUser())
+    if (user.registerUser()) {
         ui->lblStatus->setText("Registration successful. Login successful.");
-    else
+
+        this->close();
+        AppWindow *app = new AppWindow(this);
+        app->show();
+    } else
         ui->lblStatus->setText("Registration failed. User already exists.");
 
     ui->lblStatus->setVisible(true);
