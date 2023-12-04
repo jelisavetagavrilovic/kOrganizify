@@ -30,7 +30,7 @@ void MainWindow::login()
     else if (user.getSaveLoad()->userExists(username))
         ui->lblStatus->setText("Login failed. Check the password.");
     else
-        ui->lblStatus->setText("Login failed. User does not exist.");
+        ui->lblStatus->setText("Login failed. User doesn't exist.");
 
     ui->lblStatus->setVisible(true);
 }
