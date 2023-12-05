@@ -34,6 +34,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         src/user.h src/user.cpp
 
         src/appwindow.h src/appwindow.cpp src/appwindow.ui
+        src/saveload.h src/saveload.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET kOrganizify APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
