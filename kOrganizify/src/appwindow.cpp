@@ -1,24 +1,9 @@
-//#/*include "appwindow.h"
-//#include "ui_appwindow.h"
-
-//AppWindow::AppWindow(QWidget *parent) :
-//    QMainWindow(parent),
-//    ui(new Ui::AppWindow)
-//{
-//    ui->setupUi(this);
-//}
-
-//AppWindow::~AppWindow()
-//{
-//    delete ui;
-//}*/
-
 #include "appwindow.h"
 #include "ui_appwindow.h"
 
-AppWindow::AppWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::AppWindow)
+AppWindow::AppWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::AppWindow)
 {
     ui->setupUi(this);
     connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button

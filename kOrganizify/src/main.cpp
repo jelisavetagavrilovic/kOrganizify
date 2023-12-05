@@ -13,7 +13,6 @@ int main(int argc, char *argv[])
     AppWindow aw;
     aw.show();
 
-
     return a.exec();
 }
 
