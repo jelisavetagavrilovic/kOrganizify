@@ -18,13 +18,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-public slots:
-    void addTask();
-    void onCheckBoxStateChanged(int state);
-
 private:
     Ui::MainWindow *ui;
-    ToDoList m_toDoList;
 
 };
 #endif // MAINWINDOW_H

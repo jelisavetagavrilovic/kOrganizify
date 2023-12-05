@@ -25,6 +25,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         src/toDoList.h src/toDoList.cpp
         src/task.h src/task.cpp
+        src/appwindow.h src/appwindow.cpp src/appwindow.ui
 
 
 
