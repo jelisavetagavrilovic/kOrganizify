@@ -17,6 +17,7 @@ set(PROJECT_SOURCES
         src/mainwindow.cpp
         src/mainwindow.h
         src/mainwindow.ui
+
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -26,7 +27,6 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
 
         src/appwindow.h src/appwindow.cpp src/appwindow.ui
         src/settings.h src/settings.cpp
-
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET kOrganizify APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
