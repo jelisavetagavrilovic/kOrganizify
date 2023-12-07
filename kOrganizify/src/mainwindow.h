@@ -2,6 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+// #include <QGroupBox>
+// #include <QLineEdit>
+// #include <QPushButton>
+// #include <QLabel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

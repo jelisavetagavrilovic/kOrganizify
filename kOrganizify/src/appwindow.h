@@ -3,6 +3,10 @@
 
 #include <QMainWindow>
 
+//QT_BEGIN_NAMESPACE
+//namespace Ui { class AppWindow; }
+//QT_END_NAMESPACE
+
 namespace Ui {
 class AppWindow;
 }
