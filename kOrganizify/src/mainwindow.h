@@ -2,10 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-// #include <QGroupBox>
-// #include <QLineEdit>
-// #include <QPushButton>
-// #include <QLabel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,11 +17,6 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    bool userExists(const QString &username);
-
-private slots:
-    void login();
-    void registerUser();
 };
 
 #endif // MAINWINDOW_H

@@ -17,6 +17,10 @@ public:
 
 private:
     Ui::EventWindow *ui;
+
+private slots:
+    // void on_btnGenerate_clicked();
+    void on_btnSave_clicked();
 };
 
 #endif // EVENTWINDOW_H
