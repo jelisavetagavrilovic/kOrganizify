@@ -25,16 +25,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
 
-        src/toDoList.h src/toDoList.cpp
-        src/task.h src/task.cpp
-
-        src/settings.h src/settings.cpp
-
-        src/saveload.h src/saveload.cpp
-        src/user.h src/user.cpp
-
         src/appwindow.h src/appwindow.cpp src/appwindow.ui
-        src/saveload.h src/saveload.cpp
         src/eventwindow.h src/eventwindow.cpp src/eventwindow.ui
     )
 # Define target properties for Android with Qt 6 as:

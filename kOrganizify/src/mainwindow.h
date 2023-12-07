@@ -21,11 +21,6 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    bool userExists(const QString &username);
-
-private slots:
-    void login();
-    void registerUser();
 };
 
 #endif // MAINWINDOW_H

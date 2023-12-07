@@ -10,8 +10,11 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
-    EventWindow ew;
-    ew.show();
+    // AppWindow aw;
+    // aw.show();
+
+    // EventWindow ew;
+    // ew.show();
 
     return a.exec();
 }
