@@ -13,28 +13,26 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
+        src/appwindow.cpp
         src/main.cpp
         src/mainwindow.cpp
-        src/mainwindow.h
-        src/mainwindow.ui
+        src/saveload.cpp
+        src/settings.cpp
+        src/task.cpp
+        src/toDoList.cpp
+        src/user.cpp
+)
 
+set(FORMS
+        src/appwindow.ui
+        src/mainwindow.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(kOrganizify
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-
-        src/toDoList.h src/toDoList.cpp
-        src/task.h src/task.cpp
-
-        src/settings.h src/settings.cpp
-
-        src/saveload.h src/saveload.cpp
-        src/user.h src/user.cpp
-
-        src/appwindow.h src/appwindow.cpp src/appwindow.ui
-        src/saveload.h src/saveload.cpp
+        ${FORMS}
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET kOrganizify APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -44,12 +42,14 @@ else()
     if(ANDROID)
         add_library(kOrganizify SHARED
             ${PROJECT_SOURCES}
+            ${FORMS}
         )
 # Define properties for Android with Qt 5 after find_package() calls as:
 #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
         add_executable(kOrganizify
             ${PROJECT_SOURCES}
+            ${FORMS}
         )
     endif()
 endif()
