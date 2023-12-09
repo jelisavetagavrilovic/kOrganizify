@@ -1,6 +1,5 @@
-//#include "mainwindow.h"
-//#include "appwindow.h"
-#include "settingswindow.h"
+#include "mainwindow.h"
+#include "appwindow.h"
 
 #include <QApplication>
 
@@ -10,11 +9,8 @@ int main(int argc, char *argv[])
 //    MainWindow w;
 //    w.show();
 
-    // AppWindow aw;
-    // aw.show();
-
-    SettingsWindow w(nullptr);
-    w.show();
+     AppWindow aw;
+     aw.show();
 
     return a.exec();
 }

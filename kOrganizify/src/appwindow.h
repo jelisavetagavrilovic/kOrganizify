@@ -19,6 +19,9 @@ public:
     explicit AppWindow(QWidget *parent = nullptr);
     ~AppWindow();
 
+private slots:
+    void on_btnSettings_clicked();
+
 private:
     Ui::AppWindow *ui;
 };

@@ -1,6 +1,7 @@
 // settingswindow.cpp
 #include "settingswindow.h"
 #include "./ui_settingswindow.h"
+
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QPushButton>
@@ -9,7 +10,7 @@ SettingsWindow::SettingsWindow(QWidget *parent)
     : QMainWindow(parent),
     ui(new Ui::SettingsWindow),
     popupDialog(new QDialog(this)),
-    m_theme(Light),
+    m_theme(Custom),
     m_notifications(true),
     m_nightMode(false)
 {
@@ -44,19 +45,16 @@ SettingsWindow::~SettingsWindow()
 void SettingsWindow::onThemeChanged(int index)
 {
     m_theme = static_cast<Theme>(index);
-    // You can perform additional actions based on the theme change
 }
 
 void SettingsWindow::onNotificationsToggled(bool checked)
 {
     m_notifications = checked;
-    // You can perform additional actions based on the notifications toggle
 }
 
 void SettingsWindow::onNightModeToggled(bool checked)
 {
     m_nightMode = checked;
-    // You can perform additional actions based on the night mode toggle
 }
 
 void SettingsWindow::onOpenPopupClicked()

@@ -11,8 +11,6 @@ class SettingsWindow;
 }
 
 enum Theme {
-    Light,
-    Dark,
     Custom
 };
 
