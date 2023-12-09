@@ -27,6 +27,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
 
         src/eventwindow.h src/eventwindow.cpp src/eventwindow.ui
         src/event.h src/event.cpp
+        src/calendar.h
+        src/calendar.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET kOrganizify APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
