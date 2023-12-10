@@ -1,6 +1,6 @@
 #include "calendar.h"
 
-void Calendar::addEvent(const Eventgit &event){
+void Calendar::addEvent(const Event &event){
     m_events.append(event);
 }
 
