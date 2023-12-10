@@ -39,3 +39,13 @@ QString Event::getLocation() const {
 void Event::setLocation(const QString &location) {
     this->location = location;
 }
+
+bool Event::operator==(const Event &other) const {
+    return (
+        title == other.title &&
+        startTime == other.startTime &&
+        endTime == other.endTime &&
+        description == other.description &&
+        location == other.location
+        );
+}
