@@ -2,10 +2,8 @@
 #define APPWINDOW_H
 
 #include <QMainWindow>
-
-//QT_BEGIN_NAMESPACE
-//namespace Ui { class AppWindow; }
-//QT_END_NAMESPACE
+#include "settingswindow.h"
+#include "settingswindow.h"
 
 namespace Ui {
 class AppWindow;
@@ -24,6 +22,7 @@ private slots:
 
 private:
     Ui::AppWindow *ui;
+    SettingsWindow *settingsWindow;
 };
 
 #endif // APPWINDOW_H

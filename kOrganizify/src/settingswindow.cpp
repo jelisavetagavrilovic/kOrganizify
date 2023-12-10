@@ -2,14 +2,9 @@
 #include "settingswindow.h"
 #include "./ui_settingswindow.h"
 
-#include <QVBoxLayout>
-#include <QLabel>
-#include <QPushButton>
-
 SettingsWindow::SettingsWindow(QWidget *parent)
     : QMainWindow(parent),
     ui(new Ui::SettingsWindow),
-    popupDialog(new QDialog(this)),
     m_theme(Custom),
     m_notifications(true),
     m_nightMode(false)
@@ -26,15 +21,6 @@ SettingsWindow::SettingsWindow(QWidget *parent)
     ui->btnNotifications->setChecked(m_notifications);
     ui->btnNightMode->setChecked(m_nightMode);
 
-    // Initialize the pop-up dialog
-    QVBoxLayout *layout = new QVBoxLayout(popupDialog);
-    QLabel *popupLabel = new QLabel("This is the settings pop-up", popupDialog);
-    QPushButton *closeButton = new QPushButton("Close", popupDialog);
-
-    layout->addWidget(popupLabel);
-    layout->addWidget(closeButton);
-
-    connect(closeButton, SIGNAL(clicked()), popupDialog, SLOT(close()));
 }
 
 SettingsWindow::~SettingsWindow()
@@ -55,9 +41,4 @@ void SettingsWindow::onNotificationsToggled(bool checked)
 void SettingsWindow::onNightModeToggled(bool checked)
 {
     m_nightMode = checked;
-}
-
-void SettingsWindow::onOpenPopupClicked()
-{
-    popupDialog->show();
 }

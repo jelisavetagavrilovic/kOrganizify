@@ -8,13 +8,19 @@ AppWindow::AppWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    settingsWindow = nullptr;
+
     connect(ui->btnSettings, &QPushButton::clicked, this, &AppWindow::on_btnSettings_clicked);
 }
 
 void AppWindow::on_btnSettings_clicked()
 {
-    SettingsWindow *settingsWindow = new SettingsWindow(this);
-    settingsWindow->show();
+    if (settingsWindow && settingsWindow->isVisible()) {
+        settingsWindow->activateWindow();
+    } else {
+        settingsWindow = new SettingsWindow(this);
+        settingsWindow->show();
+    }
 }
 
 AppWindow::~AppWindow()

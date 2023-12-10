@@ -2,9 +2,16 @@
 #ifndef SETTINGSWINDOW_H
 #define SETTINGSWINDOW_H
 
+#include "ui_settingswindow.h"
+
 #include <iostream>
 #include <QMainWindow>
 #include <QDialog>
+
+#include <QVBoxLayout>
+#include <QLabel>
+#include <QPushButton>
+
 
 namespace Ui {
 class SettingsWindow;
@@ -29,13 +36,10 @@ private slots:
     void onThemeChanged(int index);
     void onNotificationsToggled(bool checked);
     void onNightModeToggled(bool checked);
-    void onOpenPopupClicked();
 
 public:
     SettingsWindow(QWidget *parent = nullptr);
-    ~SettingsWindow();  // Provide the correct type specifier for the destructor
-
-    SettingsWindow();  // It seems like you might want to declare a constructor here
+    ~SettingsWindow();
 };
 
 #endif // SETTINGSWINDOW_H
