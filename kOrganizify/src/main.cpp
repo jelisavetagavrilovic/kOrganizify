@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "appwindow.h"
 #include "eventwindow.h"
+#include "settingswindow.h"
 
 #include <QApplication>
 
@@ -15,6 +16,9 @@ int main(int argc, char *argv[])
 
     // EventWindow ew;
     // ew.show();
+
+    SettingsWindow sw;
+    sw.show();
 
     return a.exec();
 }
