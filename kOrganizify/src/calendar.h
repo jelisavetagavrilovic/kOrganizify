@@ -8,7 +8,7 @@ class Calendar
 {
 public:
     void addEvent(const Event &event);
-    void removeEvenet(const Event &event);
+    void removeEvent(const Event &event);
     void updateEvent(const Event &event);
     QList<Event> getEvents() const;
 

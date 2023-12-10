@@ -4,7 +4,7 @@ void Calendar::addEvent(const Event &event){
     m_events.append(event);
 }
 
-void Calendar::removeEvenet(const Event &event){
+void Calendar::removeEvent(const Event &event){
     m_events.removeOne(event);
 }
 

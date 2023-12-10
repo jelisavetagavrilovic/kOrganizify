@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "eventwindow.h"
+#include "calendar.h"
 
 #include <QApplication>
 
@@ -9,7 +10,9 @@ int main(int argc, char *argv[])
     // MainWindow w;
     // w.show();
 
-    EventWindow ew;
+    Calendar calendar;
+
+    EventWindow ew(calendar);
     ew.show();
 
     return a.exec();
