@@ -7,7 +7,6 @@ AppWindow::AppWindow(QWidget *parent)
     , ui(new Ui::AppWindow)
 {
     ui->setupUi(this);
-
     settingsWindow = nullptr;
 
     connect(ui->btnSettings, &QPushButton::clicked, this, &AppWindow::on_btnSettings_clicked);

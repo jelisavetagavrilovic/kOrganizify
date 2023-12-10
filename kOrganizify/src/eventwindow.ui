@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EventWindow</class>
+ <widget class="QWidget" name="EventWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>443</width>
+    <height>373</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="formLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>421</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <layout class="QFormLayout" name="formLayout">
+    <property name="horizontalSpacing">
+     <number>6</number>
+    </property>
+    <item row="0" column="0">
+     <widget class="QLabel" name="lblTitle">
+      <property name="text">
+       <string>Event title</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="leTitle"/>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="lblStart">
+      <property name="text">
+       <string>Start</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayoutStart">
+      <item>
+       <widget class="QDateEdit" name="deDateStart"/>
+      </item>
+      <item>
+       <widget class="QTimeEdit" name="teTimeStart"/>
+      </item>
+     </layout>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="lblEnd">
+      <property name="text">
+       <string>End</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayoutEnd">
+      <item>
+       <widget class="QDateEdit" name="deDateEnd"/>
+      </item>
+      <item>
+       <widget class="QTimeEdit" name="teTimeEnd"/>
+      </item>
+     </layout>
+    </item>
+    <item row="5" column="1">
+     <widget class="QTextEdit" name="teDescription"/>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="lblDescription">
+      <property name="text">
+       <string>Description       </string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="1">
+     <widget class="QLineEdit" name="leLocation"/>
+    </item>
+    <item row="7" column="0">
+     <widget class="QLabel" name="lblLocation">
+      <property name="text">
+       <string>Location</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="btnGenerate">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>330</y>
+     <width>88</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Generate</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnSave">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>330</y>
+     <width>89</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
