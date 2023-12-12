@@ -56,6 +56,7 @@ SettingsWindow::SettingsWindow(QWidget *parent)
 }
 
 void SettingsWindow::on_btnSave_clicked(){
+    emit colorChanged(this->color);
     this->close();
 }
 

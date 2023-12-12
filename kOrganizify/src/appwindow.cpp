@@ -8,30 +8,30 @@ AppWindow::AppWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->settingsWindow = new SettingsWindow(this);
-    this->settingsWindow->setColor("#A5A9A0");
+    this->settingsWindow->setColor("#0050B5");
 
     QString styleSheet = QString("background-color: %1").arg(this->settingsWindow->getColor());
     this->ui->btnSettings->setStyleSheet(styleSheet);
     this->ui->btnSettings->update();
 
     connect(ui->btnSettings, &QPushButton::clicked, this, &AppWindow::on_btnSettings_clicked);
+    connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
+}
 
-
-
-
-
+void AppWindow::changeButtonColor(const QString& newColor) {
+    this->ui->btnSettings->setStyleSheet("background-color: " + newColor);
 }
 
 void AppWindow::on_btnSettings_clicked()
 {
-    QString styleSheet = QString("background-color: %1").arg(this->settingsWindow->getColor());
-    this->ui->btnSettings->setStyleSheet(styleSheet);
-    this->ui->btnSettings->update();
     if (this->settingsWindow && this->settingsWindow->isVisible()) {
         this->settingsWindow->activateWindow();
     } else {
         this->settingsWindow->show();
     }
+    QString styleSheet = QString("background-color: %1").arg(this->settingsWindow->getColor());
+    this->ui->btnSettings->setStyleSheet(styleSheet);
+    this->ui->btnSettings->update();
 }
 
 AppWindow::~AppWindow()

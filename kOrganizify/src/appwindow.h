@@ -17,6 +17,7 @@ public:
     explicit AppWindow(QWidget *parent = nullptr);
     ~AppWindow();
 
+    void changeButtonColor(const QString &newColor);
 private slots:
     void on_btnSettings_clicked();
 
