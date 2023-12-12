@@ -1,7 +1,6 @@
 #include "settingswindow.h"
 #include "ui_settingswindow.h"
 #include <QPalette>
-#include <QString>
 
 SettingsWindow::SettingsWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -21,6 +20,8 @@ SettingsWindow::SettingsWindow(QWidget *parent)
     // ui->dropTheme->setCurrentIndex(static_cast<int>(m_theme));
     // ui->btnNotifications->setChecked(m_notifications);
     // ui->btnNightMode->setChecked(m_nightMode);
+
+
 
     QPalette btnSavePalette = ui->btnSave->palette();
     connect(ui->dropTheme, QOverload<const QString &>::of(&QComboBox::currentTextChanged), [=](const QString &text){
@@ -45,9 +46,25 @@ SettingsWindow::SettingsWindow(QWidget *parent)
             color = "#A5A9A0";
         }
 
+        this->setColor(color);
+
         QString styleSheet = QString("background-color: %1").arg(color);
         ui->btnSave->setStyleSheet(styleSheet);
     });
+
+
+}
+
+void SettingsWindow::on_btnSave_clicked(){
+    this->close();
+}
+
+void SettingsWindow::setColor(QString color){
+    this->color = color;
+}
+
+QString SettingsWindow::getColor(){
+    return this->color;
 }
 
 SettingsWindow::~SettingsWindow()

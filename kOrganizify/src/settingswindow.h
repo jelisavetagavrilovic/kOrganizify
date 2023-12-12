@@ -2,6 +2,7 @@
 #define SETTINGSWINDOW_H
 
 #include <QMainWindow>
+#include <QString>
 
 namespace Ui {
 class SettingsWindow;
@@ -14,9 +15,14 @@ class SettingsWindow : public QMainWindow
 public:
     explicit SettingsWindow(QWidget *parent = nullptr);
     ~SettingsWindow();
+    void setColor(QString color);
+    QString getColor();
 
+private slots:
+    void on_btnSave_clicked();
 private:
     Ui::SettingsWindow *ui;
+    QString color;
 };
 
 #endif // SETTINGSWINDOW_H
