@@ -14,6 +14,9 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
         src/appwindow.cpp
+        src/calendar.cpp
+        src/event.cpp
+        src/eventwindow.cpp
         src/main.cpp
         src/mainwindow.cpp
         src/saveload.cpp
@@ -25,6 +28,7 @@ set(PROJECT_SOURCES
 
 set(FORMS
         src/appwindow.ui
+        src/eventwindow.ui
         src/mainwindow.ui
 )
 
@@ -32,9 +36,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(kOrganizify
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        ${FORMS}
-        resources.qrc
-    )
+
+)
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET kOrganizify APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
 #                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
