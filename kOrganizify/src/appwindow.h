@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include "settingswindow.h"
-#include "settingswindow.h"
 
 namespace Ui {
 class AppWindow;
