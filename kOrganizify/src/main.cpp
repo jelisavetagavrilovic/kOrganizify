@@ -1,8 +1,8 @@
 #include "mainwindow.h"
 //#include "appwindow.h"
 //#include "settingswindow.h"
-#include "eventwindow.h"
-#include "calendar.h"
+//#include "eventwindow.h"
+//#include "calendar.h"
 
 #include <QApplication>
 
