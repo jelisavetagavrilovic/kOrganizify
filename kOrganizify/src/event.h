@@ -22,6 +22,8 @@ public:
     QString getLocation() const;
     void setLocation(const QString &location);
 
+    bool operator==(const Event &other) const;
+
 private:
     QString title;
     QDateTime startTime;
