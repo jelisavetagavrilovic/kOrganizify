@@ -2,12 +2,8 @@
 #define APPWINDOW_H
 
 #include <QMainWindow>
-#include "toDoList.h"
-#include <QCheckBox>
-
-//QT_BEGIN_NAMESPACE
-//namespace Ui { class AppWindow; }
-//QT_END_NAMESPACE
+#include "settingswindow.h"
+#include "settingswindow.h"
 
 namespace Ui {
 class AppWindow;
@@ -21,13 +17,13 @@ public:
     explicit AppWindow(QWidget *parent = nullptr);
     ~AppWindow();
 
-public slots:
-    void addTask();
-    void onCheckBoxStateChanged(int state);
+    void changeButtonColor(const QString &newColor);
+private slots:
+    void on_btnSettings_clicked();
 
 private:
     Ui::AppWindow *ui;
-    ToDoList m_toDoList;
+    SettingsWindow *settingsWindow;
 };
 
 #endif // APPWINDOW_H

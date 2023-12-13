@@ -1,5 +1,7 @@
 #include "mainwindow.h"
-#include "appwindow.h"
+//#include "appwindow.h"
+//#include "eventwindow.h"
+//#include "settingswindow.h"
 
 #include <QApplication>
 

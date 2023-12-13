@@ -17,7 +17,7 @@ set(PROJECT_SOURCES
         src/main.cpp
         src/mainwindow.cpp
         src/saveload.cpp
-        src/settings.cpp
+        src/settingswindow.cpp
         src/task.cpp
         src/toDoList.cpp
         src/user.cpp
@@ -27,7 +27,7 @@ set(HEADERS
         src/appwindow.h
         src/mainwindow.h
         src/saveload.h
-        src/settings.h
+        src/settingswindow.h
         src/task.h
         src/toDoList.h
         src/user.h
@@ -36,6 +36,7 @@ set(HEADERS
 set(FORMS
         src/appwindow.ui
         src/mainwindow.ui
+        src/settingswindow.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -44,7 +45,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         ${HEADERS}
         ${FORMS}   
-    )
+)
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET kOrganizify APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
 #                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
@@ -93,3 +94,4 @@ install(TARGETS kOrganizify
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(kOrganizify)
 endif()
+
