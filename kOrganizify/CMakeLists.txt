@@ -23,6 +23,16 @@ set(PROJECT_SOURCES
         src/user.cpp
 )
 
+set(HEADERS
+        src/appwindow.h
+        src/mainwindow.h
+        src/saveload.h
+        src/settings.h
+        src/task.h
+        src/toDoList.h
+        src/user.h
+)
+
 set(FORMS
         src/appwindow.ui
         src/mainwindow.ui
@@ -32,8 +42,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(kOrganizify
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        ${FORMS}
-        resources.qrc
+        ${HEADERS}
+        ${FORMS}   
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET kOrganizify APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -43,6 +53,7 @@ else()
     if(ANDROID)
         add_library(kOrganizify SHARED
             ${PROJECT_SOURCES}
+            ${HEADERS}
             ${FORMS}
         )
 # Define properties for Android with Qt 5 after find_package() calls as:
@@ -50,6 +61,7 @@ else()
     else()
         add_executable(kOrganizify
             ${PROJECT_SOURCES}
+            ${HEADERS}
             ${FORMS}
         )
     endif()
