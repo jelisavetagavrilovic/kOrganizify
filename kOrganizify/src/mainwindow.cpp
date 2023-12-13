@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowTitle("Login");
 
     ui->lblStatus->setVisible(false);
+    ui->lePassword->setEchoMode(QLineEdit::Password);
 
     connect(ui->btnLogin, &QPushButton::clicked, this, &MainWindow::login);
     connect(ui->btnRegister, &QPushButton::clicked, this, &MainWindow::registerUser);
