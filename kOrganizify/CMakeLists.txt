@@ -14,6 +14,8 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
         src/appwindow.cpp
+        src/event.cpp
+        src/eventwindow.cpp
         src/main.cpp
         src/mainwindow.cpp
         src/saveload.cpp
@@ -25,6 +27,8 @@ set(PROJECT_SOURCES
 
 set(HEADERS
         src/appwindow.h
+        src/event.h
+        src/eventwindow.h
         src/mainwindow.h
         src/saveload.h
         src/settingswindow.h
@@ -35,6 +39,7 @@ set(HEADERS
 
 set(FORMS
         src/appwindow.ui
+        src/eventwindow.ui
         src/mainwindow.ui
         src/settingswindow.ui
 )
