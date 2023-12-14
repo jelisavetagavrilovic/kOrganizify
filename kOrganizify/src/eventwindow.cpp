@@ -1,7 +1,6 @@
+#include "event.h"
 #include "eventwindow.h"
 #include "ui_eventwindow.h"
-
-#include "event.h"
 
 EventWindow::EventWindow(Calendar &calendar, QWidget *parent)
     : QWidget(parent)
@@ -9,6 +8,7 @@ EventWindow::EventWindow(Calendar &calendar, QWidget *parent)
     , m_calendar(calendar)
 {
     ui->setupUi(this);
+    connect(ui->btnSave, &QPushButton::clicked, this, &EventWindow::on_btnSave_clicked);
 }
 
 void EventWindow::on_btnSave_clicked()
