@@ -1,7 +1,11 @@
 #include "user.h"
 
 User::User(const QString &username, const QString &password, SaveLoad *saveLoad, QObject *parent)
-    : QObject(parent), m_username(username), m_password(password), m_saveLoad(saveLoad) {}
+    : QObject(parent)
+    , m_username(username)
+    , m_password(password)
+    , m_saveLoad(saveLoad)
+{}
 
 bool User::login(const QString &password)
 {
