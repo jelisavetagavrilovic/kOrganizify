@@ -16,14 +16,14 @@ void User::loadData(const QString &username) {
 }
 
 void User::saveData(const QString &username) {
-    QJsonObject jsonObjectUsername;
-    jsonObjectUsername["username"] = m_username;
+    // QJsonObject jsonObjectUsername;
+    // jsonObjectUsername["username"] = m_username;
 
-    QJsonObject jsonObjectPassword;
-    jsonObjectPassword["password"] = m_password;
+    // QJsonObject jsonObjectPassword;
+    // jsonObjectPassword["password"] = m_password;
 
-    m_jsonObject["username"] = jsonObjectUsername;
-    m_jsonObject["password"] = jsonObjectPassword;
+    // m_jsonObject["username"] = jsonObjectUsername;
+    // m_jsonObject["password"] = jsonObjectPassword;
 
     SaveLoad::saveData(username);
 }
