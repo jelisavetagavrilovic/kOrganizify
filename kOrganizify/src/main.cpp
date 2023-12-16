@@ -1,6 +1,6 @@
 #include "mainwindow.h"
-//#include "appwindow.h"
-//#include "settingswindow.h"
+#include "appwindow.h"
+#include "settingswindow.h"
 //#include "eventwindow.h"
 //#include "calendar.h"
 
@@ -12,6 +12,13 @@ int main(int argc, char *argv[])
 
     MainWindow w;
     w.show();
+
+    // AppWindow ap;
+    // ap.show();
+
+    // SettingsWindow sw;
+    // sw.show();
+
 
 //    Calendar calendar;
 
