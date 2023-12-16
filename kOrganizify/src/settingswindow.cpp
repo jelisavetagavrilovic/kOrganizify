@@ -3,9 +3,9 @@
 #include <QPalette>
 
 SettingsWindow::SettingsWindow(QWidget *parent)
-    : QMainWindow(parent),
-    ui(new Ui::SettingsWindow),
-    settings(new Settings)
+    : QMainWindow(parent)
+    , ui(new Ui::SettingsWindow)
+    , settings(new Settings)
 //,
     // m_theme(Custom),
     // m_notifications(true),

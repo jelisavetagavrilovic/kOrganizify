@@ -15,6 +15,19 @@ void User::loadData(const QString &username) {
     qDebug() << m_jsonObject;
 }
 
+void User::saveData(const QString &username) {
+    QJsonObject jsonObjectUsername;
+    jsonObjectUsername["username"] = m_username;
+
+    QJsonObject jsonObjectPassword;
+    jsonObjectPassword["password"] = m_password;
+
+    m_jsonObject["username"] = jsonObjectUsername;
+    m_jsonObject["password"] = jsonObjectPassword;
+
+    SaveLoad::saveData(username);
+}
+
 bool User::login(const QString &password)
 {
     if (userExists(m_username)) {

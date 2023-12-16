@@ -12,7 +12,7 @@ public:
     explicit User(const QString &username, const QString &password);
     bool userExists(const QString &username);
     void loadData(const QString &username);
-    void saveData(const QString &username, const QJsonObject &data);
+    void saveData(const QString &username);
 
     bool login(const QString &password);
     void logout();

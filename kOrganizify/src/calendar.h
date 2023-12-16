@@ -11,7 +11,7 @@ class Calendar : public SaveLoad
 {
 public:
     void loadData(const QString &username);
-    void saveData(const QString &username, const QJsonObject &data);
+    void saveData(const QString &username);
 
     void addEvent(const Event &event);
     void removeEvent(const Event &event);

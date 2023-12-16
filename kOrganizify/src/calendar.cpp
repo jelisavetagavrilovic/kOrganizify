@@ -4,7 +4,7 @@ void Calendar::loadData(const QString &username) {
     SaveLoad::loadData(username);
 
     QJsonArray jsonArray = m_jsonObject["events"].toArray();
-    for(const QJsonValue &jsonValue : jsonArray) {
+    for (const QJsonValue &jsonValue : jsonArray) {
         Event event;
         event.setTitle(jsonValue["title"].toString());
         event.setStartTime(QDateTime::fromString(jsonValue["startTime"].toString(), Qt::ISODate));
@@ -18,13 +18,24 @@ void Calendar::loadData(const QString &username) {
     }
 }
 
-void Calendar::saveData(const QString &username, const QJsonObject &data) {
+void Calendar::saveData(const QString &username) {
+    QJsonArray jsonArray;
+    for (const Event &event : m_events) {
+        QJsonObject jsonObject;
+        jsonObject["title"] = event.getTitle();
+        jsonObject["startTime"] = event.getStartTime().toString();
+        jsonObject["endTime"] = event.getEndTime().toString();
+        jsonObject["description"] = event.getDescription();
+        jsonObject["location"] = event.getLocation();
 
+        jsonArray.append(jsonObject);
+    }
+
+    m_jsonObject["events"] = jsonArray;
+    SaveLoad::saveData(username);
 }
 
 void Calendar::addEvent(const Event &event){
-    // m_events.append(event);
-
     int index = 0;
     for (const Event &e : m_events) {
         if (event.getStartTime() < e.getStartTime() ||

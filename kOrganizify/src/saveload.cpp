@@ -24,13 +24,13 @@ QString SaveLoad::getFilePath(const QString &username) {
     return QDir(userDataDir).filePath(QString("%1_data.json").arg(username));
 }
 
-void SaveLoad::saveData(const QString &username, const QJsonObject &data) {
+void SaveLoad::saveData(const QString &username) {
     QString filePath = getFilePath(username);
 
     QFile file(filePath);
     if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         QTextStream stream(&file);
-        stream << QJsonDocument(data).toJson();
+        stream << QJsonDocument(m_jsonObject).toJson();
         file.close();
     }
 }

@@ -20,7 +20,7 @@ private:
 public:
     explicit ToDoList(QObject *parent = nullptr);
     void loadData(const QString &username);
-    void saveData(const QString &username, const QJsonObject &data);
+    void saveData(const QString &username);
 
     QVector<Task> getTasks();
     void setTasks(const QVector<Task> tasks);

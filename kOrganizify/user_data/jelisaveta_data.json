@@ -1,25 +1,43 @@
 {
-    "username": "jelisaveta",
-    "password": "jelisaveta",
-    "events": [{
-        "title": "ng",
-        "startTime": "2023-12-31T23:59:00",
-        "endTime": "2024-01-01T00:01:00",
-        "description": "srecna nova godina",
-        "location": "venecija"
-    }, {
-        "title": "ng",
-        "startTime": "2023-12-31T23:59:00",
-        "endTime": "2024-01-01T00:01:00",
-        "description": "srecna nova godina",
-        "location": "venecija"
-    }],
-    "tasks": [{
-        "task": "zavrsi save"
-    }, {
-        "task": "super je"
-    }],
+    "events": [
+        {
+            "description": "srecna nova godina",
+            "endTime": "",
+            "location": "venecija",
+            "startTime": "",
+            "title": "ng"
+        },
+        {
+            "description": "srecna nova godina",
+            "endTime": "",
+            "location": "venecija",
+            "startTime": "",
+            "title": "ng"
+        }
+    ],
+    "password": {
+        "password": "jelisaveta"
+    },
     "settings": {
-        "theme": "blue"
+        "color": "#0050B5",
+        "nightMode": false,
+        "notifications": false
+    },
+    "tasks": [
+        {
+            "task": "zavrsi save"
+        },
+        {
+            "task": "super je"
+        },
+        {
+            "task": "ok"
+        },
+        {
+            "task": "drugi"
+        }
+    ],
+    "username": {
+        "username": "jelisavtea"
     }
 }

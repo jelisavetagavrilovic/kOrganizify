@@ -14,7 +14,7 @@ public:
     QJsonObject m_jsonObject;
 
 public slots:
-    void saveData(const QString &username, const QJsonObject &data);
+    void saveData(const QString &username);
     void loadData(const QString &username);
 };
 
