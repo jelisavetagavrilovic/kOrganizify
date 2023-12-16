@@ -4,7 +4,9 @@
 
 SettingsWindow::SettingsWindow(QWidget *parent)
     : QMainWindow(parent),
-    ui(new Ui::SettingsWindow)//,
+    ui(new Ui::SettingsWindow),
+    settings(new Settings)
+//,
     // m_theme(Custom),
     // m_notifications(true),
     // m_nightMode(false)
@@ -22,7 +24,7 @@ SettingsWindow::SettingsWindow(QWidget *parent)
     // ui->btnNightMode->setChecked(m_nightMode);
 
 
-
+    // ui->btnSave->setStyleSheet(("background-color: %1").arg(this->settings->color()));
     QPalette btnSavePalette = ui->btnSave->palette();
     connect(ui->dropTheme, QOverload<const QString &>::of(&QComboBox::currentTextChanged), [=](const QString &text){
 
@@ -56,16 +58,16 @@ SettingsWindow::SettingsWindow(QWidget *parent)
 }
 
 void SettingsWindow::on_btnSave_clicked(){
-    emit colorChanged(this->color);
+    emit colorChanged(this->settings->color());
     this->close();
 }
 
 void SettingsWindow::setColor(QString color){
-    this->color = color;
+    this->settings->setColor(color);
 }
 
 QString SettingsWindow::getColor(){
-    return this->color;
+    return this->settings->color();
 }
 
 SettingsWindow::~SettingsWindow()

@@ -13,6 +13,13 @@ int main(int argc, char *argv[])
     // MainWindow w;
     // w.show();
 
+    // AppWindow ap;
+    // ap.show();
+
+    // SettingsWindow sw;
+    // sw.show();
+
+
 //    Calendar calendar;
 
 //    EventWindow ew(calendar);

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QString>
+#include "settings.h"
 
 namespace Ui {
 class SettingsWindow;
@@ -24,7 +25,7 @@ signals:
     void colorChanged(const QString& color);
 private:
     Ui::SettingsWindow *ui;
-    QString color;
+    Settings *settings;
 };
 
 #endif // SETTINGSWINDOW_H
