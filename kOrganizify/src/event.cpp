@@ -1,51 +1,60 @@
 #include "event.h"
 
+// Event::Event(const QString &title, const QDateTime &startTime, const QDateTime &endTime,
+//              const QString &description, const QString location)
+//     : m_title(title)
+//     , m_startTime(startTime)
+//     , m_endTime(endTime)
+//     , m_description(description)
+//     , m_location(location)
+// {}
+
 QString Event::getTitle() const {
-    return title;
+    return m_title;
 }
 
 void Event::setTitle(const QString &title) {
-    this->title = title;
+    this->m_title = title;
 }
 
 QDateTime Event::getStartTime() const {
-    return startTime;
+    return m_startTime;
 }
 
 void Event::setStartTime(const QDateTime &startTime) {
-    this->startTime = startTime;
+    this->m_startTime = startTime;
 }
 
 QDateTime Event::getEndTime() const {
-    return endTime;
+    return m_endTime;
 }
 
 void Event::setEndTime(const QDateTime &endTime) {
-    this->endTime = endTime;
+    this->m_endTime = endTime;
 }
 
 QString Event::getDescription() const {
-    return description;
+    return m_description;
 }
 
 void Event::setDescription(const QString &description) {
-    this->description = description;
+    this->m_description = description;
 }
 
 QString Event::getLocation() const {
-    return location;
+    return m_location;
 }
 
 void Event::setLocation(const QString &location) {
-    this->location = location;
+    this->m_location = location;
 }
 
 bool Event::operator==(const Event &other) const {
     return (
-        title == other.title &&
-        startTime == other.startTime &&
-        endTime == other.endTime &&
-        description == other.description &&
-        location == other.location
+        m_title == other.m_title &&
+        m_startTime == other.m_startTime &&
+        m_endTime == other.m_endTime &&
+        m_description == other.m_description &&
+        m_location == other.m_location
         );
 }

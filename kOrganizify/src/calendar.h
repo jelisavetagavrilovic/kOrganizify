@@ -1,12 +1,18 @@
 #ifndef CALENDAR_H
 #define CALENDAR_H
 
-#include <QList>
 #include "event.h"
+#include "saveload.h"
+#include <QList>
+#include <QString>
+#include <QJsonArray>
 
-class Calendar
+class Calendar : public SaveLoad
 {
 public:
+    void loadData(const QString &username);
+    void saveData(const QString &username, const QJsonObject &data);
+
     void addEvent(const Event &event);
     void removeEvent(const Event &event);
     void updateEvent(const Event &event);

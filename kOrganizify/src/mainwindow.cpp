@@ -24,8 +24,7 @@ void MainWindow::login()
     QString username = ui->leUsername->text();
     QString password = ui->lePassword->text();
 
-    SaveLoad saveLoad;
-    User user(username, password, &saveLoad);
+    User user(username, password);
 
     if (user.login(password)) {
         ui->lblStatus->setText("Login successful.");
@@ -33,7 +32,7 @@ void MainWindow::login()
         this->close();
         AppWindow *app = new AppWindow(this);
         app->show();
-    } else if (user.getSaveLoad()->userExists(username))
+    } else if (user.userExists(username))
         ui->lblStatus->setText("Login failed. Check the password.");
     else
         ui->lblStatus->setText("Login failed. User doesn't exist.");
@@ -46,8 +45,7 @@ void MainWindow::registerUser()
     QString username = ui->leUsername->text();
     QString password = ui->lePassword->text();
 
-    SaveLoad saveLoad;
-    User user(username, password, &saveLoad);
+    User user(username, password);
 
     if (user.registerUser()) {
         ui->lblStatus->setText("Registration successful. Login successful.");

@@ -7,6 +7,9 @@
 class Event
 {
 public:
+    // explicit Event(const QString &title, const QDateTime &startTime,
+    //                const QDateTime &endTime, const QString &description, const QString location);
+
     QString getTitle() const;
     void setTitle(const QString &title);
 
@@ -25,11 +28,11 @@ public:
     bool operator==(const Event &other) const;
 
 private:
-    QString title;
-    QDateTime startTime;
-    QDateTime endTime;
-    QString description;
-    QString location;
+    QString m_title;
+    QDateTime m_startTime;
+    QDateTime m_endTime;
+    QString m_description;
+    QString m_location;
 };
 
 #endif // EVENT_H

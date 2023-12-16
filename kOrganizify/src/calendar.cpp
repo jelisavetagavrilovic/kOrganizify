@@ -1,7 +1,45 @@
 #include "calendar.h"
 
+void Calendar::loadData(const QString &username) {
+    SaveLoad::loadData(username);
+
+    QJsonArray jsonArray = m_jsonObject["events"].toArray();
+    for(const QJsonValue &jsonValue : jsonArray) {
+        Event event;
+        event.setTitle(jsonValue["title"].toString());
+        event.setStartTime(QDateTime::fromString(jsonValue["startTime"].toString(), Qt::ISODate));
+        event.setEndTime(QDateTime::fromString(jsonValue["endTime"].toString(), Qt::ISODate));
+        event.setDescription(jsonValue["description"].toString());
+        event.setLocation(jsonValue["location"].toString());
+
+        qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime() << event.getDescription() << event.getLocation();
+
+        addEvent(event);
+    }
+}
+
+void Calendar::saveData(const QString &username, const QJsonObject &data) {
+
+}
+
 void Calendar::addEvent(const Event &event){
-    m_events.append(event);
+    // m_events.append(event);
+
+    int index = 0;
+    for (const Event &e : m_events) {
+        if (event.getStartTime() < e.getStartTime() ||
+            (event.getStartTime() == e.getStartTime() && (event.getEndTime() < e.getEndTime()) ||
+            (event.getEndTime() == e.getEndTime() && event.getTitle() < e.getTitle()))) {
+            break;
+        }
+        index++;
+
+    }
+
+    m_events.insert(index, event);
+
+    // qDebug() << m_events[index].getTitle() << m_events[index].getStartTime() << m_events[index].getEndTime() <<
+    //     m_events[index].getDescription() << m_events[index].getLocation();
 }
 
 void Calendar::removeEvent(const Event &event){

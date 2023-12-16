@@ -35,9 +35,10 @@ void SaveLoad::saveData(const QString &username, const QJsonObject &data) {
     }
 }
 
-QJsonObject SaveLoad::loadData(const QString &username) {
-    QString filePath = getFilePath(username);
+void SaveLoad::loadData(const QString &username) {
+    m_jsonObject = {};
 
+    QString filePath = getFilePath(username);
     QFile file(filePath);
     if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QTextStream stream(&file);
@@ -45,12 +46,7 @@ QJsonObject SaveLoad::loadData(const QString &username) {
         file.close();
 
         QJsonDocument jsonDoc = QJsonDocument::fromJson(jsonString.toUtf8());
-        return jsonDoc.object();
+        m_jsonObject = jsonDoc.object();
+
     }
-
-    return QJsonObject();
-}
-
-bool SaveLoad::userExists(const QString &username) {
-    return QFile(getFilePath(username)).exists();
 }
