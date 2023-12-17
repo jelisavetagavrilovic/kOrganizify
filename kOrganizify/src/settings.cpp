@@ -1,5 +1,12 @@
 #include "settings.h"
 
+Settings::Settings()
+{
+    this->m_color = "#A5A9A0";
+    this->m_notifications = false;
+    this->m_nightmode = false;
+}
+
 Settings::Settings(QString color, bool notifications, bool nightmode)
 {
     this->m_color = color;
@@ -7,12 +14,6 @@ Settings::Settings(QString color, bool notifications, bool nightmode)
     this->m_nightmode = nightmode;
 }
 
-Settings::Settings()
-{
-    this->m_color = "#A5A9A0";
-    this->m_notifications = false;
-    this->m_nightmode = false;
-}
 
 QString Settings::color()
 {

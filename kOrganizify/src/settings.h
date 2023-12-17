@@ -5,20 +5,24 @@
 
 class Settings
 {
+public:
+    Settings();
+    Settings(QString color, bool notifications, bool nightmode);
+
+    QString color();
+
+    void setColor(QString color);
+    void setNightmode(bool nightmode);
+    void setNotifications(bool notifications);
+
+    bool nightmode();
+    bool notifications();
+
 private:
     QString m_color;
+
     bool m_notifications;
     bool m_nightmode;
-
-public:
-    Settings(QString color, bool notifications, bool nightmode);
-    Settings();
-    QString color();
-    void setColor(QString color);
-    bool notifications();
-    void setNotifications(bool notifications);
-    bool nightmode();
-    void setNightmode(bool nightmode);
 };
 
 #endif // SETTINGS_H

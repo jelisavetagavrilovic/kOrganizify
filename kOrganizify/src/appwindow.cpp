@@ -41,15 +41,21 @@ void AppWindow::changeButtonColor(const QString& newColor) {
 
 void AppWindow::on_btnSettings_clicked()
 {
+    if (!this->settingsWindow) {
+        this->settingsWindow = new SettingsWindow();
+    }
+
     if (this->settingsWindow && this->settingsWindow->isVisible()) {
         this->settingsWindow->activateWindow();
     } else {
         this->settingsWindow->show();
     }
+
     QString styleSheet = QString("background-color: %1").arg(this->settingsWindow->getColor());
     this->ui->btnSettings->setStyleSheet(styleSheet);
     this->ui->btnSettings->update();
 }
+
 
 void AppWindow::addTask()
 {
