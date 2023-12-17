@@ -12,7 +12,7 @@ void Calendar::loadData(const QString &username) {
         event.setDescription(jsonValue["description"].toString());
         event.setLocation(jsonValue["location"].toString());
 
-        qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime() << event.getDescription() << event.getLocation();
+        // qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime() << event.getDescription() << event.getLocation();
 
         addEvent(event);
     }
@@ -23,8 +23,8 @@ void Calendar::saveData(const QString &username) {
     for (const Event &event : m_events) {
         QJsonObject jsonObject;
         jsonObject["title"] = event.getTitle();
-        jsonObject["startTime"] = event.getStartTime().toString();
-        jsonObject["endTime"] = event.getEndTime().toString();
+        jsonObject["startTime"] = event.getStartTime().toString(Qt::ISODate);
+        jsonObject["endTime"] = event.getEndTime().toString(Qt::ISODate);
         jsonObject["description"] = event.getDescription();
         jsonObject["location"] = event.getLocation();
 
@@ -67,3 +67,11 @@ void Calendar::updateEvent(const Event &event){
 QList<Event> Calendar::getEvents() const {
     return m_events;
 }
+
+void Calendar::clear() {
+    for (Event &event : m_events) {
+        event.clear(); // Poziva clear metodu za svaki događaj
+    }
+    m_events.clear(); // Očisti listu događaja
+}
+

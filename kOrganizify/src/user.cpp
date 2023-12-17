@@ -16,14 +16,8 @@ void User::loadData(const QString &username) {
 }
 
 void User::saveData(const QString &username) {
-    // QJsonObject jsonObjectUsername;
-    // jsonObjectUsername["username"] = m_username;
-
-    // QJsonObject jsonObjectPassword;
-    // jsonObjectPassword["password"] = m_password;
-
-    // m_jsonObject["username"] = jsonObjectUsername;
-    // m_jsonObject["password"] = jsonObjectPassword;
+    m_jsonObject["username"] = m_username;
+    m_jsonObject["password"] = m_password;
 
     SaveLoad::saveData(username);
 }
@@ -35,10 +29,15 @@ bool User::login(const QString &password)
         if (m_password == password) {
             qDebug() << "User" << m_username << "successfully logged in.";
 
-            // QJsonObject userData = loadData(m_username);
-            // if (!userData.isEmpty()) {
-            //     updateUserData(userData);
-            // }
+            m_calendar.loadData(m_username);
+            for (const Event &event : m_calendar.getEvents()) {
+                qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime() <<
+                     event.getDescription() << event.getLocation();
+            }
+            m_calendar.saveData(m_username);
+
+            m_toDoList.loadData(m_username);
+            m_settings.loadData(m_username);
 
             return true;
         } else {
@@ -51,42 +50,34 @@ bool User::login(const QString &password)
     }
 }
 
-bool User::registerUser()
+bool User::registerUser(const QString &password)
 {
-    // if (userExists(m_username)) {
-    //     qDebug() << "Registration failed. User already exists.";
-    //     return false;
-    // } else {
-    //     // Implement registration logic
-    //     saveData(m_username, QJsonObject()); // Save an empty object for now
-    //     qDebug() << "User" << m_username << "successfully registered and logged in.";
-    //     login(m_password); // Automatically log in after registration
-    //     return true;
-    // }
+    if (userExists(m_username)) {
+        qDebug() << "Registration failed. User already exists.";
+        return false;
+    } else {
+        // Implement registration logic
+        m_password = password;
+        qDebug() << "User" << m_username << "successfully registered and logged in.";
+        login(m_password); // Automatically log in after registration
+        return true;
+    }
+
     return true;
 }
 
 void User::logout()
 {
-    // QJsonObject userData;
-    // // Fill userData with user-related data
+    saveData(m_username);
+    m_calendar.saveData(m_username);
+    // m_toDoList.saveData(m_username);
+    // m_settings.saveData(m_username);
 
-    // saveData(m_username, userData);
-    // qDebug() << "User" << m_username << "logged out.";
+    qDebug() << "User" << m_username << "logged out.";
+
+    // Dodatne akcije koje želite izvršiti prilikom odjavljivanja
+    // Na primer, postaviti prazne liste, brisati podatke iz memorije, itd.
+    // m_calendar.clear();
+    // m_toDoList.clear();
 }
-
-void User::updateUserData(const QJsonObject &userData)
-{
-    // Update user data in the application
-    // For example: m_calendar = userData["calendar"].toObject();
-    //              m_todoList = userData["todoList"].toObject();
-    //              m_settings = userData["settings"].toObject();
-}
-
-// SaveLoad* User::getSaveLoad() const
-// {
-//     return m_saveLoad;
-// }
-
-
 

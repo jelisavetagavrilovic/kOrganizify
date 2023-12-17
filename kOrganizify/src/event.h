@@ -27,6 +27,9 @@ public:
 
     bool operator==(const Event &other) const;
 
+    void clear();
+    void deleteString(QString &string);
+
 private:
     QString m_title;
     QDateTime m_startTime;

@@ -18,6 +18,8 @@ public:
     void updateEvent(const Event &event);
     QList<Event> getEvents() const;
 
+    void clear();
+
 private:
     QList<Event> m_events;
 };

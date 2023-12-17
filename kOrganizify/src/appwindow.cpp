@@ -1,21 +1,24 @@
 #include "appwindow.h"
 #include "ui_appwindow.h"
-#include "settingswindow.h"
+
 #include <QPixmap>
 #include <QCheckBox>
 #include <QDir>
 
-AppWindow::AppWindow(QWidget *parent)
+AppWindow::AppWindow(User *user, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::AppWindow)
+    , m_user(user)
 {
     ui->setupUi(this);
+
+    connect(ui->btnLogout, &QPushButton::clicked, this, &AppWindow::on_btnLogout_clicked);
+
     this->settingsWindow = new SettingsWindow(this);
     this->settingsWindow->setColor("#0050B5");
     this->ui->lwToDoList->setStyleSheet("background-color: #FCD299");
 
     QString sourceDir = QCoreApplication::applicationDirPath();
-
     QString path = QDir(sourceDir).filePath("../kOrganizify/src/images/background1.jpg");
     QPixmap background(path);
 
@@ -89,7 +92,29 @@ void AppWindow::onCheckBoxStateChanged(int state)
     }
 }
 
+void AppWindow::on_btnLogout_clicked()
+{
+    // Dodatne akcije koje želite izvršiti prilikom odjavljivanja
+    qDebug() << "Logout button clicked!";
+
+    // Odjavite korisnika
+    m_user->logout();
+
+    // Zatvorite trenutni prozor
+    this->close();
+
+    // // Prikazivanje ponovo MainWindow ili drugog prozora za login
+    // MainWindow *mainWindow = new MainWindow(this);
+    // mainWindow->show();
+
+    // this->close();
+}
+
 AppWindow::~AppWindow()
 {
+    disconnect(ui->btnSettings, SIGNAL(clicked()), this, SLOT(on_btnSettings_clicked()));
+    disconnect(ui->btnLogout, SIGNAL(clicked()), this, SLOT(on_btnLogout_clicked()));
+
+    disconnect(ui->btnSettings);
     delete ui;
 }

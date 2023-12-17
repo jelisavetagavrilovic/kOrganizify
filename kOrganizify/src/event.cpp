@@ -1,14 +1,5 @@
 #include "event.h"
 
-// Event::Event(const QString &title, const QDateTime &startTime, const QDateTime &endTime,
-//              const QString &description, const QString location)
-//     : m_title(title)
-//     , m_startTime(startTime)
-//     , m_endTime(endTime)
-//     , m_description(description)
-//     , m_location(location)
-// {}
-
 QString Event::getTitle() const {
     return m_title;
 }
@@ -58,3 +49,27 @@ bool Event::operator==(const Event &other) const {
         m_location == other.m_location
         );
 }
+
+
+// Implementacija metode za čišćenje resursa
+void Event::clear() {
+    // Oslobodite dinamički alocirane stringove
+    deleteString(m_title);
+    deleteString(m_description);
+    deleteString(m_location);
+
+    // Dodajte slične naredbe za oslobađanje drugih resursa ako postoje
+}
+
+void Event::deleteString(QString &str) {
+    // Provera da li je pokazivač nullptr pre dealokacije
+    if (!str.isNull())
+    {
+        delete[] str.utf16();  // Oslobađanje dinamički alocirane memorije za UTF-16 reprezentaciju stringa
+        str.clear();           // Postavljanje stringa na prazan
+    }
+}
+
+
+
+

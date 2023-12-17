@@ -2,6 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+
+#include "user.h"
+#include "saveload.h"
+#include "appwindow.h"
+
 // #include <QGroupBox>
 // #include <QLineEdit>
 // #include <QPushButton>

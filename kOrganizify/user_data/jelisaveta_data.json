@@ -2,23 +2,23 @@
     "events": [
         {
             "description": "srecna nova godina",
-            "endTime": "",
+            "endTime": "2024-01-01T00:01:00",
             "location": "venecija",
-            "startTime": "",
+            "startTime": "2023-12-31T23:58:00",
             "title": "ng"
         },
         {
             "description": "srecna nova godina",
-            "endTime": "",
+            "endTime": "2024-01-01T00:01:00",
             "location": "venecija",
-            "startTime": "",
+            "startTime": "2023-12-31T23:59:00",
             "title": "ng"
         }
     ],
     "password": "jelisaveta",
     "settings": {
-        "color": "#0050B5",
-        "nightMode": false,
+        "color": "#9063CD",
+        "nightMode": true,
         "notifications": false
     },
     "tasks": [
@@ -27,15 +27,7 @@
         },
         {
             "task": "super je"
-        },
-        {
-            "task": "ok"
-        },
-        {
-            "task": "drugi"
         }
     ],
-    "username": {
-        "username": "jelisaveta"
-    }
+    "username": "jelisaveta"
 }

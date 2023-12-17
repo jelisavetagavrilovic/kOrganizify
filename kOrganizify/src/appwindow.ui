@@ -37,17 +37,28 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QPushButton" name="btnSettings">
-       <property name="maximumSize">
-        <size>
-         <width>20</width>
-         <height>20</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>...</string>
-       </property>
-      </widget>
+      <layout class="QVBoxLayout" name="verticalLayout2">
+       <item>
+        <widget class="QPushButton" name="btnSettings">
+         <property name="maximumSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnLogout">
+         <property name="text">
+          <string>Logout</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
       <spacer name="verticalSpacer">
@@ -89,7 +100,7 @@
       </spacer>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout">
+      <layout class="QVBoxLayout" name="verticalLayout1">
        <item>
         <widget class="QLabel" name="lblToDoList">
          <property name="text">
@@ -114,7 +125,7 @@
      <x>0</x>
      <y>0</y>
      <width>819</width>
-     <height>20</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
