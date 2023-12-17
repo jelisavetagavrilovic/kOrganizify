@@ -100,36 +100,6 @@
     </attribute>
     <row>
      <property name="text">
-      <string>0h</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>1h</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>2h</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>3h</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>4h</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>5h</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
       <string>6h</string>
      </property>
     </row>
@@ -216,6 +186,41 @@
     <row>
      <property name="text">
       <string>23h</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>00h</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>1h</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>2h</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>3h</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>4h</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>5h</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>6h</string>
      </property>
     </row>
     <column>
