@@ -1,6 +1,6 @@
 # kOrganizify
 
-![kOrganizify Poster](:/images/kOrganizifyPoster.png)
+![kOrganizify Poster](kOrganizify/images/kOrganizifyPoster.png)
 
 Planer je prakticna aplikacija za organizaciju vremena i zadataka. Pomocu nje jednostavno organizujete planove, pratite dogadjaje i zadatke koji ce pomoci da ostanete produktivni uz podsetnike i kalendar. 
 U projektu cemo implementirati osnovne funkcionalnosti planera i dopusticemo da aplikacija i sama organizuje Vase planove i planove sa poznanicama.
