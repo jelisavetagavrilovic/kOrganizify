@@ -21,6 +21,7 @@ set(PROJECT_SOURCES
         src/mainwindow.cpp
         src/saveload.cpp
         src/settingswindow.cpp
+#        src/smartplan.cpp
         src/task.cpp
         src/toDoList.cpp
         src/user.cpp
@@ -34,6 +35,7 @@ set(HEADERS
         src/mainwindow.h
         src/saveload.h
         src/settingswindow.h
+#        src/smartplan.h
         src/task.h
         src/toDoList.h
         src/user.h
@@ -75,7 +77,55 @@ else()
     endif()
 endif()
 
-target_link_libraries(kOrganizify PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+
+#include(FetchContent)
+
+#FetchContent_Declare(
+#        z3
+#        GIT_REPOSITORY https://github.com/Z3Prover/z3
+#        GIT_TAG        z3-4.12.1
+#)
+#FetchContent_MakeAvailable(z3)
+
+#target_include_directories(kOrganizify PRIVATE ${z3_SOURCE_DIR}/src/api/c++)
+
+#target_link_libraries(kOrganizify PRIVATE libz3 Qt${QT_VERSION_MAJOR}::Widgets)
+
+
+# Include Z3 directories
+target_include_directories(kOrganizify PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+    ${CMAKE_CURRENT_BINARY_DIR}/_deps/z3-src/src/api/c++
+)
+
+link_directories(${z3_BINARY_DIR})
+
+include(FetchContent)
+
+FetchContent_Declare(
+    z3
+    GIT_REPOSITORY https://github.com/Z3Prover/z3
+    GIT_TAG        z3-4.12.1
+)
+
+FetchContent_GetProperties(z3)
+if(NOT z3_POPULATED)
+    FetchContent_Populate(z3)
+
+    # Add the necessary include directories
+    target_include_directories(kOrganizify PRIVATE
+        ${z3_SOURCE_DIR}/src/api
+        ${z3_BINARY_DIR}/src/api
+    )
+
+    # Link with the Z3 library
+#    target_link_libraries(kOrganizify PRIVATE ${z3_BINARY_DIR}/libz3.lib)
+endif()
+
+target_link_libraries(kOrganizify PRIVATE  Qt${QT_VERSION_MAJOR}::Widgets)
+
+
+#target_link_libraries(kOrganizify PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
