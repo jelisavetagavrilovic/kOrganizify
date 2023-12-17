@@ -7,16 +7,15 @@
 class SaveLoad : public QObject
 {
     Q_OBJECT
+
 public:
     explicit SaveLoad(QObject *parent = nullptr);
+    QString getFilePath(const QString &username);
+    QJsonObject m_jsonObject;
 
 public slots:
-    void saveData(const QString &username, const QJsonObject &data);
-    QJsonObject loadData(const QString &username);
-    bool userExists(const QString &username);
-
-private:
-    QString getFilePath(const QString &username);
+    void saveData(const QString &username);
+    void loadData(const QString &username);
 };
 
 #endif // SAVELOAD_H
