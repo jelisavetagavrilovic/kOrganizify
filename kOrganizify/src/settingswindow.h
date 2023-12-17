@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 #include <QString>
+#include <QPalette>
+#include <QMap>
+
 #include "settings.h"
 
 namespace Ui {
@@ -21,8 +24,10 @@ public:
 
 private slots:
     void on_btnSave_clicked();
+
 signals:
     void colorChanged(const QString& color);
+
 private:
     Ui::SettingsWindow *ui;
     Settings *settings;

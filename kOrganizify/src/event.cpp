@@ -1,5 +1,8 @@
 #include "event.h"
 
+//Event::Event(const QString &title, const QDateTime &startTime, const QDateTime &endTime, const QString &description, const QString &location, QObject* parent)
+//    : m_title(title), m_startTime(startTime), m_endTime(endTime), m_description(description), m_location(location), QObject(nullptr) {}
+
 QString Event::getTitle() const {
     return m_title;
 }

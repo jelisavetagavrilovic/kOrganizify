@@ -20,6 +20,8 @@ set(PROJECT_SOURCES
         src/eventwindow.cpp
         src/main.cpp
         src/mainwindow.cpp
+        src/notifications.cpp
+        src/notificationswindow.cpp
         src/saveload.cpp
         src/settings.cpp
         src/settingswindow.cpp
@@ -35,6 +37,8 @@ set(HEADERS
         src/event.h
         src/eventwindow.h
         src/mainwindow.h
+        src/notifications.h
+        src/notificationswindow.h
         src/saveload.h
         src/settings.h
         src/settingswindow.h
@@ -47,6 +51,7 @@ set(FORMS
         src/appwindow.ui
         src/eventwindow.ui
         src/mainwindow.ui
+        src/notificationswindow.ui
         src/settingswindow.ui
 )
 

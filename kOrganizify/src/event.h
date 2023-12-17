@@ -3,12 +3,14 @@
 
 #include <QString>
 #include <QDateTime>
+#include <QObject>
 
 class Event
 {
 public:
-    // explicit Event(const QString &title, const QDateTime &startTime,
-    //                const QDateTime &endTime, const QString &description, const QString location);
+//    Event(QObject* parent=nullptr);
+//    Event(const QString &title, const QDateTime &startTime, const QDateTime &endTime, const QString &description, const QString &location, QObject* parent);
+//    ~Event();
 
     QString getTitle() const;
     void setTitle(const QString &title);
@@ -30,12 +32,14 @@ public:
     void clear();
     void deleteString(QString &string);
 
+
 private:
     QString m_title;
     QDateTime m_startTime;
     QDateTime m_endTime;
     QString m_description;
     QString m_location;
+
 };
 
 #endif // EVENT_H

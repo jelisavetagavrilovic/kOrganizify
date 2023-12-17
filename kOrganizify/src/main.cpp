@@ -1,9 +1,11 @@
 #include "mainwindow.h"
-#include "appwindow.h"
-#include "settingswindow.h"
-#include "eventwindow.h"
+//#include "appwindow.h"
+//#include "settingswindow.h"
+//#include "eventwindow.h"
 #include "calendar.h"
-#include "user.h"
+//#include "user.h"
+#include"notifications.h"
+#include "notificationswindow.h"
 
 #include <QApplication>
 
@@ -11,39 +13,36 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    MainWindow w;
-    w.show();
-
-    // AppWindow ap;
-    // ap.show();
-
-    // SettingsWindow sw;
-    // sw.show();
-
-   // EventWindow ew(calendar);
-   // ew.show();
+//    MainWindow w;
+//    w.show();
 
 
-    // User user("jelisavtea", "j");
-    // user.loadData("jelisaveta");
-    // user.saveData("jelisaveta");
+    Calendar calendar;
+    calendar.loadData("andjela");
+    Notifications notif(&calendar);
+    notif.checkEvents();
 
-    // Calendar calendar;
-    // calendar.loadData("jelisaveta");
-    // calendar.saveData("jelisaveta");
+//     User user("andjela", "a");
+//     user.loadData("andjela");
+//     user.saveData("andjela");
 
-    // Settings settings;
-    // settings.loadData("jelisaveta");
-    // settings.setColor("#0050B5");
-    // settings.setNightMode(false);
-    // settings.setNotifications(false);
-    // settings.saveData("jelisaveta");
+//    NotificationsWindow nw;
+//    nw.show();
 
-    // ToDoList toDoList;
-    // toDoList.loadData("jelisaveta");
-    // toDoList.addTask(Task("ok"));
-    // toDoList.addTask(Task("drugi"));
-    // toDoList.saveData("jelisaveta");
+    // calendar.saveData("andjela");
+
+//     Settings settings;
+//     settings.loadData("andjela");
+//     settings.setColor("#0050B5");
+//     settings.setNightMode(false);
+//     settings.setNotifications(false);
+//     settings.saveData("andjela");
+
+//     ToDoList toDoList;
+//     toDoList.loadData("andjela");
+//     toDoList.addTask(Task("ok"));
+//     toDoList.addTask(Task("drugi"));
+//     toDoList.saveData("andjela");
 
     return a.exec();
 }
