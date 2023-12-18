@@ -19,7 +19,6 @@ void Server::newConnection() {
         // QString clientName = newClient->readAll();
         // m_clients.insert(clientName, newClient);
 
-        // qDebug() <<"povezan user " << clientName;
 
         // multiCast(clientName);
         qDebug() << "New client connect";
@@ -76,6 +75,7 @@ QString Server::getUsername(QTcpSocket* socket) {
 void Server::disconnection() {
     QTcpSocket* disconnectedClient = dynamic_cast<QTcpSocket*>(sender());
     QString username = getUsername(disconnectedClient);
+    m_clients.remove(username);
     for (auto i = m_clients.cbegin(), end = m_clients.cend(); i != end; ++i){
         if (i.value() != disconnectedClient) {
             QJsonObject newClientMessage;

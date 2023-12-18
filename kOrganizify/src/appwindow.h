@@ -28,6 +28,7 @@ public:
 
 public slots:
     void handleNewUserLoggedIn(const QString& username);
+    void handleUserDisconnected(const QString& username);
 
 private slots:
     // void addTask();

@@ -17,9 +17,10 @@ public slots:
     void sendMessage(QString message);
 private:
     QTcpSocket* m_socket;
-    bool makeConnection(QHostAddress::SpecialAddress adresa);
+    bool makeConnection(QHostAddress::SpecialAddress address);
 signals:
     void newUserLoggedIn(const QString& username);
+    void disconnectedUser(const QString& username);
 };
 
 #endif // CLIENT_H

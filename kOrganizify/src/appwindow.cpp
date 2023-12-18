@@ -54,10 +54,15 @@ AppWindow::AppWindow(User *user, QWidget *parent)
 
     populateFriends(m_user->m_client->m_friends);
     connect(m_user->m_client, &Client::newUserLoggedIn, this, &AppWindow::handleNewUserLoggedIn);
+    connect(m_user->m_client, &Client::disconnectedUser, this, &AppWindow::handleUserDisconnected);
 }
 
 void AppWindow::handleNewUserLoggedIn(const QString& username) {
     ui->lwFriends->addItem(username);
+}
+
+void AppWindow::handleUserDisconnected(const QString& username) {
+    delete ui->lwFriends->findItems(username,Qt::MatchExactly)[0];
 }
 
 void AppWindow::populateFriends(const QList<QString>& friends) {
