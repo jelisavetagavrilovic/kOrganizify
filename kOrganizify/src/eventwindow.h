@@ -20,6 +20,9 @@ private:
     Ui::EventWindow *ui;
     Calendar &m_calendar;
 
+signals:
+    void saveButtonClicked();
+
 private slots:
     // void on_btnGenerate_clicked();
     void on_btnSave_clicked();
