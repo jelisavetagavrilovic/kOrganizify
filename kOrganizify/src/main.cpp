@@ -3,6 +3,8 @@
 //#include "settingswindow.h"
 //#include "eventwindow.h"
 //#include "calendar.h"
+#include "syncwindow.h"
+
 
 #include <QApplication>
 
@@ -13,13 +15,11 @@ int main(int argc, char *argv[])
     // MainWindow w;
     // w.show();
 
-    AppWindow aw;
-    aw.show();
+//    AppWindow aw;
+//    aw.show();
 
-//    Calendar calendar;
-
-//    EventWindow ew(calendar);
-//    ew.show();
+    SyncWindow sw;
+    sw.show();
 
     return a.exec();
 }
