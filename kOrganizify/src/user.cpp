@@ -59,8 +59,7 @@ bool User::login(const QString &password) {
     }
 }
 
-bool User::registerUser(const QString &password)
-{
+bool User::registerUser(const QString &password) {
     if (userExists(m_username)) {
         qDebug() << "Registration failed. User already exists.";
         return false;
@@ -75,12 +74,7 @@ bool User::registerUser(const QString &password)
     return true;
 }
 
-void User::logout()
-{
-    qDebug() << "logout1";
+void User::logout() {
     saveData(m_username);
-    qDebug() << "logout2";
-    // // m_calendar.clear();
-    // // m_toDoList.clear();
 }
 
