@@ -1,8 +1,8 @@
 #include "calendar.h"
 
 void Calendar::loadData(const QString &username) {
-    // SaveLoad::loadData(username);
-
+    SaveLoad::loadData(username);
+    fromJson(m_jsonObject);
 }
 
 QJsonValue Calendar::toJson() const {
@@ -17,11 +17,6 @@ QJsonValue Calendar::toJson() const {
 
         jsonArray.append(jsonObject);
     }
-
-    // for (const QJsonValue &event : jsonArray) {
-    //     qDebug() << "calendar" << event["title"] << event["startTime"] << event["endTime"] <<
-    //         event["description"] << event["location"];
-    // }
 
     return QJsonValue(jsonArray);
 }
@@ -45,7 +40,7 @@ void Calendar::fromJson(const QJsonObject &jsonObject) {
 }
 
 void Calendar::saveData(const QString &username) {
-
+    m_jsonObject = toJson().toObject();
     SaveLoad::saveData(username);
 }
 

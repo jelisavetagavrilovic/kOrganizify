@@ -8,6 +8,7 @@ ToDoList::ToDoList(QObject *parent)
 
 void ToDoList::loadData(const QString &username) {
     SaveLoad::loadData(username);
+    fromJson(m_jsonObject);
 }
 
 void ToDoList::fromJson(const QJsonObject &jsonObject) {
@@ -34,6 +35,7 @@ QJsonValue ToDoList::toJson() const {
 }
 
 void ToDoList::saveData(const QString &username) {
+    m_jsonObject = toJson().toObject();
     SaveLoad::saveData(username);
 }
 
