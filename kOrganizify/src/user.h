@@ -5,6 +5,7 @@
 #include "calendar.h"
 #include "toDoList.h"
 #include "settings.h"
+#include "client.h"
 
 #include <QString>
 #include <QFile>
@@ -24,6 +25,7 @@ public:
     bool login(const QString &password);
     bool registerUser(const QString &password);
     void logout();
+    Client *m_client;
 
 private:
     QString m_username;

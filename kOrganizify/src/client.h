@@ -8,15 +8,18 @@ class Client : public QObject
 {
     Q_OBJECT
 public:
-    Client(QObject* parent = nullptr);
+    Client(QString username, QObject* parent = nullptr);
+    QString m_username;
+    QList<QString> m_friends;
 public slots:
     void readFromServer();
     void disconnected();
     void sendMessage(QString message);
 private:
     QTcpSocket* m_socket;
-    QString m_username;
     bool makeConnection(QHostAddress::SpecialAddress adresa);
+signals:
+    void newUserLoggedIn(const QString& username);
 };
 
 #endif // CLIENT_H

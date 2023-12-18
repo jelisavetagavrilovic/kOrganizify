@@ -47,12 +47,26 @@ AppWindow::AppWindow(User *user, QWidget *parent)
     for (int i = 0; i < ui->tableWidget->columnCount(); ++i)
         this->ui->tableWidget->setColumnWidth(i, columnWidth);
 
-
-
     connect(ui->btnLogout, &QPushButton::clicked, this, &AppWindow::logoutUser);
     // connect(ui->btnSettings, &QPushButton::clicked, this, &AppWindow::on_btnSettings_clicked);
     // connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
     // connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button
+
+    populateFriends(m_user->m_client->m_friends);
+    connect(m_user->m_client, &Client::newUserLoggedIn, this, &AppWindow::handleNewUserLoggedIn);
+}
+
+void AppWindow::handleNewUserLoggedIn(const QString& username) {
+    ui->lwFriends->addItem(username);
+}
+
+void AppWindow::populateFriends(const QList<QString>& friends) {
+    ui->lwFriends->clear();
+
+    for (const QString& name : friends) {
+        QListWidgetItem* item = new QListWidgetItem(name);
+        ui->lwFriends->addItem(item);
+    }
 }
 
 void AppWindow::changeButtonColor(const QString& newColor) { // ovde se azuriraju boje elemenata ui-a
@@ -75,6 +89,11 @@ void AppWindow::changeButtonColor(const QString& newColor) { // ovde se azuriraj
 }
 
 void AppWindow::logoutUser() {
+
+    // for (auto i : m_user->m_client->m_friends){
+    //     qDebug() <<i;
+    // }
+
     if (m_user) {
         m_user->logout();
 
@@ -86,8 +105,6 @@ void AppWindow::logoutUser() {
     mainWindow->show();
     this->close();
 }
-
-
 
 AppWindow::~AppWindow() {
     delete ui;

@@ -41,6 +41,8 @@ bool User::login(const QString &password) {
         if (m_password == password) {
             qDebug() << "User" << m_username << "successfully logged in.";
 
+            m_client = new Client(m_username);
+
             m_calendar.fromJson(m_jsonObject);
             m_toDoList.fromJson(m_jsonObject);
             m_settings.fromJson(m_jsonObject);

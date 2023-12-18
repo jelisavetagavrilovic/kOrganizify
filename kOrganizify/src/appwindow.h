@@ -26,6 +26,9 @@ public:
     AppWindow(User *user, QWidget *parent = nullptr);
     ~AppWindow();
 
+public slots:
+    void handleNewUserLoggedIn(const QString& username);
+
 private slots:
     // void addTask();
     // void addEvent();
@@ -34,6 +37,7 @@ private slots:
     void logoutUser();
 
 private:
+    void populateFriends(const QList<QString>& friends);
     Ui::AppWindow *ui;
     User *m_user;
 
