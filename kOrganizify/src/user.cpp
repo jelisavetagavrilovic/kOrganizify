@@ -78,3 +78,26 @@ void User::logout() {
     saveData(m_username);
 }
 
+Calendar& User::getCalendar() {
+    return m_calendar;
+}
+
+ToDoList& User::getToDoList() {
+    return m_toDoList;
+}
+
+Settings& User::getSettings() {
+    return m_settings;
+}
+
+void User::setCalendar(const Calendar& calendar) {
+    // m_calendar = calendar;
+}
+
+void User::setToDoList(const ToDoList& toDoList) {
+    // m_toDoList = toDoList;
+}
+
+void User::setSettings(const Settings& settings) {
+    // m_settings = settings;
+}

@@ -6,6 +6,7 @@
 #include <QPixmap>
 #include <QCheckBox>
 #include <QDir>
+#include <QVector>
 
 #include "mainwindow.h"
 #include "settingswindow.h"
@@ -26,22 +27,25 @@ public:
     AppWindow(User *user, QWidget *parent = nullptr);
     ~AppWindow();
 
+    void addTaskToListWidget(const Task &task);
+    void initialize();
+
 private slots:
-    // void addTask();
+    void addTask();
     // void addEvent();
     // void changeButtonColor(const QString &newColor);
-    // void onCheckBoxStateChanged(int state);
+    void onCheckBoxStateChanged(int state);
     void logoutUser();
 
 private:
     Ui::AppWindow *ui;
     User *m_user;
-
+};
 // private:
 //     Ui::AppWindow *ui;
 //     SettingsWindow *settingsWindow;
 //     ToDoList m_toDoList;
 //     User *m_user;
-};
+
 
 #endif // APPWINDOW_H

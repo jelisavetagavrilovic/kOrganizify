@@ -26,7 +26,7 @@ public:
     void fromJson(const QJsonObject &jsonObject) override;
 
     QVector<Task> getTasks();
-    void setTasks(const QVector<Task> tasks);
+    void setTasks(const QVector<Task>& tasks);
     void addTask(const Task task);
     void removeTask(const Task task);
     QString toString();

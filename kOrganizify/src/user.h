@@ -25,6 +25,16 @@ public:
     bool registerUser(const QString &password);
     void logout();
 
+    // Getters
+    Calendar& getCalendar();
+    ToDoList& getToDoList();
+    Settings& getSettings();
+
+    // Setters
+    void setCalendar(const Calendar& calendar);
+    void setToDoList(const ToDoList& toDoList);
+    void setSettings(const Settings& settings);
+
 private:
     QString m_username;
     QString m_password;

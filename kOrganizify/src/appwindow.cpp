@@ -3,13 +3,24 @@
 #include "ui_appwindow.h"
 
 AppWindow::AppWindow(User *user, QWidget *parent)
-    : QMainWindow(parent),
-    ui(new Ui::AppWindow),
-    m_user(user)
+    : QMainWindow(parent)
+    , ui(new Ui::AppWindow)
+    , m_user(user)
 {
     ui->setupUi(this);
 
+    initialize();
+
     connect(ui->btnLogout, &QPushButton::clicked, this, &AppWindow::logoutUser);
+    connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask);
+}
+
+void AppWindow::initialize() {
+    ToDoList& toDoList = m_user->getToDoList();
+    const QVector<Task>& tasks = toDoList.getTasks();
+
+    for (const Task& task : tasks)
+        addTaskToListWidget(task);
 }
 
 void AppWindow::logoutUser() {
@@ -25,7 +36,51 @@ void AppWindow::logoutUser() {
     this->close();
 }
 
+void AppWindow::addTask() {
+    const auto text = ui->leInput->text();
 
+    if(!text.isEmpty()){
+        Task task(text);
+        ui->leInput->clear();
+
+        this->m_user->getToDoList().addTask(task);
+
+        QListWidgetItem *item = new QListWidgetItem();
+        ui->lwToDoList->addItem(item);
+
+        QCheckBox *checkBox = new QCheckBox(task.getName());
+        ui->lwToDoList->setItemWidget(item, checkBox);
+
+        connect(checkBox, &QCheckBox::stateChanged, this, &AppWindow::onCheckBoxStateChanged);
+    }
+}
+
+void AppWindow::addTaskToListWidget(const Task &task) {
+    QListWidgetItem *item = new QListWidgetItem();
+    ui->lwToDoList->addItem(item);
+
+    QCheckBox *checkBox = new QCheckBox(task.getName());
+    ui->lwToDoList->setItemWidget(item, checkBox);
+
+    connect(checkBox, &QCheckBox::stateChanged, this, &AppWindow::onCheckBoxStateChanged);
+}
+
+void AppWindow::onCheckBoxStateChanged(int state) {
+    QCheckBox *checkBox = qobject_cast<QCheckBox*>(sender());
+    if (checkBox && state == Qt::Checked) {
+        QString taskName = checkBox->text();
+
+        this->m_user->getToDoList().removeTask(taskName);
+
+        // Uklanjanje elementa iz QListWidget-a
+        QListWidgetItem *item = ui->lwToDoList->itemAt(checkBox->pos());
+        if (item != nullptr) {
+            int row = ui->lwToDoList->row(item);
+            ui->lwToDoList->takeItem(row);
+            delete item;
+        }
+    }
+}
 
 AppWindow::~AppWindow() {
     delete ui;
@@ -52,10 +107,7 @@ AppWindow::~AppWindow() {
 
 //     // connect(ui->btnSettings, &QPushButton::clicked, this, &AppWindow::on_btnSettings_clicked);
 //     // connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
-//     // connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button
-
-
-// // }
+//
 
 // void AppWindow::changeButtonColor(const QString& newColor) {
 //     // this->ui->btnSettings->setStyleSheet("background-color: " + newColor);
@@ -75,40 +127,6 @@ AppWindow::~AppWindow() {
 //     // this->ui->btnSettings->update();
 // }
 
-// void AppWindow::addTask() {
-// //     const auto text = ui->leInput->text();
 
-// //     if(!text.isEmpty()){
-// //         Task task(text);
-// //         ui->leInput->clear();
 
-// //         this->m_toDoList.addTask(task);
-
-// //         QListWidgetItem *item = new QListWidgetItem();
-// //         ui->lwToDoList->addItem(item);
-
-// //         QCheckBox *checkBox = new QCheckBox(task.getName());
-// //         ui->lwToDoList->setItemWidget(item, checkBox);
-
-// //         connect(checkBox, &QCheckBox::stateChanged, this, &AppWindow::onCheckBoxStateChanged);
-// //     }
-// }
-
-// void AppWindow::onCheckBoxStateChanged(int state)
-// {
-//     // QCheckBox *checkBox = qobject_cast<QCheckBox*>(sender());
-//     // if (checkBox && state == Qt::Checked) {
-//     //     QString taskName = checkBox->text();
-
-//     //     this->m_toDoList.removeTask(taskName);
-
-//     //     // Uklanjanje elementa iz QListWidget-a
-//     //     QListWidgetItem *item = ui->lwToDoList->itemAt(checkBox->pos());
-//     //     if (item != nullptr) {
-//     //         int row = ui->lwToDoList->row(item);
-//     //         ui->lwToDoList->takeItem(row);
-//     //         delete item;
-//     //     }
-//     // }
-// }
 
