@@ -8,7 +8,7 @@ private:
 public:
     Task(QString name);
     void setName(const QString newName);
-    const QString getName();
+    QString getName() const;
     bool operator==(const Task &other) const;
 };
 

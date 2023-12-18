@@ -1,68 +1,79 @@
+// mainwindow.cpp
 #include "mainwindow.h"
-#include "./ui_mainwindow.h"
-#include "appwindow.h"
-
-#include "user.h"
-#include "saveload.h"
+#include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+    : QMainWindow(parent),
+    ui(new Ui::MainWindow),
+    m_user(nullptr)
 {
     ui->setupUi(this);
-    setWindowTitle("Login");
+        setWindowTitle("Login");
 
     ui->lblStatus->setVisible(false);
     ui->lePassword->setEchoMode(QLineEdit::Password);
 
-    connect(ui->btnLogin, &QPushButton::clicked, this, &MainWindow::login);
+    connect(ui->btnLogin, &QPushButton::clicked, this, &MainWindow::loginUser);
     connect(ui->btnRegister, &QPushButton::clicked, this, &MainWindow::registerUser);
 }
 
-void MainWindow::login()
-{
+void MainWindow::loginUser() {
     QString username = ui->leUsername->text();
     QString password = ui->lePassword->text();
 
-    SaveLoad saveLoad;
-    User user(username, password, &saveLoad);
+    if (username.isEmpty() || password.isEmpty())
+        return;
 
-    if (user.login(password)) {
+    m_user = new User(username, password);
+
+    if (m_user->login(password)) {
+        // Login successful, open AppWindow
         ui->lblStatus->setText("Login successful.");
 
+        AppWindow *appWindow = new AppWindow(m_user);
+        appWindow->show();
         this->close();
-        AppWindow *app = new AppWindow(this);
-        app->show();
-    } else if (user.getSaveLoad()->userExists(username))
-        ui->lblStatus->setText("Login failed. Check the password.");
-    else
-        ui->lblStatus->setText("Login failed. User doesn't exist.");
+    } else {
+        if (m_user->userExists(username))
+            ui->lblStatus->setText("Login failed. Check the password.");
+        else
+            ui->lblStatus->setText("Login failed. User doesn't exist.");
+
+        delete m_user;
+        m_user = nullptr;
+    }
 
     ui->lblStatus->setVisible(true);
 }
+
 
 void MainWindow::registerUser()
 {
     QString username = ui->leUsername->text();
     QString password = ui->lePassword->text();
 
-    SaveLoad saveLoad;
-    User user(username, password, &saveLoad);
+    if (username.isEmpty() || password.isEmpty())
+        return;
 
-    if (user.registerUser()) {
+    m_user = new User(username, password);
+
+    if (m_user->registerUser(password)) {
         ui->lblStatus->setText("Registration successful. Login successful.");
 
+        AppWindow *appWindow = new AppWindow(m_user);
+        appWindow->show();
         this->close();
-        AppWindow *app = new AppWindow(this);
-        app->show();
-    } else
+    } else {
         ui->lblStatus->setText("Registration failed. User already exists.");
+
+        delete m_user;
+        m_user = nullptr;
+    }
 
     ui->lblStatus->setVisible(true);
 }
 
-
-MainWindow::~MainWindow()
-{
+MainWindow::~MainWindow() {
     delete ui;
 }
+

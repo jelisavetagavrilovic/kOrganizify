@@ -1,18 +1,52 @@
 #include "user.h"
 
-User::User(const QString &username, const QString &password, SaveLoad *saveLoad, QObject *parent)
-    : QObject(parent), m_username(username), m_password(password), m_saveLoad(saveLoad) {}
+User::User(const QString &username, const QString &password)
+    : m_username(username)
+{}
 
-bool User::login(const QString &password)
-{
-    if (m_saveLoad->userExists(m_username)) {
+
+bool User::userExists(const QString &username) {
+    return QFile(getFilePath(username)).exists();
+}
+
+void User::loadData(const QString &username) {
+    SaveLoad::loadData(username);
+    fromJson(m_jsonObject);
+}
+
+void User::fromJson(const QJsonObject &jsonObject) {
+    m_password = jsonObject["password"].toString();
+}
+
+QJsonValue User::toJson() const {
+    QJsonObject jsonObject;
+    jsonObject["username"] = m_username;
+    jsonObject["password"] = m_password;
+    jsonObject["events"] = m_calendar.toJson();
+    jsonObject["tasks"] = m_toDoList.toJson();
+    jsonObject["settings"] = m_settings.toJson();
+
+    return QJsonValue(jsonObject);
+}
+
+void User::saveData(const QString &username) {
+    m_jsonObject = toJson().toObject();
+    // QJsonObject a = toJson().toObject();
+    SaveLoad::saveData(username);
+}
+
+bool User::login(const QString &password) {
+    if (userExists(m_username)) {
+        loadData(m_username);
         if (m_password == password) {
             qDebug() << "User" << m_username << "successfully logged in.";
 
-            QJsonObject userData = m_saveLoad->loadData(m_username);
-            if (!userData.isEmpty()) {
-                updateUserData(userData);
-            }
+            m_calendar.fromJson(m_jsonObject);
+            m_toDoList.fromJson(m_jsonObject);
+            m_settings.fromJson(m_jsonObject);
+
+            Task task("test3456");
+            m_toDoList.addTask(task);
 
             return true;
         } else {
@@ -25,41 +59,22 @@ bool User::login(const QString &password)
     }
 }
 
-bool User::registerUser()
-{
-    if (m_saveLoad->userExists(m_username)) {
+bool User::registerUser(const QString &password) {
+    if (userExists(m_username)) {
         qDebug() << "Registration failed. User already exists.";
         return false;
     } else {
         // Implement registration logic
-        m_saveLoad->saveData(m_username, QJsonObject()); // Save an empty object for now
+        m_password = password;
         qDebug() << "User" << m_username << "successfully registered and logged in.";
         login(m_password); // Automatically log in after registration
         return true;
     }
+
+    return true;
 }
 
-void User::logout()
-{
-    QJsonObject userData;
-    // Fill userData with user-related data
-
-    m_saveLoad->saveData(m_username, userData);
-    qDebug() << "User" << m_username << "logged out.";
+void User::logout() {
+    saveData(m_username);
 }
-
-void User::updateUserData(const QJsonObject &userData)
-{
-    // Update user data in the application
-    // For example: m_calendar = userData["calendar"].toObject();
-    //              m_todoList = userData["todoList"].toObject();
-    //              m_settings = userData["settings"].toObject();
-}
-
-SaveLoad* User::getSaveLoad() const
-{
-    return m_saveLoad;
-}
-
-
 

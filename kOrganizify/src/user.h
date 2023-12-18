@@ -1,28 +1,36 @@
 #ifndef USER_H
 #define USER_H
 
-#include <QObject>
-#include <QString>
 #include "saveload.h"
+#include "calendar.h"
+#include "toDoList.h"
+#include "settings.h"
 
-class User : public QObject
+#include <QString>
+#include <QFile>
+#include <QJsonValue>
+
+class User : public SaveLoad
 {
-    Q_OBJECT
 public:
-    explicit User(const QString &username, const QString &password, SaveLoad *saveLoad, QObject *parent = nullptr);
-    SaveLoad* getSaveLoad() const;
+    explicit User(const QString &username, const QString &password);
+    bool userExists(const QString &username);
 
-public slots:
+    void loadData(const QString &username);
+    void saveData(const QString &username);
+    QJsonValue toJson() const override;
+    void fromJson(const QJsonObject &jsonValue) override;
+
     bool login(const QString &password);
+    bool registerUser(const QString &password);
     void logout();
-    bool registerUser();
 
 private:
     QString m_username;
     QString m_password;
-    SaveLoad *m_saveLoad;
-
-    void updateUserData(const QJsonObject &userData);
+    Calendar m_calendar;
+    ToDoList m_toDoList;
+    Settings m_settings;
 };
 
 #endif // USER_H

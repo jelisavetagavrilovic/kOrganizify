@@ -21,7 +21,9 @@ set(PROJECT_SOURCES
         src/main.cpp
         src/mainwindow.cpp
         src/saveload.cpp
+        src/settings.cpp
         src/settingswindow.cpp
+        src/syncwindow.cpp
         src/task.cpp
         src/toDoList.cpp
         src/user.cpp
@@ -35,7 +37,9 @@ set(HEADERS
         src/eventwindow.h
         src/mainwindow.h
         src/saveload.h
+        src/settings.h
         src/settingswindow.h
+        src/syncwindow.h
         src/task.h
         src/toDoList.h
         src/user.h
@@ -46,6 +50,7 @@ set(FORMS
         src/eventwindow.ui
         src/mainwindow.ui
         src/settingswindow.ui
+        src/syncwindow.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -54,7 +59,6 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         ${HEADERS}
         ${FORMS}
-        src/syncwindow.h src/syncwindow.cpp src/syncwindow.ui
 )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET kOrganizify APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

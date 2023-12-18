@@ -8,9 +8,10 @@
 #include <QDir>
 #include <QScrollBar>
 
-AppWindow::AppWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::AppWindow)
+AppWindow::AppWindow(User *user, QWidget *parent)
+    : QMainWindow(parent),
+    ui(new Ui::AppWindow),
+    m_user(user)
 {
     ui->setupUi(this);
     this->setFixedSize(this->size());
@@ -48,10 +49,10 @@ AppWindow::AppWindow(QWidget *parent)
 
 
 
-
-    connect(ui->btnSettings, &QPushButton::clicked, this, &AppWindow::on_btnSettings_clicked);
-    connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
-    connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button
+    connect(ui->btnLogout, &QPushButton::clicked, this, &AppWindow::logoutUser);
+    // connect(ui->btnSettings, &QPushButton::clicked, this, &AppWindow::on_btnSettings_clicked);
+    // connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
+    // connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button
 }
 
 void AppWindow::changeButtonColor(const QString& newColor) { // ovde se azuriraju boje elemenata ui-a
@@ -73,57 +74,21 @@ void AppWindow::changeButtonColor(const QString& newColor) { // ovde se azuriraj
         this->ui->tableWidget->setColumnWidth(i, columnWidth);
 }
 
-void AppWindow::on_btnSettings_clicked()
-{
-    if (this->settingsWindow && this->settingsWindow->isVisible()) {
-        this->settingsWindow->activateWindow();
-    } else {
-        this->settingsWindow->show();
+void AppWindow::logoutUser() {
+    if (m_user) {
+        m_user->logout();
+
+        delete m_user;
+        m_user = nullptr;
     }
-    QString styleSheet = QString("background-color: %1").arg(this->settingsWindow->getColor());
-    this->ui->btnSettings->setStyleSheet(styleSheet);
-    this->ui->btnSettings->update();
+
+    MainWindow *mainWindow = new MainWindow;
+    mainWindow->show();
+    this->close();
 }
 
-void AppWindow::addTask()
-{
-    const auto text = ui->leInput->text();
 
-    if(!text.isEmpty()){
-        Task task(text);
-        ui->leInput->clear();
 
-        this->m_toDoList.addTask(task);
-
-        QListWidgetItem *item = new QListWidgetItem();
-        ui->lwToDoList->addItem(item);
-
-        QCheckBox *checkBox = new QCheckBox(task.getName());
-        ui->lwToDoList->setItemWidget(item, checkBox);
-
-        connect(checkBox, &QCheckBox::stateChanged, this, &AppWindow::onCheckBoxStateChanged);
-    }
-}
-
-void AppWindow::onCheckBoxStateChanged(int state)
-{
-    QCheckBox *checkBox = qobject_cast<QCheckBox*>(sender());
-    if (checkBox && state == Qt::Checked) {
-        QString taskName = checkBox->text();
-
-        this->m_toDoList.removeTask(taskName);
-
-        // Uklanjanje elementa iz QListWidget-a
-        QListWidgetItem *item = ui->lwToDoList->itemAt(checkBox->pos());
-        if (item != nullptr) {
-            int row = ui->lwToDoList->row(item);
-            ui->lwToDoList->takeItem(row);
-            delete item;
-        }
-    }
-}
-
-AppWindow::~AppWindow()
-{
+AppWindow::~AppWindow() {
     delete ui;
 }

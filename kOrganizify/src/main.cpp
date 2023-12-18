@@ -4,22 +4,14 @@
 //#include "eventwindow.h"
 //#include "calendar.h"
 #include "syncwindow.h"
-
-
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    // MainWindow w;
-    // w.show();
-
-//    AppWindow aw;
-//    aw.show();
-
-    SyncWindow sw;
-    sw.show();
+    MainWindow w;
+    w.show();
 
     return a.exec();
 }
