@@ -4,7 +4,6 @@ User::User(const QString &username, const QString &password)
     : m_username(username)
 {}
 
-
 bool User::userExists(const QString &username) {
     return QFile(getFilePath(username)).exists();
 }
@@ -44,9 +43,6 @@ bool User::login(const QString &password) {
             m_calendar.fromJson(m_jsonObject);
             m_toDoList.fromJson(m_jsonObject);
             m_settings.fromJson(m_jsonObject);
-
-            Task task("test3456");
-            m_toDoList.addTask(task);
 
             return true;
         } else {

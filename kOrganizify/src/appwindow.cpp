@@ -23,19 +23,6 @@ void AppWindow::initialize() {
         addTaskToListWidget(task);
 }
 
-void AppWindow::logoutUser() {
-    if (m_user) {
-        m_user->logout();
-
-        delete m_user;
-        m_user = nullptr;
-    }
-
-    MainWindow *mainWindow = new MainWindow;
-    mainWindow->show();
-    this->close();
-}
-
 void AppWindow::addTask() {
     const auto text = ui->leInput->text();
 
@@ -44,14 +31,7 @@ void AppWindow::addTask() {
         ui->leInput->clear();
 
         this->m_user->getToDoList().addTask(task);
-
-        QListWidgetItem *item = new QListWidgetItem();
-        ui->lwToDoList->addItem(item);
-
-        QCheckBox *checkBox = new QCheckBox(task.getName());
-        ui->lwToDoList->setItemWidget(item, checkBox);
-
-        connect(checkBox, &QCheckBox::stateChanged, this, &AppWindow::onCheckBoxStateChanged);
+        addTaskToListWidget(task);
     }
 }
 
@@ -80,6 +60,19 @@ void AppWindow::onCheckBoxStateChanged(int state) {
             delete item;
         }
     }
+}
+
+void AppWindow::logoutUser() {
+    if (m_user) {
+        m_user->logout();
+
+        delete m_user;
+        m_user = nullptr;
+    }
+
+    MainWindow *mainWindow = new MainWindow;
+    mainWindow->show();
+    this->close();
 }
 
 AppWindow::~AppWindow() {
