@@ -23,7 +23,6 @@ SettingsWindow::SettingsWindow(QWidget *parent)
 
 
 
-    QPalette btnSavePalette = ui->btnSave->palette();
     connect(ui->dropTheme, QOverload<const QString &>::of(&QComboBox::currentTextChanged), [=](const QString &text){
 
         QString color;
