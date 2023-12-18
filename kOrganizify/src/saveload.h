@@ -13,9 +13,13 @@ public:
     QString getFilePath(const QString &username);
     QJsonObject m_jsonObject;
 
-public slots:
+// public slots:
     void saveData(const QString &username);
     void loadData(const QString &username);
+    // abstract methods
+    virtual QJsonValue toJson() const = 0;
+    virtual void fromJson(const QJsonObject &jsonObject) = 0;
+
 };
 
 #endif // SAVELOAD_H

@@ -15,22 +15,28 @@ Settings::Settings() {
 
 void Settings::loadData(const QString &username) {
     SaveLoad::loadData(username);
-
-    const QJsonValue jsonValue = m_jsonObject["settings"];
-    m_color = jsonValue["color"].toString();
-    m_notifications = jsonValue["notificatios"].toBool(false);
-    m_nightMode = jsonValue["nightMode"].toBool(false);
-
-    qDebug() << m_color << m_notifications << m_nightMode;
 }
 
-void Settings::saveData(const QString &username) {
+void Settings::fromJson(const QJsonObject &jsonObject) {
+    m_jsonObject = jsonObject;
+
+    QJsonObject jsonObjectSettings = m_jsonObject["settings"].toObject();
+    m_color = jsonObjectSettings["color"].toString();
+    m_notifications = jsonObjectSettings["notificatios"].toBool(false);
+    m_nightMode = jsonObjectSettings["nightMode"].toBool(false);
+}
+
+QJsonValue Settings::toJson() const {
     QJsonObject jsonObject;
     jsonObject["color"] = m_color;
     jsonObject["notifications"] = m_notifications;
     jsonObject["nightMode"] = m_nightMode;
 
-    m_jsonObject["settings"] = jsonObject;
+    return QJsonValue(jsonObject);
+}
+
+void Settings::saveData(const QString &username) {
+
     SaveLoad::saveData(username);
 }
 

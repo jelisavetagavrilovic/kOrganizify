@@ -8,6 +8,7 @@
 
 #include <QString>
 #include <QFile>
+#include <QJsonValue>
 
 class User : public SaveLoad
 {
@@ -17,10 +18,12 @@ public:
     bool userExists(const QString &username);
     void loadData(const QString &username);
     void saveData(const QString &username);
+    QJsonValue toJson() const override;
+    void fromJson(const QJsonObject &jsonValue) override;
 
     bool login(const QString &password);
-    void logout();
     bool registerUser(const QString &password);
+    void logout();
 
     // // Getters
     // Calendar getCalendar() const;

@@ -13,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->lePassword->setEchoMode(QLineEdit::Password);
 
     connect(ui->btnLogin, &QPushButton::clicked, this, &MainWindow::login);
-    connect(ui->btnRegister, &QPushButton::clicked, this, &MainWindow::registerUser); 
+    connect(ui->btnRegister, &QPushButton::clicked, this, &MainWindow::registerUser);
 }
 
 void MainWindow::login()
@@ -23,8 +23,11 @@ void MainWindow::login()
 
     User user(username, password);
 
+
     if (user.login(password)) {
         ui->lblStatus->setText("Login successful.");
+
+        this->close();
 
         AppWindow *app = new AppWindow(&user, this);
         app->show();

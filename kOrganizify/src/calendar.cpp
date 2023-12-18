@@ -1,24 +1,11 @@
 #include "calendar.h"
 
 void Calendar::loadData(const QString &username) {
-    SaveLoad::loadData(username);
+    // SaveLoad::loadData(username);
 
-    QJsonArray jsonArray = m_jsonObject["events"].toArray();
-    for (const QJsonValue &jsonValue : jsonArray) {
-        Event event;
-        event.setTitle(jsonValue["title"].toString());
-        event.setStartTime(QDateTime::fromString(jsonValue["startTime"].toString(), Qt::ISODate));
-        event.setEndTime(QDateTime::fromString(jsonValue["endTime"].toString(), Qt::ISODate));
-        event.setDescription(jsonValue["description"].toString());
-        event.setLocation(jsonValue["location"].toString());
-
-        // qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime() << event.getDescription() << event.getLocation();
-
-        addEvent(event);
-    }
 }
 
-void Calendar::saveData(const QString &username) {
+QJsonValue Calendar::toJson() const {
     QJsonArray jsonArray;
     for (const Event &event : m_events) {
         QJsonObject jsonObject;
@@ -31,7 +18,34 @@ void Calendar::saveData(const QString &username) {
         jsonArray.append(jsonObject);
     }
 
-    m_jsonObject["events"] = jsonArray;
+    // for (const QJsonValue &event : jsonArray) {
+    //     qDebug() << "calendar" << event["title"] << event["startTime"] << event["endTime"] <<
+    //         event["description"] << event["location"];
+    // }
+
+    return QJsonValue(jsonArray);
+}
+
+void Calendar::fromJson(const QJsonObject &jsonObject) {
+    m_jsonObject = jsonObject;
+
+    QJsonArray jsonArray = m_jsonObject["events"].toArray();
+    for (const QJsonValue &jv : jsonArray) {
+        Event event;
+        event.setTitle(jv["title"].toString());
+        event.setStartTime(QDateTime::fromString(jv["startTime"].toString(), Qt::ISODate));
+        event.setEndTime(QDateTime::fromString(jv["endTime"].toString(), Qt::ISODate));
+        event.setDescription(jv["description"].toString());
+        event.setLocation(jv["location"].toString());
+
+        // qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime() << event.getDescription() << event.getLocation();
+
+        addEvent(event);
+    }
+}
+
+void Calendar::saveData(const QString &username) {
+
     SaveLoad::saveData(username);
 }
 

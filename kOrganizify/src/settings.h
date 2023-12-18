@@ -3,6 +3,7 @@
 
 #include "saveload.h"
 #include <QJsonObject>
+#include <QJsonValue>
 
 class Settings : public SaveLoad
 {
@@ -17,6 +18,8 @@ public:
 
     void loadData(const QString &username);
     void saveData(const QString &username);
+    QJsonValue toJson() const override;
+    void fromJson(const QJsonObject &jsonObject) override;
 
     QString color();
     void setColor(QString color);

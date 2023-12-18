@@ -10,16 +10,20 @@ ToDoList::ToDoList(QObject *parent) {
 
 void ToDoList::loadData(const QString &username) {
     SaveLoad::loadData(username);
+}
+
+void ToDoList::fromJson(const QJsonObject &jsonObject) {
+    m_jsonObject = jsonObject;
 
     QJsonArray jsonArray = m_jsonObject["tasks"].toArray();
-    for (const QJsonValue &jsonValue : jsonArray) {
-        Task task(jsonValue["task"].toString());
+    for (const QJsonValue &jv : jsonArray) {
+        Task task(jv["task"].toString());
 
         addTask(task);
     }
 }
 
-void ToDoList::saveData(const QString &username) {
+QJsonValue ToDoList::toJson() const {
     QJsonArray jsonArray;
     for (const Task &task : m_tasks) {
         QJsonObject jsonObject;
@@ -28,7 +32,10 @@ void ToDoList::saveData(const QString &username) {
         jsonArray.append(jsonObject);
     }
 
-    m_jsonObject["tasks"] = jsonArray;
+    return QJsonValue(jsonArray);
+}
+
+void ToDoList::saveData(const QString &username) {
     SaveLoad::saveData(username);
 }
 

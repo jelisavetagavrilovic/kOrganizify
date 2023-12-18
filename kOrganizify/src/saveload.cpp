@@ -47,6 +47,5 @@ void SaveLoad::loadData(const QString &username) {
 
         QJsonDocument jsonDoc = QJsonDocument::fromJson(jsonString.toUtf8());
         m_jsonObject = jsonDoc.object();
-
     }
 }
