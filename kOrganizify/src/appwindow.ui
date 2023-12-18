@@ -259,6 +259,16 @@
      </property>
     </column>
    </widget>
+   <widget class="QListWidget" name="lwFriends">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>350</y>
+      <width>201</width>
+      <height>260</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -266,7 +276,7 @@
      <x>0</x>
      <y>0</y>
      <width>1137</width>
-     <height>20</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
