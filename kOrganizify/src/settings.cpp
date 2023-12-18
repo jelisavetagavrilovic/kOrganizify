@@ -15,6 +15,7 @@ Settings::Settings() {
 
 void Settings::loadData(const QString &username) {
     SaveLoad::loadData(username);
+    fromJson(m_jsonObject);
 }
 
 void Settings::fromJson(const QJsonObject &jsonObject) {
@@ -36,7 +37,7 @@ QJsonValue Settings::toJson() const {
 }
 
 void Settings::saveData(const QString &username) {
-
+    m_jsonObject = toJson().toObject();
     SaveLoad::saveData(username);
 }
 

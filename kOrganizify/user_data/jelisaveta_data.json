@@ -30,16 +30,10 @@
     },
     "tasks": [
         {
-            "task": "zavrsi save"
+            "task": "test "
         },
         {
-            "task": "super je"
-        },
-        {
-            "task": "test3456"
-        },
-        {
-            "task": "test3456"
+            "task": "test"
         }
     ],
     "username": "jelisaveta"

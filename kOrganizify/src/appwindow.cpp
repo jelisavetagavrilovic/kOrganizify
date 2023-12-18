@@ -9,9 +9,9 @@
 #include <QScrollBar>
 
 AppWindow::AppWindow(User *user, QWidget *parent)
-    : QMainWindow(parent),
-    ui(new Ui::AppWindow),
-    m_user(user)
+    : QMainWindow(parent)
+    , ui(new Ui::AppWindow)
+    , m_user(user)
 {
     ui->setupUi(this);
     this->setFixedSize(this->size());
@@ -47,10 +47,12 @@ AppWindow::AppWindow(User *user, QWidget *parent)
     for (int i = 0; i < ui->tableWidget->columnCount(); ++i)
         this->ui->tableWidget->setColumnWidth(i, columnWidth);
 
+    initialize();
+
     connect(ui->btnLogout, &QPushButton::clicked, this, &AppWindow::logoutUser);
-    // connect(ui->btnSettings, &QPushButton::clicked, this, &AppWindow::on_btnSettings_clicked);
-    // connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
-    // connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button
+    connect(ui->btnSettings, &QPushButton::clicked, this, &AppWindow::on_btnSettings_clicked);
+    connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
+    connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button
 
     populateFriends(m_user->m_client->m_friends);
     connect(m_user->m_client, &Client::newUserLoggedIn, this, &AppWindow::handleNewUserLoggedIn);
@@ -93,6 +95,66 @@ void AppWindow::changeButtonColor(const QString& newColor) { // ovde se azuriraj
         this->ui->tableWidget->setColumnWidth(i, columnWidth);
 }
 
+void AppWindow::initialize() {
+    ToDoList& toDoList = m_user->getToDoList();
+    const QVector<Task>& tasks = toDoList.getTasks();
+
+    for (const Task& task : tasks)
+        addTaskToListWidget(task);
+}
+
+void AppWindow::addTask() {
+    const auto text = ui->leInput->text();
+
+    if(!text.isEmpty()){
+        Task task(text);
+        ui->leInput->clear();
+
+        this->m_user->getToDoList().addTask(task);
+        addTaskToListWidget(task);
+    }
+
+    connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask);
+}
+
+void AppWindow::addTaskToListWidget(const Task &task) {
+    QListWidgetItem *item = new QListWidgetItem();
+    ui->lwToDoList->addItem(item);
+
+    QCheckBox *checkBox = new QCheckBox(task.getName());
+    ui->lwToDoList->setItemWidget(item, checkBox);
+
+    connect(checkBox, &QCheckBox::stateChanged, this, &AppWindow::onCheckBoxStateChanged);
+}
+
+void AppWindow::onCheckBoxStateChanged(int state) {
+    QCheckBox *checkBox = qobject_cast<QCheckBox*>(sender());
+    if (checkBox && state == Qt::Checked) {
+        QString taskName = checkBox->text();
+
+        this->m_user->getToDoList().removeTask(taskName);
+
+        // Uklanjanje elementa iz QListWidget-a
+        QListWidgetItem *item = ui->lwToDoList->itemAt(checkBox->pos());
+        if (item != nullptr) {
+            int row = ui->lwToDoList->row(item);
+            ui->lwToDoList->takeItem(row);
+            delete item;
+        }
+    }
+}
+
+void AppWindow::on_btnSettings_clicked() {
+    if (this->settingsWindow && this->settingsWindow->isVisible()) {
+        this->settingsWindow->activateWindow();
+    } else {
+        this->settingsWindow->show();
+    }
+    QString styleSheet = QString("background-color: %1").arg(this->settingsWindow->getColor());
+    this->ui->btnSettings->setStyleSheet(styleSheet);
+    this->ui->btnSettings->update();
+}
+
 void AppWindow::logoutUser() {
 
     // for (auto i : m_user->m_client->m_friends){
@@ -114,3 +176,4 @@ void AppWindow::logoutUser() {
 AppWindow::~AppWindow() {
     delete ui;
 }
+

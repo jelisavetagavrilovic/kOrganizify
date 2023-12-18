@@ -4,7 +4,6 @@ User::User(const QString &username, const QString &password)
     : m_username(username)
 {}
 
-
 bool User::userExists(const QString &username) {
     return QFile(getFilePath(username)).exists();
 }
@@ -47,9 +46,6 @@ bool User::login(const QString &password) {
             m_toDoList.fromJson(m_jsonObject);
             m_settings.fromJson(m_jsonObject);
 
-            Task task("test3456");
-            m_toDoList.addTask(task);
-
             return true;
         } else {
             qDebug() << "Login failed. Check the password.";
@@ -80,3 +76,26 @@ void User::logout() {
     saveData(m_username);
 }
 
+Calendar& User::getCalendar() {
+    return m_calendar;
+}
+
+ToDoList& User::getToDoList() {
+    return m_toDoList;
+}
+
+Settings& User::getSettings() {
+    return m_settings;
+}
+
+void User::setCalendar(const Calendar& calendar) {
+    // m_calendar = calendar;
+}
+
+void User::setToDoList(const ToDoList& toDoList) {
+    // m_toDoList = toDoList;
+}
+
+void User::setSettings(const Settings& settings) {
+    // m_settings = settings;
+}

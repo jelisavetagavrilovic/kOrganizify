@@ -6,6 +6,7 @@
 #include <QPixmap>
 #include <QCheckBox>
 #include <QDir>
+#include <QVector>
 
 #include "mainwindow.h"
 #include "settingswindow.h"
@@ -29,23 +30,22 @@ public:
 public slots:
     void handleNewUserLoggedIn(const QString& username);
     void handleUserDisconnected(const QString& username);
+    void addTaskToListWidget(const Task &task);
+    void on_btnSettings_clicked();
+    void initialize();
 
 private slots:
-    // void addTask();
-    // void addEvent();
+    void addTask();
     void changeButtonColor(const QString &newColor);
-    // void onCheckBoxStateChanged(int state);
+    void onCheckBoxStateChanged(int state);
     void logoutUser();
 
 private:
     void populateFriends(const QList<QString>& friends);
     Ui::AppWindow *ui;
     User *m_user;
-
-    // Ui::AppWindow *ui;
     SettingsWindow *settingsWindow;
-//     ToDoList m_toDoList;
-    // User *m_user;
+    ToDoList m_toDoList;
 };
 
 #endif // APPWINDOW_H

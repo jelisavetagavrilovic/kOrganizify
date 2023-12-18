@@ -27,6 +27,16 @@ public:
     void logout();
     Client *m_client;
 
+    // Getters
+    Calendar& getCalendar();
+    ToDoList& getToDoList();
+    Settings& getSettings();
+
+    // Setters
+    void setCalendar(const Calendar& calendar);
+    void setToDoList(const ToDoList& toDoList);
+    void setSettings(const Settings& settings);
+
 private:
     QString m_username;
     QString m_password;
