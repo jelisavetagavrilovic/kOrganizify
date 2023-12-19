@@ -2,7 +2,7 @@
 #include "ui_settingswindow.h"
 #include <QPalette>
 
-SettingsWindow::SettingsWindow(QWidget *parent)
+SettingsWindow::SettingsWindow(Settings *settings, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::SettingsWindow)
     , settings(new Settings)

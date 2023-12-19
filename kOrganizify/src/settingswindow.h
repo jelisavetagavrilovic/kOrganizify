@@ -14,8 +14,7 @@ class SettingsWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit SettingsWindow(QWidget *parent = nullptr);
-    ~SettingsWindow();
+    explicit SettingsWindow(Settings *settings, QWidget *parent);~SettingsWindow();
     void setColor(QString color);
     QString getColor();
 

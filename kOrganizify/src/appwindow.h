@@ -8,10 +8,10 @@
 #include <QDir>
 #include <QVector>
 
-//#include "mainwindow.h"
-#include "qlistwidget.h"
+#include "mainwindow.h"
 #include "settingswindow.h"
 #include "syncwindow.h"
+
 #include "user.h"
 #include "toDoList.h"
 
@@ -27,27 +27,28 @@ class AppWindow : public QMainWindow
 public:
     AppWindow(User *user, QWidget *parent = nullptr);
     ~AppWindow();
+    
+    void initialize();
 
 public slots:
     void handleNewUserLoggedIn(const QString& username);
     void handleUserDisconnected(const QString& username);
     void addTaskToListWidget(const Task &task);
-    void on_btnSettings_clicked();
-    void initialize();
 
 private slots:
     void addTask();
     void changeButtonColor(const QString &newColor);
     void onCheckBoxStateChanged(int state);
+    void openSettings();
     void logoutUser();
     void openSyncWindow();
+    void populateFriends(const QList<QString>& friends);
 
 private:
-    void populateFriends(const QList<QString>& friends);
     Ui::AppWindow *ui;
     User *m_user;
     SettingsWindow *settingsWindow;
-    ToDoList m_toDoList;
+//    ToDoList m_toDoList;
     SyncWindow *syncWindow;
 };
 
