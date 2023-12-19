@@ -2,8 +2,9 @@
 #define APPWINDOW_H
 
 #include <QMainWindow>
-#include "settingswindow.h"
 #include "eventwindow.h"
+#include "toDoList.h"
+#include "settingswindow.h"
 
 namespace Ui {
 class AppWindow;
@@ -22,12 +23,14 @@ public:
 private slots:
     void on_btnSettings_clicked();
     void openEventWindow(int row, int column);
-
+    void addTask();
+    void onCheckBoxStateChanged(int state);
 
 private:
     Ui::AppWindow *ui;
     SettingsWindow *settingsWindow;
     EventWindow *eventWindow;
+    ToDoList m_toDoList;
 };
 
 #endif // APPWINDOW_H
