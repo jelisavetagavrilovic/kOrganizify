@@ -1,6 +1,7 @@
 #include "appwindow.h"
 #include "ui_appwindow.h"
 #include "settingswindow.h"
+#include "mainwindow.h"
 
 #include <QPixmap>
 #include <QCheckBox>
@@ -69,11 +70,17 @@ void AppWindow::handleUserDisconnected(const QString& username) {
 
 void AppWindow::populateFriends(const QList<QString>& friends) {
     ui->lwFriends->clear();
+    connect(ui->lwFriends, &QListWidget::itemClicked, this, &AppWindow::openSyncWindow);
 
     for (const QString& name : friends) {
         QListWidgetItem* item = new QListWidgetItem(name);
         ui->lwFriends->addItem(item);
     }
+}
+
+void AppWindow::openSyncWindow() {
+    this->syncWindow = new SyncWindow();
+    syncWindow->show();
 }
 
 void AppWindow::changeButtonColor(const QString& newColor) { // ovde se azuriraju boje elemenata ui-a

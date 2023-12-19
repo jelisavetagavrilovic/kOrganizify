@@ -8,9 +8,10 @@
 #include <QDir>
 #include <QVector>
 
-#include "mainwindow.h"
+//#include "mainwindow.h"
+#include "qlistwidget.h"
 #include "settingswindow.h"
-
+#include "syncwindow.h"
 #include "user.h"
 #include "toDoList.h"
 
@@ -39,6 +40,7 @@ private slots:
     void changeButtonColor(const QString &newColor);
     void onCheckBoxStateChanged(int state);
     void logoutUser();
+    void openSyncWindow();
 
 private:
     void populateFriends(const QList<QString>& friends);
@@ -46,6 +48,7 @@ private:
     User *m_user;
     SettingsWindow *settingsWindow;
     ToDoList m_toDoList;
+    SyncWindow *syncWindow;
 };
 
 #endif // APPWINDOW_H
