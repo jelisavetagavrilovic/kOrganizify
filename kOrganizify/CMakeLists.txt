@@ -24,6 +24,7 @@ set(PROJECT_SOURCES
         src/saveload.cpp
         src/settings.cpp
         src/settingswindow.cpp
+        src/synchronization.cpp
         src/syncwindow.cpp
         src/task.cpp
         src/toDoList.cpp
@@ -41,6 +42,7 @@ set(HEADERS
         src/saveload.h
         src/settings.h
         src/settingswindow.h
+        src/synchronization.h
         src/syncwindow.h
         src/task.h
         src/toDoList.h

@@ -3,6 +3,7 @@
 
 #include <QString>
 #include <QDateTime>
+#include <QHash>
 
 class Event
 {
@@ -36,6 +37,12 @@ private:
     QDateTime m_endTime;
     QString m_description;
     QString m_location;
+
+
+//overload and needs to be in .h
+friend uint qHash(const Event &event) {
+    return qHash(event.getTitle()) ^ qHash(event.getStartTime()) ^ qHash(event.getEndTime());
+}
 };
 
 #endif // EVENT_H

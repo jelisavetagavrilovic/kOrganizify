@@ -8,20 +8,6 @@
             "title": "Beyond Boundaries"
         },
         {
-            "description": "Tech Summit 2023",
-            "endTime": "2023-12-21T17:30:00",
-            "location": "Innovation Center",
-            "startTime": "2023-12-21T09:00:00",
-            "title": "Tech Summit"
-        },
-        {
-            "description": "Community Charity Run",
-            "endTime": "2023-12-22T11:00:00",
-            "location": "City Park",
-            "startTime": "2023-12-22T09:00:00",
-            "title": "Run for a Cause"
-        },
-        {
             "description": "Concert Under the Stars",
             "endTime": "2023-12-23T22:00:00",
             "location": "Amphitheater",
@@ -30,9 +16,9 @@
         },
         {
             "description": "Book Launch: ",
-            "endTime": "2023-12-24T19:00:00",
+            "endTime": "2023-12-24T16:00:00",
             "location": "Book Haven",
-            "startTime": "2023-12-24T17:30:00",
+            "startTime": "2023-12-24T13:30:00",
             "title": "Mysteries Unveiled"
         },
         {
@@ -44,20 +30,13 @@
         },
         {
             "description": "Culinary Masterclass: Fusion Flavors",
-            "endTime": "2023-12-26T21:00:00",
+            "endTime": "2023-12-26T11:00:00",
             "location": "Gourmet Academy",
-            "startTime": "2023-12-26T18:30:00",
+            "startTime": "2023-12-26T09:00:00",
             "title": "Flavors Unleashed"
-        },
-        {
-            "description": "Film Screening:",
-            "endTime": "2023-12-27T23:00:00",
-            "location": "Cinephile Cinema",
-            "startTime": "2023-12-27T19:30:00",
-            "title": "Nostalgia Revisited"
         }
     ],
-    "password": "andji",
+    "password": "markic",
     "settings": {
         "color": "#9063CD",
         "nightMode": true,
@@ -65,11 +44,11 @@
     },
     "tasks": [
         {
-            "task": "videti markica "
+            "task": "videti andji "
         },
         {
-            "task": "sync fja"
+            "task": "povezati sa serverom"
         }
     ],
-    "username": "andji"
+    "username": "markic"
 }
