@@ -2,10 +2,10 @@
 #include "ui_settingswindow.h"
 #include <QPalette>
 
-SettingsWindow::SettingsWindow(QWidget *parent)
+SettingsWindow::SettingsWindow(Settings *settings, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::SettingsWindow)
-    , settings(new Settings)
+    , m_settings(settings)
 //,
     // m_theme(Custom),
     // m_notifications(true),
@@ -58,16 +58,16 @@ SettingsWindow::SettingsWindow(QWidget *parent)
 }
 
 void SettingsWindow::on_btnSave_clicked(){
-    emit colorChanged(this->settings->color());
+    emit colorChanged(this->m_settings->color());
     this->close();
 }
 
 void SettingsWindow::setColor(QString color){
-    this->settings->setColor(color);
+    this->m_settings->setColor(color);
 }
 
 QString SettingsWindow::getColor(){
-    return this->settings->color();
+    return this->m_settings->color();
 }
 
 SettingsWindow::~SettingsWindow()

@@ -24,16 +24,13 @@
     ],
     "password": "jelisaveta",
     "settings": {
-        "color": "#9063CD",
+        "color": "#006E33",
         "nightMode": true,
         "notifications": false
     },
     "tasks": [
         {
             "task": "test "
-        },
-        {
-            "task": "test"
         }
     ],
     "username": "jelisaveta"

@@ -38,26 +38,19 @@ bool User::login(const QString &password) {
     if (userExists(m_username)) {
         loadData(m_username);
         if (m_password == password) {
-            qDebug() << "User" << m_username << "successfully logged in.";
 
             m_calendar.fromJson(m_jsonObject);
             m_toDoList.fromJson(m_jsonObject);
             m_settings.fromJson(m_jsonObject);
 
             return true;
-        } else {
-            qDebug() << "Login failed. Check the password.";
-            return false;
         }
-    } else {
-        qDebug() << "Login failed. User does not exist.";
-        return false;
     }
+    return false;
 }
 
 bool User::registerUser(const QString &password) {
     if (userExists(m_username)) {
-        qDebug() << "Registration failed. User already exists.";
         return false;
     } else {
         // Implement registration logic

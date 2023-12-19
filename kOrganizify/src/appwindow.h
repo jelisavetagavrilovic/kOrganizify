@@ -33,17 +33,19 @@ public:
 private slots:
     void addTask();
     // void addEvent();
-    // void changeButtonColor(const QString &newColor);
+    void changeButtonColor(const QString &newColor);
     void onCheckBoxStateChanged(int state);
+    void openSettings();
     void logoutUser();
 
 private:
     Ui::AppWindow *ui;
     User *m_user;
+    SettingsWindow *settingsWindow;
 };
 // private:
 //     Ui::AppWindow *ui;
-//     SettingsWindow *settingsWindow;
+//
 //     ToDoList m_toDoList;
 //     User *m_user;
 

@@ -13,14 +13,35 @@ AppWindow::AppWindow(User *user, QWidget *parent)
 
     connect(ui->btnLogout, &QPushButton::clicked, this, &AppWindow::logoutUser);
     connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask);
+    connect(ui->btnSettings, &QPushButton::clicked, this, &AppWindow::openSettings);
+    connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
 }
 
 void AppWindow::initialize() {
     ToDoList& toDoList = m_user->getToDoList();
     const QVector<Task>& tasks = toDoList.getTasks();
-
     for (const Task& task : tasks)
         addTaskToListWidget(task);
+
+    Settings& settings = m_user->getSettings();
+
+    settingsWindow = new SettingsWindow(&settings, this);
+    settingsWindow->setColor(settings.color());
+    ui->lwToDoList->setStyleSheet("background-color: #FCD299");
+
+
+    QString sourceDir = QCoreApplication::applicationDirPath();
+    QString path = QDir(sourceDir).filePath("../kOrganizify/src/images/background1.jpg");
+    QPixmap background(path);
+
+    QPalette palette;
+    palette.setBrush(this->backgroundRole(), QBrush(background));
+    this->setPalette(palette);
+
+    QString styleSheet = QString("background-color: %1").arg(this->settingsWindow->getColor());
+    this->ui->btnSettings->setStyleSheet(styleSheet);
+    this->ui->leInput->setStyleSheet(styleSheet);
+    this->ui->lblToDoList->setStyleSheet("color: " + this->settingsWindow->getColor());
 }
 
 void AppWindow::addTask() {
@@ -75,50 +96,39 @@ void AppWindow::logoutUser() {
     this->close();
 }
 
+void AppWindow::openSettings() {
+    // if (this->settingsWindow && this->settingsWindow->isVisible()) {
+    //     this->settingsWindow->activateWindow();
+    // } else {
+    //     this->settingsWindow->show();
+    // }
+    settingsWindow->show();
+    QString styleSheet = QString("background-color: %1").arg(this->settingsWindow->getColor());
+    this->ui->btnSettings->setStyleSheet(styleSheet);
+    this->ui->btnSettings->update();
+}
+
+void AppWindow::changeButtonColor(const QString& newColor) {
+    this->ui->btnSettings->setStyleSheet("background-color: " + newColor);
+    this->ui->leInput->setStyleSheet("background-color: " + newColor);
+    this->ui->lblToDoList->setStyleSheet("color: " + newColor);
+}
+
 AppWindow::~AppWindow() {
     delete ui;
 }
 
 
 
-//     // this->settingsWindow = new SettingsWindow(this);
-//     // this->settingsWindow->setColor("#0050B5");
-//     // this->ui->lwToDoList->setStyleSheet("background-color: #FCD299");
 
-//     // QString sourceDir = QCoreApplication::applicationDirPath();
-//     // QString path = QDir(sourceDir).filePath("../kOrganizify/src/images/background1.jpg");
-//     // QPixmap background(path);
 
-//     // QPalette palette;
-//     // palette.setBrush(this->backgroundRole(), QBrush(background));
-//     // this->setPalette(palette);
 
-//     // QString styleSheet = QString("background-color: %1").arg(this->settingsWindow->getColor());
-//     // this->ui->btnSettings->setStyleSheet(styleSheet);
-//     // this->ui->leInput->setStyleSheet(styleSheet);
-//     // this->ui->lblToDoList->setStyleSheet("color: " + this->settingsWindow->getColor());
 
-//     // connect(ui->btnSettings, &QPushButton::clicked, this, &AppWindow::on_btnSettings_clicked);
-//     // connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
-//
 
-// void AppWindow::changeButtonColor(const QString& newColor) {
-//     // this->ui->btnSettings->setStyleSheet("background-color: " + newColor);
-//     // this->ui->leInput->setStyleSheet("background-color: " + newColor);
-//     // this->ui->lblToDoList->setStyleSheet("color: " + newColor);
-// }
 
-// void AppWindow::on_btnSettings_clicked()
-// {
-//     // if (this->settingsWindow && this->settingsWindow->isVisible()) {
-//     //     this->settingsWindow->activateWindow();
-//     // } else {
-//     //     this->settingsWindow->show();
-//     // }
-//     // QString styleSheet = QString("background-color: %1").arg(this->settingsWindow->getColor());
-//     // this->ui->btnSettings->setStyleSheet(styleSheet);
-//     // this->ui->btnSettings->update();
-// }
+
+
+
 
 
 

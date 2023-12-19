@@ -15,7 +15,6 @@ QString SaveLoad::getFilePath(const QString &username) {
     QString sourceDir = QCoreApplication::applicationDirPath();
     // adding "user_data" to the end of the path
     QString userDataDir = QDir(sourceDir).filePath("../kOrganizify/user_data");
-    qDebug() << "Path:" << userDataDir << ".";
 
     QDir dir(userDataDir);
     if (!dir.exists())
