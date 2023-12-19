@@ -7,6 +7,7 @@
 #include <QCheckBox>
 #include <QDir>
 #include <QVector>
+#include <QScrollBar>
 
 #include "mainwindow.h"
 #include "settingswindow.h"

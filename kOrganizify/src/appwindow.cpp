@@ -3,12 +3,6 @@
 #include "settingswindow.h"
 #include "mainwindow.h"
 
-#include <QPixmap>
-#include <QCheckBox>
-#include <QDir>
-#include <QDir>
-#include <QScrollBar>
-
 AppWindow::AppWindow(User *user, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::AppWindow)

@@ -4,7 +4,11 @@
 //#include "eventwindow.h"
 //#include "calendar.h"
 #include "syncwindow.h"
+#include "responsewindow.h"
+#include "ui_responsewindow.h"
 #include <QApplication>
+
+#include <QPushButton>
 
 int main(int argc, char *argv[])
 {
