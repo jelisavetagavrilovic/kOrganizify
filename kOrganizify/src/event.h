@@ -4,12 +4,14 @@
 #include <QString>
 #include <QDateTime>
 #include <QHash>
+#include <QObject>
 
 class Event
 {
 public:
-    // explicit Event(const QString &title, const QDateTime &startTime,
-    //                const QDateTime &endTime, const QString &description, const QString location);
+//    Event(QObject* parent=nullptr);
+//    Event(const QString &title, const QDateTime &startTime, const QDateTime &endTime, const QString &description, const QString &location, QObject* parent);
+//    ~Event();
 
     QString getTitle() const;
     void setTitle(const QString &title);
@@ -31,6 +33,7 @@ public:
     void clear();
     void deleteString(QString &string);
 
+
 private:
     QString m_title;
     QDateTime m_startTime;
@@ -43,6 +46,7 @@ private:
 friend uint qHash(const Event &event) {
     return qHash(event.getTitle()) ^ qHash(event.getStartTime()) ^ qHash(event.getEndTime());
 }
+
 };
 
 #endif // EVENT_H

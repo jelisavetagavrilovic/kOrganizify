@@ -9,6 +9,7 @@ class Settings : public SaveLoad
 {
 private:
     QString m_color;
+
     bool m_notifications;
     bool m_nightMode;
 

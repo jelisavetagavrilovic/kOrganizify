@@ -12,7 +12,6 @@ Settings::Settings() {
     this->m_nightMode = false;
 }
 
-
 void Settings::loadData(const QString &username) {
     SaveLoad::loadData(username);
     fromJson(m_jsonObject);

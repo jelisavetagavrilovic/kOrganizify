@@ -1,4 +1,5 @@
 #include "appwindow.h"
+#include "qlistwidget.h"
 #include "ui_appwindow.h"
 #include "settingswindow.h"
 #include "mainwindow.h"
@@ -69,7 +70,7 @@ void AppWindow::initialize() {
     this->setFixedSize(this->size());
     this->setAutoFillBackground(true);
 
-    QString sourceDir = QCoreApplication::applicationDirPath();
+    QString sourceDir = QApplication::applicationDirPath();
     QString path = QDir(sourceDir).filePath("../kOrganizify/src/images/background1.jpg");
     QPixmap background(path);
 
@@ -97,6 +98,24 @@ void AppWindow::initialize() {
         this->ui->tableWidget->setColumnWidth(i, columnWidth);
 
 }
+
+//void AppWindow::on_btnSettings_clicked()
+//{
+//    if (!this->settingsWindow) {
+//        this->settingsWindow = new SettingsWindow();
+//    }
+
+//    if (this->settingsWindow && this->settingsWindow->isVisible()) {
+//        this->settingsWindow->activateWindow();
+//    } else {
+//        this->settingsWindow->show();
+//    }
+
+//    QString styleSheet = QString("background-color: %1").arg(this->settingsWindow->getColor());
+//    this->ui->btnSettings->setStyleSheet(styleSheet);
+//    this->ui->btnSettings->update();
+//}
+
 
 void AppWindow::addTask() {
     const auto text = ui->leInput->text();
