@@ -7,6 +7,9 @@
 class Calendar
 {
 public:
+    Calendar();
+    Calendar(const Calendar &other);
+
     void addEvent(const Event &event);
     void removeEvent(const Event &event);
     void updateEvent(const Event &event);

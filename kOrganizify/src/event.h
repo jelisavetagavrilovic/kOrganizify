@@ -4,9 +4,18 @@
 #include <QString>
 #include <QDateTime>
 
+enum class CustomEventPriority {
+    NoPriority,
+    Low,
+    Medium,
+    High
+};
+
 class Event
 {
 public:
+    Event();
+
     QString getTitle() const;
     void setTitle(const QString &title);
 
@@ -22,6 +31,9 @@ public:
     QString getLocation() const;
     void setLocation(const QString &location);
 
+    CustomEventPriority getPriority() const;
+    void setPriority(CustomEventPriority priority);
+
     bool operator==(const Event &other) const;
 
 private:
@@ -30,6 +42,8 @@ private:
     QDateTime endTime;
     QString description;
     QString location;
+
+    CustomEventPriority priority;
 };
 
 #endif // EVENT_H

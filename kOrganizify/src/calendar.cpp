@@ -1,5 +1,11 @@
 #include "calendar.h"
 
+Calendar::Calendar(){}
+
+Calendar::Calendar(const Calendar &other){
+    m_events = other.m_events;
+}
+
 void Calendar::addEvent(const Event &event){
     m_events.append(event);
 }

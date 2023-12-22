@@ -1,5 +1,9 @@
 #include "event.h"
 
+Event::Event() : priority(CustomEventPriority::NoPriority){
+
+}
+
 QString Event::getTitle() const {
     return title;
 }
@@ -38,6 +42,14 @@ QString Event::getLocation() const {
 
 void Event::setLocation(const QString &location) {
     this->location = location;
+}
+
+CustomEventPriority Event::getPriority() const {
+    return priority;
+}
+
+void Event::setPriority(CustomEventPriority priority){
+    this->priority = priority;
 }
 
 bool Event::operator==(const Event &other) const {
