@@ -71,6 +71,9 @@ void AppWindow::initialize() {
     this->setFixedSize(this->size());
     this->setAutoFillBackground(true);
 
+    m_calendar = new Calendar();
+    this->eventWindow = new EventWindow(m_calendar);
+
     QString sourceDir = QCoreApplication::applicationDirPath();
     QString path = QDir(sourceDir).filePath("../kOrganizify/src/images/background1.jpg");
     QPixmap background(path);
@@ -90,16 +93,37 @@ void AppWindow::initialize() {
     this->ui->tableWidget->horizontalHeader()->setStyleSheet("background-color: " + this->settingsWindow->getColor());
     this->ui->tableWidget->verticalHeader()->setStyleSheet("background-color: " + this->settingsWindow->getColor());
 
-    int rowHeight = 50;
-    for (int i = 0; i < ui->tableWidget->rowCount(); ++i)
-        this->ui->tableWidget->setRowHeight(i, rowHeight);
-
     int columnWidth = 110;
     for (int i = 0; i < ui->tableWidget->columnCount(); ++i)
         this->ui->tableWidget->setColumnWidth(i, columnWidth);
+
+
+    connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
+    connect(ui->tableWidget, &QTableWidget::cellClicked, this, &AppWindow::openEventWindow);
+    connect(this->eventWindow, &EventWindow::saveButtonClicked, this, &AppWindow::colorCell);
+    connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button
 }
 
-void AppWindow::addTask() {
+void AppWindow::openEventWindow(int row, int column) {
+    if (row >= 0 && column >= 0) {
+        this->eventWindow->show();
+    }
+}
+
+void AppWindow::colorCell(){
+    qDebug() << "Radi2";
+
+    QString color = "#EB212E"; // boja bi valjalo da se menja na osnovu prioriteta dogadjaja
+    QTableWidgetItem *item = new QTableWidgetItem("Ime dogadjaja");
+    item->setBackground(QBrush(QColor(color)));
+    ui->tableWidget->setItem(5, 0, item); // hardkodirano za sad
+
+    // this->ui->tableWidget->item(1, 1)->setBackground(QBrush(color));
+    // this->ui->tableWidget->setStyleSheet("background-color: " + color + ";");
+}
+
+void AppWindow::addTask()
+{
     const auto text = ui->leInput->text();
 
     if(!text.isEmpty()){
@@ -160,4 +184,5 @@ void AppWindow::logoutUser() {
 
 AppWindow::~AppWindow() {
     delete ui;
+    delete m_calendar;
 }

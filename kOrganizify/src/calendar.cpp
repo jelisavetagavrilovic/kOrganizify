@@ -1,5 +1,12 @@
 #include "calendar.h"
 
+Calendar::Calendar()
+{}
+
+Calendar::Calendar(const Calendar &other){
+    m_events = other.m_events;
+}
+
 void Calendar::loadData(const QString &username) {
     SaveLoad::loadData(username);
     fromJson(m_jsonObject);

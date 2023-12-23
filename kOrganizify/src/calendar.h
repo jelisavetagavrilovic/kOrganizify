@@ -11,6 +11,9 @@
 class Calendar : public SaveLoad
 {
 public:
+    Calendar();
+    Calendar(const Calendar &other);
+
     void loadData(const QString &username);
     void saveData(const QString &username);
     QJsonValue toJson() const override;
