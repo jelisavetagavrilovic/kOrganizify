@@ -14,13 +14,14 @@ AppWindow::AppWindow(User *user, QWidget *parent)
     initialize();
 
     connect(ui->btnLogout, &QPushButton::clicked, this, &AppWindow::logoutUser);
+
     connect(ui->btnSettings, &QPushButton::clicked, this, &AppWindow::openSettings);
     connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
     connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button
 
     populateFriends(m_user->m_client->m_friends);
     connect(m_user->m_client, &Client::newUserLoggedIn, this, &AppWindow::handleNewUserLoggedIn);
-    connect(m_user->m_client, &Client::disconnectedUser, this, &AppWindow::handleUserDisconnected);
+    connect(m_user->m_client, &Client::disconnectedUser, this, &AppWindow::handleUserDisconnected);    
 }
 
 void AppWindow::handleNewUserLoggedIn(const QString& username) {
@@ -70,7 +71,7 @@ void AppWindow::initialize() {
     this->setFixedSize(this->size());
     this->setAutoFillBackground(true);
 
-    QString sourceDir = QApplication::applicationDirPath();
+    QString sourceDir = QCoreApplication::applicationDirPath();
     QString path = QDir(sourceDir).filePath("../kOrganizify/src/images/background1.jpg");
     QPixmap background(path);
 
@@ -96,26 +97,7 @@ void AppWindow::initialize() {
     int columnWidth = 110;
     for (int i = 0; i < ui->tableWidget->columnCount(); ++i)
         this->ui->tableWidget->setColumnWidth(i, columnWidth);
-
 }
-
-//void AppWindow::on_btnSettings_clicked()
-//{
-//    if (!this->settingsWindow) {
-//        this->settingsWindow = new SettingsWindow();
-//    }
-
-//    if (this->settingsWindow && this->settingsWindow->isVisible()) {
-//        this->settingsWindow->activateWindow();
-//    } else {
-//        this->settingsWindow->show();
-//    }
-
-//    QString styleSheet = QString("background-color: %1").arg(this->settingsWindow->getColor());
-//    this->ui->btnSettings->setStyleSheet(styleSheet);
-//    this->ui->btnSettings->update();
-//}
-
 
 void AppWindow::addTask() {
     const auto text = ui->leInput->text();
@@ -179,4 +161,3 @@ void AppWindow::logoutUser() {
 AppWindow::~AppWindow() {
     delete ui;
 }
-

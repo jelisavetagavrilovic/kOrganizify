@@ -1,5 +1,6 @@
 {
     "events": [
+<<<<<<< HEAD
         {
             "description": "Birthday Party",
             "endTime": "2023-12-18T02:00:00",
@@ -81,16 +82,25 @@
     "password": "andjela",
     "settings": {
         "color": "#0050B5",
+=======
+    ],
+    "password": "andjela",
+    "settings": {
+        "color": "#A5A9A0",
+>>>>>>> origin/feature/user
         "nightMode": false,
         "notifications": false
     },
     "tasks": [
+<<<<<<< HEAD
         {
             "task": "ok"
         },
         {
             "task": "drugi"
         }
+=======
+>>>>>>> origin/feature/user
     ],
     "username": "andjela"
 }

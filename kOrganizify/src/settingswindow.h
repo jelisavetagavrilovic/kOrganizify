@@ -17,7 +17,8 @@ class SettingsWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit SettingsWindow(Settings *settings, QWidget *parent);~SettingsWindow();
+    explicit SettingsWindow(Settings *settings, QWidget *parent);
+    ~SettingsWindow();
     void setColor(QString color);
     QString getColor();
 
@@ -29,7 +30,7 @@ signals:
 
 private:
     Ui::SettingsWindow *ui;
-    Settings *settings;
+    Settings *m_settings;
 };
 
 #endif // SETTINGSWINDOW_H
