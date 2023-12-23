@@ -2,6 +2,7 @@
 
 User::User(const QString &username, const QString &password)
     : m_username(username)
+    , m_client(new Client(username))
 {}
 
 bool User::userExists(const QString &username) {
@@ -39,8 +40,6 @@ bool User::login(const QString &password) {
         loadData(m_username);
         if (m_password == password) {
 
-            m_client = new Client(m_username);
-
             m_calendar.fromJson(m_jsonObject);
             m_toDoList.fromJson(m_jsonObject);
             m_settings.fromJson(m_jsonObject);
@@ -61,7 +60,6 @@ bool User::registerUser(const QString &password) {
         login(m_password); // Automatically log in after registration
         return true;
     }
-
     return true;
 }
 
