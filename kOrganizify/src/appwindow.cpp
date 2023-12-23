@@ -18,8 +18,8 @@ AppWindow::AppWindow(QWidget *parent)
     this->settingsWindow->setColor("#0050B5");
     this->ui->lwToDoList->setStyleSheet("background-color: #FCD299");
 
-    Calendar calendar;
-    this->eventWindow = new EventWindow(calendar);
+    m_calendar = new Calendar();
+    this->eventWindow = new EventWindow(m_calendar);
 
     QString sourceDir = QCoreApplication::applicationDirPath();
     QString path = QDir(sourceDir).filePath("../kOrganizify/src/images/background1.jpg");
@@ -147,4 +147,5 @@ void AppWindow::onCheckBoxStateChanged(int state)
 AppWindow::~AppWindow()
 {
     delete ui;
+    delete m_calendar;
 }

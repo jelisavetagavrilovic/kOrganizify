@@ -31,6 +31,7 @@ private:
     SettingsWindow *settingsWindow;
     EventWindow *eventWindow;
     ToDoList m_toDoList;
+    Calendar* m_calendar;
 };
 
 #endif // APPWINDOW_H
