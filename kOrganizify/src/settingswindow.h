@@ -21,6 +21,7 @@ public:
     ~SettingsWindow();
     void setColor(QString color);
     QString getColor();
+    Ui::SettingsWindow *ui;
 
 private slots:
     void on_btnSave_clicked();
@@ -29,7 +30,6 @@ signals:
     void colorChanged(const QString& color);
 
 private:
-    Ui::SettingsWindow *ui;
     Settings *m_settings;
 };
 

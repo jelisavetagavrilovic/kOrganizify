@@ -3,6 +3,7 @@
 #include "ui_appwindow.h"
 #include "settingswindow.h"
 #include "mainwindow.h"
+#include "ui_settingswindow.h"
 
 AppWindow::AppWindow(User *user, QWidget *parent)
     : QMainWindow(parent)
@@ -16,6 +17,7 @@ AppWindow::AppWindow(User *user, QWidget *parent)
     connect(ui->btnLogout, &QPushButton::clicked, this, &AppWindow::logoutUser);
 
     connect(ui->btnSettings, &QPushButton::clicked, this, &AppWindow::openSettings);
+    connect(settingsWindow->ui->cbNotifications, &QCheckBox::clicked, m_notifications, &Notifications::setEnabledNotif);
     connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
     connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button
 

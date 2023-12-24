@@ -1,6 +1,10 @@
 #include "notifications.h"
 
-Notifications::Notifications(Calendar* calendar) : m_calendar(calendar), QObject(nullptr) {
+Notifications::Notifications(Calendar* calendar) :
+    m_calendar(calendar)
+    , QObject(nullptr)
+    , m_enabled(false)
+{
     m_timer = new QTimer(this);
     connect(m_timer, &QTimer::timeout, this, &Notifications::checkEvents);
     m_timer->start(60000);
@@ -11,7 +15,7 @@ void Notifications::checkEvents() {
 
     for (const Event& event : m_calendar->getEvents()) {
         int secs = currentDateTime.secsTo(event.getStartTime());
-        if(secs >= 29*60 && secs <= 30*60)
+        if(secs >= 29*60 && secs <= 30*60 && m_enabled)
             showEvent(event);
     }
 }
@@ -19,4 +23,8 @@ void Notifications::checkEvents() {
 void Notifications::showEvent(const Event& event) {
     NotificationsWindow* notif = new NotificationsWindow(nullptr);
     notif->updateWindow(event.getTitle(), event.getStartTime().toString("yyyy-MM-dd hh:mm:ss"));
+}
+
+void Notifications::setEnabledNotif() {
+    m_enabled = !m_enabled;
 }
