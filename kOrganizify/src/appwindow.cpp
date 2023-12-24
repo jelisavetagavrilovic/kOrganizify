@@ -10,6 +10,7 @@ AppWindow::AppWindow(User *user, QWidget *parent)
     , m_user(user)
 {
     ui->setupUi(this);
+    this->setAttribute(Qt::WA_DeleteOnClose);
 
     initialize();
 
@@ -146,18 +147,18 @@ void AppWindow::openSettings() {
 }
 
 void AppWindow::logoutUser() {
-    if (m_user) {
-        m_user->logout();
-
-        delete m_user;
-        m_user = nullptr;
-    }
-
     MainWindow *mainWindow = new MainWindow;
     mainWindow->show();
     this->close();
+    // delete this;
 }
 
 AppWindow::~AppWindow() {
-    delete ui;
+    qDebug() << "destruktor";
+    m_user->logout();
+
+    delete m_user;
+    m_user = nullptr;
+
+    delete ui;  
 }

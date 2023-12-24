@@ -31,6 +31,9 @@
     "tasks": [
         {
             "task": "test "
+        },
+        {
+            "task": "cao"
         }
     ],
     "username": "jelisaveta"
