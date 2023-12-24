@@ -3,6 +3,7 @@
 #include "ui_appwindow.h"
 #include "settingswindow.h"
 #include "mainwindow.h"
+#include "ui_settingswindow.h"
 
 AppWindow::AppWindow(User *user, QWidget *parent)
     : QMainWindow(parent)
@@ -17,6 +18,7 @@ AppWindow::AppWindow(User *user, QWidget *parent)
     connect(ui->btnLogout, &QPushButton::clicked, this, &AppWindow::logoutUser);
 
     connect(ui->btnSettings, &QPushButton::clicked, this, &AppWindow::openSettings);
+    connect(settingsWindow->ui->cbNotifications, &QCheckBox::clicked, m_notifications, &Notifications::setEnabledNotif);
     connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
     connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button
 
@@ -66,11 +68,16 @@ void AppWindow::initialize() {
 
     Settings& settings = m_user->getSettings();
     settingsWindow = new SettingsWindow(&settings, this);
-    settingsWindow->setColor(settings.color());
+    settingsWindow->setColor(settings.getColor());
     ui->lwToDoList->setStyleSheet("background-color: #FCD299");
 
     this->setFixedSize(this->size());
     this->setAutoFillBackground(true);
+
+    m_calendar = &m_user->getCalendar();
+    m_notifications = new Notifications(m_calendar);
+    m_notifications->checkEvents();
+    this->eventWindow = new EventWindow(m_calendar);
 
     QString sourceDir = QCoreApplication::applicationDirPath();
     QString path = QDir(sourceDir).filePath("../kOrganizify/src/images/background1.jpg");
@@ -91,16 +98,35 @@ void AppWindow::initialize() {
     this->ui->tableWidget->horizontalHeader()->setStyleSheet("background-color: " + this->settingsWindow->getColor());
     this->ui->tableWidget->verticalHeader()->setStyleSheet("background-color: " + this->settingsWindow->getColor());
 
-    int rowHeight = 50;
-    for (int i = 0; i < ui->tableWidget->rowCount(); ++i)
-        this->ui->tableWidget->setRowHeight(i, rowHeight);
-
     int columnWidth = 110;
     for (int i = 0; i < ui->tableWidget->columnCount(); ++i)
         this->ui->tableWidget->setColumnWidth(i, columnWidth);
+
+    connect(ui->tableWidget, &QTableWidget::cellClicked, this, &AppWindow::openEventWindow);
+    connect(this->eventWindow, &EventWindow::saveButtonClicked, this, &AppWindow::colorCell);
+    connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button
 }
 
-void AppWindow::addTask() {
+void AppWindow::openEventWindow(int row, int column) {
+    if (row >= 0 && column >= 0) {
+        this->eventWindow->show();
+    }
+}
+
+void AppWindow::colorCell(){
+    qDebug() << "Radi2";
+
+    QString color = "#EB212E"; // boja bi valjalo da se menja na osnovu prioriteta dogadjaja
+    QTableWidgetItem *item = new QTableWidgetItem("Ime dogadjaja");
+    item->setBackground(QBrush(QColor(color)));
+    ui->tableWidget->setItem(5, 0, item); // hardkodirano za sad
+
+    // this->ui->tableWidget->item(1, 1)->setBackground(QBrush(color));
+    // this->ui->tableWidget->setStyleSheet("background-color: " + color + ";");
+}
+
+void AppWindow::addTask()
+{
     const auto text = ui->leInput->text();
 
     if(!text.isEmpty()){
@@ -154,11 +180,10 @@ void AppWindow::logoutUser() {
 }
 
 AppWindow::~AppWindow() {
-    qDebug() << "destruktor";
     m_user->logout();
-
     delete m_user;
     m_user = nullptr;
 
-    delete ui;  
+    delete m_calendar;
+    delete ui;
 }

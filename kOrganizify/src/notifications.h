@@ -16,12 +16,16 @@ public:
     Notifications(Calendar* calendar);
     void checkEvents();
 
+public slots:
+    void setEnabledNotif();
+
 private slots:
     static void showEvent(const Event& event);
 
 private:
-    Calendar* calendar;
-    QTimer* timer;
+    Calendar* m_calendar;
+    QTimer* m_timer;
+    bool m_enabled;
 
 };
 

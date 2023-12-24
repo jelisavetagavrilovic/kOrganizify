@@ -1,7 +1,8 @@
 #include "event.h"
 
-//Event::Event(const QString &title, const QDateTime &startTime, const QDateTime &endTime, const QString &description, const QString &location, QObject* parent)
-//    : m_title(title), m_startTime(startTime), m_endTime(endTime), m_description(description), m_location(location), QObject(nullptr) {}
+Event::Event() : priority(CustomEventPriority::NoPriority){
+
+}
 
 QString Event::getTitle() const {
     return m_title;
@@ -41,6 +42,14 @@ QString Event::getLocation() const {
 
 void Event::setLocation(const QString &location) {
     this->m_location = location;
+}
+
+CustomEventPriority Event::getPriority() const {
+    return priority;
+}
+
+void Event::setPriority(CustomEventPriority priority){
+    this->priority = priority;
 }
 
 bool Event::operator==(const Event &other) const {

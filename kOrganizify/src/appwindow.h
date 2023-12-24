@@ -10,11 +10,12 @@
 #include <QScrollBar>
 
 #include "mainwindow.h"
+#include "eventwindow.h"
 #include "settingswindow.h"
 #include "syncwindow.h"
-
 #include "user.h"
 #include "toDoList.h"
+#include "notifications.h"
 
 
 namespace Ui {
@@ -37,8 +38,10 @@ public slots:
     void addTaskToListWidget(const Task &task);
 
 private slots:
-    void addTask();
     void changeButtonColor(const QString &newColor);
+    void colorCell();
+    void openEventWindow(int row, int column);
+    void addTask();
     void onCheckBoxStateChanged(int state);
     void openSettings();
     void logoutUser();
@@ -49,8 +52,11 @@ private:
     Ui::AppWindow *ui;
     User *m_user;
     SettingsWindow *settingsWindow;
-//    ToDoList m_toDoList;
     SyncWindow *syncWindow;
+    EventWindow *eventWindow;
+//    ToDoList m_toDoList;
+    Calendar* m_calendar;
+    Notifications* m_notifications;
 };
 
 #endif // APPWINDOW_H

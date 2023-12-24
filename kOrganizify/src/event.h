@@ -6,12 +6,17 @@
 #include <QHash>
 #include <QObject>
 
+enum class CustomEventPriority {
+    NoPriority,
+    Low,
+    Medium,
+    High
+};
+
 class Event
 {
 public:
-//    Event(QObject* parent=nullptr);
-//    Event(const QString &title, const QDateTime &startTime, const QDateTime &endTime, const QString &description, const QString &location, QObject* parent);
-//    ~Event();
+    Event();
 
     QString getTitle() const;
     void setTitle(const QString &title);
@@ -28,6 +33,9 @@ public:
     QString getLocation() const;
     void setLocation(const QString &location);
 
+    CustomEventPriority getPriority() const;
+    void setPriority(CustomEventPriority priority);
+
     bool operator==(const Event &other) const;
 
     void clear();
@@ -40,6 +48,7 @@ private:
     QDateTime m_endTime;
     QString m_description;
     QString m_location;
+    CustomEventPriority priority;
 
 
 //overload and needs to be in .h

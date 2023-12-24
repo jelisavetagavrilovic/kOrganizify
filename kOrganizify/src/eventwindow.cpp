@@ -2,7 +2,7 @@
 #include "eventwindow.h"
 #include "ui_eventwindow.h"
 
-EventWindow::EventWindow(Calendar &calendar, QWidget *parent)
+EventWindow::EventWindow(Calendar* calendar, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::EventWindow)
     , m_calendar(calendar)
@@ -26,14 +26,18 @@ void EventWindow::on_btnSave_clicked()
     event.setStartTime(startDateTime);
     event.setEndTime(endDateTime);
 
-    m_calendar.addEvent(event);
+    m_calendar->addEvent(event);
 
-    QList<Event> events = m_calendar.getEvents();
+    emit saveButtonClicked();
+
+    QList<Event> events = m_calendar->getEvents();
     for (const Event &e : events) {
         qDebug() << "Event in calendar: " << e.getTitle();
     }
 
     qDebug() << "Event saved to calendar: " << event.getTitle();
+
+    this->close();
 
     //qDebug() << "title: " << event.getTitle();
     //qDebug() << "start date and time: " << event.getStartTime();

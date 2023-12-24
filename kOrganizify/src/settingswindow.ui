@@ -71,7 +71,7 @@
      </spacer>
     </item>
     <item>
-     <widget class="QCheckBox" name="btnNotifications">
+     <widget class="QCheckBox" name="cbNotifications">
       <property name="text">
        <string>Enable Notifications</string>
       </property>
@@ -94,7 +94,7 @@
      </spacer>
     </item>
     <item>
-     <widget class="QCheckBox" name="btnNightMode">
+     <widget class="QCheckBox" name="cbNightMode">
       <property name="text">
        <string>Night Mode</string>
       </property>
@@ -145,7 +145,7 @@
      <x>0</x>
      <y>0</y>
      <width>228</width>
-     <height>20</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
