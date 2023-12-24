@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 cmake_minimum_required(VERSION 3.5)
 
 project(kOrganizify VERSION 0.1 LANGUAGES CXX)
@@ -152,3 +153,137 @@ if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(kOrganizify)
 endif()
 
+=======
+cmake_minimum_required(VERSION 3.5)
+
+project(kOrganizify VERSION 0.1 LANGUAGES CXX)
+
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Use FetchContent to include the Z3 library
+include(FetchContent)
+FetchContent_Declare(
+  z3
+  GIT_REPOSITORY https://github.com/Z3Prover/z3.git
+  GIT_TAG        master  # You can specify a commit hash or release tag
+  SOURCE_DIR     "${CMAKE_CURRENT_SOURCE_DIR}/_deps/z3-src"
+  BINARY_DIR     "${CMAKE_CURRENT_BINARY_DIR}/_deps/z3-build"
+)
+
+
+FetchContent_GetProperties(z3)
+if(NOT z3_POPULATED)
+  FetchContent_Populate(z3)
+  add_subdirectory(${z3_SOURCE_DIR} ${z3_BINARY_DIR})
+endif()
+
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+
+set(PROJECT_SOURCES
+        src/appwindow.cpp
+        src/calendar.cpp
+        src/event.cpp
+        src/eventwindow.cpp
+        src/main.cpp
+        src/mainwindow.cpp
+        src/saveload.cpp
+        src/settingswindow.cpp
+#        src/smartplan.cpp
+        src/task.cpp
+        src/toDoList.cpp
+        src/user.cpp
+)
+
+set(HEADERS
+        src/appwindow.h
+        src/calendar.h
+        src/event.h
+        src/eventwindow.h
+        src/mainwindow.h
+        src/saveload.h
+        src/settingswindow.h
+#        src/smartplan.h
+        src/task.h
+        src/toDoList.h
+        src/user.h
+)
+
+set(FORMS
+        src/appwindow.ui
+        src/eventwindow.ui
+        src/mainwindow.ui
+        src/settingswindow.ui
+)
+
+if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
+    qt_add_executable(kOrganizify
+        MANUAL_FINALIZATION
+        ${PROJECT_SOURCES}
+        ${HEADERS}
+        ${FORMS}
+)
+# Define target properties for Android with Qt 6 as:
+#    set_property(TARGET kOrganizify APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
+#                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
+# For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
+else()
+    if(ANDROID)
+        add_library(kOrganizify SHARED
+            ${PROJECT_SOURCES}
+            ${HEADERS}
+            ${FORMS}
+        )
+# Define properties for Android with Qt 5 after find_package() calls as:
+#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
+    else()
+        add_executable(kOrganizify
+            ${PROJECT_SOURCES}
+            ${HEADERS}
+            ${FORMS}
+        )
+    endif()
+endif()
+
+# Link against the Z3 library
+target_include_directories(kOrganizify PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(kOrganizify PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src")
+target_include_directories(kOrganizify PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/_deps/z3-src/src/api")
+target_include_directories(kOrganizify PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/_deps/z3-src/src/api/c++")
+target_link_directories(kOrganizify PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/_deps/z3-build")
+
+# target_link_libraries(kOrganizify PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/_deps/z3-build/libz3.a")
+target_link_libraries(kOrganizify PRIVATE z3)
+target_link_libraries(kOrganizify PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+
+# Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
+# If you are developing for iOS or macOS you should consider setting an
+# explicit, fixed bundle identifier manually though.
+if(${QT_VERSION} VERSION_LESS 6.1.0)
+  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.kOrganizify)
+endif()
+set_target_properties(kOrganizify PROPERTIES
+    ${BUNDLE_ID_OPTION}
+    MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
+    MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
+    MACOSX_BUNDLE TRUE
+    WIN32_EXECUTABLE TRUE
+)
+
+include(GNUInstallDirs)
+install(TARGETS kOrganizify
+    BUNDLE DESTINATION .
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
+
+if(QT_VERSION_MAJOR EQUAL 6)
+    qt_finalize_executable(kOrganizify)
+endif()
+
+>>>>>>> Stashed changes
