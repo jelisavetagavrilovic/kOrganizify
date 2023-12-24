@@ -35,7 +35,7 @@ SettingsWindow::SettingsWindow(Settings *settings, QWidget *parent)
 }
 
 void SettingsWindow::on_btnSave_clicked(){
-    emit colorChanged(this->m_settings->color());
+    emit colorChanged(this->m_settings->getColor());
     this->close();
 }
 
@@ -44,7 +44,7 @@ void SettingsWindow::setColor(QString color){
 }
 
 QString SettingsWindow::getColor(){
-    return this->m_settings->color();
+    return this->m_settings->getColor();
 }
 
 SettingsWindow::~SettingsWindow()

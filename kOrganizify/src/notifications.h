@@ -20,8 +20,8 @@ private slots:
     static void showEvent(const Event& event);
 
 private:
-    Calendar* calendar;
-    QTimer* timer;
+    Calendar* m_calendar;
+    QTimer* m_timer;
 
 };
 

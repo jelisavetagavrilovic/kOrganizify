@@ -15,6 +15,7 @@
 #include "syncwindow.h"
 #include "user.h"
 #include "toDoList.h"
+#include "notifications.h"
 
 
 namespace Ui {
@@ -55,6 +56,7 @@ private:
     EventWindow *eventWindow;
 //    ToDoList m_toDoList;
     Calendar* m_calendar;
+    Notifications* m_notifications;
 };
 
 #endif // APPWINDOW_H

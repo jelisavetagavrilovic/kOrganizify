@@ -7,6 +7,7 @@
 
 class Settings : public SaveLoad
 {
+    Q_OBJECT
 private:
     QString m_color;
 
@@ -22,11 +23,11 @@ public:
     QJsonValue toJson() const override;
     void fromJson(const QJsonObject &jsonObject) override;
 
-    QString color();
+    QString getColor();
     void setColor(QString color);
-    bool notifications();
+    bool getNotifications();
     void setNotifications(bool notifications);
-    bool nightMode();
+    bool getNightMode();
     void setNightMode(bool nightMode);
 };
 

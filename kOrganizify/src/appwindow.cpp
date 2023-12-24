@@ -65,13 +65,15 @@ void AppWindow::initialize() {
 
     Settings& settings = m_user->getSettings();
     settingsWindow = new SettingsWindow(&settings, this);
-    settingsWindow->setColor(settings.color());
+    settingsWindow->setColor(settings.getColor());
     ui->lwToDoList->setStyleSheet("background-color: #FCD299");
 
     this->setFixedSize(this->size());
     this->setAutoFillBackground(true);
 
-    m_calendar = new Calendar();
+    m_calendar = &m_user->getCalendar();
+    m_notifications = new Notifications(m_calendar);
+    m_notifications->checkEvents();
     this->eventWindow = new EventWindow(m_calendar);
 
     QString sourceDir = QCoreApplication::applicationDirPath();
@@ -97,8 +99,6 @@ void AppWindow::initialize() {
     for (int i = 0; i < ui->tableWidget->columnCount(); ++i)
         this->ui->tableWidget->setColumnWidth(i, columnWidth);
 
-
-    connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
     connect(ui->tableWidget, &QTableWidget::cellClicked, this, &AppWindow::openEventWindow);
     connect(this->eventWindow, &EventWindow::saveButtonClicked, this, &AppWindow::colorCell);
     connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button
