@@ -4,6 +4,9 @@
 #include <QObject>
 #include <QTcpServer>
 #include <QTcpSocket>
+#include "../kOrganizify/src/event.h"
+#include "../kOrganizify/src/calendar.h"
+
 
 class Server : public QObject
 {
@@ -19,6 +22,7 @@ private:
     QTcpServer* m_server;
     QHash<QString, QTcpSocket*> m_clients;
     void multiCast(const QString &username) const;
+    QList<Event> findFreeTime(Calendar cal1, Calendar cal2, int maxTime) const;
 };
 
 #endif // SERVER_H
