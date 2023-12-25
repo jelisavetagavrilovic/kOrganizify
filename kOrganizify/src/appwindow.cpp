@@ -21,7 +21,7 @@ AppWindow::AppWindow(User *user, QWidget *parent)
 
     populateFriends(m_user->m_client->m_friends);
     connect(m_user->m_client, &Client::newUserLoggedIn, this, &AppWindow::handleNewUserLoggedIn);
-    connect(m_user->m_client, &Client::disconnectedUser, this, &AppWindow::handleUserDisconnected);    
+    connect(m_user->m_client, &Client::disconnectedUser, this, &AppWindow::handleUserDisconnected);
 }
 
 void AppWindow::handleNewUserLoggedIn(const QString& username) {
@@ -149,16 +149,24 @@ void AppWindow::onCheckBoxStateChanged(int state) {
     QCheckBox *checkBox = qobject_cast<QCheckBox*>(sender());
     if (checkBox && state == Qt::Checked) {
         QString taskName = checkBox->text();
+        QList<QListWidgetItem *> items = ui->lwToDoList->findItems(taskName, Qt::MatchExactly);
 
-        this->m_user->getToDoList().removeTask(taskName);
-
-        // remmoving elements from QListWidget
-        QListWidgetItem *item = ui->lwToDoList->itemAt(checkBox->pos());
-        if (item != nullptr) {
-            int row = ui->lwToDoList->row(item);
-            ui->lwToDoList->takeItem(row);
-            delete item;
+        if (!items.isEmpty()) {
+            QListWidgetItem *item = items.first(); // Uzmemo prvi pronađeni element
+            item->setCheckState(Qt::Checked);
         }
+
+
+        // OVO JE ZA BRISANJE ELEMENTA
+        // this->m_user->getToDoList().removeTask(taskName);
+
+        // // remmoving elements from QListWidget
+        // QListWidgetItem *item = ui->lwToDoList->itemAt(checkBox->pos());
+        // if (item != nullptr) {
+        //     int row = ui->lwToDoList->row(item);
+        //     ui->lwToDoList->takeItem(row);
+        //     delete item;
+        // }
     }
 }
 
