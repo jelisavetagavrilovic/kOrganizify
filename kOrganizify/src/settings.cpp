@@ -22,8 +22,8 @@ void Settings::fromJson(const QJsonObject &jsonObject) {
 
     QJsonObject jsonObjectSettings = m_jsonObject["settings"].toObject();
     m_color = jsonObjectSettings["color"].toString();
-    m_notifications = jsonObjectSettings["notificatios"].toBool(false);
-    m_nightMode = jsonObjectSettings["nightMode"].toBool(false);
+    m_notifications = jsonObjectSettings["notifications"].toBool();
+    m_nightMode = jsonObjectSettings["nightMode"].toBool();
 }
 
 QJsonValue Settings::toJson() const {
@@ -50,11 +50,13 @@ void Settings::setColor(QString color) {
 }
 
 bool Settings::getNotifications() {
+    qDebug() << "sada sam" << m_notifications;
     return m_notifications;
 }
 
 void Settings::setNotifications(bool notifications) {
     m_notifications = notifications;
+    qDebug() << "postavila sam se na:" << m_notifications;
 }
 
 bool Settings::getNightMode() {

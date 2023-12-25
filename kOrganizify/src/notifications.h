@@ -17,7 +17,7 @@ public:
     void checkEvents();
 
 public slots:
-    void setEnabledNotif();
+    void enabledNotifications(const bool enabled);
 
 private slots:
     static void showEvent(const Event& event);

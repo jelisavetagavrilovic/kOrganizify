@@ -16,9 +16,9 @@ AppWindow::AppWindow(User *user, QWidget *parent)
     initialize();
 
     connect(ui->btnLogout, &QPushButton::clicked, this, &AppWindow::logoutUser);
-
     connect(ui->btnSettings, &QPushButton::clicked, this, &AppWindow::openSettings);
-    connect(settingsWindow->ui->cbNotifications, &QCheckBox::clicked, m_notifications, &Notifications::setEnabledNotif);
+    connect(settingsWindow, &SettingsWindow::enabledNotifications, this, &AppWindow::enabledNotifications);
+    connect(settingsWindow, &SettingsWindow::enabledNotifications, m_notifications, &Notifications::enabledNotifications);
     connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
     connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button
 
@@ -60,6 +60,10 @@ void AppWindow::changeButtonColor(const QString& newColor) {
     this->ui->tableWidget->verticalHeader()->setStyleSheet(styleSheet);
 }
 
+void AppWindow::enabledNotifications(const bool enabled) {
+    m_user->getSettings().setNotifications(enabled);
+}
+
 void AppWindow::initialize() {
     ToDoList& toDoList = m_user->getToDoList();
     const QVector<Task>& tasks = toDoList.getTasks();
@@ -69,6 +73,7 @@ void AppWindow::initialize() {
     Settings& settings = m_user->getSettings();
     settingsWindow = new SettingsWindow(&settings, this);
     settingsWindow->setColor(settings.getColor());
+    settingsWindow->ui->cbNotifications->setChecked(m_user->getSettings().getNotifications());
     ui->lwToDoList->setStyleSheet("background-color: #FCD299");
 
     this->setFixedSize(this->size());

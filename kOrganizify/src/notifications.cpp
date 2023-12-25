@@ -3,7 +3,6 @@
 Notifications::Notifications(Calendar* calendar) :
     m_calendar(calendar)
     , QObject(nullptr)
-    , m_enabled(false)
 {
     m_timer = new QTimer(this);
     connect(m_timer, &QTimer::timeout, this, &Notifications::checkEvents);
@@ -25,6 +24,6 @@ void Notifications::showEvent(const Event& event) {
     notif->updateWindow(event.getTitle(), event.getStartTime().toString("yyyy-MM-dd hh:mm:ss"));
 }
 
-void Notifications::setEnabledNotif() {
-    m_enabled = !m_enabled;
+void Notifications::enabledNotifications(const bool enabled) {
+    m_enabled = enabled;
 }

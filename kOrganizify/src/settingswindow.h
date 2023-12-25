@@ -19,15 +19,18 @@ class SettingsWindow : public QMainWindow
 public:
     explicit SettingsWindow(Settings *settings, QWidget *parent);
     ~SettingsWindow();
-    void setColor(QString color);
-    QString getColor();
+    void setColor(const QString color);
+    QString getColor() const;
+    void setNotifications(const bool notifications);
+    bool getNotifications() const;
     Ui::SettingsWindow *ui;
 
 private slots:
-    void on_btnSave_clicked();
+    void save();
 
 signals:
     void colorChanged(const QString& color);
+    void enabledNotifications(const bool enabled);
 
 private:
     Settings *m_settings;
