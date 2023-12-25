@@ -14,21 +14,11 @@ Slučaj upotrebe: Kalendar
     Osnovni tok:
 
         1. Korisnik otvara aplikaciju koja prikazuje kalendar.
-            1.1. Korisnik bira da li zeli da učita kalendar sa lokalnog uređaja.
-        
         2. Korisnik pregleda svoj kalendarski prikaz, kako bi imao uvid u postojeće događaje i slobodno vreme.
-        
         3. Nakon što izabere dan za koji želi da unese podatke
             3.1 Dobija opciju za dodavanje događaja
-                3.1.1 Nastavak slučaja upotrebe: Dodavanje događaja
-            
-        4. Ako je dostupno, korisnik koristi funkciju pametnog planiranja za automatsko određivanje optimalnog vremena za nove      obaveze.
-            4.1. Nastavak slučaja upotrebe: Pametni plan
-
-        5. Aplikacija pristupa kalendarskim podacima korisnika i prijatelja kako bi usklađivala njihove rasporede.
-            5.1. Nastavak slučaja upotrebe: Sinhronizacija
-        
-        6. Nakon završetka, korisnik može zatvoriti aplikaciju.
+                3.1.1 Nastavak slučaja upotrebe: Dodavanje događaja        
+        4. Nakon završetka, korisnik može zatvoriti aplikaciju.
 
 
     Alternativni tokovi:

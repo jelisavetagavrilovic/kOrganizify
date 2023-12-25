@@ -11,16 +11,11 @@ Slučaj upotrebe: TO-DO Lista
         Aplikacija je pokrenuta i prikazan je glavni prozor.
 
     Osnovni tok:
-    
         1. Korisnik pristupa sekciji za TO-DO liste u aplikaciji.
-
-        2. Prikazuje se prazna TO-DO lista sa opcijama za dodavanje novih zadatka.
-
+        2. Prikazuje se TO-DO lista sa opcijama za dodavanje novih zadatka.
         3. Korisnik dodaje novi zadatak unosom naziva zadatka.
-
         4. Kada korisnik obavi zadatak, može ga označiti kao završenog (check).
-
-        5. Podešavanja se primenjuju i čuvaju.
+        5. Podaci se čuvaju.
 
 
     Alternativni tokovi:
