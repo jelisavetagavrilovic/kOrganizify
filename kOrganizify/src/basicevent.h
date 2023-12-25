@@ -11,12 +11,13 @@ public:
     QString getTitle() const;
     void setTitle(const QString &title);
 
-    double getDuration() const;
-    void setDuration(const double duration);
+    int getDuration() const;
+    void setDuration(const int duration);
+    void deleteString(QString &string);
 
 private:
     QString m_title;
-    double m_duration;
+    int m_duration;
 };
 
 #endif // BASICEVENT_H

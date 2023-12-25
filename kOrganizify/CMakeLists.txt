@@ -10,37 +10,43 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Use FetchContent to include the Z3 library
-include(FetchContent)
-FetchContent_Declare(
-  z3
-  GIT_REPOSITORY https://github.com/Z3Prover/z3.git
-  GIT_TAG        master  # You can specify a commit hash or release tag
-  SOURCE_DIR     "${CMAKE_CURRENT_SOURCE_DIR}/_deps/z3-src"
-  BINARY_DIR     "${CMAKE_CURRENT_BINARY_DIR}/_deps/z3-build"
-)
+# include(FetchContent)
+# FetchContent_Declare(
+#   z3
+#   GIT_REPOSITORY https://github.com/Z3Prover/z3.git
+#   GIT_TAG        master  # You can specify a commit hash or release tag
+#   SOURCE_DIR     "${CMAKE_CURRENT_SOURCE_DIR}/_deps/z3-src"
+#   BINARY_DIR     "${CMAKE_CURRENT_BINARY_DIR}/_deps/z3-build"
+# )
 
+# FetchContent_GetProperties(z3)
+# if(NOT z3_POPULATED)
+#   FetchContent_Populate(z3)
+#   add_subdirectory(${z3_SOURCE_DIR} ${z3_BINARY_DIR})
+# endif()
 
-FetchContent_GetProperties(z3)
-if(NOT z3_POPULATED)
-  FetchContent_Populate(z3)
-  add_subdirectory(${z3_SOURCE_DIR} ${z3_BINARY_DIR})
-endif()
-
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Network)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Network)
 
 set(PROJECT_SOURCES
         src/appwindow.cpp
         src/basicevent.cpp
         src/basiceventwindow.cpp
         src/calendar.cpp
+        src/client.cpp
         src/event.cpp
         src/eventwindow.cpp
         src/main.cpp
         src/mainwindow.cpp
+        src/responsewindow.cpp
+        src/notifications.cpp
+        src/notificationswindow.cpp
         src/saveload.cpp
+        src/settings.cpp
         src/settingswindow.cpp
-#        src/smartplan.cpp
+
+        src/synchronization.cpp
+        src/syncwindow.cpp
         src/task.cpp
         src/toDoList.cpp
         src/user.cpp
@@ -51,12 +57,19 @@ set(HEADERS
         src/basicevent.h
         src/basiceventwindow.h
         src/calendar.h
+        src/client.h
         src/event.h
         src/eventwindow.h
         src/mainwindow.h
+        src/responsewindow.h
+        src/notifications.h
+        src/notificationswindow.h
         src/saveload.h
+        src/settings.h
         src/settingswindow.h
-#        src/smartplan.h
+
+        src/synchronization.h
+        src/syncwindow.h
         src/task.h
         src/toDoList.h
         src/user.h
@@ -67,7 +80,10 @@ set(FORMS
         src/basiceventwindow.ui
         src/eventwindow.ui
         src/mainwindow.ui
+        src/responsewindow.ui
+        src/notificationswindow.ui
         src/settingswindow.ui
+        src/syncwindow.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -75,7 +91,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         ${HEADERS}
-        ${FORMS} 
+        ${FORMS}
 )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET kOrganizify APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -99,16 +115,24 @@ else()
     endif()
 endif()
 
-# Link against the Z3 library
-target_include_directories(kOrganizify PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
-target_include_directories(kOrganizify PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src")
-target_include_directories(kOrganizify PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/_deps/z3-src/src/api")
-target_include_directories(kOrganizify PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/_deps/z3-src/src/api/c++")
-target_link_directories(kOrganizify PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/_deps/z3-build")
 
-# target_link_libraries(kOrganizify PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/_deps/z3-build/libz3.so")
-target_link_libraries(kOrganizify PRIVATE z3)
-target_link_libraries(kOrganizify PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+# # Link against the Z3 library
+# target_include_directories(kOrganizify PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+# target_include_directories(kOrganizify PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src")
+# target_include_directories(kOrganizify PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/_deps/z3-src/src/api")
+# target_include_directories(kOrganizify PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/_deps/z3-src/src/api/c++")
+# target_link_directories(kOrganizify PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/_deps/z3-build")
+
+# # target_link_libraries(kOrganizify PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/_deps/z3-build/libz3.so")
+# # target_link_libraries(kOrganizify PRIVATE z3)
+
+# target_link_libraries(kOrganizify PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(kOrganizify
+    PRIVATE
+    # z3
+    Qt${QT_VERSION_MAJOR}::Widgets
+    Qt${QT_VERSION_MAJOR}::Network
+)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

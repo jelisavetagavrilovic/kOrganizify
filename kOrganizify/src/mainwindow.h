@@ -1,15 +1,14 @@
+// mainwindow.h
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-// #include <QGroupBox>
-// #include <QLineEdit>
-// #include <QPushButton>
-// #include <QLabel>
+#include "user.h"
+#include "appwindow.h"
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
+namespace Ui {
+class MainWindow;
+}
 
 class MainWindow : public QMainWindow
 {
@@ -19,13 +18,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void loginUser();
+    void registerUser();
+
 private:
     Ui::MainWindow *ui;
-    bool userExists(const QString &username);
-
-private slots:
-    void login();
-    void registerUser();
+    User *m_user;
 };
 
 #endif // MAINWINDOW_H

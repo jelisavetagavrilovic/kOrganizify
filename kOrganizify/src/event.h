@@ -3,10 +3,21 @@
 
 #include <QString>
 #include <QDateTime>
+#include <QHash>
+#include <QObject>
+
+enum class CustomEventPriority {
+    NoPriority,
+    Low,
+    Medium,
+    High
+};
 
 class Event
 {
 public:
+    Event();
+
     QString getTitle() const;
     void setTitle(const QString &title);
 
@@ -22,14 +33,29 @@ public:
     QString getLocation() const;
     void setLocation(const QString &location);
 
+    CustomEventPriority getPriority() const;
+    void setPriority(CustomEventPriority priority);
+
     bool operator==(const Event &other) const;
 
+    void clear();
+    void deleteString(QString &string);
+
+
 private:
-    QString title;
-    QDateTime startTime;
-    QDateTime endTime;
-    QString description;
-    QString location;
+    QString m_title;
+    QDateTime m_startTime;
+    QDateTime m_endTime;
+    QString m_description;
+    QString m_location;
+    CustomEventPriority priority;
+
+
+//overload and needs to be in .h
+friend uint qHash(const Event &event) {
+    return qHash(event.getTitle()) ^ qHash(event.getStartTime()) ^ qHash(event.getEndTime());
+}
+
 };
 
 #endif // EVENT_H
