@@ -32,6 +32,7 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 set(PROJECT_SOURCES
         src/appwindow.cpp
         src/basicevent.cpp
+        src/basiceventwindow.cpp
         src/calendar.cpp
         src/event.cpp
         src/eventwindow.cpp
@@ -48,6 +49,7 @@ set(PROJECT_SOURCES
 set(HEADERS
         src/appwindow.h
         src/basicevent.h
+        src/basiceventwindow.h
         src/calendar.h
         src/event.h
         src/eventwindow.h
@@ -62,6 +64,7 @@ set(HEADERS
 
 set(FORMS
         src/appwindow.ui
+        src/basiceventwindow.ui
         src/eventwindow.ui
         src/mainwindow.ui
         src/settingswindow.ui
@@ -72,7 +75,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         ${HEADERS}
-        ${FORMS}
+        ${FORMS} 
 )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET kOrganizify APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -103,7 +106,7 @@ target_include_directories(kOrganizify PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/_dep
 target_include_directories(kOrganizify PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/_deps/z3-src/src/api/c++")
 target_link_directories(kOrganizify PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/_deps/z3-build")
 
-# target_link_libraries(kOrganizify PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/_deps/z3-build/libz3.a")
+# target_link_libraries(kOrganizify PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/_deps/z3-build/libz3.so")
 target_link_libraries(kOrganizify PRIVATE z3)
 target_link_libraries(kOrganizify PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 

@@ -1,6 +1,8 @@
 #ifndef BASICEVENT_H
 #define BASICEVENT_H
 
+#include <QString>
+
 class BasicEvent
 {
 public:
