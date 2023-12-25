@@ -142,6 +142,12 @@ void AppWindow::addTaskToListWidget(const Task &task) {
     QCheckBox *checkBox = new QCheckBox(task.getName());
     ui->lwToDoList->setItemWidget(item, checkBox);
 
+    QFont font;
+    font.setPointSize(15); // Postavljanje veličine fonta na 20 piksela za čekboks tekst
+    checkBox->setFont(font);
+    checkBox->setText(task.getName());
+    checkBox->setStyleSheet("color: black;");
+
     connect(checkBox, &QCheckBox::stateChanged, this, &AppWindow::onCheckBoxStateChanged);
 }
 
