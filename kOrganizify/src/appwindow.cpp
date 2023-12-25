@@ -104,8 +104,9 @@ void AppWindow::initialize() {
 
     connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
     connect(ui->tableWidget, &QTableWidget::cellClicked, this, &AppWindow::openEventWindow);
-    connect(this->eventWindow, &EventWindow::saveButtonClicked, this, &AppWindow::colorCell);
+    connect(this->eventWindow, &EventWindow::saveButtonClicked, this, &AppWindow::updateTableForSelectedDate);
     connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button
+    connect(ui->calendarWidget, &QCalendarWidget::selectionChanged, this, &AppWindow::updateTableForSelectedDate);
 }
 
 void AppWindow::openEventWindow(int row, int column) {
@@ -114,17 +115,17 @@ void AppWindow::openEventWindow(int row, int column) {
     }
 }
 
-void AppWindow::colorCell(){
-    qDebug() << "Radi2";
+//void AppWindow::colorCell(){
+//    qDebug() << "Radi2";
 
-    QString color = "#EB212E"; // boja bi valjalo da se menja na osnovu prioriteta dogadjaja
-    QTableWidgetItem *item = new QTableWidgetItem("Ime dogadjaja");
-    item->setBackground(QBrush(QColor(color)));
-    ui->tableWidget->setItem(5, 0, item); // hardkodirano za sad
+//    QString color = "#EB212E"; // boja bi valjalo da se menja na osnovu prioriteta dogadjaja
+//    QTableWidgetItem *item = new QTableWidgetItem("Ime dogadjaja");
+//    item->setBackground(QBrush(QColor(color)));
+//    ui->tableWidget->setItem(5, 0, item); // hardkodirano za sad
 
     // this->ui->tableWidget->item(1, 1)->setBackground(QBrush(color));
     // this->ui->tableWidget->setStyleSheet("background-color: " + color + ";");
-}
+//}
 
 void AppWindow::addTask()
 {
@@ -171,6 +172,34 @@ void AppWindow::openSettings() {
     QString styleSheet = QString("background-color: %1").arg(this->settingsWindow->getColor());
     this->ui->btnSettings->setStyleSheet(styleSheet);
     this->ui->btnSettings->update();
+}
+
+void AppWindow::updateTableForSelectedDate() {
+    QDate selectedDate = ui->calendarWidget->selectedDate();
+    showWeeklyEvents(selectedDate);
+}
+
+void AppWindow::showWeeklyEvents(const QDate& selectedDate){
+    ui->tableWidget->clearContents();
+
+    QDate startDate = selectedDate.addDays(-selectedDate.dayOfWeek() + 1);
+    QDate endDate = startDate.addDays(6);
+
+    QList<Event> weekEvents = m_calendar->getEventsForWeek(startDate, endDate);
+
+    for(const Event &event: weekEvents){
+
+        int row = event.getStartTime().time().hour() - 6;
+        if(row < 0){
+            row += 24;
+        }
+
+        int column = event.getStartTime().date().dayOfWeek() - 1;
+
+        QTableWidgetItem *item = new QTableWidgetItem(event.getTitle());
+
+        ui->tableWidget->setItem(row, column, item);
+    }
 }
 
 void AppWindow::logoutUser() {

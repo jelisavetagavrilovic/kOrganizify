@@ -23,6 +23,7 @@ public:
     void removeEvent(const Event &event);
     void updateEvent(const Event &event);
     QList<Event> getEvents() const;
+    QList<Event> getEventsForWeek(const QDate& startDate, const QDate& endDate) const;
 
     void clear();
 

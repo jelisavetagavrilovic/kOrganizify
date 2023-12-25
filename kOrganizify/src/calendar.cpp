@@ -84,6 +84,18 @@ QList<Event> Calendar::getEvents() const {
     return m_events;
 }
 
+QList<Event> Calendar::getEventsForWeek(const QDate& startDate, const QDate& endDate) const {
+    QList<Event> weekEvents;
+
+    for (const Event& event: m_events){
+        if (event.getStartTime().date() >= startDate && event.getEndTime().date() <= endDate){
+            weekEvents.append(event);
+        }
+    }
+
+    return weekEvents;
+}
+
 void Calendar::clear() {
     for (Event &event : m_events) {
         event.clear(); // Poziva clear metodu za svaki događaj

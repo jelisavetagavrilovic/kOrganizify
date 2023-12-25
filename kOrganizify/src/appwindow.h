@@ -35,10 +35,11 @@ public slots:
     void handleNewUserLoggedIn(const QString& username);
     void handleUserDisconnected(const QString& username);
     void addTaskToListWidget(const Task &task);
+    void showWeeklyEvents(const QDate& selectedDate);
 
 private slots:
     void changeButtonColor(const QString &newColor);
-    void colorCell();
+    //void colorCell();
     void openEventWindow(int row, int column);
     void addTask();
     void onCheckBoxStateChanged(int state);
@@ -46,6 +47,7 @@ private slots:
     void logoutUser();
     void openSyncWindow();
     void populateFriends(const QList<QString>& friends);
+    void updateTableForSelectedDate();
 
 private:
     Ui::AppWindow *ui;

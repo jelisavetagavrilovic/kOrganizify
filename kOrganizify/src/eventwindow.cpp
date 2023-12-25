@@ -37,6 +37,11 @@ void EventWindow::onSaveButtonClicked()
 
     qDebug() << "Event saved to calendar: " << event.getTitle();
 
+    QList<Event> weekEvents = m_calendar->getEventsForWeek(QDate(2000, 1, 1), QDate(2000, 1, 7));
+    for (const Event &e : weekEvents) {
+        qDebug() << "Event in weekly calendar: " << e.getTitle();
+    }
+
     this->close();
 
     //qDebug() << "title: " << event.getTitle();
