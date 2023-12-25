@@ -25,7 +25,7 @@ signals:
 
 private slots:
     // void on_btnGenerate_clicked();
-    void on_btnSave_clicked();
+    void onSaveButtonClicked();
 };
 
 #endif // EVENTWINDOW_H

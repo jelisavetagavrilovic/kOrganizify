@@ -8,10 +8,10 @@ EventWindow::EventWindow(Calendar* calendar, QWidget *parent)
     , m_calendar(calendar)
 {
     ui->setupUi(this);
-    connect(ui->btnSave, &QPushButton::clicked, this, &EventWindow::on_btnSave_clicked);
+    connect(ui->btnSave, &QPushButton::clicked, this, &EventWindow::onSaveButtonClicked);
 }
 
-void EventWindow::on_btnSave_clicked()
+void EventWindow::onSaveButtonClicked()
 {
     // create new event
     Event event;

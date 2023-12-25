@@ -71,7 +71,11 @@ void AppWindow::initialize() {
     this->setFixedSize(this->size());
     this->setAutoFillBackground(true);
 
-    m_calendar = new Calendar();
+    m_calendar = &m_user->getCalendar();
+    for (Event& e: m_calendar->getEvents()){
+        qDebug() << e.getStartTime();
+    }
+
     this->eventWindow = new EventWindow(m_calendar);
 
     QString sourceDir = QCoreApplication::applicationDirPath();
