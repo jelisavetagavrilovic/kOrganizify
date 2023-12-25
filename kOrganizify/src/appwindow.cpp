@@ -146,29 +146,47 @@ void AppWindow::addTaskToListWidget(const Task &task) {
 }
 
 void AppWindow::onCheckBoxStateChanged(int state) {
+
     QCheckBox *checkBox = qobject_cast<QCheckBox*>(sender());
     if (checkBox && state == Qt::Checked) {
         QString taskName = checkBox->text();
-        QList<QListWidgetItem *> items = ui->lwToDoList->findItems(taskName, Qt::MatchExactly);
-
-        if (!items.isEmpty()) {
-            QListWidgetItem *item = items.first(); // Uzmemo prvi pronađeni element
-            item->setCheckState(Qt::Checked);
+        QString newTaskName = "";
+        for (auto ch : taskName)
+        {
+            newTaskName.append(u8"\u0336");
+            newTaskName.push_back(ch);
         }
+        newTaskName.append(u8"\u0336");
 
-
-        // OVO JE ZA BRISANJE ELEMENTA
-        // this->m_user->getToDoList().removeTask(taskName);
-
-        // // remmoving elements from QListWidget
-        // QListWidgetItem *item = ui->lwToDoList->itemAt(checkBox->pos());
-        // if (item != nullptr) {
-        //     int row = ui->lwToDoList->row(item);
-        //     ui->lwToDoList->takeItem(row);
-        //     delete item;
-        // }
+        checkBox->setText(newTaskName);  // crossed task name
     }
+    else if (checkBox && state == Qt::Unchecked){
+        QString taskName = checkBox->text();
+        QString newTaskName = "";
+
+        int i = 0;
+        for (auto ch : taskName){
+            if(i % 2 == 1)
+                newTaskName.push_back(ch);
+            i++;
+        }
+        checkBox->setText(newTaskName); // regular task name
+    }
+
+
+    // OVO JE ZA BRISANJE ELEMENTA
+    // QListWidgetItem *item = ui->lwToDoList->itemAt(checkBox->pos());
+    // if (item != nullptr) {
+
+
+    //     int row = ui->lwToDoList->row(item);
+    //     ui->lwToDoList->takeItem(row);
+    //     delete item;
+    //     this->m_user->getToDoList().removeTask(taskName);
+    // }
 }
+
+
 
 void AppWindow::openSettings() {
     settingsWindow->show();
