@@ -1,10 +1,12 @@
 #include "calendar.h"
 
 Calendar::Calendar()
+    : m_sizeFixedEvents(0)
 {}
 
 Calendar::Calendar(const Calendar &other){
     m_events = other.m_events;
+    m_sizeFixedEvents = other.m_sizeFixedEvents;
 }
 
 void Calendar::loadData(const QString &username) {
@@ -64,6 +66,7 @@ void Calendar::addEvent(const Event &event){
     }
 
     m_events.insert(index, event);
+    m_sizeFixedEvents++;
 
     // qDebug() << m_events[index].getTitle() << m_events[index].getStartTime() << m_events[index].getEndTime() <<
     //     m_events[index].getDescription() << m_events[index].getLocation();
@@ -82,6 +85,39 @@ void Calendar::updateEvent(const Event &event){
 
 QList<Event> Calendar::getEvents() const {
     return m_events;
+}
+
+Event Calendar::getEvent(const int index) {
+    return m_events[index];
+}
+
+void Calendar::addBasicEvent(const BasicEvent &basicEvent) {
+    qDebug() << "kalendar" << basicEvent.getTitle() << basicEvent.getDuration();
+
+    qDebug() << m_events.size();
+    Event event(basicEvent);
+
+    for (int index = m_sizeFixedEvents; index < m_events.size(); index++) {
+        qDebug() << m_events[index].getTitle() << m_events[index].getStartTime() << m_events[index].getEndTime() <<
+            m_events[index].getDescription() << m_events[index].getLocation();
+
+        qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime() <<
+            event.getDescription() << event.getLocation();
+        if(&m_events[index] == &event)
+            return;
+    }
+    m_events.append(event);
+}
+
+int Calendar::size() {
+    return m_events.size();
+}
+
+void Calendar::print() {
+    for (int index = 0; index < m_events.size(); index++)
+        qDebug() << m_events[index].getTitle() << m_events[index].getStartTime() << m_events[index].getEndTime() <<
+            m_events[index].getDescription() << m_events[index].getLocation();
+
 }
 
 void Calendar::clear() {

@@ -1,15 +1,26 @@
 #include "event.h"
 
-Event::Event() : priority(CustomEventPriority::NoPriority){
+Event::Event() : priority(CustomEventPriority::NoPriority) {}
 
+Event::Event(const BasicEvent &basicEvent) {
+    setTitle(basicEvent.getTitle());
+    setDuration(basicEvent.getDuration());
 }
 
 QString Event::getTitle() const {
-    return m_title;
+    return BasicEvent::getTitle();
 }
 
 void Event::setTitle(const QString &title) {
-    this->m_title = title;
+    BasicEvent::setTitle(title);
+}
+
+double Event::getDuration() const {
+    return BasicEvent::getDuration();
+}
+
+void Event::setDuration(const double duration) {
+    BasicEvent::setDuration(duration);
 }
 
 QDateTime Event::getStartTime() const {
@@ -54,7 +65,7 @@ void Event::setPriority(CustomEventPriority priority){
 
 bool Event::operator==(const Event &other) const {
     return (
-        m_title == other.m_title &&
+        BasicEvent::getTitle() == BasicEvent::getTitle() &&
         m_startTime == other.m_startTime &&
         m_endTime == other.m_endTime &&
         m_description == other.m_description &&
@@ -66,7 +77,7 @@ bool Event::operator==(const Event &other) const {
 // Implementacija metode za čišćenje resursa
 void Event::clear() {
     // Oslobodite dinamički alocirane stringove
-    deleteString(m_title);
+    BasicEvent::deleteString();
     deleteString(m_description);
     deleteString(m_location);
 

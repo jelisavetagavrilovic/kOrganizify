@@ -13,7 +13,7 @@ public:
 
     int getDuration() const;
     void setDuration(const int duration);
-    void deleteString(QString &string);
+    void deleteString();
 
 private:
     QString m_title;

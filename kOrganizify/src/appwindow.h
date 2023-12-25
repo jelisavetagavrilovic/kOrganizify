@@ -13,6 +13,7 @@
 #include "eventwindow.h"
 #include "settingswindow.h"
 #include "syncwindow.h"
+#include "basiceventwindow.h"
 #include "user.h"
 #include "toDoList.h"
 
@@ -46,6 +47,7 @@ private slots:
     void logoutUser();
     void openSyncWindow();
     void populateFriends(const QList<QString>& friends);
+    void smartPlan();
 
 private:
     Ui::AppWindow *ui;

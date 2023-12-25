@@ -14,6 +14,7 @@ AppWindow::AppWindow(User *user, QWidget *parent)
     initialize();
 
     connect(ui->btnLogout, &QPushButton::clicked, this, &AppWindow::logoutUser);
+    connect(ui->btnSmartPlan, &QPushButton::clicked, this, &AppWindow::smartPlan);
 
     connect(ui->btnSettings, &QPushButton::clicked, this, &AppWindow::openSettings);
     connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
@@ -71,7 +72,7 @@ void AppWindow::initialize() {
     this->setFixedSize(this->size());
     this->setAutoFillBackground(true);
 
-    m_calendar = new Calendar();
+    m_calendar = &m_user->getCalendar();
     this->eventWindow = new EventWindow(m_calendar);
 
     QString sourceDir = QCoreApplication::applicationDirPath();
@@ -180,6 +181,11 @@ void AppWindow::logoutUser() {
     MainWindow *mainWindow = new MainWindow;
     mainWindow->show();
     this->close();
+}
+
+void AppWindow::smartPlan() {
+    BasicEventWindow *basicEventWindow = new BasicEventWindow(m_calendar);
+    basicEventWindow->show();
 }
 
 AppWindow::~AppWindow() {
