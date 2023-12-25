@@ -152,7 +152,6 @@ void AppWindow::addTaskToListWidget(const Task &task) {
     checkBox->setFont(font);
     checkBox->setText(task.getName());
     checkBox->setStyleSheet("color: black;");
-    checkBox->
 
     connect(checkBox, &QCheckBox::stateChanged, this, &AppWindow::onCheckBoxStateChanged);
 }
@@ -170,6 +169,7 @@ void AppWindow::onCheckBoxStateChanged(int state) {
         newTaskName.append(QChar(0x0336));
 
         checkBox->setText(newTaskName);  // crossed task name
+
     }
     else if (checkBox && state == Qt::Unchecked){
         QString taskName = checkBox->text();
@@ -183,7 +183,38 @@ void AppWindow::onCheckBoxStateChanged(int state) {
         }
         checkBox->setText(newTaskName); // regular task name
     }
+
+    //reorderCheckedTasks();
 }
+
+// void AppWindow::reorderCheckedTasks(){
+//     QList<QListWidgetItem*> checkedItems;
+//     QString text = "";
+
+//     for (int i = ui->lwToDoList->count() - 1; i >= 0; --i) {
+//         QListWidgetItem* item = ui->lwToDoList->item(i);
+//         QWidget* widget = ui->lwToDoList->itemWidget(item);
+
+//         if (widget && widget->inherits("QCheckBox")) {
+//             QCheckBox* checkBox = static_cast<QCheckBox*>(widget);
+//             if (checkBox->isChecked()) {
+
+//                 text = checkBox->text();
+
+//                 checkedItems.append(item);
+//                 ui->lwToDoList->takeItem(i);
+//                 --i;
+//             }
+//         }
+//     }
+
+//     if(!text.isEmpty()){
+//         Task task(text);
+
+//         this->m_user->getToDoList().addTask(task);
+//         addTaskToListWidget(task);
+//     }
+// }
 
 void AppWindow::clearFinishedTasks(){
     for (int i = ui->lwToDoList->count() - 1; i >= 0; --i) {

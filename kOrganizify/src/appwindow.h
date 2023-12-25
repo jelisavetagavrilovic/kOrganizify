@@ -47,6 +47,7 @@ private slots:
     void openSyncWindow();
     void populateFriends(const QList<QString>& friends);
     void clearFinishedTasks();
+    // void reorderCheckedTasks();
 
 private:
     Ui::AppWindow *ui;
