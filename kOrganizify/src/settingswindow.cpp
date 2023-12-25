@@ -29,20 +29,24 @@ SettingsWindow::SettingsWindow(Settings *settings, QWidget *parent)
         QString styleSheet = QString("background-color: %1").arg(color);
         ui->btnSave->setStyleSheet(styleSheet);
     });
+
+    connect(ui->btnSave, &QPushButton::clicked, this, &SettingsWindow::save);
 }
 
-void SettingsWindow::on_btnSave_clicked(){
+void SettingsWindow::save() {
     emit colorChanged(this->m_settings->getColor());
+    emit enabledNotifications(this->ui->cbNotifications->isChecked());
     this->close();
 }
 
-void SettingsWindow::setColor(QString color){
+void SettingsWindow::setColor(const QString color) {
     this->m_settings->setColor(color);
 }
 
-QString SettingsWindow::getColor(){
+QString SettingsWindow::getColor() const {
     return this->m_settings->getColor();
 }
+
 
 QString SettingsWindow::getColorNameFromValue(const QMap<QString, QString> &colorMap, const QString &value) {
     for (auto it = colorMap.begin(); it != colorMap.end(); ++it) {
@@ -51,6 +55,14 @@ QString SettingsWindow::getColorNameFromValue(const QMap<QString, QString> &colo
         }
     }
     return "";
+}
+
+void SettingsWindow::setNotifications(const bool notification) {
+    this->m_settings->setNotifications(notification);
+}
+
+bool SettingsWindow::getNotifications() const {
+    return this->m_settings->getNotifications();
 }
 
 SettingsWindow::~SettingsWindow()

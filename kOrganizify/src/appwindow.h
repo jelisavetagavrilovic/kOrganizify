@@ -39,6 +39,7 @@ public slots:
 
 private slots:
     void changeButtonColor(const QString &newColor);
+    void enabledNotifications(const bool enabled);
     void colorCell();
     void openEventWindow(int row, int column);
     void addTask();
