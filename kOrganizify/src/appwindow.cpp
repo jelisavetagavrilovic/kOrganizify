@@ -51,6 +51,8 @@ void AppWindow::openSyncWindow() {
 void AppWindow::changeButtonColor(const QString& newColor) {
     QString styleSheet = "background-color: " + newColor + ";";
     this->ui->btnSettings->setStyleSheet(styleSheet);
+    this->ui->btnClear->setStyleSheet(styleSheet);
+    this->ui->btnLogout->setStyleSheet(styleSheet);
     this->ui->leInput->setStyleSheet(styleSheet);
     this->ui->lblToDoList->setStyleSheet("color: " + newColor);
     this->ui->tableWidget->setStyleSheet(QString("QTableWidget::item { background-color: white; } QTableWidget{background-color: %1}").arg(newColor) + QString("QScrollBar:vertical { background-color: %1; }").arg(newColor));
@@ -85,6 +87,8 @@ void AppWindow::initialize() {
 
     QString styleSheet = QString("background-color: %1").arg(this->settingsWindow->getColor());
     this->ui->btnSettings->setStyleSheet(styleSheet);
+    this->ui->btnClear->setStyleSheet(styleSheet);
+    this->ui->btnLogout->setStyleSheet(styleSheet);
     this->ui->leInput->setStyleSheet(styleSheet);
     this->ui->lblToDoList->setStyleSheet("color: " + this->settingsWindow->getColor());
 
