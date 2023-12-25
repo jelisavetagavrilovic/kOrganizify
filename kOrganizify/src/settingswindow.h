@@ -24,6 +24,7 @@ public:
     Ui::SettingsWindow *ui;
 
 private slots:
+    QString getColorNameFromValue(const QMap<QString, QString> &colorMap, const QString &value);
     void on_btnSave_clicked();
 
 signals:

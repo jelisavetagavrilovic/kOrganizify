@@ -5,14 +5,8 @@ SettingsWindow::SettingsWindow(Settings *settings, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::SettingsWindow)
     , m_settings(settings)
-//,
-    // m_theme(Custom),
-    // m_notifications(true),
-    // m_nightMode(false)
 {
     ui->setupUi(this);
-
-//    QPalette btnSavePalette = ui->btnSave->palette();
 
     QMap<QString, QString> themeColors {
         {"Blue", "#0050B5"},
@@ -23,8 +17,11 @@ SettingsWindow::SettingsWindow(Settings *settings, QWidget *parent)
         {"Default", "#A5A9A0"}
     };
 
+    QString currentColor = m_settings->getColor();
+    ui->cbxDropTheme->setCurrentText(getColorNameFromValue(themeColors, currentColor));
+    this->setColor(currentColor);
 
-    connect(ui->dropTheme, QOverload<const QString &>::of(&QComboBox::currentTextChanged), [=](const QString &text){
+    connect(ui->cbxDropTheme, QOverload<const QString &>::of(&QComboBox::currentTextChanged), [=](const QString &text){
         QString color = themeColors.value(text, themeColors["Default"]);
 
         this->setColor(color);
@@ -45,6 +42,15 @@ void SettingsWindow::setColor(QString color){
 
 QString SettingsWindow::getColor(){
     return this->m_settings->getColor();
+}
+
+QString SettingsWindow::getColorNameFromValue(const QMap<QString, QString> &colorMap, const QString &value) {
+    for (auto it = colorMap.begin(); it != colorMap.end(); ++it) {
+        if (it.value() == value) {
+            return it.key();
+        }
+    }
+    return "";
 }
 
 SettingsWindow::~SettingsWindow()
