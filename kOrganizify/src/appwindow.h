@@ -46,6 +46,7 @@ private slots:
     void logoutUser();
     void openSyncWindow();
     void populateFriends(const QList<QString>& friends);
+    void clearFinishedTasks();
 
 private:
     Ui::AppWindow *ui;
@@ -53,7 +54,7 @@ private:
     SettingsWindow *settingsWindow;
     SyncWindow *syncWindow;
     EventWindow *eventWindow;
-//    ToDoList m_toDoList;
+    // ToDoList m_toDoList;
     Calendar* m_calendar;
 };
 

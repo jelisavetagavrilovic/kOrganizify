@@ -18,6 +18,7 @@ AppWindow::AppWindow(User *user, QWidget *parent)
     connect(ui->btnSettings, &QPushButton::clicked, this, &AppWindow::openSettings);
     connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
     connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button
+    connect(ui->btnClear, &QPushButton::clicked, this, &AppWindow::clearFinishedTasks);
 
     populateFriends(m_user->m_client->m_friends);
     connect(m_user->m_client, &Client::newUserLoggedIn, this, &AppWindow::handleNewUserLoggedIn);
@@ -147,22 +148,22 @@ void AppWindow::addTaskToListWidget(const Task &task) {
     checkBox->setFont(font);
     checkBox->setText(task.getName());
     checkBox->setStyleSheet("color: black;");
+    checkBox->
 
     connect(checkBox, &QCheckBox::stateChanged, this, &AppWindow::onCheckBoxStateChanged);
 }
 
 void AppWindow::onCheckBoxStateChanged(int state) {
-
     QCheckBox *checkBox = qobject_cast<QCheckBox*>(sender());
     if (checkBox && state == Qt::Checked) {
         QString taskName = checkBox->text();
         QString newTaskName = "";
         for (auto ch : taskName)
         {
-            newTaskName.append(u8"\u0336");
+            newTaskName.append(QChar(0x0336));
             newTaskName.push_back(ch);
         }
-        newTaskName.append(u8"\u0336");
+        newTaskName.append(QChar(0x0336));
 
         checkBox->setText(newTaskName);  // crossed task name
     }
@@ -178,21 +179,22 @@ void AppWindow::onCheckBoxStateChanged(int state) {
         }
         checkBox->setText(newTaskName); // regular task name
     }
-
-
-    // OVO JE ZA BRISANJE ELEMENTA
-    // QListWidgetItem *item = ui->lwToDoList->itemAt(checkBox->pos());
-    // if (item != nullptr) {
-
-
-    //     int row = ui->lwToDoList->row(item);
-    //     ui->lwToDoList->takeItem(row);
-    //     delete item;
-    //     this->m_user->getToDoList().removeTask(taskName);
-    // }
 }
 
+void AppWindow::clearFinishedTasks(){
+    for (int i = ui->lwToDoList->count() - 1; i >= 0; --i) {
+        QListWidgetItem* item = ui->lwToDoList->item(i);
+        QWidget* widget = ui->lwToDoList->itemWidget(item);
 
+        if (widget && widget->inherits("QCheckBox")) {
+            QCheckBox* checkBox = static_cast<QCheckBox*>(widget);
+            if (checkBox->isChecked()) {
+                ui->lwToDoList->takeItem(i);
+                delete item;
+            }
+        }
+    }
+}
 
 void AppWindow::openSettings() {
     settingsWindow->show();

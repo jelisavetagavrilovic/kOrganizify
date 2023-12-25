@@ -8,6 +8,15 @@
         "notifications": false
     },
     "tasks": [
+        {
+            "task": "task1"
+        },
+        {
+            "task": "task2"
+        },
+        {
+            "task": "task3"
+        }
     ],
     "username": "a"
 }
