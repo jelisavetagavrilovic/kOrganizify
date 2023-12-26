@@ -76,6 +76,11 @@ QLabel{
        <height>24</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit{
+	background-color: #4B4B4D;
+}</string>
+     </property>
     </widget>
     <widget class="QLineEdit" name="lePassword">
      <property name="geometry">
@@ -85,6 +90,11 @@ QLabel{
        <width>201</width>
        <height>24</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit{
+	background-color: #4B4B4D;
+}</string>
      </property>
     </widget>
     <widget class="QPushButton" name="btnLogin">
@@ -183,7 +193,7 @@ QPushButton:hover {
     <widget class="QLabel" name="lblUserChecked">
      <property name="geometry">
       <rect>
-       <x>220</x>
+       <x>230</x>
        <y>20</y>
        <width>51</width>
        <height>51</height>
@@ -202,7 +212,7 @@ QPushButton:hover {
     <widget class="QLabel" name="lblUserPlus">
      <property name="geometry">
       <rect>
-       <x>220</x>
+       <x>230</x>
        <y>20</y>
        <width>51</width>
        <height>51</height>
