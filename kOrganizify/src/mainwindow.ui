@@ -118,7 +118,7 @@ QLabel{
     font-size: 13px;
     margin: 4px 2px;
     cursor: pointer;
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
 QPushButton:hover {
@@ -167,7 +167,7 @@ QPushButton:hover {
     font-size: 13px;
     margin: 4px 2px;
     cursor: pointer;
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
 QPushButton:hover {

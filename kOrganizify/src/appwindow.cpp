@@ -51,7 +51,7 @@ void AppWindow::openSyncWindow() {
 
 void AppWindow::changeButtonColor(const QString& newColor) {
     QString styleSheet = "background-color: " + newColor + ";";
-    QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 12px;}");
+    QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 10px;}");
     this->ui->btnSettings->setStyleSheet(btnStyleSheet);
     this->ui->btnClear->setStyleSheet(btnStyleSheet);
     this->ui->btnLogout->setStyleSheet(btnStyleSheet);
@@ -87,7 +87,7 @@ void AppWindow::initialize() {
     this->eventWindow = new EventWindow(m_calendar);
 
     QString sourceDir = QCoreApplication::applicationDirPath();
-    QString path = QDir(sourceDir).filePath("../kOrganizify/src/images/background1.jpg");
+    QString path = QDir(sourceDir).filePath(":/images/images/sarinaPozadina1.png");
     QPixmap background(path);
 
     QPalette palette;
@@ -95,7 +95,7 @@ void AppWindow::initialize() {
     this->setPalette(palette);
 
     QString styleSheet = QString("background-color: %1; ").arg(this->settingsWindow->getColor());
-    QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 12px; color:black;}");
+    QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 10px; color:black;}");
     this->ui->btnSettings->setStyleSheet(btnStyleSheet);
     this->ui->btnClear->setStyleSheet(btnStyleSheet);
     this->ui->btnLogout->setStyleSheet(btnStyleSheet);
@@ -264,7 +264,7 @@ void AppWindow::clearFinishedTasks(){
 void AppWindow::openSettings() {
     settingsWindow->show();
     QString styleSheet = QString("background-color: %1; ").arg(this->settingsWindow->getColor());
-    QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 12px; color:black;}");
+    QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 10px; color:black;}");
     this->ui->btnSettings->setStyleSheet(btnStyleSheet);
     this->ui->btnSettings->update();
 }
