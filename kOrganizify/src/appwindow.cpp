@@ -188,6 +188,7 @@ void AppWindow::updateTableForSelectedDate() {
 
 void AppWindow::showWeeklyEvents(const QDate& selectedDate){
     ui->tableWidget->clearContents();
+    ui->tableWidget->clearSpans();
 
     QDate startDate = selectedDate.addDays(-selectedDate.dayOfWeek() + 1);
     QDate endDate = startDate.addDays(6);
@@ -196,7 +197,10 @@ void AppWindow::showWeeklyEvents(const QDate& selectedDate){
 
     for(const Event &event: weekEvents){
 
-        int row = event.getStartTime().time().hour();
+        int startHour = event.getStartTime().time().hour();
+        int endHour = event.getEndTime().time().hour();
+
+        int row = startHour;
         if(row < 0){
             row += 24;
         }
@@ -204,6 +208,12 @@ void AppWindow::showWeeklyEvents(const QDate& selectedDate){
         int column = event.getStartTime().date().dayOfWeek() - 1;
 
         QTableWidgetItem *item = new QTableWidgetItem(event.getTitle());
+
+        int duration = endHour - startHour;
+        qDebug() << "Duration: " << duration;
+        if (duration > 1){
+            ui->tableWidget->setSpan(row, column, duration, 1);
+        }
 
         ui->tableWidget->setItem(row, column, item);
     }
