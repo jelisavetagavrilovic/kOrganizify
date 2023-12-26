@@ -51,14 +51,17 @@ void AppWindow::openSyncWindow() {
 
 void AppWindow::changeButtonColor(const QString& newColor) {
     QString styleSheet = "background-color: " + newColor + ";";
-    this->ui->btnSettings->setStyleSheet(styleSheet);
-    this->ui->btnClear->setStyleSheet(styleSheet);
-    this->ui->btnLogout->setStyleSheet(styleSheet);
+    QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 12px;}");
+    this->ui->btnSettings->setStyleSheet(btnStyleSheet);
+    this->ui->btnClear->setStyleSheet(btnStyleSheet);
+    this->ui->btnLogout->setStyleSheet(btnStyleSheet);
     this->ui->leInput->setStyleSheet(styleSheet);
     this->ui->lblToDoList->setStyleSheet("color: " + newColor);
-    this->ui->tableWidget->setStyleSheet(QString("QTableWidget::item { background-color: white; } QTableWidget{background-color: %1}").arg(newColor) + QString("QScrollBar:vertical { background-color: %1; }").arg(newColor));
+    this->ui->tableWidget->setStyleSheet(QString("QTableWidget::item { background-color: white; } QTableWidget{background-color: %1}").arg(newColor));
     this->ui->tableWidget->horizontalHeader()->setStyleSheet(styleSheet);
     this->ui->tableWidget->verticalHeader()->setStyleSheet(styleSheet);
+    this->ui->calendarWidget->setStyleSheet(QString("QCalendarWidget QWidget#qt_calendar_navigationbar { color: black; background-color: %1;}"
+                                                    "QCalendarWidget QAbstractItemView:enabled { color: white; selection-background-color: %2 ;}").arg(newColor, newColor));
 }
 
 void AppWindow::initialize() {
@@ -91,13 +94,21 @@ void AppWindow::initialize() {
     palette.setBrush(this->backgroundRole(), QBrush(background));
     this->setPalette(palette);
 
-    QString styleSheet = QString("background-color: %1").arg(this->settingsWindow->getColor());
-    this->ui->btnSettings->setStyleSheet(styleSheet);
-    this->ui->btnClear->setStyleSheet(styleSheet);
-    this->ui->btnLogout->setStyleSheet(styleSheet);
+    QString styleSheet = QString("background-color: %1; ").arg(this->settingsWindow->getColor());
+    QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 12px; color:black;}");
+    this->ui->btnSettings->setStyleSheet(btnStyleSheet);
+    this->ui->btnClear->setStyleSheet(btnStyleSheet);
+    this->ui->btnLogout->setStyleSheet(btnStyleSheet);
     this->ui->leInput->setStyleSheet(styleSheet);
     this->ui->lblToDoList->setStyleSheet("color: " + this->settingsWindow->getColor());
 
+    this->ui->calendarWidget->setStyleSheet(QString("QCalendarWidget QWidget#qt_calendar_navigationbar {"
+                                                    "   color: black; background-color: %1;}"
+                                                    "QCalendarWidget QAbstractItemView:enabled {"
+                                                    "   color: white; selection-background-color: %2 ;}"
+                                                    "QCalendarWidget QToolButton:hover {"
+                                                    "    background-color: #3C5291;" // Boja pozadine kada se pređe mišem preko datuma
+                                                    "}").arg(this->settingsWindow->getColor(), this->settingsWindow->getColor()));
     // table
     this->ui->tableWidget->setStyleSheet(QString("QTableWidget::item { background-color: white; } QTableWidget{background-color: %1}").arg(this->settingsWindow->getColor()));
     this->ui->tableWidget->verticalScrollBar()->setStyleSheet("background-color: lightblue");
@@ -252,8 +263,9 @@ void AppWindow::clearFinishedTasks(){
 
 void AppWindow::openSettings() {
     settingsWindow->show();
-    QString styleSheet = QString("background-color: %1").arg(this->settingsWindow->getColor());
-    this->ui->btnSettings->setStyleSheet(styleSheet);
+    QString styleSheet = QString("background-color: %1; ").arg(this->settingsWindow->getColor());
+    QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 12px; color:black;}");
+    this->ui->btnSettings->setStyleSheet(btnStyleSheet);
     this->ui->btnSettings->update();
 }
 
