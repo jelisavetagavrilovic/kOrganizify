@@ -69,7 +69,8 @@ void AppWindow::initialize() {
     Settings& settings = m_user->getSettings();
     settingsWindow = new SettingsWindow(&settings, this);
     settingsWindow->setColor(settings.color());
-    ui->lwToDoList->setStyleSheet("background-color: #FCD299");
+    this->ui->lwToDoList->setStyleSheet("background-color: #FCD299");
+    this->ui->lwFriends->setStyleSheet("background-color: #E5E1E6;");
 
     this->setFixedSize(this->size());
     this->setAutoFillBackground(true);
