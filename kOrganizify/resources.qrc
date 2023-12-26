@@ -4,5 +4,7 @@
         <file>images/settings.png</file>
         <file>images/user-plus.svg</file>
         <file>images/user-check.svg</file>
+        <file>images/log-in.svg</file>
+        <file>images/kOrganizify.png</file>
     </qresource>
 </RCC>
