@@ -11,6 +11,8 @@ SettingsWindow::SettingsWindow(Settings *settings, QWidget *parent)
     // m_nightMode(false)
 {
     ui->setupUi(this);
+    ui->lblNotificationsOn->setVisible(false);
+
 
 //    QPalette btnSavePalette = ui->btnSave->palette();
 

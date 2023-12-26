@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1229</width>
+    <width>1276</width>
     <height>654</height>
    </rect>
   </property>
@@ -36,7 +36,7 @@
      <rect>
       <x>920</x>
       <y>30</y>
-      <width>191</width>
+      <width>251</width>
       <height>261</height>
      </rect>
     </property>
@@ -44,7 +44,7 @@
    <widget class="QLabel" name="lblToDoList">
     <property name="geometry">
      <rect>
-      <x>980</x>
+      <x>1004</x>
       <y>-5</y>
       <width>81</width>
       <height>41</height>
@@ -65,7 +65,7 @@
      <rect>
       <x>920</x>
       <y>300</y>
-      <width>191</width>
+      <width>251</width>
       <height>22</height>
      </rect>
     </property>
@@ -255,8 +255,8 @@
    <widget class="QPushButton" name="btnClear">
     <property name="geometry">
      <rect>
-      <x>1075</x>
-      <y>255</y>
+      <x>1130</x>
+      <y>250</y>
       <width>31</width>
       <height>31</height>
      </rect>
@@ -278,18 +278,24 @@
    <widget class="QPushButton" name="btnLogout">
     <property name="geometry">
      <rect>
-      <x>1130</x>
+      <x>1205</x>
       <y>90</y>
-      <width>81</width>
+      <width>41</width>
       <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>Logout</string>
+     <string/>
     </property>
     <property name="icon">
      <iconset resource="../resources.qrc">
-      <normaloff>:/images/images/log-out.svg</normaloff>:/images/images/log-out.svg</iconset>
+      <normaloff>:/images/images/user-x.svg</normaloff>:/images/images/user-x.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
     </property>
    </widget>
    <widget class="QCalendarWidget" name="calendarWidget">
@@ -305,7 +311,7 @@
    <widget class="QPushButton" name="btnSettings">
     <property name="geometry">
      <rect>
-      <x>1170</x>
+      <x>1205</x>
       <y>30</y>
       <width>41</width>
       <height>41</height>
@@ -320,7 +326,30 @@
     </property>
     <property name="iconSize">
      <size>
-      <width>28</width>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnSmartPlan">
+    <property name="geometry">
+     <rect>
+      <x>1205</x>
+      <y>150</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../resources.qrc">
+      <normaloff>:/images/images/calendar.svg</normaloff>:/images/images/calendar.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
       <height>30</height>
      </size>
     </property>
@@ -331,7 +360,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1229</width>
+     <width>1276</width>
      <height>20</height>
     </rect>
    </property>

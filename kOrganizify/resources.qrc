@@ -10,5 +10,11 @@
         <file>images/log-out.svg</file>
         <file>images/sarinaPozadina1.png</file>
         <file>images/trash-2.svg</file>
+        <file>images/user-x.svg</file>
+        <file>images/bell-off.svg</file>
+        <file>images/bell.svg</file>
+        <file>images/calendar.svg</file>
+        <file>images/color-palette.png</file>
+        <file>images/save.svg</file>
     </qresource>
 </RCC>

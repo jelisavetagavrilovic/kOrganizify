@@ -78,7 +78,7 @@ QLabel{
      </property>
      <property name="styleSheet">
       <string notr="true">QLineEdit{
-	background-color: #4B4B4D;
+	background-color: #B4B19A;
 }</string>
      </property>
     </widget>
@@ -93,7 +93,7 @@ QLabel{
      </property>
      <property name="styleSheet">
       <string notr="true">QLineEdit{
-	background-color: #4B4B4D;
+	background-color: #B4B19A;
 }</string>
      </property>
     </widget>

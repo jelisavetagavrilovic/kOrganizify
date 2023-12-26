@@ -55,13 +55,14 @@ void AppWindow::changeButtonColor(const QString& newColor) {
     this->ui->btnSettings->setStyleSheet(btnStyleSheet);
     this->ui->btnClear->setStyleSheet(btnStyleSheet);
     this->ui->btnLogout->setStyleSheet(btnStyleSheet);
+    this->ui->btnSmartPlan->setStyleSheet(btnStyleSheet);
     this->ui->leInput->setStyleSheet(styleSheet);
     this->ui->lblToDoList->setStyleSheet("color: " + newColor);
     this->ui->tableWidget->setStyleSheet(QString("QTableWidget::item { background-color: white; } QTableWidget{background-color: %1}").arg(newColor));
     this->ui->tableWidget->horizontalHeader()->setStyleSheet(styleSheet);
     this->ui->tableWidget->verticalHeader()->setStyleSheet(styleSheet);
     this->ui->calendarWidget->setStyleSheet(QString("QCalendarWidget QWidget#qt_calendar_navigationbar { color: black; background-color: %1;}"
-                                                    "QCalendarWidget QAbstractItemView:enabled { color: white; selection-background-color: %2 ;}").arg(newColor, newColor));
+                                                    "QCalendarWidget QAbstractItemView:enabled {selection-background-color: %2 ;}").arg(newColor, newColor));
 }
 
 void AppWindow::initialize() {
@@ -99,6 +100,7 @@ void AppWindow::initialize() {
     this->ui->btnSettings->setStyleSheet(btnStyleSheet);
     this->ui->btnClear->setStyleSheet(btnStyleSheet);
     this->ui->btnLogout->setStyleSheet(btnStyleSheet);
+    this->ui->btnSmartPlan->setStyleSheet(btnStyleSheet);
     this->ui->leInput->setStyleSheet(styleSheet);
     this->ui->lblToDoList->setStyleSheet("color: " + this->settingsWindow->getColor());
 
