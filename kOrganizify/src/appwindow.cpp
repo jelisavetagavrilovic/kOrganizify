@@ -105,7 +105,7 @@ void AppWindow::initialize() {
     this->ui->calendarWidget->setStyleSheet(QString("QCalendarWidget QWidget#qt_calendar_navigationbar {"
                                                     "   color: black; background-color: %1;}"
                                                     "QCalendarWidget QAbstractItemView:enabled {"
-                                                    "   color: white; selection-background-color: %2 ;}"
+                                                    "   selection-background-color: %2 ;}"
                                                     "QCalendarWidget QToolButton:hover {"
                                                     "    background-color: #3C5291;" // Boja pozadine kada se pređe mišem preko datuma
                                                     "}").arg(this->settingsWindow->getColor(), this->settingsWindow->getColor()));
