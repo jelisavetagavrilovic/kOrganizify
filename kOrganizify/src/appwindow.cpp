@@ -96,10 +96,12 @@ void AppWindow::initialize() {
     this->ui->tableWidget->verticalScrollBar()->setStyleSheet("background-color: lightblue");
     this->ui->tableWidget->horizontalHeader()->setStyleSheet("background-color: " + this->settingsWindow->getColor());
     this->ui->tableWidget->verticalHeader()->setStyleSheet("background-color: " + this->settingsWindow->getColor());
-
     int columnWidth = 110;
     for (int i = 0; i < ui->tableWidget->columnCount(); ++i)
         this->ui->tableWidget->setColumnWidth(i, columnWidth);
+    int scrollBarValue = this->ui->tableWidget->verticalScrollBar()->maximum();
+    this->ui->tableWidget->verticalScrollBar()->setValue(scrollBarValue);
+
 
 
     connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
