@@ -20,3 +20,10 @@ void BasicEvent::setDuration(const int duration) {
 void BasicEvent::deleteString() {
     m_title.clear();
 }
+
+bool BasicEvent::operator==(const BasicEvent &other) const {
+    return (
+        m_title == other.m_title &&
+        m_duration == other.m_duration
+        );
+}

@@ -2,10 +2,10 @@
 
 Event::Event() : priority(CustomEventPriority::NoPriority) {}
 
-Event::Event(const BasicEvent &basicEvent) {
-    setTitle(basicEvent.getTitle());
-    setDuration(basicEvent.getDuration());
-}
+// Event::Event(const BasicEvent &basicEvent) {
+//     setTitle(basicEvent.getTitle());
+//     setDuration(basicEvent.getDuration());
+// }
 
 QString Event::getTitle() const {
     return BasicEvent::getTitle();

@@ -19,24 +19,28 @@ public:
     QJsonValue toJson() const override;
     void fromJson(const QJsonObject &jsonObject) override;
 
-    void addEvent(const Event &event);
-    void removeEvent(const Event &event);
+    //void addEvent(const Event &event);
+    void addEvent(const BasicEvent &basicEvent);
+    // void removeEvent(const Event &event);
+    void removeEvent(const BasicEvent &basicEvent);
     void updateEvent(const Event &event);
+
     QList<Event> getEvents() const;
-    Event getEvent(const int index);
+    BasicEvent getBasicEvent(const int index);
 
-
-    void addBasicEvent(const BasicEvent &basicEvent);
-
-    int size();
+    int sizeBasic();
 
     void print();
 
     void clear();
 
 private:
-    QList<Event> m_events;
+    // QList<Event> m_events;
     int m_sizeFixedEvents;
+
+    QList<BasicEvent> m_basicEvents;
+    QList<Event> m_events;
 };
+
 
 #endif // CALENDAR_H

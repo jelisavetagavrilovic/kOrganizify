@@ -20,7 +20,7 @@ public:
     ~BasicEventWindow();
 
 private slots:
-    void addEvent();
+    bool addEvent();
     void removeEvent();
     void generate();
     void nextEvent();
@@ -30,10 +30,12 @@ private slots:
 
 private:
     Ui::BasicEventWindow *ui;
-    BasicEvent *m_event;
+    BasicEvent *m_basicEvent;
     Calendar *m_calendar;
+    Calendar *m_basicCalendar;
     int m_currentIndex;
-    int m_startIndex;
+
+
 };
 
 #endif // BASICEVENTWINDOW_H

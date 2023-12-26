@@ -53,27 +53,39 @@ void Calendar::saveData(const QString &username) {
     SaveLoad::saveData(username);
 }
 
-void Calendar::addEvent(const Event &event){
-    int index = 0;
-    for (const Event &e : m_events) {
-        if (event.getStartTime() < e.getStartTime() ||
-            (event.getStartTime() == e.getStartTime() && (event.getEndTime() < e.getEndTime()) ||
-            (event.getEndTime() == e.getEndTime() && event.getTitle() < e.getTitle()))) {
-            break;
-        }
-        index++;
+// void Calendar::addEvent(const Event &event){
+//     int index = 0;
+//     for (const Event &e : m_events) {
+//         if (event.getStartTime() < e.getStartTime() ||
+//             (event.getStartTime() == e.getStartTime() && (event.getEndTime() < e.getEndTime()) ||
+//             (event.getEndTime() == e.getEndTime() && event.getTitle() < e.getTitle()))) {
+//             break;
+//         }
+//         index++;
+
+//     }
+
+//     m_events.insert(index, event);
+//     m_sizeFixedEvents++;
+
+//     // qDebug() << m_events[index].getTitle() << m_events[index].getStartTime() << m_events[index].getEndTime() <<
+//     //     m_events[index].getDescription() << m_events[index].getLocation();
+// }
+
+void Calendar::removeEvent(const BasicEvent &basicEvent) {
+    const Event *eventPtr = dynamic_cast<const Event*>(&basicEvent);
+    if (eventPtr) {
+        const Event &event = *eventPtr;
+        qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime() <<
+            event.getDescription() << event.getLocation();
+
+        m_events.removeOne(event);
+        clear();
+    } else {
+        const BasicEvent &nonEvent = basicEvent;
+        m_basicEvents.removeOne(nonEvent);
 
     }
-
-    m_events.insert(index, event);
-    m_sizeFixedEvents++;
-
-    // qDebug() << m_events[index].getTitle() << m_events[index].getStartTime() << m_events[index].getEndTime() <<
-    //     m_events[index].getDescription() << m_events[index].getLocation();
-}
-
-void Calendar::removeEvent(const Event &event){
-    m_events.removeOne(event);
 }
 
 void Calendar::updateEvent(const Event &event){
@@ -87,36 +99,52 @@ QList<Event> Calendar::getEvents() const {
     return m_events;
 }
 
-Event Calendar::getEvent(const int index) {
-    return m_events[index];
+BasicEvent Calendar::getBasicEvent(const int index) {
+    return m_basicEvents[index];
 }
 
-void Calendar::addBasicEvent(const BasicEvent &basicEvent) {
-    qDebug() << "kalendar" << basicEvent.getTitle() << basicEvent.getDuration();
+void Calendar::addEvent(const BasicEvent &basicEvent) {
+    // Provera tipa korišćenjem dynamic_cast
+    const Event *eventPtr = dynamic_cast<const Event*>(&basicEvent);
 
-    qDebug() << m_events.size();
-    Event event(basicEvent);
-
-    for (int index = m_sizeFixedEvents; index < m_events.size(); index++) {
-        qDebug() << m_events[index].getTitle() << m_events[index].getStartTime() << m_events[index].getEndTime() <<
-            m_events[index].getDescription() << m_events[index].getLocation();
-
+    if (eventPtr) {
+        const Event &event = *eventPtr;
         qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime() <<
             event.getDescription() << event.getLocation();
-        if(&m_events[index] == &event)
-            return;
+
+        int index = 0;
+        for (const Event &e : m_events) {
+            if (event.getStartTime() < e.getStartTime() ||
+                (event.getStartTime() == e.getStartTime() && (event.getEndTime() < e.getEndTime()) ||
+                (event.getEndTime() == e.getEndTime() && event.getTitle() < e.getTitle()))) {
+                break;
+            }
+            index++;
+
+        }
+        m_events.insert(index, event);
+    } else {
+        const BasicEvent &nonEvent = basicEvent;
+
+        qDebug() << nonEvent.getTitle() << nonEvent.getDuration();
+
+        for (int index = 0; index < m_basicEvents.size(); index++)
+            if(m_basicEvents[index] == basicEvent)
+                return;
+
+        m_basicEvents.append(nonEvent);
     }
-    m_events.append(event);
 }
 
-int Calendar::size() {
-    return m_events.size();
+int Calendar::sizeBasic() {
+    return m_basicEvents.size();
 }
+
 
 void Calendar::print() {
-    for (int index = 0; index < m_events.size(); index++)
-        qDebug() << m_events[index].getTitle() << m_events[index].getStartTime() << m_events[index].getEndTime() <<
-            m_events[index].getDescription() << m_events[index].getLocation();
+    // for (int index = 0; index < m_events.size(); index++)
+    //     qDebug() << m_events[index].getTitle() << m_events[index].getStartTime() << m_events[index].getEndTime() <<
+    //         m_events[index].getDescription() << m_events[index].getLocation();
 
 }
 
