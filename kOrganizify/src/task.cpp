@@ -1,9 +1,12 @@
 #include "task.h"
 
 //check
-Task::Task(QString name /*= "Add Task"*/)
-    : m_name(name) {
-}
+Task::Task() {}
+
+Task::Task(QString name)
+    : m_name(name)
+    , m_isChecked(false)
+{}
 
 void Task::setName(const QString newName){
     this->m_name = newName;
@@ -11,6 +14,14 @@ void Task::setName(const QString newName){
 
 QString Task::getName() const{
     return this->m_name;
+}
+
+bool Task::getIsChecked() const{
+    return this->m_isChecked;
+}
+
+void Task::setIsChecked(const bool isChecked) {
+    this->m_isChecked = isChecked;
 }
 
 bool Task::operator==(const Task &other) const {

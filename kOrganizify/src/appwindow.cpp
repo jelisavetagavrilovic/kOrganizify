@@ -21,10 +21,11 @@ AppWindow::AppWindow(User *user, QWidget *parent)
     connect(settingsWindow, &SettingsWindow::enabledNotifications, m_notifications, &Notifications::enabledNotifications);
     connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
     connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button
+    connect(ui->btnClear, &QPushButton::clicked, this, &AppWindow::clearFinishedTasks);
 
     populateFriends(m_user->m_client->m_friends);
     connect(m_user->m_client, &Client::newUserLoggedIn, this, &AppWindow::handleNewUserLoggedIn);
-    connect(m_user->m_client, &Client::disconnectedUser, this, &AppWindow::handleUserDisconnected);    
+    connect(m_user->m_client, &Client::disconnectedUser, this, &AppWindow::handleUserDisconnected);
 }
 
 void AppWindow::handleNewUserLoggedIn(const QString& username) {
@@ -53,6 +54,8 @@ void AppWindow::openSyncWindow() {
 void AppWindow::changeButtonColor(const QString& newColor) {
     QString styleSheet = "background-color: " + newColor + ";";
     this->ui->btnSettings->setStyleSheet(styleSheet);
+    this->ui->btnClear->setStyleSheet(styleSheet);
+    this->ui->btnLogout->setStyleSheet(styleSheet);
     this->ui->leInput->setStyleSheet(styleSheet);
     this->ui->lblToDoList->setStyleSheet("color: " + newColor);
     this->ui->tableWidget->setStyleSheet(QString("QTableWidget::item { background-color: white; } QTableWidget{background-color: %1}").arg(newColor) + QString("QScrollBar:vertical { background-color: %1; }").arg(newColor));
@@ -72,9 +75,11 @@ void AppWindow::initialize() {
 
     Settings& settings = m_user->getSettings();
     settingsWindow = new SettingsWindow(&settings, this);
+
     settingsWindow->setColor(settings.getColor());
     settingsWindow->ui->cbNotifications->setChecked(m_user->getSettings().getNotifications());
-    ui->lwToDoList->setStyleSheet("background-color: #FCD299");
+    this->ui->lwToDoList->setStyleSheet("background-color: #FCD299");
+    this->ui->lwFriends->setStyleSheet("background-color: #E5E1E6;");
 
     this->setFixedSize(this->size());
     this->setAutoFillBackground(true);
@@ -94,6 +99,8 @@ void AppWindow::initialize() {
 
     QString styleSheet = QString("background-color: %1").arg(this->settingsWindow->getColor());
     this->ui->btnSettings->setStyleSheet(styleSheet);
+    this->ui->btnClear->setStyleSheet(styleSheet);
+    this->ui->btnLogout->setStyleSheet(styleSheet);
     this->ui->leInput->setStyleSheet(styleSheet);
     this->ui->lblToDoList->setStyleSheet("color: " + this->settingsWindow->getColor());
 
@@ -150,6 +157,12 @@ void AppWindow::addTaskToListWidget(const Task &task) {
     QCheckBox *checkBox = new QCheckBox(task.getName());
     ui->lwToDoList->setItemWidget(item, checkBox);
 
+    QFont font;
+    font.setPointSize(15); // Postavljanje veličine fonta na 20 piksela za čekboks tekst
+    checkBox->setFont(font);
+    checkBox->setText(task.getName());
+    checkBox->setStyleSheet("color: black;");
+
     connect(checkBox, &QCheckBox::stateChanged, this, &AppWindow::onCheckBoxStateChanged);
 }
 
@@ -157,15 +170,77 @@ void AppWindow::onCheckBoxStateChanged(int state) {
     QCheckBox *checkBox = qobject_cast<QCheckBox*>(sender());
     if (checkBox && state == Qt::Checked) {
         QString taskName = checkBox->text();
+        QString newTaskName = "";
+        for (auto ch : taskName)
+        {
+            newTaskName.append(QChar(0x0336));
+            newTaskName.push_back(ch);
+        }
+        newTaskName.append(QChar(0x0336));
 
-        this->m_user->getToDoList().removeTask(taskName);
+        checkBox->setText(newTaskName);  // crossed task name
 
-        // remmoving elements from QListWidget
-        QListWidgetItem *item = ui->lwToDoList->itemAt(checkBox->pos());
-        if (item != nullptr) {
-            int row = ui->lwToDoList->row(item);
-            ui->lwToDoList->takeItem(row);
-            delete item;
+    }
+    else if (checkBox && state == Qt::Unchecked){
+        QString taskName = checkBox->text();
+        QString newTaskName = "";
+
+        int i = 0;
+        for (auto ch : taskName){
+            if(i % 2 == 1)
+                newTaskName.push_back(ch);
+            i++;
+        }
+        checkBox->setText(newTaskName); // regular task name
+    }
+
+    //reorderCheckedTasks();
+}
+
+// QString AppWindow::crossTask(int index) {
+
+// }
+
+// void AppWindow::reorderCheckedTasks(){
+//     QList<QListWidgetItem*> checkedItems;
+//     QString text = "";
+
+//     for (int i = ui->lwToDoList->count() - 1; i >= 0; --i) {
+//         QListWidgetItem* item = ui->lwToDoList->item(i);
+//         QWidget* widget = ui->lwToDoList->itemWidget(item);
+
+//         if (widget && widget->inherits("QCheckBox")) {
+//             QCheckBox* checkBox = static_cast<QCheckBox*>(widget);
+//             if (checkBox->isChecked()) {
+
+//                 text = checkBox->text();
+
+//                 checkedItems.append(item);
+//                 ui->lwToDoList->takeItem(i);
+//                 --i;
+//             }
+//         }
+//     }
+
+//     if(!text.isEmpty()){
+//         Task task(text);
+
+//         this->m_user->getToDoList().addTask(task);
+//         addTaskToListWidget(task);
+//     }
+// }
+
+void AppWindow::clearFinishedTasks(){
+    for (int i = ui->lwToDoList->count() - 1; i >= 0; --i) {
+        QListWidgetItem* item = ui->lwToDoList->item(i);
+        QWidget* widget = ui->lwToDoList->itemWidget(item);
+
+        if (widget && widget->inherits("QCheckBox")) {
+            QCheckBox* checkBox = static_cast<QCheckBox*>(widget);
+            if (checkBox->isChecked()) {
+                ui->lwToDoList->takeItem(i);
+                delete item;
+            }
         }
     }
 }

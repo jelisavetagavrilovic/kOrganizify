@@ -5,6 +5,7 @@
 #include <QMainWindow>
 #include <QPixmap>
 #include <QCheckBox>
+#include <QString>
 #include <QDir>
 #include <QVector>
 #include <QScrollBar>
@@ -44,10 +45,13 @@ private slots:
     void openEventWindow(int row, int column);
     void addTask();
     void onCheckBoxStateChanged(int state);
+    // Qstring crossTask(int index);
     void openSettings();
     void logoutUser();
     void openSyncWindow();
     void populateFriends(const QList<QString>& friends);
+    void clearFinishedTasks();
+    // void reorderCheckedTasks();
 
 private:
     Ui::AppWindow *ui;
@@ -55,7 +59,7 @@ private:
     SettingsWindow *settingsWindow;
     SyncWindow *syncWindow;
     EventWindow *eventWindow;
-//    ToDoList m_toDoList;
+    // ToDoList m_toDoList;
     Calendar* m_calendar;
     Notifications* m_notifications;
 };

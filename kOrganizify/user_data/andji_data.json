@@ -1,6 +1,20 @@
 {
     "events": [
         {
+            "description": "Concert Under the Stars",
+            "endTime": "2023-12-23T22:00:00",
+            "location": "Amphitheater",
+            "startTime": "2023-12-23T19:30:00",
+            "title": "Starry Night Concert"
+        },
+        {
+            "description": "Book Launch: ",
+            "endTime": "2023-12-24T19:00:00",
+            "location": "Book Haven",
+            "startTime": "2023-12-24T17:30:00",
+            "title": "Mysteries Unveiled"
+        },
+        {
             "description": "Art Exhibition: Beyond Boundaries",
             "endTime": "2023-12-20T20:00:00",
             "location": "Gallery X",
@@ -20,20 +34,6 @@
             "location": "City Park",
             "startTime": "2023-12-24T23:23:00",
             "title": "Run for a Cause"
-        },  
-        {
-            "description": "Concert Under the Stars",
-            "endTime": "2023-12-23T22:00:00",
-            "location": "Amphitheater",
-            "startTime": "2023-12-23T19:30:00",
-            "title": "Starry Night Concert"
-        },
-        {
-            "description": "Book Launch: ",
-            "endTime": "2023-12-24T19:00:00",
-            "location": "Book Haven",
-            "startTime": "2023-12-24T17:30:00",
-            "title": "Mysteries Unveiled"
         },
         {
             "description": "Winter Wonderland Festival",
@@ -59,13 +59,19 @@
     ],
     "password": "andji",
     "settings": {
-        "color": "#9063CD",
+        "color": "#D62598",
         "nightMode": true,
         "notifications": false
     },
     "tasks": [
         {
             "task": "videti markica "
+        },
+        {
+            "task": "hcscnjcd"
+        },
+        {
+            "task": "cao"
         }
     ],
     "username": "andji"

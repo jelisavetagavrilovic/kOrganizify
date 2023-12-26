@@ -31,6 +31,7 @@ public:
     void removeTask(const Task task);
     QString toString();
 
+
 signals:
 };
 
