@@ -21,7 +21,7 @@ AppWindow::AppWindow(User *user, QWidget *parent)
 
     populateFriends(m_user->m_client->m_friends);
     connect(m_user->m_client, &Client::newUserLoggedIn, this, &AppWindow::handleNewUserLoggedIn);
-    connect(m_user->m_client, &Client::disconnectedUser, this, &AppWindow::handleUserDisconnected);    
+    connect(m_user->m_client, &Client::disconnectedUser, this, &AppWindow::handleUserDisconnected);
 }
 
 void AppWindow::handleNewUserLoggedIn(const QString& username) {
@@ -191,7 +191,7 @@ void AppWindow::showWeeklyEvents(const QDate& selectedDate){
 
     for(const Event &event: weekEvents){
 
-        int row = event.getStartTime().time().hour() - 6;
+        int row = event.getStartTime().time().hour();
         if(row < 0){
             row += 24;
         }
