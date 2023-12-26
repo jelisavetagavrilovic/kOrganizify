@@ -3,6 +3,7 @@
 #include "ui_appwindow.h"
 #include "settingswindow.h"
 #include "mainwindow.h"
+#include <QStyle>
 
 AppWindow::AppWindow(User *user, QWidget *parent)
     : QMainWindow(parent)
@@ -109,6 +110,11 @@ void AppWindow::initialize() {
     this->ui->tableWidget->verticalScrollBar()->setValue(scrollBarValue);
 
 
+    // QStyle *macStyle = new QFusionStyle;
+    // this->ui->btnClear->setStyle(macStyle);
+    // this->ui->btnLogout->setStyle(macStyle);
+    // this->ui->btnSettings->setStyle(macStyle);
+
 
     connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
     connect(ui->tableWidget, &QTableWidget::cellClicked, this, &AppWindow::openEventWindowForCell);
@@ -161,7 +167,7 @@ void AppWindow::addTaskToListWidget(const Task &task) {
     ui->lwToDoList->setItemWidget(item, checkBox);
 
     QFont font;
-    font.setPointSize(15); // Postavljanje veličine fonta na 20 piksela za čekboks tekst
+    font.setPointSize(11); // Postavljanje veličine fonta na 20 piksela za čekboks tekst
     checkBox->setFont(font);
     checkBox->setText(task.getName());
     checkBox->setStyleSheet("color: black;");

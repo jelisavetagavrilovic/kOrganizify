@@ -6,21 +6,30 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>533</width>
-    <height>345</height>
+    <width>352</width>
+    <height>453</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">MainWindow{
+	background-color: #F7F4F8;
+}
+
+QLabel{
+	color: black;
+}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGroupBox" name="gbLogin">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>10</y>
-      <width>491</width>
-      <height>291</height>
+      <x>-70</x>
+      <y>-10</y>
+      <width>501</width>
+      <height>301</height>
      </rect>
     </property>
     <property name="title">
@@ -82,16 +91,16 @@
      <property name="geometry">
       <rect>
        <x>190</x>
-       <y>170</y>
+       <y>180</y>
        <width>89</width>
        <height>41</height>
       </rect>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-    background-color: #7BB2DD;
+    background-color: #D0443F;
     border: none;
-    color: white;
+    color: black;
     padding: 10px 24px;
     text-align: center;
     text-decoration: none;
@@ -103,7 +112,7 @@
 }
 
 QPushButton:hover {
-    background-color: #83BEEB;
+    background-color: #DD7875;
 }</string>
      </property>
      <property name="text">
@@ -126,7 +135,7 @@ QPushButton:hover {
     <widget class="QPushButton" name="btnRegister">
      <property name="geometry">
       <rect>
-       <x>270</x>
+       <x>280</x>
        <y>240</y>
        <width>101</width>
        <height>41</height>
@@ -134,9 +143,9 @@ QPushButton:hover {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-    background-color: #7BB2DD;
+    background-color: #D0443F;
     border: none;
-    color: white;
+    color: black;
     padding: 10px 24px;
     text-align: center;
     text-decoration: none;
@@ -148,7 +157,7 @@ QPushButton:hover {
 }
 
 QPushButton:hover {
-    background-color: #83BEEB;
+    background-color: #DD7875;
 }</string>
      </property>
      <property name="text">
@@ -171,28 +180,63 @@ QPushButton:hover {
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="lblLoginIcon">
+    <widget class="QLabel" name="lblUserChecked">
      <property name="geometry">
       <rect>
-       <x>230</x>
+       <x>220</x>
        <y>20</y>
-       <width>31</width>
-       <height>31</height>
+       <width>51</width>
+       <height>51</height>
       </rect>
      </property>
      <property name="text">
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>../../../Desktop/ikonice/login.png</pixmap>
+      <pixmap resource="../resources.qrc">:/images/images/user-check.svg</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
      </property>
-     <property name="indent">
-      <number>-2</number>
+    </widget>
+    <widget class="QLabel" name="lblUserPlus">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>20</y>
+       <width>51</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="../resources.qrc">:/images/images/user-plus.svg</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
      </property>
     </widget>
+   </widget>
+   <widget class="QLabel" name="lblPoster">
+    <property name="geometry">
+     <rect>
+      <x>-20</x>
+      <y>290</y>
+      <width>381</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../resources.qrc">:/images/images/kOrganizifyPoster.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -200,13 +244,15 @@ QPushButton:hover {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>533</width>
-     <height>22</height>
+     <width>352</width>
+     <height>20</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
         setWindowTitle("Login");
 
     ui->lblStatus->setVisible(false);
+        ui->lblUserPlus->setVisible(false);
     ui->lePassword->setEchoMode(QLineEdit::Password);
 
     connect(ui->btnLogin, &QPushButton::clicked, this, &MainWindow::loginUser);
@@ -50,6 +51,8 @@ void MainWindow::loginUser() {
 
 void MainWindow::registerUser()
 {
+    ui->lblUserPlus->setVisible(true);
+    ui->lblUserChecked->setVisible(false);
     QString username = ui->leUsername->text();
     QString password = ui->lePassword->text();
 
