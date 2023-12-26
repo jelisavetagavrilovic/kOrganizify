@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->lePassword->setEchoMode(QLineEdit::Password);
 
     connect(ui->btnLogin, &QPushButton::clicked, this, &MainWindow::loginUser);
+    connect(ui->lePassword, &QLineEdit::returnPressed, this, &MainWindow::loginUser);
     connect(ui->btnRegister, &QPushButton::clicked, this, &MainWindow::registerUser);
 }
 
