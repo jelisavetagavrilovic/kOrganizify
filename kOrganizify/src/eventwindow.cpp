@@ -8,10 +8,10 @@ EventWindow::EventWindow(Calendar* calendar, QWidget *parent)
     , m_calendar(calendar)
 {
     ui->setupUi(this);
-    connect(ui->btnSave, &QPushButton::clicked, this, &EventWindow::on_btnSave_clicked);
+    connect(ui->btnSave, &QPushButton::clicked, this, &EventWindow::onSaveButtonClicked);
 }
 
-void EventWindow::on_btnSave_clicked()
+void EventWindow::onSaveButtonClicked()
 {
     // create new event
     Event event;
@@ -37,6 +37,11 @@ void EventWindow::on_btnSave_clicked()
 
     qDebug() << "Event saved to calendar: " << event.getTitle();
 
+    QList<Event> weekEvents = m_calendar->getEventsForWeek(QDate(2000, 1, 1), QDate(2000, 1, 7));
+    for (const Event &e : weekEvents) {
+        qDebug() << "Event in weekly calendar: " << e.getTitle();
+    }
+
     this->close();
 
     //qDebug() << "title: " << event.getTitle();
@@ -44,6 +49,13 @@ void EventWindow::on_btnSave_clicked()
     //qDebug() << "end date and time: " << event.getEndTime();
     //qDebug() << "description: " << event.getDescription();
     //qDebug() << "location: " << event.getLocation();
+}
+
+void EventWindow::setDateAndTime(const QDateTime &dateTime){
+    ui->deDateStart->setDateTime(dateTime);
+    ui->teTimeStart->setDateTime(dateTime);
+    ui->deDateEnd->setDateTime(dateTime);
+    ui->teTimeEnd->setDateTime(dateTime.addSecs(3600));
 }
 
 EventWindow::~EventWindow()

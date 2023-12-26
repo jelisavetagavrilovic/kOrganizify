@@ -15,6 +15,7 @@ class EventWindow : public QWidget
 public:
     explicit EventWindow(Calendar* calendar, QWidget *parent = nullptr);
     ~EventWindow();
+    void setDateAndTime(const QDateTime &dateTime);
 
 private:
     Ui::EventWindow *ui;
@@ -25,7 +26,7 @@ signals:
 
 private slots:
     // void on_btnGenerate_clicked();
-    void on_btnSave_clicked();
+    void onSaveButtonClicked();
 };
 
 #endif // EVENTWINDOW_H

@@ -27,11 +27,9 @@ public:
 
     QList<Event> getEvents() const;
     BasicEvent getBasicEvent(const int index);
-
     int sizeBasic();
-
     void print();
-
+    QList<Event> getEventsForWeek(const QDate& startDate, const QDate& endDate) const;
     void clear();
 
 private:

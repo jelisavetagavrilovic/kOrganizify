@@ -1,5 +1,14 @@
 <RCC>
     <qresource prefix="/images">
         <file>images/kOrganizifyPoster.png</file>
+        <file>images/settings.png</file>
+        <file>images/user-plus.svg</file>
+        <file>images/user-check.svg</file>
+        <file>images/log-in.svg</file>
+        <file>images/kOrganizify.png</file>
+        <file>images/settings.svg</file>
+        <file>images/log-out.svg</file>
+        <file>images/sarinaPozadina1.png</file>
+        <file>images/trash-2.svg</file>
     </qresource>
 </RCC>
