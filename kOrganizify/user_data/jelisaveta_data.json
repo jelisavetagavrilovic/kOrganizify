@@ -29,12 +29,16 @@
     },
     "tasks": [
         {
+            "isChecked": false,
+            "task": "cao"
+        },
+        {
             "isChecked": true,
-            "task": "test"
+            "task": "ovo"
         },
         {
             "isChecked": false,
-            "task": "cao"
+            "task": "radi"
         }
     ],
     "username": "jelisaveta"

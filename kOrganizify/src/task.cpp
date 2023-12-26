@@ -1,5 +1,7 @@
 #include "task.h"
 
+#include <QDebug>
+
 //check
 Task::Task() {}
 

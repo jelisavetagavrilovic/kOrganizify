@@ -68,8 +68,8 @@ void AppWindow::enabledNotifications(const bool enabled) {
 }
 
 void AppWindow::initialize() {
-    ToDoList& toDoList = m_user->getToDoList();
-    const QVector<Task>& tasks = toDoList.getTasks();
+    m_toDoList = &m_user->getToDoList();
+    const QVector<Task>& tasks = m_toDoList->getTasks();
     for (const Task& task : tasks)
         addTaskToListWidget(task);
 
@@ -137,8 +137,7 @@ void AppWindow::colorCell(){
     // this->ui->tableWidget->setStyleSheet("background-color: " + color + ";");
 }
 
-void AppWindow::addTask()
-{
+void AppWindow::addTask() {
     const auto text = ui->leInput->text();
 
     if(!text.isEmpty()){
@@ -158,48 +157,42 @@ void AppWindow::addTaskToListWidget(const Task &task) {
     ui->lwToDoList->setItemWidget(item, checkBox);
 
     QFont font;
-    font.setPointSize(15); // Postavljanje veličine fonta na 20 piksela za čekboks tekst
+    font.setPointSize(15);
     checkBox->setFont(font);
-    checkBox->setText(task.getName());
     checkBox->setStyleSheet("color: black;");
+    if (task.getIsChecked()) {
+        checkBox->setText(crossTask(task.getName()));
+        checkBox->setChecked(true);
+    } else
+        checkBox->setText(task.getName());
 
     connect(checkBox, &QCheckBox::stateChanged, this, &AppWindow::onCheckBoxStateChanged);
 }
 
 void AppWindow::onCheckBoxStateChanged(int state) {
     QCheckBox *checkBox = qobject_cast<QCheckBox*>(sender());
-    if (checkBox && state == Qt::Checked) {
-        QString taskName = checkBox->text();
-        QString newTaskName = "";
-        for (auto ch : taskName)
-        {
-            newTaskName.append(QChar(0x0336));
-            newTaskName.push_back(ch);
+    if (checkBox) {
+        int index = ui->lwToDoList->row(ui->lwToDoList->itemFromIndex(ui->lwToDoList->indexAt(checkBox->pos())));
+        if (state == Qt::Checked) {
+            m_toDoList->getTask(index)->setIsChecked(true);
+            checkBox->setText(crossTask(m_toDoList->getTask(index)->getName()));  // crossed task name
+        } else if (state == Qt::Unchecked) {
+            m_toDoList->getTask(index)->setIsChecked(false);
+            checkBox->setText(m_toDoList->getTask(index)->getName()); // regular task name
         }
-        newTaskName.append(QChar(0x0336));
-
-        checkBox->setText(newTaskName);  // crossed task name
-
     }
-    else if (checkBox && state == Qt::Unchecked){
-        QString taskName = checkBox->text();
-        QString newTaskName = "";
-
-        int i = 0;
-        for (auto ch : taskName){
-            if(i % 2 == 1)
-                newTaskName.push_back(ch);
-            i++;
-        }
-        checkBox->setText(newTaskName); // regular task name
-    }
-
-    //reorderCheckedTasks();
 }
 
-// QString AppWindow::crossTask(int index) {
+QString AppWindow::crossTask(const QString &taskName) {
+    QString newTaskName = "";
+    for (auto ch : taskName) {
+        newTaskName.append(QChar(0x0336));
+        newTaskName.push_back(ch);
+    }
+    newTaskName.append(QChar(0x0336));
 
-// }
+    return newTaskName;
+}
 
 // void AppWindow::reorderCheckedTasks(){
 //     QList<QListWidgetItem*> checkedItems;
@@ -240,6 +233,8 @@ void AppWindow::clearFinishedTasks(){
             if (checkBox->isChecked()) {
                 ui->lwToDoList->takeItem(i);
                 delete item;
+
+                m_toDoList->removeTask(i);
             }
         }
     }

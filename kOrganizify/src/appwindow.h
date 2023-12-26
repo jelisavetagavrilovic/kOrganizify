@@ -45,7 +45,7 @@ private slots:
     void openEventWindow(int row, int column);
     void addTask();
     void onCheckBoxStateChanged(int state);
-    // Qstring crossTask(int index);
+    QString crossTask(const QString &taskName);
     void openSettings();
     void logoutUser();
     void openSyncWindow();
@@ -59,7 +59,7 @@ private:
     SettingsWindow *settingsWindow;
     SyncWindow *syncWindow;
     EventWindow *eventWindow;
-    // ToDoList m_toDoList;
+    ToDoList *m_toDoList;
     Calendar* m_calendar;
     Notifications* m_notifications;
 };
