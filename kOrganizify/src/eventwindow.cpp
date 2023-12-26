@@ -51,6 +51,13 @@ void EventWindow::onSaveButtonClicked()
     //qDebug() << "location: " << event.getLocation();
 }
 
+void EventWindow::setDateAndTime(const QDateTime &dateTime){
+    ui->deDateStart->setDateTime(dateTime);
+    ui->teTimeStart->setDateTime(dateTime);
+    ui->deDateEnd->setDateTime(dateTime);
+    ui->teTimeEnd->setDateTime(dateTime.addSecs(3600));
+}
+
 EventWindow::~EventWindow()
 {
     delete ui;

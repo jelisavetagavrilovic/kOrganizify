@@ -105,15 +105,20 @@ void AppWindow::initialize() {
 
 
     connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
-    connect(ui->tableWidget, &QTableWidget::cellClicked, this, &AppWindow::openEventWindow);
+    connect(ui->tableWidget, &QTableWidget::cellClicked, this, &AppWindow::openEventWindowForCell);
     connect(this->eventWindow, &EventWindow::saveButtonClicked, this, &AppWindow::updateTableForSelectedDate);
     connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button
     connect(ui->calendarWidget, &QCalendarWidget::selectionChanged, this, &AppWindow::updateTableForSelectedDate);
 }
 
-void AppWindow::openEventWindow(int row, int column) {
+void AppWindow::openEventWindowForCell(int row, int column) {
     if (row >= 0 && column >= 0) {
-        this->eventWindow->show();
+        QDate selectedDate = ui->calendarWidget->selectedDate();
+        QDate startDate = selectedDate.addDays(-selectedDate.dayOfWeek() + 1);
+        QDateTime cellDateTime(startDate.addDays(column), QTime(row + 1, 0));
+        eventWindow->setDateAndTime(cellDateTime);
+
+        eventWindow->show();
     }
 }
 

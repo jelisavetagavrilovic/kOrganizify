@@ -40,7 +40,7 @@ public slots:
 private slots:
     void changeButtonColor(const QString &newColor);
     //void colorCell();
-    void openEventWindow(int row, int column);
+    void openEventWindowForCell(int row, int column);
     void addTask();
     void onCheckBoxStateChanged(int state);
     void openSettings();

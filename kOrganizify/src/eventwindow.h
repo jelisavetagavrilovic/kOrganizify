@@ -15,6 +15,7 @@ class EventWindow : public QWidget
 public:
     explicit EventWindow(Calendar* calendar, QWidget *parent = nullptr);
     ~EventWindow();
+    void setDateAndTime(const QDateTime &dateTime);
 
 private:
     Ui::EventWindow *ui;
