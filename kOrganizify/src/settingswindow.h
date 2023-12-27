@@ -20,7 +20,9 @@ public:
     explicit SettingsWindow(Settings *settings, QWidget *parent);
     ~SettingsWindow();
     void setColor(QString color);
+    void setBackgroundPath(QString backgroundPath);
     QString getColor();
+    QString getBackgroundPath();
 
 public slots:
     void changeColor(QString color);
@@ -29,7 +31,7 @@ private slots:
     void on_btnSave_clicked();
 
 signals:
-    void colorChanged(const QString& color);
+    void colorChanged(const QString& color, const QString& backgroundPath);
 
 private:
     Ui::SettingsWindow *ui;

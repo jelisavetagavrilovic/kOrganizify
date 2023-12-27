@@ -38,7 +38,7 @@ public slots:
     void showWeeklyEvents(const QDate& selectedDate);
 
 private slots:
-    void changeButtonColor(const QString &newColor);
+    void changeButtonColor(const QString &newColor, const QString& backgroundPath);
     //void colorCell();
     void openEventWindowForCell(int row, int column);
     void addTask();

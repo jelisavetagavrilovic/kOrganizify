@@ -49,7 +49,7 @@ void AppWindow::openSyncWindow() {
     syncWindow->show();
 }
 
-void AppWindow::changeButtonColor(const QString& newColor) {
+void AppWindow::changeButtonColor(const QString& newColor, const QString& backgroundPath) {
     QString styleSheet = "background-color: " + newColor + ";";
     QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 10px;}");
     this->ui->btnSettings->setStyleSheet(btnStyleSheet);
@@ -63,6 +63,13 @@ void AppWindow::changeButtonColor(const QString& newColor) {
     this->ui->tableWidget->verticalHeader()->setStyleSheet(styleSheet);
     this->ui->calendarWidget->setStyleSheet(QString("QCalendarWidget QWidget#qt_calendar_navigationbar { color: black; background-color: %1;}"
                                                     "QCalendarWidget QAbstractItemView:enabled {selection-background-color: %2 ;}").arg(newColor, newColor));
+
+
+    QPixmap background(backgroundPath);
+
+    QPalette palette;
+    palette.setBrush(this->backgroundRole(), QBrush(background));
+    this->setPalette(palette);
 }
 
 void AppWindow::initialize() {
@@ -74,6 +81,7 @@ void AppWindow::initialize() {
     Settings& settings = m_user->getSettings();
     settingsWindow = new SettingsWindow(&settings, this);
     settingsWindow->setColor(settings.color());
+    // settingsWindow->setBackgroundPath(settings.backgroundPath());
     this->ui->lwToDoList->setStyleSheet("background-color: #FCD299");
     this->ui->lwFriends->setStyleSheet("background-color: #E5E1E6;");
 
@@ -88,7 +96,7 @@ void AppWindow::initialize() {
     this->eventWindow = new EventWindow(m_calendar);
 
     QString sourceDir = QCoreApplication::applicationDirPath();
-    QString path = QDir(sourceDir).filePath(":/images/images/sarinaPozadina1.png");
+    QString path = QDir(sourceDir).filePath(":/images/images/backgroundGreen.png");
     QPixmap background(path);
 
     QPalette palette;

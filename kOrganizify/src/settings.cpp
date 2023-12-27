@@ -49,6 +49,16 @@ void Settings::setColor(QString color) {
     this->m_color = color;
 }
 
+QString Settings::backgroundPath()
+{
+    return this->m_backgroundPath;
+}
+
+void Settings::setBackgroundPath(QString backgroundPath)
+{
+    this->m_backgroundPath = backgroundPath;
+}
+
 bool Settings::notifications() {
     return this->m_notifications;
 }

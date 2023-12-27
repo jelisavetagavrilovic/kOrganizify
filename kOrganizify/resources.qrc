@@ -16,5 +16,11 @@
         <file>images/calendar.svg</file>
         <file>images/color-palette.png</file>
         <file>images/save.svg</file>
+        <file>images/backgroundPurple.png</file>
+        <file>images/backgroundPink.png</file>
+        <file>images/backgroundOrange.png</file>
+        <file>images/backgroundGreen.png</file>
+        <file>images/backgroundDefault.png</file>
+        <file>images/backgroundBlue.png</file>
     </qresource>
 </RCC>

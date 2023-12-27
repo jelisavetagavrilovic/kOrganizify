@@ -55,6 +55,11 @@
       <string>Purple</string>
      </property>
     </item>
+    <item>
+     <property name="text">
+      <string>Default</string>
+     </property>
+    </item>
    </widget>
    <widget class="QCheckBox" name="btnNotifications">
     <property name="geometry">
