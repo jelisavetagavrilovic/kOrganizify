@@ -15,6 +15,7 @@
 #include "syncwindow.h"
 #include "user.h"
 #include "toDoList.h"
+#include "notifications.h"
 
 
 namespace Ui {
@@ -39,8 +40,8 @@ public slots:
 
 private slots:
     void changeButtonColor(const QString &newColor);
-    //void colorCell();
     void openEventWindowForCell(int row, int column);
+    void enabledNotifications(const bool enabled);
     void addTask();
     void onCheckBoxStateChanged(int state);
     void openSettings();
@@ -59,6 +60,7 @@ private:
     EventWindow *eventWindow;
     // ToDoList m_toDoList;
     Calendar* m_calendar;
+    Notifications* m_notifications;
 };
 
 #endif // APPWINDOW_H

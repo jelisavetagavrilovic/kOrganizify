@@ -26,18 +26,24 @@ public:
     QString textToColor(const QString text);
     QString textToPath(const QString text);
     QString colorToPath(const QString color);
+    Ui::SettingsWindow *ui;
 
 public slots:
     void changeColor(QString color);
+//    void setColorSlot(const QString color);
+//    QString getColorSlot() const;
+    void setNotifications(const bool notifications);
+    bool getNotifications() const;
 
 private slots:
-    void on_btnSave_clicked();
+    QString getColorNameFromValue(const QMap<QString, QString> &colorMap, const QString &value);
+    void save();
 
 signals:
     void colorChanged(const QString& color);
+    void enabledNotifications(const bool enabled);
 
 private:
-    Ui::SettingsWindow *ui;
     Settings *m_settings;
 };
 

@@ -1,46 +1,11 @@
 {
     "events": [
         {
-            "description": "Art Exhibition: Beyond Boundaries",
-            "endTime": "2023-12-20T20:00:00",
-            "location": "Gallery X",
-            "startTime": "2023-12-20T18:00:00",
-            "title": "Beyond Boundaries"
-        },
-        {
-            "description": "Tech Summit 2023",
-            "endTime": "2023-12-21T17:30:00",
-            "location": "Innovation Center",
-            "startTime": "2023-12-21T09:00:00",
-            "title": "Tech Summit"
-        },
-        {
-            "description": "Community Charity Run",
-            "endTime": "2023-12-22T11:00:00",
-            "location": "City Park",
-            "startTime": "2023-12-22T09:00:00",
-            "title": "Run for a Cause"
-        },
-        {
-            "description": "Concert Under the Stars",
-            "endTime": "2023-12-23T22:00:00",
-            "location": "Amphitheater",
-            "startTime": "2023-12-23T19:30:00",
-            "title": "Starry Night Concert"
-        },
-        {
-            "description": "Book Launch: ",
-            "endTime": "2023-12-24T19:00:00",
-            "location": "Book Haven",
-            "startTime": "2023-12-24T17:30:00",
-            "title": "Mysteries Unveiled"
-        },
-        {
-            "description": "Winter Wonderland Festival",
-            "endTime": "2023-12-25T23:59:00",
-            "location": "City Square",
-            "startTime": "2023-12-25T15:00:00",
-            "title": "Frosty Festivities"
+            "description": "daaaa",
+            "endTime": "2023-12-16T09:00:00",
+            "location": "",
+            "startTime": "2023-12-16T08:00:00",
+            "title": "dodala"
         },
         {
             "description": "Culinary Masterclass: Fusion Flavors",
@@ -50,18 +15,60 @@
             "title": "Flavors Unleashed"
         },
         {
+            "description": "Tech Summit 2023",
+            "endTime": "2023-12-21T17:30:00",
+            "location": "Innovation Center",
+            "startTime": "2023-12-27T02:13:00",
+            "title": "Tech Summit"
+        },
+        {
+            "description": "Community Charity Run",
+            "endTime": "2023-12-22T11:00:00",
+            "location": "City Park",
+            "startTime": "2023-12-27T04:13:00",
+            "title": "Run for a Cause"
+        },
+        {
+            "description": "Book Launch: ",
+            "endTime": "2023-12-24T19:00:00",
+            "location": "Book Haven",
+            "startTime": "2023-12-27T16:58:00",
+            "title": "Mysteries Unveiled"
+        },
+        {
             "description": "Film Screening:",
             "endTime": "2023-12-27T23:00:00",
             "location": "Cinephile Cinema",
-            "startTime": "2023-12-27T19:30:00",
+            "startTime": "2023-12-27T17:19:00",
             "title": "Nostalgia Revisited"
+        },
+        {
+            "description": "Winter Wonderland Festival",
+            "endTime": "2023-12-25T23:59:00",
+            "location": "City Square",
+            "startTime": "2023-12-27T17:22:00",
+            "title": "Frosty Festivities"
+        },
+        {
+            "description": "Concert Under the Stars",
+            "endTime": "2023-12-23T22:00:00",
+            "location": "Amphitheater",
+            "startTime": "2023-12-27T17:23:00",
+            "title": "Starry Night Concert"
+        },
+        {
+            "description": "Art Exhibition: Beyond Boundaries",
+            "endTime": "2023-12-20T20:00:00",
+            "location": "Gallery X",
+            "startTime": "2023-12-27T17:24:00",
+            "title": "Beyond Boundaries"
         }
     ],
     "password": "andji",
     "settings": {
         "color": "#9063CD",
         "nightMode": true,
-        "notifications": false
+        "notifications": true
     },
     "tasks": [
         {

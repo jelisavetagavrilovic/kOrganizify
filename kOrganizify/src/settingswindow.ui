@@ -12,11 +12,11 @@
   </property>
   <property name="styleSheet">
    <string notr="true">SettingsWindow{
-	background-color: #F7F4F8;
+        background-color: #F7F4F8;
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QComboBox" name="dropTheme">
+   <widget class="QComboBox" name="cbxDropTheme">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -61,7 +61,7 @@
      </property>
     </item>
    </widget>
-   <widget class="QCheckBox" name="btnNotifications">
+   <widget class="QCheckBox" name="cbNotifications">
     <property name="geometry">
      <rect>
       <x>185</x>
@@ -77,7 +77,7 @@
     </property>
     <property name="styleSheet">
      <string notr="true">QCheckBox{
-	color: black;
+        color: black;
 }</string>
     </property>
     <property name="text">
@@ -176,7 +176,7 @@
      <x>0</x>
      <y>0</y>
      <width>345</width>
-     <height>20</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

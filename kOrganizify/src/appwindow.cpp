@@ -3,7 +3,9 @@
 #include "ui_appwindow.h"
 #include "settingswindow.h"
 #include "mainwindow.h"
-#include <QStyle>
+#include "ui_settingswindow.h"
+
+//#include <QStyle>
 
 AppWindow::AppWindow(User *user, QWidget *parent)
     : QMainWindow(parent)
@@ -11,12 +13,14 @@ AppWindow::AppWindow(User *user, QWidget *parent)
     , m_user(user)
 {
     ui->setupUi(this);
+    this->setAttribute(Qt::WA_DeleteOnClose);
 
     initialize();
 
     connect(ui->btnLogout, &QPushButton::clicked, this, &AppWindow::logoutUser);
-
     connect(ui->btnSettings, &QPushButton::clicked, this, &AppWindow::openSettings);
+    connect(settingsWindow, &SettingsWindow::enabledNotifications, this, &AppWindow::enabledNotifications);
+    connect(settingsWindow, &SettingsWindow::enabledNotifications, m_notifications, &Notifications::enabledNotifications);
     connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
     connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button
     connect(ui->btnClear, &QPushButton::clicked, this, &AppWindow::clearFinishedTasks);
@@ -74,6 +78,10 @@ void AppWindow::changeButtonColor(const QString& newColor) {
     this->setPalette(palette);
 }
 
+void AppWindow::enabledNotifications(const bool enabled) {
+    m_user->getSettings().setNotifications(enabled);
+}
+
 void AppWindow::initialize() {
     ToDoList& toDoList = m_user->getToDoList();
     const QVector<Task>& tasks = toDoList.getTasks();
@@ -82,18 +90,23 @@ void AppWindow::initialize() {
 
     Settings& settings = m_user->getSettings();
     settingsWindow = new SettingsWindow(&settings, this);
-    settingsWindow->setColor(settings.color());
+
+    settingsWindow->setColor(settings.getColor());
     settingsWindow->setBackgroundPath(settingsWindow->colorToPath(settingsWindow->getColor()));
     this->ui->lwToDoList->setStyleSheet("background-color: #FCD299");
     this->ui->lwFriends->setStyleSheet("background-color: #E5E1E6;");
+    settingsWindow->ui->cbNotifications->setChecked(m_user->getSettings().getNotifications());
+    ui->lwToDoList->setStyleSheet("background-color: #FCD299");
 
     this->setFixedSize(this->size());
     this->setAutoFillBackground(true);
 
     m_calendar = &m_user->getCalendar();
-    for (Event& e: m_calendar->getEvents()){
-        qDebug() << e.getStartTime();
-    }
+//    for (Event& e: m_calendar->getEvents()){
+//        qDebug() << e.getStartTime();
+//    }
+    m_notifications = new Notifications(m_calendar);
+//    m_notifications->checkEvents();
     this->eventWindow = new EventWindow(m_calendar);
 
     QString sourceDir = QCoreApplication::applicationDirPath();
@@ -133,12 +146,6 @@ void AppWindow::initialize() {
     this->eventWindow->changeColor(this->settingsWindow->getColor());
     this->settingsWindow->changeColor(this->settingsWindow->getColor());
 
-    // QStyle *macStyle = new QFusionStyle;
-    // this->ui->btnClear->setStyle(macStyle);
-    // this->ui->btnLogout->setStyle(macStyle);
-    // this->ui->btnSettings->setStyle(macStyle);
-
-
     connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
     connect(settingsWindow, &SettingsWindow::colorChanged, this->eventWindow, &EventWindow::changeColor);
     connect(ui->tableWidget, &QTableWidget::cellClicked, this, &AppWindow::openEventWindowForCell);
@@ -157,18 +164,6 @@ void AppWindow::openEventWindowForCell(int row, int column) {
         eventWindow->show();
     }
 }
-
-//void AppWindow::colorCell(){
-//    qDebug() << "Radi2";
-
-//    QString color = "#EB212E"; // boja bi valjalo da se menja na osnovu prioriteta dogadjaja
-//    QTableWidgetItem *item = new QTableWidgetItem("Ime dogadjaja");
-//    item->setBackground(QBrush(QColor(color)));
-//    ui->tableWidget->setItem(5, 0, item); // hardkodirano za sad
-
-    // this->ui->tableWidget->item(1, 1)->setBackground(QBrush(color));
-    // this->ui->tableWidget->setStyleSheet("background-color: " + color + ";");
-//}
 
 void AppWindow::addTask()
 {
@@ -321,19 +316,17 @@ void AppWindow::showWeeklyEvents(const QDate& selectedDate){
 }
 
 void AppWindow::logoutUser() {
-    if (m_user) {
-        m_user->logout();
-
-        delete m_user;
-        m_user = nullptr;
-    }
-
     MainWindow *mainWindow = new MainWindow;
     mainWindow->show();
     this->close();
+    // delete this;
 }
 
 AppWindow::~AppWindow() {
-    delete ui;
+    m_user->logout();
+    delete m_user;
+    m_user = nullptr;
+
     delete m_calendar;
+    delete ui;
 }

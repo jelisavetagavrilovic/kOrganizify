@@ -6,16 +6,15 @@ SettingsWindow::SettingsWindow(Settings *settings, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::SettingsWindow)
     , m_settings(settings)
-//,
-    // m_theme(Custom),
-    // m_notifications(true),
-    // m_nightMode(false)
 {
     ui->setupUi(this);
     ui->lblNotificationsOn->setVisible(false);
 
+    QString currentColor = m_settings->getColor();
+//    ui->cbxDropTheme->setCurrentText(getColorNameFromValue(themeColors, currentColor));
+//    this->setColor(currentColor);
 
-    connect(ui->dropTheme, QOverload<const QString &>::of(&QComboBox::currentTextChanged), [=](const QString &text){
+    connect(ui->cbxDropTheme, QOverload<const QString &>::of(&QComboBox::currentTextChanged), [=](const QString &text){
         QString color = this->textToColor(text);
 
         QString path = this->colorToPath(color);
@@ -26,13 +25,10 @@ SettingsWindow::SettingsWindow(Settings *settings, QWidget *parent)
         QString styleSheet = QString("background-color: %1; ").arg(color);
         QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 10px; color:black;}");
         this->ui->btnSave->setStyleSheet(btnStyleSheet);
-        this->ui->dropTheme->setStyleSheet(QString("QComboBox{color: black; border-radius:10px; background-color: %1; }").arg(color));
+        this->ui->cbxDropTheme->setStyleSheet(QString("QComboBox{color: black; border-radius:10px; background-color: %1; }").arg(color));
     });
-}
 
-void SettingsWindow::on_btnSave_clicked(){
-    emit colorChanged(this->m_settings->color());
-    this->close();
+    connect(ui->btnSave, &QPushButton::clicked, this, &SettingsWindow::save);
 }
 
 void SettingsWindow::changeColor(QString color)
@@ -40,20 +36,12 @@ void SettingsWindow::changeColor(QString color)
     QString styleSheet = QString("background-color: %1; ").arg(color);
     QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 10px; color:black;}");
     this->ui->btnSave->setStyleSheet(btnStyleSheet);
-    this->ui->dropTheme->setStyleSheet(QString("QComboBox{color: black; border-radius:10px; background-color: %1; }").arg(color));
-}
-
-void SettingsWindow::setColor(QString color){
-    this->m_settings->setColor(color);
+    this->ui->cbxDropTheme->setStyleSheet(QString("QComboBox{color: black; border-radius:10px; background-color: %1; }").arg(color));
 }
 
 void SettingsWindow::setBackgroundPath(QString backgroundPath)
 {
     this->m_settings->setBackgroundPath(backgroundPath);
-}
-
-QString SettingsWindow::getColor(){
-    return this->m_settings->color();
 }
 
 QString SettingsWindow::getBackgroundPath()
@@ -109,6 +97,38 @@ QString SettingsWindow::colorToPath(QString color)
     };
 
     return this->textToPath(colorNames.value(color));
+}
+
+void SettingsWindow::save() {
+    emit colorChanged(this->m_settings->getColor());
+    emit enabledNotifications(this->ui->cbNotifications->isChecked());
+    this->close();
+}
+
+void SettingsWindow::setColor(const QString color) {
+    this->m_settings->setColor(color);
+}
+
+QString SettingsWindow::getColor()  {
+    return this->m_settings->getColor();
+}
+
+
+QString SettingsWindow::getColorNameFromValue(const QMap<QString, QString> &colorMap, const QString &value) {
+    for (auto it = colorMap.begin(); it != colorMap.end(); ++it) {
+        if (it.value() == value) {
+            return it.key();
+        }
+    }
+    return "";
+}
+
+void SettingsWindow::setNotifications(const bool notification) {
+    this->m_settings->setNotifications(notification);
+}
+
+bool SettingsWindow::getNotifications() const {
+    return this->m_settings->getNotifications();
 }
 
 SettingsWindow::~SettingsWindow()

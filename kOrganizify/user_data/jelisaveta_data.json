@@ -4,7 +4,7 @@
             "description": "asdfgh",
             "endTime": "2023-12-17T18:47:00",
             "location": "pi",
-            "startTime": "2023-12-17T18:45:00",
+            "startTime": "2023-12-25T01:59:00",
             "title": "nista"
         },
         {
@@ -26,11 +26,14 @@
     "settings": {
         "color": "#006E33",
         "nightMode": true,
-        "notifications": false
+        "notifications": true
     },
     "tasks": [
         {
             "task": "test "
+        },
+        {
+            "task": "cao"
         }
     ],
     "username": "jelisaveta"
