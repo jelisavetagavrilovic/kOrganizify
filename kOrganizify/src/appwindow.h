@@ -18,6 +18,7 @@
 #include "user.h"
 #include "toDoList.h"
 #include "notifications.h"
+#include "syncdeniedwindow.h"
 
 
 namespace Ui {
@@ -54,7 +55,7 @@ private slots:
     void clearFinishedTasks();
     // void reorderCheckedTasks();
     void showSyncWindow(QString username, QString title, int duration);
-    void syncDenied();
+    void syncDenied(QString friendName);
     void sendYesResponse(QString friendName, int duration);
     void sendNoResponse(QString friendName);
     void showResponseWindow(QString eventTitle, QString startTime);
