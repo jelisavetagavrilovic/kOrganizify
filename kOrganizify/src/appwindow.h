@@ -35,17 +35,21 @@ public slots:
     void handleNewUserLoggedIn(const QString& username);
     void handleUserDisconnected(const QString& username);
     void addTaskToListWidget(const Task &task);
+    void showWeeklyEvents(const QDate& selectedDate);
 
 private slots:
     void changeButtonColor(const QString &newColor);
-    void colorCell();
-    void openEventWindow(int row, int column);
+    //void colorCell();
+    void openEventWindowForCell(int row, int column);
     void addTask();
     void onCheckBoxStateChanged(int state);
     void openSettings();
     void logoutUser();
     void openSyncWindow();
     void populateFriends(const QList<QString>& friends);
+    void updateTableForSelectedDate();
+    void clearFinishedTasks();
+    // void reorderCheckedTasks();
 
 private:
     Ui::AppWindow *ui;
@@ -53,7 +57,7 @@ private:
     SettingsWindow *settingsWindow;
     SyncWindow *syncWindow;
     EventWindow *eventWindow;
-//    ToDoList m_toDoList;
+    // ToDoList m_toDoList;
     Calendar* m_calendar;
 };
 

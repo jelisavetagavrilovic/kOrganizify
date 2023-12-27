@@ -73,15 +73,30 @@ void Calendar::removeEvent(const Event &event){
     m_events.removeOne(event);
 }
 
-void Calendar::updateEvent(const Event &event){
-    int index = m_events.indexOf(event);
-    if (index != -1){
-        m_events[index] = event;
+void Calendar::updateEvent(const Event &oldEvent, const Event &newEvent){
+    for (int i = 0; i < m_events.size(); ++i) {
+        if (m_events[i] == oldEvent) {
+            qDebug() << "Updating Event - Title: " << oldEvent.getTitle();
+            m_events[i] = newEvent;
+            return;
+        }
     }
 }
 
 QList<Event> Calendar::getEvents() const {
     return m_events;
+}
+
+QList<Event> Calendar::getEventsForWeek(const QDate& startDate, const QDate& endDate) const {
+    QList<Event> weekEvents;
+
+    for (const Event& event: m_events){
+        if (event.getStartTime().date() >= startDate && event.getEndTime().date() <= endDate){
+            weekEvents.append(event);
+        }
+    }
+
+    return weekEvents;
 }
 
 void Calendar::clear() {

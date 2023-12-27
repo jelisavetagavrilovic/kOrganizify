@@ -9,6 +9,7 @@ class Settings : public SaveLoad
 {
 private:
     QString m_color;
+    QString m_backgroundPath;
 
     bool m_notifications;
     bool m_nightMode;
@@ -24,6 +25,8 @@ public:
 
     QString color();
     void setColor(QString color);
+    QString backgroundPath();
+    void setBackgroundPath(QString backgroundPath);
     bool notifications();
     void setNotifications(bool notifications);
     bool nightMode();

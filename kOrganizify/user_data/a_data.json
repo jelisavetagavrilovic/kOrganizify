@@ -1,0 +1,22 @@
+{
+    "events": [
+    ],
+    "password": "a",
+    "settings": {
+        "color": "#A5A9A0",
+        "nightMode": false,
+        "notifications": false
+    },
+    "tasks": [
+        {
+            "task": "task1"
+        },
+        {
+            "task": "task2"
+        },
+        {
+            "task": "task3"
+        }
+    ],
+    "username": "a"
+}

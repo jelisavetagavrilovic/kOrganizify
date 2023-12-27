@@ -6,151 +6,184 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>228</width>
-    <height>260</height>
+    <width>345</width>
+    <height>241</height>
    </rect>
   </property>
+  <property name="styleSheet">
+   <string notr="true">SettingsWindow{
+	background-color: #F7F4F8;
+}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <widget class="QComboBox" name="dropTheme">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>110</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <item>
-     <widget class="QLabel" name="lblColor">
-      <property name="maximumSize">
-       <size>
-        <width>100</width>
-        <height>15</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Color:</string>
-      </property>
-     </widget>
+     <property name="text">
+      <string>Blue</string>
+     </property>
     </item>
     <item>
-     <widget class="QComboBox" name="dropTheme">
-      <item>
-       <property name="text">
-        <string>Blue</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Green</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Orange</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Pink</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Purple</string>
-       </property>
-      </item>
-     </widget>
+     <property name="text">
+      <string>Green</string>
+     </property>
     </item>
     <item>
-     <spacer name="verticalSpacer1">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeType">
-       <enum>QSizePolicy::Maximum</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
+     <property name="text">
+      <string>Orange</string>
+     </property>
     </item>
     <item>
-     <widget class="QCheckBox" name="btnNotifications">
-      <property name="text">
-       <string>Enable Notifications</string>
-      </property>
-     </widget>
+     <property name="text">
+      <string>Pink</string>
+     </property>
     </item>
     <item>
-     <spacer name="verticalSpacer2">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeType">
-       <enum>QSizePolicy::Maximum</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
+     <property name="text">
+      <string>Purple</string>
+     </property>
     </item>
     <item>
-     <widget class="QCheckBox" name="btnNightMode">
-      <property name="text">
-       <string>Night Mode</string>
-      </property>
-     </widget>
+     <property name="text">
+      <string>Default</string>
+     </property>
     </item>
-    <item>
-     <spacer name="verticalSpacer3">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>10</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QPushButton" name="btnSave">
-        <property name="text">
-         <string>Save</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-   </layout>
+   </widget>
+   <widget class="QCheckBox" name="btnNotifications">
+    <property name="geometry">
+     <rect>
+      <x>185</x>
+      <y>115</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCheckBox{
+	color: black;
+}</string>
+    </property>
+    <property name="text">
+     <string>Notifications</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnSave">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>180</y>
+      <width>106</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>   Save</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../resources.qrc">
+      <normaloff>:/images/images/save.svg</normaloff>:/images/images/save.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblColor">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>30</y>
+      <width>51</width>
+      <height>46</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../resources.qrc">:/images/images/color-palette.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblNotificationsOn">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>30</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../resources.qrc">:/images/images/bell.svg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblNotificationsOff">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>30</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../resources.qrc">:/images/images/bell-off.svg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>228</width>
+     <width>345</width>
      <height>20</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

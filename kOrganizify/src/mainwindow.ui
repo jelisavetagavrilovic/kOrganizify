@@ -6,21 +6,30 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>533</width>
-    <height>345</height>
+    <width>352</width>
+    <height>453</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">MainWindow{
+	background-color: #F7F4F8;
+}
+
+QLabel{
+	color: black;
+}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGroupBox" name="gbLogin">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>10</y>
-      <width>491</width>
-      <height>291</height>
+      <x>-70</x>
+      <y>-10</y>
+      <width>501</width>
+      <height>301</height>
      </rect>
     </property>
     <property name="title">
@@ -67,6 +76,11 @@
        <height>24</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit{
+	background-color: #B4B19A;
+}</string>
+     </property>
     </widget>
     <widget class="QLineEdit" name="lePassword">
      <property name="geometry">
@@ -77,21 +91,26 @@
        <height>24</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit{
+	background-color: #B4B19A;
+}</string>
+     </property>
     </widget>
     <widget class="QPushButton" name="btnLogin">
      <property name="geometry">
       <rect>
        <x>190</x>
-       <y>170</y>
-       <width>89</width>
+       <y>180</y>
+       <width>111</width>
        <height>41</height>
       </rect>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-    background-color: #7BB2DD;
+    background-color: #D0443F;
     border: none;
-    color: white;
+    color: black;
     padding: 10px 24px;
     text-align: center;
     text-decoration: none;
@@ -99,15 +118,19 @@
     font-size: 13px;
     margin: 4px 2px;
     cursor: pointer;
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
 QPushButton:hover {
-    background-color: #83BEEB;
+    background-color: #DD7875;
 }</string>
      </property>
      <property name="text">
       <string>Login</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../resources.qrc">
+       <normaloff>:/images/images/log-in.svg</normaloff>:/images/images/log-in.svg</iconset>
      </property>
     </widget>
     <widget class="QLabel" name="lblRegister">
@@ -128,15 +151,15 @@ QPushButton:hover {
       <rect>
        <x>270</x>
        <y>240</y>
-       <width>101</width>
+       <width>121</width>
        <height>41</height>
       </rect>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-    background-color: #7BB2DD;
+    background-color: #D0443F;
     border: none;
-    color: white;
+    color: black;
     padding: 10px 24px;
     text-align: center;
     text-decoration: none;
@@ -144,15 +167,19 @@ QPushButton:hover {
     font-size: 13px;
     margin: 4px 2px;
     cursor: pointer;
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
 QPushButton:hover {
-    background-color: #83BEEB;
+    background-color: #DD7875;
 }</string>
      </property>
      <property name="text">
       <string>Register</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../resources.qrc">
+       <normaloff>:/images/images/user-plus.svg</normaloff>:/images/images/user-plus.svg</iconset>
      </property>
     </widget>
     <widget class="QLabel" name="lblStatus">
@@ -171,28 +198,63 @@ QPushButton:hover {
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="lblLoginIcon">
+    <widget class="QLabel" name="lblUserChecked">
      <property name="geometry">
       <rect>
        <x>230</x>
        <y>20</y>
-       <width>31</width>
-       <height>31</height>
+       <width>51</width>
+       <height>51</height>
       </rect>
      </property>
      <property name="text">
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>../../../Desktop/ikonice/login.png</pixmap>
+      <pixmap resource="../resources.qrc">:/images/images/user-check.svg</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
      </property>
-     <property name="indent">
-      <number>-2</number>
+    </widget>
+    <widget class="QLabel" name="lblUserPlus">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>20</y>
+       <width>51</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="../resources.qrc">:/images/images/user-plus.svg</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
      </property>
     </widget>
+   </widget>
+   <widget class="QLabel" name="lblPoster">
+    <property name="geometry">
+     <rect>
+      <x>-20</x>
+      <y>290</y>
+      <width>381</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../resources.qrc">:/images/images/LoginPoster.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -200,13 +262,15 @@ QPushButton:hover {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>533</width>
-     <height>22</height>
+     <width>352</width>
+     <height>24</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

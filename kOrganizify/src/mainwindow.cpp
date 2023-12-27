@@ -11,9 +11,14 @@ MainWindow::MainWindow(QWidget *parent)
         setWindowTitle("Login");
 
     ui->lblStatus->setVisible(false);
+        ui->lblUserPlus->setVisible(false);
     ui->lePassword->setEchoMode(QLineEdit::Password);
 
+    ui->leUsername->setStyleSheet("QLineEdit{color: black; background-color: #B4B19A; }");
+    ui->lePassword->setStyleSheet("QLineEdit{color: black; background-color: #B4B19A; }");
+
     connect(ui->btnLogin, &QPushButton::clicked, this, &MainWindow::loginUser);
+    connect(ui->lePassword, &QLineEdit::returnPressed, this, &MainWindow::loginUser);
     connect(ui->btnRegister, &QPushButton::clicked, this, &MainWindow::registerUser);
 }
 
@@ -49,6 +54,8 @@ void MainWindow::loginUser() {
 
 void MainWindow::registerUser()
 {
+    ui->lblUserPlus->setVisible(true);
+    ui->lblUserChecked->setVisible(false);
     QString username = ui->leUsername->text();
     QString password = ui->lePassword->text();
 
