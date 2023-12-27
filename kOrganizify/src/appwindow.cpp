@@ -367,6 +367,10 @@ void AppWindow::showResponseWindow(QString eventTitle, QString startTime) {
 }
 
 void AppWindow::agreedSync(QDateTime startTime, QDateTime endTime, QString title) {
-    qDebug() <<"should insert into calendar";  // TODO
-    qDebug() <<startTime <<" "<< endTime <<" " << title;
+    Event event;
+    event.setStartTime(startTime);
+    event.setEndTime(endTime);
+    event.setTitle(title);
+
+    m_user->getCalendar().addEvent(event);
 }

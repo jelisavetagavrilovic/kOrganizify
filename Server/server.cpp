@@ -19,11 +19,6 @@ void Server::newConnection() {
     QTcpSocket* newClient = m_server->nextPendingConnection();
 
     if(newClient) {
-        // QString clientName = newClient->readAll();
-        // m_clients.insert(clientName, newClient);
-
-
-        // multiCast(clientName);
         qDebug() << "New client connect";
         connect(newClient, &QTcpSocket::readyRead, this, &Server::readFromClient);
         connect(newClient, &QTcpSocket::disconnected, this, &Server::disconnection);
@@ -64,8 +59,7 @@ void Server::readFromClient() {
         m_syncEventTitle = doc.value("titleEvent").toString();
         newClientMessage.insert("duration", doc.value("duration").toString());
 
-        //here the duration is set
-        //where to next?
+        m_syncEventDuration = doc.value("duration").toString().toInt();
 
         QJsonArray jsonArray = doc.value("events").toArray();
         newClientMessage.insert("events", jsonArray);
@@ -104,27 +98,12 @@ void Server::readFromClient() {
 
         m_calendar.insert(doc.value("fromUsername").toString(),cal);
 
-        //here it doesnt recieve well
-        m_syncEventDuration = doc.value("syncEventDuration").toString().toInt();
-
-        //tried two aproaches, both say 0
-//        qDebug() <<  "proba2" << doc.value("duration").toString().toInt();
-//        qDebug() <<  "proba3"<< doc.value("syncEventDuration").toString().toInt();
-
         m_user1 = doc.value("fromUsername").toString();
         m_user2 = doc.value("toUsername").toString();
-        Calendar* cal1 = m_calendar[doc.value("fromUsername").toString()];
-        Calendar* cal2 = m_calendar[doc.value("toUsername").toString()];
-
+        Calendar* cal1 = m_calendar[m_user1];
+        Calendar* cal2 = m_calendar[m_user2];
 
         m_currentSyncEvents = findFreeTime(cal1,cal2,m_syncEventDuration);
-
-        //checking if the function works well
-//        for (const auto &event : m_currentSyncEvents) {
-//            qDebug() << event.getStartTime() << event.getEndTime();
-//        }
-
-
         m_numResponses = 0;
 
         sendEvent(0);
