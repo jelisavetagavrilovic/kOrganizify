@@ -22,6 +22,9 @@ public:
     void setColor(QString color);
     QString getColor();
 
+public slots:
+    void changeColor(QString color);
+
 private slots:
     void on_btnSave_clicked();
 

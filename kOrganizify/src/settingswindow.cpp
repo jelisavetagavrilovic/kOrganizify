@@ -31,14 +31,24 @@ SettingsWindow::SettingsWindow(Settings *settings, QWidget *parent)
 
         this->setColor(color);
 
-        QString styleSheet = QString("background-color: %1").arg(color);
-        ui->btnSave->setStyleSheet(styleSheet);
+        QString styleSheet = QString("background-color: %1; ").arg(color);
+        QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 10px; color:black;}");
+        this->ui->btnSave->setStyleSheet(btnStyleSheet);
+        this->ui->dropTheme->setStyleSheet(QString("QComboBox{color: black; border-radius:10px; background-color: %1; }").arg(color));
     });
 }
 
 void SettingsWindow::on_btnSave_clicked(){
     emit colorChanged(this->m_settings->color());
     this->close();
+}
+
+void SettingsWindow::changeColor(QString color)
+{
+    QString styleSheet = QString("background-color: %1; ").arg(color);
+    QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 10px; color:black;}");
+    this->ui->btnSave->setStyleSheet(btnStyleSheet);
+    this->ui->dropTheme->setStyleSheet(QString("QComboBox{color: black; border-radius:10px; background-color: %1; }").arg(color));
 }
 
 void SettingsWindow::setColor(QString color){

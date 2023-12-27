@@ -16,6 +16,7 @@ public:
     explicit EventWindow(Calendar* calendar, QWidget *parent = nullptr);
     ~EventWindow();
     void setDateAndTime(const QDateTime &dateTime);
+    void changeColor(QString color);
 
 private:
     Ui::EventWindow *ui;

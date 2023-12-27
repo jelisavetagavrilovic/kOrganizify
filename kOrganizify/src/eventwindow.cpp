@@ -8,6 +8,7 @@ EventWindow::EventWindow(Calendar* calendar, QWidget *parent)
     , m_calendar(calendar)
 {
     ui->setupUi(this);
+
     connect(ui->btnSave, &QPushButton::clicked, this, &EventWindow::onSaveButtonClicked);
 }
 
@@ -49,6 +50,21 @@ void EventWindow::onSaveButtonClicked()
     //qDebug() << "end date and time: " << event.getEndTime();
     //qDebug() << "description: " << event.getDescription();
     //qDebug() << "location: " << event.getLocation();
+}
+
+void EventWindow::changeColor(QString color)
+{
+    QString styleSheet = QString("background-color: %1; ").arg(color);
+    QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 10px; color:black;}");
+    QString leStyleSheet = QString("QLineEdit{" + styleSheet + "}");
+    QString teStyleSheet = QString("QTextEdit{" + styleSheet + "}");
+    QString dateEditStyleSheet = QString("QDateEdit{" + styleSheet + "}");
+    QString timeEditStyleSheet = QString("QTimeEdit{" + styleSheet + "}");
+    QString ewStyleSheet = QString("QWidget{color: black; background-color: #F7F4F8;}");
+
+    QString ultimateStyleSheet = ewStyleSheet + btnStyleSheet + leStyleSheet + teStyleSheet + dateEditStyleSheet + timeEditStyleSheet;
+
+    this->setStyleSheet(ultimateStyleSheet);
 }
 
 void EventWindow::setDateAndTime(const QDateTime &dateTime){

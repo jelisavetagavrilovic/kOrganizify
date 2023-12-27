@@ -122,6 +122,8 @@ void AppWindow::initialize() {
     int scrollBarValue = this->ui->tableWidget->verticalScrollBar()->maximum();
     this->ui->tableWidget->verticalScrollBar()->setValue(scrollBarValue);
 
+    this->eventWindow->changeColor(this->settingsWindow->getColor());
+    this->settingsWindow->changeColor(this->settingsWindow->getColor());
 
     // QStyle *macStyle = new QFusionStyle;
     // this->ui->btnClear->setStyle(macStyle);
@@ -130,6 +132,7 @@ void AppWindow::initialize() {
 
 
     connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
+    connect(settingsWindow, &SettingsWindow::colorChanged, this->eventWindow, &EventWindow::changeColor);
     connect(ui->tableWidget, &QTableWidget::cellClicked, this, &AppWindow::openEventWindowForCell);
     connect(this->eventWindow, &EventWindow::saveButtonClicked, this, &AppWindow::updateTableForSelectedDate);
     connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button
