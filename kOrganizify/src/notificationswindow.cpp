@@ -4,14 +4,13 @@
 NotificationsWindow::NotificationsWindow(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::NotificationsWindow),
-    mediaPlayer(new QSoundEffect())
+    m_mediaPlayer(new QSoundEffect())
 {
     ui->setupUi(this);
 
-//    mediaPlayer->setSource(QUrl::fromLocalFile(":/resources/notification.wav"));
-//    mediaPlayer->setVolume(50);
-//    mediaPlayer->setLoopCount(QSoundEffect::Infinite);
-
+    m_mediaPlayer->setSource(QUrl("qrc:/images/resources/notification.wav"));
+    m_mediaPlayer->setVolume(50);
+    m_mediaPlayer->setLoopCount(1);
 }
 
 void NotificationsWindow::updateWindow(const QString &name, const QString &time)
@@ -19,12 +18,11 @@ void NotificationsWindow::updateWindow(const QString &name, const QString &time)
     ui->lbl_timeEvent->setText("Time: " + time);
     ui->lbl_nameEvent->setText("Name: " + name);
 
-//    mediaPlayer->play();
     show();
+    m_mediaPlayer->play();
 }
 
 NotificationsWindow::~NotificationsWindow()
 {
     delete ui;
 }
-

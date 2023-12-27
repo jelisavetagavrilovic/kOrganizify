@@ -24,7 +24,7 @@ public slots:
 
 private:
     Ui::NotificationsWindow *ui;
-    QSoundEffect *mediaPlayer;
+    QSoundEffect *m_mediaPlayer;
 };
 
 #endif // NOTIFICATIONSWINDOW_H
