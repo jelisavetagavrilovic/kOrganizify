@@ -250,7 +250,7 @@ QPushButton:hover {
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="../resources.qrc">:/images/images/kOrganizifyPoster.png</pixmap>
+     <pixmap resource="../resources.qrc">:/images/images/LoginPoster.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -263,7 +263,7 @@ QPushButton:hover {
      <x>0</x>
      <y>0</y>
      <width>352</width>
-     <height>20</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>

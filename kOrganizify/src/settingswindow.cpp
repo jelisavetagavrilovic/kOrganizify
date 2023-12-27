@@ -64,11 +64,11 @@ QString SettingsWindow::getBackgroundPath()
 QString SettingsWindow::textToColor(QString text)
 {
     QMap<QString, QString> themeColors {
-        {"Blue", "#0050B5"},
-        {"Green", "#006E33"},
-        {"Orange", "#FE5000"},
-        {"Pink", "#D62598"},
-        {"Purple", "#9063CD"},
+        {"Blue", "#9EAEF8"},
+        {"Green", "#ABD49A"},
+        {"Orange", "#F1BC6A"},
+        {"Pink", "#FFBCE5"},
+        {"Purple", "#D8B7F1"},
         {"Default", "#A5A9A0"}
     };
 
@@ -100,11 +100,11 @@ QString SettingsWindow::textToPath(QString text)
 QString SettingsWindow::colorToPath(QString color)
 {
     QMap<QString, QString> colorNames {
-        {"#0050B5", "Blue"},
-        {"#006E33", "Green"},
-        {"#FE5000", "Orange"},
-        {"#D62598", "Pink"},
-        {"#9063CD", "Purple"},
+        {"#9EAEF8", "Blue"},
+        {"#ABD49A", "Green"},
+        {"#F1BC6A", "Orange"},
+        {"#FFBCE5", "Pink"},
+        {"#D8B7F1", "Purple"},
         {"#A5A9A0", "Default"}
     };
 

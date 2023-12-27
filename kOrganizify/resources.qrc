@@ -22,5 +22,6 @@
         <file>images/backgroundGreen.png</file>
         <file>images/backgroundDefault.png</file>
         <file>images/backgroundBlue.png</file>
+        <file>images/LoginPoster.png</file>
     </qresource>
 </RCC>
