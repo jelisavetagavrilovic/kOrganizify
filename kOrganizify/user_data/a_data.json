@@ -1,11 +1,60 @@
 {
     "events": [
+        {
+            "description": "",
+            "endTime": "2023-12-27T23:00:00",
+            "location": "",
+            "startTime": "2023-12-27T22:56:00",
+            "title": "a"
+        },
+        {
+            "description": "",
+            "endTime": "2023-12-27T23:00:00",
+            "location": "",
+            "startTime": "2023-12-27T22:57:00",
+            "title": "aaaa"
+        },
+        {
+            "description": "",
+            "endTime": "2023-12-28T00:00:00",
+            "location": "",
+            "startTime": "2023-12-27T23:20:00",
+            "title": "adasdd"
+        },
+        {
+            "description": "",
+            "endTime": "2023-12-27T00:00:00",
+            "location": "",
+            "startTime": "2023-12-27T23:28:00",
+            "title": "ascac"
+        },
+        {
+            "description": "",
+            "endTime": "2023-12-27T00:00:00",
+            "location": "",
+            "startTime": "2023-12-27T23:27:00",
+            "title": "sdasdas"
+        },
+        {
+            "description": "",
+            "endTime": "2023-12-28T01:00:00",
+            "location": "",
+            "startTime": "2023-12-28T00:18:00",
+            "title": "Dogadjaj"
+        },
+        {
+            "description": "asdad",
+            "endTime": "2023-12-28T01:00:00",
+            "location": "asdads",
+            "startTime": "2023-12-28T00:31:00",
+            "title": "Dogadjaj"
+        }
     ],
     "password": "a",
     "settings": {
-        "color": "#A5A9A0",
+        "color": "#ABD49A",
         "nightMode": false,
-        "notifications": false
+        "notifications": true
     },
     "tasks": [
         {

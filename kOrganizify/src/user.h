@@ -31,6 +31,7 @@ public:
     Calendar& getCalendar();
     ToDoList& getToDoList();
     Settings& getSettings();
+    QString getUsername() const;
 
     // Setters
     void setCalendar(const Calendar& calendar);

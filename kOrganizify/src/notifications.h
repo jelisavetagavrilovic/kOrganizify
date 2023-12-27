@@ -6,6 +6,7 @@
 #include <QDateTime>
 #include <QTimer>
 #include <QMessageBox>
+#include <QList>
 
 #include "calendar.h"
 #include "notificationswindow.h"
@@ -14,14 +15,19 @@ class Notifications : public QObject {
     Q_OBJECT
 public:
     Notifications(Calendar* calendar);
-    void checkEvents();
+    void checkEvents(const QList<Event>& filteredEvents);
+
+public slots:
+    void enabledNotifications(const bool enabled);
 
 private slots:
     static void showEvent(const Event& event);
 
 private:
-    Calendar* calendar;
-    QTimer* timer;
+    Calendar* m_calendar;
+    QTimer* m_timer;
+    bool m_enabled;
+    QList<Event> m_filteredEvents;
 
 };
 

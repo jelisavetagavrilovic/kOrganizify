@@ -11,6 +11,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Network)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Network)
+# find_package(Qt${QT_VERSION_MAJOR}Multimedia REQUIRED)
 
 set(PROJECT_SOURCES
         src/appwindow.cpp
@@ -27,6 +28,7 @@ set(PROJECT_SOURCES
         src/settings.cpp
         src/settingswindow.cpp
         src/synchronization.cpp
+        src/syncresponsewindow.h
         src/syncwindow.cpp
         src/task.cpp
         src/toDoList.cpp
@@ -47,6 +49,7 @@ set(HEADERS
         src/settings.h
         src/settingswindow.h
         src/synchronization.h
+        src/syncresponsewindow.cpp
         src/syncwindow.h
         src/task.h
         src/toDoList.h
@@ -60,6 +63,7 @@ set(FORMS
         src/responsewindow.ui
         src/notificationswindow.ui
         src/settingswindow.ui
+        src/syncresponsewindow.ui
         src/syncwindow.ui
 )
 
@@ -93,7 +97,7 @@ else()
     endif()
 endif()
 
-target_link_libraries(kOrganizify PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Network)
+target_link_libraries(kOrganizify PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Network) #[[Qt${QT_VERSION_MAJOR}::Multimedia)]]
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

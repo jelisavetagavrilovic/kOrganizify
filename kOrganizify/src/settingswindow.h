@@ -26,19 +26,35 @@ public:
     QString textToColor(const QString text);
     QString textToPath(const QString text);
     QString colorToPath(const QString color);
+    QString colorToText(QString color);
+    Ui::SettingsWindow *ui;
 
 public slots:
     void changeColor(QString color);
+//    void setColorSlot(const QString color);
+//    QString getColorSlot() const;
+    void setNotifications(const bool notifications);
+    bool getNotifications() const;
+    void updateNotificationIcon(bool state);
 
 private slots:
-    void on_btnSave_clicked();
+    QString getColorNameFromValue(const QMap<QString, QString> &colorMap, const QString &value);
+    void save();
 
 signals:
     void colorChanged(const QString& color);
+    void enabledNotifications(const bool enabled);
 
 private:
-    Ui::SettingsWindow *ui;
     Settings *m_settings;
+    const QMap<QString, QString> m_themeColors {
+        {"Blue", "#9EAEF8"},
+        {"Green", "#ABD49A"},
+        {"Orange", "#F1BC6A"},
+        {"Pink", "#FFBCE5"},
+        {"Purple", "#D8B7F1"},
+        {"Default", "#A5A9A0"}
+    };
 };
 
 #endif // SETTINGSWINDOW_H

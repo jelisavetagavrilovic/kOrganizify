@@ -11,10 +11,13 @@
 
 #include "mainwindow.h"
 #include "eventwindow.h"
+#include "qlistwidget.h"
+#include "responsewindow.h"
 #include "settingswindow.h"
 #include "syncwindow.h"
 #include "user.h"
 #include "toDoList.h"
+#include "notifications.h"
 
 
 namespace Ui {
@@ -39,17 +42,23 @@ public slots:
 
 private slots:
     void changeButtonColor(const QString &newColor);
-    //void colorCell();
     void openEventWindowForCell(int row, int column);
+    void enabledNotifications(const bool enabled);
     void addTask();
     void onCheckBoxStateChanged(int state);
     void openSettings();
     void logoutUser();
-    void openSyncWindow();
+    void openSyncWindow(QListWidgetItem *item);
     void populateFriends(const QList<QString>& friends);
     void updateTableForSelectedDate();
     void clearFinishedTasks();
     // void reorderCheckedTasks();
+    void showSyncWindow(QString username, QString title, int duration);
+    void syncDenied();
+    void sendYesResponse(QString friendName, int duration);
+    void sendNoResponse(QString friendName);
+    void showResponseWindow(QString eventTitle, QString startTime);
+    void agreedSync(QDateTime startTime, QDateTime endTime, QString title);
 
 private:
     Ui::AppWindow *ui;
@@ -59,6 +68,7 @@ private:
     EventWindow *eventWindow;
     // ToDoList m_toDoList;
     Calendar* m_calendar;
+    Notifications* m_notifications;
 };
 
 #endif // APPWINDOW_H

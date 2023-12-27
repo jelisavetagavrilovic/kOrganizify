@@ -1,5 +1,6 @@
 #ifndef SYNCWINDOW_H
 #define SYNCWINDOW_H
+#include "calendar.h"
 
 #include <QWidget>
 
@@ -12,11 +13,15 @@ class SyncWindow : public QWidget
     Q_OBJECT
 
 public:
-    explicit SyncWindow(QWidget *parent = nullptr);
+    explicit SyncWindow(QString username, QString friendName, Calendar calendar, QWidget *parent = nullptr);
     ~SyncWindow();
 
     QString getEnteredText() const;
     int getSelectedNumber() const;
+    void changeColor(QString color);
+
+signals:
+    void sendSyncRequest(QString username, QString friendName, QString eventTitle, int duration, Calendar calendar);
 
 private slots:
     void onTextEntered(const QString &m_text);
@@ -26,8 +31,11 @@ private slots:
 private:
     Ui::SyncWindow *ui;
 
+    QString m_friendName;
+    QString m_username;
     QString m_enteredText;
     int m_selectedNumber;
+    Calendar m_calendar;
 };
 
 #endif // SYNCWINDOW_H

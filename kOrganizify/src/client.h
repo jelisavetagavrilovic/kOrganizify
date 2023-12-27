@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QTcpSocket>
+#include "calendar.h"
 
 class Client : public QObject
 {
@@ -14,13 +15,20 @@ public:
 public slots:
     void readFromServer();
     void disconnected();
-    void sendMessage(QString message);
+    void syncResponse(bool response, QString username, QString friendName, int duration, Calendar cal = {}) const;
+    void eventResponse(bool response);
+    void syncRequest(QString from, QString to, QString titleEvent, int duration, Calendar calendar);
 private:
+    void sendMessage(QString message);
     QTcpSocket* m_socket;
     bool makeConnection(QHostAddress::SpecialAddress address);
 signals:
     void newUserLoggedIn(const QString& username);
     void disconnectedUser(const QString& username);
+    void showSyncWindow(QString from, QString eventTitle, int duration);
+    void syncRequestDenied();
+    void syncSuccess(QDateTime startTime,QDateTime endTime, QString eventTitle);
+    void newEventSync(QString eventTitle, QString startTime);
 };
 
 #endif // CLIENT_H

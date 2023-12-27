@@ -23,5 +23,7 @@
         <file>images/backgroundDefault.png</file>
         <file>images/backgroundBlue.png</file>
         <file>images/LoginPoster.png</file>
+        <file>images/link.png</file>
+        <file>resources/notification.wav</file>
     </qresource>
 </RCC>

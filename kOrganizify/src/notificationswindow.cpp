@@ -4,20 +4,28 @@
 NotificationsWindow::NotificationsWindow(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::NotificationsWindow)
+    // m_mediaPlayer(new QSoundEffect())
 {
     ui->setupUi(this);
+
+    // m_mediaPlayer->setSource(QUrl("qrc:/images/resources/notification.wav"));
+    // m_mediaPlayer->setVolume(50);
+    // m_mediaPlayer->setLoopCount(1);
 }
 
-void NotificationsWindow::updateWindow(const QString &name, const QString &time)
+void NotificationsWindow::updateWindow(const QString &name, const QString &time, const QString &location)
 {
-    ui->lbl_timeEvent->setText("Time: " + time);
-    ui->lbl_nameEvent->setText("Name: " + name);
+    ui->lblNameEvent->setText("30 min until: " + name);
+    ui->lblLocationEvent->setText("Location: " + location);
+    ui->lblTimeEvent->setText("At: " + time);
+
+
 
     show();
+    // m_mediaPlayer->play();
 }
 
 NotificationsWindow::~NotificationsWindow()
 {
     delete ui;
 }
-
