@@ -1,6 +1,7 @@
 #include "settingswindow.h"
 #include "ui_settingswindow.h"
 #include <QDir>
+#include <QMap>
 
 SettingsWindow::SettingsWindow(Settings *settings, QWidget *parent)
     : QMainWindow(parent)
@@ -8,12 +9,19 @@ SettingsWindow::SettingsWindow(Settings *settings, QWidget *parent)
     , m_settings(settings)
 {
     ui->setupUi(this);
-    ui->lblNotificationsOn->setVisible(false);
 
-    QString currentColor = m_settings->getColor();
-//    ui->cbxDropTheme->setCurrentText(getColorNameFromValue(themeColors, currentColor));
-//    this->setColor(currentColor);
+    if(this->getNotifications()){
+        ui->lblNotificationsOn->setVisible(true);
+        ui->lblNotificationsOff->setVisible(false);
+    }
+    else{
+        ui->lblNotificationsOn->setVisible(false);
+        ui->lblNotificationsOff->setVisible(true);
+    }
 
+    ui->cbxDropTheme->setCurrentText(colorToText(this->getColor()));
+
+    connect(ui->cbNotifications, &QCheckBox::stateChanged, this, &SettingsWindow::updateNotificationIcon);
     connect(ui->cbxDropTheme, QOverload<const QString &>::of(&QComboBox::currentTextChanged), [=](const QString &text){
         QString color = this->textToColor(text);
 
@@ -51,16 +59,7 @@ QString SettingsWindow::getBackgroundPath()
 
 QString SettingsWindow::textToColor(QString text)
 {
-    QMap<QString, QString> themeColors {
-        {"Blue", "#0050B5"},
-        {"Green", "#006E33"},
-        {"Orange", "#FE5000"},
-        {"Pink", "#D62598"},
-        {"Purple", "#9063CD"},
-        {"Default", "#A5A9A0"}
-    };
-
-    return themeColors.value(text, themeColors["Default"]);
+    return this->m_themeColors.value(text);
 }
 
 QString SettingsWindow::textToPath(QString text)
@@ -87,16 +86,12 @@ QString SettingsWindow::textToPath(QString text)
 
 QString SettingsWindow::colorToPath(QString color)
 {
-    QMap<QString, QString> colorNames {
-        {"#0050B5", "Blue"},
-        {"#006E33", "Green"},
-        {"#FE5000", "Orange"},
-        {"#D62598", "Pink"},
-        {"#9063CD", "Purple"},
-        {"#A5A9A0", "Default"}
-    };
+    return this->textToPath(colorToText(color));
+}
 
-    return this->textToPath(colorNames.value(color));
+QString SettingsWindow::colorToText(QString color)
+{
+    return this->m_themeColors.key(color);
 }
 
 void SettingsWindow::save() {
@@ -129,6 +124,17 @@ void SettingsWindow::setNotifications(const bool notification) {
 
 bool SettingsWindow::getNotifications() const {
     return this->m_settings->getNotifications();
+}
+
+void SettingsWindow::updateNotificationIcon(bool state){
+    if(state){
+        ui->lblNotificationsOn->setVisible(true);
+        ui->lblNotificationsOff->setVisible(false);
+    }
+    else{
+        ui->lblNotificationsOn->setVisible(false);
+        ui->lblNotificationsOff->setVisible(true);
+    }
 }
 
 SettingsWindow::~SettingsWindow()

@@ -16,9 +16,12 @@
   <property name="styleSheet">
    <string notr="true">SyncWindow{
 	background-color: #F7F4F8;
+}
+QLabel{
+	color: black;
 }</string>
   </property>
-  <widget class="QLineEdit" name="le_nameInput">
+  <widget class="QLineEdit" name="leNameInput">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -27,16 +30,25 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">SyncWindow{
+	background-color: #F7F4F8;
+}
+
+QLabel{
+	color: black;
+}</string>
+   </property>
    <property name="placeholderText">
     <string>Enter Event Name</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="cb_selectHours">
+  <widget class="QComboBox" name="cbSelectHours">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>120</x>
      <y>147</y>
-     <width>131</width>
+     <width>51</width>
      <height>23</height>
     </rect>
    </property>
@@ -50,7 +62,7 @@
     <number>1</number>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_sync">
+  <widget class="QPushButton" name="btnSync">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -63,7 +75,7 @@
     <string>Sync</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="lblChooseTime">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -78,7 +90,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Choose a friend:</string>
+    <string>Choose time:</string>
    </property>
   </widget>
   <widget class="QLabel" name="lblIcon">

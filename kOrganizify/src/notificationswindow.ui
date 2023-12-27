@@ -6,19 +6,28 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>176</height>
+    <width>369</width>
+    <height>180</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="lbl_timeEvent">
+  <property name="styleSheet">
+   <string notr="true">NotificationWindow{
+	background-color: #F7F4F8;
+}
+
+QLabel{
+	color: black;
+}</string>
+  </property>
+  <widget class="QLabel" name="lblTimeEvent">
    <property name="geometry">
     <rect>
      <x>90</x>
-     <y>140</y>
-     <width>261</width>
+     <y>110</y>
+     <width>251</width>
      <height>16</height>
     </rect>
    </property>
@@ -31,12 +40,12 @@
     <string>At:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_nameEvent">
+  <widget class="QLabel" name="lblNameEvent">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>110</y>
-     <width>331</width>
+     <y>80</y>
+     <width>321</width>
      <height>16</height>
     </rect>
    </property>
@@ -49,13 +58,13 @@
     <string>30 min until:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="lblIcon">
    <property name="geometry">
     <rect>
      <x>160</x>
      <y>10</y>
-     <width>71</width>
-     <height>61</height>
+     <width>51</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="text">
@@ -66,6 +75,24 @@
    </property>
    <property name="scaledContents">
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblLocationEvent">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>140</y>
+     <width>291</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Location:</string>
    </property>
   </widget>
  </widget>

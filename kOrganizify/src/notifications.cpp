@@ -37,7 +37,7 @@ void Notifications::checkEvents(const QList<Event>& filteredEvents) {
 
 void Notifications::showEvent(const Event& event) {
     NotificationsWindow* notif = new NotificationsWindow(nullptr);
-    notif->updateWindow(event.getTitle(), event.getStartTime().toString("yyyy-MM-dd hh:mm:ss"));
+    notif->updateWindow(event.getTitle(), event.getStartTime().toString("yyyy-MM-dd hh:mm:ss"), event.getLocation());
 }
 
 void Notifications::enabledNotifications(const bool enabled) {

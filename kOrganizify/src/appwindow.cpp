@@ -60,7 +60,7 @@ void AppWindow::populateFriends(const QList<QString>& friends) {
 void AppWindow::openSyncWindow(QListWidgetItem *item) {
     this->syncWindow = new SyncWindow(m_user->getUsername(),item->text(), m_user->getCalendar());
     connect(syncWindow, &SyncWindow::sendSyncRequest, m_user->m_client, &Client::syncRequest);
-    connect(settingsWindow, &SettingsWindow::colorChanged, this->syncWindow, &SyncWindow::changeColor);
+    this->syncWindow->changeColor(settingsWindow->getColor());
     syncWindow->show();
 }
 
@@ -103,7 +103,7 @@ void AppWindow::initialize() {
     settingsWindow->setColor(settings.getColor());
     settingsWindow->setBackgroundPath(settingsWindow->colorToPath(settingsWindow->getColor()));
     this->ui->lwToDoList->setStyleSheet("background-color: #FCD299");
-    this->ui->lwFriends->setStyleSheet("background-color: #E5E1E6;");
+    this->ui->lwFriends->setStyleSheet("background-color: #E5E1E6; color: black;");
     settingsWindow->ui->cbNotifications->setChecked(m_user->getSettings().getNotifications());
     ui->lwToDoList->setStyleSheet("background-color: #FCD299");
 
@@ -134,6 +134,7 @@ void AppWindow::initialize() {
     this->ui->leInput->setStyleSheet(styleSheet);
     this->ui->lblToDoList->setStyleSheet("color: " + this->settingsWindow->getColor());
 
+    this->ui->calendarWidget->setVerticalHeaderFormat(QCalendarWidget::NoVerticalHeader);
     this->ui->calendarWidget->setStyleSheet(QString("QCalendarWidget QWidget#qt_calendar_navigationbar {"
                                                     "   color: black; background-color: %1;}"
                                                     "QCalendarWidget QAbstractItemView:enabled {"
@@ -343,7 +344,6 @@ AppWindow::~AppWindow() {
     delete m_user;
     m_user = nullptr;
 
-    delete m_calendar;
     delete ui;
 }
 

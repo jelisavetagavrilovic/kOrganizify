@@ -14,19 +14,20 @@ SyncWindow::SyncWindow(QString username, QString friendName, Calendar calendar, 
     ui->setupUi(this);
 
     for (int i = 1; i <= 24; ++i) {
-        ui->cb_selectHours->addItem(QString::number(i));
+        ui->cbSelectHours->addItem(QString::number(i));
     }
 
-    connect(ui->le_nameInput, &QLineEdit::textChanged, this, &SyncWindow::onTextEntered);
-    connect(ui->cb_selectHours, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &SyncWindow::onNumberSelected);
-    connect(ui->btn_sync, &QPushButton::clicked, this, &SyncWindow::onSyncButtonClicked);
+    connect(ui->leNameInput, &QLineEdit::textChanged, this, &SyncWindow::onTextEntered);
+    connect(ui->cbSelectHours, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &SyncWindow::onNumberSelected);
+    connect(ui->btnSync, &QPushButton::clicked, this, &SyncWindow::onSyncButtonClicked);
 }
 
 void SyncWindow::changeColor(QString color){
     QString styleSheet = QString("background-color: %1; ").arg(color);
     QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 10px; color:black;}");
-    ui->btn_sync->setStyleSheet(btnStyleSheet);
-    ui->cb_selectHours->setStyleSheet(QString("QComboBox{color: black; border-radius:10px; background-color: %1; }").arg(color));
+    ui->btnSync->setStyleSheet(btnStyleSheet);
+    ui->cbSelectHours->setStyleSheet(QString("QComboBox{color: black; border-radius:10px; background-color: %1; }").arg(color));
+    ui->leNameInput->setStyleSheet(styleSheet + "color: black;");
 }
 
 SyncWindow::~SyncWindow()

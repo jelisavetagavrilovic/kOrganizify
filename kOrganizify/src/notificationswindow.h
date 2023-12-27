@@ -5,7 +5,7 @@
 #include <QDateTime>
 #include <QTimer>
 
-#include <QtMultimedia/QSoundEffect>
+// #include <QtMultimedia/QSoundEffect>
 
 namespace Ui {
 class NotificationsWindow;
@@ -20,11 +20,11 @@ public:
     ~NotificationsWindow();
 
 public slots:
-    void updateWindow(const QString &name, const QString &time);
+    void updateWindow(const QString &name, const QString &time, const QString &location);
 
 private:
     Ui::NotificationsWindow *ui;
-    QSoundEffect *m_mediaPlayer;
+    // QSoundEffect *m_mediaPlayer;
 };
 
 #endif // NOTIFICATIONSWINDOW_H
