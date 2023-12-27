@@ -140,7 +140,8 @@ void AppWindow::initialize() {
     connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
     connect(settingsWindow, &SettingsWindow::colorChanged, this->eventWindow, &EventWindow::changeColor);
     connect(ui->tableWidget, &QTableWidget::cellClicked, this, &AppWindow::openEventWindowForCell);
-    connect(this->eventWindow, &EventWindow::saveButtonClicked, this, &AppWindow::updateTableForSelectedDate);
+    connect(eventWindow, &EventWindow::saveButtonClicked, this, &AppWindow::updateTableForSelectedDate);
+    connect(eventWindow, &EventWindow::deleteButtonClicked, this, &AppWindow::updateTableForSelectedDate);
     connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button
     connect(ui->calendarWidget, &QCalendarWidget::selectionChanged, this, &AppWindow::updateTableForSelectedDate);
 }
@@ -150,8 +151,31 @@ void AppWindow::openEventWindowForCell(int row, int column) {
         QDate selectedDate = ui->calendarWidget->selectedDate();
         QDate startDate = selectedDate.addDays(-selectedDate.dayOfWeek() + 1);
         QDateTime cellDateTime(startDate.addDays(column), QTime(row + 1, 0));
-        eventWindow->setDateAndTime(cellDateTime);
 
+        QList<Event> weekEvents = m_calendar->getEventsForWeek(startDate, startDate.addDays(6));
+        for(const Event &event: weekEvents){
+            int startHour = event.getStartTime().time().hour();
+            int endHour = event.getEndTime().time().hour();
+
+            if(row >= startHour && row < endHour && column == event.getStartTime().date().dayOfWeek() - 1){
+                eventWindow->setCurrentEvent(event);
+                eventWindow->setStartDate(cellDateTime);
+                eventWindow->setEndDate(cellDateTime.addSecs(3600 * (endHour - startHour)));
+                eventWindow->setTitle(event.getTitle());
+                eventWindow->setDescription(event.getDescription());
+                eventWindow->setLocation(event.getLocation());
+
+                eventWindow->show();
+                return;
+            }
+        }
+
+        eventWindow->setCurrentEvent(Event());
+        eventWindow->setTitle("");
+        eventWindow->setDescription("");
+        eventWindow->setLocation("");
+        eventWindow->setStartDate(cellDateTime);
+        eventWindow->setEndDate(cellDateTime.addSecs(3600));
         eventWindow->show();
     }
 }

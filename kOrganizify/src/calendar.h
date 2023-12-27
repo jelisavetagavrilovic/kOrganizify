@@ -21,7 +21,7 @@ public:
 
     void addEvent(const Event &event);
     void removeEvent(const Event &event);
-    void updateEvent(const Event &event);
+    void updateEvent(const Event &oldEvent, const Event &newEvent);
     QList<Event> getEvents() const;
     QList<Event> getEventsForWeek(const QDate& startDate, const QDate& endDate) const;
 

@@ -73,10 +73,13 @@ void Calendar::removeEvent(const Event &event){
     m_events.removeOne(event);
 }
 
-void Calendar::updateEvent(const Event &event){
-    int index = m_events.indexOf(event);
-    if (index != -1){
-        m_events[index] = event;
+void Calendar::updateEvent(const Event &oldEvent, const Event &newEvent){
+    for (int i = 0; i < m_events.size(); ++i) {
+        if (m_events[i] == oldEvent) {
+            qDebug() << "Updating Event - Title: " << oldEvent.getTitle();
+            m_events[i] = newEvent;
+            return;
+        }
     }
 }
 
