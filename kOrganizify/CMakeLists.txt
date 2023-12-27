@@ -28,6 +28,7 @@ set(PROJECT_SOURCES
         src/settings.cpp
         src/settingswindow.cpp
         src/synchronization.cpp
+        src/syncresponsewindow.h
         src/syncwindow.cpp
         src/task.cpp
         src/toDoList.cpp
@@ -48,6 +49,7 @@ set(HEADERS
         src/settings.h
         src/settingswindow.h
         src/synchronization.h
+        src/syncresponsewindow.cpp
         src/syncwindow.h
         src/task.h
         src/toDoList.h
@@ -61,6 +63,7 @@ set(FORMS
         src/responsewindow.ui
         src/notificationswindow.ui
         src/settingswindow.ui
+        src/syncresponsewindow.ui
         src/syncwindow.ui
 )
 

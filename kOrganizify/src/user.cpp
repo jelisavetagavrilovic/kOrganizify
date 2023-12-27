@@ -71,6 +71,10 @@ Calendar& User::getCalendar() {
     return m_calendar;
 }
 
+QString User::getUsername() const {
+    return m_username;
+}
+
 ToDoList& User::getToDoList() {
     return m_toDoList;
 }

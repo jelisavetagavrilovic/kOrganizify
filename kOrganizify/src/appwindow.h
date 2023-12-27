@@ -11,6 +11,8 @@
 
 #include "mainwindow.h"
 #include "eventwindow.h"
+#include "qlistwidget.h"
+#include "responsewindow.h"
 #include "settingswindow.h"
 #include "syncwindow.h"
 #include "user.h"
@@ -46,11 +48,17 @@ private slots:
     void onCheckBoxStateChanged(int state);
     void openSettings();
     void logoutUser();
-    void openSyncWindow();
+    void openSyncWindow(QListWidgetItem *item);
     void populateFriends(const QList<QString>& friends);
     void updateTableForSelectedDate();
     void clearFinishedTasks();
     // void reorderCheckedTasks();
+    void showSyncWindow(QString username, QString title, int duration);
+    void syncDenied();
+    void sendYesResponse(QString friendName, int duration);
+    void sendNoResponse(QString friendName);
+    void showResponseWindow(QString eventTitle, QString startTime);
+    void agreedSync(QDateTime startTime, QDateTime endTime, QString title);
 
 private:
     Ui::AppWindow *ui;
