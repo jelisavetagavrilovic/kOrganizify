@@ -49,7 +49,7 @@ void AppWindow::openSyncWindow() {
     syncWindow->show();
 }
 
-void AppWindow::changeButtonColor(const QString& newColor, const QString& backgroundPath) {
+void AppWindow::changeButtonColor(const QString& newColor) {
     QString styleSheet = "background-color: " + newColor + ";";
     QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 10px;}");
     this->ui->btnSettings->setStyleSheet(btnStyleSheet);
@@ -65,8 +65,8 @@ void AppWindow::changeButtonColor(const QString& newColor, const QString& backgr
                                                     "QCalendarWidget QAbstractItemView:enabled {selection-background-color: %2 ;}").arg(newColor, newColor));
 
 
+    QString backgroundPath = this->settingsWindow->colorToPath(newColor);
     QPixmap background(backgroundPath);
-
     QPalette palette;
     palette.setBrush(this->backgroundRole(), QBrush(background));
     this->setPalette(palette);
@@ -81,7 +81,7 @@ void AppWindow::initialize() {
     Settings& settings = m_user->getSettings();
     settingsWindow = new SettingsWindow(&settings, this);
     settingsWindow->setColor(settings.color());
-    // settingsWindow->setBackgroundPath(settings.backgroundPath());
+    settingsWindow->setBackgroundPath(settingsWindow->colorToPath(settingsWindow->getColor()));
     this->ui->lwToDoList->setStyleSheet("background-color: #FCD299");
     this->ui->lwFriends->setStyleSheet("background-color: #E5E1E6;");
 
@@ -92,13 +92,11 @@ void AppWindow::initialize() {
     for (Event& e: m_calendar->getEvents()){
         qDebug() << e.getStartTime();
     }
-
     this->eventWindow = new EventWindow(m_calendar);
 
     QString sourceDir = QCoreApplication::applicationDirPath();
-    QString path = QDir(sourceDir).filePath(":/images/images/backgroundGreen.png");
+    QString path = QDir(sourceDir).filePath(settingsWindow->getBackgroundPath());
     QPixmap background(path);
-
     QPalette palette;
     palette.setBrush(this->backgroundRole(), QBrush(background));
     this->setPalette(palette);

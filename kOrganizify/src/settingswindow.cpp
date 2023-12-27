@@ -15,37 +15,10 @@ SettingsWindow::SettingsWindow(Settings *settings, QWidget *parent)
     ui->lblNotificationsOn->setVisible(false);
 
 
-//    QPalette btnSavePalette = ui->btnSave->palette();
-
-    QString sourceDir = QCoreApplication::applicationDirPath();
-    QString pathBlue = QDir(sourceDir).filePath(":/images/images/backgroundBlue.png");
-    QString pathGreen = QDir(sourceDir).filePath(":/images/images/backgroundGreen.png");
-    QString pathOrange = QDir(sourceDir).filePath(":/images/images/backgroundOrange.png");
-    QString pathPink = QDir(sourceDir).filePath(":/images/images/backgroundPink.png");
-    QString pathPurple = QDir(sourceDir).filePath(":/images/images/backgroundPurple.png");
-    QString pathDefault = QDir(sourceDir).filePath(":/images/images/backgroundDefault.png");
-
-    QMap<QString, QString> themeColors {
-        {"Blue", "#0050B5"},
-        {"Green", "#006E33"},
-        {"Orange", "#FE5000"},
-        {"Pink", "#D62598"},
-        {"Purple", "#9063CD"},
-        {"Default", "#A5A9A0"}
-    };
-
-    QMap<QString, QString> themeBackgrounds {
-        {"Blue", pathBlue},
-        {"Green", pathGreen},
-        {"Orange", pathOrange},
-        {"Pink", pathPink},
-        {"Purple", pathPurple},
-        {"Default", pathDefault}
-    };
-
     connect(ui->dropTheme, QOverload<const QString &>::of(&QComboBox::currentTextChanged), [=](const QString &text){
-        QString color = themeColors.value(text, themeColors["Default"]);
-        QString path = themeBackgrounds.value(text, themeBackgrounds["Default"]);
+        QString color = this->textToColor(text);
+
+        QString path = this->colorToPath(color);
 
         this->setColor(color);
         this->setBackgroundPath(path);
@@ -58,7 +31,7 @@ SettingsWindow::SettingsWindow(Settings *settings, QWidget *parent)
 }
 
 void SettingsWindow::on_btnSave_clicked(){
-    emit colorChanged(this->m_settings->color(), this->m_settings->backgroundPath());
+    emit colorChanged(this->m_settings->color());
     this->close();
 }
 
@@ -86,6 +59,56 @@ QString SettingsWindow::getColor(){
 QString SettingsWindow::getBackgroundPath()
 {
     return this->m_settings->backgroundPath();
+}
+
+QString SettingsWindow::textToColor(QString text)
+{
+    QMap<QString, QString> themeColors {
+        {"Blue", "#0050B5"},
+        {"Green", "#006E33"},
+        {"Orange", "#FE5000"},
+        {"Pink", "#D62598"},
+        {"Purple", "#9063CD"},
+        {"Default", "#A5A9A0"}
+    };
+
+    return themeColors.value(text, themeColors["Default"]);
+}
+
+QString SettingsWindow::textToPath(QString text)
+{
+    QString sourceDir = QCoreApplication::applicationDirPath();
+    QString pathBlue = QDir(sourceDir).filePath(":/images/images/backgroundBlue.png");
+    QString pathGreen = QDir(sourceDir).filePath(":/images/images/backgroundGreen.png");
+    QString pathOrange = QDir(sourceDir).filePath(":/images/images/backgroundOrange.png");
+    QString pathPink = QDir(sourceDir).filePath(":/images/images/backgroundPink.png");
+    QString pathPurple = QDir(sourceDir).filePath(":/images/images/backgroundPurple.png");
+    QString pathDefault = QDir(sourceDir).filePath(":/images/images/backgroundDefault.png");
+
+    QMap<QString, QString> themeBackgrounds {
+        {"Blue", pathBlue},
+        {"Green", pathGreen},
+        {"Orange", pathOrange},
+        {"Pink", pathPink},
+        {"Purple", pathPurple},
+        {"Default", pathDefault}
+    };
+
+    return themeBackgrounds.value(text, themeBackgrounds["Default"]);
+}
+
+QString SettingsWindow::colorToPath(QString color)
+{
+    QMap<QString, QString> colorNames {
+        {"#0050B5", "Blue"},
+        {"#006E33", "Green"},
+        {"#FE5000", "Orange"},
+        {"#D62598", "Pink"},
+        {"#9063CD", "Purple"},
+        {"#A5A9A0", "Default"}
+    };
+
+    return this->textToPath(colorNames.value(color));
 }
 
 SettingsWindow::~SettingsWindow()
