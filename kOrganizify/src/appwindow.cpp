@@ -46,6 +46,8 @@ void AppWindow::populateFriends(const QList<QString>& friends) {
 
 void AppWindow::openSyncWindow() {
     this->syncWindow = new SyncWindow();
+
+    connect(settingsWindow, &SettingsWindow::colorChanged, this->syncWindow, &SyncWindow::changeColor);
     syncWindow->show();
 }
 

@@ -17,6 +17,7 @@ public:
 
     QString getEnteredText() const;
     int getSelectedNumber() const;
+    void changeColor(QString color);
 
 private slots:
     void onTextEntered(const QString &m_text);

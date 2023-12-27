@@ -1,5 +1,6 @@
 #include "syncwindow.h"
 #include "ui_syncwindow.h"
+#include "settingswindow.h"
 #include <QDebug>
 
 SyncWindow::SyncWindow(QWidget *parent) :
@@ -16,6 +17,13 @@ SyncWindow::SyncWindow(QWidget *parent) :
     connect(ui->le_nameInput, &QLineEdit::textChanged, this, &SyncWindow::onTextEntered);
     connect(ui->cb_selectHours, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &SyncWindow::onNumberSelected);
     connect(ui->btn_sync, &QPushButton::clicked, this, &SyncWindow::onSyncButtonClicked);
+}
+
+void SyncWindow::changeColor(QString color){
+    QString styleSheet = QString("background-color: %1; ").arg(color);
+    QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 10px; color:black;}");
+    ui->btn_sync->setStyleSheet(btnStyleSheet);
+    ui->cb_selectHours->setStyleSheet(QString("QComboBox{color: black; border-radius:10px; background-color: %1; }").arg(color));
 }
 
 SyncWindow::~SyncWindow()
