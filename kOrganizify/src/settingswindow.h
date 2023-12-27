@@ -48,11 +48,11 @@ signals:
 private:
     Settings *m_settings;
     const QMap<QString, QString> m_themeColors {
-        {"Blue", "#0050B5"},
-        {"Green", "#006E33"},
-        {"Orange", "#FE5000"},
-        {"Pink", "#D62598"},
-        {"Purple", "#9063CD"},
+        {"Blue", "#9EAEF8"},
+        {"Green", "#ABD49A"},
+        {"Orange", "#F1BC6A"},
+        {"Pink", "#FFBCE5"},
+        {"Purple", "#D8B7F1"},
         {"Default", "#A5A9A0"}
     };
 };

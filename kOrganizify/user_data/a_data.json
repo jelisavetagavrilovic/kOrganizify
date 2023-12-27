@@ -25,15 +25,15 @@
             "description": "",
             "endTime": "2023-12-27T00:00:00",
             "location": "",
-            "startTime": "2023-12-27T23:27:00",
-            "title": "sdasdas"
+            "startTime": "2023-12-27T23:28:00",
+            "title": "ascac"
         },
         {
             "description": "",
             "endTime": "2023-12-27T00:00:00",
             "location": "",
-            "startTime": "2023-12-27T23:28:00",
-            "title": "ascac"
+            "startTime": "2023-12-27T23:27:00",
+            "title": "sdasdas"
         },
         {
             "description": "",
@@ -52,7 +52,7 @@
     ],
     "password": "a",
     "settings": {
-        "color": "#A5A9A0",
+        "color": "#ABD49A",
         "nightMode": false,
         "notifications": true
     },
