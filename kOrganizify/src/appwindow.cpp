@@ -2,6 +2,7 @@
 #include "qlistwidget.h"
 #include "ui_appwindow.h"
 #include "settingswindow.h"
+#include "syncresponsewindow.h"
 #include "mainwindow.h"
 
 AppWindow::AppWindow(User *user, QWidget *parent)
@@ -21,7 +22,11 @@ AppWindow::AppWindow(User *user, QWidget *parent)
 
     populateFriends(m_user->m_client->m_friends);
     connect(m_user->m_client, &Client::newUserLoggedIn, this, &AppWindow::handleNewUserLoggedIn);
-    connect(m_user->m_client, &Client::disconnectedUser, this, &AppWindow::handleUserDisconnected);    
+    connect(m_user->m_client, &Client::disconnectedUser, this, &AppWindow::handleUserDisconnected);
+    connect(m_user->m_client, &Client::showSyncWindow, this, &AppWindow::showSyncWindow);
+    connect(m_user->m_client, &Client::syncRequestDenied, this, &AppWindow::syncDenied);
+    connect(m_user->m_client, &Client::newEventSync, this, &AppWindow::showResponseWindow);
+    connect(m_user->m_client, &Client::syncSuccess, this, &AppWindow::agreedSync);
 }
 
 void AppWindow::handleNewUserLoggedIn(const QString& username) {
@@ -42,8 +47,10 @@ void AppWindow::populateFriends(const QList<QString>& friends) {
     }
 }
 
-void AppWindow::openSyncWindow() {
-    this->syncWindow = new SyncWindow();
+void AppWindow::openSyncWindow(QListWidgetItem *item) {
+    this->syncWindow = new SyncWindow(m_user->getUsername(),item->text(), m_user->getCalendar());
+    connect(syncWindow, &SyncWindow::sendSyncRequest, m_user->m_client, &Client::syncRequest);
+
     syncWindow->show();
 }
 
@@ -111,8 +118,6 @@ void AppWindow::openEventWindow(int row, int column) {
 }
 
 void AppWindow::colorCell(){
-    qDebug() << "Radi2";
-
     QString color = "#EB212E"; // boja bi valjalo da se menja na osnovu prioriteta dogadjaja
     QTableWidgetItem *item = new QTableWidgetItem("Ime dogadjaja");
     item->setBackground(QBrush(QColor(color)));
@@ -182,7 +187,38 @@ void AppWindow::logoutUser() {
     this->close();
 }
 
+void AppWindow::showSyncWindow(QString username, QString title, int duration) {
+    SyncResponseWindow* responseWindow = new SyncResponseWindow(username, title, duration);
+    responseWindow->show();
+    connect(responseWindow, &SyncResponseWindow::yesResponse, this, &AppWindow::sendYesResponse);
+    connect(responseWindow, &SyncResponseWindow::noResponse, this, &AppWindow::sendNoResponse);
+}
+
 AppWindow::~AppWindow() {
     delete ui;
     delete m_calendar;
+}
+
+void AppWindow::sendYesResponse(QString friendName) {
+    m_user->m_client->syncResponse(true, m_user->getUsername(), friendName, m_user->getCalendar());
+}
+
+void AppWindow::sendNoResponse(QString friendName) {
+    m_user->m_client->syncResponse(false, m_user->getUsername(), friendName);
+}
+
+void AppWindow::syncDenied() {
+    qDebug() << "your friend doesn't want to sync up with you :(";
+    // some pop-up? TODO
+}
+
+void AppWindow::showResponseWindow(QString eventTitle, QString startTime) {
+    ResponseWindow *responseWindow = new ResponseWindow(eventTitle,startTime);
+    responseWindow->show();
+    connect(responseWindow, &ResponseWindow::sendResponse, m_user->m_client, &Client::eventResponse);
+}
+
+void AppWindow::agreedSync(QDateTime startTime, QDateTime endTime, QString title) {
+    qDebug() <<"should insert into calendar";  // TODO
+    qDebug() <<startTime <<" "<< endTime <<" " << title;
 }

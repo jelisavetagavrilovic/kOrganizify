@@ -15,9 +15,9 @@ public:
 public slots:
     void readFromServer();
     void disconnected();
-    void syncResponse(bool response, Calendar cal) const;
+    void syncResponse(bool response, QString username, QString friendName, Calendar cal = {}) const;
     void eventResponse(bool response);
-    void syncRequest(QString from, QString to, QString titleEvent, int duration);
+    void syncRequest(QString from, QString to, QString titleEvent, int duration, Calendar calendar);
 private:
     void sendMessage(QString message);
     QTcpSocket* m_socket;
@@ -28,6 +28,7 @@ signals:
     void showSyncWindow(QString from, QString eventTitle, int duration);
     void syncRequestDenied();
     void syncSuccess(QDateTime startTime,QDateTime endTime, QString eventTitle);
+    void newEventSync(QString eventTitle, QString startTime);
 };
 
 #endif // CLIENT_H

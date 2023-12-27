@@ -13,7 +13,7 @@ class ResponseWindow : public QWidget
     Q_OBJECT
 
 public:
-    explicit ResponseWindow(QWidget *parent = nullptr);
+    explicit ResponseWindow(QString eventTitle, QString startTime, QWidget *parent = nullptr);
     ~ResponseWindow();
 
 public slots:
@@ -21,10 +21,14 @@ public slots:
     void onNoClicked();
 
 private slots:
-    void setDate(QString& foundDate);
-    QString getDate();
+
+signals:
+    void sendResponse(bool answer);
 
 private:
+    void setDate(QString foundDate);
+    void setTitle(QString title);
+    QString getDate();
     Ui::ResponseWindow *ui;
     QString m_date;
 };

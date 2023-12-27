@@ -16,7 +16,7 @@ public slots:
     void disconnection();
     void sendToClient(const QString &username, const QString &message) const;
 private:
-    QList<Event> findFreeTime(Calendar cal1, Calendar cal2, int maxTime) const;
+    QList<Event> findFreeTime(Calendar* cal1, Calendar* cal2, int maxTime) const;
     QString getUsername(QTcpSocket* socket);
     QTcpServer* m_server;
     QHash<QString, QTcpSocket*> m_clients;

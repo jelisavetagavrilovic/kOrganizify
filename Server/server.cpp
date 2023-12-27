@@ -42,7 +42,6 @@ void Server::readFromClient() {
     QString dataRead = QString(senderClient->readAll());
     QJsonObject doc = QJsonDocument::fromJson(dataRead.toUtf8()).object();
     QString title = doc.value("title").toString();
-    qDebug() << title;
     if(title == "new connection"){ //when someone new joins
         for (auto i = m_clients.cbegin(), end = m_clients.cend(); i != end; ++i){
             QJsonObject newClientMessage;
@@ -62,12 +61,13 @@ void Server::readFromClient() {
         newClientMessage.insert("fromUsername", doc.value("fromUsername").toString());
         newClientMessage.insert("toUsername", doc.value("toUsername").toString());
         newClientMessage.insert("titleEvent", doc.value("titleEvent").toString());
+        m_syncEventTitle = doc.value("titleEvent").toString();
         newClientMessage.insert("duration", doc.value("duration").toString());
 
         QJsonArray jsonArray = doc.value("events").toArray();
         newClientMessage.insert("events", jsonArray);
 
-        Calendar cal;
+        Calendar *cal = new Calendar();
         for (const QJsonValue &jv : jsonArray) {
             Event event;
             event.setTitle(jv["title"].toString());
@@ -76,20 +76,19 @@ void Server::readFromClient() {
             event.setDescription(jv["description"].toString());
             event.setLocation(jv["location"].toString());
 
-            cal.addEvent(event);
+            cal->addEvent(event);
         }
-        m_calendar.insert(doc.value("fromUsername").toString(),&cal);
+        m_calendar.insert(doc.value("fromUsername").toString(),cal);
 
         QString msg(QJsonDocument(newClientMessage).toJson());
         sendToClient(doc.value("toUsername").toString(), msg);
     }
     else if (title == "acceptSync") { // accepting initial sync request
         // receives their calendar, event title, total time for event
-
         QJsonArray jsonArray = doc.value("events").toArray();
         // newClientMessage.insert("events", jsonArray);
 
-        Calendar cal;
+        Calendar *cal = new Calendar();
         for (const QJsonValue &jv : jsonArray) {
             Event event;
             event.setTitle(jv["title"].toString());
@@ -97,36 +96,21 @@ void Server::readFromClient() {
             event.setEndTime(QDateTime::fromString(jv["endTime"].toString(), Qt::ISODate));
             event.setDescription(jv["description"].toString());
             event.setLocation(jv["location"].toString());
-
-            cal.addEvent(event);
+            cal->addEvent(event);
         }
-        m_calendar.insert(doc.value("fromUsername").toString(),&cal);
 
-        m_syncEventTitle = doc.value("syncEventTitle").toString();
-        m_syncEventDuration = doc.value("syncEventDuration").toInt();
+        m_calendar.insert(doc.value("fromUsername").toString(),cal);
 
-        Calendar* cal1 = m_calendar[doc.value("fromUsername").toString()];
-        Calendar* cal2 = m_calendar[doc.value("toUsername").toString()];
-        m_currentSyncEvents = findFreeTime(*cal1,*cal2,m_syncEventDuration);
-
-        m_numResponses = 0;
+        m_syncEventDuration = doc.value("syncEventDuration").toString().toInt();
 
         m_user1 = doc.value("fromUsername").toString();
         m_user2 = doc.value("toUsername").toString();
+        Calendar* cal1 = m_calendar[doc.value("fromUsername").toString()];
+        Calendar* cal2 = m_calendar[doc.value("toUsername").toString()];
+        m_currentSyncEvents = findFreeTime(cal1,cal2,m_syncEventDuration);
+        m_numResponses = 0;
+
         sendEvent(0);
-
-        QJsonObject newClientMessage;
-        newClientMessage.insert("title", "new event request");
-        newClientMessage.insert("fromUsername", doc.value("fromUsername").toString());
-        newClientMessage.insert("toUsername", doc.value("toUsername").toString());
-        newClientMessage.insert("startTime", m_currentSyncEvents[0].getStartTime().toString());
-        QString msg(QJsonDocument(newClientMessage).toJson());
-        sendToClient(doc.value("fromUsername").toString(), msg);
-
-        newClientMessage.insert("fromUsername", doc.value("toUsername").toString());
-        newClientMessage.insert("toUsername", doc.value("fromUsername").toString());
-        QString msg1(QJsonDocument(newClientMessage).toJson());
-        sendToClient(doc.value("toUsername").toString(),msg1);
     }
     else if(title == "rejectSync") {
         QString from = doc.value("fromUsername").toString();
@@ -161,10 +145,12 @@ void Server::sendEvent(int ind) const {
     if(m_currentSyncEvents.size() == ind) {
         sendNoMore();
     }
+
     QJsonObject newSyncEventMsg;
     newSyncEventMsg.insert("title", "new sync event");
     newSyncEventMsg.insert("from", m_user2);
     newSyncEventMsg.insert("startTime", m_currentSyncEvents[ind].getStartTime().toString());
+    newSyncEventMsg.insert("eventTitle", m_currentSyncEvents[ind].getTitle());
     QString msg(QJsonDocument(newSyncEventMsg).toJson());
 
     m_clients[m_user1]->write(msg.toStdString().c_str());
@@ -258,12 +244,12 @@ void Server::sendNoMore() const {
     m_clients[m_user2]->flush();
 }
 
-QList<Event> Server::findFreeTime(Calendar cal1, Calendar cal2, int maxTime) const {
+QList<Event> Server::findFreeTime(Calendar *cal1, Calendar *cal2, int maxTime) const {
     QList<Event> freeTimeSlots;
-
     QList<Event> allEvents;
-    allEvents.append(cal1.getEvents());
-    allEvents.append(cal2.getEvents());
+
+    allEvents.append(cal1->getEvents());
+    allEvents.append(cal2->getEvents());
 
     QSet<Event> uniqueEvents;
     for (const auto &event : allEvents) {
@@ -292,7 +278,7 @@ QList<Event> Server::findFreeTime(Calendar cal1, Calendar cal2, int maxTime) con
                 Event* newEvent = new Event();
                 newEvent->setStartTime(QDateTime(currentDate, currentHour));
                 newEvent->setEndTime(QDateTime(currentDate, currentHour.addSecs(maxTime * 3600)));
-                newEvent->setTitle("Free time");
+                newEvent->setTitle(m_syncEventTitle);
 
                 freeTimeSlots.append(*newEvent);
             }
