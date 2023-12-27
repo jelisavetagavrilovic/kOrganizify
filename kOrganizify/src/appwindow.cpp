@@ -199,12 +199,12 @@ AppWindow::~AppWindow() {
     delete m_calendar;
 }
 
-void AppWindow::sendYesResponse(QString friendName) {
-    m_user->m_client->syncResponse(true, m_user->getUsername(), friendName, m_user->getCalendar());
+void AppWindow::sendYesResponse(QString friendName, int duration) {
+    m_user->m_client->syncResponse(true, m_user->getUsername(), friendName, duration, m_user->getCalendar());
 }
 
 void AppWindow::sendNoResponse(QString friendName) {
-    m_user->m_client->syncResponse(false, m_user->getUsername(), friendName);
+    m_user->m_client->syncResponse(false, m_user->getUsername(), friendName, 0);
 }
 
 void AppWindow::syncDenied() {

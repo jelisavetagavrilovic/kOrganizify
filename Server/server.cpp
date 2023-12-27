@@ -64,6 +64,9 @@ void Server::readFromClient() {
         m_syncEventTitle = doc.value("titleEvent").toString();
         newClientMessage.insert("duration", doc.value("duration").toString());
 
+        //here the duration is set
+        //where to next?
+
         QJsonArray jsonArray = doc.value("events").toArray();
         newClientMessage.insert("events", jsonArray);
 
@@ -101,13 +104,27 @@ void Server::readFromClient() {
 
         m_calendar.insert(doc.value("fromUsername").toString(),cal);
 
+        //here it doesnt recieve well
         m_syncEventDuration = doc.value("syncEventDuration").toString().toInt();
+
+        //tried two aproaches, both say 0
+//        qDebug() <<  "proba2" << doc.value("duration").toString().toInt();
+//        qDebug() <<  "proba3"<< doc.value("syncEventDuration").toString().toInt();
 
         m_user1 = doc.value("fromUsername").toString();
         m_user2 = doc.value("toUsername").toString();
         Calendar* cal1 = m_calendar[doc.value("fromUsername").toString()];
         Calendar* cal2 = m_calendar[doc.value("toUsername").toString()];
+
+
         m_currentSyncEvents = findFreeTime(cal1,cal2,m_syncEventDuration);
+
+        //checking if the function works well
+//        for (const auto &event : m_currentSyncEvents) {
+//            qDebug() << event.getStartTime() << event.getEndTime();
+//        }
+
+
         m_numResponses = 0;
 
         sendEvent(0);
@@ -268,7 +285,11 @@ QList<Event> Server::findFreeTime(Calendar *cal1, Calendar *cal2, int maxTime) c
 
     for (QDate currentDate = currentDay; currentDate <= lastDayOfWeek; currentDate = currentDate.addDays(1)) {
 
-        QTime startHour = (currentDate == currentDay) ? currentHour : QTime(8, 0);
+        auto roundUpToNextHour = [](const QTime &time) {
+            return (time.minute() > 0 || time.second() > 0 || time.msec() > 0) ? QTime(time.hour() + 1, 0) : time;
+        };
+
+        QTime startHour = (currentDate == currentDay) ? roundUpToNextHour(currentHour) : QTime(8, 0);
         QTime endHour = QTime(23, 59, 59);
 
         for (QTime currentHour = startHour; currentHour < endHour; currentHour = currentHour.addSecs(3600)) {
@@ -279,6 +300,8 @@ QList<Event> Server::findFreeTime(Calendar *cal1, Calendar *cal2, int maxTime) c
                 newEvent->setStartTime(QDateTime(currentDate, currentHour));
                 newEvent->setEndTime(QDateTime(currentDate, currentHour.addSecs(maxTime * 3600)));
                 newEvent->setTitle(m_syncEventTitle);
+
+//                qDebug() << currentHour << currentHour.addSecs(maxTime * 3600);
 
                 freeTimeSlots.append(*newEvent);
             }
@@ -300,6 +323,5 @@ QList<Event> Server::findFreeTime(Calendar *cal1, Calendar *cal2, int maxTime) c
     });
 
     freeTimeSlots.erase(it, freeTimeSlots.end());
-
     return freeTimeSlots;
 }

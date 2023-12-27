@@ -15,7 +15,7 @@ public:
 public slots:
     void readFromServer();
     void disconnected();
-    void syncResponse(bool response, QString username, QString friendName, Calendar cal = {}) const;
+    void syncResponse(bool response, QString username, QString friendName, int duration, Calendar cal = {}) const;
     void eventResponse(bool response);
     void syncRequest(QString from, QString to, QString titleEvent, int duration, Calendar calendar);
 private:

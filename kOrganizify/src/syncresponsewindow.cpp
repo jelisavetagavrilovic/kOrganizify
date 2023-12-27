@@ -4,7 +4,8 @@
 SyncResponseWindow::SyncResponseWindow(QString friendName, QString title, int duration, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::SyncResponseWindow),
-    m_friendName(friendName)
+    m_friendName(friendName),
+    m_duration(duration)
 {
     ui->setupUi(this);
 
@@ -25,7 +26,7 @@ SyncResponseWindow::~SyncResponseWindow()
 }
 
 void SyncResponseWindow::sendYes() {
-    emit yesResponse(m_friendName);
+    emit yesResponse(m_friendName, m_duration);
     close();
 }
 

@@ -50,7 +50,7 @@ private slots:
     void populateFriends(const QList<QString>& friends);
     void showSyncWindow(QString username, QString title, int duration);
     void syncDenied();
-    void sendYesResponse(QString friendName);
+    void sendYesResponse(QString friendName, int duration);
     void sendNoResponse(QString friendName);
     void showResponseWindow(QString eventTitle, QString startTime);
     void agreedSync(QDateTime startTime, QDateTime endTime, QString title);

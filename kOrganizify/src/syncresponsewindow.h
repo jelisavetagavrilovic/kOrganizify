@@ -16,7 +16,7 @@ public:
     ~SyncResponseWindow();
 
 signals:
-    void yesResponse(QString friendName);
+    void yesResponse(QString friendName, int duration);
     void noResponse(QString friendName);
 
 private:
@@ -24,6 +24,7 @@ private:
     void sendNo();
     void sendYes();
     QString m_friendName;
+    int m_duration;
 };
 
 #endif // SYNCRESPONSEWINDOW_H

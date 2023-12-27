@@ -102,7 +102,7 @@ void Client::sendMessage(QString x) {
     m_socket->write(toSend);
 }
 
-void Client::syncResponse(bool response, QString username, QString friendName, Calendar cal) const {
+void Client::syncResponse(bool response, QString username, QString friendName, int duration, Calendar cal) const {
     if(!response) {
         QJsonObject newClientMessage;
         newClientMessage.insert("title", "rejectSync");
@@ -129,8 +129,9 @@ void Client::syncResponse(bool response, QString username, QString friendName, C
 
         QJsonObject newClientMessage;
         newClientMessage.insert("title", "acceptSync");
-        newClientMessage.insert("fromUsername", username);  // ovo treba da se menja
+        newClientMessage.insert("fromUsername", username);
         newClientMessage.insert("toUsername", friendName);
+        newClientMessage.insert("syncEventDuration", duration);
         newClientMessage.insert("events", QJsonValue(jsonArray));
         QString msg(QJsonDocument(newClientMessage).toJson());
         m_socket->write(msg.toStdString().c_str());
