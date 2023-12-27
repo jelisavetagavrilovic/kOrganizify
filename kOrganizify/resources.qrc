@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/images">
         <file>images/kOrganizifyPoster.png</file>
+        <file>resources/notification.wav</file>
     </qresource>
 </RCC>

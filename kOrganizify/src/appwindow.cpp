@@ -81,7 +81,7 @@ void AppWindow::initialize() {
 
     m_calendar = &m_user->getCalendar();
     m_notifications = new Notifications(m_calendar);
-    m_notifications->checkEvents();
+//    m_notifications->checkEvents();
     this->eventWindow = new EventWindow(m_calendar);
 
     QString sourceDir = QCoreApplication::applicationDirPath();
