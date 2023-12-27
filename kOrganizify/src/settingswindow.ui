@@ -10,6 +10,11 @@
     <height>241</height>
    </rect>
   </property>
+  <property name="styleSheet">
+   <string notr="true">SettingsWindow{
+	background-color: #F7F4F8;
+}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QComboBox" name="dropTheme">
     <property name="geometry">
@@ -64,6 +69,11 @@
      <font>
       <pointsize>12</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCheckBox{
+	color: black;
+}</string>
     </property>
     <property name="text">
      <string>Notifications</string>
