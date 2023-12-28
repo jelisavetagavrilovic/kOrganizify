@@ -48,29 +48,31 @@
             "location": "",
             "startTime": "2023-12-28T09:00:00",
             "title": "kafica"
+        },
+        {
+            "description": "",
+            "endTime": "2023-12-28T20:00:00",
+            "location": "",
+            "startTime": "2023-12-28T15:00:00",
+            "title": "bleja"
+        },
+        {
+            "description": "",
+            "endTime": "2023-12-29T15:00:00",
+            "location": "",
+            "startTime": "2023-12-29T09:00:00",
+            "title": "eeeeeeeeeeeeeeeeeeee"
         }
     ],
     "password": "markic",
     "settings": {
-        "color": "#9063CD",
+        "color": "#ABD49A",
         "notifications": false
     },
     "tasks": [
         {
             "isChecked": false,
             "task": "videti andji "
-        },
-        {
-            "isChecked": false,
-            "task": "povezati sa serverom"
-        },
-        {
-            "isChecked": false,
-            "task": "cdn,cscas"
-        },
-        {
-            "isChecked": false,
-            "task": "bjdfjkad"
         }
     ],
     "username": "markic"

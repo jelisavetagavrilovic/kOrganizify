@@ -161,6 +161,9 @@ void AppWindow::initialize() {
     connect(ui->calendarWidget, &QCalendarWidget::selectionChanged, this, &AppWindow::updateTableForSelectedDate);
     connect(eventWindow, &EventWindow::saveButtonClicked, this, &AppWindow::updatedEvents);
     connect(eventWindow, &EventWindow::deleteButtonClicked, this, &AppWindow::updatedEvents);
+
+
+    updateTableForSelectedDate();
 }
 
 void AppWindow::openEventWindowForCell(int row, int column) {
@@ -397,6 +400,7 @@ void AppWindow::agreedSync(QDateTime startTime, QDateTime endTime, QString title
     event.setTitle(title);
 
     m_user->getCalendar().addEvent(event);
+    updateTableForSelectedDate();
 }
 
 void AppWindow::updatedEvents() {
