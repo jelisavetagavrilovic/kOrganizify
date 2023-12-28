@@ -257,17 +257,24 @@ QList<Event> Server::findFreeTime(Calendar *cal1, Calendar *cal2, int maxTime) c
         return a.getStartTime() < b.getStartTime();
     });
 
-    QDate currentDay = QDateTime::currentDateTime().date();
-    QTime currentHour = QDateTime::currentDateTime().time();
-    QDate lastDayOfWeek = currentDay.addDays(7 - currentDay.dayOfWeek());
-
     auto roundUpToNextHour = [](const QTime &time) {
         return (time.minute() > 0 || time.second() > 0 || time.msec() > 0) ? QTime(time.hour() + 1, 0) : time;
     };
 
+    auto isBetween12pmAnd8am = [](const QTime& currentHour) {
+        return (currentHour >= QTime(0, 0) && currentHour < QTime(12, 0)) || (currentHour >= QTime(12, 0) && currentHour <= QTime(8, 0));
+    };
+
+    QDate currentDay = QDateTime::currentDateTime().date();
+    QTime currentHour = QDateTime::currentDateTime().time();
+    QDate lastDayOfWeek = currentDay.addDays(7 - currentDay.dayOfWeek());
+
     for (QDate currentDate = currentDay; currentDate <= lastDayOfWeek; currentDate = currentDate.addDays(1)) {
         QTime startHour = (currentDate == currentDay) ? roundUpToNextHour(currentHour) : QTime(8, 0);
         QTime endHour = QTime(23, 59, 59);
+
+        if(isBetween12pmAnd8am(startHour))
+            startHour = QTime(8, 0);
 
         for (QTime currentHour = startHour; currentHour < endHour; currentHour = currentHour.addSecs(3600)) {
             QTime endTime = endHour.addSecs(-maxTime * 3600);
