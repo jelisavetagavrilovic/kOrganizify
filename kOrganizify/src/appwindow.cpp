@@ -38,7 +38,10 @@ void AppWindow::handleNewUserLoggedIn(const QString& username) {
 }
 
 void AppWindow::handleUserDisconnected(const QString& username) {
-    delete ui->lwFriends->findItems(username,Qt::MatchExactly)[0];
+    auto user = ui->lwFriends->findItems(username,Qt::MatchExactly);
+    if (user.size() > 0) {
+        delete user[0];
+    }
 }
 
 void AppWindow::populateFriends(const QList<QString>& friends) {
@@ -109,7 +112,6 @@ void AppWindow::initialize() {
 //        qDebug() << e.getStartTime();
 //    }
     m_notifications = new Notifications(m_calendar);
-//    m_notifications->checkEvents();
     this->eventWindow = new EventWindow(m_calendar);
 
     QString sourceDir = QCoreApplication::applicationDirPath();
@@ -157,6 +159,8 @@ void AppWindow::initialize() {
     connect(eventWindow, &EventWindow::deleteButtonClicked, this, &AppWindow::updateTableForSelectedDate);
     connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button
     connect(ui->calendarWidget, &QCalendarWidget::selectionChanged, this, &AppWindow::updateTableForSelectedDate);
+    connect(eventWindow, &EventWindow::saveButtonClicked, this, &AppWindow::updatedEvents);
+    connect(eventWindow, &EventWindow::deleteButtonClicked, this, &AppWindow::updatedEvents);
 }
 
 void AppWindow::openEventWindowForCell(int row, int column) {
@@ -393,4 +397,8 @@ void AppWindow::agreedSync(QDateTime startTime, QDateTime endTime, QString title
     event.setTitle(title);
 
     m_user->getCalendar().addEvent(event);
+}
+
+void AppWindow::updatedEvents() {
+    m_notifications = new Notifications(m_calendar);
 }

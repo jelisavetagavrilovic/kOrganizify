@@ -43,3 +43,8 @@ void Notifications::showEvent(const Event& event) {
 void Notifications::enabledNotifications(const bool enabled) {
     m_enabled = enabled;
 }
+
+void Notifications::updatedEvents() {
+    m_filteredEvents = m_calendar->getEvents();
+    checkEvents(m_filteredEvents);
+}

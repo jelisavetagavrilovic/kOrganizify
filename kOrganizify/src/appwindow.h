@@ -62,6 +62,7 @@ private slots:
     void sendNoResponse(QString friendName);
     void showResponseWindow(QString eventTitle, QString startTime);
     void agreedSync(QDateTime startTime, QDateTime endTime, QString title);
+    void updatedEvents();
 
 private:
     Ui::AppWindow *ui;
