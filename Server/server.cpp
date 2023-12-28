@@ -5,7 +5,6 @@
 #include "../kOrganizify/src/calendar.h"
 #include "../kOrganizify/src/event.h"
 
-
 Server::Server(QObject* parent)
     : QObject(parent) {
     m_server = new QTcpServer(this);
@@ -19,11 +18,6 @@ void Server::newConnection() {
     QTcpSocket* newClient = m_server->nextPendingConnection();
 
     if(newClient) {
-        // QString clientName = newClient->readAll();
-        // m_clients.insert(clientName, newClient);
-
-
-        // multiCast(clientName);
         qDebug() << "New client connect";
         connect(newClient, &QTcpSocket::readyRead, this, &Server::readFromClient);
         connect(newClient, &QTcpSocket::disconnected, this, &Server::disconnection);
@@ -42,7 +36,7 @@ void Server::readFromClient() {
     QString dataRead = QString(senderClient->readAll());
     QJsonObject doc = QJsonDocument::fromJson(dataRead.toUtf8()).object();
     QString title = doc.value("title").toString();
-    if(title == "new connection"){ //when someone new joins
+    if(title == "new connection"){
         for (auto i = m_clients.cbegin(), end = m_clients.cend(); i != end; ++i){
             QJsonObject newClientMessage;
             newClientMessage.insert("title", "new connection");
@@ -50,6 +44,8 @@ void Server::readFromClient() {
             QString msg(QJsonDocument(newClientMessage).toJson());
             senderClient->write(msg.toStdString().c_str());
             senderClient->flush();
+            QTime dieTime = QTime::currentTime().addMSecs( 100 );
+            while( QTime::currentTime() < dieTime );
         }
         m_clients.insert(doc.value("username").toString(), senderClient);
         multiCast(doc.value("username").toString());
@@ -64,8 +60,7 @@ void Server::readFromClient() {
         m_syncEventTitle = doc.value("titleEvent").toString();
         newClientMessage.insert("duration", doc.value("duration").toString());
 
-        //here the duration is set
-        //where to next?
+        m_syncEventDuration = doc.value("duration").toString().toInt();
 
         QJsonArray jsonArray = doc.value("events").toArray();
         newClientMessage.insert("events", jsonArray);
@@ -89,7 +84,6 @@ void Server::readFromClient() {
     else if (title == "acceptSync") { // accepting initial sync request
         // receives their calendar, event title, total time for event
         QJsonArray jsonArray = doc.value("events").toArray();
-        // newClientMessage.insert("events", jsonArray);
 
         Calendar *cal = new Calendar();
         for (const QJsonValue &jv : jsonArray) {
@@ -104,27 +98,12 @@ void Server::readFromClient() {
 
         m_calendar.insert(doc.value("fromUsername").toString(),cal);
 
-        //here it doesnt recieve well
-        m_syncEventDuration = doc.value("syncEventDuration").toString().toInt();
-
-        //tried two aproaches, both say 0
-//        qDebug() <<  "proba2" << doc.value("duration").toString().toInt();
-//        qDebug() <<  "proba3"<< doc.value("syncEventDuration").toString().toInt();
-
         m_user1 = doc.value("fromUsername").toString();
         m_user2 = doc.value("toUsername").toString();
-        Calendar* cal1 = m_calendar[doc.value("fromUsername").toString()];
-        Calendar* cal2 = m_calendar[doc.value("toUsername").toString()];
-
+        Calendar* cal1 = m_calendar[m_user1];
+        Calendar* cal2 = m_calendar[m_user2];
 
         m_currentSyncEvents = findFreeTime(cal1,cal2,m_syncEventDuration);
-
-        //checking if the function works well
-//        for (const auto &event : m_currentSyncEvents) {
-//            qDebug() << event.getStartTime() << event.getEndTime();
-//        }
-
-
         m_numResponses = 0;
 
         sendEvent(0);
@@ -200,6 +179,7 @@ void Server::sendFinalEvent(int ind) const {
 void Server::sendToClient(const QString &username, const QString &message) const {
     if(m_clients.contains(username)) {
         m_clients[username]->write(message.toStdString().c_str());
+        m_clients[username]->flush();
     }
     else {
         qDebug() << "No such user exists!";
@@ -208,7 +188,7 @@ void Server::sendToClient(const QString &username, const QString &message) const
 
 QString Server::getUsername(QTcpSocket* socket) {
     for (auto i = m_clients.cbegin(), end = m_clients.cend(); i != end; ++i){
-        if (i.value() == socket){
+        if (i.value() == socket) {
             return i.key();
         }
     }
@@ -224,24 +204,22 @@ void Server::disconnection() {
             QJsonObject newClientMessage;
             newClientMessage.insert("title", "disconnected");
             newClientMessage.insert("username", username);
-
             QString msg(QJsonDocument(newClientMessage).toJson());
-            qDebug() << msg << " is sent to " << i.key();
             i.value()->write(msg.toStdString().c_str());
+            i.value()->flush();
         }
     }
 }
 
 void Server::multiCast(const QString &username) const {
     for (auto i = m_clients.cbegin(), end = m_clients.cend(); i != end; ++i){
-        if (i.key() != username){
-            qDebug() << " hey " << i.key() <<" there is a new user: " << username;
+        if (i.key() != username) {
             QJsonObject newClientMessage;
             newClientMessage.insert("title", "new connection");
             newClientMessage.insert("username", username);
-
             QString msg(QJsonDocument(newClientMessage).toJson());
             i.value()->write(msg.toStdString().c_str());
+            i.value()->flush();
         }
     }
 }
@@ -283,12 +261,11 @@ QList<Event> Server::findFreeTime(Calendar *cal1, Calendar *cal2, int maxTime) c
     QTime currentHour = QDateTime::currentDateTime().time();
     QDate lastDayOfWeek = currentDay.addDays(7 - currentDay.dayOfWeek());
 
+    auto roundUpToNextHour = [](const QTime &time) {
+        return (time.minute() > 0 || time.second() > 0 || time.msec() > 0) ? QTime(time.hour() + 1, 0) : time;
+    };
+
     for (QDate currentDate = currentDay; currentDate <= lastDayOfWeek; currentDate = currentDate.addDays(1)) {
-
-        auto roundUpToNextHour = [](const QTime &time) {
-            return (time.minute() > 0 || time.second() > 0 || time.msec() > 0) ? QTime(time.hour() + 1, 0) : time;
-        };
-
         QTime startHour = (currentDate == currentDay) ? roundUpToNextHour(currentHour) : QTime(8, 0);
         QTime endHour = QTime(23, 59, 59);
 
@@ -300,8 +277,6 @@ QList<Event> Server::findFreeTime(Calendar *cal1, Calendar *cal2, int maxTime) c
                 newEvent->setStartTime(QDateTime(currentDate, currentHour));
                 newEvent->setEndTime(QDateTime(currentDate, currentHour.addSecs(maxTime * 3600)));
                 newEvent->setTitle(m_syncEventTitle);
-
-//                qDebug() << currentHour << currentHour.addSecs(maxTime * 3600);
 
                 freeTimeSlots.append(*newEvent);
             }

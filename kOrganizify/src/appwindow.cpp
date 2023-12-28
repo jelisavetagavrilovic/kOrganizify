@@ -344,6 +344,8 @@ void AppWindow::showWeeklyEvents(const QDate& selectedDate){
 }
 
 void AppWindow::logoutUser() {
+    emit m_user->m_client->disconnectedUser(m_user->getUsername());
+
     MainWindow *mainWindow = new MainWindow;
     mainWindow->show();
     this->close();
@@ -373,9 +375,9 @@ void AppWindow::sendNoResponse(QString friendName) {
     m_user->m_client->syncResponse(false, m_user->getUsername(), friendName, 0);
 }
 
-void AppWindow::syncDenied() {
-    qDebug() << "your friend doesn't want to sync up with you :(";
-    // some pop-up? TODO
+void AppWindow::syncDenied(QString friendName) {
+    SyncDeniedWindow *syncDeniedWindow = new SyncDeniedWindow(friendName);
+    syncDeniedWindow->show();
 }
 
 void AppWindow::showResponseWindow(QString eventTitle, QString startTime) {
@@ -385,6 +387,10 @@ void AppWindow::showResponseWindow(QString eventTitle, QString startTime) {
 }
 
 void AppWindow::agreedSync(QDateTime startTime, QDateTime endTime, QString title) {
-    qDebug() <<"should insert into calendar";  // TODO
-    qDebug() <<startTime <<" "<< endTime <<" " << title;
+    Event event;
+    event.setStartTime(startTime);
+    event.setEndTime(endTime);
+    event.setTitle(title);
+
+    m_user->getCalendar().addEvent(event);
 }

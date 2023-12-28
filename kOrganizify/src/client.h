@@ -12,6 +12,7 @@ public:
     Client(QString username, QObject* parent = nullptr);
     QString m_username;
     QList<QString> m_friends;
+    void logoutHappened(QString username);
 public slots:
     void readFromServer();
     void disconnected();
@@ -26,7 +27,7 @@ signals:
     void newUserLoggedIn(const QString& username);
     void disconnectedUser(const QString& username);
     void showSyncWindow(QString from, QString eventTitle, int duration);
-    void syncRequestDenied();
+    void syncRequestDenied(QString friendName);
     void syncSuccess(QDateTime startTime,QDateTime endTime, QString eventTitle);
     void newEventSync(QString eventTitle, QString startTime);
 };
