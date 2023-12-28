@@ -175,8 +175,10 @@ void AppWindow::openEventWindowForCell(int row, int column) {
 
             if(row >= startHour && row < endHour && column == event.getStartTime().date().dayOfWeek() - 1){
                 eventWindow->setCurrentEvent(event);
-                eventWindow->setStartDate(cellDateTime);
-                eventWindow->setEndDate(cellDateTime.addSecs(3600 * (endHour - startHour)));
+                qDebug() << "START TIME: " << event.getStartTime();
+                qDebug() << "END TIME: " << event.getEndTime();
+                eventWindow->setStartDate(event.getStartTime());
+                eventWindow->setEndDate(event.getEndTime());
                 eventWindow->setTitle(event.getTitle());
                 eventWindow->setDescription(event.getDescription());
                 eventWindow->setLocation(event.getLocation());
@@ -323,9 +325,12 @@ void AppWindow::showWeeklyEvents(const QDate& selectedDate){
     QList<Event> weekEvents = m_calendar->getEventsForWeek(startDate, endDate);
 
     for(const Event &event: weekEvents){
+        QDateTime startTime = event.getStartTime();
+        QDateTime endTime = event.getEndTime();
 
-        int startHour = event.getStartTime().time().hour();
-        int endHour = event.getEndTime().time().hour();
+        int startHour = startTime.time().hour();
+        int endHour = endTime.time().hour();
+        int endMinute = endTime.time().minute();
 
         int row = startHour;
         if(row < 0){
@@ -336,13 +341,15 @@ void AppWindow::showWeeklyEvents(const QDate& selectedDate){
 
         QTableWidgetItem *item = new QTableWidgetItem(event.getTitle());
 
-        int duration = endHour - startHour;
-        qDebug() << "Duration: " << duration;
-        if (duration > 1){
-            ui->tableWidget->setSpan(row, column, duration, 1);
-        }
+        int durationHours = endHour - startHour;
+        int durationInHours = durationHours + (endMinute > 0 ? 1 : 0);
 
+        if (durationInHours > 1){
+            ui->tableWidget->setSpan(row, column, durationInHours, 1);
+        }
         ui->tableWidget->setItem(row, column, item);
+
+        qDebug() << event.getTitle() << " " << event.getStartTime() << " " << event.getEndTime();
     }
 }
 

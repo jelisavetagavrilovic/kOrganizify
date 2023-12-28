@@ -14,11 +14,13 @@ EventWindow::EventWindow(Calendar* calendar, QWidget *parent)
 }
 
 void EventWindow::setStartDate(const QDateTime &dateTime){
+    qDebug() << "SET START TIM: " << dateTime;
     ui->deDateStart->setDateTime(dateTime);
     ui->teTimeStart->setDateTime(dateTime);
 }
 
 void EventWindow::setEndDate(const QDateTime &dateTime){
+    qDebug() << "SET END TIME: " << dateTime;
     ui->deDateEnd->setDateTime(dateTime);
     ui->teTimeEnd->setDateTime(dateTime);
 }
@@ -86,12 +88,6 @@ void EventWindow::onSaveButtonClicked()
     QList<Event> events = m_calendar->getEvents();
     for (const Event &e : events) {
         qDebug() << "Event in calendar: " << e.getTitle();
-    }
-
-
-    QList<Event> weekEvents = m_calendar->getEventsForWeek(QDate(2000, 1, 1), QDate(2000, 1, 7));
-    for (const Event &e : weekEvents) {
-        qDebug() << "Event in weekly calendar: " << e.getTitle();
     }
 
     this->close();
