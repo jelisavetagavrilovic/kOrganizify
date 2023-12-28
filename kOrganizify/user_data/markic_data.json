@@ -34,25 +34,42 @@
             "location": "Gourmet Academy",
             "startTime": "2023-12-26T09:00:00",
             "title": "Flavors Unleashed"
+        },
+        {
+            "description": "",
+            "endTime": "2023-12-28T07:00:00",
+            "location": "",
+            "startTime": "2023-12-28T04:00:00",
+            "title": "bfvsdcs"
+        },
+        {
+            "description": "",
+            "endTime": "2023-12-28T12:00:00",
+            "location": "",
+            "startTime": "2023-12-28T09:00:00",
+            "title": "kafica"
         }
     ],
     "password": "markic",
     "settings": {
         "color": "#9063CD",
-        "nightMode": true,
         "notifications": false
     },
     "tasks": [
         {
+            "isChecked": false,
             "task": "videti andji "
         },
         {
+            "isChecked": false,
             "task": "povezati sa serverom"
         },
         {
+            "isChecked": false,
             "task": "cdn,cscas"
         },
         {
+            "isChecked": false,
             "task": "bjdfjkad"
         }
     ],
