@@ -170,15 +170,21 @@ void AppWindow::openEventWindowForCell(int row, int column) {
 
         QList<Event> weekEvents = m_calendar->getEventsForWeek(startDate, startDate.addDays(6));
         for(const Event &event: weekEvents){
-            int startHour = event.getStartTime().time().hour();
-            int endHour = event.getEndTime().time().hour();
+            QDateTime startTime = event.getStartTime();
+            QDateTime endTime = event.getEndTime();
 
-            if(row >= startHour && row < endHour && column == event.getStartTime().date().dayOfWeek() - 1){
+            int startHour = startTime.time().hour();
+            int endHour = endTime.time().hour();
+            int startMinute = startTime.time().minute();
+            int endMinute = endTime.time().minute();
+
+            int duration = endHour - startHour;
+
+
+            if(row >= startHour && row <= endHour && column == event.getStartTime().date().dayOfWeek() - 1){
                 eventWindow->setCurrentEvent(event);
-                qDebug() << "START TIME: " << event.getStartTime();
-                qDebug() << "END TIME: " << event.getEndTime();
-                eventWindow->setStartDate(event.getStartTime());
-                eventWindow->setEndDate(event.getEndTime());
+                eventWindow->setStartDate(cellDateTime.addSecs(60 * startMinute));
+                eventWindow->setEndDate(cellDateTime.addSecs(3600 * duration + 60 * endMinute));
                 eventWindow->setTitle(event.getTitle());
                 eventWindow->setDescription(event.getDescription());
                 eventWindow->setLocation(event.getLocation());
@@ -192,8 +198,13 @@ void AppWindow::openEventWindowForCell(int row, int column) {
         eventWindow->setTitle("");
         eventWindow->setDescription("");
         eventWindow->setLocation("");
-        eventWindow->setStartDate(cellDateTime);
-        eventWindow->setEndDate(cellDateTime.addSecs(3600));
+        if (row == 23) {
+            eventWindow->setStartDate(cellDateTime.addDays(1));
+            eventWindow->setEndDate(cellDateTime.addSecs(3600 * 24 + 59 * 60));
+        } else {
+            eventWindow->setStartDate(cellDateTime);
+            eventWindow->setEndDate(cellDateTime.addSecs(3600));
+        }
         eventWindow->show();
     }
 }
@@ -337,19 +348,17 @@ void AppWindow::showWeeklyEvents(const QDate& selectedDate){
             row += 24;
         }
 
-        int column = event.getStartTime().date().dayOfWeek() - 1;
+        int column = startTime.date().dayOfWeek() - 1;
 
         QTableWidgetItem *item = new QTableWidgetItem(event.getTitle());
 
-        int durationHours = endHour - startHour;
-        int durationInHours = durationHours + (endMinute > 0 ? 1 : 0);
+        int durationInHours = (endHour - startHour) + (endMinute > 0 ? 1 : 0);
 
         if (durationInHours > 1){
             ui->tableWidget->setSpan(row, column, durationInHours, 1);
         }
         ui->tableWidget->setItem(row, column, item);
 
-        qDebug() << event.getTitle() << " " << event.getStartTime() << " " << event.getEndTime();
     }
 }
 
