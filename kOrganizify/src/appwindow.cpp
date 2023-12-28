@@ -38,7 +38,10 @@ void AppWindow::handleNewUserLoggedIn(const QString& username) {
 }
 
 void AppWindow::handleUserDisconnected(const QString& username) {
-    delete ui->lwFriends->findItems(username,Qt::MatchExactly)[0];
+    auto user = ui->lwFriends->findItems(username,Qt::MatchExactly);
+    if (user.size() > 0) {
+        delete user[0];
+    }
 }
 
 void AppWindow::populateFriends(const QList<QString>& friends) {
