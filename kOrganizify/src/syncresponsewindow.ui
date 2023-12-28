@@ -6,21 +6,42 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>376</width>
     <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">SyncResponseWindow{
+	background-color: #F7F4F8;
+}
+QLabel{
+	color: black;
+}</string>
+  </property>
   <widget class="QLabel" name="lblTitle">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>10</y>
-     <width>241</width>
+     <x>40</x>
+     <y>20</y>
+     <width>301</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">SyncResponseWindow{
+	background-color: #F7F4F8;
+}
+QLabel{
+	color: black;
+}</string>
    </property>
    <property name="text">
     <string/>
@@ -29,24 +50,34 @@
   <widget class="QLabel" name="lblT">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>50</x>
      <y>80</y>
-     <width>41</width>
+     <width>81</width>
      <height>41</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
    <property name="text">
-    <string>Title: </string>
+    <string>Event:</string>
    </property>
   </widget>
   <widget class="QLabel" name="lblEventTitle">
    <property name="geometry">
     <rect>
-     <x>60</x>
+     <x>110</x>
      <y>80</y>
-     <width>311</width>
+     <width>361</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
    <property name="text">
     <string/>
@@ -55,24 +86,42 @@
   <widget class="QLabel" name="lblD">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>150</y>
-     <width>61</width>
+     <x>30</x>
+     <y>130</y>
+     <width>81</width>
      <height>31</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
    <property name="text">
-    <string>Duration</string>
+    <string>Duration:</string>
    </property>
   </widget>
   <widget class="QLabel" name="lblDuration">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>140</y>
-     <width>131</width>
+     <x>110</x>
+     <y>120</y>
+     <width>231</width>
      <height>51</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	backgroun-color: #F7F4F8;
+}
+QLabel{
+	color: black;
+}</string>
    </property>
    <property name="text">
     <string/>
@@ -81,11 +130,16 @@
   <widget class="QPushButton" name="btnYes">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>250</y>
-     <width>80</width>
-     <height>25</height>
+     <x>230</x>
+     <y>240</y>
+     <width>91</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Yes</string>
@@ -94,14 +148,37 @@
   <widget class="QPushButton" name="btnNo">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>250</y>
-     <width>80</width>
-     <height>25</height>
+     <x>50</x>
+     <y>244</y>
+     <width>91</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>No</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblQuestion">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>190</y>
+     <width>141</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Add to calendar?</string>
    </property>
   </widget>
  </widget>

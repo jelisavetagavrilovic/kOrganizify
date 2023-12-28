@@ -1,0 +1,42 @@
+{
+    "events": [
+        {
+            "description": "Proslava",
+            "endTime": "2024-08-16T23:00:00",
+            "location": "Takovski vrt",
+            "startTime": "2024-08-16T15:00:00",
+            "title": "Sestrin rodj"
+        },
+        {
+            "description": "Proslava",
+            "endTime": "2024-08-25T23:00:00",
+            "location": "Takovski vrt",
+            "startTime": "2024-08-25T20:00:00",
+            "title": "Moj rodj"
+        }
+    ],
+    "password": "marko",
+    "settings": {
+        "color": "#A5A9A0",
+        "nightMode": false,
+        "notifications": false
+    },
+    "tasks": [
+        {
+            "task": "Uci"
+        },
+        {
+            "task": "Popij vode"
+        },
+        {
+            "task": "Rucaj"
+        },
+        {
+            "task": "Idi u terretanu"
+        },
+        {
+            "task": "Idi do prodavnice"
+        }
+    ],
+    "username": "marko"
+}

@@ -15,6 +15,7 @@ class ResponseWindow : public QWidget
 public:
     explicit ResponseWindow(QString eventTitle, QString startTime, QWidget *parent = nullptr);
     ~ResponseWindow();
+    void changeColor(QString color);
 
 public slots:
     void onYesClicked();
