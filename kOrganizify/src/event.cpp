@@ -15,11 +15,19 @@ void Event::setTitle(const QString &title) {
     BasicEvent::setTitle(title);
 }
 
-double Event::getDuration() const {
+int Event::getDuration() const {
     return BasicEvent::getDuration();
 }
 
-void Event::setDuration(const double duration) {
+void Event::setDuration(const int duration) {
+    BasicEvent::setDuration(duration);
+}
+
+void Event::setDuration() {
+    QTime startTime = m_startTime.time();
+    QTime endTime = m_endTime.time();
+
+    int duration = startTime.msecsTo(endTime) / (1000 * 60); // 1000 milisekundi = 1 sekunda
     BasicEvent::setDuration(duration);
 }
 

@@ -16,6 +16,8 @@ public:
     void setDuration(const int duration);
     void deleteString();
 
+    bool isValidate() const;
+
     bool operator==(const BasicEvent &other) const;
 
 private:

@@ -279,10 +279,10 @@ void AppWindow::showWeeklyEvents(const QDate& selectedDate){
     ui->tableWidget->clearContents();
     ui->tableWidget->clearSpans();
 
-    QDate startDate = selectedDate.addDays(-selectedDate.dayOfWeek() + 1);
-    QDate endDate = startDate.addDays(6);
+    m_startDate = selectedDate.addDays(-selectedDate.dayOfWeek() + 1);
+    m_endDate = m_startDate.addDays(6);
 
-    QList<Event> weekEvents = m_calendar->getEventsForWeek(startDate, endDate);
+    QList<Event> weekEvents = m_calendar->getEventsForWeek(m_startDate, m_endDate);
 
     for(const Event &event: weekEvents){
 
@@ -322,7 +322,14 @@ void AppWindow::logoutUser() {
 }
 
 void AppWindow::smartPlan() {
-    BasicEventWindow *basicEventWindow = new BasicEventWindow(m_calendar);
+    // popraviti da se ne ponavlja kode
+    QDate selectedDate = ui->calendarWidget->selectedDate();
+    m_startDate = selectedDate.addDays(-selectedDate.dayOfWeek() + 1);
+    m_endDate = m_startDate.addDays(6);
+    qDebug() << m_startDate << m_endDate;
+
+    BasicEventWindow *basicEventWindow = new BasicEventWindow(m_calendar, &m_startDate, &m_endDate);
+
     basicEventWindow->show();
 }
 

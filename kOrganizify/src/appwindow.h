@@ -61,6 +61,8 @@ private:
     EventWindow *eventWindow;
     // ToDoList m_toDoList;
     Calendar* m_calendar;
+    QDate m_startDate;
+    QDate m_endDate;
 };
 
 #endif // APPWINDOW_H

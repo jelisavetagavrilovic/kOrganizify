@@ -26,16 +26,16 @@ public:
     void updateEvent(const Event &event);
 
     QList<Event> getEvents() const;
+    Event getEvent(const int index);
     BasicEvent getBasicEvent(const int index);
     int sizeBasic();
+    int size();
     void print();
     QList<Event> getEventsForWeek(const QDate& startDate, const QDate& endDate) const;
     void clear();
+    bool hasEventAt(const QDateTime& dateTime) const;
 
 private:
-    // QList<Event> m_events;
-    int m_sizeFixedEvents;
-
     QList<BasicEvent> m_basicEvents;
     QList<Event> m_events;
 };

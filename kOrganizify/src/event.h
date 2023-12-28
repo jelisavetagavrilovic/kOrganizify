@@ -24,8 +24,9 @@ public:
     QString getTitle() const;
     void setTitle(const QString &title);
 
-    double getDuration() const;
-    void  setDuration(const double duratoin);
+    int getDuration() const;
+    void  setDuration(const int duration);
+    void setDuration();
 
     QDateTime getStartTime() const;
     void setStartTime(const QDateTime &startTime);

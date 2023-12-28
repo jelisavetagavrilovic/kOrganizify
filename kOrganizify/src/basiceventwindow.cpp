@@ -1,17 +1,18 @@
 #include "basiceventwindow.h"
 #include "ui_basiceventwindow.h"
 
-BasicEventWindow::BasicEventWindow(Calendar *calendar, QWidget *parent)
+BasicEventWindow::BasicEventWindow(Calendar *calendar, QDate *startDate, QDate *endDate,  QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::BasicEventWindow)
-    , m_basicEvent(new BasicEvent())
     , m_calendar(calendar)
+    , m_basicEvent(new BasicEvent())
     , m_basicCalendar(new Calendar)
+    , m_startDate(startDate)
+    , m_endDate(endDate)
 {
     ui->setupUi(this);
     setWindowTitle("Smart plan");
 
-    // m_startIndex = m_calendar->size();
     m_currentIndex = 0;
 
     connect(ui->btnGenerate, &QPushButton::clicked, this, &BasicEventWindow::generate);
@@ -20,21 +21,23 @@ BasicEventWindow::BasicEventWindow(Calendar *calendar, QWidget *parent)
     connect(ui->btnRemove, &QPushButton::clicked, this, &BasicEventWindow::removeEvent);
 }
 
-bool BasicEventWindow::addEvent() {
+bool BasicEventWindow::addEvent(const char op) {
     if (m_currentIndex == m_basicCalendar->sizeBasic()) {
         QString title = ui->leTitle->text();
         QString durationString = ui->leDuration->text();
-
-        if (title.isEmpty() || durationString.isEmpty()) {
-            QMessageBox::warning(this, "Warning", "Please enter the title and duration of the event");
-            return false;
-        }
-
         bool ok;
         int duration = durationString.toInt(&ok);
-        if (!ok) {
-            QMessageBox::warning(this, "Warning", "Duration must be an integer number");
-            return false;
+
+        if (op == 'n') {
+            if (title.isEmpty() || durationString.isEmpty()) {
+                QMessageBox::warning(this, "Warning", "Please enter the title and duration of the event");
+                return false;
+            }
+
+            if (!ok) {
+                QMessageBox::warning(this, "Warning", "Duration must be an integer number");
+                return false;
+            }
         }
 
         m_basicEvent->setTitle(title);
@@ -46,12 +49,11 @@ bool BasicEventWindow::addEvent() {
 }
 
 void BasicEventWindow::nextEvent() {
-    if(addEvent())
+    if(addEvent('n'))
         m_currentIndex++;
 
     updateUi();
 }
-
 
 void BasicEventWindow::removeEvent() {
     if (m_currentIndex >= 0  &&  m_currentIndex < m_basicCalendar->sizeBasic()) {
@@ -59,21 +61,54 @@ void BasicEventWindow::removeEvent() {
 
         m_currentIndex = std::max(0, m_currentIndex-1);
         updateUi();
+        if (m_currentIndex == 0)
+            nextEvent();
+        else
+            previousEvent();
     }
 }
 
 void BasicEventWindow::previousEvent() {
     if (m_currentIndex > 0) {
-        if(addEvent())
+        if(addEvent('p'))
             m_currentIndex--;
 
         updateUi();
     }
 }
 
-void BasicEventWindow::generate() {
-
+void BasicEventWindow::print() {
+    for (int i = 0; i < m_basicCalendar->sizeBasic(); i++)
+        qDebug() << m_basicCalendar->getBasicEvent(i).getTitle() << m_basicCalendar->getBasicEvent(i).getDuration();
 }
+
+
+void BasicEventWindow::generate() {
+    if(addEvent('g')) {
+        QTime startTime = ui->tePlanStartTime->time();
+        QTime endTime = ui->tePlanEndTime->time();
+
+        qDebug() << startTime << endTime;
+
+        int workMinutesPerDay = startTime.msecsTo(endTime) / (1000 * 60); // 1000 milisekundi = 1 sekunda
+        qDebug() << workMinutesPerDay;
+
+        for (int i = 0; i < m_basicCalendar->sizeBasic(); i++)
+            qDebug() << m_basicCalendar->getBasicEvent(i).getTitle() << m_basicCalendar->getBasicEvent(i).getDuration();
+
+        qDebug() << *m_startDate << *m_endDate;
+
+
+        m_scheduler = new Scheduler(m_calendar, m_basicCalendar);
+        // m_scheduler->generateSchedule(*m_startDate, *m_endDate, workMinutesPerDay, startTime, endTime);
+        m_scheduler->generateSchedule(*m_startDate, *m_endDate, workMinutesPerDay, startTime, endTime, 10);
+
+        QList<Calendar*> generatedSchedules = m_scheduler->getGeneratedSchedules();
+        for (Calendar* schedules : generatedSchedules)
+            schedules->print();
+    }
+}
+
 
 void BasicEventWindow::updateUi() {
     if (m_currentIndex >= 0 && m_currentIndex < m_basicCalendar->sizeBasic()) {

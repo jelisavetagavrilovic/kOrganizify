@@ -9,21 +9,6 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Use FetchContent to include the Z3 library
-# include(FetchContent)
-# FetchContent_Declare(
-#   z3
-#   GIT_REPOSITORY https://github.com/Z3Prover/z3.git
-#   GIT_TAG        master  # You can specify a commit hash or release tag
-#   SOURCE_DIR     "${CMAKE_CURRENT_SOURCE_DIR}/_deps/z3-src"
-#   BINARY_DIR     "${CMAKE_CURRENT_BINARY_DIR}/_deps/z3-build"
-# )
-
-# FetchContent_GetProperties(z3)
-# if(NOT z3_POPULATED)
-#   FetchContent_Populate(z3)
-#   add_subdirectory(${z3_SOURCE_DIR} ${z3_BINARY_DIR})
-# endif()
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Network)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Network)
@@ -42,9 +27,9 @@ set(PROJECT_SOURCES
         src/notifications.cpp
         src/notificationswindow.cpp
         src/saveload.cpp
+        src/scheduler.cpp
         src/settings.cpp
         src/settingswindow.cpp
-
         src/synchronization.cpp
         src/syncwindow.cpp
         src/task.cpp
@@ -65,9 +50,9 @@ set(HEADERS
         src/notifications.h
         src/notificationswindow.h
         src/saveload.h
+        src/scheduler.h
         src/settings.h
         src/settingswindow.h
-
         src/synchronization.h
         src/syncwindow.h
         src/task.h
@@ -117,20 +102,12 @@ else()
 endif()
 
 
-# # Link against the Z3 library
-# target_include_directories(kOrganizify PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
-# target_include_directories(kOrganizify PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src")
-# target_include_directories(kOrganizify PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/_deps/z3-src/src/api")
-# target_include_directories(kOrganizify PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/_deps/z3-src/src/api/c++")
-# target_link_directories(kOrganizify PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/_deps/z3-build")
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/external/linux/z3/include")
+link_directories("${CMAKE_CURRENT_SOURCE_DIR}/external/linux/z3/lib")
 
-# # target_link_libraries(kOrganizify PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/_deps/z3-build/libz3.so")
-# # target_link_libraries(kOrganizify PRIVATE z3)
-
-# target_link_libraries(kOrganizify PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_link_libraries(kOrganizify
     PRIVATE
-    # z3
+    "${CMAKE_CURRENT_SOURCE_DIR}/external/linux/z3/lib/libz3.so"
     Qt${QT_VERSION_MAJOR}::Widgets
     Qt${QT_VERSION_MAJOR}::Network
 )
