@@ -128,7 +128,7 @@ void Server::readFromClient() {
                 sendEvent(m_numResponses / 2);
             }
             else {
-                sendFinalEvent(m_numResponses / 2);
+                sendFinalEvent(m_numResponses / 2 - 1);
             }
         }
         else {
