@@ -1,6 +1,7 @@
 #include "event.h"
 #include "eventwindow.h"
 #include "ui_eventwindow.h"
+#include <QMessageBox>
 
 EventWindow::EventWindow(Calendar* calendar, QWidget *parent)
     : QWidget(parent)
@@ -85,6 +86,11 @@ void EventWindow::onSaveButtonClicked()
 
     QDateTime startDateTime(ui->deDateStart->date(), ui->teTimeStart->time());
     QDateTime endDateTime(ui->deDateEnd->date(), ui->teTimeEnd->time());
+
+    if (endDateTime <= startDateTime) {
+        QMessageBox::critical(this, "Error", "End time must be after start time.", QMessageBox::Ok);
+        return;
+    }
 
     newEvent.setStartTime(startDateTime);
     newEvent.setEndTime(endDateTime);
