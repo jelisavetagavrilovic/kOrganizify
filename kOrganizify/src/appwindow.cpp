@@ -108,11 +108,7 @@ void AppWindow::initialize() {
     this->setAutoFillBackground(true);
 
     m_calendar = &m_user->getCalendar();
-//    for (Event& e: m_calendar->getEvents()){
-//        qDebug() << e.getStartTime();
-//    }
     m_notifications = new Notifications(m_calendar);
-//    m_notifications->checkEvents();
     this->eventWindow = new EventWindow(m_calendar);
 
     QString sourceDir = QCoreApplication::applicationDirPath();
@@ -160,6 +156,11 @@ void AppWindow::initialize() {
     connect(eventWindow, &EventWindow::deleteButtonClicked, this, &AppWindow::updateTableForSelectedDate);
     connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button
     connect(ui->calendarWidget, &QCalendarWidget::selectionChanged, this, &AppWindow::updateTableForSelectedDate);
+    connect(eventWindow, &EventWindow::saveButtonClicked, this, &AppWindow::updatedEvents);
+    connect(eventWindow, &EventWindow::deleteButtonClicked, this, &AppWindow::updatedEvents);
+
+
+    updateTableForSelectedDate();
 }
 
 void AppWindow::openEventWindowForCell(int row, int column) {
@@ -232,8 +233,7 @@ void AppWindow::addTaskToListWidget(const Task &task) {
     QCheckBox *checkBox = new QCheckBox(task.getName());
     ui->lwToDoList->setItemWidget(item, checkBox);
 
-    QFont font;
-    font.setPointSize(10);
+    QFont font{"Times New Roman", 12};
 
     checkBox->setFont(font);
     checkBox->setStyleSheet("color: black;");
@@ -457,4 +457,9 @@ void AppWindow::agreedSync(QDateTime startTime, QDateTime endTime, QString title
     event.setTitle(title);
 
     m_user->getCalendar().addEvent(event);
+    updateTableForSelectedDate();
+}
+
+void AppWindow::updatedEvents() {
+    m_notifications = new Notifications(m_calendar);
 }

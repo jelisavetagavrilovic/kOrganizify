@@ -19,6 +19,7 @@ public:
 
 public slots:
     void enabledNotifications(const bool enabled);
+    void updatedEvents();
 
 private slots:
     static void showEvent(const Event& event);
