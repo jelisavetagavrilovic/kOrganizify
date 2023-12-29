@@ -11,7 +11,17 @@ Scheduler::Scheduler(Calendar *calendar, Calendar* m_basicCalendar)
     , m_basicCalendar(m_basicCalendar)
     , m_scheduledCalendar(nullptr)
 {
+    //refactor - update calendar with sort?
+    QList<BasicEvent> allEvents;
+    for (int i = 0; i < m_basicCalendar->sizeBasic(); i++)
+        allEvents.append(m_basicCalendar->getBasicEvent(i));
 
+    std::sort(allEvents.begin(), allEvents.end(), [](const BasicEvent &a, const BasicEvent &b) {
+        return a.getDuration() > b.getDuration();
+    });
+
+    for(BasicEvent& e: allEvents)
+        qDebug() << e.getDuration() << e.getTitle();
 
 //    m_freeTimeList = findFreeTime(m_calendar, 2);
 }

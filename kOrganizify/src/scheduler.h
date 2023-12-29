@@ -8,7 +8,7 @@
 #include <QSet>
 #include <z3++.h>
 #include "calendar.h"
-
+#include "basicevent.h"
 
 class Scheduler {
 

@@ -92,17 +92,7 @@ void BasicEventWindow::generate() {
 
 
         m_scheduler = new Scheduler(m_calendar, m_basicCalendar);
-
-        //refactor - update calendar with sort?
-        QList<Event> allEvents;
-        allEvents.append(m_basicCalendar->getEvents());
-        std::sort(allEvents.begin(), allEvents.end(), [](const Event &a, const Event &b) {
-            return a.getDuration() < b.getDuration();
-        });
-
         m_scheduler->generateSchedule(startTime, endTime);
-
-
 
         //        m_scheduler->generateSchedule(*m_startDate, *m_endDate, workMinutesPerDay, startTime, endTime, 5);
 
