@@ -1,14 +1,14 @@
 #include "basiceventwindow.h"
 #include "ui_basiceventwindow.h"
 
-BasicEventWindow::BasicEventWindow(Calendar *calendar, QDate *startDate, QDate *endDate,  QWidget *parent)
+BasicEventWindow::BasicEventWindow(Calendar *calendar, QDate *startDate/*, QDate *endDate*/, QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::BasicEventWindow)
     , m_calendar(calendar)
     , m_basicEvent(new BasicEvent())
     , m_basicCalendar(new Calendar)
     , m_startDate(startDate)
-    , m_endDate(endDate)
+//    , m_endDate(endDate)
 {
     ui->setupUi(this);
     setWindowTitle("Smart plan");
@@ -85,27 +85,13 @@ void BasicEventWindow::generate() {
         QTime endTime = ui->tePlanEndTime->time();
 
         Calendar* tmp = new Calendar(*m_calendar);
-        m_scheduler = new Scheduler(tmp, m_basicCalendar);
+        m_scheduler = new Scheduler(tmp, m_basicCalendar, m_startDate);
         m_scheduler->generateSchedule(startTime, endTime);
         m_listOfCalendars.append(tmp);
 
         for (int i = 0; i <= 10; i++) {
             tmp = new Calendar(*m_calendar);
-//            m_cal = tmp->getEvents();
-//            m_basicCal = m_basicCalendar->getEvents();
-
-//            auto it = std::remove_if(m_cal.begin(), m_cal.end(), [this](const Event& calEvent) {
-//                const QString& calEventName = calEvent.getTitle();
-//                return std::any_of(m_basicCal.begin(), m_basicCal.end(), [&calEventName](const Event& basicEvent) {
-//                    return basicEvent.getTitle() == calEventName;
-//                });
-//            });
-//            m_cal.erase(it, m_cal.end());
-
-//            for(Event& e : m_cal)
-//                tmp->addEvent(e);
-
-            m_scheduler = new Scheduler(tmp, m_basicCalendar);
+            m_scheduler = new Scheduler(tmp, m_basicCalendar, m_startDate);
             m_scheduler->generateSchedule(startTime, endTime);
             m_listOfCalendars.append(tmp);
         }
@@ -119,10 +105,6 @@ void BasicEventWindow::previousCalendar() {
         m_currentCalendarIndex--;
         Calendar* previousCalendar = m_listOfCalendars[m_currentCalendarIndex];
         m_calendar = previousCalendar;
-        qDebug() << "prethodni         " << m_currentCalendarIndex;
-        for(Event& event : m_calendar->getEvents())
-            qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime();
-        qDebug() << "-------------------------------------------------------------------------------------";
         emit previousCalendarSignal(m_calendar);
     }
 }
@@ -132,11 +114,6 @@ void BasicEventWindow::nextCalendar() {
         m_currentCalendarIndex++;
         Calendar* nextCalendar = m_listOfCalendars[m_currentCalendarIndex];
         m_calendar = nextCalendar;
-
-        qDebug() << "sledeci         " << m_currentCalendarIndex;
-        for(Event& event : m_calendar->getEvents())
-            qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime();
-        qDebug() << "-------------------------------------------------------------------------------------";
         emit nextCalendarSignal(m_calendar);
     }
 }
@@ -153,6 +130,7 @@ void BasicEventWindow::updateUi() {
 
 BasicEventWindow::~BasicEventWindow()
 {
+    emit saveCalendar(m_calendar);
     delete m_basicEvent;
     delete m_basicCalendar;
     delete ui;

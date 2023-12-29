@@ -15,7 +15,7 @@
 class Scheduler {
 
 public:
-    Scheduler(Calendar *calendar, Calendar *m_basicCalendar);
+    Scheduler(Calendar *calendar, Calendar *basicCalendar, QDate *startDate/*, QDate *endDate*/);
     ~Scheduler();
 
     void generateSchedule(const QTime &startOfWorkday, const QTime &endOfWorkday);
@@ -25,16 +25,16 @@ private slots:
     bool nextPermutation(QList<Event>& events, int size);
     void generatePermutations(QList<Event>& events, int start, int end, int depth,
                               QList<QList<Event>>& allPermutations);
+    QList<Event> findFreeTime(Calendar *cal1, int maxTime);
 
 private:
     Calendar *m_calendar;
     Calendar *m_basicCalendar;
-    QList<Calendar*> m_generatedSchedules;
-//    QSet<Event> scheduledEvents;
     Calendar* m_scheduledCalendar;
+    QList<Calendar*> m_generatedSchedules;
     QList<Event> m_freeTimeList;
-    QList<Event> findFreeTime(Calendar *cal1, int maxTime);
     QList<BasicEvent> m_allEvents;
+    QDate *m_startDate;
 };
 
 #endif // SCHEDULER_H

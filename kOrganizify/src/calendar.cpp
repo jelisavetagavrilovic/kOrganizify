@@ -59,8 +59,6 @@ void Calendar::addEvent(const BasicEvent &basicEvent) {
 
     if (eventPtr) {
         const Event &event = *eventPtr;
-//        qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime() <<
-//            event.getDescription() << event.getLocation();
 
         int index = 0;
         for (const Event &e : m_events) {
@@ -76,8 +74,6 @@ void Calendar::addEvent(const BasicEvent &basicEvent) {
     } else {
         const BasicEvent &nonEvent = basicEvent;
 
-//        qDebug() << nonEvent.getTitle() << nonEvent.getDuration();
-
         if (nonEvent.isValidate())
             m_basicEvents.append(nonEvent);
     }
@@ -90,7 +86,6 @@ void Calendar::removeEvent(const BasicEvent &basicEvent) {
         qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime() <<
             event.getDescription() << event.getLocation();
         m_events.removeOne(event);
-//        clear();
     } else {
         const BasicEvent &nonEvent = basicEvent;
         m_basicEvents.removeOne(nonEvent);
@@ -127,13 +122,6 @@ int Calendar::size() {
     return m_events.size();
 }
 
-void Calendar::print() {
-    // for (int index = 0; index < m_events.size(); index++)
-    //     qDebug() << m_events[index].getTitle() << m_events[index].getStartTime() << m_events[index].getEndTime() <<
-    //         m_events[index].getDescription() << m_events[index].getLocation();
-
-}
-
 QList<Event> Calendar::getEventsForWeek(const QDate& startDate, const QDate& endDate) const {
     QList<Event> weekEvents;
 
@@ -155,10 +143,19 @@ bool Calendar::hasEventAt(const QDateTime& dateTime) const {
     return false;
 }
 
-
 void Calendar::clear() {
     for (Event &event : m_events) {
         event.clear();
     }
     m_events.clear();
+}
+
+Calendar Calendar::operator=(const Calendar &other) {
+    m_basicEvents.clear();
+    m_events.clear();
+
+    m_events = other.m_events;
+    m_basicEvents = other.m_basicEvents;
+
+    return *this;
 }

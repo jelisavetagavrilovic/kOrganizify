@@ -84,13 +84,5 @@ Settings& User::getSettings() {
 }
 
 void User::setCalendar(const Calendar& calendar) {
-    // m_calendar = calendar;
-}
-
-void User::setToDoList(const ToDoList& toDoList) {
-    // m_toDoList = toDoList;
-}
-
-void User::setSettings(const Settings& settings) {
-    // m_settings = settings;
+    m_calendar = calendar;
 }

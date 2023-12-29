@@ -1,4 +1,3 @@
-// appwindow.h
 #ifndef APPWINDOW_H
 #define APPWINDOW_H
 
@@ -57,6 +56,7 @@ private slots:
     void populateFriends(const QList<QString>& friends);
     void smartPlan();
     void updateTableForSelectedDate();
+    void updateTableForSelectedDateCalendar(Calendar* calendar);
     void clearFinishedTasks();
     void showSyncWindow(QString username, QString title, int duration);
     void syncDenied(QString friendName);

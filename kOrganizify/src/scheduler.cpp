@@ -1,20 +1,14 @@
 #include "scheduler.h"
 
-Scheduler::Scheduler(Calendar *calendar, Calendar* m_basicCalendar)
+Scheduler::Scheduler(Calendar *calendar, Calendar* basicCalendar, QDate *startDate)
     : m_calendar(calendar)
-    , m_basicCalendar(m_basicCalendar)
+    , m_basicCalendar(basicCalendar)
     , m_scheduledCalendar(new Calendar())
+    , m_startDate(startDate)
 {
 }
 
 void Scheduler::generateSchedule(const QTime &startOfWorkday, const QTime &endOfWorkday) {
-
-    auto it = std::remove_if(m_freeTimeList.begin(), m_freeTimeList.end(),
-                        [startOfWorkday, endOfWorkday](const Event& event) {
-                            QDateTime startTime = event.getStartTime();
-                            QDateTime endTime = event.getEndTime();
-                            return startTime.time() <= startOfWorkday || endTime.time() >= endOfWorkday;});
-    m_freeTimeList.erase(it, m_freeTimeList.end());
 
     QList<BasicEvent> m_allEvents;
     for (int i = 0; i < m_basicCalendar->sizeBasic(); i++)
@@ -26,6 +20,14 @@ void Scheduler::generateSchedule(const QTime &startOfWorkday, const QTime &endOf
 
     for(BasicEvent& event : m_allEvents) {
         m_freeTimeList = findFreeTime(m_calendar, event.getDuration());
+
+        auto it = std::remove_if(m_freeTimeList.begin(), m_freeTimeList.end(),
+                                 [startOfWorkday, endOfWorkday](const Event& event) {
+                                     QDateTime startTime = event.getStartTime();
+                                     QDateTime endTime = event.getEndTime();
+                                     return startTime.time() <= startOfWorkday || endTime.time() >= endOfWorkday;});
+        m_freeTimeList.erase(it, m_freeTimeList.end());
+
         generateSchedules(m_freeTimeList);
         QList<Event> scheduledEvents = m_scheduledCalendar->getEvents();
         Event e;
@@ -39,11 +41,8 @@ void Scheduler::generateSchedule(const QTime &startOfWorkday, const QTime &endOf
 
         m_calendar->addEvent(e);
     }
-
-//    for(Event& event : m_calendar->getEvents())
-//        qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime();
-//    qDebug() << "-------------------------------------------------------------------------------------";
 }
+
 void Scheduler::generateSchedules(QList<Event> freeTime) {
     QList<QList<Event>> allPermutations;
     generatePermutations(freeTime, 0, freeTime.size() - 1, 0, allPermutations);
@@ -87,8 +86,7 @@ QList<Event> Scheduler::findFreeTime(Calendar *cal1, int maxTimeInMinutes) {
         return (currentHour >= QTime(0, 0) && currentHour < QTime(12, 0)) || (currentHour >= QTime(12, 0) && currentHour <= QTime(8, 0));
     };
 
-    //update for the selected week
-    QDate currentDay = QDateTime::currentDateTime().date();
+    QDate currentDay = *m_startDate;
     QTime currentHour = QDateTime::currentDateTime().time();
     QDate lastDayOfWeek = currentDay.addDays(7 - currentDay.dayOfWeek());
 

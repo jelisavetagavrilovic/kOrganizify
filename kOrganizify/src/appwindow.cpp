@@ -14,6 +14,8 @@ AppWindow::AppWindow(User *user, QWidget *parent)
     ui->setupUi(this);
     this->setAttribute(Qt::WA_DeleteOnClose);
 
+    qDebug() << m_user->getCalendar().size();
+
     initialize();
 
     connect(ui->btnLogout, &QPushButton::clicked, this, &AppWindow::logoutUser);
@@ -108,7 +110,8 @@ void AppWindow::initialize() {
     this->setFixedSize(this->size());
     this->setAutoFillBackground(true);
 
-    m_calendar = &m_user->getCalendar();
+    m_calendar = new Calendar();
+    *m_calendar = m_user->getCalendar();
     m_notifications = new Notifications(m_calendar);
     this->eventWindow = new EventWindow(m_calendar);
 
@@ -297,6 +300,12 @@ void AppWindow::openSettings() {
     this->ui->btnSettings->update();
 }
 
+void AppWindow::updateTableForSelectedDateCalendar(Calendar* calendar) {
+    //free m_calendar
+    m_calendar = calendar;
+    updateTableForSelectedDate();
+}
+
 void AppWindow::updateTableForSelectedDate() {
     QDate selectedDate = ui->calendarWidget->selectedDate();
     showWeeklyEvents(selectedDate);
@@ -381,6 +390,7 @@ QColor AppWindow::getColorFromPriority(CustomEventPriority priority) {
 
 void AppWindow::logoutUser() {
     emit m_user->m_client->disconnectedUser(m_user->getUsername());
+//    m_user->saveData(m_user->getUsername());
 
     MainWindow *mainWindow = new MainWindow;
     mainWindow->show();
@@ -398,17 +408,29 @@ void AppWindow::showSyncWindow(QString username, QString title, int duration) {
 
 void AppWindow::smartPlan() {
     QDate selectedDate = ui->calendarWidget->selectedDate();
-    m_startDate = selectedDate.addDays(-selectedDate.dayOfWeek() + 1);
-    m_endDate = m_startDate.addDays(6);
-    BasicEventWindow *basicEventWindow = new BasicEventWindow(m_calendar, &m_startDate, &m_endDate);
+    if (selectedDate == QDate::currentDate()) {
+        m_startDate = selectedDate;
+    }
+    else {
+        m_startDate = selectedDate.addDays(-selectedDate.dayOfWeek() + 1);
+    }
+    BasicEventWindow *basicEventWindow = new BasicEventWindow(m_calendar, &m_startDate);
     basicEventWindow->changeColor(settingsWindow->getColor());
     basicEventWindow->show();
 
-    connect(basicEventWindow, &BasicEventWindow::nextCalendarSignal, this, &AppWindow::updateTableForSelectedDate);
-    connect(basicEventWindow, &BasicEventWindow::previousCalendarSignal, this, &AppWindow::updateTableForSelectedDate);
+    connect(basicEventWindow, &BasicEventWindow::nextCalendarSignal, this, &AppWindow::updateTableForSelectedDateCalendar);
+    connect(basicEventWindow, &BasicEventWindow::previousCalendarSignal, this, &AppWindow::updateTableForSelectedDateCalendar);
+    connect(basicEventWindow, &BasicEventWindow::saveCalendar, this, &AppWindow::updateTableForSelectedDateCalendar);
+
 }
 
 AppWindow::~AppWindow() {
+
+//    for(Event& e:m_calendar->getEvents()) {
+//        qDebug() << e.getTitle();
+//    }
+
+    m_user->setCalendar(*m_calendar);
     m_user->logout();
     delete m_user;
     m_user = nullptr;

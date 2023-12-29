@@ -18,7 +18,7 @@ class BasicEventWindow : public QDialog
     Q_OBJECT
 
 public:
-    explicit BasicEventWindow(Calendar *calendar, QDate *startTime, QDate *endTime, QWidget *parent = nullptr);
+    explicit BasicEventWindow(Calendar *calendar, QDate *startTime, QWidget *parent = nullptr);
     ~BasicEventWindow();
     int m_currentIndex;
     int m_currentCalendarIndex;
@@ -28,6 +28,7 @@ public:
 signals:
     void previousCalendarSignal(Calendar *m_calendar);
     void nextCalendarSignal(Calendar *m_calendar);
+    void saveCalendar(Calendar *m_calendar);
 
 private slots:
     bool addEvent(const char op);
@@ -46,7 +47,6 @@ private:
     Calendar *m_basicCalendar;
     Scheduler *m_scheduler;
     QDate *m_startDate;
-    QDate *m_endDate;
     QList<Event> m_cal;
     QList<Event> m_basicCal;
 };

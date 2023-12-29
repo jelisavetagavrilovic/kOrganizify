@@ -32,6 +32,7 @@ public:
     QList<Event> getEventsForWeek(const QDate& startDate, const QDate& endDate) const;
     void clear();
     bool hasEventAt(const QDateTime& dateTime) const;
+    Calendar operator=(const Calendar &other);
 
 private:
     QList<BasicEvent> m_basicEvents;

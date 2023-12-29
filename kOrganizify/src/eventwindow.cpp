@@ -20,13 +20,11 @@ EventWindow::EventWindow(Calendar* calendar, QWidget *parent)
 }
 
 void EventWindow::setStartDate(const QDateTime &dateTime){
-    qDebug() << "SET START TIM: " << dateTime;
     ui->deDateStart->setDateTime(dateTime);
     ui->teTimeStart->setDateTime(dateTime);
 }
 
 void EventWindow::setEndDate(const QDateTime &dateTime){
-    qDebug() << "SET END TIME: " << dateTime;
     ui->deDateEnd->setDateTime(dateTime);
     ui->teTimeEnd->setDateTime(dateTime);
 }
@@ -104,33 +102,6 @@ void EventWindow::onSaveButtonClicked()
     }
 
     emit saveButtonClicked();
-
-//    QList<Event> events = m_calendar->getEvents();
-//    for (const Event &e : events) {
-//<<<<<<< HEAD
-//        qDebug() << "Event in calendar: " << e.getTitle();
-//        if (e.getPriority() == CustomEventPriority::High) {
-//            // Prioritet je High
-//            qDebug() << "PHIGH";
-//        } else if (e.getPriority() == CustomEventPriority::Medium) {
-//            // Prioritet nije High
-//            qDebug() << "MEDIUM";
-//        } else if (e.getPriority() == CustomEventPriority::Low){
-//            qDebug() << "LOW";
-//        } else {
-//            qDebug() << "No Priority";
-//        }
-//=======
-////        qDebug() << "Event in calendar: " << e.getTitle();
-//    }
-
-
-//    QList<Event> weekEvents = m_calendar->getEventsForWeek(QDate(2000, 1, 1), QDate(2000, 1, 7));
-//    for (const Event &e : weekEvents) {
-////        qDebug() << "Event in weekly calendar: " << e.getTitle();
-//>>>>>>> feature/smartPlan
-//    }
-
     this->close();
 }
 
