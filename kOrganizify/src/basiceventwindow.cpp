@@ -1,6 +1,5 @@
 #include "basiceventwindow.h"
 #include "ui_basiceventwindow.h"
-#include "appwindow.h"
 
 BasicEventWindow::BasicEventWindow(Calendar *calendar, QDate *startDate, QDate *endDate,  QWidget *parent)
     : QDialog(parent)
@@ -20,6 +19,8 @@ BasicEventWindow::BasicEventWindow(Calendar *calendar, QDate *startDate, QDate *
     connect(ui->btnNext, &QPushButton::clicked, this, &BasicEventWindow::nextEvent);
     connect(ui->btnPrevious, &QPushButton::clicked, this, &BasicEventWindow::previousEvent);
     connect(ui->btnRemove, &QPushButton::clicked, this, &BasicEventWindow::removeEvent);
+    connect(ui->btnPreviousCalendar, &QPushButton::clicked, this, &BasicEventWindow::previousCalendar);
+    connect(ui->btnNextCalendar, &QPushButton::clicked, this, &BasicEventWindow::nextCalendar);
 }
 
 bool BasicEventWindow::addEvent(const char op) {
@@ -78,12 +79,6 @@ void BasicEventWindow::previousEvent() {
     }
 }
 
-void BasicEventWindow::print() {
-//    for (int i = 0; i < m_basicCalendar->sizeBasic(); i++)
-//        qDebug() << m_basicCalendar->getBasicEvent(i).getTitle() << m_basicCalendar->getBasicEvent(i).getDuration();
-}
-
-
 void BasicEventWindow::generate() {
     if(addEvent('g')) {
         QTime startTime = ui->tePlanStartTime->time();
@@ -95,25 +90,54 @@ void BasicEventWindow::generate() {
         m_listOfCalendars.append(tmp);
 
         for (int i = 0; i <= 10; i++) {
-            tmp = new Calendar;
-            m_cal = m_calendar->getEvents();
-            m_basicCal = m_basicCalendar->getEvents();
+            tmp = new Calendar(*m_calendar);
+//            m_cal = tmp->getEvents();
+//            m_basicCal = m_basicCalendar->getEvents();
 
-            auto it = std::remove_if(m_cal.begin(), m_cal.end(), [this](const Event& calEvent) {
-                const QString& calEventName = calEvent.getTitle();
-                return std::any_of(m_basicCal.begin(), m_basicCal.end(), [&calEventName](const Event& basicEvent) {
-                    return basicEvent.getTitle() == calEventName;
-                });
-            });
-            m_cal.erase(it, m_cal.end());
+//            auto it = std::remove_if(m_cal.begin(), m_cal.end(), [this](const Event& calEvent) {
+//                const QString& calEventName = calEvent.getTitle();
+//                return std::any_of(m_basicCal.begin(), m_basicCal.end(), [&calEventName](const Event& basicEvent) {
+//                    return basicEvent.getTitle() == calEventName;
+//                });
+//            });
+//            m_cal.erase(it, m_cal.end());
 
-            for(Event& e : m_cal)
-                tmp->addEvent(e);
+//            for(Event& e : m_cal)
+//                tmp->addEvent(e);
 
             m_scheduler = new Scheduler(tmp, m_basicCalendar);
             m_scheduler->generateSchedule(startTime, endTime);
             m_listOfCalendars.append(tmp);
         }
+    }
+
+    m_currentCalendarIndex = 0;
+}
+
+void BasicEventWindow::previousCalendar() {
+    if (m_currentCalendarIndex > 0) {
+        m_currentCalendarIndex--;
+        Calendar* previousCalendar = m_listOfCalendars[m_currentCalendarIndex];
+        m_calendar = previousCalendar;
+        qDebug() << "prethodni         " << m_currentCalendarIndex;
+        for(Event& event : m_calendar->getEvents())
+            qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime();
+        qDebug() << "-------------------------------------------------------------------------------------";
+        emit previousCalendarSignal(m_calendar);
+    }
+}
+
+void BasicEventWindow::nextCalendar() {
+    if (m_currentCalendarIndex < m_listOfCalendars.size() - 1) {
+        m_currentCalendarIndex++;
+        Calendar* nextCalendar = m_listOfCalendars[m_currentCalendarIndex];
+        m_calendar = nextCalendar;
+
+        qDebug() << "sledeci         " << m_currentCalendarIndex;
+        for(Event& event : m_calendar->getEvents())
+            qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime();
+        qDebug() << "-------------------------------------------------------------------------------------";
+        emit nextCalendarSignal(m_calendar);
     }
 }
 
@@ -148,3 +172,4 @@ void BasicEventWindow::changeColor(QString color){
 
     this->setStyleSheet(ultimateStyleSheet);
 }
+

@@ -25,6 +25,9 @@ public:
     QList<Calendar*> m_listOfCalendars;
     void changeColor(QString color);
 
+signals:
+    void previousCalendarSignal(Calendar *m_calendar);
+    void nextCalendarSignal(Calendar *m_calendar);
 
 private slots:
     bool addEvent(const char op);
@@ -33,9 +36,8 @@ private slots:
     void nextEvent();
     void previousEvent();
     void updateUi();
-//    void showNextCalendar();
-    void print();
-
+    void previousCalendar();
+    void nextCalendar();
 
 private:
     Ui::BasicEventWindow *ui;

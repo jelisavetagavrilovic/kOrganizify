@@ -404,14 +404,8 @@ void AppWindow::smartPlan() {
     basicEventWindow->changeColor(settingsWindow->getColor());
     basicEventWindow->show();
 
-
-    basicEventWindow->m_currentCalendarIndex = 0;
-    if (basicEventWindow->m_currentCalendarIndex < basicEventWindow->m_listOfCalendars.size()) {
-        Calendar* nextCalendar = basicEventWindow->m_listOfCalendars[basicEventWindow->m_currentCalendarIndex];
-        m_calendar = nextCalendar;
-        AppWindow::updateTableForSelectedDate();
-        basicEventWindow->m_currentCalendarIndex++;
-    }
+    connect(basicEventWindow, &BasicEventWindow::nextCalendarSignal, this, &AppWindow::updateTableForSelectedDate);
+    connect(basicEventWindow, &BasicEventWindow::previousCalendarSignal, this, &AppWindow::updateTableForSelectedDate);
 }
 
 AppWindow::~AppWindow() {

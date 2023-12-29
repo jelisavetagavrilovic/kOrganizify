@@ -157,6 +157,32 @@
     </rect>
    </property>
   </widget>
+  <widget class="QPushButton" name="btnPreviousCalendar">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>220</y>
+     <width>89</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnNextCalendar">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>220</y>
+     <width>89</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&gt;</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

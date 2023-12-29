@@ -27,7 +27,6 @@ void Scheduler::generateSchedule(const QTime &startOfWorkday, const QTime &endOf
     for(BasicEvent& event : m_allEvents) {
         m_freeTimeList = findFreeTime(m_calendar, event.getDuration());
         generateSchedules(m_freeTimeList);
-
         QList<Event> scheduledEvents = m_scheduledCalendar->getEvents();
         Event e;
         if (!scheduledEvents.isEmpty()) {
