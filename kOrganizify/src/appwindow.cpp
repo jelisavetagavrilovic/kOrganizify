@@ -17,6 +17,7 @@ AppWindow::AppWindow(User *user, QWidget *parent)
     initialize();
 
     connect(ui->btnLogout, &QPushButton::clicked, this, &AppWindow::logoutUser);
+    connect(ui->btnSmartPlan, &QPushButton::clicked, this, &AppWindow::smartPlan);
     connect(ui->btnSettings, &QPushButton::clicked, this, &AppWindow::openSettings);
     connect(settingsWindow, &SettingsWindow::enabledNotifications, this, &AppWindow::enabledNotifications);
     connect(settingsWindow, &SettingsWindow::enabledNotifications, m_notifications, &Notifications::enabledNotifications);
@@ -271,35 +272,6 @@ QString AppWindow::crossTask(const QString &taskName) {
     return newTaskName;
 }
 
-// void AppWindow::reorderCheckedTasks(){
-//     QList<QListWidgetItem*> checkedItems;
-//     QString text = "";
-
-//     for (int i = ui->lwToDoList->count() - 1; i >= 0; --i) {
-//         QListWidgetItem* item = ui->lwToDoList->item(i);
-//         QWidget* widget = ui->lwToDoList->itemWidget(item);
-
-//         if (widget && widget->inherits("QCheckBox")) {
-//             QCheckBox* checkBox = static_cast<QCheckBox*>(widget);
-//             if (checkBox->isChecked()) {
-
-//                 text = checkBox->text();
-
-//                 checkedItems.append(item);
-//                 ui->lwToDoList->takeItem(i);
-//                 --i;
-//             }
-//         }
-//     }
-
-//     if(!text.isEmpty()){
-//         Task task(text);
-
-//         this->m_user->getToDoList().addTask(task);
-//         addTaskToListWidget(task);
-//     }
-// }
-
 void AppWindow::clearFinishedTasks(){
     for (int i = ui->lwToDoList->count() - 1; i >= 0; --i) {
         QListWidgetItem* item = ui->lwToDoList->item(i);
@@ -334,10 +306,10 @@ void AppWindow::showWeeklyEvents(const QDate& selectedDate){
     ui->tableWidget->clearContents();
     ui->tableWidget->clearSpans();
 
-    QDate startDate = selectedDate.addDays(-selectedDate.dayOfWeek() + 1);
-    QDate endDate = startDate.addDays(6);
+    m_startDate = selectedDate.addDays(-selectedDate.dayOfWeek() + 1);
+    m_endDate = m_startDate.addDays(6);
 
-    QList<Event> weekEvents = m_calendar->getEventsForWeek(startDate, endDate);
+    QList<Event> weekEvents = m_calendar->getEventsForWeek(m_startDate, m_endDate);
 
     for(const Event &event: weekEvents){
         QDateTime startTime = event.getStartTime();
@@ -422,6 +394,18 @@ void AppWindow::showSyncWindow(QString username, QString title, int duration) {
     responseWindow->show();
     connect(responseWindow, &SyncResponseWindow::yesResponse, this, &AppWindow::sendYesResponse);
     connect(responseWindow, &SyncResponseWindow::noResponse, this, &AppWindow::sendNoResponse);
+}
+
+void AppWindow::smartPlan() {
+    // popraviti da se ne ponavlja kode
+    QDate selectedDate = ui->calendarWidget->selectedDate();
+    m_startDate = selectedDate.addDays(-selectedDate.dayOfWeek() + 1);
+    m_endDate = m_startDate.addDays(6);
+//    qDebug() << m_startDate << m_endDate;
+
+    BasicEventWindow *basicEventWindow = new BasicEventWindow(m_calendar, &m_startDate, &m_endDate);
+
+    basicEventWindow->show();
 }
 
 AppWindow::~AppWindow() {

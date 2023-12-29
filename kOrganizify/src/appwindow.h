@@ -16,6 +16,7 @@
 #include "responsewindow.h"
 #include "settingswindow.h"
 #include "syncwindow.h"
+#include "basiceventwindow.h"
 #include "user.h"
 #include "toDoList.h"
 #include "notifications.h"
@@ -54,9 +55,9 @@ private slots:
     void logoutUser();
     void openSyncWindow(QListWidgetItem *item);
     void populateFriends(const QList<QString>& friends);
+    void smartPlan();
     void updateTableForSelectedDate();
     void clearFinishedTasks();
-    // void reorderCheckedTasks();
     void showSyncWindow(QString username, QString title, int duration);
     void syncDenied(QString friendName);
     void sendYesResponse(QString friendName, int duration);
@@ -73,6 +74,8 @@ private:
     EventWindow *eventWindow;
     ToDoList *m_toDoList;
     Calendar* m_calendar;
+    QDate m_startDate;
+    QDate m_endDate;
     Notifications* m_notifications;
 };
 

@@ -9,12 +9,15 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Network)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Network)
 find_package(Qt${QT_VERSION_MAJOR}Multimedia REQUIRED)
 
 set(PROJECT_SOURCES
         src/appwindow.cpp
+        src/basicevent.cpp
+        src/basiceventwindow.cpp
         src/calendar.cpp
         src/client.cpp
         src/event.cpp
@@ -25,6 +28,7 @@ set(PROJECT_SOURCES
         src/notifications.cpp
         src/notificationswindow.cpp
         src/saveload.cpp
+        src/scheduler.cpp
         src/settings.cpp
         src/settingswindow.cpp
         src/syncdeniedwindow.cpp
@@ -38,6 +42,8 @@ set(PROJECT_SOURCES
 
 set(HEADERS
         src/appwindow.h
+        src/basicevent.h
+        src/basiceventwindow.h
         src/calendar.h
         src/client.h
         src/event.h
@@ -47,6 +53,7 @@ set(HEADERS
         src/notifications.h
         src/notificationswindow.h
         src/saveload.h
+        src/scheduler.h
         src/settings.h
         src/settingswindow.h
         src/syncdeniedwindow.h
@@ -60,6 +67,7 @@ set(HEADERS
 
 set(FORMS
         src/appwindow.ui
+        src/basiceventwindow.ui
         src/eventwindow.ui
         src/mainwindow.ui
         src/responsewindow.ui
@@ -99,6 +107,7 @@ else()
         )
     endif()
 endif()
+
 
 if(WIN32)
     include_directories("${CMAKE_CURRENT_SOURCE_DIR}/external/windows/z3/include")
@@ -150,4 +159,3 @@ install(TARGETS kOrganizify
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(kOrganizify)
 endif()
-

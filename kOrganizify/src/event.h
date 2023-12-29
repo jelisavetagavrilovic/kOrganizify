@@ -6,6 +6,8 @@
 #include <QHash>
 #include <QObject>
 
+#include "basicevent.h"
+
 enum class CustomEventPriority {
     NoPriority,
     Low,
@@ -16,13 +18,22 @@ enum class CustomEventPriority {
 QString customEventPriorityToString(CustomEventPriority priority);
 CustomEventPriority customEventPriorityFromString(const QString &priorityString);
 
-class Event
-{
+
+class Event : public BasicEvent {
+
 public:
     Event();
+    Event(const BasicEvent &basicEvent);
+
+    void clear();
+    void deleteString(QString &str);
 
     QString getTitle() const;
     void setTitle(const QString &title);
+
+    int getDuration() const;
+    void  setDuration(const int duration);
+    void setDuration();
 
     QDateTime getStartTime() const;
     void setStartTime(const QDateTime &startTime);

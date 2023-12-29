@@ -97,9 +97,10 @@
             "title": "Starry Night Concert"
         },
         {
-            "description": "",
-            "endTime": "2023-12-28T07:00:00",
+            "description": "daaaa",
+            "endTime": "2023-12-16T09:00:00",
             "location": "",
+<<<<<<< HEAD
             "priority": "No Priority",
             "startTime": "2023-12-28T04:00:00",
             "title": "bfvsdcs"
@@ -135,11 +136,29 @@
             "priority": "No Priority",
             "startTime": "2023-12-29T16:00:00",
             "title": "ajde"
+=======
+            "startTime": "2023-12-28T01:28:00",
+            "title": "dodala"
+        },
+        {
+            "description": "Winter Wonderland Festival",
+            "endTime": "2023-12-25T23:59:00",
+            "location": "City Square",
+            "startTime": "2023-12-28T01:30:00",
+            "title": "Frosty Festivities"
+        },
+        {
+            "description": "Art Exhibition: Beyond Boundaries",
+            "endTime": "2023-12-20T20:00:00",
+            "location": "Gallery X",
+            "startTime": "2023-12-28T02:01:00",
+            "title": "Beyond Boundaries"
+>>>>>>> feature/smartPlan
         }
     ],
     "password": "andji",
     "settings": {
-        "color": "#D8B7F1",
+        "color": "#ABD49A",
         "notifications": true
     },
     "tasks": [

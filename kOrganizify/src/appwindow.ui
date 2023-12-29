@@ -252,6 +252,17 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout"/>
    </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>170</y>
+      <width>91</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout2"/>
+   </widget>
    <widget class="QPushButton" name="btnClear">
     <property name="geometry">
      <rect>
@@ -361,7 +372,7 @@
      <x>0</x>
      <y>0</y>
      <width>1276</width>
-     <height>20</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

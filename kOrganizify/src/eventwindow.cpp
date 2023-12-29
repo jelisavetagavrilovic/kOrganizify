@@ -69,7 +69,6 @@ bool EventWindow::isEventNull() const {
 void EventWindow::onDeleteButtonClicked() {
     if (!isEventNull()) {
         m_calendar->removeEvent(m_currentEvent);
-        qDebug() << "Event deleted from calendar: " << m_currentEvent.getTitle();
     }
 
     emit deleteButtonClicked();
@@ -106,29 +105,33 @@ void EventWindow::onSaveButtonClicked()
 
     emit saveButtonClicked();
 
-    QList<Event> events = m_calendar->getEvents();
-    for (const Event &e : events) {
-        qDebug() << "Event in calendar: " << e.getTitle();
-        if (e.getPriority() == CustomEventPriority::High) {
-            // Prioritet je High
-            qDebug() << "PHIGH";
-        } else if (e.getPriority() == CustomEventPriority::Medium) {
-            // Prioritet nije High
-            qDebug() << "MEDIUM";
-        } else if (e.getPriority() == CustomEventPriority::Low){
-            qDebug() << "LOW";
-        } else {
-            qDebug() << "No Priority";
-        }
-    }
+//    QList<Event> events = m_calendar->getEvents();
+//    for (const Event &e : events) {
+//<<<<<<< HEAD
+//        qDebug() << "Event in calendar: " << e.getTitle();
+//        if (e.getPriority() == CustomEventPriority::High) {
+//            // Prioritet je High
+//            qDebug() << "PHIGH";
+//        } else if (e.getPriority() == CustomEventPriority::Medium) {
+//            // Prioritet nije High
+//            qDebug() << "MEDIUM";
+//        } else if (e.getPriority() == CustomEventPriority::Low){
+//            qDebug() << "LOW";
+//        } else {
+//            qDebug() << "No Priority";
+//        }
+//=======
+////        qDebug() << "Event in calendar: " << e.getTitle();
+//    }
+
+
+//    QList<Event> weekEvents = m_calendar->getEventsForWeek(QDate(2000, 1, 1), QDate(2000, 1, 7));
+//    for (const Event &e : weekEvents) {
+////        qDebug() << "Event in weekly calendar: " << e.getTitle();
+//>>>>>>> feature/smartPlan
+//    }
 
     this->close();
-
-    //qDebug() << "title: " << event.getTitle();
-    //qDebug() << "start date and time: " << event.getStartTime();
-    //qDebug() << "end date and time: " << event.getEndTime();
-    //qDebug() << "description: " << event.getDescription();
-    //qDebug() << "location: " << event.getLocation();
 }
 
 void EventWindow::changeColor(QString color)

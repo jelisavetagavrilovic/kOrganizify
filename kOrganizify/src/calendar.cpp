@@ -44,8 +44,6 @@ void Calendar::fromJson(const QJsonObject &jsonObject) {
         event.setPriority(customEventPriorityFromString(jv["priority"].toString()));
 
 
-        // qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime() << event.getDescription() << event.getLocation();
-
         addEvent(event);
     }
 }
@@ -55,26 +53,48 @@ void Calendar::saveData(const QString &username) {
     SaveLoad::saveData(username);
 }
 
-void Calendar::addEvent(const Event &event){
-    int index = 0;
-    for (const Event &e : m_events) {
-        if (event.getStartTime() < e.getStartTime() ||
-            (event.getStartTime() == e.getStartTime() && (event.getEndTime() < e.getEndTime()) ||
-            (event.getEndTime() == e.getEndTime() && event.getTitle() < e.getTitle()))) {
-            break;
+void Calendar::addEvent(const BasicEvent &basicEvent) {
+    // Provera tipa korišćenjem dynamic_cast
+    const Event *eventPtr = dynamic_cast<const Event*>(&basicEvent);
+
+    if (eventPtr) {
+        const Event &event = *eventPtr;
+//        qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime() <<
+//            event.getDescription() << event.getLocation();
+
+        int index = 0;
+        for (const Event &e : m_events) {
+            if (event.getStartTime() < e.getStartTime() ||
+                (event.getStartTime() == e.getStartTime() && (event.getEndTime() < e.getEndTime()) ||
+                 (event.getEndTime() == e.getEndTime() && event.getTitle() < e.getTitle()))) {
+                break;
+            }
+            index++;
+
         }
-        index++;
+        m_events.insert(index, event);
+    } else {
+        const BasicEvent &nonEvent = basicEvent;
 
+//        qDebug() << nonEvent.getTitle() << nonEvent.getDuration();
+
+        if (nonEvent.isValidate())
+            m_basicEvents.append(nonEvent);
     }
-
-    m_events.insert(index, event);
-
-    // qDebug() << m_events[index].getTitle() << m_events[index].getStartTime() << m_events[index].getEndTime() <<
-    //     m_events[index].getDescription() << m_events[index].getLocation();
 }
 
-void Calendar::removeEvent(const Event &event){
-    m_events.removeOne(event);
+void Calendar::removeEvent(const BasicEvent &basicEvent) {
+    const Event *eventPtr = dynamic_cast<const Event*>(&basicEvent);
+    if (eventPtr) {
+        const Event &event = *eventPtr;
+        qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime() <<
+            event.getDescription() << event.getLocation();
+        m_events.removeOne(event);
+//        clear();
+    } else {
+        const BasicEvent &nonEvent = basicEvent;
+        m_basicEvents.removeOne(nonEvent);
+    }
 }
 
 void Calendar::updateEvent(const Event &oldEvent, const Event &newEvent){
@@ -91,6 +111,29 @@ QList<Event> Calendar::getEvents() const {
     return m_events;
 }
 
+BasicEvent Calendar::getBasicEvent(const int index) {
+    return m_basicEvents[index];
+}
+
+Event Calendar::getEvent(const int index) {
+    return m_events[index];
+}
+
+int Calendar::sizeBasic() {
+    return m_basicEvents.size();
+}
+
+int Calendar::size() {
+    return m_events.size();
+}
+
+void Calendar::print() {
+    // for (int index = 0; index < m_events.size(); index++)
+    //     qDebug() << m_events[index].getTitle() << m_events[index].getStartTime() << m_events[index].getEndTime() <<
+    //         m_events[index].getDescription() << m_events[index].getLocation();
+
+}
+
 QList<Event> Calendar::getEventsForWeek(const QDate& startDate, const QDate& endDate) const {
     QList<Event> weekEvents;
 
@@ -101,4 +144,21 @@ QList<Event> Calendar::getEventsForWeek(const QDate& startDate, const QDate& end
     }
 
     return weekEvents;
+}
+
+bool Calendar::hasEventAt(const QDateTime& dateTime) const {
+    for (const Event& event : m_events) {
+        if (event.getStartTime() == dateTime) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+void Calendar::clear() {
+    for (Event &event : m_events) {
+        event.clear();
+    }
+    m_events.clear();
 }
