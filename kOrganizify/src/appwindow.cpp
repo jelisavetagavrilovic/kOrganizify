@@ -402,6 +402,15 @@ void AppWindow::smartPlan() {
     m_endDate = m_startDate.addDays(6);
     BasicEventWindow *basicEventWindow = new BasicEventWindow(m_calendar, &m_startDate, &m_endDate);
     basicEventWindow->show();
+
+
+    basicEventWindow->m_currentCalendarIndex = 0;
+    if (basicEventWindow->m_currentCalendarIndex < basicEventWindow->m_listOfCalendars.size()) {
+        Calendar* nextCalendar = basicEventWindow->m_listOfCalendars[basicEventWindow->m_currentCalendarIndex];
+        m_calendar = nextCalendar;
+        AppWindow::updateTableForSelectedDate();
+        basicEventWindow->m_currentCalendarIndex++;
+    }
 }
 
 AppWindow::~AppWindow() {

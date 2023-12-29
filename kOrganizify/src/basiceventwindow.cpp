@@ -1,5 +1,6 @@
 #include "basiceventwindow.h"
 #include "ui_basiceventwindow.h"
+#include "appwindow.h"
 
 BasicEventWindow::BasicEventWindow(Calendar *calendar, QDate *startDate, QDate *endDate,  QWidget *parent)
     : QDialog(parent)
@@ -88,14 +89,33 @@ void BasicEventWindow::generate() {
         QTime startTime = ui->tePlanStartTime->time();
         QTime endTime = ui->tePlanEndTime->time();
 
-        int workMinutesPerDay = startTime.msecsTo(endTime) / (1000 * 60); // 1000 milisekundi = 1 sekunda
-
-
-        m_scheduler = new Scheduler(m_calendar, m_basicCalendar);
+        Calendar* tmp = new Calendar(*m_calendar);
+        m_scheduler = new Scheduler(tmp, m_basicCalendar);
         m_scheduler->generateSchedule(startTime, endTime);
+        m_listOfCalendars.append(tmp);
+
+        for (int i = 0; i <= 10; i++) {
+            tmp = new Calendar;
+            m_cal = m_calendar->getEvents();
+            m_basicCal = m_basicCalendar->getEvents();
+
+            auto it = std::remove_if(m_cal.begin(), m_cal.end(), [this](const Event& calEvent) {
+                const QString& calEventName = calEvent.getTitle();
+                return std::any_of(m_basicCal.begin(), m_basicCal.end(), [&calEventName](const Event& basicEvent) {
+                    return basicEvent.getTitle() == calEventName;
+                });
+            });
+            m_cal.erase(it, m_cal.end());
+
+            for(Event& e : m_cal)
+                tmp->addEvent(e);
+
+            m_scheduler = new Scheduler(tmp, m_basicCalendar);
+            m_scheduler->generateSchedule(startTime, endTime);
+            m_listOfCalendars.append(tmp);
+        }
     }
 }
-
 
 void BasicEventWindow::updateUi() {
     if (m_currentIndex >= 0 && m_currentIndex < m_basicCalendar->sizeBasic()) {

@@ -41,9 +41,9 @@ void Scheduler::generateSchedule(const QTime &startOfWorkday, const QTime &endOf
         m_calendar->addEvent(e);
     }
 
-    for(Event& event : m_calendar->getEvents())
-        qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime();
-    qDebug() << "-------------------------------------------------------------------------------------";
+//    for(Event& event : m_calendar->getEvents())
+//        qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime();
+//    qDebug() << "-------------------------------------------------------------------------------------";
 }
 void Scheduler::generateSchedules(QList<Event> freeTime) {
     QList<QList<Event>> allPermutations;
@@ -88,6 +88,7 @@ QList<Event> Scheduler::findFreeTime(Calendar *cal1, int maxTimeInMinutes) {
         return (currentHour >= QTime(0, 0) && currentHour < QTime(12, 0)) || (currentHour >= QTime(12, 0) && currentHour <= QTime(8, 0));
     };
 
+    //update for the selected week
     QDate currentDay = QDateTime::currentDateTime().date();
     QTime currentHour = QDateTime::currentDateTime().time();
     QDate lastDayOfWeek = currentDay.addDays(7 - currentDay.dayOfWeek());
