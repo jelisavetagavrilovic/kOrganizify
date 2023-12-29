@@ -12,7 +12,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Network)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Network)
-find_package(Qt${QT_VERSION_MAJOR}Multimedia REQUIRED)
+# find_package(Qt${QT_VERSION_MAJOR}Multimedia REQUIRED)
 
 set(PROJECT_SOURCES
         src/appwindow.cpp
@@ -118,7 +118,7 @@ if(WIN32)
         "${CMAKE_CURRENT_SOURCE_DIR}/external/windows/z3/bin/libz3.dll"
         Qt${QT_VERSION_MAJOR}::Widgets
         Qt${QT_VERSION_MAJOR}::Network
-        Qt${QT_VERSION_MAJOR}::Multimedia
+        # Qt${QT_VERSION_MAJOR}::Multimedia
     )
 else()
     if(UNIX)
@@ -130,7 +130,7 @@ else()
             "${CMAKE_CURRENT_SOURCE_DIR}/external/linux/z3/lib/libz3.so"
             Qt${QT_VERSION_MAJOR}::Widgets
             Qt${QT_VERSION_MAJOR}::Network
-            Qt${QT_VERSION_MAJOR}::Multimedia
+            # Qt${QT_VERSION_MAJOR}::Multimedia
         )
     endif()
 endif()

@@ -4,6 +4,7 @@
             "description": "proba",
             "endTime": "2023-12-25T09:30:00",
             "location": "pi",
+            "priority": "No Priority",
             "startTime": "2023-12-25T09:00:00",
             "title": "nesto"
         },
@@ -11,6 +12,7 @@
             "description": "srecna nova godina",
             "endTime": "2024-01-01T00:01:00",
             "location": "venecija",
+            "priority": "No Priority",
             "startTime": "2023-12-31T23:58:00",
             "title": "nova godina"
         },
@@ -18,18 +20,14 @@
             "description": "srecna nova godina",
             "endTime": "2024-01-01T00:01:00",
             "location": "venecija",
+            "priority": "No Priority",
             "startTime": "2023-12-31T23:59:00",
             "title": "nova godina"
         }
     ],
     "password": "jelisaveta",
     "settings": {
-<<<<<<< HEAD
         "color": "#006E33",
-=======
-        "color": "#D8B7F1",
-        "nightMode": true,
->>>>>>> feature/gui
         "notifications": true
     },
     "tasks": [

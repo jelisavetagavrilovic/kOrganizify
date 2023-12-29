@@ -39,7 +39,7 @@ QLabel{
      <property name="geometry">
       <rect>
        <x>100</x>
-       <y>100</y>
+       <y>90</y>
        <width>91</width>
        <height>21</height>
       </rect>
@@ -58,7 +58,7 @@ QLabel{
      <property name="geometry">
       <rect>
        <x>100</x>
-       <y>130</y>
+       <y>120</y>
        <width>91</width>
        <height>21</height>
       </rect>
@@ -71,7 +71,7 @@ QLabel{
      <property name="geometry">
       <rect>
        <x>190</x>
-       <y>100</y>
+       <y>90</y>
        <width>201</width>
        <height>24</height>
       </rect>
@@ -86,7 +86,7 @@ QLabel{
      <property name="geometry">
       <rect>
        <x>190</x>
-       <y>130</y>
+       <y>120</y>
        <width>201</width>
        <height>24</height>
       </rect>
@@ -236,6 +236,29 @@ QPushButton:hover {
       <bool>true</bool>
      </property>
     </widget>
+    <widget class="QLabel" name="lblPasswordAgain">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>150</y>
+       <width>111</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Password again</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lePasswordAgain">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>150</y>
+       <width>201</width>
+       <height>24</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
    <widget class="QLabel" name="lblPoster">
     <property name="geometry">
@@ -263,7 +286,7 @@ QPushButton:hover {
      <x>0</x>
      <y>0</y>
      <width>352</width>
-     <height>24</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

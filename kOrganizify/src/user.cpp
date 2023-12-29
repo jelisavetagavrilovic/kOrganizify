@@ -56,8 +56,7 @@ bool User::registerUser(const QString &password) {
     } else {
         // Implement registration logic
         m_password = password;
-        qDebug() << "User" << m_username << "successfully registered and logged in.";
-        login(m_password); // Automatically log in after registration
+        saveData(m_username);
         return true;
     }
     return true;
