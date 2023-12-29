@@ -55,8 +55,8 @@ void Calendar::addEvent(const BasicEvent &basicEvent) {
 
     if (eventPtr) {
         const Event &event = *eventPtr;
-        qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime() <<
-            event.getDescription() << event.getLocation();
+//        qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime() <<
+//            event.getDescription() << event.getLocation();
 
         int index = 0;
         for (const Event &e : m_events) {
@@ -72,7 +72,7 @@ void Calendar::addEvent(const BasicEvent &basicEvent) {
     } else {
         const BasicEvent &nonEvent = basicEvent;
 
-        qDebug() << nonEvent.getTitle() << nonEvent.getDuration();
+//        qDebug() << nonEvent.getTitle() << nonEvent.getDuration();
 
         if (nonEvent.isValidate())
             m_basicEvents.append(nonEvent);
@@ -86,18 +86,20 @@ void Calendar::removeEvent(const BasicEvent &basicEvent) {
         qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime() <<
             event.getDescription() << event.getLocation();
         m_events.removeOne(event);
-        clear();
+//        clear();
     } else {
         const BasicEvent &nonEvent = basicEvent;
         m_basicEvents.removeOne(nonEvent);
-
     }
 }
 
-void Calendar::updateEvent(const Event &event){
-    int index = m_events.indexOf(event);
-    if (index != -1){
-        m_events[index] = event;
+void Calendar::updateEvent(const Event &oldEvent, const Event &newEvent){
+    for (int i = 0; i < m_events.size(); ++i) {
+        if (m_events[i] == oldEvent) {
+            qDebug() << "Updating Event - Title: " << oldEvent.getTitle();
+            m_events[i] = newEvent;
+            return;
+        }
     }
 }
 

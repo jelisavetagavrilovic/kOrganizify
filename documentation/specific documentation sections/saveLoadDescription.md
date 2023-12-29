@@ -1,4 +1,4 @@
-Slučaj upotrebe: Save / load
+Slučaj upotrebe: Čuvanje i učitavanje podataka
 
     Kratak opis: 
         Omogućuje korisniku da učita raspored i da sačuva izmene na njemu.
@@ -10,16 +10,15 @@ Slučaj upotrebe: Save / load
         Aplikacija je pokrenuta i prikazuje se početni prozor.
 
     Osnovni tok:
-        LOAD:
-            1. Korisnik pokreće aplikaciju
-            2. Aplikacija prikazuje listu rasporeda (sa svim podešavanjima, TO-DO listi, ...) koje korisnik može da učita
-            3. Korisnik bira raspored
-            4. Raspored se učitava i prikazuje
-
-        SAVE: 
-            1. Nakon izmena rasporeda korisnik pritiska dugme save
-            2. Aplikacija čuva izmenjeni raspored u odgovarajućem formatu tako da on može ponovo da se učita
-            3. Aplikacija obaveštava korisnika da je raspored uspešno sačuvan.
+        1. Korisnik pokreće aplikaciju.
+        2. Unosi korisničko ime i šifru.
+            2.1. Ako postoji korisnik:
+                2.1.1. Učitava se prozor sa njegovim podacima(sa kalendarom, svim podešavanjima, TO-DO listi, ...)
+                2.1.2. Izvršava izmene koje želi.
+            2.2. Ako ne postoji korisnik:
+                2.2.1. Učitava se prozor koji nema podatke.
+                2.2.2. Izvršava izmene koje želi.
+        3. Korisnik klikne dugme 'Logout' kako bi se izlogovao i tek tada se čuvaju podaci.
 
     Alternativni tokovi: 
         A1: Ispisuje se poruka o neuspehu.

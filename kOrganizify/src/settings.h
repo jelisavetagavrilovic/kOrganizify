@@ -7,8 +7,10 @@
 
 class Settings : public SaveLoad
 {
+    Q_OBJECT
 private:
     QString m_color;
+    QString m_backgroundPath;
 
     bool m_notifications;
     bool m_nightMode;
@@ -22,11 +24,14 @@ public:
     QJsonValue toJson() const override;
     void fromJson(const QJsonObject &jsonObject) override;
 
-    QString color();
+    QString getColor();
     void setColor(QString color);
+    QString backgroundPath();
+    void setBackgroundPath(QString backgroundPath);
     bool notifications();
+    bool getNotifications();
     void setNotifications(bool notifications);
-    bool nightMode();
+    bool getNightMode();
     void setNightMode(bool nightMode);
 };
 

@@ -16,7 +16,9 @@ void ToDoList::fromJson(const QJsonObject &jsonObject) {
 
     QJsonArray jsonArray = m_jsonObject["tasks"].toArray();
     for (const QJsonValue &jv : jsonArray) {
-        Task task(jv["task"].toString());
+        Task task;
+        task.setName(jv["task"].toString());
+        task.setIsChecked(jv["isChecked"].toBool());
 
         addTask(task);
     }
@@ -27,9 +29,13 @@ QJsonValue ToDoList::toJson() const {
     for (const Task &task : m_tasks) {
         QJsonObject jsonObject;
         jsonObject["task"] = task.getName();
+        jsonObject["isChecked"] = task.getIsChecked();
+
+        qDebug() << "todolist tojson" << task.getIsChecked();
 
         jsonArray.append(jsonObject);
     }
+
 
     return QJsonValue(jsonArray);
 }
@@ -51,13 +57,17 @@ void ToDoList::addTask(const Task task){
     this->m_tasks.append(task);
 }
 
-void ToDoList::removeTask(const Task task){
-    this->m_tasks.removeOne(task);
+void ToDoList::removeTask(const int index){
+    this->m_tasks.remove(index);
+}
+
+Task* ToDoList::getTask(int index) const {
+    return const_cast<Task*>(&m_tasks[index]);
 }
 
 QString ToDoList::toString() {
     QStringList taskNames;
-    for (Task task : this->getTasks())
+    for (Task& task : this->getTasks())
         taskNames.append(task.getName());
 
     QString string = taskNames.join("\n");

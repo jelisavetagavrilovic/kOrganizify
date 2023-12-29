@@ -12,6 +12,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Network)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Network)
+find_package(Qt${QT_VERSION_MAJOR}Multimedia REQUIRED)
 
 set(PROJECT_SOURCES
         src/appwindow.cpp
@@ -30,7 +31,9 @@ set(PROJECT_SOURCES
         src/scheduler.cpp
         src/settings.cpp
         src/settingswindow.cpp
+        src/syncdeniedwindow.cpp
         src/synchronization.cpp
+        src/syncresponsewindow.cpp
         src/syncwindow.cpp
         src/task.cpp
         src/toDoList.cpp
@@ -53,7 +56,9 @@ set(HEADERS
         src/scheduler.h
         src/settings.h
         src/settingswindow.h
+        src/syncdeniedwindow.h
         src/synchronization.h
+        src/syncresponsewindow.h
         src/syncwindow.h
         src/task.h
         src/toDoList.h
@@ -68,6 +73,8 @@ set(FORMS
         src/responsewindow.ui
         src/notificationswindow.ui
         src/settingswindow.ui
+        src/syncdeniedwindow.ui
+        src/syncresponsewindow.ui
         src/syncwindow.ui
 )
 
@@ -102,15 +109,31 @@ else()
 endif()
 
 
-include_directories("${CMAKE_CURRENT_SOURCE_DIR}/external/linux/z3/include")
-link_directories("${CMAKE_CURRENT_SOURCE_DIR}/external/linux/z3/lib")
+if(WIN32)
+    include_directories("${CMAKE_CURRENT_SOURCE_DIR}/external/windows/z3/include")
+    link_directories("${CMAKE_CURRENT_SOURCE_DIR}/external/windows/z3/bin")
 
-target_link_libraries(kOrganizify
-    PRIVATE
-    "${CMAKE_CURRENT_SOURCE_DIR}/external/linux/z3/lib/libz3.so"
-    Qt${QT_VERSION_MAJOR}::Widgets
-    Qt${QT_VERSION_MAJOR}::Network
-)
+    target_link_libraries(kOrganizify
+        PRIVATE
+        "${CMAKE_CURRENT_SOURCE_DIR}/external/windows/z3/bin/libz3.dll"
+        Qt${QT_VERSION_MAJOR}::Widgets
+        Qt${QT_VERSION_MAJOR}::Network
+        Qt${QT_VERSION_MAJOR}::Multimedia
+    )
+else()
+    if(UNIX)
+        include_directories("${CMAKE_CURRENT_SOURCE_DIR}/external/linux/z3/include")
+        link_directories("${CMAKE_CURRENT_SOURCE_DIR}/external/linux/z3/lib")
+
+        target_link_libraries(kOrganizify
+            PRIVATE
+            "${CMAKE_CURRENT_SOURCE_DIR}/external/linux/z3/lib/libz3.so"
+            Qt${QT_VERSION_MAJOR}::Widgets
+            Qt${QT_VERSION_MAJOR}::Network
+            Qt${QT_VERSION_MAJOR}::Multimedia
+        )
+    endif()
+endif()
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

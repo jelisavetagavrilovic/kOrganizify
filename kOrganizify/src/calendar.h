@@ -19,11 +19,15 @@ public:
     QJsonValue toJson() const override;
     void fromJson(const QJsonObject &jsonObject) override;
 
+//<<<<<<< HEAD
     //void addEvent(const Event &event);
     void addEvent(const BasicEvent &basicEvent);
-    // void removeEvent(const Event &event);
+    //void removeEvent(const Event &event);
     void removeEvent(const BasicEvent &basicEvent);
-    void updateEvent(const Event &event);
+
+//    void addEvent(const Event &event);
+//    void removeEvent(const Event &event);
+    void updateEvent(const Event &oldEvent, const Event &newEvent);
 
     QList<Event> getEvents() const;
     Event getEvent(const int index);

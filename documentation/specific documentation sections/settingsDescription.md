@@ -12,14 +12,10 @@ Slučaj upotrebe: Podešavanja
     Osnovni tok:
     
         1. Korisnik pristupa sekciji za podešavanja u aplikaciji.
-
-        2. Prikazuju se različite opcije za prilagođavanje od kojih korisnim može da selektuje:
+        2. Prikazuju se različite opcije za prilagođavanje od kojih korisnik može da selektuje:
             2.1. Promenu teme kalendara
             2.2. Isključivanje/Uključivanje obaveštenja
-            2.3. Noćni režim
-
         3. Korisnik bira željenu opciju za podešavanje.
-
         4. Podešavanja se primenjuju i čuvaju.
         
     Alternativni tokovi:

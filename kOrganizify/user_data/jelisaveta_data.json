@@ -25,12 +25,20 @@
     "password": "jelisaveta",
     "settings": {
         "color": "#006E33",
-        "nightMode": true,
-        "notifications": false
+        "notifications": true
     },
     "tasks": [
         {
-            "task": "test "
+            "isChecked": false,
+            "task": "cao"
+        },
+        {
+            "isChecked": true,
+            "task": "ovo"
+        },
+        {
+            "isChecked": false,
+            "task": "radi"
         }
     ],
     "username": "jelisaveta"

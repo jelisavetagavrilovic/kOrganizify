@@ -5,17 +5,22 @@
 #include <QMainWindow>
 #include <QPixmap>
 #include <QCheckBox>
+#include <QString>
 #include <QDir>
 #include <QVector>
 #include <QScrollBar>
 
 #include "mainwindow.h"
 #include "eventwindow.h"
+#include "qlistwidget.h"
+#include "responsewindow.h"
 #include "settingswindow.h"
 #include "syncwindow.h"
 #include "basiceventwindow.h"
 #include "user.h"
 #include "toDoList.h"
+#include "notifications.h"
+#include "syncdeniedwindow.h"
 
 
 namespace Ui {
@@ -40,18 +45,26 @@ public slots:
 
 private slots:
     void changeButtonColor(const QString &newColor);
-    //void colorCell();
     void openEventWindowForCell(int row, int column);
+    void enabledNotifications(const bool enabled);
     void addTask();
     void onCheckBoxStateChanged(int state);
+    QString crossTask(const QString &taskName);
     void openSettings();
     void logoutUser();
-    void openSyncWindow();
+    void openSyncWindow(QListWidgetItem *item);
     void populateFriends(const QList<QString>& friends);
     void smartPlan();
     void updateTableForSelectedDate();
     void clearFinishedTasks();
     // void reorderCheckedTasks();
+    void showSyncWindow(QString username, QString title, int duration);
+    void syncDenied(QString friendName);
+    void sendYesResponse(QString friendName, int duration);
+    void sendNoResponse(QString friendName);
+    void showResponseWindow(QString eventTitle, QString startTime);
+    void agreedSync(QDateTime startTime, QDateTime endTime, QString title);
+    void updatedEvents();
 
 private:
     Ui::AppWindow *ui;
@@ -59,10 +72,11 @@ private:
     SettingsWindow *settingsWindow;
     SyncWindow *syncWindow;
     EventWindow *eventWindow;
-    // ToDoList m_toDoList;
+    ToDoList *m_toDoList;
     Calendar* m_calendar;
     QDate m_startDate;
     QDate m_endDate;
+    Notifications* m_notifications;
 };
 
 #endif // APPWINDOW_H

@@ -6,38 +6,29 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>228</width>
-    <height>260</height>
+    <width>345</width>
+    <height>241</height>
    </rect>
   </property>
+  <property name="styleSheet">
+   <string notr="true">SettingsWindow{
+        background-color: #F7F4F8;
+}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="lblColor">
+   <widget class="QComboBox" name="cbxDropTheme">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>90</y>
-      <width>35</width>
-      <height>15</height>
-     </rect>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>100</width>
-      <height>15</height>
-     </size>
-    </property>
-    <property name="text">
-     <string>Color:</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="dropTheme">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>80</y>
+      <x>20</x>
+      <y>110</y>
       <width>101</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <item>
      <property name="text">
@@ -64,50 +55,115 @@
       <string>Purple</string>
      </property>
     </item>
+    <item>
+     <property name="text">
+      <string>Default</string>
+     </property>
+    </item>
    </widget>
-   <widget class="QCheckBox" name="btnNotifications">
+   <widget class="QCheckBox" name="cbNotifications">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>150</y>
-      <width>145</width>
+      <x>185</x>
+      <y>115</y>
+      <width>121</width>
       <height>21</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCheckBox{
+        color: black;
+}</string>
+    </property>
     <property name="text">
-     <string>Enable Notifications</string>
+     <string>Notifications</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btnSave">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>210</y>
+      <x>120</x>
+      <y>180</y>
       <width>106</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Save</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>20</y>
-      <width>31</width>
       <height>31</height>
      </rect>
     </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>   Save</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../resources.qrc">
+      <normaloff>:/images/images/save.svg</normaloff>:/images/images/save.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblColor">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>30</y>
+      <width>51</width>
+      <height>46</height>
+     </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="../resources.qrc">:/images/images/settings.png</pixmap>
+     <pixmap resource="../resources.qrc">:/images/images/color-palette.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblNotificationsOn">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>30</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../resources.qrc">:/images/images/bell.svg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblNotificationsOff">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>30</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../resources.qrc">:/images/images/bell-off.svg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -119,8 +175,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>228</width>
-     <height>20</height>
+     <width>345</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>

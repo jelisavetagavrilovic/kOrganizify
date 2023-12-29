@@ -10,5 +10,20 @@
         <file>images/log-out.svg</file>
         <file>images/sarinaPozadina1.png</file>
         <file>images/trash-2.svg</file>
+        <file>images/user-x.svg</file>
+        <file>images/bell-off.svg</file>
+        <file>images/bell.svg</file>
+        <file>images/calendar.svg</file>
+        <file>images/color-palette.png</file>
+        <file>images/save.svg</file>
+        <file>images/backgroundPurple.png</file>
+        <file>images/backgroundPink.png</file>
+        <file>images/backgroundOrange.png</file>
+        <file>images/backgroundGreen.png</file>
+        <file>images/backgroundDefault.png</file>
+        <file>images/backgroundBlue.png</file>
+        <file>images/LoginPoster.png</file>
+        <file>images/link.png</file>
+        <file>resources/notification.wav</file>
     </qresource>
 </RCC>

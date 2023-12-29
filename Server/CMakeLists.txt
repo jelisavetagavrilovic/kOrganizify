@@ -15,10 +15,17 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Network)
 set(PROJECT_SOURCES
         main.cpp
         server.cpp
+        ../kOrganizify/src/calendar.cpp
+        ../kOrganizify/src/event.cpp
+        ../kOrganizify/src/saveload.cpp
+        ../kOrganizify/src/basicEvent.cpp
 )
 
 set(PROJECT_HEADERS
         server.h
+        ../kOrganizify/src/calendar.h
+        ../kOrganizify/src/event.h
+        ../kOrganizify/src/basicEvent.h
 )
 
 add_executable(Server

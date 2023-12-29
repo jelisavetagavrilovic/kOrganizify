@@ -34,26 +34,45 @@
             "location": "Gourmet Academy",
             "startTime": "2023-12-26T09:00:00",
             "title": "Flavors Unleashed"
+        },
+        {
+            "description": "",
+            "endTime": "2023-12-28T07:00:00",
+            "location": "",
+            "startTime": "2023-12-28T04:00:00",
+            "title": "bfvsdcs"
+        },
+        {
+            "description": "",
+            "endTime": "2023-12-28T12:00:00",
+            "location": "",
+            "startTime": "2023-12-28T09:00:00",
+            "title": "kafica"
+        },
+        {
+            "description": "",
+            "endTime": "2023-12-28T20:00:00",
+            "location": "",
+            "startTime": "2023-12-28T15:00:00",
+            "title": "bleja"
+        },
+        {
+            "description": "",
+            "endTime": "2023-12-29T15:00:00",
+            "location": "",
+            "startTime": "2023-12-29T09:00:00",
+            "title": "eeeeeeeeeeeeeeeeeeee"
         }
     ],
     "password": "markic",
     "settings": {
-        "color": "#9063CD",
-        "nightMode": true,
+        "color": "#ABD49A",
         "notifications": false
     },
     "tasks": [
         {
+            "isChecked": false,
             "task": "videti andji "
-        },
-        {
-            "task": "povezati sa serverom"
-        },
-        {
-            "task": "cdn,cscas"
-        },
-        {
-            "task": "bjdfjkad"
         }
     ],
     "username": "markic"

@@ -78,8 +78,8 @@ void BasicEventWindow::previousEvent() {
 }
 
 void BasicEventWindow::print() {
-    for (int i = 0; i < m_basicCalendar->sizeBasic(); i++)
-        qDebug() << m_basicCalendar->getBasicEvent(i).getTitle() << m_basicCalendar->getBasicEvent(i).getDuration();
+//    for (int i = 0; i < m_basicCalendar->sizeBasic(); i++)
+//        qDebug() << m_basicCalendar->getBasicEvent(i).getTitle() << m_basicCalendar->getBasicEvent(i).getDuration();
 }
 
 
@@ -88,20 +88,23 @@ void BasicEventWindow::generate() {
         QTime startTime = ui->tePlanStartTime->time();
         QTime endTime = ui->tePlanEndTime->time();
 
-        qDebug() << startTime << endTime;
-
         int workMinutesPerDay = startTime.msecsTo(endTime) / (1000 * 60); // 1000 milisekundi = 1 sekunda
-        qDebug() << workMinutesPerDay;
-
-        for (int i = 0; i < m_basicCalendar->sizeBasic(); i++)
-            qDebug() << m_basicCalendar->getBasicEvent(i).getTitle() << m_basicCalendar->getBasicEvent(i).getDuration();
-
-        qDebug() << *m_startDate << *m_endDate;
 
 
         m_scheduler = new Scheduler(m_calendar, m_basicCalendar);
-        // m_scheduler->generateSchedule(*m_startDate, *m_endDate, workMinutesPerDay, startTime, endTime);
-        m_scheduler->generateSchedule(*m_startDate, *m_endDate, workMinutesPerDay, startTime, endTime, 5);
+
+        //refactor - update calendar with sort?
+        QList<Event> allEvents;
+        allEvents.append(m_basicCalendar->getEvents());
+        std::sort(allEvents.begin(), allEvents.end(), [](const Event &a, const Event &b) {
+            return a.getDuration() < b.getDuration();
+        });
+
+        m_scheduler->generateSchedule(startTime, endTime);
+
+
+
+        //        m_scheduler->generateSchedule(*m_startDate, *m_endDate, workMinutesPerDay, startTime, endTime, 5);
 
     //     QList<Calendar*> generatedSchedules = m_scheduler->getGeneratedSchedules();
     //     qDebug() << generatedSchedules.size();
