@@ -6,21 +6,38 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>440</width>
+    <height>126</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">SyncDeniedWindow{
+	background-color: #F7F4F8;
+}
+
+QLabel{
+	color: black;
+}</string>
+  </property>
   <widget class="QLabel" name="lblMessage">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>80</y>
-     <width>311</width>
+     <x>0</x>
+     <y>10</y>
+     <width>441</width>
      <height>101</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
    </property>
    <property name="text">
     <string/>

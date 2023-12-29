@@ -20,6 +20,7 @@ class BasicEventWindow : public QDialog
 public:
     explicit BasicEventWindow(Calendar *calendar, QDate *startTime, QDate *endTime, QWidget *parent = nullptr);
     ~BasicEventWindow();
+    void changeColor(QString color);
 
 private slots:
     bool addEvent(const char op);

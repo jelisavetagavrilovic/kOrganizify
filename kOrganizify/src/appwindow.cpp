@@ -405,6 +405,7 @@ void AppWindow::smartPlan() {
 
     BasicEventWindow *basicEventWindow = new BasicEventWindow(m_calendar, &m_startDate, &m_endDate);
 
+    basicEventWindow->changeColor(settingsWindow->getColor());
     basicEventWindow->show();
 }
 

@@ -1,9 +1,18 @@
 {
     "events": [
         {
+            "description": "",
+            "endTime": "2023-12-29T17:00:00",
+            "location": "",
+            "priority": "No Priority",
+            "startTime": "2023-12-29T15:00:00",
+            "title": "Dog"
+        },
+        {
             "description": "Proslava",
             "endTime": "2024-08-16T23:00:00",
             "location": "Takovski vrt",
+            "priority": "No Priority",
             "startTime": "2024-08-16T15:00:00",
             "title": "Sestrin rodj"
         },
@@ -11,6 +20,7 @@
             "description": "Proslava",
             "endTime": "2024-08-25T23:00:00",
             "location": "Takovski vrt",
+            "priority": "No Priority",
             "startTime": "2024-08-25T20:00:00",
             "title": "Moj rodj"
         }
@@ -18,23 +28,27 @@
     "password": "marko",
     "settings": {
         "color": "#A5A9A0",
-        "nightMode": false,
         "notifications": false
     },
     "tasks": [
         {
+            "isChecked": false,
             "task": "Uci"
         },
         {
+            "isChecked": false,
             "task": "Popij vode"
         },
         {
+            "isChecked": false,
             "task": "Rucaj"
         },
         {
+            "isChecked": false,
             "task": "Idi u terretanu"
         },
         {
+            "isChecked": false,
             "task": "Idi do prodavnice"
         }
     ],
