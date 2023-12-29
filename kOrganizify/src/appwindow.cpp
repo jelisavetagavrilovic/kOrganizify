@@ -397,14 +397,10 @@ void AppWindow::showSyncWindow(QString username, QString title, int duration) {
 }
 
 void AppWindow::smartPlan() {
-    // popraviti da se ne ponavlja kode
     QDate selectedDate = ui->calendarWidget->selectedDate();
     m_startDate = selectedDate.addDays(-selectedDate.dayOfWeek() + 1);
     m_endDate = m_startDate.addDays(6);
-//    qDebug() << m_startDate << m_endDate;
-
     BasicEventWindow *basicEventWindow = new BasicEventWindow(m_calendar, &m_startDate, &m_endDate);
-
     basicEventWindow->show();
 }
 

@@ -1,29 +1,18 @@
 #include "scheduler.h"
 
-#include <algorithm>
-#include <vector>
-#include <QList>
-#include "event.h"
-
-
 Scheduler::Scheduler(Calendar *calendar, Calendar* m_basicCalendar)
     : m_calendar(calendar)
     , m_basicCalendar(m_basicCalendar)
     , m_scheduledCalendar(nullptr)
 {
     //refactor - update calendar with sort?
-    QList<BasicEvent> allEvents;
+    QList<BasicEvent> m_AllEvents;
     for (int i = 0; i < m_basicCalendar->sizeBasic(); i++)
-        allEvents.append(m_basicCalendar->getBasicEvent(i));
+        m_AllEvents.append(m_basicCalendar->getBasicEvent(i));
 
-    std::sort(allEvents.begin(), allEvents.end(), [](const BasicEvent &a, const BasicEvent &b) {
+    std::sort(m_AllEvents.begin(), m_AllEvents.end(), [](const BasicEvent &a, const BasicEvent &b) {
         return a.getDuration() > b.getDuration();
     });
-
-    for(BasicEvent& e: allEvents)
-        qDebug() << e.getDuration() << e.getTitle();
-
-//    m_freeTimeList = findFreeTime(m_calendar, 2);
 }
 
 void Scheduler::generateSchedule(const QTime &startOfWorkday, const QTime &endOfWorkday) {
@@ -35,25 +24,38 @@ void Scheduler::generateSchedule(const QTime &startOfWorkday, const QTime &endOf
                             return startTime.time() <= startOfWorkday || endTime.time() >= endOfWorkday;});
     m_freeTimeList.erase(it, m_freeTimeList.end());
 
-    for(Event& e : m_freeTimeList)
-        qDebug() << e.getStartTime() << e.getEndTime();
+    Calendar* tmp;
+    for(BasicEvent& event : m_AllEvents) {
+        //check for minutes
+        m_freeTimeList = findFreeTime(m_calendar, event.getDuration());
+        tmp = generateSchedules(m_freeTimeList);
 
-    generateSchedules(m_freeTimeList, m_basicCalendar->getEvents());
+        Event e;
+        e.setStartTime(tmp->getEvents()[0].getStartTime());
+        e.setEndTime(tmp->getEvents()[0].getEndTime());
+        e.setTitle(event.getTitle());
+
+        qDebug() << e.getTitle() << e.getStartTime() << e.getEndTime();
+
+        m_calendar->addEvent(e);
+    }
+
+//    for(Event& event : m_calendar->getEvents())
+//        qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime();
 }
 
-void Scheduler::generateSchedules(QList<Event> freeTime, QList<Event> basicEvents) {
-   int sizeFree = freeTime.size();
-   QList<QList<Event>> allPermutations;
-   generatePermutations(freeTime, 0, sizeFree - 1, 0, allPermutations);
+Calendar* Scheduler::generateSchedules(QList<Event> freeTime) {
+    QList<QList<Event>> allPermutations;
+    generatePermutations(freeTime, 0, freeTime.size() - 1, 0, allPermutations);
 
-   int permutationLength = basicEvents.size();
-   for (const QList<Event>& permutation : allPermutations) {
-       qDebug() << "Permutation:";
-       for (const Event& event : permutation) {
-           qDebug() << "Event: " << event.getStartTime() << event.getEndTime();
-       }
-       qDebug() << "-----------------------------------------------------------------------------";
-   }
+    Calendar* cal;
+    QList<Event> permutation = allPermutations[0];
+    for (int j = 0; j < permutation.size(); ++j) {
+        Event event = permutation[j];
+        cal->addEvent(event);
+    }
+
+    return cal;
 }
 
 void Scheduler::generatePermutations(QList<Event>& events, int start, int end, int depth,
@@ -69,15 +71,6 @@ void Scheduler::generatePermutations(QList<Event>& events, int start, int end, i
        std::swap(events[start], events[i]);  // backtrack
     }
 }
-
-void Scheduler::processSchedule(const QList<Event>& schedule) {
-
-    for (const Event& event : schedule) {
-       qDebug() << "Event: " << event.getTitle();
-    }
-    qDebug() << "-----------";
-}
-
 
 QList<Event> Scheduler::findFreeTime(Calendar *cal1, int maxTime) {
     QList<Event> freeTimeSlots;

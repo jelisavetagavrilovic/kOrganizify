@@ -93,14 +93,6 @@ void BasicEventWindow::generate() {
 
         m_scheduler = new Scheduler(m_calendar, m_basicCalendar);
         m_scheduler->generateSchedule(startTime, endTime);
-
-        //        m_scheduler->generateSchedule(*m_startDate, *m_endDate, workMinutesPerDay, startTime, endTime, 5);
-
-    //     QList<Calendar*> generatedSchedules = m_scheduler->getGeneratedSchedules();
-    //     qDebug() << generatedSchedules.size();
-    //     for (Calendar* schedules : generatedSchedules)
-    //         schedules->print();
-    // }
     }
 }
 
