@@ -418,6 +418,7 @@ void AppWindow::logoutUser() {
 
 void AppWindow::showSyncWindow(QString username, QString title, int duration) {
     SyncResponseWindow* responseWindow = new SyncResponseWindow(username, title, duration);
+    responseWindow->changeColor(settingsWindow->getColor());
     responseWindow->show();
     connect(responseWindow, &SyncResponseWindow::yesResponse, this, &AppWindow::sendYesResponse);
     connect(responseWindow, &SyncResponseWindow::noResponse, this, &AppWindow::sendNoResponse);
@@ -446,6 +447,7 @@ void AppWindow::syncDenied(QString friendName) {
 
 void AppWindow::showResponseWindow(QString eventTitle, QString startTime) {
     ResponseWindow *responseWindow = new ResponseWindow(eventTitle,startTime);
+    responseWindow->changeColor(settingsWindow->getColor());
     responseWindow->show();
     connect(responseWindow, &ResponseWindow::sendResponse, m_user->m_client, &Client::eventResponse);
 }

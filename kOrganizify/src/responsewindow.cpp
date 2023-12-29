@@ -19,12 +19,12 @@ ResponseWindow::~ResponseWindow() {
 }
 
 void ResponseWindow::setTitle(QString title) {
-    ui->lbl_Question->setText(title);
+    ui->lblQuestion->setText(title);
 }
 
 void ResponseWindow::setDate(QString startTime) {
     m_date = startTime;
-    ui->lbl_Date->setText("Does this time work for you " + startTime);
+    ui->lblDate->setText(startTime);
 }
 
 QString ResponseWindow::getDate() {
@@ -42,4 +42,11 @@ void ResponseWindow::onNoClicked() {
     qDebug() << "I cannot on this date: " << getDate();
     emit sendResponse(false);
     close();
+}
+
+void ResponseWindow::changeColor(QString color){
+    QString styleSheet = QString("background-color: %1; ").arg(color);
+    QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 10px; color:black;}");
+    ui->btnYes->setStyleSheet(btnStyleSheet);
+    ui->btnNo->setStyleSheet(btnStyleSheet);
 }

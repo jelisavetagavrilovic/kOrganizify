@@ -11,7 +11,7 @@ SyncResponseWindow::SyncResponseWindow(QString friendName, QString title, int du
 
     ui->lblDuration->setText(QString::number(duration) + " hours");
     ui->lblEventTitle->setText(title);
-    ui->lblTitle->setText("Hey, " + friendName + " wants to sync with you");
+    ui->lblTitle->setText(friendName + " wants to sync with you");
 
     // connect(ui->le_nameInput, &QLineEdit::textChanged, this, &SyncWindow::onTextEntered);
     // connect(ui->cb_selectHours, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &SyncWindow::onNumberSelected);
@@ -33,4 +33,12 @@ void SyncResponseWindow::sendYes() {
 void SyncResponseWindow::sendNo() {
     emit noResponse(m_friendName);
     close();
+}
+
+void SyncResponseWindow::changeColor(QString color){
+    QString styleSheet = QString("background-color: %1; ").arg(color);
+    QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 10px; color:black;}");
+
+    ui->btnYes->setStyleSheet(btnStyleSheet);
+    ui->btnNo->setStyleSheet(btnStyleSheet);
 }

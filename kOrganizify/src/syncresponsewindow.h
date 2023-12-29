@@ -14,6 +14,7 @@ class SyncResponseWindow : public QWidget
 public:
     explicit SyncResponseWindow(QString friendName, QString title, int duration, QWidget *parent = nullptr);
     ~SyncResponseWindow();
+    void changeColor(QString color);
 
 signals:
     void yesResponse(QString friendName, int duration);

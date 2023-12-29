@@ -24,7 +24,12 @@
     ],
     "password": "jelisaveta",
     "settings": {
+<<<<<<< HEAD
         "color": "#006E33",
+=======
+        "color": "#D8B7F1",
+        "nightMode": true,
+>>>>>>> feature/gui
         "notifications": true
     },
     "tasks": [
