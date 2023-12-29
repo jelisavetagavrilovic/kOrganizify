@@ -401,6 +401,7 @@ void AppWindow::smartPlan() {
     m_startDate = selectedDate.addDays(-selectedDate.dayOfWeek() + 1);
     m_endDate = m_startDate.addDays(6);
     BasicEventWindow *basicEventWindow = new BasicEventWindow(m_calendar, &m_startDate, &m_endDate);
+    basicEventWindow->changeColor(settingsWindow->getColor());
     basicEventWindow->show();
 
 

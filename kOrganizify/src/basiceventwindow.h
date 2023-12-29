@@ -23,6 +23,8 @@ public:
     int m_currentIndex;
     int m_currentCalendarIndex;
     QList<Calendar*> m_listOfCalendars;
+    void changeColor(QString color);
+
 
 private slots:
     bool addEvent(const char op);

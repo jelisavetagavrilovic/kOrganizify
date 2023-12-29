@@ -10,10 +10,10 @@ EventWindow::EventWindow(Calendar* calendar, QWidget *parent)
 {
     ui->setupUi(this);
 
-    ui->comboBox->addItem("No Priority", QVariant::fromValue(CustomEventPriority::NoPriority));
-    ui->comboBox->addItem("Low", QVariant::fromValue(CustomEventPriority::Low));
-    ui->comboBox->addItem("Medium", QVariant::fromValue(CustomEventPriority::Medium));
-    ui->comboBox->addItem("High", QVariant::fromValue(CustomEventPriority::High));
+    ui->cbPriority->addItem("No Priority", QVariant::fromValue(CustomEventPriority::NoPriority));
+    ui->cbPriority->addItem("Low", QVariant::fromValue(CustomEventPriority::Low));
+    ui->cbPriority->addItem("Medium", QVariant::fromValue(CustomEventPriority::Medium));
+    ui->cbPriority->addItem("High", QVariant::fromValue(CustomEventPriority::High));
 
     connect(ui->btnSave, &QPushButton::clicked, this, &EventWindow::onSaveButtonClicked);
     connect(ui->btnDelete, &QPushButton::clicked, this, &EventWindow::onDeleteButtonClicked);
@@ -45,7 +45,7 @@ void EventWindow::setLocation(const QString &location) {
 
 
 void EventWindow::setPriority(const CustomEventPriority &priority){
-    ui->comboBox->setCurrentIndex(static_cast<int>(priority));
+    ui->cbPriority->setCurrentIndex(static_cast<int>(priority));
 }
 
 void EventWindow::setCurrentEvent(const Event &event){
@@ -94,7 +94,7 @@ void EventWindow::onSaveButtonClicked()
     newEvent.setStartTime(startDateTime);
     newEvent.setEndTime(endDateTime);
 
-    CustomEventPriority selectedPriority = ui->comboBox->currentData().value<CustomEventPriority>();
+    CustomEventPriority selectedPriority = ui->cbPriority->currentData().value<CustomEventPriority>();
     newEvent.setPriority(selectedPriority);
 
     if (!isEventNull()){
@@ -143,8 +143,9 @@ void EventWindow::changeColor(QString color)
     QString dateEditStyleSheet = QString("QDateEdit{" + styleSheet + "}");
     QString timeEditStyleSheet = QString("QTimeEdit{" + styleSheet + "}");
     QString ewStyleSheet = QString("QWidget{color: black; background-color: #F7F4F8;}");
+    QString cbStyleSheet = QString("QComboBox{" + styleSheet + "}");
 
-    QString ultimateStyleSheet = ewStyleSheet + btnStyleSheet + leStyleSheet + teStyleSheet + dateEditStyleSheet + timeEditStyleSheet;
+    QString ultimateStyleSheet = ewStyleSheet + btnStyleSheet + leStyleSheet + teStyleSheet + dateEditStyleSheet + timeEditStyleSheet + cbStyleSheet;
 
     this->setStyleSheet(ultimateStyleSheet);
 }
