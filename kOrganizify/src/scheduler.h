@@ -5,13 +5,12 @@
 #include "basicevent.h"
 #include "event.h"
 
-//#include <algorithm>
-//#include <vector>
-
 #include <QList>
 #include <QDate>
 #include <QTime>
 #include <QSet>
+
+#include <cstdlib>
 
 class Scheduler {
 
@@ -22,7 +21,7 @@ public:
     void generateSchedule(const QTime &startOfWorkday, const QTime &endOfWorkday);
 
 private slots:
-    Calendar* generateSchedules(QList<Event> freeTime);
+    void generateSchedules(QList<Event> freeTime);
     bool nextPermutation(QList<Event>& events, int size);
     void generatePermutations(QList<Event>& events, int start, int end, int depth,
                               QList<QList<Event>>& allPermutations);
@@ -35,7 +34,7 @@ private:
     Calendar* m_scheduledCalendar;
     QList<Event> m_freeTimeList;
     QList<Event> findFreeTime(Calendar *cal1, int maxTime);
-    QList<BasicEvent> m_AllEvents;
+    QList<BasicEvent> m_allEvents;
 };
 
 #endif // SCHEDULER_H

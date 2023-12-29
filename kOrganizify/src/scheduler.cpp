@@ -3,16 +3,8 @@
 Scheduler::Scheduler(Calendar *calendar, Calendar* m_basicCalendar)
     : m_calendar(calendar)
     , m_basicCalendar(m_basicCalendar)
-    , m_scheduledCalendar(nullptr)
+    , m_scheduledCalendar(new Calendar())
 {
-    //refactor - update calendar with sort?
-    QList<BasicEvent> m_AllEvents;
-    for (int i = 0; i < m_basicCalendar->sizeBasic(); i++)
-        m_AllEvents.append(m_basicCalendar->getBasicEvent(i));
-
-    std::sort(m_AllEvents.begin(), m_AllEvents.end(), [](const BasicEvent &a, const BasicEvent &b) {
-        return a.getDuration() > b.getDuration();
-    });
 }
 
 void Scheduler::generateSchedule(const QTime &startOfWorkday, const QTime &endOfWorkday) {
@@ -24,38 +16,45 @@ void Scheduler::generateSchedule(const QTime &startOfWorkday, const QTime &endOf
                             return startTime.time() <= startOfWorkday || endTime.time() >= endOfWorkday;});
     m_freeTimeList.erase(it, m_freeTimeList.end());
 
-    Calendar* tmp;
-    for(BasicEvent& event : m_AllEvents) {
-        //check for minutes
+    QList<BasicEvent> m_allEvents;
+    for (int i = 0; i < m_basicCalendar->sizeBasic(); i++)
+        m_allEvents.append(m_basicCalendar->getBasicEvent(i));
+
+    std::sort(m_allEvents.begin(), m_allEvents.end(), [](const BasicEvent &a, const BasicEvent &b) {
+        return a.getDuration() > b.getDuration();
+    });
+
+    for(BasicEvent& event : m_allEvents) {
         m_freeTimeList = findFreeTime(m_calendar, event.getDuration());
-        tmp = generateSchedules(m_freeTimeList);
+        generateSchedules(m_freeTimeList);
 
+        QList<Event> scheduledEvents = m_scheduledCalendar->getEvents();
         Event e;
-        e.setStartTime(tmp->getEvents()[0].getStartTime());
-        e.setEndTime(tmp->getEvents()[0].getEndTime());
-        e.setTitle(event.getTitle());
+        if (!scheduledEvents.isEmpty()) {
+            int randomIndex = rand() % scheduledEvents.size();
 
-        qDebug() << e.getTitle() << e.getStartTime() << e.getEndTime();
+            e.setStartTime(scheduledEvents[randomIndex].getStartTime());
+            e.setEndTime(scheduledEvents[randomIndex].getEndTime());
+            e.setTitle(event.getTitle());
+        }
 
         m_calendar->addEvent(e);
     }
 
-//    for(Event& event : m_calendar->getEvents())
-//        qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime();
+    for(Event& event : m_calendar->getEvents())
+        qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime();
+    qDebug() << "-------------------------------------------------------------------------------------";
 }
-
-Calendar* Scheduler::generateSchedules(QList<Event> freeTime) {
+void Scheduler::generateSchedules(QList<Event> freeTime) {
     QList<QList<Event>> allPermutations;
     generatePermutations(freeTime, 0, freeTime.size() - 1, 0, allPermutations);
 
-    Calendar* cal;
     QList<Event> permutation = allPermutations[0];
+
     for (int j = 0; j < permutation.size(); ++j) {
         Event event = permutation[j];
-        cal->addEvent(event);
+        m_scheduledCalendar->addEvent(event);
     }
-
-    return cal;
 }
 
 void Scheduler::generatePermutations(QList<Event>& events, int start, int end, int depth,
@@ -72,7 +71,7 @@ void Scheduler::generatePermutations(QList<Event>& events, int start, int end, i
     }
 }
 
-QList<Event> Scheduler::findFreeTime(Calendar *cal1, int maxTime) {
+QList<Event> Scheduler::findFreeTime(Calendar *cal1, int maxTimeInMinutes) {
     QList<Event> freeTimeSlots;
     QList<Event> allEvents;
 
@@ -94,26 +93,26 @@ QList<Event> Scheduler::findFreeTime(Calendar *cal1, int maxTime) {
     QDate lastDayOfWeek = currentDay.addDays(7 - currentDay.dayOfWeek());
 
     for (QDate currentDate = currentDay; currentDate <= lastDayOfWeek; currentDate = currentDate.addDays(1)) {
-        QTime startHour = (currentDate == currentDay) ? roundUpToNextHour(currentHour) : QTime(8, 0);
-        QTime endHour = QTime(23, 59, 59);
+       QTime startHour = (currentDate == currentDay) ? roundUpToNextHour(currentHour) : QTime(8, 0);
+       QTime endHour = QTime(23, 59, 59);
 
-        if(isBetween12pmAnd8am(startHour))
-            startHour = QTime(8, 0);
+       if(isBetween12pmAnd8am(startHour))
+           startHour = QTime(8, 0);
 
-        for (QTime currentHour = startHour; currentHour < endHour; currentHour = currentHour.addSecs(3600)) {
-            QTime endTime = endHour.addSecs(-maxTime * 3600);
+       for (QTime currentHour = startHour; currentHour < endHour; currentHour = currentHour.addSecs(60 * maxTimeInMinutes)) {
+           QTime endTime = endHour.addSecs(-60 * maxTimeInMinutes);
 
-            if (currentHour <= endTime) {
-                Event* newEvent = new Event();
-                newEvent->setStartTime(QDateTime(currentDate, currentHour));
-                newEvent->setEndTime(QDateTime(currentDate, currentHour.addSecs(maxTime * 3600)));
+           if (currentHour <= endTime) {
+               Event* newEvent = new Event();
+               newEvent->setStartTime(QDateTime(currentDate, currentHour));
+               newEvent->setEndTime(QDateTime(currentDate, currentHour.addSecs(60 * maxTimeInMinutes)));
 
-                freeTimeSlots.append(*newEvent);
-            }
+               freeTimeSlots.append(*newEvent);
+           }
 
-            if (currentHour.hour() == 23)
-                break;
-        }
+           if (currentHour.addSecs(60 * maxTimeInMinutes).hour() == 23)
+               break;
+       }
     }
 
     // removing free time slots that overlap with existing events
@@ -121,7 +120,7 @@ QList<Event> Scheduler::findFreeTime(Calendar *cal1, int maxTime) {
         for (const auto &existingEvent : allEvents) {
             if (freeTimeSlot.getStartTime() < existingEvent.getEndTime() &&
                 freeTimeSlot.getEndTime() > existingEvent.getStartTime()) {
-                return true;  // ovelapping, remove this free time slot
+                return true;  // overlapping, remove this free time slot
             }
         }
         return false;
@@ -133,5 +132,6 @@ QList<Event> Scheduler::findFreeTime(Calendar *cal1, int maxTime) {
 
 
 Scheduler::~Scheduler() {
-    // Implementacija destruktora po potrebi
+    delete m_basicCalendar;
+    delete m_scheduledCalendar;
 }

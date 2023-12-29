@@ -18,14 +18,14 @@ set(PROJECT_SOURCES
         ../kOrganizify/src/calendar.cpp
         ../kOrganizify/src/event.cpp
         ../kOrganizify/src/saveload.cpp
-        ../kOrganizify/src/basicEvent.cpp
+        ../kOrganizify/src/basicevent.cpp
 )
 
 set(PROJECT_HEADERS
         server.h
         ../kOrganizify/src/calendar.h
         ../kOrganizify/src/event.h
-        ../kOrganizify/src/basicEvent.h
+        ../kOrganizify/src/basicevent.h
 )
 
 add_executable(Server
