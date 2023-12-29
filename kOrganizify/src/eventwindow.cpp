@@ -1,6 +1,7 @@
 #include "event.h"
 #include "eventwindow.h"
 #include "ui_eventwindow.h"
+#include <QMessageBox>
 
 EventWindow::EventWindow(Calendar* calendar, QWidget *parent)
     : QWidget(parent)
@@ -9,16 +10,23 @@ EventWindow::EventWindow(Calendar* calendar, QWidget *parent)
 {
     ui->setupUi(this);
 
+    ui->comboBox->addItem("No Priority", QVariant::fromValue(CustomEventPriority::NoPriority));
+    ui->comboBox->addItem("Low", QVariant::fromValue(CustomEventPriority::Low));
+    ui->comboBox->addItem("Medium", QVariant::fromValue(CustomEventPriority::Medium));
+    ui->comboBox->addItem("High", QVariant::fromValue(CustomEventPriority::High));
+
     connect(ui->btnSave, &QPushButton::clicked, this, &EventWindow::onSaveButtonClicked);
     connect(ui->btnDelete, &QPushButton::clicked, this, &EventWindow::onDeleteButtonClicked);
 }
 
 void EventWindow::setStartDate(const QDateTime &dateTime){
+    qDebug() << "SET START TIM: " << dateTime;
     ui->deDateStart->setDateTime(dateTime);
     ui->teTimeStart->setDateTime(dateTime);
 }
 
 void EventWindow::setEndDate(const QDateTime &dateTime){
+    qDebug() << "SET END TIME: " << dateTime;
     ui->deDateEnd->setDateTime(dateTime);
     ui->teTimeEnd->setDateTime(dateTime);
 }
@@ -35,6 +43,11 @@ void EventWindow::setLocation(const QString &location) {
     ui->leLocation->setText(location);
 }
 
+
+void EventWindow::setPriority(const CustomEventPriority &priority){
+    ui->comboBox->setCurrentIndex(static_cast<int>(priority));
+}
+
 void EventWindow::setCurrentEvent(const Event &event){
     m_currentEvent = event;
 }
@@ -42,6 +55,8 @@ void EventWindow::setCurrentEvent(const Event &event){
 Event EventWindow::getCurrentEvent() const {
     return m_currentEvent;
 }
+
+
 
 bool EventWindow::isEventNull() const {
     return m_currentEvent.getTitle().isEmpty()
@@ -72,8 +87,16 @@ void EventWindow::onSaveButtonClicked()
     QDateTime startDateTime(ui->deDateStart->date(), ui->teTimeStart->time());
     QDateTime endDateTime(ui->deDateEnd->date(), ui->teTimeEnd->time());
 
+    if (endDateTime <= startDateTime) {
+        QMessageBox::critical(this, "Error", "End time must be after start time.", QMessageBox::Ok);
+        return;
+    }
+
     newEvent.setStartTime(startDateTime);
     newEvent.setEndTime(endDateTime);
+
+    CustomEventPriority selectedPriority = ui->comboBox->currentData().value<CustomEventPriority>();
+    newEvent.setPriority(selectedPriority);
 
     if (!isEventNull()){
         m_calendar->updateEvent(m_currentEvent, newEvent);
@@ -86,12 +109,17 @@ void EventWindow::onSaveButtonClicked()
     QList<Event> events = m_calendar->getEvents();
     for (const Event &e : events) {
         qDebug() << "Event in calendar: " << e.getTitle();
-    }
-
-
-    QList<Event> weekEvents = m_calendar->getEventsForWeek(QDate(2000, 1, 1), QDate(2000, 1, 7));
-    for (const Event &e : weekEvents) {
-        qDebug() << "Event in weekly calendar: " << e.getTitle();
+        if (e.getPriority() == CustomEventPriority::High) {
+            // Prioritet je High
+            qDebug() << "PHIGH";
+        } else if (e.getPriority() == CustomEventPriority::Medium) {
+            // Prioritet nije High
+            qDebug() << "MEDIUM";
+        } else if (e.getPriority() == CustomEventPriority::Low){
+            qDebug() << "LOW";
+        } else {
+            qDebug() << "No Priority";
+        }
     }
 
     this->close();
@@ -122,6 +150,4 @@ EventWindow::~EventWindow()
 {
     delete ui;
 }
-
-
 

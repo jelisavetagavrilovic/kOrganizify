@@ -70,7 +70,7 @@ void AppWindow::changeButtonColor(const QString& newColor) {
     this->ui->btnSmartPlan->setStyleSheet(btnStyleSheet);
     this->ui->leInput->setStyleSheet(styleSheet);
     this->ui->lblToDoList->setStyleSheet("color: " + newColor);
-    this->ui->tableWidget->setStyleSheet(QString("QTableWidget::item { background-color: white; } QTableWidget{background-color: %1}").arg(newColor));
+    this->ui->tableWidget->setStyleSheet(QString("QTableWidget { gridline-color: %1; }").arg(newColor));
     this->ui->tableWidget->horizontalHeader()->setStyleSheet(styleSheet);
     this->ui->tableWidget->verticalHeader()->setStyleSheet(styleSheet);
     this->ui->calendarWidget->setStyleSheet(QString("QCalendarWidget QWidget#qt_calendar_navigationbar { color: black; background-color: %1;}"
@@ -102,7 +102,7 @@ void AppWindow::initialize() {
     this->ui->lwToDoList->setStyleSheet("background-color: #FCD299");
     this->ui->lwFriends->setStyleSheet("background-color: #E5E1E6; color: black;");
     settingsWindow->ui->cbNotifications->setChecked(m_user->getSettings().getNotifications());
-    ui->lwToDoList->setStyleSheet("background-color: #FCD299");
+    ui->lwToDoList->setStyleSheet("background-color: #F4F4F4");
 
     this->setFixedSize(this->size());
     this->setAutoFillBackground(true);
@@ -140,7 +140,7 @@ void AppWindow::initialize() {
                                                     "    background-color: #3C5291;" // Boja pozadine kada se pređe mišem preko datuma
                                                     "}").arg(this->settingsWindow->getColor(), this->settingsWindow->getColor()));
     // table
-    this->ui->tableWidget->setStyleSheet(QString("QTableWidget::item { background-color: white; } QTableWidget{background-color: %1}").arg(this->settingsWindow->getColor()));
+    this->ui->tableWidget->setStyleSheet(QString("QTableWidget { gridline-color: %1; }").arg(this->settingsWindow->getColor()));
     this->ui->tableWidget->verticalScrollBar()->setStyleSheet("background-color: lightblue");
     this->ui->tableWidget->horizontalHeader()->setStyleSheet("background-color: " + this->settingsWindow->getColor());
     this->ui->tableWidget->verticalHeader()->setStyleSheet("background-color: " + this->settingsWindow->getColor());
@@ -170,16 +170,27 @@ void AppWindow::openEventWindowForCell(int row, int column) {
 
         QList<Event> weekEvents = m_calendar->getEventsForWeek(startDate, startDate.addDays(6));
         for(const Event &event: weekEvents){
-            int startHour = event.getStartTime().time().hour();
-            int endHour = event.getEndTime().time().hour();
+            QDateTime startTime = event.getStartTime();
+            QDateTime endTime = event.getEndTime();
 
-            if(row >= startHour && row < endHour && column == event.getStartTime().date().dayOfWeek() - 1){
+            int startHour = startTime.time().hour();
+            int endHour = endTime.time().hour();
+            int startMinute = startTime.time().minute();
+            int endMinute = endTime.time().minute();
+
+            int duration = endHour - startHour;
+
+
+            if(((row >= startHour && row < endHour) ||
+                (duration < 1 && row >= startHour && row <= endHour)) &&
+                column == event.getStartTime().date().dayOfWeek() - 1){
                 eventWindow->setCurrentEvent(event);
-                eventWindow->setStartDate(cellDateTime);
-                eventWindow->setEndDate(cellDateTime.addSecs(3600 * (endHour - startHour)));
+                eventWindow->setStartDate(cellDateTime.addSecs(60 * startMinute));
+                eventWindow->setEndDate(cellDateTime.addSecs(3600 * duration + 60 * endMinute));
                 eventWindow->setTitle(event.getTitle());
                 eventWindow->setDescription(event.getDescription());
                 eventWindow->setLocation(event.getLocation());
+                eventWindow->setPriority(event.getPriority());
 
                 eventWindow->show();
                 return;
@@ -190,8 +201,14 @@ void AppWindow::openEventWindowForCell(int row, int column) {
         eventWindow->setTitle("");
         eventWindow->setDescription("");
         eventWindow->setLocation("");
-        eventWindow->setStartDate(cellDateTime);
-        eventWindow->setEndDate(cellDateTime.addSecs(3600));
+        if (row == 23) {
+            eventWindow->setStartDate(cellDateTime.addDays(1));
+            eventWindow->setEndDate(cellDateTime.addSecs(3600 * 24 + 59 * 60));
+        } else {
+            eventWindow->setStartDate(cellDateTime);
+            eventWindow->setEndDate(cellDateTime.addSecs(3600));
+        }
+        eventWindow->setPriority(CustomEventPriority::NoPriority);
         eventWindow->show();
     }
 }
@@ -323,26 +340,70 @@ void AppWindow::showWeeklyEvents(const QDate& selectedDate){
     QList<Event> weekEvents = m_calendar->getEventsForWeek(startDate, endDate);
 
     for(const Event &event: weekEvents){
+        QDateTime startTime = event.getStartTime();
+        QDateTime endTime = event.getEndTime();
 
-        int startHour = event.getStartTime().time().hour();
-        int endHour = event.getEndTime().time().hour();
+        int startHour = startTime.time().hour();
+        int endHour = endTime.time().hour();
+        int endMinute = endTime.time().minute();
 
         int row = startHour;
         if(row < 0){
             row += 24;
         }
 
-        int column = event.getStartTime().date().dayOfWeek() - 1;
+        int column = startTime.date().dayOfWeek() - 1;
 
-        QTableWidgetItem *item = new QTableWidgetItem(event.getTitle());
+        QString title = event.getTitle();
+        if (!event.getLocation().isEmpty()) {
+            title += QString("\nLocation: %1").arg(event.getLocation());
+        }
+        QTableWidgetItem *item = new QTableWidgetItem();
+        item->setData(Qt::DisplayRole, title);
+        item->setTextAlignment(Qt::AlignCenter);
+        QFont font = item->font();
+        font.setBold(true);
+        item->setFont(font);
+        CustomEventPriority priority = event.getPriority();
+        QColor priorityColor = getColorFromPriority(priority);
+        item->setBackground(QBrush(priorityColor));
 
-        int duration = endHour - startHour;
-        qDebug() << "Duration: " << duration;
-        if (duration > 1){
-            ui->tableWidget->setSpan(row, column, duration, 1);
+        int durationInHours = (endHour - startHour) + (endMinute > 0 ? 1 : 0);
+
+        if (durationInHours > 1){
+            ui->tableWidget->setSpan(row, column, durationInHours, 1);
         }
 
         ui->tableWidget->setItem(row, column, item);
+
+        QString tooltipText = QString("<div style='max-width: 300px;'>"
+                                      "<b>Title:</b> %1<br>"
+                                      "<b>Location:</b> %2<br>"
+                                      "<b>Start:</b> %3<br>"
+                                      "<b>End:</b> %4<br>"
+                                      "<b>Description:</b> %5</div>")
+                                  .arg(event.getTitle())
+                                  .arg(event.getLocation().isEmpty() ? "N/A" : event.getLocation())
+                                  .arg(event.getStartTime().toString("hh:mm"))
+                                  .arg(event.getEndTime().toString("hh:mm"))
+                                  .arg(event.getDescription().isEmpty() ? "N/A" : event.getDescription());
+
+        item->setToolTip(tooltipText);
+    }
+}
+
+QColor AppWindow::getColorFromPriority(CustomEventPriority priority) {
+    switch (priority) {
+    case CustomEventPriority::NoPriority:
+        return QColor(247, 244, 248);
+    case CustomEventPriority::Low:
+        return QColor(209, 244, 164);
+    case CustomEventPriority::Medium:
+        return QColor(250, 226, 127);
+    case CustomEventPriority::High:
+        return QColor(207, 91, 87);
+    default:
+        return QColor(247, 244, 248);
     }
 }
 

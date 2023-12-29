@@ -13,6 +13,9 @@ enum class CustomEventPriority {
     High
 };
 
+QString customEventPriorityToString(CustomEventPriority priority);
+CustomEventPriority customEventPriorityFromString(const QString &priorityString);
+
 class Event
 {
 public:

@@ -21,6 +21,8 @@ QJsonValue Calendar::toJson() const {
         jsonObject["endTime"] = event.getEndTime().toString(Qt::ISODate);
         jsonObject["description"] = event.getDescription();
         jsonObject["location"] = event.getLocation();
+        jsonObject["priority"] = customEventPriorityToString(event.getPriority());
+
 
         jsonArray.append(jsonObject);
     }
@@ -39,6 +41,8 @@ void Calendar::fromJson(const QJsonObject &jsonObject) {
         event.setEndTime(QDateTime::fromString(jv["endTime"].toString(), Qt::ISODate));
         event.setDescription(jv["description"].toString());
         event.setLocation(jv["location"].toString());
+        event.setPriority(customEventPriorityFromString(jv["priority"].toString()));
+
 
         // qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime() << event.getDescription() << event.getLocation();
 
