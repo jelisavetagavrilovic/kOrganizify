@@ -96,6 +96,10 @@ QString customEventPriorityToString(CustomEventPriority priority) {
     }
 }
 
+bool Event::overlapsWith(const Event& other) const {
+    return m_endTime > other.m_startTime && m_startTime < other.m_endTime;
+}
+
 void Event::clear() {
     BasicEvent::deleteString();
     deleteString(m_description);

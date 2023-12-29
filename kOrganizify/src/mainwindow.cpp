@@ -8,10 +8,11 @@ MainWindow::MainWindow(QWidget *parent)
     m_user(nullptr)
 {
     ui->setupUi(this);
-        setWindowTitle("Login");
+    setWindowTitle("Login");
+    setFixedSize(this->size());
 
     ui->lblStatus->setVisible(false);
-        ui->lblUserPlus->setVisible(false);
+    ui->lblUserPlus->setVisible(false);
     ui->lePassword->setEchoMode(QLineEdit::Password);
 
     ui->leUsername->setStyleSheet("QLineEdit{color: black; background-color: #B4B19A; }");

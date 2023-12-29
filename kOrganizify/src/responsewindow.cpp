@@ -6,6 +6,9 @@ ResponseWindow::ResponseWindow(QString eventTitle, QString startTime, QWidget *p
     ui(new Ui::ResponseWindow)
 {
     ui->setupUi(this);
+    setWindowTitle("Notification");
+    setFixedSize(this->size());
+
 
     setDate(startTime);
     setTitle(eventTitle);

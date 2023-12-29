@@ -9,6 +9,9 @@ SettingsWindow::SettingsWindow(Settings *settings, QWidget *parent)
     , m_settings(settings)
 {
     ui->setupUi(this);
+    setWindowTitle("Settings");
+    setFixedSize(this->size());
+
 
     if(this->getNotifications()){
         ui->lblNotificationsOn->setVisible(true);
