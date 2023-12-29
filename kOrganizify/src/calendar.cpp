@@ -98,11 +98,3 @@ QList<Event> Calendar::getEventsForWeek(const QDate& startDate, const QDate& end
 
     return weekEvents;
 }
-
-void Calendar::clear() {
-    for (Event &event : m_events) {
-        event.clear(); // Poziva clear metodu za svaki događaj
-    }
-    m_events.clear(); // Očisti listu događaja
-}
-

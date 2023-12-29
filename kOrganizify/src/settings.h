@@ -13,26 +13,21 @@ private:
     QString m_backgroundPath;
 
     bool m_notifications;
-    bool m_nightMode;
 
 public:
-    explicit Settings(QString color, bool notifications, bool nightMode);
-    explicit Settings();
+    explicit Settings(QString color = "#A5A9A0", bool notifications = false);
 
     void loadData(const QString &username);
     void saveData(const QString &username);
     QJsonValue toJson() const override;
     void fromJson(const QJsonObject &jsonObject) override;
 
-    QString getColor();
+    QString getColor() const;
     void setColor(QString color);
     QString backgroundPath();
     void setBackgroundPath(QString backgroundPath);
-    bool notifications();
-    bool getNotifications();
+    bool getNotifications() const;
     void setNotifications(bool notifications);
-    bool getNightMode();
-    void setNightMode(bool nightMode);
 };
 
 #endif // SETTINGS_H

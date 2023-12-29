@@ -38,10 +38,6 @@ public:
 
     bool operator==(const Event &other) const;
 
-    void clear();
-    void deleteString(QString &string);
-
-
 private:
     QString m_title;
     QDateTime m_startTime;
@@ -51,7 +47,6 @@ private:
     CustomEventPriority priority;
 
 
-//overload and needs to be in .h
 friend uint qHash(const Event &event) {
     return qHash(event.getTitle()) ^ qHash(event.getStartTime()) ^ qHash(event.getEndTime());
 }

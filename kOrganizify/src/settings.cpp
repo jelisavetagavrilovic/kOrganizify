@@ -1,15 +1,8 @@
 #include "settings.h"
 
-Settings::Settings(QString color, bool notifications, bool nightMode) {
+Settings::Settings(QString color, bool notifications) {
     m_color = color;
     m_notifications = notifications;
-    m_nightMode = nightMode;
-}
-
-Settings::Settings() {
-    m_color = "#A5A9A0";
-    m_notifications = false;
-    m_nightMode = false;
 }
 
 void Settings::loadData(const QString &username) {
@@ -39,7 +32,7 @@ void Settings::saveData(const QString &username) {
 }
 
 
-QString Settings::getColor() {
+QString Settings::getColor() const {
     return m_color;
 }
 
@@ -57,20 +50,10 @@ void Settings::setBackgroundPath(QString backgroundPath)
     this->m_backgroundPath = backgroundPath;
 }
 
-bool Settings::getNotifications() {
+bool Settings::getNotifications() const {
     return m_notifications;
 }
 
 void Settings::setNotifications(bool notifications) {
     m_notifications = notifications;
 }
-
-bool Settings::getNightMode() {
-    return m_nightMode;
-}
-
-void Settings::setNightMode(bool nightMode) {
-    m_nightMode = nightMode;
-}
-
-
