@@ -82,6 +82,35 @@ void Event::deleteString(QString &str) {
     }
 }
 
+QString customEventPriorityToString(CustomEventPriority priority) {
+    switch (priority) {
+    case CustomEventPriority::NoPriority:
+        return "No Priority";
+    case CustomEventPriority::Low:
+        return "Low";
+    case CustomEventPriority::Medium:
+        return "Medium";
+    case CustomEventPriority::High:
+        return "High";
+    default:
+        return "Unknown Priority";
+    }
+}
+
+CustomEventPriority customEventPriorityFromString(const QString &priorityString) {
+    if (priorityString == "No Priority") {
+        return CustomEventPriority::NoPriority;
+    } else if (priorityString == "Low") {
+        return CustomEventPriority::Low;
+    } else if (priorityString == "Medium") {
+        return CustomEventPriority::Medium;
+    } else if (priorityString == "High") {
+        return CustomEventPriority::High;
+    } else {
+        return CustomEventPriority::NoPriority;
+    }
+}
+
 
 
 

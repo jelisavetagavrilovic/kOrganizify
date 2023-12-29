@@ -20,6 +20,7 @@ public:
     void setTitle(const QString &title);
     void setDescription(const QString &description);
     void setLocation(const QString &location);
+    void setPriority(const CustomEventPriority &priority);
     void setCurrentEvent(const Event& event);
     Event getCurrentEvent() const;
     bool isEventNull() const;

@@ -9,6 +9,11 @@ EventWindow::EventWindow(Calendar* calendar, QWidget *parent)
 {
     ui->setupUi(this);
 
+    ui->comboBox->addItem("No Priority", QVariant::fromValue(CustomEventPriority::NoPriority));
+    ui->comboBox->addItem("Low", QVariant::fromValue(CustomEventPriority::Low));
+    ui->comboBox->addItem("Medium", QVariant::fromValue(CustomEventPriority::Medium));
+    ui->comboBox->addItem("High", QVariant::fromValue(CustomEventPriority::High));
+
     connect(ui->btnSave, &QPushButton::clicked, this, &EventWindow::onSaveButtonClicked);
     connect(ui->btnDelete, &QPushButton::clicked, this, &EventWindow::onDeleteButtonClicked);
 }
@@ -37,6 +42,11 @@ void EventWindow::setLocation(const QString &location) {
     ui->leLocation->setText(location);
 }
 
+
+void EventWindow::setPriority(const CustomEventPriority &priority){
+    ui->comboBox->setCurrentIndex(static_cast<int>(priority));
+}
+
 void EventWindow::setCurrentEvent(const Event &event){
     m_currentEvent = event;
 }
@@ -44,6 +54,8 @@ void EventWindow::setCurrentEvent(const Event &event){
 Event EventWindow::getCurrentEvent() const {
     return m_currentEvent;
 }
+
+
 
 bool EventWindow::isEventNull() const {
     return m_currentEvent.getTitle().isEmpty()
@@ -77,6 +89,9 @@ void EventWindow::onSaveButtonClicked()
     newEvent.setStartTime(startDateTime);
     newEvent.setEndTime(endDateTime);
 
+    CustomEventPriority selectedPriority = ui->comboBox->currentData().value<CustomEventPriority>();
+    newEvent.setPriority(selectedPriority);
+
     if (!isEventNull()){
         m_calendar->updateEvent(m_currentEvent, newEvent);
     } else {
@@ -88,6 +103,17 @@ void EventWindow::onSaveButtonClicked()
     QList<Event> events = m_calendar->getEvents();
     for (const Event &e : events) {
         qDebug() << "Event in calendar: " << e.getTitle();
+        if (e.getPriority() == CustomEventPriority::High) {
+            // Prioritet je High
+            qDebug() << "PHIGH";
+        } else if (e.getPriority() == CustomEventPriority::Medium) {
+            // Prioritet nije High
+            qDebug() << "MEDIUM";
+        } else if (e.getPriority() == CustomEventPriority::Low){
+            qDebug() << "LOW";
+        } else {
+            qDebug() << "No Priority";
+        }
     }
 
     this->close();
@@ -118,6 +144,4 @@ EventWindow::~EventWindow()
 {
     delete ui;
 }
-
-
 
