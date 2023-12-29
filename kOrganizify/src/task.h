@@ -13,7 +13,6 @@ public:
     Task(QString name);
     void setName(const QString newName);
     QString getName() const;
-    bool operator==(const Task &other) const;
 
     bool getIsChecked() const;
     void setIsChecked(const bool isChecked);

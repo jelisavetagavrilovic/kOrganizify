@@ -25,7 +25,3 @@ bool Task::getIsChecked() const{
 void Task::setIsChecked(const bool isChecked) {
     this->m_isChecked = isChecked;
 }
-
-bool Task::operator==(const Task &other) const {
-    return this->m_name == other.m_name;
-}
