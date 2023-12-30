@@ -130,7 +130,7 @@ QPushButton:hover {
      </property>
      <property name="icon">
       <iconset resource="../resources.qrc">
-       <normaloff>:/images/images/log-in.svg</normaloff>:/images/images/log-in.svg</iconset>
+       <normaloff>:/resources/images/log-in.svg</normaloff>:/reosurces/resources/images/log-in.svg</iconset>
      </property>
     </widget>
     <widget class="QLabel" name="lblRegister">
@@ -179,7 +179,7 @@ QPushButton:hover {
      </property>
      <property name="icon">
       <iconset resource="../resources.qrc">
-       <normaloff>:/images/images/user-plus.svg</normaloff>:/images/images/user-plus.svg</iconset>
+       <normaloff>:/resources/images/user-plus.svg</normaloff>:/resources/images/user-plus.svg</iconset>
      </property>
     </widget>
     <widget class="QLabel" name="lblStatus">
@@ -211,7 +211,7 @@ QPushButton:hover {
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="../resources.qrc">:/images/images/user-check.svg</pixmap>
+      <pixmap resource="../resources.qrc">:/resources/images/user-check.svg</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -230,7 +230,7 @@ QPushButton:hover {
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="../resources.qrc">:/images/images/user-plus.svg</pixmap>
+      <pixmap resource="../resources.qrc">:/resources/images/user-plus.svg</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -250,7 +250,7 @@ QPushButton:hover {
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="../resources.qrc">:/images/images/LoginPoster.png</pixmap>
+     <pixmap resource="../resources.qrc">:/resources/images/LoginPoster.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>

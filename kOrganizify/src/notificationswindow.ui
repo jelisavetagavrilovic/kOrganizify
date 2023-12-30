@@ -71,7 +71,7 @@ QLabel{
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../resources.qrc">:/images/images/bell.svg</pixmap>
+    <pixmap resource="../resources.qrc">:/resources/images/bell.svg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>

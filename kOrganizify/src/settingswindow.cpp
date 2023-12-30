@@ -68,12 +68,12 @@ QString SettingsWindow::textToColor(QString text)
 QString SettingsWindow::textToPath(QString text)
 {
     QString sourceDir = QCoreApplication::applicationDirPath();
-    QString pathBlue = QDir(sourceDir).filePath(":/images/images/backgroundBlue.png");
-    QString pathGreen = QDir(sourceDir).filePath(":/images/images/backgroundGreen.png");
-    QString pathOrange = QDir(sourceDir).filePath(":/images/images/backgroundOrange.png");
-    QString pathPink = QDir(sourceDir).filePath(":/images/images/backgroundPink.png");
-    QString pathPurple = QDir(sourceDir).filePath(":/images/images/backgroundPurple.png");
-    QString pathDefault = QDir(sourceDir).filePath(":/images/images/backgroundDefault.png");
+    QString pathBlue = QDir(sourceDir).filePath(":/resources/images/backgroundBlue.png");
+    QString pathGreen = QDir(sourceDir).filePath(":/resources/images/backgroundGreen.png");
+    QString pathOrange = QDir(sourceDir).filePath(":/resources/images/backgroundOrange.png");
+    QString pathPink = QDir(sourceDir).filePath(":/resources/images/backgroundPink.png");
+    QString pathPurple = QDir(sourceDir).filePath(":/resources/images/backgroundPurple.png");
+    QString pathDefault = QDir(sourceDir).filePath(":/resources/images/backgroundDefault.png");
 
     QMap<QString, QString> themeBackgrounds {
         {"Blue", pathBlue},
