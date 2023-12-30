@@ -3,7 +3,7 @@
 
 NotificationsWindow::NotificationsWindow(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::NotificationsWindow)
+    ui(new Ui::NotificationsWindow),
     m_mediaPlayer(new QSoundEffect())
 {
     ui->setupUi(this);
