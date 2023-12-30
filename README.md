@@ -3,7 +3,7 @@
 
   
 
-![kOrganizify Poster](kOrganizify/images/kOrganizifyPoster.png)
+![kOrganizify Poster](kOrganizify/resources/images/kOrganizifyPoster.png)
 
   
 
