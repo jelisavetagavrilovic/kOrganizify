@@ -15,7 +15,7 @@
 class Scheduler {
 
 public:
-    Scheduler(Calendar *calendar, Calendar *basicCalendar, QDate *startDate/*, QDate *endDate*/);
+    Scheduler(Calendar *calendar, Calendar *basicCalendar, QDate *startDate);
     ~Scheduler();
 
     void generateSchedule(const QTime &startOfWorkday, const QTime &endOfWorkday);

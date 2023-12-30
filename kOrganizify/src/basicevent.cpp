@@ -9,7 +9,6 @@ void BasicEvent::setTitle(const QString &title) {
     m_title = title;
 }
 
-// Getter and Setter for m_duration
 int BasicEvent::getDuration() const {
     return m_duration;
 }

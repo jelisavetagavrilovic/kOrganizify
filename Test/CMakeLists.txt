@@ -29,6 +29,9 @@ add_executable(Test
   ../kOrganizify/src/basicevent.cpp
     toDoListTest.cpp
   ../kOrganizify/src/toDoList.cpp
+  ../kOrganizify/src/scheduler.cpp
+  schedulerTest.cpp
+  basicEventTest.cpp
 )
 target_link_libraries(Test Qt${QT_VERSION_MAJOR}::Core)
 
