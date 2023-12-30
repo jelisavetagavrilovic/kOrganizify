@@ -1,0 +1,212 @@
+{
+    "events": [
+        {
+            "description": "Predavanje o projektovanju baza podataka",
+            "endTime": "2023-12-20T12:00:00",
+            "location": "Amfiteatar A",
+            "priority": "High",
+            "startTime": "2023-12-20T10:00:00",
+            "title": "Projektovanje baza podataka"
+        },
+        {
+            "description": "Neformalno druženje sa kolegama",
+            "endTime": "2023-12-21T21:00:00",
+            "location": "Kafić GreenBean",
+            "priority": "No Priority",
+            "startTime": "2023-12-21T18:30:00",
+            "title": "Druženje s kolegama"
+        },
+        {
+            "description": "Radionica o naprednim C++ konceptima",
+            "endTime": "2023-12-22T17:00:00",
+            "location": "Kabinet 203",
+            "priority": "Medium",
+            "startTime": "2023-12-22T14:00:00",
+            "title": "C++ radionica"
+        },
+        {
+            "description": "Opustite se i uživajte",
+            "endTime": "2023-12-23T18:00:00",
+            "location": "Kuća",
+            "priority": "Low",
+            "startTime": "2023-12-23T10:00:00",
+            "title": "Slobodno vreme"
+        },
+        {
+            "description": "Starry Night Concert uživo",
+            "endTime": "2023-12-24T23:00:00",
+            "location": "Amfiteatar",
+            "priority": "High",
+            "startTime": "2023-12-24T20:00:00",
+            "title": "Koncert pod zvezdama"
+        },
+        {
+            "description": "Istraživanje novih C++ tehnologija",
+            "endTime": "2023-12-25T17:00:00",
+            "location": "Kafić TechNerd",
+            "priority": "Medium",
+            "startTime": "2023-12-25T14:00:00",
+            "title": "Slobodno vreme za istraživanje"
+        },
+        {
+            "description": "Učešće na Winter Wonderland Festivalu",
+            "endTime": "2023-12-26T22:00:00",
+            "location": "City Square",
+            "priority": "No Priority",
+            "startTime": "2023-12-26T16:00:00",
+            "title": "Zimski festival"
+        },
+        {
+            "description": "Culinary Masterclass o fusion kuhinji",
+            "endTime": "2023-12-27T12:30:00",
+            "location": "Gourmet Academy",
+            "priority": "Low",
+            "startTime": "2023-12-27T09:30:00",
+            "title": "Masterclass: Fusion Flavors"
+        },
+        {
+            "description": "Večera sa kolegama iz Odeljenja za računarske nauke",
+            "endTime": "2023-12-29T21:30:00",
+            "location": "Restoran FusionFlavors",
+            "priority": "High",
+            "startTime": "2023-12-29T19:00:00",
+            "title": "Večera sa kolegama"
+        },
+        {
+            "description": "Opustite se i uživajte vikend",
+            "endTime": "2023-12-30T18:00:00",
+            "location": "Kuća",
+            "priority": "Low",
+            "startTime": "2023-12-30T10:00:00",
+            "title": "Slobodno vreme"
+        },
+        {
+            "description": "Ručak povodom Nove godine",
+            "endTime": "2023-12-31T15:30:00",
+            "location": "Porodična kuća",
+            "priority": "High",
+            "startTime": "2023-12-31T13:00:00",
+            "title": "Novogodišnji ručak"
+        },
+        {
+            "description": "Opustite se i uživajte",
+            "endTime": "2024-01-04T18:00:00",
+            "location": "Gde god želite",
+            "priority": "Low",
+            "startTime": "2024-01-04T15:00:00",
+            "title": "Slobodno vreme"
+        },
+        {
+            "description": "Relaksacija uz omiljenu knjigu",
+            "endTime": "2024-01-05T21:00:00",
+            "location": "Domaća biblioteka",
+            "priority": "Low",
+            "startTime": "2024-01-05T19:00:00",
+            "title": "Čitanje knjige"
+        },
+        {
+            "description": "Šetnja u prirodi",
+            "endTime": "2024-01-06T16:00:00",
+            "location": "Lokalni park",
+            "priority": "Low",
+            "startTime": "2024-01-06T14:00:00",
+            "title": "Šetnja"
+        },
+        {
+            "description": "Proslava Badnjeg dana sa porodicom",
+            "endTime": "2024-01-06T23:59:00",
+            "location": "Porodična kuća",
+            "priority": "High",
+            "startTime": "2024-01-06T18:00:00",
+            "title": "Badnje veče"
+        },
+        {
+            "description": "Proslava Božića sa porodicom",
+            "endTime": "2024-01-07T23:59:00",
+            "location": "Porodična kuća",
+            "priority": "High",
+            "startTime": "2024-01-07T00:00:00",
+            "title": "Božić"
+        },
+        {
+            "description": "Priprema materijala za odbrane projekata",
+            "endTime": "2024-01-08T15:00:00",
+            "location": "Kabinet 203",
+            "priority": "Medium",
+            "startTime": "2024-01-08T10:00:00",
+            "title": "Priprema za odbrane projekata"
+        },
+        {
+            "description": "Odbrana projekta iz predmeta Razvoj softvera",
+            "endTime": "2024-01-10T11:00:00",
+            "location": "Učionica A",
+            "priority": "High",
+            "startTime": "2024-01-10T09:00:00",
+            "title": "Odbrana projekta: Razvoj softvera"
+        },
+        {
+            "description": "Odbrana projekta iz predmeta Projektovanje baza podataka",
+            "endTime": "2024-01-11T11:00:00",
+            "location": "Učionica B",
+            "priority": "High",
+            "startTime": "2024-01-11T09:00:00",
+            "title": "Odbrana projekta: Projektovanje baza podataka"
+        },
+        {
+            "description": "Priprema za radionicu o naprednim C++ tehnologijama",
+            "endTime": "2024-01-12T14:00:00",
+            "location": "Kabinet 205",
+            "priority": "Medium",
+            "startTime": "2024-01-12T10:00:00",
+            "title": "Priprema za radionicu o C++"
+        },
+        {
+            "description": "Radionica o naprednim C++ tehnologijama",
+            "endTime": "2024-01-13T12:00:00",
+            "location": "Učionica C",
+            "priority": "High",
+            "startTime": "2024-01-13T09:00:00",
+            "title": "Radionica: Napredne C++ tehnologije"
+        },
+        {
+            "description": "Pismeni ispit iz predmeta Projektovanje baza podataka",
+            "endTime": "2024-01-14T12:00:00",
+            "location": "Učionica D",
+            "priority": "High",
+            "startTime": "2024-01-14T09:00:00",
+            "title": "Ispit iz Projektovanja baza podataka"
+        },
+        {
+            "description": "Odmor nakon ispita",
+            "endTime": "2024-01-15T18:00:00",
+            "location": "Kuća",
+            "priority": "Low",
+            "startTime": "2024-01-15T12:00:00",
+            "title": "Slobodno vreme"
+        },
+        {
+            "description": "Planiranje novih projekata",
+            "endTime": "2024-01-16T13:00:00",
+            "location": "Kabinet 203",
+            "priority": "Medium",
+            "startTime": "2024-01-16T10:00:00",
+            "title": "Priprema za nove projekte"
+        },
+        {
+            "description": "Radionica o razvoju softvera",
+            "endTime": "2024-01-17T16:00:00",
+            "location": "Kabinet 205",
+            "priority": "High",
+            "startTime": "2024-01-17T14:00:00",
+            "title": "Radionica: Razvoj softvera"
+        }
+    ],
+    "password": "smalkov",
+    "settings": {
+        "color": "#A5A9A0",
+        "notifications": false
+    },
+    "tasks": [
+    ],
+    "username": "smalkov"
+}
