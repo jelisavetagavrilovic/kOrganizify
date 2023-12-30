@@ -24,6 +24,16 @@ TEST_CASE("getTitle() Basic", "[BasicEvent]") {
 
         REQUIRE(actualTitle == expectedTitle);
     }
+
+    SECTION("Dohvatanje imena 2") {
+        BasicEvent event;
+
+        const QString expectedTitle = "test title";
+        event.setTitle(expectedTitle);
+        const QString actualTitle = event.getTitle();
+
+        REQUIRE(actualTitle == expectedTitle);
+    }
 }
 
 TEST_CASE("setTitle() Basic", "[BasicEvent]") {
@@ -31,6 +41,16 @@ TEST_CASE("setTitle() Basic", "[BasicEvent]") {
         BasicEvent event;
 
         const QString expectedTitle = "Test Title";
+        event.setTitle(expectedTitle);
+        const QString actualTitle = event.getTitle();
+
+        REQUIRE(actualTitle == expectedTitle);
+    }
+
+    SECTION("Postavljanje titla") {
+        BasicEvent event;
+
+        const QString expectedTitle = "test titla 2";
         event.setTitle(expectedTitle);
         const QString actualTitle = event.getTitle();
 
@@ -48,6 +68,16 @@ TEST_CASE("getDuration() Basic", "[BasicEvent]") {
 
         REQUIRE(actualDuration == expectedDuration);
     }
+
+    SECTION("Dohvatanje trajanja dogadjaja 2") {
+        BasicEvent event;
+
+        const int expectedDuration = 120;
+        event.setDuration(expectedDuration);
+        const int actualDuration = event.getDuration();
+
+        REQUIRE(actualDuration == expectedDuration);
+    }
 }
 
 TEST_CASE("setDuration() Basic", "[BasicEvent]") {
@@ -55,6 +85,16 @@ TEST_CASE("setDuration() Basic", "[BasicEvent]") {
         BasicEvent event;
 
         const int expectedDuration = 60;
+        event.setDuration(expectedDuration);
+        const int actualDuration = event.getDuration();
+
+        REQUIRE(actualDuration == expectedDuration);
+    }
+
+    SECTION("Namestanje trajanja dogadjaja 2") {
+        BasicEvent event;
+
+        const int expectedDuration = 80;
         event.setDuration(expectedDuration);
         const int actualDuration = event.getDuration();
 
@@ -73,6 +113,17 @@ TEST_CASE("deleteString() Basic", "[BasicEvent]") {
         const QString actualTitle = event.getTitle();
         REQUIRE(actualTitle == "");
     }
+
+    SECTION("Brisanje stringa 2") {
+        BasicEvent event;
+
+        const QString expectedTitle = "test titla";
+        event.setTitle(expectedTitle);
+        event.deleteString();
+
+        const QString actualTitle = event.getTitle();
+        REQUIRE(actualTitle == "");
+    }
 }
 
 TEST_CASE("isValidate() Basic", "[BasicEvent]") {
@@ -80,6 +131,17 @@ TEST_CASE("isValidate() Basic", "[BasicEvent]") {
         BasicEvent validEvent;
         const QString validTitle = "Valid Title";
         const int validDuration = 30;
+        validEvent.setTitle(validTitle);
+        validEvent.setDuration(validDuration);
+
+        const bool actualValidation = validEvent.isValidate();
+        REQUIRE(actualValidation == true);
+    }
+
+    SECTION("Validacija imena i vremana 2") {
+        BasicEvent validEvent;
+        const QString validTitle = "Dobar titl";
+        const int validDuration = 45;
         validEvent.setTitle(validTitle);
         validEvent.setDuration(validDuration);
 
@@ -124,6 +186,31 @@ TEST_CASE("operator==(const BasicEvent &other)", "[BasicEvent]") {
         BasicEvent event3;
         const QString title3 = "Title2";
         const int duration3 = 90;
+        event3.setTitle(title3);
+        event3.setDuration(duration3);
+
+        const bool equalityCheck1 = (event1 == event2);
+        const bool equalityCheck2 = !(event1 == event3);
+        REQUIRE(equalityCheck1);
+        REQUIRE(equalityCheck2);
+    }
+
+    SECTION("Poredjenje jednakosti 2") {
+        BasicEvent event1;
+        const QString title1 = "ime1";
+        const int duration1 = 45;
+        event1.setTitle(title1);
+        event1.setDuration(duration1);
+
+        BasicEvent event2;
+        const QString title2 = "ime1";
+        const int duration2 = 45;
+        event2.setTitle(title2);
+        event2.setDuration(duration2);
+
+        BasicEvent event3;
+        const QString title3 = "ime2";
+        const int duration3 = 120;
         event3.setTitle(title3);
         event3.setDuration(duration3);
 
