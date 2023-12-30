@@ -119,6 +119,7 @@ void EventWindow::onSaveButtonClicked()
 
     emit saveButtonClicked();
     this->close();
+    delete this;
 }
 
 void EventWindow::changeColor(QString color)

@@ -66,6 +66,9 @@ private slots:
     void agreedSync(QDateTime startTime, QDateTime endTime, QString title);
     void updatedEvents();
 
+signals:
+    void exit();
+
 private:
     Ui::AppWindow *ui;
     User *m_user;

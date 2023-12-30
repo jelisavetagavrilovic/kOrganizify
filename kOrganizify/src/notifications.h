@@ -15,6 +15,7 @@ class Notifications : public QObject {
     Q_OBJECT
 public:
     Notifications(Calendar* calendar);
+    ~Notifications();
     void checkEvents(const QList<Event>& filteredEvents);
 
 public slots:

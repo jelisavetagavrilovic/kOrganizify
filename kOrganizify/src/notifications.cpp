@@ -48,3 +48,7 @@ void Notifications::updatedEvents() {
     m_filteredEvents = m_calendar->getEvents();
     checkEvents(m_filteredEvents);
 }
+
+Notifications::~Notifications() {
+    delete m_timer;
+}

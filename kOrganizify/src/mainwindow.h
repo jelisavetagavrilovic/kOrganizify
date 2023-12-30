@@ -21,6 +21,7 @@ public:
 private slots:
     void loginUser();
     void registerUser();
+    void appear();
 
 private:
     Ui::MainWindow *ui;

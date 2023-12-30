@@ -38,7 +38,8 @@ void MainWindow::loginUser() {
 
         AppWindow *appWindow = new AppWindow(m_user);
         appWindow->show();
-        this->close();
+        hide();
+        connect(appWindow, &AppWindow::exit, this, &MainWindow::appear);
     } else {
         if (m_user->userExists(username))
             ui->lblStatus->setText("Login failed. Check the password.");
@@ -70,7 +71,8 @@ void MainWindow::registerUser()
 
         AppWindow *appWindow = new AppWindow(m_user);
         appWindow->show();
-        this->close();
+        hide();
+        connect(appWindow, &AppWindow::exit, this, &MainWindow::appear);
     } else {
         ui->lblStatus->setText("Registration failed. User already exists.");
 
@@ -79,6 +81,10 @@ void MainWindow::registerUser()
     }
 
     ui->lblStatus->setVisible(true);
+}
+
+void MainWindow::appear() {
+    show();
 }
 
 MainWindow::~MainWindow() {

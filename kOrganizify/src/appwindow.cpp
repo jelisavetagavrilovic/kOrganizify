@@ -397,12 +397,10 @@ QColor AppWindow::getColorFromPriority(CustomEventPriority priority) {
 
 void AppWindow::logoutUser() {
     emit m_user->m_client->disconnectedUser(m_user->getUsername());
-//    m_user->saveData(m_user->getUsername());
+    emit exit();
 
-    MainWindow *mainWindow = new MainWindow;
-    mainWindow->show();
     this->close();
-    // delete this;
+    delete this;
 }
 
 void AppWindow::showSyncWindow(QString username, QString title, int duration) {
@@ -435,6 +433,8 @@ AppWindow::~AppWindow() {
     m_user->logout();
     delete m_user;
     m_user = nullptr;
+    delete m_notifications;
+    delete eventWindow;
 
     delete ui;
 }
@@ -470,5 +470,6 @@ void AppWindow::agreedSync(QDateTime startTime, QDateTime endTime, QString title
 }
 
 void AppWindow::updatedEvents() {
+    delete m_notifications;
     m_notifications = new Notifications(m_calendar);
 }

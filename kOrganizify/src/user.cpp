@@ -65,6 +65,7 @@ bool User::registerUser(const QString &password) {
 
 void User::logout() {
     saveData(m_username);
+    delete m_client;
 }
 
 Calendar& User::getCalendar() {
