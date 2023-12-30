@@ -25,6 +25,7 @@ public:
     Event getCurrentEvent() const;
     bool isEventNull() const;
     void changeColor(QString color);
+    bool checkEventOverlap(const Event& newEvent);
 
 private:
     Ui::EventWindow *ui;
@@ -39,6 +40,9 @@ private slots:
     // void on_btnGenerate_clicked();
     void onSaveButtonClicked();
     void onDeleteButtonClicked();
+
+protected:
+    void keyPressEvent(QKeyEvent *event) override;
 };
 
 #endif // EVENTWINDOW_H

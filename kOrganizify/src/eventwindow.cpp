@@ -2,6 +2,7 @@
 #include "eventwindow.h"
 #include "ui_eventwindow.h"
 #include <QMessageBox>
+#include <QKeyEvent>
 
 EventWindow::EventWindow(Calendar* calendar, QWidget *parent)
     : QWidget(parent)
@@ -9,6 +10,9 @@ EventWindow::EventWindow(Calendar* calendar, QWidget *parent)
     , m_calendar(calendar)
 {
     ui->setupUi(this);
+    setWindowTitle("Event details");
+
+    ui->leTitle->setFocus();
 
     ui->cbPriority->addItem("No Priority", QVariant::fromValue(CustomEventPriority::NoPriority));
     ui->cbPriority->addItem("Low", QVariant::fromValue(CustomEventPriority::Low));
@@ -75,9 +79,17 @@ void EventWindow::onDeleteButtonClicked() {
 
 void EventWindow::onSaveButtonClicked()
 {
+
+    QString title = ui->leTitle->text();
+
+    if (title.isEmpty()) {
+        QMessageBox::critical(this, "Error", "Title cannot be empty.", QMessageBox::Ok);
+        return;
+    }
+
     Event newEvent;
 
-    newEvent.setTitle(ui->leTitle->text());
+    newEvent.setTitle(title);
     newEvent.setDescription(ui->teDescription->toPlainText());
     newEvent.setLocation(ui->leLocation->text());
 
@@ -95,11 +107,15 @@ void EventWindow::onSaveButtonClicked()
     CustomEventPriority selectedPriority = ui->cbPriority->currentData().value<CustomEventPriority>();
     newEvent.setPriority(selectedPriority);
 
-    if (!isEventNull()){
+    if (!isEventNull() && !checkEventOverlap(newEvent)){
         m_calendar->updateEvent(m_currentEvent, newEvent);
+    } else if (checkEventOverlap(newEvent)) {
+            QMessageBox::warning(this, "Error", "The new event overlaps with existing events.");
+            return;
     } else {
         m_calendar->addEvent(newEvent);
     }
+
 
     emit saveButtonClicked();
     this->close();
@@ -119,6 +135,31 @@ void EventWindow::changeColor(QString color)
     QString ultimateStyleSheet = ewStyleSheet + btnStyleSheet + leStyleSheet + teStyleSheet + dateEditStyleSheet + timeEditStyleSheet + cbStyleSheet;
 
     this->setStyleSheet(ultimateStyleSheet);
+}
+
+bool EventWindow::checkEventOverlap(const Event &newEvent) {
+    QList<Event> existingEvents = m_calendar->getEventsForWeek(newEvent.getStartTime().date(), newEvent.getEndTime().date().addDays(6));
+
+    for (const Event &existingEvent : existingEvents) {
+        if (existingEvent == newEvent) {
+            continue;
+        }
+        if (existingEvent.overlapsWith(newEvent)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+void EventWindow::keyPressEvent(QKeyEvent *event){
+    if (event->key() == Qt::Key_Enter || event->key() == Qt::Key_Return)
+    {
+        onSaveButtonClicked();
+    }
+    else
+    {
+        QWidget::keyPressEvent(event);
+    }
 }
 
 EventWindow::~EventWindow()

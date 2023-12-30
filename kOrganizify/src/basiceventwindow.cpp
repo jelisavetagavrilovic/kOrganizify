@@ -12,6 +12,7 @@ BasicEventWindow::BasicEventWindow(Calendar *calendar, QDate *startDate/*, QDate
 {
     ui->setupUi(this);
     setWindowTitle("Smart plan");
+    setFixedSize(this->size());
 
     m_currentIndex = 0;
 
