@@ -33,9 +33,6 @@ void MainWindow::loginUser() {
     m_user = new User(username, password);
 
     if (m_user->login(password)) {
-        // Login successful, open AppWindow
-        ui->lblStatus->setText("Login successful.");
-
         AppWindow *appWindow = new AppWindow(m_user);
         appWindow->show();
         hide();

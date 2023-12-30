@@ -109,10 +109,10 @@ void AppWindow::initialize() {
     this->setFixedSize(this->size());
     this->setAutoFillBackground(true);
 
-    m_calendar = new Calendar();
-    *m_calendar = m_user->getCalendar();
-    m_notifications = new Notifications(&m_user->getCalendar());
-    this->eventWindow = new EventWindow(&m_user->getCalendar());
+//    m_calendar = new Calendar();
+    m_calendar = &m_user->getCalendar();
+    m_notifications = new Notifications(m_calendar);
+    this->eventWindow = new EventWindow(m_calendar);
 
     QString sourceDir = QCoreApplication::applicationDirPath();
     QString path = QDir(sourceDir).filePath(settingsWindow->getBackgroundPath());
@@ -136,7 +136,7 @@ void AppWindow::initialize() {
                                                     "QCalendarWidget QAbstractItemView:enabled {"
                                                     "   selection-background-color: %2 ;}"
                                                     "QCalendarWidget QToolButton:hover {"
-                                                    "    background-color: #3C5291;" // Boja pozadine kada se pređe mišem preko datuma
+                                                    "    background-color: #3C5291;"
                                                     "}").arg(this->settingsWindow->getColor(), this->settingsWindow->getColor()));
     // table
     this->ui->tableWidget->setStyleSheet(QString("QTableWidget { gridline-color: %1; }").arg(this->settingsWindow->getColor()));
@@ -161,7 +161,6 @@ void AppWindow::initialize() {
     connect(ui->calendarWidget, &QCalendarWidget::selectionChanged, this, &AppWindow::updateTableForSelectedDate);
     connect(eventWindow, &EventWindow::saveButtonClicked, this, &AppWindow::updatedEvents);
     connect(eventWindow, &EventWindow::deleteButtonClicked, this, &AppWindow::updatedEvents);
-
 
     updateTableForSelectedDate();
 }
@@ -317,7 +316,9 @@ void AppWindow::showWeeklyEvents(const QDate& selectedDate){
     m_startDate = selectedDate.addDays(-selectedDate.dayOfWeek() + 1);
     m_endDate = m_startDate.addDays(6);
 
-    QList<Event> weekEvents = m_user->getCalendar().getEventsForWeek(m_startDate, m_endDate);
+//    qDebug() << m_user->getCalendar().size();
+    QList<Event> weekEvents = m_calendar->getEventsForWeek(m_startDate, m_endDate);
+//    qDebug() << m_user->getCalendar().size();
 
     for(const Event &event: weekEvents){
         QDateTime startTime = event.getStartTime();
@@ -411,7 +412,7 @@ void AppWindow::smartPlan() {
     else {
         m_startDate = selectedDate.addDays(-selectedDate.dayOfWeek() + 1);
     }
-    BasicEventWindow *basicEventWindow = new BasicEventWindow(&m_user->getCalendar(), &m_startDate);
+    BasicEventWindow *basicEventWindow = new BasicEventWindow(m_calendar, &m_startDate);
     basicEventWindow->changeColor(settingsWindow->getColor());
     basicEventWindow->show();
 
@@ -463,5 +464,6 @@ void AppWindow::agreedSync(QDateTime startTime, QDateTime endTime, QString title
 
 void AppWindow::updatedEvents() {
     delete m_notifications;
-    m_notifications = new Notifications(&m_user->getCalendar());
+    qDebug() << m_user->getCalendar().size();
+    m_notifications = new Notifications(m_calendar);
 }
