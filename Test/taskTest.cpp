@@ -2,24 +2,38 @@
 #include "../kOrganizify/src/task.h"
 
 TEST_CASE("Task()", "[Task]") {
-    SECTION("Postavljanje vrednosti u konstruktoru") {
-        Task task("eeee");
+    SECTION("Postavljanje vrednosti polja u konstruktoru") {
+        QString name = "newTask";
 
-        REQUIRE(task.getName() == "eeee");
+        Task task(name);
+        QString taskName = task.getName();
+        bool checked = task.getIsChecked();
+
+        REQUIRE(taskName == name);
+        REQUIRE(checked == false);
     }
 }
 
-TEST_CASE("isChecked()", "[Task]") {
-    SECTION("Postavljanje vrednosti u konstruktoru") {
-        Task task("andji");
+TEST_CASE("setName()", "[Task]") {
+    SECTION("Postavljanje vrednosti polja seterom") {
+        Task task("newTask");
+        QString newName = "newName";
+        task.setName(newName);
 
-        REQUIRE(task.getIsChecked() == false);
+        QString name = task.getName();
+
+        REQUIRE(newName == name);
     }
+}
 
-    SECTION("Postavljanje vrednosti u konstruktoru") {
-        Task task("andji");
-        task.setIsChecked(true);
+TEST_CASE("setIsChecked()", "[Task]") {
+    SECTION("Postavljanje vrednosti polja seterom") {
+        Task task("newTask");
+        bool newChecked = true;
+        task.setIsChecked(newChecked);
 
-        REQUIRE(task.getIsChecked() == true);
+        bool checked = task.getIsChecked();
+
+        REQUIRE(newChecked == checked);
     }
 }

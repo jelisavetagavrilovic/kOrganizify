@@ -1,16 +1,15 @@
 #include "catch.hpp"
+#include <QJsonObject>
 #include "../kOrganizify/src/settings.h"
 
 TEST_CASE("Settings()", "[Settings]") {
     SECTION("Postavljanje vrednosti u konstruktoru") {
+
         Settings settings;
+        QString color = settings.getColor();
+        bool notifications = settings.getNotifications();
 
-        REQUIRE(settings.getColor() == "#A5A9A0");
-    }
-
-    SECTION("Postavljanje vrednosti u konstruktoru") {
-        Settings settings;
-
-        REQUIRE(settings.getNotifications() == false);
+        REQUIRE(color == "#A5A9A0");
+        REQUIRE(notifications == false);
     }
 }

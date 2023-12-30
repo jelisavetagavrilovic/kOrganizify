@@ -20,6 +20,10 @@ add_executable(Test
   settingsTest.cpp
   ../kOrganizify/src/settings.cpp
   ../kOrganizify/src/saveload.cpp
+  calendarTest.cpp
+  ../kOrganizify/src/calendar.cpp
+  ../kOrganizify/src/event.cpp
+  ../kOrganizify/src/basicevent.cpp
 )
 target_link_libraries(Test Qt${QT_VERSION_MAJOR}::Core)
 
