@@ -13,6 +13,7 @@ AppWindow::AppWindow(User *user, QWidget *parent)
 {
     ui->setupUi(this);
     this->setAttribute(Qt::WA_DeleteOnClose);
+    setWindowTitle("kOrganizify");
 
     initialize();
 
@@ -152,7 +153,7 @@ void AppWindow::initialize() {
 
     connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
     connect(settingsWindow, &SettingsWindow::colorChanged, this->eventWindow, &EventWindow::changeColor);
-    connect(ui->tableWidget, &QTableWidget::cellClicked, this, &AppWindow::openEventWindowForCell);
+    connect(ui->tableWidget, &QTableWidget::cellDoubleClicked, this, &AppWindow::openEventWindowForCell);
     connect(eventWindow, &EventWindow::saveButtonClicked, this, &AppWindow::updateTableForSelectedDate);
     connect(eventWindow, &EventWindow::deleteButtonClicked, this, &AppWindow::updateTableForSelectedDate);
     connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button

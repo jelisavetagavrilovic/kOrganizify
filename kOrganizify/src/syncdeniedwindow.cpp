@@ -6,6 +6,8 @@ SyncDeniedWindow::SyncDeniedWindow(QString friendName, QWidget *parent)
     , ui(new Ui::SyncDeniedWindow)
 {
     ui->setupUi(this);
+    setWindowTitle("");
+    setFixedSize(this->size());
 
     ui->lblMessage->setText("Your friend " + friendName + " doesn't want to sync with you :(");
 }

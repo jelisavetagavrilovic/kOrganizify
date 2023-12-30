@@ -50,6 +50,8 @@ public:
     CustomEventPriority getPriority() const;
     void setPriority(CustomEventPriority priority);
 
+    bool overlapsWith(const Event& other) const;
+
     bool operator==(const Event &other) const;
 
 private:
