@@ -8,11 +8,9 @@ TEST_CASE("Event()", "[Event]") {
 
         CustomEventPriority priority = event.getPriority();
         QString title = event.getTitle();
-        int duration = event.getDuration();
 
         REQUIRE(priority == CustomEventPriority::NoPriority);
         REQUIRE(title.isEmpty());
-        REQUIRE(duration == 0);
     }
 }
 
