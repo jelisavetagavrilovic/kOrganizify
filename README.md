@@ -1,4 +1,3 @@
-
 # kOrganizify
 
   
@@ -21,7 +20,7 @@ Kada se radi o druženju s prijateljima, Planer vam olakšava dogovaranje susret
 
 ## :video_camera: Demo snimak projekta
 
-<!-- - link: [kOrganizify]() <br> -->
+[kOrganizify](https://www.youtube.com/watch?v=osjZg6V7cFo) <br> 
 
   
 
