@@ -34,13 +34,11 @@ QString ResponseWindow::getDate() {
 }
 
 void ResponseWindow::onYesClicked() {
-    qDebug() << "I can on this date: " << getDate();
     emit sendResponse(true);
     close();
 }
 
 void ResponseWindow::onNoClicked() {
-    qDebug() << "I cannot on this date: " << getDate();
     emit sendResponse(false);
     close();
 }

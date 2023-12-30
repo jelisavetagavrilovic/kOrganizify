@@ -1,14 +1,13 @@
 #include "basiceventwindow.h"
 #include "ui_basiceventwindow.h"
 
-BasicEventWindow::BasicEventWindow(Calendar *calendar, QDate *startDate/*, QDate *endDate*/, QWidget *parent)
+BasicEventWindow::BasicEventWindow(Calendar *calendar, QDate *startDate, QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::BasicEventWindow)
     , m_calendar(calendar)
     , m_basicEvent(new BasicEvent())
     , m_basicCalendar(new Calendar)
     , m_startDate(startDate)
-//    , m_endDate(endDate)
 {
     ui->setupUi(this);
     setWindowTitle("Smart plan");
@@ -61,7 +60,6 @@ void BasicEventWindow::nextEvent() {
 void BasicEventWindow::removeEvent() {
     if (m_currentIndex >= 0  &&  m_currentIndex < m_basicCalendar->sizeBasic()) {
         m_basicCalendar->removeEvent(*m_basicEvent);
-
         m_currentIndex = std::max(0, m_currentIndex-1);
         updateUi();
         if (m_currentIndex == 0)

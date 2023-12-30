@@ -455,6 +455,5 @@ void AppWindow::agreedSync(QDateTime startTime, QDateTime endTime, QString title
 
 void AppWindow::updatedEvents() {
     delete m_notifications;
-    qDebug() << m_user->getCalendar().size();
     m_notifications = new Notifications(m_calendar);
 }

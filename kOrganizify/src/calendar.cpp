@@ -54,7 +54,6 @@ void Calendar::saveData(const QString &username) {
 }
 
 void Calendar::addEvent(const BasicEvent &basicEvent) {
-    // Provera tipa korišćenjem dynamic_cast
     const Event *eventPtr = dynamic_cast<const Event*>(&basicEvent);
 
     if (eventPtr) {
@@ -93,7 +92,6 @@ void Calendar::removeEvent(const BasicEvent &basicEvent) {
 void Calendar::updateEvent(const Event &oldEvent, const Event &newEvent){
     for (int i = 0; i < m_events.size(); ++i) {
         if (m_events[i] == oldEvent) {
-            qDebug() << "Updating Event - Title: " << oldEvent.getTitle();
             m_events[i] = newEvent;
             return;
         }

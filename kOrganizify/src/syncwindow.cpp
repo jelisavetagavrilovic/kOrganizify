@@ -60,7 +60,5 @@ int SyncWindow::getSelectedNumber() const
 void SyncWindow::onSyncButtonClicked()
 {
     emit sendSyncRequest(m_username, m_friendName, getEnteredText(), getSelectedNumber(), m_calendar);
-    qDebug() << "Entered Text: " << getEnteredText();
-    qDebug() << "Selected Number: " << getSelectedNumber();
     close();
 }
