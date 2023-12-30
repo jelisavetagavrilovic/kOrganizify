@@ -9,7 +9,6 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Network)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Network)
 find_package(Qt${QT_VERSION_MAJOR}Multimedia REQUIRED)
@@ -78,13 +77,17 @@ set(FORMS
         src/syncwindow.ui
 )
 
+set(RESOURCES
+    resources.qrc
+)
+
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(kOrganizify
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         ${HEADERS}
         ${FORMS}
-        resources.qrc
+        ${RESOURCES}
 )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET kOrganizify APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -108,32 +111,12 @@ else()
     endif()
 endif()
 
-
-if(WIN32)
-    include_directories("${CMAKE_CURRENT_SOURCE_DIR}/external/windows/z3/include")
-    link_directories("${CMAKE_CURRENT_SOURCE_DIR}/external/windows/z3/bin")
-
-    target_link_libraries(kOrganizify
-        PRIVATE
-        "${CMAKE_CURRENT_SOURCE_DIR}/external/windows/z3/bin/libz3.dll"
-        Qt${QT_VERSION_MAJOR}::Widgets
-        Qt${QT_VERSION_MAJOR}::Network
-        Qt${QT_VERSION_MAJOR}::Multimedia
-    )
-else()
-    if(UNIX)
-        include_directories("${CMAKE_CURRENT_SOURCE_DIR}/external/linux/z3/include")
-        link_directories("${CMAKE_CURRENT_SOURCE_DIR}/external/linux/z3/lib")
-
-        target_link_libraries(kOrganizify
-            PRIVATE
-            "${CMAKE_CURRENT_SOURCE_DIR}/external/linux/z3/lib/libz3.so"
-            Qt${QT_VERSION_MAJOR}::Widgets
-            Qt${QT_VERSION_MAJOR}::Network
-            Qt${QT_VERSION_MAJOR}::Multimedia
-        )
-    endif()
-endif()
+target_link_libraries(kOrganizify
+    PRIVATE
+    Qt${QT_VERSION_MAJOR}::Widgets
+    Qt${QT_VERSION_MAJOR}::Network
+    Qt${QT_VERSION_MAJOR}::Multimedia
+)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

@@ -47,7 +47,8 @@ void Scheduler::generateSchedules(QList<Event> freeTime) {
     QList<QList<Event>> allPermutations;
     generatePermutations(freeTime, 0, freeTime.size() - 1, 0, allPermutations);
 
-    QList<Event> permutation = allPermutations[0];
+    int randomIndex = rand() % allPermutations.size();
+    QList<Event> permutation = allPermutations[randomIndex];
 
     for (int j = 0; j < permutation.size(); ++j) {
         Event event = permutation[j];

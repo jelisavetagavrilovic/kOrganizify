@@ -10,9 +10,7 @@ NotificationsWindow::NotificationsWindow(QWidget *parent) :
     setFixedSize(this->size());
     setWindowTitle("Notification");
 
-
-
-    m_mediaPlayer->setSource(QUrl("qrc:/images/resources/notification.wav"));
+    m_mediaPlayer->setSource(QUrl("qrc:/images/sound/notification.wav"));
     m_mediaPlayer->setVolume(50);
     m_mediaPlayer->setLoopCount(1);
 }
