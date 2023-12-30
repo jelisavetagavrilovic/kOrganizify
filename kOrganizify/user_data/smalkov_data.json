@@ -199,6 +199,14 @@
             "priority": "High",
             "startTime": "2024-01-17T14:00:00",
             "title": "Radionica: Razvoj softvera"
+        },
+        {
+            "description": "Ispit iz Razvoja Softvera",
+            "endTime": "2024-01-22T20:00:00",
+            "location": "Matematicki fakultet ucionica 718",
+            "priority": "High",
+            "startTime": "2024-01-22T17:00:00",
+            "title": "Ispit: Razvoj softvera"
         }
     ],
     "password": "smalkov",
@@ -207,6 +215,18 @@
         "notifications": false
     },
     "tasks": [
+        {
+            "isChecked": false,
+            "task": "oceniti projekte"
+        },
+        {
+            "isChecked": false,
+            "task": "pripremiti ispitna pitanja"
+        },
+        {
+            "isChecked": true,
+            "task": "zavrsiti skriptu"
+        }
     ],
     "username": "smalkov"
 }

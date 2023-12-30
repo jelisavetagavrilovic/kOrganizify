@@ -1,0 +1,240 @@
+{
+    "events": [
+        {
+            "description": "Opinformalni sastanak sa kolegama iz QCerris",
+            "endTime": "2023-12-18T19:30:00",
+            "location": "QCerris",
+            "priority": "Medium",
+            "startTime": "2023-12-18T17:30:00",
+            "title": "Druženje sa kolegama"
+        },
+        {
+            "description": "Veče uz pivo i opuštenu atmosferu",
+            "endTime": "2023-12-19T23:00:00",
+            "location": "Lokalni pab",
+            "priority": "High",
+            "startTime": "2023-12-19T20:00:00",
+            "title": "Izlazak u pab"
+        },
+        {
+            "description": "Konsultacije sa studentima iz Razvoja softvera",
+            "endTime": "2023-12-20T16:00:00",
+            "location": "Kancelarija",
+            "priority": "Medium",
+            "startTime": "2023-12-20T14:00:00",
+            "title": "Sastanak sa studentima"
+        },
+        {
+            "description": "Radionica i diskusija o Haskelu",
+            "endTime": "2023-12-21T20:30:00",
+            "location": "Klub ljubitelja funkcionalnih jezika",
+            "priority": "High",
+            "startTime": "2023-12-21T18:00:00",
+            "title": "Veče uz Haskel"
+        },
+        {
+            "description": "Relaksacija uz omiljeni film",
+            "endTime": "2023-12-22T22:00:00",
+            "location": "Domaći kutak",
+            "priority": "Low",
+            "startTime": "2023-12-22T19:00:00",
+            "title": "Slobodno vreme"
+        },
+        {
+            "description": "Veče u gradu sa prijateljima",
+            "endTime": "2023-12-24T01:00:00",
+            "location": "Gradski klub",
+            "priority": "High",
+            "startTime": "2023-12-23T21:00:00",
+            "title": "Izlazak sa društvom"
+        },
+        {
+            "description": "Opustite se uz čitanje knjige",
+            "endTime": "2023-12-25T17:00:00",
+            "location": "Udobna fotelja",
+            "priority": "Low",
+            "startTime": "2023-12-25T15:00:00",
+            "title": "Slobodno vreme"
+        },
+        {
+            "description": "Neformalni ručak sa timom",
+            "endTime": "2023-12-26T14:30:00",
+            "location": "Kafana kod kolege",
+            "priority": "Medium",
+            "startTime": "2023-12-26T12:30:00",
+            "title": "Druženje sa kolegama"
+        },
+        {
+            "description": "Istraživanje novih tehnologija",
+            "endTime": "2023-12-27T18:00:00",
+            "location": "Kuća",
+            "priority": "Low",
+            "startTime": "2023-12-27T16:00:00",
+            "title": "Slobodno vreme"
+        },
+        {
+            "description": "Veče uz muziku i razgovor",
+            "endTime": "2023-12-28T23:30:00",
+            "location": "Pab 'Craft Corner'",
+            "priority": "High",
+            "startTime": "2023-12-28T21:00:00",
+            "title": "Izlazak u pab"
+        },
+        {
+            "description": "Opuštanje uz video igre",
+            "endTime": "2023-12-29T22:00:00",
+            "location": "Gaming soba",
+            "priority": "Low",
+            "startTime": "2023-12-29T19:00:00",
+            "title": "Slobodno vreme"
+        },
+        {
+            "description": "Konsultacije sa studentima iz Alata za Razvoj Softvera",
+            "endTime": "2023-12-30T12:00:00",
+            "location": "Kancelarija",
+            "priority": "Medium",
+            "startTime": "2023-12-30T10:00:00",
+            "title": "Sastanak sa studentima"
+        },
+        {
+            "description": "Završetak knjige uz omiljeni čaj",
+            "endTime": "2023-12-31T18:00:00",
+            "location": "Domaći kutak",
+            "priority": "Low",
+            "startTime": "2023-12-31T16:00:00",
+            "title": "Slobodno vreme"
+        },
+        {
+            "description": "Diskusija o novim projektima",
+            "endTime": "2024-01-01T12:00:00",
+            "location": "Kancelarija",
+            "priority": "Medium",
+            "startTime": "2024-01-01T10:00:00",
+            "title": "Sastanak sa kolegama"
+        },
+        {
+            "description": "Relaksacija uz omiljeno piće",
+            "endTime": "2024-01-02T21:00:00",
+            "location": "Lokalni pab",
+            "priority": "High",
+            "startTime": "2024-01-02T19:00:00",
+            "title": "Izlazak na pivo"
+        },
+        {
+            "description": "Čitanje knjige",
+            "endTime": "2024-01-03T18:00:00",
+            "location": "Domaći kutak",
+            "priority": "Low",
+            "startTime": "2024-01-03T16:00:00",
+            "title": "Slobodno vreme"
+        },
+        {
+            "description": "Upoznavanje sa osnovama Haskella",
+            "endTime": "2024-01-04T20:00:00",
+            "location": "Klub ljubitelja funkcionalnih jezika",
+            "priority": "High",
+            "startTime": "2024-01-04T17:30:00",
+            "title": "Radionica: Haskell za početnike"
+        },
+        {
+            "description": "Veče uz omiljeni film",
+            "endTime": "2024-01-05T22:30:00",
+            "location": "Domaći kutak",
+            "priority": "Low",
+            "startTime": "2024-01-05T20:00:00",
+            "title": "Slobodno vreme"
+        },
+        {
+            "description": "Proslava Badnjeg dana sa porodicom",
+            "endTime": "2024-01-06T23:59:00",
+            "location": "Porodična kuća",
+            "priority": "High",
+            "startTime": "2024-01-06T18:00:00",
+            "title": "Badnje veče"
+        },
+        {
+            "description": "Veče u restoranu",
+            "endTime": "2024-01-06T23:00:00",
+            "location": "Restoran 'Gurmanski užitak'",
+            "priority": "High",
+            "startTime": "2024-01-06T19:30:00",
+            "title": "Izlazak sa društvom"
+        },
+        {
+            "description": "Proslava Božića sa porodicom",
+            "endTime": "2024-01-07T20:00:00",
+            "location": "Porodična kuća",
+            "priority": "High",
+            "startTime": "2024-01-07T00:00:00",
+            "title": "Božić"
+        },
+        {
+            "description": "Odmor nakon praznika",
+            "endTime": "2024-01-08T18:00:00",
+            "location": "Kuća",
+            "priority": "Low",
+            "startTime": "2024-01-08T12:00:00",
+            "title": "Slobodno vreme"
+        },
+        {
+            "description": "Priprema za predavanje",
+            "endTime": "2024-01-09T11:00:00",
+            "location": "Kabinet 204",
+            "priority": "Medium",
+            "startTime": "2024-01-09T09:00:00",
+            "title": "Sastanak sa studentima"
+        },
+        {
+            "description": "Završetak knjige uz omiljeni čaj",
+            "endTime": "2024-01-10T18:00:00",
+            "location": "Domaći kutak",
+            "priority": "Low",
+            "startTime": "2024-01-10T16:00:00",
+            "title": "Slobodno vreme"
+        },
+        {
+            "description": "Veče uz muziku i razgovor",
+            "endTime": "2024-01-11T23:30:00",
+            "location": "Pab 'Craft Corner'",
+            "priority": "High",
+            "startTime": "2024-01-11T21:00:00",
+            "title": "Izlazak u pab"
+        },
+        {
+            "description": "Proslava Srpske Nove godine sa prijateljima",
+            "endTime": "2024-01-13T23:00:00",
+            "location": "Restoran 'Srbija'",
+            "priority": "High",
+            "startTime": "2024-01-13T23:59:00",
+            "title": "Srpska Nova godina"
+        },
+        {
+            "description": "Opustite se uz omiljenu seriju",
+            "endTime": "2024-01-14T18:00:00",
+            "location": "Domaći kutak",
+            "priority": "Low",
+            "startTime": "2024-01-14T16:00:00",
+            "title": "Slobodno vreme"
+        }
+    ],
+    "password": "pdjordjevic",
+    "settings": {
+        "color": "#ABD49A",
+        "notifications": false
+    },
+    "tasks": [
+        {
+            "isChecked": false,
+            "task": "ocenjivanje projekata"
+        },
+        {
+            "isChecked": false,
+            "task": "priprema ispita"
+        },
+        {
+            "isChecked": false,
+            "task": "zakazivanje putovanja"
+        }
+    ],
+    "username": "pdjordjevic"
+}
