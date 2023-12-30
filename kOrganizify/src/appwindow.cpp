@@ -303,7 +303,7 @@ void AppWindow::openSettings() {
 
 void AppWindow::updateTableForSelectedDateCalendar(Calendar* calendar) {
     //free m_calendar
-    m_calendar = calendar;
+    m_user->setCalendar(*calendar);
     updateTableForSelectedDate();
 }
 
@@ -319,7 +319,13 @@ void AppWindow::showWeeklyEvents(const QDate& selectedDate){
     m_startDate = selectedDate.addDays(-selectedDate.dayOfWeek() + 1);
     m_endDate = m_startDate.addDays(6);
 
-    QList<Event> weekEvents = m_calendar->getEventsForWeek(m_startDate, m_endDate);
+
+    for(Event& e:m_calendar->getEvents())
+        qDebug() << e.getTitle();
+
+    QList<Event> weekEvents = m_user->getCalendar().getEventsForWeek(m_startDate, m_endDate);
+
+    qDebug() << weekEvents.size();
 
     for(const Event &event: weekEvents){
         QDateTime startTime = event.getStartTime();
@@ -426,12 +432,6 @@ void AppWindow::smartPlan() {
 }
 
 AppWindow::~AppWindow() {
-
-//    for(Event& e:m_calendar->getEvents()) {
-//        qDebug() << e.getTitle();
-//    }
-
-    m_user->setCalendar(*m_calendar);
     m_user->logout();
     delete m_user;
     m_user = nullptr;
