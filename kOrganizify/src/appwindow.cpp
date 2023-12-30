@@ -15,8 +15,6 @@ AppWindow::AppWindow(User *user, QWidget *parent)
     this->setAttribute(Qt::WA_DeleteOnClose);
     setWindowTitle("kOrganizify");
 
-    qDebug() << m_user->getCalendar().size();
-
     initialize();
 
     connect(ui->btnLogout, &QPushButton::clicked, this, &AppWindow::logoutUser);
@@ -319,13 +317,7 @@ void AppWindow::showWeeklyEvents(const QDate& selectedDate){
     m_startDate = selectedDate.addDays(-selectedDate.dayOfWeek() + 1);
     m_endDate = m_startDate.addDays(6);
 
-
-    for(Event& e:m_calendar->getEvents())
-        qDebug() << e.getTitle();
-
     QList<Event> weekEvents = m_user->getCalendar().getEventsForWeek(m_startDate, m_endDate);
-
-    qDebug() << weekEvents.size();
 
     for(const Event &event: weekEvents){
         QDateTime startTime = event.getStartTime();

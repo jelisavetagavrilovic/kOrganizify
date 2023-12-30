@@ -83,8 +83,6 @@ void Calendar::removeEvent(const BasicEvent &basicEvent) {
     const Event *eventPtr = dynamic_cast<const Event*>(&basicEvent);
     if (eventPtr) {
         const Event &event = *eventPtr;
-        qDebug() << event.getTitle() << event.getStartTime() << event.getEndTime() <<
-            event.getDescription() << event.getLocation();
         m_events.removeOne(event);
     } else {
         const BasicEvent &nonEvent = basicEvent;

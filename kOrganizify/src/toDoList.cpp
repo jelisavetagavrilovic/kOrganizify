@@ -30,9 +30,6 @@ QJsonValue ToDoList::toJson() const {
         QJsonObject jsonObject;
         jsonObject["task"] = task.getName();
         jsonObject["isChecked"] = task.getIsChecked();
-
-        qDebug() << "todolist tojson" << task.getIsChecked();
-
         jsonArray.append(jsonObject);
     }
 
