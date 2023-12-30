@@ -90,3 +90,71 @@ TEST_CASE("customEventPriorityFromString(const QString &priorityString)", "[Even
         REQUIRE(convertedPriority == CustomEventPriority::Low);
     }
 }
+
+TEST_CASE("overlapsWith(const Event& other)", "[Event]") {
+    SECTION("Tacno proverava jedan nacin preklapanj dogadjaja") {
+        Event event;
+        QDate date(2023,12,31);
+        QTime time(23,59,59);
+        QDateTime dateTime(date,time);
+        event.setTitle("newEvent");
+        event.setStartTime(dateTime);
+        event.setEndTime(dateTime.addDays(11));
+
+        Event event1;
+        QDate date1(2024,1,6);
+        QTime time1(23,59,59);
+        QDateTime dateTime1(date1,time1);
+        event1.setTitle("newEvent1");
+        event1.setStartTime(dateTime1);
+        event1.setEndTime(dateTime1.addDays(1));
+
+        bool answer = event.overlapsWith(event1);
+
+        REQUIRE(answer == true);
+    }
+
+    SECTION("Proverava drugi nacin preklapanja dogadjaja") {
+        Event event;
+        QDate date(2023,12,31);
+        QTime time(23,59,59);
+        QDateTime dateTime(date,time);
+        event.setTitle("newEvent");
+        event.setStartTime(dateTime);
+        event.setEndTime(dateTime.addDays(11));
+
+        Event event1;
+        QDate date1(2024,1,6);
+        QTime time1(23,59,59);
+        QDateTime dateTime1(date1,time1);
+        event1.setTitle("newEvent1");
+        event1.setStartTime(dateTime1);
+        event1.setEndTime(dateTime1.addDays(1));
+
+        bool answer = event1.overlapsWith(event);
+
+        REQUIRE(answer == true);
+    }
+
+    SECTION("Proverava nepreklapanje dogadjaja") {
+        Event event;
+        QDate date(2023,12,31);
+        QTime time(23,59,59);
+        QDateTime dateTime(date,time);
+        event.setTitle("newEvent");
+        event.setStartTime(dateTime);
+        event.setEndTime(dateTime.addDays(3));
+
+        Event event1;
+        QDate date1(2024,1,6);
+        QTime time1(23,59,59);
+        QDateTime dateTime1(date1,time1);
+        event1.setTitle("newEvent1");
+        event1.setStartTime(dateTime1);
+        event1.setEndTime(dateTime1.addDays(1));
+
+        bool answer = event1.overlapsWith(event);
+
+        REQUIRE(answer == false);
+    }
+}
