@@ -9,7 +9,7 @@ SyncResponseWindow::SyncResponseWindow(QString friendName, QString title, int du
 {
     ui->setupUi(this);
     setWindowTitle("");
-    setFixedSize(this->size());
+    setFixedSize(size());
 
     ui->lblDuration->setText(QString::number(duration) + " hours");
     ui->lblEventTitle->setText(title);

@@ -42,12 +42,12 @@ void Settings::setColor(QString color) {
 
 QString Settings::backgroundPath()
 {
-    return this->m_backgroundPath;
+    return m_backgroundPath;
 }
 
 void Settings::setBackgroundPath(QString backgroundPath)
 {
-    this->m_backgroundPath = backgroundPath;
+    m_backgroundPath = backgroundPath;
 }
 
 bool Settings::getNotifications() const {

@@ -9,8 +9,6 @@
 #include <QJsonArray>
 #include <QJsonValue>
 
-// ovo je singleton object
-
 class ToDoList : public SaveLoad
 {
     Q_OBJECT
@@ -22,18 +20,15 @@ public:
     explicit ToDoList(QObject *parent = nullptr);
     void loadData(const QString &username);
     void saveData(const QString &username);
-    QJsonValue toJson() const override;
     void fromJson(const QJsonObject &jsonObject) override;
-
-    QVector<Task> getTasks();
-    Task* getTask(int index) const;
     void setTasks(const QVector<Task>& tasks);
     void addTask(const Task task);
     void removeTask(const int index);
+
+    QVector<Task> getTasks();
+    Task* getTask(int index) const;
     QString toString();
-
-
-signals:
+    QJsonValue toJson() const override;
 };
 
 #endif // TODOLIST_H

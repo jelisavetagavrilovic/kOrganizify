@@ -11,9 +11,9 @@ private:
 public:
     Task();
     Task(QString name);
-    void setName(const QString newName);
     QString getName() const;
 
+    void setName(const QString newName);
     bool getIsChecked() const;
     void setIsChecked(const bool isChecked);
 };

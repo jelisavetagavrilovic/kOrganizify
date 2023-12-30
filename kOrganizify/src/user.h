@@ -16,23 +16,19 @@ class User : public SaveLoad
 public:
     explicit User(const QString &username, const QString &password);
     bool userExists(const QString &username);
-
     void loadData(const QString &username);
     void saveData(const QString &username);
-    QJsonValue toJson() const override;
     void fromJson(const QJsonObject &jsonValue) override;
-
+    void setCalendar(const Calendar& calendar);
     bool login(const QString &password);
     bool registerUser(const QString &password);
     void logout();
     Client *m_client;
-
     Calendar& getCalendar();
     ToDoList& getToDoList();
     Settings& getSettings();
     QString getUsername() const;
-
-    void setCalendar(const Calendar& calendar);
+    QJsonValue toJson() const override;
 
 private:
     QString m_username;

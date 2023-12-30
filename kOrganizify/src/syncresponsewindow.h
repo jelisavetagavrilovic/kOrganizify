@@ -21,11 +21,11 @@ signals:
     void noResponse(QString friendName);
 
 private:
-    Ui::SyncResponseWindow *ui;
+    QString m_friendName;
     void sendNo();
     void sendYes();
-    QString m_friendName;
     int m_duration;
+    Ui::SyncResponseWindow *ui;
 };
 
 #endif // SYNCRESPONSEWINDOW_H

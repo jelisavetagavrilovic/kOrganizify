@@ -8,26 +8,25 @@
 class Settings : public SaveLoad
 {
     Q_OBJECT
-private:
-    QString m_color;
-    QString m_backgroundPath;
-
-    bool m_notifications;
 
 public:
     explicit Settings(QString color = "#A5A9A0", bool notifications = false);
 
+    bool getNotifications() const;
     void loadData(const QString &username);
     void saveData(const QString &username);
-    QJsonValue toJson() const override;
     void fromJson(const QJsonObject &jsonObject) override;
-
-    QString getColor() const;
     void setColor(QString color);
-    QString backgroundPath();
     void setBackgroundPath(QString backgroundPath);
-    bool getNotifications() const;
     void setNotifications(bool notifications);
+    QJsonValue toJson() const override;
+    QString getColor() const;
+    QString backgroundPath();
+
+private:
+    QString m_color;
+    QString m_backgroundPath;
+    bool m_notifications;
 };
 
 #endif // SETTINGS_H

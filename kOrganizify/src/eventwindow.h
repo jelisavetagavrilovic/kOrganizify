@@ -27,22 +27,21 @@ public:
     void changeColor(QString color);
     bool checkEventOverlap(const Event& newEvent);
 
-private:
-    Ui::EventWindow *ui;
-    Calendar* m_calendar;
-    Event m_currentEvent;
-
 signals:
     void saveButtonClicked();
     void deleteButtonClicked();
 
+protected:
+    void keyPressEvent(QKeyEvent *event) override;
+
 private slots:
-    // void on_btnGenerate_clicked();
     void onSaveButtonClicked();
     void onDeleteButtonClicked();
 
-protected:
-    void keyPressEvent(QKeyEvent *event) override;
+private:
+    Ui::EventWindow *ui;
+    Calendar* m_calendar;
+    Event m_currentEvent;
 };
 
 #endif // EVENTWINDOW_H

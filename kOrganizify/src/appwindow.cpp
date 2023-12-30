@@ -1,10 +1,6 @@
 #include "appwindow.h"
 #include "qlistwidget.h"
 #include "ui_appwindow.h"
-#include "settingswindow.h"
-#include "syncresponsewindow.h"
-#include "mainwindow.h"
-#include "ui_settingswindow.h"
 
 AppWindow::AppWindow(User *user, QWidget *parent)
     : QMainWindow(parent)
@@ -12,7 +8,7 @@ AppWindow::AppWindow(User *user, QWidget *parent)
     , m_user(user)
 {
     ui->setupUi(this);
-    this->setAttribute(Qt::WA_DeleteOnClose);
+    setAttribute(Qt::WA_DeleteOnClose);
     setWindowTitle("kOrganizify");
 
     initialize();
@@ -20,10 +16,10 @@ AppWindow::AppWindow(User *user, QWidget *parent)
     connect(ui->btnLogout, &QPushButton::clicked, this, &AppWindow::logoutUser);
     connect(ui->btnSmartPlan, &QPushButton::clicked, this, &AppWindow::smartPlan);
     connect(ui->btnSettings, &QPushButton::clicked, this, &AppWindow::openSettings);
-    connect(settingsWindow, &SettingsWindow::enabledNotifications, this, &AppWindow::enabledNotifications);
-    connect(settingsWindow, &SettingsWindow::enabledNotifications, m_notifications, &Notifications::enabledNotifications);
-    connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
-    connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button
+    connect(m_settingsWindow, &SettingsWindow::enabledNotifications, this, &AppWindow::enabledNotifications);
+    connect(m_settingsWindow, &SettingsWindow::enabledNotifications, m_notifications, &Notifications::enabledNotifications);
+    connect(m_settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
+    connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask);
     connect(ui->btnClear, &QPushButton::clicked, this, &AppWindow::clearFinishedTasks);
 
     populateFriends(m_user->m_client->m_friends);
@@ -57,33 +53,33 @@ void AppWindow::populateFriends(const QList<QString>& friends) {
 }
 
 void AppWindow::openSyncWindow(QListWidgetItem *item) {
-    this->syncWindow = new SyncWindow(m_user->getUsername(),item->text(), m_user->getCalendar());
-    connect(syncWindow, &SyncWindow::sendSyncRequest, m_user->m_client, &Client::syncRequest);
-    this->syncWindow->changeColor(settingsWindow->getColor());
-    syncWindow->show();
+    m_syncWindow = new SyncWindow(m_user->getUsername(),item->text(), m_user->getCalendar());
+    connect(m_syncWindow, &SyncWindow::sendSyncRequest, m_user->m_client, &Client::syncRequest);
+    m_syncWindow->changeColor(m_settingsWindow->getColor());
+    m_syncWindow->show();
 }
 
 void AppWindow::changeButtonColor(const QString& newColor) {
     QString styleSheet = "background-color: " + newColor + ";";
     QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 10px;}");
-    this->ui->btnSettings->setStyleSheet(btnStyleSheet);
-    this->ui->btnClear->setStyleSheet(btnStyleSheet);
-    this->ui->btnLogout->setStyleSheet(btnStyleSheet);
-    this->ui->btnSmartPlan->setStyleSheet(btnStyleSheet);
-    this->ui->leInput->setStyleSheet(styleSheet);
-    this->ui->lblToDoList->setStyleSheet("color: " + newColor);
-    this->ui->tableWidget->setStyleSheet(QString("QTableWidget { gridline-color: %1; }").arg(newColor));
-    this->ui->tableWidget->horizontalHeader()->setStyleSheet(styleSheet);
-    this->ui->tableWidget->verticalHeader()->setStyleSheet(styleSheet);
-    this->ui->calendarWidget->setStyleSheet(QString("QCalendarWidget QWidget#qt_calendar_navigationbar { color: black; background-color: %1;}"
+    ui->btnSettings->setStyleSheet(btnStyleSheet);
+    ui->btnClear->setStyleSheet(btnStyleSheet);
+    ui->btnLogout->setStyleSheet(btnStyleSheet);
+    ui->btnSmartPlan->setStyleSheet(btnStyleSheet);
+    ui->leInput->setStyleSheet(styleSheet);
+    ui->lblToDoList->setStyleSheet("color: " + newColor);
+    ui->tableWidget->setStyleSheet(QString("QTableWidget { gridline-color: %1; }").arg(newColor));
+    ui->tableWidget->horizontalHeader()->setStyleSheet(styleSheet);
+    ui->tableWidget->verticalHeader()->setStyleSheet(styleSheet);
+    ui->calendarWidget->setStyleSheet(QString("QCalendarWidget QWidget#qt_calendar_navigationbar { color: black; background-color: %1;}"
                                                     "QCalendarWidget QAbstractItemView:enabled {selection-background-color: %2 ;}").arg(newColor, newColor));
 
 
-    QString backgroundPath = this->settingsWindow->colorToPath(newColor);
+    QString backgroundPath = m_settingsWindow->colorToPath(newColor);
     QPixmap background(backgroundPath);
     QPalette palette;
-    palette.setBrush(this->backgroundRole(), QBrush(background));
-    this->setPalette(palette);
+    palette.setBrush(backgroundRole(), QBrush(background));
+    setPalette(palette);
 }
 
 void AppWindow::enabledNotifications(const bool enabled) {
@@ -97,70 +93,68 @@ void AppWindow::initialize() {
         addTaskToListWidget(task);
 
     Settings& settings = m_user->getSettings();
-    settingsWindow = new SettingsWindow(&settings, this);
+    m_settingsWindow = new SettingsWindow(&settings, this);
 
-    settingsWindow->setColor(settings.getColor());
-    settingsWindow->setBackgroundPath(settingsWindow->colorToPath(settingsWindow->getColor()));
-    this->ui->lwToDoList->setStyleSheet("background-color: #FCD299");
-    this->ui->lwFriends->setStyleSheet("background-color: #E5E1E6; color: black;");
-    settingsWindow->ui->cbNotifications->setChecked(m_user->getSettings().getNotifications());
+    m_settingsWindow->setColor(settings.getColor());
+    m_settingsWindow->setBackgroundPath(m_settingsWindow->colorToPath(m_settingsWindow->getColor()));
+    ui->lwToDoList->setStyleSheet("background-color: #FCD299");
+    ui->lwFriends->setStyleSheet("background-color: #E5E1E6; color: black;");
+    m_settingsWindow->ui->cbNotifications->setChecked(m_user->getSettings().getNotifications());
     ui->lwToDoList->setStyleSheet("background-color: #F4F4F4");
 
-    this->setFixedSize(this->size());
-    this->setAutoFillBackground(true);
+    setFixedSize(size());
+    setAutoFillBackground(true);
 
-//    m_calendar = new Calendar();
     m_calendar = &m_user->getCalendar();
     m_notifications = new Notifications(m_calendar);
-    this->eventWindow = new EventWindow(m_calendar);
+    m_eventWindow = new EventWindow(m_calendar);
 
     QString sourceDir = QCoreApplication::applicationDirPath();
-    QString path = QDir(sourceDir).filePath(settingsWindow->getBackgroundPath());
+    QString path = QDir(sourceDir).filePath(m_settingsWindow->getBackgroundPath());
     QPixmap background(path);
     QPalette palette;
-    palette.setBrush(this->backgroundRole(), QBrush(background));
-    this->setPalette(palette);
+    palette.setBrush(backgroundRole(), QBrush(background));
+    setPalette(palette);
 
-    QString styleSheet = QString("background-color: %1; ").arg(this->settingsWindow->getColor());
+    QString styleSheet = QString("background-color: %1; ").arg(m_settingsWindow->getColor());
     QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 10px; color:black;}");
-    this->ui->btnSettings->setStyleSheet(btnStyleSheet);
-    this->ui->btnClear->setStyleSheet(btnStyleSheet);
-    this->ui->btnLogout->setStyleSheet(btnStyleSheet);
-    this->ui->btnSmartPlan->setStyleSheet(btnStyleSheet);
-    this->ui->leInput->setStyleSheet(styleSheet);
-    this->ui->lblToDoList->setStyleSheet("color: " + this->settingsWindow->getColor());
+    ui->btnSettings->setStyleSheet(btnStyleSheet);
+    ui->btnClear->setStyleSheet(btnStyleSheet);
+    ui->btnLogout->setStyleSheet(btnStyleSheet);
+    ui->btnSmartPlan->setStyleSheet(btnStyleSheet);
+    ui->leInput->setStyleSheet(styleSheet);
+    ui->lblToDoList->setStyleSheet("color: " + m_settingsWindow->getColor());
 
-    this->ui->calendarWidget->setVerticalHeaderFormat(QCalendarWidget::NoVerticalHeader);
-    this->ui->calendarWidget->setStyleSheet(QString("QCalendarWidget QWidget#qt_calendar_navigationbar {"
+    ui->calendarWidget->setVerticalHeaderFormat(QCalendarWidget::NoVerticalHeader);
+    ui->calendarWidget->setStyleSheet(QString("QCalendarWidget QWidget#qt_calendar_navigationbar {"
                                                     "   color: black; background-color: %1;}"
                                                     "QCalendarWidget QAbstractItemView:enabled {"
                                                     "   selection-background-color: %2 ;}"
                                                     "QCalendarWidget QToolButton:hover {"
                                                     "    background-color: #3C5291;"
-                                                    "}").arg(this->settingsWindow->getColor(), this->settingsWindow->getColor()));
-    // table
-    this->ui->tableWidget->setStyleSheet(QString("QTableWidget { gridline-color: %1; }").arg(this->settingsWindow->getColor()));
-    this->ui->tableWidget->verticalScrollBar()->setStyleSheet("background-color: lightblue");
-    this->ui->tableWidget->horizontalHeader()->setStyleSheet("background-color: " + this->settingsWindow->getColor());
-    this->ui->tableWidget->verticalHeader()->setStyleSheet("background-color: " + this->settingsWindow->getColor());
+                                                    "}").arg(m_settingsWindow->getColor(), m_settingsWindow->getColor()));
+    ui->tableWidget->setStyleSheet(QString("QTableWidget { gridline-color: %1; }").arg(m_settingsWindow->getColor()));
+    ui->tableWidget->verticalScrollBar()->setStyleSheet("background-color: lightblue");
+    ui->tableWidget->horizontalHeader()->setStyleSheet("background-color: " + m_settingsWindow->getColor());
+    ui->tableWidget->verticalHeader()->setStyleSheet("background-color: " + m_settingsWindow->getColor());
     int columnWidth = 110;
     for (int i = 0; i < ui->tableWidget->columnCount(); ++i)
-        this->ui->tableWidget->setColumnWidth(i, columnWidth);
-    int scrollBarValue = this->ui->tableWidget->verticalScrollBar()->maximum();
-    this->ui->tableWidget->verticalScrollBar()->setValue(scrollBarValue);
+        ui->tableWidget->setColumnWidth(i, columnWidth);
+    int scrollBarValue = ui->tableWidget->verticalScrollBar()->maximum();
+    ui->tableWidget->verticalScrollBar()->setValue(scrollBarValue);
 
-    this->eventWindow->changeColor(this->settingsWindow->getColor());
-    this->settingsWindow->changeColor(this->settingsWindow->getColor());
+    m_eventWindow->changeColor(m_settingsWindow->getColor());
+    m_settingsWindow->changeColor(m_settingsWindow->getColor());
 
-    connect(settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
-    connect(settingsWindow, &SettingsWindow::colorChanged, this->eventWindow, &EventWindow::changeColor);
+    connect(m_settingsWindow, &SettingsWindow::colorChanged, this, &AppWindow::changeButtonColor);
+    connect(m_settingsWindow, &SettingsWindow::colorChanged, m_eventWindow, &EventWindow::changeColor);
     connect(ui->tableWidget, &QTableWidget::cellDoubleClicked, this, &AppWindow::openEventWindowForCell);
-    connect(eventWindow, &EventWindow::saveButtonClicked, this, &AppWindow::updateTableForSelectedDate);
-    connect(eventWindow, &EventWindow::deleteButtonClicked, this, &AppWindow::updateTableForSelectedDate);
-    connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask); // for Enter button
+    connect(m_eventWindow, &EventWindow::saveButtonClicked, this, &AppWindow::updateTableForSelectedDate);
+    connect(m_eventWindow, &EventWindow::deleteButtonClicked, this, &AppWindow::updateTableForSelectedDate);
+    connect(ui->leInput, &QLineEdit::returnPressed, this, &AppWindow::addTask);
     connect(ui->calendarWidget, &QCalendarWidget::selectionChanged, this, &AppWindow::updateTableForSelectedDate);
-    connect(eventWindow, &EventWindow::saveButtonClicked, this, &AppWindow::updatedEvents);
-    connect(eventWindow, &EventWindow::deleteButtonClicked, this, &AppWindow::updatedEvents);
+    connect(m_eventWindow, &EventWindow::saveButtonClicked, this, &AppWindow::updatedEvents);
+    connect(m_eventWindow, &EventWindow::deleteButtonClicked, this, &AppWindow::updatedEvents);
 
     updateTableForSelectedDate();
 }
@@ -187,32 +181,32 @@ void AppWindow::openEventWindowForCell(int row, int column) {
             if(((row >= startHour && row < endHour) ||
                 (duration < 1 && row >= startHour && row <= endHour)) &&
                 column == event.getStartTime().date().dayOfWeek() - 1){
-                eventWindow->setCurrentEvent(event);
-                eventWindow->setStartDate(cellDateTime.addSecs(60 * startMinute));
-                eventWindow->setEndDate(cellDateTime.addSecs(3600 * duration + 60 * endMinute));
-                eventWindow->setTitle(event.getTitle());
-                eventWindow->setDescription(event.getDescription());
-                eventWindow->setLocation(event.getLocation());
-                eventWindow->setPriority(event.getPriority());
+                m_eventWindow->setCurrentEvent(event);
+                m_eventWindow->setStartDate(cellDateTime.addSecs(60 * startMinute));
+                m_eventWindow->setEndDate(cellDateTime.addSecs(3600 * duration + 60 * endMinute));
+                m_eventWindow->setTitle(event.getTitle());
+                m_eventWindow->setDescription(event.getDescription());
+                m_eventWindow->setLocation(event.getLocation());
+                m_eventWindow->setPriority(event.getPriority());
 
-                eventWindow->show();
+                m_eventWindow->show();
                 return;
             }
         }
 
-        eventWindow->setCurrentEvent(Event());
-        eventWindow->setTitle("");
-        eventWindow->setDescription("");
-        eventWindow->setLocation("");
+        m_eventWindow->setCurrentEvent(Event());
+        m_eventWindow->setTitle("");
+        m_eventWindow->setDescription("");
+        m_eventWindow->setLocation("");
         if (row == 23) {
-            eventWindow->setStartDate(cellDateTime.addDays(1));
-            eventWindow->setEndDate(cellDateTime.addSecs(3600 * 24 + 59 * 60));
+            m_eventWindow->setStartDate(cellDateTime.addDays(1));
+            m_eventWindow->setEndDate(cellDateTime.addSecs(3600 * 24 + 59 * 60));
         } else {
-            eventWindow->setStartDate(cellDateTime);
-            eventWindow->setEndDate(cellDateTime.addSecs(3600));
+            m_eventWindow->setStartDate(cellDateTime);
+            m_eventWindow->setEndDate(cellDateTime.addSecs(3600));
         }
-        eventWindow->setPriority(CustomEventPriority::NoPriority);
-        eventWindow->show();
+        m_eventWindow->setPriority(CustomEventPriority::NoPriority);
+        m_eventWindow->show();
     }
 }
 
@@ -223,7 +217,7 @@ void AppWindow::addTask() {
         Task task(text);
         ui->leInput->clear();
 
-        this->m_user->getToDoList().addTask(task);
+        m_user->getToDoList().addTask(task);
         addTaskToListWidget(task);
     }
 }
@@ -254,10 +248,10 @@ void AppWindow::onCheckBoxStateChanged(int state) {
         int index = ui->lwToDoList->row(ui->lwToDoList->itemFromIndex(ui->lwToDoList->indexAt(checkBox->pos())));
         if (state == Qt::Checked) {
             m_toDoList->getTask(index)->setIsChecked(true);
-            checkBox->setText(crossTask(m_toDoList->getTask(index)->getName()));  // crossed task name
+            checkBox->setText(crossTask(m_toDoList->getTask(index)->getName()));
         } else if (state == Qt::Unchecked) {
             m_toDoList->getTask(index)->setIsChecked(false);
-            checkBox->setText(m_toDoList->getTask(index)->getName()); // regular task name
+            checkBox->setText(m_toDoList->getTask(index)->getName());
         }
     }
 }
@@ -291,15 +285,14 @@ void AppWindow::clearFinishedTasks(){
 }
 
 void AppWindow::openSettings() {
-    settingsWindow->show();
-    QString styleSheet = QString("background-color: %1; ").arg(this->settingsWindow->getColor());
+    m_settingsWindow->show();
+    QString styleSheet = QString("background-color: %1; ").arg(m_settingsWindow->getColor());
     QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 10px; color:black;}");
-    this->ui->btnSettings->setStyleSheet(btnStyleSheet);
-    this->ui->btnSettings->update();
+    ui->btnSettings->setStyleSheet(btnStyleSheet);
+    ui->btnSettings->update();
 }
 
 void AppWindow::updateTableForSelectedDateCalendar(Calendar* calendar) {
-    //free m_calendar
     m_user->setCalendar(*calendar);
     updateTableForSelectedDate();
 }
@@ -316,9 +309,7 @@ void AppWindow::showWeeklyEvents(const QDate& selectedDate){
     m_startDate = selectedDate.addDays(-selectedDate.dayOfWeek() + 1);
     m_endDate = m_startDate.addDays(6);
 
-//    qDebug() << m_user->getCalendar().size();
     QList<Event> weekEvents = m_calendar->getEventsForWeek(m_startDate, m_endDate);
-//    qDebug() << m_user->getCalendar().size();
 
     for(const Event &event: weekEvents){
         QDateTime startTime = event.getStartTime();
@@ -392,13 +383,13 @@ void AppWindow::logoutUser() {
     emit m_user->m_client->disconnectedUser(m_user->getUsername());
     emit exit();
 
-    this->close();
+    close();
     delete this;
 }
 
 void AppWindow::showSyncWindow(QString username, QString title, int duration) {
     SyncResponseWindow* responseWindow = new SyncResponseWindow(username, title, duration);
-    responseWindow->changeColor(settingsWindow->getColor());
+    responseWindow->changeColor(m_settingsWindow->getColor());
     responseWindow->show();
     connect(responseWindow, &SyncResponseWindow::yesResponse, this, &AppWindow::sendYesResponse);
     connect(responseWindow, &SyncResponseWindow::noResponse, this, &AppWindow::sendNoResponse);
@@ -413,7 +404,7 @@ void AppWindow::smartPlan() {
         m_startDate = selectedDate.addDays(-selectedDate.dayOfWeek() + 1);
     }
     BasicEventWindow *basicEventWindow = new BasicEventWindow(m_calendar, &m_startDate);
-    basicEventWindow->changeColor(settingsWindow->getColor());
+    basicEventWindow->changeColor(m_settingsWindow->getColor());
     basicEventWindow->show();
 
     connect(basicEventWindow, &BasicEventWindow::nextCalendarSignal, this, &AppWindow::updateTableForSelectedDateCalendar);
@@ -427,7 +418,7 @@ AppWindow::~AppWindow() {
     delete m_user;
     m_user = nullptr;
     delete m_notifications;
-    delete eventWindow;
+    delete m_eventWindow;
 
     delete ui;
 }
@@ -447,7 +438,7 @@ void AppWindow::syncDenied(QString friendName) {
 
 void AppWindow::showResponseWindow(QString eventTitle, QString startTime) {
     ResponseWindow *responseWindow = new ResponseWindow(eventTitle,startTime);
-    responseWindow->changeColor(settingsWindow->getColor());
+    responseWindow->changeColor(m_settingsWindow->getColor());
     responseWindow->show();
     connect(responseWindow, &ResponseWindow::sendResponse, m_user->m_client, &Client::eventResponse);
 }

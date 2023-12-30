@@ -21,8 +21,6 @@ public slots:
     void onYesClicked();
     void onNoClicked();
 
-private slots:
-
 signals:
     void sendResponse(bool answer);
 

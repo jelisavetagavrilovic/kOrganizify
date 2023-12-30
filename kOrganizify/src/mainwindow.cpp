@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     setWindowTitle("Login");
-    setFixedSize(this->size());
+    setFixedSize(size());
 
     ui->lblStatus->setVisible(false);
     ui->lblUserPlus->setVisible(false);

@@ -13,7 +13,7 @@ SyncWindow::SyncWindow(QString username, QString friendName, Calendar calendar, 
 {
     ui->setupUi(this);
     setWindowTitle("");
-    setFixedSize(this->size());
+    setFixedSize(size());
 
     for (int i = 1; i <= 24; ++i) {
         ui->cbSelectHours->addItem(QString::number(i));

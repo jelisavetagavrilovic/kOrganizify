@@ -12,7 +12,7 @@ BasicEventWindow::BasicEventWindow(Calendar *calendar, QDate *startDate/*, QDate
 {
     ui->setupUi(this);
     setWindowTitle("Smart plan");
-    setFixedSize(this->size());
+    setFixedSize(size());
 
     m_currentIndex = 0;
 
@@ -149,6 +149,6 @@ void BasicEventWindow::changeColor(QString color){
 
     QString ultimateStyleSheet = ewStyleSheet + btnStyleSheet + leStyleSheet + teStyleSheet + dateEditStyleSheet + timeEditStyleSheet + cbStyleSheet;
 
-    this->setStyleSheet(ultimateStyleSheet);
+    setStyleSheet(ultimateStyleSheet);
 }
 

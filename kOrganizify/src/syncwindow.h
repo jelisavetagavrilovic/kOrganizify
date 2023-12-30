@@ -34,8 +34,8 @@ private:
     QString m_friendName;
     QString m_username;
     QString m_enteredText;
-    int m_selectedNumber;
     Calendar m_calendar;
+    int m_selectedNumber;
 };
 
 #endif // SYNCWINDOW_H

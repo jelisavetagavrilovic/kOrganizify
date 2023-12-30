@@ -11,17 +11,17 @@ Task::Task(QString name)
 {}
 
 void Task::setName(const QString newName){
-    this->m_name = newName;
+    m_name = newName;
 }
 
 QString Task::getName() const{
-    return this->m_name;
+    return m_name;
 }
 
 bool Task::getIsChecked() const{
-    return this->m_isChecked;
+    return m_isChecked;
 }
 
 void Task::setIsChecked(const bool isChecked) {
-    this->m_isChecked = isChecked;
+    m_isChecked = isChecked;
 }

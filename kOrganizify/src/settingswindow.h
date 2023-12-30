@@ -31,8 +31,6 @@ public:
 
 public slots:
     void changeColor(QString color);
-//    void setColorSlot(const QString color);
-//    QString getColorSlot() const;
     void setNotifications(const bool notifications);
     bool getNotifications() const;
     void updateNotificationIcon(bool state);

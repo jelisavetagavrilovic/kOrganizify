@@ -7,8 +7,7 @@ ResponseWindow::ResponseWindow(QString eventTitle, QString startTime, QWidget *p
 {
     ui->setupUi(this);
     setWindowTitle("Notification");
-    setFixedSize(this->size());
-
+    setFixedSize(size());
 
     setDate(startTime);
     setTitle(eventTitle);
@@ -33,7 +32,6 @@ void ResponseWindow::setDate(QString startTime) {
 QString ResponseWindow::getDate() {
     return m_date;
 }
-
 
 void ResponseWindow::onYesClicked() {
     qDebug() << "I can on this date: " << getDate();

@@ -20,6 +20,9 @@
 #include "toDoList.h"
 #include "notifications.h"
 #include "syncdeniedwindow.h"
+#include "settingswindow.h"
+#include "syncresponsewindow.h"
+#include "ui_settingswindow.h"
 
 
 namespace Ui {
@@ -72,11 +75,11 @@ signals:
 private:
     Ui::AppWindow *ui;
     User *m_user;
-    SettingsWindow *settingsWindow;
-    SyncWindow *syncWindow;
-    EventWindow *eventWindow;
+    SettingsWindow *m_settingsWindow;
+    SyncWindow *m_syncWindow;
+    EventWindow *m_eventWindow;
     ToDoList *m_toDoList;
-    Calendar* m_calendar;
+    Calendar *m_calendar;
     QDate m_startDate;
     QDate m_endDate;
     Notifications* m_notifications;

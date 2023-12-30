@@ -118,7 +118,7 @@ void EventWindow::onSaveButtonClicked()
 
 
     emit saveButtonClicked();
-    this->close();
+    close();
 }
 
 void EventWindow::changeColor(QString color)
@@ -134,7 +134,7 @@ void EventWindow::changeColor(QString color)
 
     QString ultimateStyleSheet = ewStyleSheet + btnStyleSheet + leStyleSheet + teStyleSheet + dateEditStyleSheet + timeEditStyleSheet + cbStyleSheet;
 
-    this->setStyleSheet(ultimateStyleSheet);
+    setStyleSheet(ultimateStyleSheet);
 }
 
 bool EventWindow::checkEventOverlap(const Event &newEvent) {

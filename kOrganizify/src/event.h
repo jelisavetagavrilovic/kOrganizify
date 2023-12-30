@@ -60,7 +60,7 @@ private:
     QDateTime m_endTime;
     QString m_description;
     QString m_location;
-    CustomEventPriority priority;
+    CustomEventPriority m_priority;
 
 
 friend uint qHash(const Event &event) {

@@ -31,7 +31,6 @@ set(PROJECT_SOURCES
         src/settings.cpp
         src/settingswindow.cpp
         src/syncdeniedwindow.cpp
-        src/synchronization.cpp
         src/syncresponsewindow.cpp
         src/syncwindow.cpp
         src/task.cpp
@@ -56,7 +55,6 @@ set(HEADERS
         src/settings.h
         src/settingswindow.h
         src/syncdeniedwindow.h
-        src/synchronization.h
         src/syncresponsewindow.h
         src/syncwindow.h
         src/task.h

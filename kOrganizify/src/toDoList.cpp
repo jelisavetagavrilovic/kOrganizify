@@ -43,19 +43,19 @@ void ToDoList::saveData(const QString &username) {
 }
 
 QVector<Task> ToDoList::getTasks() {
-    return this->m_tasks;
+    return m_tasks;
 }
 
 void ToDoList::setTasks(const QVector<Task> &tasks){
-    this->m_tasks = tasks;
+    m_tasks = tasks;
 }
 
 void ToDoList::addTask(const Task task){
-    this->m_tasks.append(task);
+    m_tasks.append(task);
 }
 
 void ToDoList::removeTask(const int index){
-    this->m_tasks.remove(index);
+    m_tasks.remove(index);
 }
 
 Task* ToDoList::getTask(int index) const {
@@ -64,7 +64,7 @@ Task* ToDoList::getTask(int index) const {
 
 QString ToDoList::toString() {
     QStringList taskNames;
-    for (Task& task : this->getTasks())
+    for (Task& task : getTasks())
         taskNames.append(task.getName());
 
     QString string = taskNames.join("\n");
