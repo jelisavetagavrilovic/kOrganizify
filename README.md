@@ -70,6 +70,7 @@ Kada se radi o druženju s prijateljima, Planer vam olakšava dogovaranje susret
 
 -  7. Takođe, imate opciju izbora *SmartPlan* klikom na ikonicu mini kalendara u gornjem desnom uglu.
 
+-  8. Uz projekat dostavljeni su kalendari koje mozete videti u folderu user_data, ime json-a je i samo korisnicko ime i sifra.   
   
 
 ### :arrow_forward: Za pokretanje servera :
