@@ -111,8 +111,8 @@ void AppWindow::initialize() {
 
     m_calendar = new Calendar();
     *m_calendar = m_user->getCalendar();
-    m_notifications = new Notifications(m_calendar);
-    this->eventWindow = new EventWindow(m_calendar);
+    m_notifications = new Notifications(&m_user->getCalendar());
+    this->eventWindow = new EventWindow(&m_user->getCalendar());
 
     QString sourceDir = QCoreApplication::applicationDirPath();
     QString path = QDir(sourceDir).filePath(settingsWindow->getBackgroundPath());
@@ -411,7 +411,7 @@ void AppWindow::smartPlan() {
     else {
         m_startDate = selectedDate.addDays(-selectedDate.dayOfWeek() + 1);
     }
-    BasicEventWindow *basicEventWindow = new BasicEventWindow(m_calendar, &m_startDate);
+    BasicEventWindow *basicEventWindow = new BasicEventWindow(&m_user->getCalendar(), &m_startDate);
     basicEventWindow->changeColor(settingsWindow->getColor());
     basicEventWindow->show();
 
@@ -463,5 +463,5 @@ void AppWindow::agreedSync(QDateTime startTime, QDateTime endTime, QString title
 
 void AppWindow::updatedEvents() {
     delete m_notifications;
-    m_notifications = new Notifications(m_calendar);
+    m_notifications = new Notifications(&m_user->getCalendar());
 }
