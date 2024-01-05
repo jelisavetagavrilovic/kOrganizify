@@ -1,14 +1,10 @@
-#include "event.h"
 #include "eventwindow.h"
+#include "event.h"
 #include "ui_eventwindow.h"
-#include <QMessageBox>
 #include <QKeyEvent>
+#include <QMessageBox>
 
-EventWindow::EventWindow(Calendar* calendar, QWidget *parent)
-    : QWidget(parent)
-    , ui(new Ui::EventWindow)
-    , m_calendar(calendar)
-{
+EventWindow::EventWindow(Calendar *calendar, QWidget *parent) : QWidget(parent), ui(new Ui::EventWindow), m_calendar(calendar) {
     ui->setupUi(this);
     setWindowTitle("Event details");
 
@@ -23,12 +19,12 @@ EventWindow::EventWindow(Calendar* calendar, QWidget *parent)
     connect(ui->btnDelete, &QPushButton::clicked, this, &EventWindow::onDeleteButtonClicked);
 }
 
-void EventWindow::setStartDate(const QDateTime &dateTime){
+void EventWindow::setStartDate(const QDateTime &dateTime) {
     ui->deDateStart->setDateTime(dateTime);
     ui->teTimeStart->setDateTime(dateTime);
 }
 
-void EventWindow::setEndDate(const QDateTime &dateTime){
+void EventWindow::setEndDate(const QDateTime &dateTime) {
     ui->deDateEnd->setDateTime(dateTime);
     ui->teTimeEnd->setDateTime(dateTime);
 }
@@ -46,11 +42,11 @@ void EventWindow::setLocation(const QString &location) {
 }
 
 
-void EventWindow::setPriority(const CustomEventPriority &priority){
+void EventWindow::setPriority(const CustomEventPriority &priority) {
     ui->cbPriority->setCurrentIndex(static_cast<int>(priority));
 }
 
-void EventWindow::setCurrentEvent(const Event &event){
+void EventWindow::setCurrentEvent(const Event &event) {
     m_currentEvent = event;
 }
 
@@ -59,13 +55,9 @@ Event EventWindow::getCurrentEvent() const {
 }
 
 
-
 bool EventWindow::isEventNull() const {
-    return m_currentEvent.getTitle().isEmpty()
-           && m_currentEvent.getDescription().isEmpty()
-           && m_currentEvent.getLocation().isEmpty()
-           && !m_currentEvent.getStartTime().isValid()
-           && !m_currentEvent.getEndTime().isValid();
+    return m_currentEvent.getTitle().isEmpty() && m_currentEvent.getDescription().isEmpty() && m_currentEvent.getLocation().isEmpty() &&
+           !m_currentEvent.getStartTime().isValid() && !m_currentEvent.getEndTime().isValid();
 }
 
 void EventWindow::onDeleteButtonClicked() {
@@ -77,8 +69,7 @@ void EventWindow::onDeleteButtonClicked() {
     close();
 }
 
-void EventWindow::onSaveButtonClicked()
-{
+void EventWindow::onSaveButtonClicked() {
 
     QString title = ui->leTitle->text();
 
@@ -107,11 +98,11 @@ void EventWindow::onSaveButtonClicked()
     CustomEventPriority selectedPriority = ui->cbPriority->currentData().value<CustomEventPriority>();
     newEvent.setPriority(selectedPriority);
 
-    if (!isEventNull() && !checkEventOverlap(newEvent)){
+    if (!isEventNull() && !checkEventOverlap(newEvent)) {
         m_calendar->updateEvent(m_currentEvent, newEvent);
     } else if (checkEventOverlap(newEvent)) {
-            QMessageBox::warning(this, "Error", "The new event overlaps with existing events.");
-            return;
+        QMessageBox::warning(this, "Error", "The new event overlaps with existing events.");
+        return;
     } else {
         m_calendar->addEvent(newEvent);
     }
@@ -121,16 +112,15 @@ void EventWindow::onSaveButtonClicked()
     close();
 }
 
-void EventWindow::changeColor(QString color)
-{
-    QString styleSheet = QString("background-color: %1; ").arg(color);
-    QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 10px; color:black;}");
-    QString leStyleSheet = QString("QLineEdit{" + styleSheet + "}");
-    QString teStyleSheet = QString("QTextEdit{" + styleSheet + "}");
+void EventWindow::changeColor(QString color) {
+    QString styleSheet         = QString("background-color: %1; ").arg(color);
+    QString btnStyleSheet      = QString("QPushButton{" + styleSheet + "border-radius: 10px; color:black;}");
+    QString leStyleSheet       = QString("QLineEdit{" + styleSheet + "}");
+    QString teStyleSheet       = QString("QTextEdit{" + styleSheet + "}");
     QString dateEditStyleSheet = QString("QDateEdit{" + styleSheet + "}");
     QString timeEditStyleSheet = QString("QTimeEdit{" + styleSheet + "}");
-    QString ewStyleSheet = QString("QWidget{color: black; background-color: #F7F4F8;}");
-    QString cbStyleSheet = QString("QComboBox{" + styleSheet + "}");
+    QString ewStyleSheet       = QString("QWidget{color: black; background-color: #F7F4F8;}");
+    QString cbStyleSheet       = QString("QComboBox{" + styleSheet + "}");
 
     QString ultimateStyleSheet = ewStyleSheet + btnStyleSheet + leStyleSheet + teStyleSheet + dateEditStyleSheet + timeEditStyleSheet + cbStyleSheet;
 
@@ -151,19 +141,14 @@ bool EventWindow::checkEventOverlap(const Event &newEvent) {
     return false;
 }
 
-void EventWindow::keyPressEvent(QKeyEvent *event){
-    if (event->key() == Qt::Key_Enter || event->key() == Qt::Key_Return)
-    {
+void EventWindow::keyPressEvent(QKeyEvent *event) {
+    if (event->key() == Qt::Key_Enter || event->key() == Qt::Key_Return) {
         onSaveButtonClicked();
-    }
-    else
-    {
+    } else {
         QWidget::keyPressEvent(event);
     }
 }
 
-EventWindow::~EventWindow()
-{
+EventWindow::~EventWindow() {
     delete ui;
 }
-

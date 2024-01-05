@@ -1,10 +1,7 @@
 #include "responsewindow.h"
 #include "ui_responsewindow.h"
 
-ResponseWindow::ResponseWindow(QString eventTitle, QString startTime, QWidget *parent)
-    : QWidget(parent),
-    ui(new Ui::ResponseWindow)
-{
+ResponseWindow::ResponseWindow(QString eventTitle, QString startTime, QWidget *parent) : QWidget(parent), ui(new Ui::ResponseWindow) {
     ui->setupUi(this);
     setWindowTitle("Notification");
     setFixedSize(size());
@@ -43,8 +40,8 @@ void ResponseWindow::onNoClicked() {
     close();
 }
 
-void ResponseWindow::changeColor(QString color){
-    QString styleSheet = QString("background-color: %1; ").arg(color);
+void ResponseWindow::changeColor(QString color) {
+    QString styleSheet    = QString("background-color: %1; ").arg(color);
     QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 10px; color:black;}");
     ui->btnYes->setStyleSheet(btnStyleSheet);
     ui->btnNo->setStyleSheet(btnStyleSheet);

@@ -1,9 +1,6 @@
 #include "user.h"
 
-User::User(const QString &username, const QString &password)
-    : m_username(username)
-    , m_client(new Client(username))
-{}
+User::User(const QString &username, const QString &password) : m_username(username), m_client(new Client(username)) {}
 
 bool User::userExists(const QString &username) {
     return QFile(getFilePath(username)).exists();
@@ -22,8 +19,8 @@ QJsonValue User::toJson() const {
     QJsonObject jsonObject;
     jsonObject["username"] = m_username;
     jsonObject["password"] = m_password;
-    jsonObject["events"] = m_calendar.toJson();
-    jsonObject["tasks"] = m_toDoList.toJson();
+    jsonObject["events"]   = m_calendar.toJson();
+    jsonObject["tasks"]    = m_toDoList.toJson();
     jsonObject["settings"] = m_settings.toJson();
 
     return QJsonValue(jsonObject);
@@ -66,7 +63,7 @@ void User::logout() {
     delete m_client;
 }
 
-Calendar& User::getCalendar() {
+Calendar &User::getCalendar() {
     return m_calendar;
 }
 
@@ -74,14 +71,14 @@ QString User::getUsername() const {
     return m_username;
 }
 
-ToDoList& User::getToDoList() {
+ToDoList &User::getToDoList() {
     return m_toDoList;
 }
 
-Settings& User::getSettings() {
+Settings &User::getSettings() {
     return m_settings;
 }
 
-void User::setCalendar(const Calendar& calendar) {
+void User::setCalendar(const Calendar &calendar) {
     m_calendar = calendar;
 }

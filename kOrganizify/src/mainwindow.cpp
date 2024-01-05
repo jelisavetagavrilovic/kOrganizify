@@ -2,11 +2,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent),
-    ui(new Ui::MainWindow),
-    m_user(nullptr)
-{
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow), m_user(nullptr) {
     ui->setupUi(this);
     setWindowTitle("Login");
     setFixedSize(size());
@@ -51,8 +47,7 @@ void MainWindow::loginUser() {
 }
 
 
-void MainWindow::registerUser()
-{
+void MainWindow::registerUser() {
     ui->lblUserPlus->setVisible(true);
     ui->lblUserChecked->setVisible(false);
     QString username = ui->leUsername->text();
@@ -87,4 +82,3 @@ void MainWindow::appear() {
 MainWindow::~MainWindow() {
     delete ui;
 }
-

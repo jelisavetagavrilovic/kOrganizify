@@ -1,9 +1,8 @@
 #ifndef SYNCREQUESTWINDOW_H
 #define SYNCREQUESTWINDOW_H
 
-class syncrequestwindow
-{
-public:
+class syncrequestwindow {
+  public:
     syncrequestwindow();
 };
 

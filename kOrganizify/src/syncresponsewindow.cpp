@@ -1,12 +1,8 @@
 #include "syncresponsewindow.h"
 #include "ui_syncresponsewindow.h"
 
-SyncResponseWindow::SyncResponseWindow(QString friendName, QString title, int duration, QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::SyncResponseWindow),
-    m_friendName(friendName),
-    m_duration(duration)
-{
+SyncResponseWindow::SyncResponseWindow(QString friendName, QString title, int duration, QWidget *parent)
+    : QWidget(parent), ui(new Ui::SyncResponseWindow), m_friendName(friendName), m_duration(duration) {
     ui->setupUi(this);
     setWindowTitle("");
     setFixedSize(size());
@@ -22,8 +18,7 @@ SyncResponseWindow::SyncResponseWindow(QString friendName, QString title, int du
     connect(ui->btnYes, &QPushButton::clicked, this, &SyncResponseWindow::sendYes);
 }
 
-SyncResponseWindow::~SyncResponseWindow()
-{
+SyncResponseWindow::~SyncResponseWindow() {
     delete ui;
 }
 
@@ -37,8 +32,8 @@ void SyncResponseWindow::sendNo() {
     close();
 }
 
-void SyncResponseWindow::changeColor(QString color){
-    QString styleSheet = QString("background-color: %1; ").arg(color);
+void SyncResponseWindow::changeColor(QString color) {
+    QString styleSheet    = QString("background-color: %1; ").arg(color);
     QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 10px; color:black;}");
 
     ui->btnYes->setStyleSheet(btnStyleSheet);

@@ -1,14 +1,12 @@
 #include "saveload.h"
+#include <QCoreApplication>
 #include <QDir>
 #include <QFile>
 #include <QIODevice>
 #include <QJsonDocument>
 #include <QTextStream>
-#include <QCoreApplication>
 
-SaveLoad::SaveLoad(QObject *parent)
-    : QObject(parent)
-{}
+SaveLoad::SaveLoad(QObject *parent) : QObject(parent) {}
 
 QString SaveLoad::getFilePath(const QString &username) {
     // getting  the absolute path to the source code
@@ -45,6 +43,6 @@ void SaveLoad::loadData(const QString &username) {
         file.close();
 
         QJsonDocument jsonDoc = QJsonDocument::fromJson(jsonString.toUtf8());
-        m_jsonObject = jsonDoc.object();
+        m_jsonObject          = jsonDoc.object();
     }
 }

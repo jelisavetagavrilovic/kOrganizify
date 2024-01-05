@@ -2,23 +2,20 @@
 
 #include <QDebug>
 
-//check
+// check
 Task::Task() {}
 
-Task::Task(QString name)
-    : m_name(name)
-    , m_isChecked(false)
-{}
+Task::Task(QString name) : m_name(name), m_isChecked(false) {}
 
-void Task::setName(const QString newName){
+void Task::setName(const QString newName) {
     m_name = newName;
 }
 
-QString Task::getName() const{
+QString Task::getName() const {
     return m_name;
 }
 
-bool Task::getIsChecked() const{
+bool Task::getIsChecked() const {
     return m_isChecked;
 }
 

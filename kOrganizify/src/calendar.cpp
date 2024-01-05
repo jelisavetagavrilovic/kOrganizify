@@ -1,9 +1,8 @@
 #include "calendar.h"
 
-Calendar::Calendar()
-{}
+Calendar::Calendar() {}
 
-Calendar::Calendar(const Calendar &other){
+Calendar::Calendar(const Calendar &other) {
     m_events = other.m_events;
 }
 
@@ -16,12 +15,12 @@ QJsonValue Calendar::toJson() const {
     QJsonArray jsonArray;
     for (const Event &event : m_events) {
         QJsonObject jsonObject;
-        jsonObject["title"] = event.getTitle();
-        jsonObject["startTime"] = event.getStartTime().toString(Qt::ISODate);
-        jsonObject["endTime"] = event.getEndTime().toString(Qt::ISODate);
+        jsonObject["title"]       = event.getTitle();
+        jsonObject["startTime"]   = event.getStartTime().toString(Qt::ISODate);
+        jsonObject["endTime"]     = event.getEndTime().toString(Qt::ISODate);
         jsonObject["description"] = event.getDescription();
-        jsonObject["location"] = event.getLocation();
-        jsonObject["priority"] = customEventPriorityToString(event.getPriority());
+        jsonObject["location"]    = event.getLocation();
+        jsonObject["priority"]    = customEventPriorityToString(event.getPriority());
 
 
         jsonArray.append(jsonObject);
@@ -54,20 +53,18 @@ void Calendar::saveData(const QString &username) {
 }
 
 void Calendar::addEvent(const BasicEvent &basicEvent) {
-    const Event *eventPtr = dynamic_cast<const Event*>(&basicEvent);
+    const Event *eventPtr = dynamic_cast<const Event *>(&basicEvent);
 
     if (eventPtr) {
         const Event &event = *eventPtr;
 
         int index = 0;
         for (const Event &e : m_events) {
-            if (event.getStartTime() < e.getStartTime() ||
-                (event.getStartTime() == e.getStartTime() && (event.getEndTime() < e.getEndTime()) ||
-                 (event.getEndTime() == e.getEndTime() && event.getTitle() < e.getTitle()))) {
+            if (event.getStartTime() < e.getStartTime() || (event.getStartTime() == e.getStartTime() && (event.getEndTime() < e.getEndTime()) ||
+                                                            (event.getEndTime() == e.getEndTime() && event.getTitle() < e.getTitle()))) {
                 break;
             }
             index++;
-
         }
         m_events.insert(index, event);
     } else {
@@ -79,7 +76,7 @@ void Calendar::addEvent(const BasicEvent &basicEvent) {
 }
 
 void Calendar::removeEvent(const BasicEvent &basicEvent) {
-    const Event *eventPtr = dynamic_cast<const Event*>(&basicEvent);
+    const Event *eventPtr = dynamic_cast<const Event *>(&basicEvent);
     if (eventPtr) {
         const Event &event = *eventPtr;
         m_events.removeOne(event);
@@ -89,7 +86,7 @@ void Calendar::removeEvent(const BasicEvent &basicEvent) {
     }
 }
 
-void Calendar::updateEvent(const Event &oldEvent, const Event &newEvent){
+void Calendar::updateEvent(const Event &oldEvent, const Event &newEvent) {
     for (int i = 0; i < m_events.size(); ++i) {
         if (m_events[i] == oldEvent) {
             m_events[i] = newEvent;
@@ -118,11 +115,11 @@ int Calendar::size() {
     return m_events.size();
 }
 
-QList<Event> Calendar::getEventsForWeek(const QDate& startDate, const QDate& endDate) const {
+QList<Event> Calendar::getEventsForWeek(const QDate &startDate, const QDate &endDate) const {
     QList<Event> weekEvents;
 
-    for (const Event& event: m_events){
-        if (event.getStartTime().date() >= startDate && event.getEndTime().date() <= endDate){
+    for (const Event &event : m_events) {
+        if (event.getStartTime().date() >= startDate && event.getEndTime().date() <= endDate) {
             weekEvents.append(event);
         }
     }
@@ -130,8 +127,8 @@ QList<Event> Calendar::getEventsForWeek(const QDate& startDate, const QDate& end
     return weekEvents;
 }
 
-bool Calendar::hasEventAt(const QDateTime& dateTime) const {
-    for (const Event& event : m_events) {
+bool Calendar::hasEventAt(const QDateTime &dateTime) const {
+    for (const Event &event : m_events) {
         if (event.getStartTime() == dateTime) {
             return true;
         }
@@ -150,7 +147,7 @@ Calendar Calendar::operator=(const Calendar &other) {
     m_basicEvents.clear();
     m_events.clear();
 
-    m_events = other.m_events;
+    m_events      = other.m_events;
     m_basicEvents = other.m_basicEvents;
 
     return *this;

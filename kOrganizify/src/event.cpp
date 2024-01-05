@@ -20,7 +20,7 @@ void Event::setDuration(const int duration) {
 
 void Event::setDuration() {
     QTime startTime = m_startTime.time();
-    QTime endTime = m_endTime.time();
+    QTime endTime   = m_endTime.time();
 
     int duration = startTime.msecsTo(endTime) / (1000 * 60); // 1000 milisekundi = 1 sekunda
     BasicEvent::setDuration(duration);
@@ -62,36 +62,26 @@ CustomEventPriority Event::getPriority() const {
     return m_priority;
 }
 
-void Event::setPriority(CustomEventPriority priority){
+void Event::setPriority(CustomEventPriority priority) {
     m_priority = priority;
 }
 
 bool Event::operator==(const Event &other) const {
-    return (
-        BasicEvent::getTitle() == BasicEvent::getTitle() &&
-        m_startTime == other.m_startTime &&
-        m_endTime == other.m_endTime &&
-        m_description == other.m_description &&
-        m_location == other.m_location
-        );
+    return (BasicEvent::getTitle() == BasicEvent::getTitle() && m_startTime == other.m_startTime && m_endTime == other.m_endTime &&
+            m_description == other.m_description && m_location == other.m_location);
 }
 
 QString customEventPriorityToString(CustomEventPriority priority) {
     switch (priority) {
-    case CustomEventPriority::NoPriority:
-        return "No Priority";
-    case CustomEventPriority::Low:
-        return "Low";
-    case CustomEventPriority::Medium:
-        return "Medium";
-    case CustomEventPriority::High:
-        return "High";
-    default:
-        return "Unknown Priority";
+    case CustomEventPriority::NoPriority: return "No Priority";
+    case CustomEventPriority::Low: return "Low";
+    case CustomEventPriority::Medium: return "Medium";
+    case CustomEventPriority::High: return "High";
+    default: return "Unknown Priority";
     }
 }
 
-bool Event::overlapsWith(const Event& other) const {
+bool Event::overlapsWith(const Event &other) const {
     return m_endTime > other.m_startTime && m_startTime < other.m_endTime;
 }
 
@@ -102,8 +92,7 @@ void Event::clear() {
 }
 
 void Event::deleteString(QString &str) {
-    if (!str.isNull())
-    {
+    if (!str.isNull()) {
         delete[] str.utf16();
         str.clear();
     }

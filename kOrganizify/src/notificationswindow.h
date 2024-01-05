@@ -1,9 +1,9 @@
 #ifndef NOTIFICATIONSWINDOW_H
 #define NOTIFICATIONSWINDOW_H
 
-#include <QWidget>
 #include <QDateTime>
 #include <QTimer>
+#include <QWidget>
 
 #include <QtMultimedia/QSoundEffect>
 
@@ -11,18 +11,17 @@ namespace Ui {
 class NotificationsWindow;
 }
 
-class NotificationsWindow : public QWidget
-{
+class NotificationsWindow : public QWidget {
     Q_OBJECT
 
-public:
+  public:
     explicit NotificationsWindow(QWidget *parent = nullptr);
     ~NotificationsWindow();
 
-public slots:
+  public slots:
     void updateWindow(const QString &name, const QString &time, const QString &location);
 
-private:
+  private:
     Ui::NotificationsWindow *ui;
     QSoundEffect *m_mediaPlayer;
 };

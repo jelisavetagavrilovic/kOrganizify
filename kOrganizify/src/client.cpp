@@ -1,14 +1,11 @@
 #include "client.h"
 #include "event.h"
+#include <QCoreApplication>
 #include <QEventLoop>
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QCoreApplication>
 
-Client::Client(QString username, QObject* parent)
-    : QObject(parent),
-      m_username(username)
-{
+Client::Client(QString username, QObject *parent) : QObject(parent), m_username(username) {
     m_socket = new QTcpSocket(this);
     makeConnection(QHostAddress::LocalHost);
 }
@@ -47,37 +44,32 @@ void Client::disconnected() {
 void Client::readFromServer() {
     QString message = m_socket->readAll();
     QJsonObject doc = QJsonDocument::fromJson(message.toUtf8()).object();
-    QString title = doc.value("title").toString();
-    if(title == "new connection") {
+    QString title   = doc.value("title").toString();
+    if (title == "new connection") {
         m_friends.append(doc.value("username").toString());
         emit newUserLoggedIn(doc.value("username").toString());
-    }
-    else if(title == "disconnected") {
+    } else if (title == "disconnected") {
         m_friends.removeOne(doc.value("username").toString());
         emit disconnectedUser(doc.value("username").toString());
-    }
-    else if(title == "syncRequest") {
-        QString from = doc.value("fromUsername").toString();
+    } else if (title == "syncRequest") {
+        QString from       = doc.value("fromUsername").toString();
         QString eventTitle = doc.value("titleEvent").toString();
-        int duration = doc.value("duration").toString().toInt();
+        int duration       = doc.value("duration").toString().toInt();
 
-        emit showSyncWindow(from , eventTitle, duration);
-    }
-    else if(title == "rejectSync") {
+        emit showSyncWindow(from, eventTitle, duration);
+    } else if (title == "rejectSync") {
         QString friendName = doc.value("fromUsername").toString();
         emit syncRequestDenied(friendName);
-    }
-    else if(title == "new sync event") {
+    } else if (title == "new sync event") {
         Event event;
         event.setTitle(doc.value("eventTitle").toString());
         event.setStartTime(QDateTime::fromString(doc.value("startTime").toString(), Qt::ISODate));
 
         emit newEventSync(doc.value("eventTitle").toString(), doc.value("startTime").toString());
-    }
-    else if(title == "agreed sync") {
-        QDateTime startTime = QDateTime::fromString(doc.value("startTime").toString());  // won't convert
-        QDateTime endTime = QDateTime::fromString(doc.value("endTime").toString());
-        QString title = doc.value("eventTitle").toString();
+    } else if (title == "agreed sync") {
+        QDateTime startTime = QDateTime::fromString(doc.value("startTime").toString()); // won't convert
+        QDateTime endTime   = QDateTime::fromString(doc.value("endTime").toString());
+        QString title       = doc.value("eventTitle").toString();
 
         emit syncSuccess(startTime, endTime, title);
     }
@@ -90,23 +82,22 @@ void Client::sendMessage(QString x) {
 }
 
 void Client::syncResponse(bool response, QString username, QString friendName, int duration, Calendar cal) const {
-    if(!response) {
+    if (!response) {
         QJsonObject newClientMessage;
         newClientMessage.insert("title", "rejectSync");
         newClientMessage.insert("fromUsername", username);
         newClientMessage.insert("toUsername", friendName);
         QString msg(QJsonDocument(newClientMessage).toJson());
         m_socket->write(msg.toStdString().c_str());
-    }
-    else {
+    } else {
         QJsonArray jsonArray;
         for (const Event &event : cal.getEvents()) {
             QJsonObject jsonObject;
-            jsonObject["title"] = event.getTitle();
-            jsonObject["startTime"] = event.getStartTime().toString(Qt::ISODate);
-            jsonObject["endTime"] = event.getEndTime().toString(Qt::ISODate);
+            jsonObject["title"]       = event.getTitle();
+            jsonObject["startTime"]   = event.getStartTime().toString(Qt::ISODate);
+            jsonObject["endTime"]     = event.getEndTime().toString(Qt::ISODate);
             jsonObject["description"] = event.getDescription();
-            jsonObject["location"] = event.getLocation();
+            jsonObject["location"]    = event.getLocation();
 
             jsonArray.append(jsonObject);
         }
@@ -129,7 +120,7 @@ void Client::syncResponse(bool response, QString username, QString friendName, i
 void Client::eventResponse(bool response) {
     QJsonObject responseMsg;
     responseMsg.insert("title", "eventResponse");
-    responseMsg.insert("answer", response? "yes" : "no");
+    responseMsg.insert("answer", response ? "yes" : "no");
     QString msg(QJsonDocument(responseMsg).toJson());
 
     m_socket->write(msg.toStdString().c_str());
@@ -147,11 +138,11 @@ void Client::syncRequest(QString from, QString to, QString titleEvent, int durat
     QJsonArray jsonArray;
     for (const Event &event : calendar.getEvents()) {
         QJsonObject jsonObject;
-        jsonObject["title"] = event.getTitle();
-        jsonObject["startTime"] = event.getStartTime().toString(Qt::ISODate);
-        jsonObject["endTime"] = event.getEndTime().toString(Qt::ISODate);
+        jsonObject["title"]       = event.getTitle();
+        jsonObject["startTime"]   = event.getStartTime().toString(Qt::ISODate);
+        jsonObject["endTime"]     = event.getEndTime().toString(Qt::ISODate);
         jsonObject["description"] = event.getDescription();
-        jsonObject["location"] = event.getLocation();
+        jsonObject["location"]    = event.getLocation();
 
         jsonArray.append(jsonObject);
     }
