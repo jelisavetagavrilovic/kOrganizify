@@ -1,0 +1,2695 @@
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/appwindow.h:4:10: fatal error: 'QCheckBox' file not found
+    4 | #include <QCheckBox>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/basiceventwindow.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/client.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/eventwindow.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\main.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\main.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/basiceventwindow.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\main.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.cpp:2:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/mainwindow.h:5:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/appwindow.h:4:10: fatal error: 'QCheckBox' file not found
+    4 | #include <QCheckBox>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/notifications.h:5:10: fatal error: 'QDateTime' file not found
+    5 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/notificationswindow.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/responsewindow.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/scheduler.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/settings.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/settingswindow.h:4:10: fatal error: 'QMainWindow' file not found
+    4 | #include <QMainWindow>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/syncdeniedwindow.h:4:10: fatal error: 'QWidget' file not found
+    4 | #include <QWidget>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/syncresponsewindow.h:4:10: fatal error: 'QWidget' file not found
+    4 | #include <QWidget>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/syncwindow.h:3:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/task.h:3:10: fatal error: 'QString' file not found
+    3 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/toDoList.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/user.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.h:4:10: fatal error: 'QCheckBox' file not found
+    4 | #include <QCheckBox>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.h:5:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/appwindow.h:4:10: fatal error: 'QCheckBox' file not found
+    4 | #include <QCheckBox>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.h:5:10: fatal error: 'QDateTime' file not found
+    5 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.h:4:10: fatal error: 'QMainWindow' file not found
+    4 | #include <QMainWindow>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.h:4:10: fatal error: 'QWidget' file not found
+    4 | #include <QWidget>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncrequestwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncrequestwindow.h:4:1: error: unknown type name 'class'
+    4 | class syncrequestwindow {
+      | ^
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncrequestwindow.h:4:24: error: expected ';' after top level declarator
+    4 | class syncrequestwindow {
+      |                        ^
+      |                        ;
+2 errors generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncrequestwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.h:4:10: fatal error: 'QWidget' file not found
+    4 | #include <QWidget>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.h:3:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.h:3:10: fatal error: 'QString' file not found
+    3 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/appwindow.h:4:10: fatal error: 'QCheckBox' file not found
+    4 | #include <QCheckBox>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/basiceventwindow.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/client.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/eventwindow.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\main.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\main.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/basiceventwindow.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\main.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.cpp:2:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/mainwindow.h:5:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/appwindow.h:4:10: fatal error: 'QCheckBox' file not found
+    4 | #include <QCheckBox>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/notifications.h:5:10: fatal error: 'QDateTime' file not found
+    5 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/notificationswindow.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/responsewindow.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/scheduler.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/settings.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/settingswindow.h:4:10: fatal error: 'QMainWindow' file not found
+    4 | #include <QMainWindow>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/syncdeniedwindow.h:4:10: fatal error: 'QWidget' file not found
+    4 | #include <QWidget>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/syncresponsewindow.h:4:10: fatal error: 'QWidget' file not found
+    4 | #include <QWidget>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/syncwindow.h:3:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/task.h:3:10: fatal error: 'QString' file not found
+    3 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/toDoList.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/user.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.h:4:10: fatal error: 'QCheckBox' file not found
+    4 | #include <QCheckBox>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.h:5:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/appwindow.h:4:10: fatal error: 'QCheckBox' file not found
+    4 | #include <QCheckBox>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.h:5:10: fatal error: 'QDateTime' file not found
+    5 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.h:4:10: fatal error: 'QMainWindow' file not found
+    4 | #include <QMainWindow>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.h:4:10: fatal error: 'QWidget' file not found
+    4 | #include <QWidget>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncrequestwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncrequestwindow.h:4:1: error: unknown type name 'class'
+    4 | class syncrequestwindow {
+      | ^
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncrequestwindow.h:4:24: error: expected ';' after top level declarator
+    4 | class syncrequestwindow {
+      |                        ^
+      |                        ;
+2 errors generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncrequestwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.h:4:10: fatal error: 'QWidget' file not found
+    4 | #include <QWidget>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.h:3:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.h:3:10: fatal error: 'QString' file not found
+    3 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/appwindow.h:4:10: fatal error: 'QCheckBox' file not found
+    4 | #include <QCheckBox>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/basiceventwindow.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/client.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/eventwindow.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\main.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\main.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/basiceventwindow.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\main.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.cpp:2:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/mainwindow.h:5:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/appwindow.h:4:10: fatal error: 'QCheckBox' file not found
+    4 | #include <QCheckBox>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/notifications.h:5:10: fatal error: 'QDateTime' file not found
+    5 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/notificationswindow.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/responsewindow.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/scheduler.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/settings.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/settingswindow.h:4:10: fatal error: 'QMainWindow' file not found
+    4 | #include <QMainWindow>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/syncdeniedwindow.h:4:10: fatal error: 'QWidget' file not found
+    4 | #include <QWidget>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/syncresponsewindow.h:4:10: fatal error: 'QWidget' file not found
+    4 | #include <QWidget>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/syncwindow.h:3:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/task.h:3:10: fatal error: 'QString' file not found
+    3 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/toDoList.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/user.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.h:4:10: fatal error: 'QCheckBox' file not found
+    4 | #include <QCheckBox>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.h:5:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/appwindow.h:4:10: fatal error: 'QCheckBox' file not found
+    4 | #include <QCheckBox>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.h:5:10: fatal error: 'QDateTime' file not found
+    5 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.h:4:10: fatal error: 'QMainWindow' file not found
+    4 | #include <QMainWindow>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.h:4:10: fatal error: 'QWidget' file not found
+    4 | #include <QWidget>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncrequestwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncrequestwindow.h:4:1: error: unknown type name 'class'
+    4 | class syncrequestwindow {
+      | ^
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncrequestwindow.h:4:24: error: expected ';' after top level declarator
+    4 | class syncrequestwindow {
+      |                        ^
+      |                        ;
+2 errors generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncrequestwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.h:4:10: fatal error: 'QWidget' file not found
+    4 | #include <QWidget>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.h:3:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.h:3:10: fatal error: 'QString' file not found
+    3 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/appwindow.h:4:10: fatal error: 'QCheckBox' file not found
+    4 | #include <QCheckBox>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/basiceventwindow.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/client.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/eventwindow.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\main.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\main.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/basiceventwindow.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\main.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.cpp:2:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/mainwindow.h:5:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/appwindow.h:4:10: fatal error: 'QCheckBox' file not found
+    4 | #include <QCheckBox>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/notifications.h:5:10: fatal error: 'QDateTime' file not found
+    5 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/notificationswindow.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/responsewindow.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/scheduler.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/settings.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/settingswindow.h:4:10: fatal error: 'QMainWindow' file not found
+    4 | #include <QMainWindow>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/syncdeniedwindow.h:4:10: fatal error: 'QWidget' file not found
+    4 | #include <QWidget>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/syncresponsewindow.h:4:10: fatal error: 'QWidget' file not found
+    4 | #include <QWidget>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/syncwindow.h:3:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/task.h:3:10: fatal error: 'QString' file not found
+    3 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/toDoList.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/user.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.h:4:10: fatal error: 'QCheckBox' file not found
+    4 | #include <QCheckBox>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.h:5:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/appwindow.h:4:10: fatal error: 'QCheckBox' file not found
+    4 | #include <QCheckBox>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.h:5:10: fatal error: 'QDateTime' file not found
+    5 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.h:4:10: fatal error: 'QMainWindow' file not found
+    4 | #include <QMainWindow>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.h:4:10: fatal error: 'QWidget' file not found
+    4 | #include <QWidget>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncrequestwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncrequestwindow.h:4:1: error: unknown type name 'class'
+    4 | class syncrequestwindow {
+      | ^
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncrequestwindow.h:4:24: error: expected ';' after top level declarator
+    4 | class syncrequestwindow {
+      |                        ^
+      |                        ;
+2 errors generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncrequestwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.h:4:10: fatal error: 'QWidget' file not found
+    4 | #include <QWidget>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.h:3:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.h:3:10: fatal error: 'QString' file not found
+    3 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/appwindow.h:4:10: fatal error: 'QCheckBox' file not found
+    4 | #include <QCheckBox>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/basiceventwindow.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/client.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/eventwindow.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\main.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\main.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/basiceventwindow.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\main.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.cpp:2:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/mainwindow.h:5:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/appwindow.h:4:10: fatal error: 'QCheckBox' file not found
+    4 | #include <QCheckBox>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/notifications.h:5:10: fatal error: 'QDateTime' file not found
+    5 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/notificationswindow.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/responsewindow.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/scheduler.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/settings.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/settingswindow.h:4:10: fatal error: 'QMainWindow' file not found
+    4 | #include <QMainWindow>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/syncdeniedwindow.h:4:10: fatal error: 'QWidget' file not found
+    4 | #include <QWidget>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/syncresponsewindow.h:4:10: fatal error: 'QWidget' file not found
+    4 | #include <QWidget>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/syncwindow.h:3:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.cpp:1:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/task.h:3:10: fatal error: 'QString' file not found
+    3 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/toDoList.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.cpp"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.cpp:1:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/user.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.cpp.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.h:4:10: fatal error: 'QCheckBox' file not found
+    4 | #include <QCheckBox>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\appwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\basicevent.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\basiceventwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\calendar.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\client.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\event.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\eventwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.h:5:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/appwindow.h:4:10: fatal error: 'QCheckBox' file not found
+    4 | #include <QCheckBox>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\mainwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.h:5:10: fatal error: 'QDateTime' file not found
+    5 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\notifications.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\notificationswindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\responsewindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\saveload.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/basicevent.h:4:10: fatal error: 'QString' file not found
+    4 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\scheduler.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\settings.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.h:4:10: fatal error: 'QMainWindow' file not found
+    4 | #include <QMainWindow>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\settingswindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.h:4:10: fatal error: 'QWidget' file not found
+    4 | #include <QWidget>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncdeniedwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncrequestwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncrequestwindow.h:4:1: error: unknown type name 'class'
+    4 | class syncrequestwindow {
+      | ^
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncrequestwindow.h:4:24: error: expected ';' after top level declarator
+    4 | class syncrequestwindow {
+      |                        ^
+      |                        ;
+2 errors generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncrequestwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.h:4:10: fatal error: 'QWidget' file not found
+    4 | #include <QWidget>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncresponsewindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.h:3:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\syncwindow.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.h:3:10: fatal error: 'QString' file not found
+    3 | #include <QString>
+      |          ^~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\task.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/saveload.h:4:10: fatal error: 'QJsonObject' file not found
+    4 | #include <QJsonObject>
+      |          ^~~~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\toDoList.h.
+Error while trying to load a compilation database:
+Could not auto-detect compilation database for file "D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.h"
+No compilation database found in D:\visual\projekatRs\kOrganizify\kOrganizify\src or any parent directory
+fixed-compilation-database: Error while opening fixed database: no such file or directory
+json-compilation-database: Error while opening JSON database: no such file or directory
+Running without flags.
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.h:4:
+In file included from D:\visual\projekatRs\kOrganizify\kOrganizify\src/calendar.h:4:
+D:\visual\projekatRs\kOrganizify\kOrganizify\src/event.h:4:10: fatal error: 'QDateTime' file not found
+    4 | #include <QDateTime>
+      |          ^~~~~~~~~~~
+1 error generated.
+Error while processing D:\visual\projekatRs\kOrganizify\kOrganizify\src\user.h.
