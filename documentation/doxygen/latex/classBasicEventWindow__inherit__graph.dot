@@ -1,0 +1,9 @@
+digraph "BasicEventWindow"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{BasicEventWindow\n|+ m_currentIndex\l+ m_currentCalendarIndex\l+ m_listOfCalendars\l- ui\l- m_basicEvent\l- m_calendar\l- m_basicCalendar\l- m_scheduler\l- m_startDate\l- m_cal\l- m_basicCal\l|+ BasicEventWindow()\l+ ~BasicEventWindow()\l+ changeColor()\l- addEvent()\l- removeEvent()\l- generate()\l- nextEvent()\l- previousEvent()\l- updateUi()\l- previousCalendar()\l- nextCalendar()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node2 [label="{QDialog\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}

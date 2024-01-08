@@ -1,0 +1,88 @@
+.TH "SyncResponseWindow" 3 "Mon Jan 8 2024" "kOrganizify" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SyncResponseWindow
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <syncresponsewindow\&.h>\fP
+.PP
+Inherits QWidget\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fByesResponse\fP (QString friendName, int duration)"
+.br
+.ti -1c
+.RI "void \fBnoResponse\fP (QString friendName)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSyncResponseWindow\fP (QString friendName, QString title, int duration, QWidget *parent=nullptr)"
+.br
+.ti -1c
+.RI "\fB~SyncResponseWindow\fP ()"
+.br
+.ti -1c
+.RI "void \fBchangeColor\fP (QString color)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsendNo\fP ()"
+.br
+.ti -1c
+.RI "void \fBsendYes\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBm_friendName\fP"
+.br
+.ti -1c
+.RI "int \fBm_duration\fP"
+.br
+.ti -1c
+.RI "Ui::SyncResponseWindow * \fBui\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SyncResponseWindow::SyncResponseWindow (QString friendName, QString title, int duration, QWidget * parent = \fCnullptr\fP)\fC [explicit]\fP"
+
+.SS "SyncResponseWindow::~SyncResponseWindow ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void SyncResponseWindow::changeColor (QString color)"
+
+.SS "void SyncResponseWindow::noResponse (QString friendName)\fC [signal]\fP"
+
+.SS "void SyncResponseWindow::sendNo ()\fC [private]\fP"
+
+.SS "void SyncResponseWindow::sendYes ()\fC [private]\fP"
+
+.SS "void SyncResponseWindow::yesResponse (QString friendName, int duration)\fC [signal]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "int SyncResponseWindow::m_duration\fC [private]\fP"
+
+.SS "QString SyncResponseWindow::m_friendName\fC [private]\fP"
+
+.SS "Ui::SyncResponseWindow* SyncResponseWindow::ui\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for kOrganizify from the source code\&.

@@ -1,0 +1,227 @@
+\hypertarget{classSettingsWindow}{}\doxysection{Settings\+Window Class Reference}
+\label{classSettingsWindow}\index{SettingsWindow@{SettingsWindow}}
+
+
+{\ttfamily \#include $<$settingswindow.\+h$>$}
+
+
+
+Inheritance diagram for Settings\+Window\+:
+% FIG 0
+
+
+Collaboration diagram for Settings\+Window\+:
+% FIG 1
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSettingsWindow_ad683e49f33e4a420ab967a87aa9bb52c}{change\+Color}} (QString color)
+\item 
+void \mbox{\hyperlink{classSettingsWindow_ae3c9d2e315218c5d138ee84e25a2c8d3}{set\+Notifications}} (const bool notifications)
+\item 
+bool \mbox{\hyperlink{classSettingsWindow_a40c39b325c10704b4cceb40479334e7c}{get\+Notifications}} () const
+\item 
+void \mbox{\hyperlink{classSettingsWindow_ac7439b05b852cf4615c2432b3ae67c1a}{update\+Notification\+Icon}} (bool state)
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSettingsWindow_a5453db6ee46f2cde569edd325bc1c585}{color\+Changed}} (const QString \&color)
+\item 
+void \mbox{\hyperlink{classSettingsWindow_a79bfe243e8d446cf55769c296a72cbaf}{enabled\+Notifications}} (const bool enabled)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSettingsWindow_a6c70cd2f772a9245a1a267bfab7f259b}{Settings\+Window}} (\mbox{\hyperlink{classSettings}{Settings}} $\ast$settings, QWidget $\ast$parent)
+\item 
+\mbox{\hyperlink{classSettingsWindow_a380a4a1227c28e0b3499175b10cea230}{$\sim$\+Settings\+Window}} ()
+\item 
+void \mbox{\hyperlink{classSettingsWindow_ac9ea1fb0ea03c7e6ed4d8df946fc97c6}{set\+Color}} (QString color)
+\item 
+void \mbox{\hyperlink{classSettingsWindow_a603440cf1224fb11673a6ae066f41bd6}{set\+Background\+Path}} (QString background\+Path)
+\item 
+QString \mbox{\hyperlink{classSettingsWindow_a35cc9b898c81950f612b6d1f8de84f21}{get\+Color}} ()
+\item 
+QString \mbox{\hyperlink{classSettingsWindow_a61c276c94db8f2675e0b6b85afc52063}{get\+Background\+Path}} ()
+\item 
+QString \mbox{\hyperlink{classSettingsWindow_a68ab5267108783e338106042ea869817}{text\+To\+Color}} (const QString text)
+\item 
+QString \mbox{\hyperlink{classSettingsWindow_a944f5633544d58a818a124ba5b802563}{text\+To\+Path}} (const QString text)
+\item 
+QString \mbox{\hyperlink{classSettingsWindow_afe56d24c5ffe5702ca042e1941655fd3}{color\+To\+Path}} (const QString color)
+\item 
+QString \mbox{\hyperlink{classSettingsWindow_a131aa9570c94259a997660b21b3ffa31}{color\+To\+Text}} (QString color)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Settings\+Window $\ast$ \mbox{\hyperlink{classSettingsWindow_a6b9139d42445e90ee22ba34c669d9ce1}{ui}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{classSettingsWindow_a4d2b502e2250a247523bdc962f9ef15f}{get\+Color\+Name\+From\+Value}} (const QMap$<$ QString, QString $>$ \&color\+Map, const QString \&value)
+\item 
+void \mbox{\hyperlink{classSettingsWindow_a910fbfe368953abd87e156a81521c8dd}{save}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSettings}{Settings}} $\ast$ \mbox{\hyperlink{classSettingsWindow_a56fd6ea34a15156419b0ae4ba1e9758c}{m\+\_\+settings}}
+\item 
+const QMap$<$ QString, QString $>$ \mbox{\hyperlink{classSettingsWindow_a437008199a7d8ccec3cfb0e7ac05f8df}{m\+\_\+theme\+Colors}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSettingsWindow_a6c70cd2f772a9245a1a267bfab7f259b}\label{classSettingsWindow_a6c70cd2f772a9245a1a267bfab7f259b}} 
+\index{SettingsWindow@{SettingsWindow}!SettingsWindow@{SettingsWindow}}
+\index{SettingsWindow@{SettingsWindow}!SettingsWindow@{SettingsWindow}}
+\doxysubsubsection{\texorpdfstring{SettingsWindow()}{SettingsWindow()}}
+{\footnotesize\ttfamily Settings\+Window\+::\+Settings\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSettings}{Settings}} $\ast$}]{settings,  }\item[{QWidget $\ast$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classSettingsWindow_a380a4a1227c28e0b3499175b10cea230}\label{classSettingsWindow_a380a4a1227c28e0b3499175b10cea230}} 
+\index{SettingsWindow@{SettingsWindow}!````~SettingsWindow@{$\sim$SettingsWindow}}
+\index{````~SettingsWindow@{$\sim$SettingsWindow}!SettingsWindow@{SettingsWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$SettingsWindow()}{~SettingsWindow()}}
+{\footnotesize\ttfamily Settings\+Window\+::$\sim$\+Settings\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSettingsWindow_ad683e49f33e4a420ab967a87aa9bb52c}\label{classSettingsWindow_ad683e49f33e4a420ab967a87aa9bb52c}} 
+\index{SettingsWindow@{SettingsWindow}!changeColor@{changeColor}}
+\index{changeColor@{changeColor}!SettingsWindow@{SettingsWindow}}
+\doxysubsubsection{\texorpdfstring{changeColor}{changeColor}}
+{\footnotesize\ttfamily void Settings\+Window\+::change\+Color (\begin{DoxyParamCaption}\item[{QString}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classSettingsWindow_a5453db6ee46f2cde569edd325bc1c585}\label{classSettingsWindow_a5453db6ee46f2cde569edd325bc1c585}} 
+\index{SettingsWindow@{SettingsWindow}!colorChanged@{colorChanged}}
+\index{colorChanged@{colorChanged}!SettingsWindow@{SettingsWindow}}
+\doxysubsubsection{\texorpdfstring{colorChanged}{colorChanged}}
+{\footnotesize\ttfamily void Settings\+Window\+::color\+Changed (\begin{DoxyParamCaption}\item[{const QString \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classSettingsWindow_afe56d24c5ffe5702ca042e1941655fd3}\label{classSettingsWindow_afe56d24c5ffe5702ca042e1941655fd3}} 
+\index{SettingsWindow@{SettingsWindow}!colorToPath@{colorToPath}}
+\index{colorToPath@{colorToPath}!SettingsWindow@{SettingsWindow}}
+\doxysubsubsection{\texorpdfstring{colorToPath()}{colorToPath()}}
+{\footnotesize\ttfamily QString Settings\+Window\+::color\+To\+Path (\begin{DoxyParamCaption}\item[{const QString}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSettingsWindow_a131aa9570c94259a997660b21b3ffa31}\label{classSettingsWindow_a131aa9570c94259a997660b21b3ffa31}} 
+\index{SettingsWindow@{SettingsWindow}!colorToText@{colorToText}}
+\index{colorToText@{colorToText}!SettingsWindow@{SettingsWindow}}
+\doxysubsubsection{\texorpdfstring{colorToText()}{colorToText()}}
+{\footnotesize\ttfamily QString Settings\+Window\+::color\+To\+Text (\begin{DoxyParamCaption}\item[{QString}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSettingsWindow_a79bfe243e8d446cf55769c296a72cbaf}\label{classSettingsWindow_a79bfe243e8d446cf55769c296a72cbaf}} 
+\index{SettingsWindow@{SettingsWindow}!enabledNotifications@{enabledNotifications}}
+\index{enabledNotifications@{enabledNotifications}!SettingsWindow@{SettingsWindow}}
+\doxysubsubsection{\texorpdfstring{enabledNotifications}{enabledNotifications}}
+{\footnotesize\ttfamily void Settings\+Window\+::enabled\+Notifications (\begin{DoxyParamCaption}\item[{const bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classSettingsWindow_a61c276c94db8f2675e0b6b85afc52063}\label{classSettingsWindow_a61c276c94db8f2675e0b6b85afc52063}} 
+\index{SettingsWindow@{SettingsWindow}!getBackgroundPath@{getBackgroundPath}}
+\index{getBackgroundPath@{getBackgroundPath}!SettingsWindow@{SettingsWindow}}
+\doxysubsubsection{\texorpdfstring{getBackgroundPath()}{getBackgroundPath()}}
+{\footnotesize\ttfamily QString Settings\+Window\+::get\+Background\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSettingsWindow_a35cc9b898c81950f612b6d1f8de84f21}\label{classSettingsWindow_a35cc9b898c81950f612b6d1f8de84f21}} 
+\index{SettingsWindow@{SettingsWindow}!getColor@{getColor}}
+\index{getColor@{getColor}!SettingsWindow@{SettingsWindow}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily QString Settings\+Window\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSettingsWindow_a4d2b502e2250a247523bdc962f9ef15f}\label{classSettingsWindow_a4d2b502e2250a247523bdc962f9ef15f}} 
+\index{SettingsWindow@{SettingsWindow}!getColorNameFromValue@{getColorNameFromValue}}
+\index{getColorNameFromValue@{getColorNameFromValue}!SettingsWindow@{SettingsWindow}}
+\doxysubsubsection{\texorpdfstring{getColorNameFromValue}{getColorNameFromValue}}
+{\footnotesize\ttfamily QString Settings\+Window\+::get\+Color\+Name\+From\+Value (\begin{DoxyParamCaption}\item[{const QMap$<$ QString, QString $>$ \&}]{color\+Map,  }\item[{const QString \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classSettingsWindow_a40c39b325c10704b4cceb40479334e7c}\label{classSettingsWindow_a40c39b325c10704b4cceb40479334e7c}} 
+\index{SettingsWindow@{SettingsWindow}!getNotifications@{getNotifications}}
+\index{getNotifications@{getNotifications}!SettingsWindow@{SettingsWindow}}
+\doxysubsubsection{\texorpdfstring{getNotifications}{getNotifications}}
+{\footnotesize\ttfamily bool Settings\+Window\+::get\+Notifications (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classSettingsWindow_a910fbfe368953abd87e156a81521c8dd}\label{classSettingsWindow_a910fbfe368953abd87e156a81521c8dd}} 
+\index{SettingsWindow@{SettingsWindow}!save@{save}}
+\index{save@{save}!SettingsWindow@{SettingsWindow}}
+\doxysubsubsection{\texorpdfstring{save}{save}}
+{\footnotesize\ttfamily void Settings\+Window\+::save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classSettingsWindow_a603440cf1224fb11673a6ae066f41bd6}\label{classSettingsWindow_a603440cf1224fb11673a6ae066f41bd6}} 
+\index{SettingsWindow@{SettingsWindow}!setBackgroundPath@{setBackgroundPath}}
+\index{setBackgroundPath@{setBackgroundPath}!SettingsWindow@{SettingsWindow}}
+\doxysubsubsection{\texorpdfstring{setBackgroundPath()}{setBackgroundPath()}}
+{\footnotesize\ttfamily void Settings\+Window\+::set\+Background\+Path (\begin{DoxyParamCaption}\item[{QString}]{background\+Path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSettingsWindow_ac9ea1fb0ea03c7e6ed4d8df946fc97c6}\label{classSettingsWindow_ac9ea1fb0ea03c7e6ed4d8df946fc97c6}} 
+\index{SettingsWindow@{SettingsWindow}!setColor@{setColor}}
+\index{setColor@{setColor}!SettingsWindow@{SettingsWindow}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily void Settings\+Window\+::set\+Color (\begin{DoxyParamCaption}\item[{QString}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSettingsWindow_ae3c9d2e315218c5d138ee84e25a2c8d3}\label{classSettingsWindow_ae3c9d2e315218c5d138ee84e25a2c8d3}} 
+\index{SettingsWindow@{SettingsWindow}!setNotifications@{setNotifications}}
+\index{setNotifications@{setNotifications}!SettingsWindow@{SettingsWindow}}
+\doxysubsubsection{\texorpdfstring{setNotifications}{setNotifications}}
+{\footnotesize\ttfamily void Settings\+Window\+::set\+Notifications (\begin{DoxyParamCaption}\item[{const bool}]{notifications }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classSettingsWindow_a68ab5267108783e338106042ea869817}\label{classSettingsWindow_a68ab5267108783e338106042ea869817}} 
+\index{SettingsWindow@{SettingsWindow}!textToColor@{textToColor}}
+\index{textToColor@{textToColor}!SettingsWindow@{SettingsWindow}}
+\doxysubsubsection{\texorpdfstring{textToColor()}{textToColor()}}
+{\footnotesize\ttfamily QString Settings\+Window\+::text\+To\+Color (\begin{DoxyParamCaption}\item[{const QString}]{text }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSettingsWindow_a944f5633544d58a818a124ba5b802563}\label{classSettingsWindow_a944f5633544d58a818a124ba5b802563}} 
+\index{SettingsWindow@{SettingsWindow}!textToPath@{textToPath}}
+\index{textToPath@{textToPath}!SettingsWindow@{SettingsWindow}}
+\doxysubsubsection{\texorpdfstring{textToPath()}{textToPath()}}
+{\footnotesize\ttfamily QString Settings\+Window\+::text\+To\+Path (\begin{DoxyParamCaption}\item[{const QString}]{text }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSettingsWindow_ac7439b05b852cf4615c2432b3ae67c1a}\label{classSettingsWindow_ac7439b05b852cf4615c2432b3ae67c1a}} 
+\index{SettingsWindow@{SettingsWindow}!updateNotificationIcon@{updateNotificationIcon}}
+\index{updateNotificationIcon@{updateNotificationIcon}!SettingsWindow@{SettingsWindow}}
+\doxysubsubsection{\texorpdfstring{updateNotificationIcon}{updateNotificationIcon}}
+{\footnotesize\ttfamily void Settings\+Window\+::update\+Notification\+Icon (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSettingsWindow_a56fd6ea34a15156419b0ae4ba1e9758c}\label{classSettingsWindow_a56fd6ea34a15156419b0ae4ba1e9758c}} 
+\index{SettingsWindow@{SettingsWindow}!m\_settings@{m\_settings}}
+\index{m\_settings@{m\_settings}!SettingsWindow@{SettingsWindow}}
+\doxysubsubsection{\texorpdfstring{m\_settings}{m\_settings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSettings}{Settings}}$\ast$ Settings\+Window\+::m\+\_\+settings\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSettingsWindow_a437008199a7d8ccec3cfb0e7ac05f8df}\label{classSettingsWindow_a437008199a7d8ccec3cfb0e7ac05f8df}} 
+\index{SettingsWindow@{SettingsWindow}!m\_themeColors@{m\_themeColors}}
+\index{m\_themeColors@{m\_themeColors}!SettingsWindow@{SettingsWindow}}
+\doxysubsubsection{\texorpdfstring{m\_themeColors}{m\_themeColors}}
+{\footnotesize\ttfamily const QMap$<$QString, QString$>$ Settings\+Window\+::m\+\_\+theme\+Colors\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{        \{\textcolor{stringliteral}{"{}Blue"{}}, \textcolor{stringliteral}{"{}\#9EAEF8"{}}\},}
+\DoxyCodeLine{        \{\textcolor{stringliteral}{"{}Green"{}}, \textcolor{stringliteral}{"{}\#ABD49A"{}}\},}
+\DoxyCodeLine{        \{\textcolor{stringliteral}{"{}Orange"{}}, \textcolor{stringliteral}{"{}\#F1BC6A"{}}\},}
+\DoxyCodeLine{        \{\textcolor{stringliteral}{"{}Pink"{}}, \textcolor{stringliteral}{"{}\#FFBCE5"{}}\},}
+\DoxyCodeLine{        \{\textcolor{stringliteral}{"{}Purple"{}}, \textcolor{stringliteral}{"{}\#D8B7F1"{}}\},}
+\DoxyCodeLine{        \{\textcolor{stringliteral}{"{}Default"{}}, \textcolor{stringliteral}{"{}\#A5A9A0"{}}\}}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSettingsWindow_a6b9139d42445e90ee22ba34c669d9ce1}\label{classSettingsWindow_a6b9139d42445e90ee22ba34c669d9ce1}} 
+\index{SettingsWindow@{SettingsWindow}!ui@{ui}}
+\index{ui@{ui}!SettingsWindow@{SettingsWindow}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Settings\+Window$\ast$ Settings\+Window\+::ui}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+k\+Organizify/src/\mbox{\hyperlink{settingswindow_8h}{settingswindow.\+h}}\item 
+k\+Organizify/src/\mbox{\hyperlink{settingswindow_8cpp}{settingswindow.\+cpp}}\end{DoxyCompactItemize}

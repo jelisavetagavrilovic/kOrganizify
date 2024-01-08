@@ -1,0 +1,162 @@
+.TH "SettingsWindow" 3 "Mon Jan 8 2024" "kOrganizify" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SettingsWindow
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <settingswindow\&.h>\fP
+.PP
+Inherits QMainWindow\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBchangeColor\fP (QString color)"
+.br
+.ti -1c
+.RI "void \fBsetNotifications\fP (const bool notifications)"
+.br
+.ti -1c
+.RI "bool \fBgetNotifications\fP () const"
+.br
+.ti -1c
+.RI "void \fBupdateNotificationIcon\fP (bool state)"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBcolorChanged\fP (const QString &color)"
+.br
+.ti -1c
+.RI "void \fBenabledNotifications\fP (const bool enabled)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSettingsWindow\fP (\fBSettings\fP *settings, QWidget *parent)"
+.br
+.ti -1c
+.RI "\fB~SettingsWindow\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetColor\fP (QString color)"
+.br
+.ti -1c
+.RI "void \fBsetBackgroundPath\fP (QString backgroundPath)"
+.br
+.ti -1c
+.RI "QString \fBgetColor\fP ()"
+.br
+.ti -1c
+.RI "QString \fBgetBackgroundPath\fP ()"
+.br
+.ti -1c
+.RI "QString \fBtextToColor\fP (const QString text)"
+.br
+.ti -1c
+.RI "QString \fBtextToPath\fP (const QString text)"
+.br
+.ti -1c
+.RI "QString \fBcolorToPath\fP (const QString color)"
+.br
+.ti -1c
+.RI "QString \fBcolorToText\fP (QString color)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "Ui::SettingsWindow * \fBui\fP"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "QString \fBgetColorNameFromValue\fP (const QMap< QString, QString > &colorMap, const QString &value)"
+.br
+.ti -1c
+.RI "void \fBsave\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSettings\fP * \fBm_settings\fP"
+.br
+.ti -1c
+.RI "const QMap< QString, QString > \fBm_themeColors\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SettingsWindow::SettingsWindow (\fBSettings\fP * settings, QWidget * parent)\fC [explicit]\fP"
+
+.SS "SettingsWindow::~SettingsWindow ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void SettingsWindow::changeColor (QString color)\fC [slot]\fP"
+
+.SS "void SettingsWindow::colorChanged (const QString & color)\fC [signal]\fP"
+
+.SS "QString SettingsWindow::colorToPath (const QString color)"
+
+.SS "QString SettingsWindow::colorToText (QString color)"
+
+.SS "void SettingsWindow::enabledNotifications (const bool enabled)\fC [signal]\fP"
+
+.SS "QString SettingsWindow::getBackgroundPath ()"
+
+.SS "QString SettingsWindow::getColor ()"
+
+.SS "QString SettingsWindow::getColorNameFromValue (const QMap< QString, QString > & colorMap, const QString & value)\fC [private]\fP, \fC [slot]\fP"
+
+.SS "bool SettingsWindow::getNotifications () const\fC [slot]\fP"
+
+.SS "void SettingsWindow::save ()\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void SettingsWindow::setBackgroundPath (QString backgroundPath)"
+
+.SS "void SettingsWindow::setColor (QString color)"
+
+.SS "void SettingsWindow::setNotifications (const bool notifications)\fC [slot]\fP"
+
+.SS "QString SettingsWindow::textToColor (const QString text)"
+
+.SS "QString SettingsWindow::textToPath (const QString text)"
+
+.SS "void SettingsWindow::updateNotificationIcon (bool state)\fC [slot]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSettings\fP* SettingsWindow::m_settings\fC [private]\fP"
+
+.SS "const QMap<QString, QString> SettingsWindow::m_themeColors\fC [private]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+{
+        {"Blue", "#9EAEF8"},
+        {"Green", "#ABD49A"},
+        {"Orange", "#F1BC6A"},
+        {"Pink", "#FFBCE5"},
+        {"Purple", "#D8B7F1"},
+        {"Default", "#A5A9A0"}
+    }
+.fi
+.SS "Ui::SettingsWindow* SettingsWindow::ui"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for kOrganizify from the source code\&.

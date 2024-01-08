@@ -1,0 +1,56 @@
+digraph "kOrganizify/src/calendar.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="kOrganizify/src/calendar.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="kOrganizify/src/basiceventwindow.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$basiceventwindow_8h.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="kOrganizify/src/appwindow.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$appwindow_8h.html",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="kOrganizify/src/appwindow.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$appwindow_8cpp.html",tooltip=" "];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="kOrganizify/src/mainwindow.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mainwindow_8h.html",tooltip=" "];
+  Node5 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="kOrganizify/src/main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html",tooltip=" "];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="kOrganizify/src/mainwindow.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mainwindow_8cpp.html",tooltip=" "];
+  Node2 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="kOrganizify/src/basiceventwindow.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$basiceventwindow_8cpp.html",tooltip=" "];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="kOrganizify/src/calendar.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$calendar_8cpp.html",tooltip=" "];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="kOrganizify/src/client.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$client_8h.html",tooltip=" "];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="kOrganizify/src/client.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$client_8cpp.html",tooltip=" "];
+  Node10 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="kOrganizify/src/user.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$user_8h.html",tooltip=" "];
+  Node12 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="kOrganizify/src/user.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$user_8cpp.html",tooltip=" "];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="kOrganizify/src/eventwindow.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$eventwindow_8h.html",tooltip=" "];
+  Node14 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node14 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="kOrganizify/src/eventwindow.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$eventwindow_8cpp.html",tooltip=" "];
+  Node1 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="kOrganizify/src/notifications.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$notifications_8h.html",tooltip=" "];
+  Node16 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node16 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node17 [label="kOrganizify/src/notifications.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$notifications_8cpp.html",tooltip=" "];
+  Node1 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node18 [label="kOrganizify/src/scheduler.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$scheduler_8h.html",tooltip=" "];
+  Node18 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node18 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node19 [label="kOrganizify/src/scheduler.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$scheduler_8cpp.html",tooltip=" "];
+  Node1 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node20 [label="kOrganizify/src/syncwindow.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$syncwindow_8h.html",tooltip=" "];
+  Node20 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node20 -> Node21 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node21 [label="kOrganizify/src/syncwindow.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$syncwindow_8cpp.html",tooltip=" "];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+}

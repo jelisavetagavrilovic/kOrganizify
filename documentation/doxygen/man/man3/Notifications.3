@@ -1,0 +1,88 @@
+.TH "Notifications" 3 "Mon Jan 8 2024" "kOrganizify" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Notifications
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <notifications\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBenabledNotifications\fP (const bool enabled)"
+.br
+.ti -1c
+.RI "void \fBupdatedEvents\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBNotifications\fP (\fBCalendar\fP *calendar)"
+.br
+.ti -1c
+.RI "\fB~Notifications\fP ()"
+.br
+.ti -1c
+.RI "void \fBcheckEvents\fP (const QList< \fBEvent\fP > &filteredEvents)"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "static void \fBshowEvent\fP (const \fBEvent\fP &event)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBCalendar\fP * \fBm_calendar\fP"
+.br
+.ti -1c
+.RI "QTimer * \fBm_timer\fP"
+.br
+.ti -1c
+.RI "bool \fBm_enabled\fP"
+.br
+.ti -1c
+.RI "QList< \fBEvent\fP > \fBm_filteredEvents\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Notifications::Notifications (\fBCalendar\fP * calendar)"
+
+.SS "Notifications::~Notifications ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void Notifications::checkEvents (const QList< \fBEvent\fP > & filteredEvents)"
+
+.SS "void Notifications::enabledNotifications (const bool enabled)\fC [slot]\fP"
+
+.SS "void Notifications::showEvent (const \fBEvent\fP & event)\fC [static]\fP, \fC [private]\fP, \fC [slot]\fP"
+
+.SS "void Notifications::updatedEvents ()\fC [slot]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBCalendar\fP* Notifications::m_calendar\fC [private]\fP"
+
+.SS "bool Notifications::m_enabled\fC [private]\fP"
+
+.SS "QList<\fBEvent\fP> Notifications::m_filteredEvents\fC [private]\fP"
+
+.SS "QTimer* Notifications::m_timer\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for kOrganizify from the source code\&.

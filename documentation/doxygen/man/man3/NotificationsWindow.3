@@ -1,0 +1,59 @@
+.TH "NotificationsWindow" 3 "Mon Jan 8 2024" "kOrganizify" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NotificationsWindow
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <notificationswindow\&.h>\fP
+.PP
+Inherits QWidget\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBupdateWindow\fP (const QString &name, const QString &time, const QString &location)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBNotificationsWindow\fP (QWidget *parent=nullptr)"
+.br
+.ti -1c
+.RI "\fB~NotificationsWindow\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "Ui::NotificationsWindow * \fBui\fP"
+.br
+.ti -1c
+.RI "QSoundEffect * \fBm_mediaPlayer\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "NotificationsWindow::NotificationsWindow (QWidget * parent = \fCnullptr\fP)\fC [explicit]\fP"
+
+.SS "NotificationsWindow::~NotificationsWindow ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void NotificationsWindow::updateWindow (const QString & name, const QString & time, const QString & location)\fC [slot]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "QSoundEffect* NotificationsWindow::m_mediaPlayer\fC [private]\fP"
+
+.SS "Ui::NotificationsWindow* NotificationsWindow::ui\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for kOrganizify from the source code\&.

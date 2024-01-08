@@ -1,0 +1,203 @@
+\hypertarget{classClient}{}\doxysection{Client Class Reference}
+\label{classClient}\index{Client@{Client}}
+
+
+{\ttfamily \#include $<$client.\+h$>$}
+
+
+
+Inheritance diagram for Client\+:
+% FIG 0
+
+
+Collaboration diagram for Client\+:
+% FIG 1
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classClient_a76b78d338a86f3db291a3365208d6114}{read\+From\+Server}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classClient}{Client}} can receive one of the following messages\+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClient_ac2cdeb8b0249c1bf0ddd2167da861ad4}{disconnected}} ()
+\item 
+void \mbox{\hyperlink{classClient_a6a5fe81068f598e3cfd7e98c62f8f194}{sync\+Response}} (bool response, QString username, QString friend\+Name, int duration, \mbox{\hyperlink{classCalendar}{Calendar}} cal=\{\}) const
+\item 
+void \mbox{\hyperlink{classClient_a373ad840e476a7f94c936b3b6ec994c7}{event\+Response}} (bool response)
+\item 
+void \mbox{\hyperlink{classClient_a12f947f0d5a33e7f3b2403c8d8ee5719}{sync\+Request}} (QString from, QString to, QString title\+Event, int duration, \mbox{\hyperlink{classCalendar}{Calendar}} calendar)
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classClient_a87f8a60811eb9d3b631d3900f2e82423}{new\+User\+Logged\+In}} (const QString \&username)
+\item 
+void \mbox{\hyperlink{classClient_af6b8e867d5366deb2ac60745b862da01}{disconnected\+User}} (const QString \&username)
+\item 
+void \mbox{\hyperlink{classClient_a6b50128773f66c0c5da153e215be12e8}{show\+Sync\+Window}} (QString from, QString event\+Title, int duration)
+\item 
+void \mbox{\hyperlink{classClient_a9ae896a498cc407fb05c949b2f7ce068}{sync\+Request\+Denied}} (QString friend\+Name)
+\item 
+void \mbox{\hyperlink{classClient_a01f6701276aa43085d4616237a5f7a7b}{sync\+Success}} (QDate\+Time start\+Time, QDate\+Time end\+Time, QString event\+Title)
+\item 
+void \mbox{\hyperlink{classClient_aa602ac033e013d5b972de5729f310fd3}{new\+Event\+Sync}} (QString event\+Title, QString start\+Time)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classClient_a5c0365b0ad125f3d228df88bbde4d12c}{Client}} (QString username, QObject $\ast$parent=nullptr)
+\item 
+void \mbox{\hyperlink{classClient_a826559400b28f070747919b53c88865c}{logout\+Happened}} (QString username)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{classClient_abb6d3f2487c068e1635155b413dede2e}{m\+\_\+username}}
+\item 
+QList$<$ QString $>$ \mbox{\hyperlink{classClient_a33add91c4acfa665135e024fbd7aaa0c}{m\+\_\+friends}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classClient_a35f70c84fff5a3c6110f45abd0f55dfd}{send\+Message}} (QString message)
+\item 
+bool \mbox{\hyperlink{classClient_adf8ccca8b2ad74600faf6c55d936aa6c}{make\+Connection}} (QHost\+Address\+::\+Special\+Address address)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QTcp\+Socket $\ast$ \mbox{\hyperlink{classClient_a87cd45a74519455ef95406ff82d05aeb}{m\+\_\+socket}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classClient_a5c0365b0ad125f3d228df88bbde4d12c}\label{classClient_a5c0365b0ad125f3d228df88bbde4d12c}} 
+\index{Client@{Client}!Client@{Client}}
+\index{Client@{Client}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{Client()}{Client()}}
+{\footnotesize\ttfamily Client\+::\+Client (\begin{DoxyParamCaption}\item[{QString}]{username,  }\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classClient_ac2cdeb8b0249c1bf0ddd2167da861ad4}\label{classClient_ac2cdeb8b0249c1bf0ddd2167da861ad4}} 
+\index{Client@{Client}!disconnected@{disconnected}}
+\index{disconnected@{disconnected}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{disconnected}{disconnected}}
+{\footnotesize\ttfamily void Client\+::disconnected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classClient_af6b8e867d5366deb2ac60745b862da01}\label{classClient_af6b8e867d5366deb2ac60745b862da01}} 
+\index{Client@{Client}!disconnectedUser@{disconnectedUser}}
+\index{disconnectedUser@{disconnectedUser}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{disconnectedUser}{disconnectedUser}}
+{\footnotesize\ttfamily void Client\+::disconnected\+User (\begin{DoxyParamCaption}\item[{const QString \&}]{username }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classClient_a373ad840e476a7f94c936b3b6ec994c7}\label{classClient_a373ad840e476a7f94c936b3b6ec994c7}} 
+\index{Client@{Client}!eventResponse@{eventResponse}}
+\index{eventResponse@{eventResponse}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{eventResponse}{eventResponse}}
+{\footnotesize\ttfamily void Client\+::event\+Response (\begin{DoxyParamCaption}\item[{bool}]{response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classClient_a826559400b28f070747919b53c88865c}\label{classClient_a826559400b28f070747919b53c88865c}} 
+\index{Client@{Client}!logoutHappened@{logoutHappened}}
+\index{logoutHappened@{logoutHappened}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{logoutHappened()}{logoutHappened()}}
+{\footnotesize\ttfamily void Client\+::logout\+Happened (\begin{DoxyParamCaption}\item[{QString}]{username }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classClient_adf8ccca8b2ad74600faf6c55d936aa6c}\label{classClient_adf8ccca8b2ad74600faf6c55d936aa6c}} 
+\index{Client@{Client}!makeConnection@{makeConnection}}
+\index{makeConnection@{makeConnection}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{makeConnection()}{makeConnection()}}
+{\footnotesize\ttfamily bool Client\+::make\+Connection (\begin{DoxyParamCaption}\item[{QHost\+Address\+::\+Special\+Address}]{address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classClient_aa602ac033e013d5b972de5729f310fd3}\label{classClient_aa602ac033e013d5b972de5729f310fd3}} 
+\index{Client@{Client}!newEventSync@{newEventSync}}
+\index{newEventSync@{newEventSync}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{newEventSync}{newEventSync}}
+{\footnotesize\ttfamily void Client\+::new\+Event\+Sync (\begin{DoxyParamCaption}\item[{QString}]{event\+Title,  }\item[{QString}]{start\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classClient_a87f8a60811eb9d3b631d3900f2e82423}\label{classClient_a87f8a60811eb9d3b631d3900f2e82423}} 
+\index{Client@{Client}!newUserLoggedIn@{newUserLoggedIn}}
+\index{newUserLoggedIn@{newUserLoggedIn}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{newUserLoggedIn}{newUserLoggedIn}}
+{\footnotesize\ttfamily void Client\+::new\+User\+Logged\+In (\begin{DoxyParamCaption}\item[{const QString \&}]{username }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classClient_a76b78d338a86f3db291a3365208d6114}\label{classClient_a76b78d338a86f3db291a3365208d6114}} 
+\index{Client@{Client}!readFromServer@{readFromServer}}
+\index{readFromServer@{readFromServer}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{readFromServer}{readFromServer}}
+{\footnotesize\ttfamily void Client\+::read\+From\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{classClient}{Client}} can receive one of the following messages\+: 
+
+
+\begin{DoxyEnumerate}
+\item new connection
+\item disconnected
+\item sync\+Request
+\item reject\+Sync
+\item new sync event
+\item agreed sync 
+\end{DoxyEnumerate}\mbox{\Hypertarget{classClient_a35f70c84fff5a3c6110f45abd0f55dfd}\label{classClient_a35f70c84fff5a3c6110f45abd0f55dfd}} 
+\index{Client@{Client}!sendMessage@{sendMessage}}
+\index{sendMessage@{sendMessage}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{sendMessage()}{sendMessage()}}
+{\footnotesize\ttfamily void Client\+::send\+Message (\begin{DoxyParamCaption}\item[{QString}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classClient_a6b50128773f66c0c5da153e215be12e8}\label{classClient_a6b50128773f66c0c5da153e215be12e8}} 
+\index{Client@{Client}!showSyncWindow@{showSyncWindow}}
+\index{showSyncWindow@{showSyncWindow}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{showSyncWindow}{showSyncWindow}}
+{\footnotesize\ttfamily void Client\+::show\+Sync\+Window (\begin{DoxyParamCaption}\item[{QString}]{from,  }\item[{QString}]{event\+Title,  }\item[{int}]{duration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classClient_a12f947f0d5a33e7f3b2403c8d8ee5719}\label{classClient_a12f947f0d5a33e7f3b2403c8d8ee5719}} 
+\index{Client@{Client}!syncRequest@{syncRequest}}
+\index{syncRequest@{syncRequest}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{syncRequest}{syncRequest}}
+{\footnotesize\ttfamily void Client\+::sync\+Request (\begin{DoxyParamCaption}\item[{QString}]{from,  }\item[{QString}]{to,  }\item[{QString}]{title\+Event,  }\item[{int}]{duration,  }\item[{\mbox{\hyperlink{classCalendar}{Calendar}}}]{calendar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classClient_a9ae896a498cc407fb05c949b2f7ce068}\label{classClient_a9ae896a498cc407fb05c949b2f7ce068}} 
+\index{Client@{Client}!syncRequestDenied@{syncRequestDenied}}
+\index{syncRequestDenied@{syncRequestDenied}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{syncRequestDenied}{syncRequestDenied}}
+{\footnotesize\ttfamily void Client\+::sync\+Request\+Denied (\begin{DoxyParamCaption}\item[{QString}]{friend\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classClient_a6a5fe81068f598e3cfd7e98c62f8f194}\label{classClient_a6a5fe81068f598e3cfd7e98c62f8f194}} 
+\index{Client@{Client}!syncResponse@{syncResponse}}
+\index{syncResponse@{syncResponse}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{syncResponse}{syncResponse}}
+{\footnotesize\ttfamily void Client\+::sync\+Response (\begin{DoxyParamCaption}\item[{bool}]{response,  }\item[{QString}]{username,  }\item[{QString}]{friend\+Name,  }\item[{int}]{duration,  }\item[{\mbox{\hyperlink{classCalendar}{Calendar}}}]{cal = {\ttfamily \{\}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classClient_a01f6701276aa43085d4616237a5f7a7b}\label{classClient_a01f6701276aa43085d4616237a5f7a7b}} 
+\index{Client@{Client}!syncSuccess@{syncSuccess}}
+\index{syncSuccess@{syncSuccess}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{syncSuccess}{syncSuccess}}
+{\footnotesize\ttfamily void Client\+::sync\+Success (\begin{DoxyParamCaption}\item[{QDate\+Time}]{start\+Time,  }\item[{QDate\+Time}]{end\+Time,  }\item[{QString}]{event\+Title }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classClient_a33add91c4acfa665135e024fbd7aaa0c}\label{classClient_a33add91c4acfa665135e024fbd7aaa0c}} 
+\index{Client@{Client}!m\_friends@{m\_friends}}
+\index{m\_friends@{m\_friends}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{m\_friends}{m\_friends}}
+{\footnotesize\ttfamily QList$<$QString$>$ Client\+::m\+\_\+friends}
+
+\mbox{\Hypertarget{classClient_a87cd45a74519455ef95406ff82d05aeb}\label{classClient_a87cd45a74519455ef95406ff82d05aeb}} 
+\index{Client@{Client}!m\_socket@{m\_socket}}
+\index{m\_socket@{m\_socket}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{m\_socket}{m\_socket}}
+{\footnotesize\ttfamily QTcp\+Socket$\ast$ Client\+::m\+\_\+socket\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classClient_abb6d3f2487c068e1635155b413dede2e}\label{classClient_abb6d3f2487c068e1635155b413dede2e}} 
+\index{Client@{Client}!m\_username@{m\_username}}
+\index{m\_username@{m\_username}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{m\_username}{m\_username}}
+{\footnotesize\ttfamily QString Client\+::m\+\_\+username}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+k\+Organizify/src/\mbox{\hyperlink{client_8h}{client.\+h}}\item 
+k\+Organizify/src/\mbox{\hyperlink{client_8cpp}{client.\+cpp}}\end{DoxyCompactItemize}

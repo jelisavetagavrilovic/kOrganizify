@@ -1,0 +1,105 @@
+.TH "Settings" 3 "Mon Jan 8 2024" "kOrganizify" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Settings
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <settings\&.h>\fP
+.PP
+Inherits \fBSaveLoad\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSettings\fP (QString color='#A5A9A0', bool notifications=false)"
+.br
+.ti -1c
+.RI "bool \fBgetNotifications\fP () const"
+.br
+.ti -1c
+.RI "void \fBloadData\fP (const QString &username)"
+.br
+.ti -1c
+.RI "void \fBsaveData\fP (const QString &username)"
+.br
+.ti -1c
+.RI "void \fBfromJson\fP (const QJsonObject &jsonObject) override"
+.br
+.ti -1c
+.RI "void \fBsetColor\fP (QString color)"
+.br
+.ti -1c
+.RI "void \fBsetBackgroundPath\fP (QString \fBbackgroundPath\fP)"
+.br
+.ti -1c
+.RI "void \fBsetNotifications\fP (bool notifications)"
+.br
+.ti -1c
+.RI "QJsonValue \fBtoJson\fP () const override"
+.br
+.ti -1c
+.RI "QString \fBgetColor\fP () const"
+.br
+.ti -1c
+.RI "QString \fBbackgroundPath\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBm_color\fP"
+.br
+.ti -1c
+.RI "QString \fBm_backgroundPath\fP"
+.br
+.ti -1c
+.RI "bool \fBm_notifications\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Settings::Settings (QString color = \fC'#A5A9A0'\fP, bool notifications = \fCfalse\fP)\fC [explicit]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "QString Settings::backgroundPath ()"
+
+.SS "void Settings::fromJson (const QJsonObject & jsonObject)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBSaveLoad\fP\&.
+.SS "QString Settings::getColor () const"
+
+.SS "bool Settings::getNotifications () const"
+
+.SS "void Settings::loadData (const QString & username)"
+
+.SS "void Settings::saveData (const QString & username)"
+
+.SS "void Settings::setBackgroundPath (QString backgroundPath)"
+
+.SS "void Settings::setColor (QString color)"
+
+.SS "void Settings::setNotifications (bool notifications)"
+
+.SS "QJsonValue Settings::toJson () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBSaveLoad\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QString Settings::m_backgroundPath\fC [private]\fP"
+
+.SS "QString Settings::m_color\fC [private]\fP"
+
+.SS "bool Settings::m_notifications\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for kOrganizify from the source code\&.

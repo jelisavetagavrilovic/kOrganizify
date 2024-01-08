@@ -1,0 +1,176 @@
+.TH "Event" 3 "Mon Jan 8 2024" "kOrganizify" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Event
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <event\&.h>\fP
+.PP
+Inherits \fBBasicEvent\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEvent\fP ()"
+.br
+.ti -1c
+.RI "\fBEvent\fP (const \fBBasicEvent\fP &basicEvent)"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "void \fBdeleteString\fP (QString &str)"
+.br
+.ti -1c
+.RI "QString \fBgetTitle\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTitle\fP (const QString &title)"
+.br
+.ti -1c
+.RI "int \fBgetDuration\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDuration\fP (const int duration)"
+.br
+.ti -1c
+.RI "void \fBsetDuration\fP ()"
+.br
+.ti -1c
+.RI "QDateTime \fBgetStartTime\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetStartTime\fP (const QDateTime &startTime)"
+.br
+.ti -1c
+.RI "QDateTime \fBgetEndTime\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetEndTime\fP (const QDateTime &endTime)"
+.br
+.ti -1c
+.RI "QString \fBgetDescription\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDescription\fP (const QString &description)"
+.br
+.ti -1c
+.RI "QString \fBgetLocation\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLocation\fP (const QString &location)"
+.br
+.ti -1c
+.RI "\fBCustomEventPriority\fP \fBgetPriority\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPriority\fP (\fBCustomEventPriority\fP priority)"
+.br
+.ti -1c
+.RI "bool \fBoverlapsWith\fP (const \fBEvent\fP &other) const"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBEvent\fP &other) const"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBm_title\fP"
+.br
+.ti -1c
+.RI "QDateTime \fBm_startTime\fP"
+.br
+.ti -1c
+.RI "QDateTime \fBm_endTime\fP"
+.br
+.ti -1c
+.RI "QString \fBm_description\fP"
+.br
+.ti -1c
+.RI "QString \fBm_location\fP"
+.br
+.ti -1c
+.RI "\fBCustomEventPriority\fP \fBm_priority\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "uint \fBqHash\fP (const \fBEvent\fP &event)"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Event::Event ()"
+
+.SS "Event::Event (const \fBBasicEvent\fP & basicEvent)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void Event::clear ()"
+
+.SS "void Event::deleteString (QString & str)"
+
+.SS "QString Event::getDescription () const"
+
+.SS "int Event::getDuration () const"
+
+.SS "QDateTime Event::getEndTime () const"
+
+.SS "QString Event::getLocation () const"
+
+.SS "\fBCustomEventPriority\fP Event::getPriority () const"
+
+.SS "QDateTime Event::getStartTime () const"
+
+.SS "QString Event::getTitle () const"
+
+.SS "bool Event::operator== (const \fBEvent\fP & other) const"
+
+.SS "bool Event::overlapsWith (const \fBEvent\fP & other) const"
+
+.SS "void Event::setDescription (const QString & description)"
+
+.SS "void Event::setDuration ()"
+
+.SS "void Event::setDuration (const int duration)"
+
+.SS "void Event::setEndTime (const QDateTime & endTime)"
+
+.SS "void Event::setLocation (const QString & location)"
+
+.SS "void Event::setPriority (\fBCustomEventPriority\fP priority)"
+
+.SS "void Event::setStartTime (const QDateTime & startTime)"
+
+.SS "void Event::setTitle (const QString & title)"
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "uint qHash (const \fBEvent\fP & event)\fC [friend]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "QString Event::m_description\fC [private]\fP"
+
+.SS "QDateTime Event::m_endTime\fC [private]\fP"
+
+.SS "QString Event::m_location\fC [private]\fP"
+
+.SS "\fBCustomEventPriority\fP Event::m_priority\fC [private]\fP"
+
+.SS "QDateTime Event::m_startTime\fC [private]\fP"
+
+.SS "QString Event::m_title\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for kOrganizify from the source code\&.

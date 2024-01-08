@@ -1,0 +1,99 @@
+\hypertarget{classSaveLoad}{}\doxysection{Save\+Load Class Reference}
+\label{classSaveLoad}\index{SaveLoad@{SaveLoad}}
+
+
+{\ttfamily \#include $<$saveload.\+h$>$}
+
+
+
+Inheritance diagram for Save\+Load\+:
+% FIG 0
+
+
+Collaboration diagram for Save\+Load\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSaveLoad_ad12fe99dac1bc8755610ddfa11324757}{Save\+Load}} (QObject $\ast$parent=nullptr)
+\item 
+QString \mbox{\hyperlink{classSaveLoad_adba074bd989113b14cd8f408099465fc}{get\+File\+Path}} (const QString \&username)
+\item 
+void \mbox{\hyperlink{classSaveLoad_a936276a111b56c683aa357b5b4c66392}{save\+Data}} (const QString \&username)
+\item 
+void \mbox{\hyperlink{classSaveLoad_aa65dfc33822e446af5d2a774fb4e4205}{load\+Data}} (const QString \&username)
+\item 
+virtual QJson\+Value \mbox{\hyperlink{classSaveLoad_ad40a777954df28028579624c19f2d37a}{to\+Json}} () const =0
+\item 
+virtual void \mbox{\hyperlink{classSaveLoad_a05c9c7a31d4e909f05c1028da44f9deb}{from\+Json}} (const QJson\+Object \&json\+Object)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QJson\+Object \mbox{\hyperlink{classSaveLoad_aa82a2fc9a27d60f33130649219ebe20a}{m\+\_\+json\+Object}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSaveLoad_ad12fe99dac1bc8755610ddfa11324757}\label{classSaveLoad_ad12fe99dac1bc8755610ddfa11324757}} 
+\index{SaveLoad@{SaveLoad}!SaveLoad@{SaveLoad}}
+\index{SaveLoad@{SaveLoad}!SaveLoad@{SaveLoad}}
+\doxysubsubsection{\texorpdfstring{SaveLoad()}{SaveLoad()}}
+{\footnotesize\ttfamily Save\+Load\+::\+Save\+Load (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSaveLoad_a05c9c7a31d4e909f05c1028da44f9deb}\label{classSaveLoad_a05c9c7a31d4e909f05c1028da44f9deb}} 
+\index{SaveLoad@{SaveLoad}!fromJson@{fromJson}}
+\index{fromJson@{fromJson}!SaveLoad@{SaveLoad}}
+\doxysubsubsection{\texorpdfstring{fromJson()}{fromJson()}}
+{\footnotesize\ttfamily virtual void Save\+Load\+::from\+Json (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classUser_ad34d1b634d63467f53740de78942b860}{User}}, \mbox{\hyperlink{classToDoList_ae49f7eabe503ff96c96ceedcf26338e5}{To\+Do\+List}}, \mbox{\hyperlink{classSettings_ac3e25efdd93fe97172135243c0791ca2}{Settings}}, and \mbox{\hyperlink{classCalendar_a56459b1986582fc6cad12663645f54aa}{Calendar}}.
+
+\mbox{\Hypertarget{classSaveLoad_adba074bd989113b14cd8f408099465fc}\label{classSaveLoad_adba074bd989113b14cd8f408099465fc}} 
+\index{SaveLoad@{SaveLoad}!getFilePath@{getFilePath}}
+\index{getFilePath@{getFilePath}!SaveLoad@{SaveLoad}}
+\doxysubsubsection{\texorpdfstring{getFilePath()}{getFilePath()}}
+{\footnotesize\ttfamily QString Save\+Load\+::get\+File\+Path (\begin{DoxyParamCaption}\item[{const QString \&}]{username }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSaveLoad_aa65dfc33822e446af5d2a774fb4e4205}\label{classSaveLoad_aa65dfc33822e446af5d2a774fb4e4205}} 
+\index{SaveLoad@{SaveLoad}!loadData@{loadData}}
+\index{loadData@{loadData}!SaveLoad@{SaveLoad}}
+\doxysubsubsection{\texorpdfstring{loadData()}{loadData()}}
+{\footnotesize\ttfamily void Save\+Load\+::load\+Data (\begin{DoxyParamCaption}\item[{const QString \&}]{username }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSaveLoad_a936276a111b56c683aa357b5b4c66392}\label{classSaveLoad_a936276a111b56c683aa357b5b4c66392}} 
+\index{SaveLoad@{SaveLoad}!saveData@{saveData}}
+\index{saveData@{saveData}!SaveLoad@{SaveLoad}}
+\doxysubsubsection{\texorpdfstring{saveData()}{saveData()}}
+{\footnotesize\ttfamily void Save\+Load\+::save\+Data (\begin{DoxyParamCaption}\item[{const QString \&}]{username }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSaveLoad_ad40a777954df28028579624c19f2d37a}\label{classSaveLoad_ad40a777954df28028579624c19f2d37a}} 
+\index{SaveLoad@{SaveLoad}!toJson@{toJson}}
+\index{toJson@{toJson}!SaveLoad@{SaveLoad}}
+\doxysubsubsection{\texorpdfstring{toJson()}{toJson()}}
+{\footnotesize\ttfamily virtual QJson\+Value Save\+Load\+::to\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classUser_ab59f0101721cd374f249926d52d32fcf}{User}}, \mbox{\hyperlink{classToDoList_a8fc5d4103ca891f45010a86959bc511d}{To\+Do\+List}}, \mbox{\hyperlink{classSettings_abdec1074951618f012c74386e365ecc8}{Settings}}, and \mbox{\hyperlink{classCalendar_ac1dc71883179427b8ee037ab3064aa92}{Calendar}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSaveLoad_aa82a2fc9a27d60f33130649219ebe20a}\label{classSaveLoad_aa82a2fc9a27d60f33130649219ebe20a}} 
+\index{SaveLoad@{SaveLoad}!m\_jsonObject@{m\_jsonObject}}
+\index{m\_jsonObject@{m\_jsonObject}!SaveLoad@{SaveLoad}}
+\doxysubsubsection{\texorpdfstring{m\_jsonObject}{m\_jsonObject}}
+{\footnotesize\ttfamily QJson\+Object Save\+Load\+::m\+\_\+json\+Object}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+k\+Organizify/src/\mbox{\hyperlink{saveload_8h}{saveload.\+h}}\item 
+k\+Organizify/src/\mbox{\hyperlink{saveload_8cpp}{saveload.\+cpp}}\end{DoxyCompactItemize}
