@@ -33,7 +33,7 @@ void MainWindow::loginUser() {
     m_user = new User(username, password);
 
     if (m_user->login(password)) {
-        AppWindow *appWindow = new AppWindow(m_user);
+        auto *appWindow = new AppWindow(m_user);
         appWindow->show();
         hide();
         connect(appWindow, &AppWindow::exit, this, &MainWindow::appear);
@@ -66,7 +66,7 @@ void MainWindow::registerUser()
     if (m_user->registerUser(password)) {
         ui->lblStatus->setText("Registration successful. Login successful.");
 
-        AppWindow *appWindow = new AppWindow(m_user);
+        auto *appWindow = new AppWindow(m_user);
         appWindow->show();
         hide();
         connect(appWindow, &AppWindow::exit, this, &MainWindow::appear);

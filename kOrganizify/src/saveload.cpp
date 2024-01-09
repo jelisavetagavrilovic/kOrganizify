@@ -10,7 +10,7 @@ SaveLoad::SaveLoad(QObject *parent)
     : QObject(parent)
 {}
 
-QString SaveLoad::getFilePath(const QString &username) {
+auto SaveLoad::getFilePath(const QString &username) -> QString {
     // getting  the absolute path to the source code
     QString sourceDir = QCoreApplication::applicationDirPath();
     // adding "user_data" to the end of the path

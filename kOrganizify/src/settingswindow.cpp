@@ -55,17 +55,17 @@ void SettingsWindow::setBackgroundPath(QString backgroundPath)
     m_settings->setBackgroundPath(backgroundPath);
 }
 
-QString SettingsWindow::getBackgroundPath()
+auto SettingsWindow::getBackgroundPath() -> QString
 {
     return m_settings->backgroundPath();
 }
 
-QString SettingsWindow::textToColor(QString text)
+auto SettingsWindow::textToColor(QString text) -> QString
 {
     return m_themeColors.value(text);
 }
 
-QString SettingsWindow::textToPath(QString text)
+auto SettingsWindow::textToPath(QString text) -> QString
 {
     QString sourceDir = QCoreApplication::applicationDirPath();
     QString pathBlue = QDir(sourceDir).filePath(":/resources/images/backgroundBlue.png");
@@ -87,12 +87,12 @@ QString SettingsWindow::textToPath(QString text)
     return themeBackgrounds.value(text, themeBackgrounds["Default"]);
 }
 
-QString SettingsWindow::colorToPath(QString color)
+auto SettingsWindow::colorToPath(QString color) -> QString
 {
     return textToPath(colorToText(color));
 }
 
-QString SettingsWindow::colorToText(QString color)
+auto SettingsWindow::colorToText(QString color) -> QString
 {
     return m_themeColors.key(color);
 }
@@ -107,12 +107,12 @@ void SettingsWindow::setColor(const QString color) {
     m_settings->setColor(color);
 }
 
-QString SettingsWindow::getColor()  {
+auto SettingsWindow::getColor() -> QString  {
     return m_settings->getColor();
 }
 
 
-QString SettingsWindow::getColorNameFromValue(const QMap<QString, QString> &colorMap, const QString &value) {
+auto SettingsWindow::getColorNameFromValue(const QMap<QString, QString> &colorMap, const QString &value) -> QString {
     for (auto it = colorMap.begin(); it != colorMap.end(); ++it) {
         if (it.value() == value) {
             return it.key();
@@ -125,7 +125,7 @@ void SettingsWindow::setNotifications(const bool notification) {
     m_settings->setNotifications(notification);
 }
 
-bool SettingsWindow::getNotifications() const {
+auto SettingsWindow::getNotifications() const -> bool {
     return m_settings->getNotifications();
 }
 

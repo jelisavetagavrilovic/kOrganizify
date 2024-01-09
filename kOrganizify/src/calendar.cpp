@@ -1,7 +1,7 @@
 #include "calendar.h"
 
 Calendar::Calendar()
-{}
+= default;
 
 Calendar::Calendar(const Calendar &other){
     m_events = other.m_events;
@@ -12,7 +12,7 @@ void Calendar::loadData(const QString &username) {
     fromJson(m_jsonObject);
 }
 
-QJsonValue Calendar::toJson() const {
+auto Calendar::toJson() const -> QJsonValue {
     QJsonArray jsonArray;
     for (const Event &event : m_events) {
         QJsonObject jsonObject;
@@ -54,7 +54,7 @@ void Calendar::saveData(const QString &username) {
 }
 
 void Calendar::addEvent(const BasicEvent &basicEvent) {
-    const Event *eventPtr = dynamic_cast<const Event*>(&basicEvent);
+    const auto *eventPtr = dynamic_cast<const Event*>(&basicEvent);
 
     if (eventPtr) {
         const Event &event = *eventPtr;
@@ -79,7 +79,7 @@ void Calendar::addEvent(const BasicEvent &basicEvent) {
 }
 
 void Calendar::removeEvent(const BasicEvent &basicEvent) {
-    const Event *eventPtr = dynamic_cast<const Event*>(&basicEvent);
+    const auto *eventPtr = dynamic_cast<const Event*>(&basicEvent);
     if (eventPtr) {
         const Event &event = *eventPtr;
         m_events.removeOne(event);
@@ -98,27 +98,27 @@ void Calendar::updateEvent(const Event &oldEvent, const Event &newEvent){
     }
 }
 
-QList<Event> Calendar::getEvents() const {
+auto Calendar::getEvents() const -> QList<Event> {
     return m_events;
 }
 
-BasicEvent Calendar::getBasicEvent(const int index) {
+auto Calendar::getBasicEvent(const int index) -> BasicEvent {
     return m_basicEvents[index];
 }
 
-Event Calendar::getEvent(const int index) {
+auto Calendar::getEvent(const int index) -> Event {
     return m_events[index];
 }
 
-int Calendar::sizeBasic() {
+auto Calendar::sizeBasic() -> int {
     return m_basicEvents.size();
 }
 
-int Calendar::size() {
+auto Calendar::size() -> int {
     return m_events.size();
 }
 
-QList<Event> Calendar::getEventsForWeek(const QDate& startDate, const QDate& endDate) const {
+auto Calendar::getEventsForWeek(const QDate& startDate, const QDate& endDate) const -> QList<Event> {
     QList<Event> weekEvents;
 
     for (const Event& event: m_events){
@@ -130,7 +130,7 @@ QList<Event> Calendar::getEventsForWeek(const QDate& startDate, const QDate& end
     return weekEvents;
 }
 
-bool Calendar::hasEventAt(const QDateTime& dateTime) const {
+auto Calendar::hasEventAt(const QDateTime& dateTime) const -> bool {
     for (const Event& event : m_events) {
         if (event.getStartTime() == dateTime) {
             return true;
@@ -146,7 +146,7 @@ void Calendar::clear() {
     m_events.clear();
 }
 
-Calendar Calendar::operator=(const Calendar &other) {
+auto Calendar::operator=(const Calendar &other) -> Calendar {
     m_basicEvents.clear();
     m_events.clear();
 
