@@ -2,35 +2,34 @@
 #ifndef NOTIFICATIONS_H
 #define NOTIFICATIONS_H
 
-#include <QObject>
 #include <QDateTime>
-#include <QTimer>
-#include <QMessageBox>
 #include <QList>
+#include <QMessageBox>
+#include <QObject>
+#include <QTimer>
 
 #include "calendar.h"
 #include "notificationswindow.h"
 
 class Notifications : public QObject {
-    Q_OBJECT
+  Q_OBJECT
 public:
-    Notifications(Calendar* calendar);
-    ~Notifications();
-    void checkEvents(const QList<Event>& filteredEvents);
+  Notifications(Calendar *calendar);
+  ~Notifications();
+  void checkEvents(const QList<Event> &filteredEvents);
 
 public slots:
-    void enabledNotifications(const bool enabled);
-    void updatedEvents();
+  void enabledNotifications(const bool enabled);
+  void updatedEvents();
 
 private slots:
-    static void showEvent(const Event& event);
+  static void showEvent(const Event &event);
 
 private:
-    Calendar* m_calendar;
-    QTimer* m_timer;
-    bool m_enabled;
-    QList<Event> m_filteredEvents;
-
+  Calendar *m_calendar;
+  QTimer *m_timer;
+  bool m_enabled;
+  QList<Event> m_filteredEvents;
 };
 
 #endif // NOTIFICATIONS_H

@@ -1,51 +1,48 @@
 #include "responsewindow.h"
 #include "ui_responsewindow.h"
 
-ResponseWindow::ResponseWindow(QString eventTitle, QString startTime, QWidget *parent)
-    : QWidget(parent),
-    ui(new Ui::ResponseWindow)
-{
-    ui->setupUi(this);
-    setWindowTitle("Notification");
-    setFixedSize(size());
+ResponseWindow::ResponseWindow(QString eventTitle, QString startTime,
+                               QWidget *parent)
+    : QWidget(parent), ui(new Ui::ResponseWindow) {
+  ui->setupUi(this);
+  setWindowTitle("Notification");
+  setFixedSize(size());
 
-    setDate(startTime);
-    setTitle(eventTitle);
+  setDate(startTime);
+  setTitle(eventTitle);
 
-    connect(ui->btnYes, &QPushButton::clicked, this, &ResponseWindow::onYesClicked);
-    connect(ui->btnNo, &QPushButton::clicked, this, &ResponseWindow::onNoClicked);
+  connect(ui->btnYes, &QPushButton::clicked, this,
+          &ResponseWindow::onYesClicked);
+  connect(ui->btnNo, &QPushButton::clicked, this, &ResponseWindow::onNoClicked);
 }
 
-ResponseWindow::~ResponseWindow() {
-    delete ui;
-}
+ResponseWindow::~ResponseWindow() { delete ui; }
 
 void ResponseWindow::setTitle(QString title) {
-    ui->lblQuestion->setText(title);
+  ui->lblQuestion->setText(title);
 }
 
 void ResponseWindow::setDate(QString startTime) {
-    m_date = startTime;
-    ui->lblDate->setText(startTime);
+  m_date = startTime;
+  ui->lblDate->setText(startTime);
 }
 
-QString ResponseWindow::getDate() {
-    return m_date;
-}
+QString ResponseWindow::getDate() { return m_date; }
 
 void ResponseWindow::onYesClicked() {
-    emit sendResponse(true);
-    close();
+  emit sendResponse(true);
+  close();
 }
 
 void ResponseWindow::onNoClicked() {
-    emit sendResponse(false);
-    close();
+  emit sendResponse(false);
+  close();
 }
 
-void ResponseWindow::changeColor(QString color){
-    QString styleSheet = QString("background-color: %1; ").arg(color);
-    QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 10px; color:black;}");
-    ui->btnYes->setStyleSheet(btnStyleSheet);
-    ui->btnNo->setStyleSheet(btnStyleSheet);
+void ResponseWindow::changeColor(QString color) {
+  QString styleSheet = QString("background-color: %1; ").arg(color);
+  QString btnStyleSheet = QString("QPushButton{" + styleSheet +
+                                  "border-radius: 10px; color:black;}");
+  ui->btnYes->setStyleSheet(btnStyleSheet);
+  ui->btnNo->setStyleSheet(btnStyleSheet);
 }
