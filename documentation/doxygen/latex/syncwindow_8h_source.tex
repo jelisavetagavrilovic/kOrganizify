@@ -1,0 +1,46 @@
+\doxysection{syncwindow.\+h}
+\hypertarget{syncwindow_8h_source}{}\label{syncwindow_8h_source}\index{src/syncwindow.h@{src/syncwindow.h}}
+\mbox{\hyperlink{syncwindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SYNCWINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SYNCWINDOW\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{calendar_8h}{calendar.h}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sync_window}{SyncWindow}};}
+\DoxyCodeLine{00009\ \}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sync_window}{SyncWindow}}\ :\ \textcolor{keyword}{public}\ QWidget\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_sync_window_a61cd65df430758547ba47df7cd880eb1}{SyncWindow}}(QString\ username,\ QString\ friendName,\ \mbox{\hyperlink{class_calendar}{Calendar}}\ calendar,\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_sync_window_ae309dc9aa7dd07d6114e73c7fb137352}{\string~SyncWindow}}();}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ QString\ \mbox{\hyperlink{class_sync_window_a83b56347779faed7546be3c5b2d9974a}{getEnteredText}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_sync_window_a765527a1530b3f13a10facfeddb0f551}{getSelectedNumber}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sync_window_a6da76816bc1f38f8509dbb1e41072eec}{changeColor}}(QString\ color);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ signals:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sync_window_a99007b0cce8a32f0aef3cdc96052b6a7}{sendSyncRequest}}(QString\ username,\ QString\ friendName,\ QString\ eventTitle,\ \textcolor{keywordtype}{int}\ duration,\ \mbox{\hyperlink{class_calendar}{Calendar}}\ calendar);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sync_window_aa2efa2d132009b8e21e7a6051d560b15}{onTextEntered}}(\textcolor{keyword}{const}\ QString\ \&m\_text);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sync_window_afcaf6d4a51635cece1300af6474b7809}{onNumberSelected}}(\textcolor{keywordtype}{int}\ m\_index);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sync_window_a16b6fed57591ec3187288d5f7702fb51}{onSyncButtonClicked}}();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00031\ \ \ \ \ Ui::SyncWindow\ *\mbox{\hyperlink{class_sync_window_aa7c0865bbdb9cc87a234aea54eeb2e6a}{ui}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ QString\ \mbox{\hyperlink{class_sync_window_abad3c09cbc17ffb59c48f433321c2874}{m\_friendName}};}
+\DoxyCodeLine{00034\ \ \ \ \ QString\ \mbox{\hyperlink{class_sync_window_a81e1796867afce5457868cdb8de17565}{m\_username}};}
+\DoxyCodeLine{00035\ \ \ \ \ QString\ \mbox{\hyperlink{class_sync_window_ab86e356c0f7e7cd5c6390a35fa86fb04}{m\_enteredText}};}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_calendar}{Calendar}}\ \mbox{\hyperlink{class_sync_window_a32210cb6f097f444cacca61fc8bafeb0}{m\_calendar}};}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_sync_window_abda5832735dcb230ef18268bf8e516f4}{m\_selectedNumber}};}
+\DoxyCodeLine{00038\ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SYNCWINDOW\_H}}
+
+\end{DoxyCode}

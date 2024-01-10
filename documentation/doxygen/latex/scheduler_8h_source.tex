@@ -1,0 +1,45 @@
+\doxysection{scheduler.\+h}
+\hypertarget{scheduler_8h_source}{}\label{scheduler_8h_source}\index{src/scheduler.h@{src/scheduler.h}}
+\mbox{\hyperlink{scheduler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCHEDULER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCHEDULER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{basicevent_8h}{basicevent.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{calendar_8h}{calendar.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{event_8h}{event.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QDate>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QList>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QSet>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QTime>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_scheduler}{Scheduler}}\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_scheduler_a12261d866c7a48e7f3c9ee1a9892ba65}{Scheduler}}(\mbox{\hyperlink{class_calendar}{Calendar}}\ *calendar,\ \mbox{\hyperlink{class_calendar}{Calendar}}\ *basicCalendar,\ QDate\ *startDate);}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_scheduler_afc8187779b46f64039d3ffa58f0dbe51}{\string~Scheduler}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scheduler_acdfe5c49a2adbf28324da1a2afc93632}{generateSchedule}}(\textcolor{keyword}{const}\ QTime\ \&startOfWorkday,\ \textcolor{keyword}{const}\ QTime\ \&endOfWorkday);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scheduler_a91702c7ab8b7ffeb97fa35db6122778f}{generateSchedules}}(QList<Event>\ freeTime);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_scheduler_a2a00b5ee74fb6c43856dbeed5e04dace}{nextPermutation}}(QList<Event>\ \&events,\ \textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scheduler_a02a13a84a086661b8a3a9003515db829}{generatePermutations}}(QList<Event>\ \&events,\ \textcolor{keywordtype}{int}\ start,\ \textcolor{keywordtype}{int}\ end,\ \textcolor{keywordtype}{int}\ depth,\ QList<QList<Event>>\ \&allPermutations);}
+\DoxyCodeLine{00027\ \ \ \ \ QList<Event>\ \mbox{\hyperlink{class_scheduler_adaee8e7fb55b82a3a9a3dfb9f011974a}{findFreeTime}}(\mbox{\hyperlink{class_calendar}{Calendar}}\ *cal1,\ \textcolor{keywordtype}{int}\ maxTime);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_calendar}{Calendar}}\ *\mbox{\hyperlink{class_scheduler_a816738c889f5e4ad78823b5b0d38c960}{m\_calendar}};}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_calendar}{Calendar}}\ *\mbox{\hyperlink{class_scheduler_ad2e258cc0b9d6a57658f10f17bd00d9b}{m\_basicCalendar}};}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_calendar}{Calendar}}\ *\mbox{\hyperlink{class_scheduler_a2250c3da87e07e2c830b389be07f5afa}{m\_scheduledCalendar}};}
+\DoxyCodeLine{00033\ \ \ \ \ QList<Calendar\ *>\ \mbox{\hyperlink{class_scheduler_a04b041912d904826f8bcff7798ad343a}{m\_generatedSchedules}};}
+\DoxyCodeLine{00034\ \ \ \ \ QList<Event>\ \mbox{\hyperlink{class_scheduler_a539cf602f3413cd2e9530c231ef6231a}{m\_freeTimeList}};}
+\DoxyCodeLine{00035\ \ \ \ \ QList<BasicEvent>\ \mbox{\hyperlink{class_scheduler_abf5df1998562f7d61688e89ec3361941}{m\_allEvents}};}
+\DoxyCodeLine{00036\ \ \ \ \ QDate\ *\mbox{\hyperlink{class_scheduler_a85affd523542442c67dabbe8f2c8cc85}{m\_startDate}};}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCHEDULER\_H}}
+
+\end{DoxyCode}

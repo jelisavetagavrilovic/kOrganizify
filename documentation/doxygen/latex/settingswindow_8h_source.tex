@@ -1,0 +1,57 @@
+\doxysection{settingswindow.\+h}
+\hypertarget{settingswindow_8h_source}{}\label{settingswindow_8h_source}\index{src/settingswindow.h@{src/settingswindow.h}}
+\mbox{\hyperlink{settingswindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SETTINGSWINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SETTINGSWINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QPalette>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{settings_8h}{settings.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_settings_window}{SettingsWindow}};}
+\DoxyCodeLine{00013\ \}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_settings_window}{SettingsWindow}}\ :\ \textcolor{keyword}{public}\ QMainWindow\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_settings_window_a6c70cd2f772a9245a1a267bfab7f259b}{SettingsWindow}}(\mbox{\hyperlink{class_settings}{Settings}}\ *settings,\ QWidget\ *parent);}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_settings_window_a380a4a1227c28e0b3499175b10cea230}{\string~SettingsWindow}}();}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_settings_window_ac9ea1fb0ea03c7e6ed4d8df946fc97c6}{setColor}}(QString\ color);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_settings_window_a603440cf1224fb11673a6ae066f41bd6}{setBackgroundPath}}(QString\ backgroundPath);}
+\DoxyCodeLine{00023\ \ \ \ \ QString\ \mbox{\hyperlink{class_settings_window_a35cc9b898c81950f612b6d1f8de84f21}{getColor}}();}
+\DoxyCodeLine{00024\ \ \ \ \ QString\ \mbox{\hyperlink{class_settings_window_a61c276c94db8f2675e0b6b85afc52063}{getBackgroundPath}}();}
+\DoxyCodeLine{00025\ \ \ \ \ QString\ \mbox{\hyperlink{class_settings_window_a68ab5267108783e338106042ea869817}{textToColor}}(\textcolor{keyword}{const}\ QString\ text);}
+\DoxyCodeLine{00026\ \ \ \ \ QString\ \mbox{\hyperlink{class_settings_window_a944f5633544d58a818a124ba5b802563}{textToPath}}(\textcolor{keyword}{const}\ QString\ text);}
+\DoxyCodeLine{00027\ \ \ \ \ QString\ \mbox{\hyperlink{class_settings_window_afe56d24c5ffe5702ca042e1941655fd3}{colorToPath}}(\textcolor{keyword}{const}\ QString\ color);}
+\DoxyCodeLine{00028\ \ \ \ \ QString\ \mbox{\hyperlink{class_settings_window_a131aa9570c94259a997660b21b3ffa31}{colorToText}}(QString\ color);}
+\DoxyCodeLine{00029\ \ \ \ \ Ui::SettingsWindow\ *\mbox{\hyperlink{class_settings_window_a6b9139d42445e90ee22ba34c669d9ce1}{ui}};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_settings_window_ad683e49f33e4a420ab967a87aa9bb52c}{changeColor}}(QString\ color);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_settings_window_ae3c9d2e315218c5d138ee84e25a2c8d3}{setNotifications}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ notifications);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_settings_window_a40c39b325c10704b4cceb40479334e7c}{getNotifications}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_settings_window_ac7439b05b852cf4615c2432b3ae67c1a}{updateNotificationIcon}}(\textcolor{keywordtype}{bool}\ state);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00038\ \ \ \ \ QString\ \mbox{\hyperlink{class_settings_window_a4d2b502e2250a247523bdc962f9ef15f}{getColorNameFromValue}}(\textcolor{keyword}{const}\ QMap<QString,\ QString>\ \&colorMap,\ \textcolor{keyword}{const}\ QString\ \&value);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_settings_window_a910fbfe368953abd87e156a81521c8dd}{save}}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ signals:}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_settings_window_a5453db6ee46f2cde569edd325bc1c585}{colorChanged}}(\textcolor{keyword}{const}\ QString\ \&color);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_settings_window_a79bfe243e8d446cf55769c296a72cbaf}{enabledNotifications}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_settings}{Settings}}\ *\mbox{\hyperlink{class_settings_window_a56fd6ea34a15156419b0ae4ba1e9758c}{m\_settings}};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{const}\ QMap<QString,\ QString>\ \mbox{\hyperlink{class_settings_window_a437008199a7d8ccec3cfb0e7ac05f8df}{m\_themeColors}}\{\{\textcolor{stringliteral}{"{}Blue"{}},\ \textcolor{stringliteral}{"{}\#9EAEF8"{}}\},\ \{\textcolor{stringliteral}{"{}Green"{}},\ \textcolor{stringliteral}{"{}\#ABD49A"{}}\},\ \ \{\textcolor{stringliteral}{"{}Orange"{}},\ \textcolor{stringliteral}{"{}\#F1BC6A"{}}\},}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}Pink"{}},\ \textcolor{stringliteral}{"{}\#FFBCE5"{}}\},\ \{\textcolor{stringliteral}{"{}Purple"{}},\ \textcolor{stringliteral}{"{}\#D8B7F1"{}}\},\ \{\textcolor{stringliteral}{"{}Default"{}},\ \textcolor{stringliteral}{"{}\#A5A9A0"{}}\}\};}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SETTINGSWINDOW\_H}}
+
+\end{DoxyCode}

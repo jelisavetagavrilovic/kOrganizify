@@ -1,0 +1,37 @@
+\doxysection{settings.\+h}
+\hypertarget{settings_8h_source}{}\label{settings_8h_source}\index{src/settings.h@{src/settings.h}}
+\mbox{\hyperlink{settings_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SETTINGS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SETTINGS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{saveload_8h}{saveload.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QJsonObject>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QJsonValue>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_settings}{Settings}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_save_load}{SaveLoad}}\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_settings_aec069a50c3141a00c687fc4d36025ec0}{Settings}}(QString\ color\ =\ \textcolor{stringliteral}{"{}\#A5A9A0"{}},\ \textcolor{keywordtype}{bool}\ notifications\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_settings_a389f0bbac65d3b80afbc251f69d91ad1}{getNotifications}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_settings_a9ad6e2a6a93a6f05cc10fe35082c922d}{loadData}}(\textcolor{keyword}{const}\ QString\ \&username);}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_settings_a85d03ce9af37c588189aa0b9f253f45d}{saveData}}(\textcolor{keyword}{const}\ QString\ \&username);}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_settings_ac3e25efdd93fe97172135243c0791ca2}{fromJson}}(\textcolor{keyword}{const}\ QJsonObject\ \&jsonObject)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_settings_a0158c6e8a32fe17293a3270e97602c10}{setColor}}(QString\ color);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_settings_a4ba476b9d98be1d16d29c301c8d5cb16}{setBackgroundPath}}(QString\ \mbox{\hyperlink{class_settings_a3bdf152ab5d27ab969b0f4a49ac4c01c}{backgroundPath}});}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_settings_a9320b87087996f196693b67eb807b9b2}{setNotifications}}(\textcolor{keywordtype}{bool}\ notifications);}
+\DoxyCodeLine{00021\ \ \ \ \ QJsonValue\ \mbox{\hyperlink{class_settings_abdec1074951618f012c74386e365ecc8}{toJson}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00022\ \ \ \ \ QString\ \mbox{\hyperlink{class_settings_a60d6f01b50e6cf7290ec937e2d65ee99}{getColor}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00023\ \ \ \ \ QString\ \mbox{\hyperlink{class_settings_a3bdf152ab5d27ab969b0f4a49ac4c01c}{backgroundPath}}();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \ \ QString\ \mbox{\hyperlink{class_settings_a90087ffaa5ba948d4c3be7c5c212565c}{m\_color}};}
+\DoxyCodeLine{00027\ \ \ \ \ QString\ \mbox{\hyperlink{class_settings_a492c9e25aee321a15213dca6256ec63d}{m\_backgroundPath}};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_settings_a0cc47efa4351434523b2585a6c298dfc}{m\_notifications}};}
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SETTINGS\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,52 @@
+\doxysection{eventwindow.\+h}
+\hypertarget{eventwindow_8h_source}{}\label{eventwindow_8h_source}\index{src/eventwindow.h@{src/eventwindow.h}}
+\mbox{\hyperlink{eventwindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ EVENTWINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ EVENTWINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{calendar_8h}{calendar.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_event_window}{EventWindow}};}
+\DoxyCodeLine{00009\ \}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_event_window}{EventWindow}}\ :\ \textcolor{keyword}{public}\ QWidget\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_event_window_a159081d30b8d40a7ccc15343b6aa2506}{EventWindow}}(\mbox{\hyperlink{class_calendar}{Calendar}}\ *calendar,\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_event_window_a27ce10ac845ca81cd7198b84a6b91f30}{\string~EventWindow}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_window_a9ab826fedf58932170a14da132818f78}{setStartDate}}(\textcolor{keyword}{const}\ QDateTime\ \&dateTime);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_window_a7adbe620c931f3bd9447345d2683484f}{setEndDate}}(\textcolor{keyword}{const}\ QDateTime\ \&dateTime);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_window_ad3fcf5aaa6493afe3325c8d2a10809f5}{setTitle}}(\textcolor{keyword}{const}\ QString\ \&title);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_window_a86ae979796d54983b133e3d3a3fab292}{setDescription}}(\textcolor{keyword}{const}\ QString\ \&description);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_window_aefe7a7273d3292c8954f3fb7ed204646}{setLocation}}(\textcolor{keyword}{const}\ QString\ \&location);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_window_adf5b50d0fa438931deaf4c189bba8948}{setPriority}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{event_8h_a2bdd47d7a383e60d517514db97940b3f}{CustomEventPriority}}\ \&priority);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_window_af91c90f526e5fa3d901e0251298d072d}{setCurrentEvent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_event}{Event}}\ \&event);}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_event}{Event}}\ \mbox{\hyperlink{class_event_window_a1ffad9478790e0d8e57e26dc25ead33f}{getCurrentEvent}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_event_window_a9922d0bb04925a17bce3e632b9940fab}{isEventNull}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_window_a83ebd8cb011f5aec6b287f63158313cd}{changeColor}}(QString\ color);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_event_window_a19a15b2881ffc20a1125bfbab9971e02}{checkEventOverlap}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_event}{Event}}\ \&newEvent);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ signals:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_window_a961ae315d7871516977e1ecd6733c8ff}{saveButtonClicked}}();}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_window_a08b8b9867385f60a452cfa5465ef1a81}{deleteButtonClicked}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_window_a2a7d1970123f4e0cbefdb40eed667466}{keyPressEvent}}(QKeyEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_window_a55b2ac75e7843e2d1e12115295dbf5f4}{onSaveButtonClicked}}();}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_window_af16255c1197591391725eb6fb60db546}{onDeleteButtonClicked}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00041\ \ \ \ \ Ui::EventWindow\ *\mbox{\hyperlink{class_event_window_a021feda6d7840540ee793bba38018347}{ui}};}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_calendar}{Calendar}}\ *\mbox{\hyperlink{class_event_window_a2b122b119a77094be55d471f7985170d}{m\_calendar}};}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_event}{Event}}\ \mbox{\hyperlink{class_event_window_aea40ac8838cd5f27250ea4e278fae87e}{m\_currentEvent}};}
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ EVENTWINDOW\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,26 @@
+\doxysection{saveload.\+h}
+\hypertarget{saveload_8h_source}{}\label{saveload_8h_source}\index{src/saveload.h@{src/saveload.h}}
+\mbox{\hyperlink{saveload_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SAVELOAD\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SAVELOAD\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QJsonObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_save_load}{SaveLoad}}\ :\ \textcolor{keyword}{public}\ QObject\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_save_load_ad12fe99dac1bc8755610ddfa11324757}{SaveLoad}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00012\ \ \ \ \ QString\ \mbox{\hyperlink{class_save_load_adba074bd989113b14cd8f408099465fc}{getFilePath}}(\textcolor{keyword}{const}\ QString\ \&username);}
+\DoxyCodeLine{00013\ \ \ \ \ QJsonObject\ \mbox{\hyperlink{class_save_load_aa82a2fc9a27d60f33130649219ebe20a}{m\_jsonObject}};}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_save_load_a936276a111b56c683aa357b5b4c66392}{saveData}}(\textcolor{keyword}{const}\ QString\ \&username);}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_save_load_aa65dfc33822e446af5d2a774fb4e4205}{loadData}}(\textcolor{keyword}{const}\ QString\ \&username);}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{virtual}\ QJsonValue\ \mbox{\hyperlink{class_save_load_ad40a777954df28028579624c19f2d37a}{toJson}}()\ \textcolor{keyword}{const}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_save_load_a05c9c7a31d4e909f05c1028da44f9deb}{fromJson}}(\textcolor{keyword}{const}\ QJsonObject\ \&jsonObject)\ =\ 0;}
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SAVELOAD\_H}}
+
+\end{DoxyCode}

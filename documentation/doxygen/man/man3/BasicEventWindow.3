@@ -1,0 +1,167 @@
+.TH "BasicEventWindow" 3 "kOrganizify" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BasicEventWindow
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <basiceventwindow\&.h>\fP
+.PP
+Inherits QDialog\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBpreviousCalendarSignal\fP (\fBCalendar\fP *\fBm_calendar\fP)"
+.br
+.ti -1c
+.RI "void \fBnextCalendarSignal\fP (\fBCalendar\fP *\fBm_calendar\fP)"
+.br
+.ti -1c
+.RI "void \fBsaveCalendar\fP (\fBCalendar\fP *\fBm_calendar\fP)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBasicEventWindow\fP (\fBCalendar\fP *calendar, QDate *startTime, QWidget *parent=nullptr)"
+.br
+.ti -1c
+.RI "\fB~BasicEventWindow\fP ()"
+.br
+.ti -1c
+.RI "void \fBchangeColor\fP (QString color)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBm_currentIndex\fP"
+.br
+.ti -1c
+.RI "int \fBm_currentCalendarIndex\fP"
+.br
+.ti -1c
+.RI "QList< \fBCalendar\fP * > \fBm_listOfCalendars\fP"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "bool \fBaddEvent\fP (const char op)"
+.br
+.ti -1c
+.RI "void \fBremoveEvent\fP ()"
+.br
+.ti -1c
+.RI "void \fBgenerate\fP ()"
+.br
+.ti -1c
+.RI "void \fBnextEvent\fP ()"
+.br
+.ti -1c
+.RI "void \fBpreviousEvent\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdateUi\fP ()"
+.br
+.ti -1c
+.RI "void \fBpreviousCalendar\fP ()"
+.br
+.ti -1c
+.RI "void \fBnextCalendar\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "Ui::BasicEventWindow * \fBui\fP"
+.br
+.ti -1c
+.RI "\fBBasicEvent\fP * \fBm_basicEvent\fP"
+.br
+.ti -1c
+.RI "\fBCalendar\fP * \fBm_calendar\fP"
+.br
+.ti -1c
+.RI "\fBCalendar\fP * \fBm_basicCalendar\fP"
+.br
+.ti -1c
+.RI "\fBScheduler\fP * \fBm_scheduler\fP"
+.br
+.ti -1c
+.RI "QDate * \fBm_startDate\fP"
+.br
+.ti -1c
+.RI "QList< \fBEvent\fP > \fBm_cal\fP"
+.br
+.ti -1c
+.RI "QList< \fBEvent\fP > \fBm_basicCal\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BasicEventWindow::BasicEventWindow (\fBCalendar\fP * calendar, QDate * startTime, QWidget * parent = \fRnullptr\fP)\fR [explicit]\fP"
+
+.SS "BasicEventWindow::~BasicEventWindow ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool BasicEventWindow::addEvent (const char op)\fR [private]\fP, \fR [slot]\fP"
+
+.SS "void BasicEventWindow::changeColor (QString color)"
+
+.SS "void BasicEventWindow::generate ()\fR [private]\fP, \fR [slot]\fP"
+
+.SS "void BasicEventWindow::nextCalendar ()\fR [private]\fP, \fR [slot]\fP"
+
+.SS "void BasicEventWindow::nextCalendarSignal (\fBCalendar\fP * m_calendar)\fR [signal]\fP"
+
+.SS "void BasicEventWindow::nextEvent ()\fR [private]\fP, \fR [slot]\fP"
+
+.SS "void BasicEventWindow::previousCalendar ()\fR [private]\fP, \fR [slot]\fP"
+
+.SS "void BasicEventWindow::previousCalendarSignal (\fBCalendar\fP * m_calendar)\fR [signal]\fP"
+
+.SS "void BasicEventWindow::previousEvent ()\fR [private]\fP, \fR [slot]\fP"
+
+.SS "void BasicEventWindow::removeEvent ()\fR [private]\fP, \fR [slot]\fP"
+
+.SS "void BasicEventWindow::saveCalendar (\fBCalendar\fP * m_calendar)\fR [signal]\fP"
+
+.SS "void BasicEventWindow::updateUi ()\fR [private]\fP, \fR [slot]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "QList<\fBEvent\fP> BasicEventWindow::m_basicCal\fR [private]\fP"
+
+.SS "\fBCalendar\fP* BasicEventWindow::m_basicCalendar\fR [private]\fP"
+
+.SS "\fBBasicEvent\fP* BasicEventWindow::m_basicEvent\fR [private]\fP"
+
+.SS "QList<\fBEvent\fP> BasicEventWindow::m_cal\fR [private]\fP"
+
+.SS "\fBCalendar\fP* BasicEventWindow::m_calendar\fR [private]\fP"
+
+.SS "int BasicEventWindow::m_currentCalendarIndex"
+
+.SS "int BasicEventWindow::m_currentIndex"
+
+.SS "QList<\fBCalendar\fP *> BasicEventWindow::m_listOfCalendars"
+
+.SS "\fBScheduler\fP* BasicEventWindow::m_scheduler\fR [private]\fP"
+
+.SS "QDate* BasicEventWindow::m_startDate\fR [private]\fP"
+
+.SS "Ui::BasicEventWindow* BasicEventWindow::ui\fR [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for kOrganizify from the source code\&.

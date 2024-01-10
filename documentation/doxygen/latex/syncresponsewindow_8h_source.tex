@@ -1,0 +1,36 @@
+\doxysection{syncresponsewindow.\+h}
+\hypertarget{syncresponsewindow_8h_source}{}\label{syncresponsewindow_8h_source}\index{src/syncresponsewindow.h@{src/syncresponsewindow.h}}
+\mbox{\hyperlink{syncresponsewindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SYNCRESPONSEWINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SYNCRESPONSEWINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sync_response_window}{SyncResponseWindow}};}
+\DoxyCodeLine{00008\ \}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sync_response_window}{SyncResponseWindow}}\ :\ \textcolor{keyword}{public}\ QWidget\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_sync_response_window_adde2143c35a075cf46892607b0ef4bd8}{SyncResponseWindow}}(QString\ friendName,\ QString\ title,\ \textcolor{keywordtype}{int}\ duration,\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_sync_response_window_aab358a0a1ea3aaea47379b2aa3cc8357}{\string~SyncResponseWindow}}();}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sync_response_window_a61d71e5658b14a45f591ff4b8009cd78}{changeColor}}(QString\ color);}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ signals:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sync_response_window_a1cb29ed6fc15c554df2747780b1bdf28}{yesResponse}}(QString\ friendName,\ \textcolor{keywordtype}{int}\ duration);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sync_response_window_af7b3a6aa77dd5556ac75556eb5a3378c}{noResponse}}(QString\ friendName);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ \ \ QString\ \mbox{\hyperlink{class_sync_response_window_a0c055e9e6140276ef6392e362612ab6c}{m\_friendName}};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sync_response_window_a16a43b9803aaad5baabf84fa3c3801c4}{sendNo}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sync_response_window_a94f8815d2d706bb9dba464bf34de1dae}{sendYes}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_sync_response_window_ad80d3f4cbab1ed7a4f715848cb2e525b}{m\_duration}};}
+\DoxyCodeLine{00027\ \ \ \ \ Ui::SyncResponseWindow\ *\mbox{\hyperlink{class_sync_response_window_ac124ef917d3a5079cdea4edfd6859ea8}{ui}};}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SYNCRESPONSEWINDOW\_H}}
+
+\end{DoxyCode}

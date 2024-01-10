@@ -1,0 +1,43 @@
+\doxysection{client.\+h}
+\hypertarget{client_8h_source}{}\label{client_8h_source}\index{src/client.h@{src/client.h}}
+\mbox{\hyperlink{client_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CLIENT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CLIENT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{calendar_8h}{calendar.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QTcpSocket>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_client}{Client}}\ :\ \textcolor{keyword}{public}\ QObject\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00010\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_client_a5c0365b0ad125f3d228df88bbde4d12c}{Client}}(QString\ username,\ QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00012\ \ \ \ \ QString\ \mbox{\hyperlink{class_client_abb6d3f2487c068e1635155b413dede2e}{m\_username}};}
+\DoxyCodeLine{00013\ \ \ \ \ QList<QString>\ \mbox{\hyperlink{class_client_a33add91c4acfa665135e024fbd7aaa0c}{m\_friends}};}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_client_a826559400b28f070747919b53c88865c}{logoutHappened}}(QString\ username);}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_client_a76b78d338a86f3db291a3365208d6114}{readFromServer}}();}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_client_ac2cdeb8b0249c1bf0ddd2167da861ad4}{disconnected}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_client_a6a5fe81068f598e3cfd7e98c62f8f194}{syncResponse}}(\textcolor{keywordtype}{bool}\ response,\ QString\ username,\ QString\ friendName,\ \textcolor{keywordtype}{int}\ duration,\ \mbox{\hyperlink{class_calendar}{Calendar}}\ cal\ =\ \{\})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_client_a373ad840e476a7f94c936b3b6ec994c7}{eventResponse}}(\textcolor{keywordtype}{bool}\ response);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_client_a12f947f0d5a33e7f3b2403c8d8ee5719}{syncRequest}}(QString\ from,\ QString\ to,\ QString\ titleEvent,\ \textcolor{keywordtype}{int}\ duration,\ \mbox{\hyperlink{class_calendar}{Calendar}}\ calendar);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_client_a35f70c84fff5a3c6110f45abd0f55dfd}{sendMessage}}(QString\ message);}
+\DoxyCodeLine{00025\ \ \ \ \ QTcpSocket\ *\mbox{\hyperlink{class_client_a87cd45a74519455ef95406ff82d05aeb}{m\_socket}};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_client_adf8ccca8b2ad74600faf6c55d936aa6c}{makeConnection}}(QHostAddress::SpecialAddress\ address);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ signals:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_client_a87f8a60811eb9d3b631d3900f2e82423}{newUserLoggedIn}}(\textcolor{keyword}{const}\ QString\ \&username);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_client_af6b8e867d5366deb2ac60745b862da01}{disconnectedUser}}(\textcolor{keyword}{const}\ QString\ \&username);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_client_a6b50128773f66c0c5da153e215be12e8}{showSyncWindow}}(QString\ from,\ QString\ eventTitle,\ \textcolor{keywordtype}{int}\ duration);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_client_a9ae896a498cc407fb05c949b2f7ce068}{syncRequestDenied}}(QString\ friendName);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_client_a01f6701276aa43085d4616237a5f7a7b}{syncSuccess}}(QDateTime\ startTime,\ QDateTime\ endTime,\ QString\ eventTitle);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_client_aa602ac033e013d5b972de5729f310fd3}{newEventSync}}(QString\ eventTitle,\ QString\ startTime);}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CLIENT\_H}}
+
+\end{DoxyCode}

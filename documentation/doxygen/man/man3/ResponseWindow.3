@@ -1,0 +1,97 @@
+.TH "ResponseWindow" 3 "kOrganizify" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ResponseWindow
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <responsewindow\&.h>\fP
+.PP
+Inherits QWidget\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBonYesClicked\fP ()"
+.br
+.ti -1c
+.RI "void \fBonNoClicked\fP ()"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBsendResponse\fP (bool answer)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBResponseWindow\fP (QString eventTitle, QString startTime, QWidget *parent=nullptr)"
+.br
+.ti -1c
+.RI "\fB~ResponseWindow\fP ()"
+.br
+.ti -1c
+.RI "void \fBchangeColor\fP (QString color)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetDate\fP (QString foundDate)"
+.br
+.ti -1c
+.RI "void \fBsetTitle\fP (QString title)"
+.br
+.ti -1c
+.RI "QString \fBgetDate\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "Ui::ResponseWindow * \fBui\fP"
+.br
+.ti -1c
+.RI "QString \fBm_date\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ResponseWindow::ResponseWindow (QString eventTitle, QString startTime, QWidget * parent = \fRnullptr\fP)\fR [explicit]\fP"
+
+.SS "ResponseWindow::~ResponseWindow ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void ResponseWindow::changeColor (QString color)"
+
+.SS "QString ResponseWindow::getDate ()\fR [private]\fP"
+
+.SS "void ResponseWindow::onNoClicked ()\fR [slot]\fP"
+
+.SS "void ResponseWindow::onYesClicked ()\fR [slot]\fP"
+
+.SS "void ResponseWindow::sendResponse (bool answer)\fR [signal]\fP"
+
+.SS "void ResponseWindow::setDate (QString foundDate)\fR [private]\fP"
+
+.SS "void ResponseWindow::setTitle (QString title)\fR [private]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "QString ResponseWindow::m_date\fR [private]\fP"
+
+.SS "Ui::ResponseWindow* ResponseWindow::ui\fR [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for kOrganizify from the source code\&.

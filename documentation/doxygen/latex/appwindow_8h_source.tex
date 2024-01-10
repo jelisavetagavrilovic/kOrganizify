@@ -1,0 +1,92 @@
+\doxysection{appwindow.\+h}
+\hypertarget{appwindow_8h_source}{}\label{appwindow_8h_source}\index{src/appwindow.h@{src/appwindow.h}}
+\mbox{\hyperlink{appwindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ APPWINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ APPWINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QCheckBox>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QDir>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QPixmap>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QScrollBar>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{basiceventwindow_8h}{basiceventwindow.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{eventwindow_8h}{eventwindow.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mainwindow_8h}{mainwindow.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{notifications_8h}{notifications.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}qlistwidget.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{responsewindow_8h}{responsewindow.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{settingswindow_8h}{settingswindow.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{syncdeniedwindow_8h}{syncdeniedwindow.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{syncresponsewindow_8h}{syncresponsewindow.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{syncwindow_8h}{syncwindow.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{to_do_list_8h}{toDoList.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}ui\_settingswindow.h"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{user_8h}{user.h}}"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_app_window}{AppWindow}};}
+\DoxyCodeLine{00029\ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_app_window}{AppWindow}}\ :\ \textcolor{keyword}{public}\ QMainWindow\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_app_window_a17a6dc5f553d4daf9c58d5b862a0ce9e}{AppWindow}}(\mbox{\hyperlink{class_user}{User}}\ *user,\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_app_window_aabb56a1ba5d2f3254eeaa4d0f24da0cb}{\string~AppWindow}}();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_aa990f332de10cc5864f055958a51afbe}{initialize}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_a65f284dfe540bc151b6078e73aac5917}{handleNewUserLoggedIn}}(\textcolor{keyword}{const}\ QString\ \&username);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_a5dbb519aee9ce81aa52b49de644ce0c5}{handleUserDisconnected}}(\textcolor{keyword}{const}\ QString\ \&username);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_ac7cf7615340c66699e90402f233d327e}{addTaskToListWidget}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_task}{Task}}\ \&task);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_aed01176d54475651371fba785928eaee}{showWeeklyEvents}}(\textcolor{keyword}{const}\ QDate\ \&selectedDate);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_a69ba6bf71357289bf2be432eb5e984e6}{changeButtonColor}}(\textcolor{keyword}{const}\ QString\ \&newColor);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_aaac40fcb1cd7aa038c7896da0c8d974b}{openEventWindowForCell}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ column);}
+\DoxyCodeLine{00049\ \ \ \ \ QColor\ \mbox{\hyperlink{class_app_window_a2677b4d1b8c9dd5ac55f6f6423e1904a}{getColorFromPriority}}(\mbox{\hyperlink{event_8h_a2bdd47d7a383e60d517514db97940b3f}{CustomEventPriority}}\ priority);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_a741b688c484dd340a26a0d0512369d98}{enabledNotifications}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_ad1c2d836c5002dd8e9a475b8ff8a293b}{addTask}}();}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_a03635a2056a0b96b8b9af6b8d5a5900c}{onCheckBoxStateChanged}}(\textcolor{keywordtype}{int}\ state);}
+\DoxyCodeLine{00053\ \ \ \ \ QString\ \mbox{\hyperlink{class_app_window_ab8158e59f6533510199f717839a0ee04}{crossTask}}(\textcolor{keyword}{const}\ QString\ \&taskName);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_ad6a9fc903dfe960ad20e3e54035e7545}{openSettings}}();}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_a44c863ee8d85e18a27458ec265a2d2f8}{logoutUser}}();}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_abd45fad855674a0ac1252eaa29a2c0c5}{openSyncWindow}}(QListWidgetItem\ *item);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_ab4b894c867b5740590cfd1e2095dd442}{populateFriends}}(\textcolor{keyword}{const}\ QList<QString>\ \&friends);}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_a48096e12907869be03bc02916c2abca2}{smartPlan}}();}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_a4ce265c6de966bf3be442379a5d445ed}{updateTableForSelectedDate}}();}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_a9eada093353d0be0a611a49aea2b7a51}{updateTableForSelectedDateCalendar}}(\mbox{\hyperlink{class_calendar}{Calendar}}\ *calendar);}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_a4b43822e08669be69dc45edfb645a909}{clearFinishedTasks}}();}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_a0e92877b4f4a4eb900bd375e7780d28e}{showSyncWindow}}(QString\ username,\ QString\ title,\ \textcolor{keywordtype}{int}\ duration);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_ac5447608c126faca793d29adb8c2195d}{syncDenied}}(QString\ friendName);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_aeb1cd5fcf3712f75e039f68787536268}{sendYesResponse}}(QString\ friendName,\ \textcolor{keywordtype}{int}\ duration);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_af04a36a22769ed4d5587479864a86ef7}{sendNoResponse}}(QString\ friendName);}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_af66bac09e2a409ddc22fa6a965eb7bce}{showResponseWindow}}(QString\ eventTitle,\ QString\ startTime);}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_afd0efe8085d66e08cd05db8232a9fdfe}{agreedSync}}(QDateTime\ startTime,\ QDateTime\ endTime,\ QString\ title);}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_aba9d4b1dda0c29591377a0ad7c3ab309}{updatedEvents}}();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ signals:}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_window_aaf8b7a2008177fb6c0c23d1a673655b1}{exit}}();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00074\ \ \ \ \ Ui::AppWindow\ *\mbox{\hyperlink{class_app_window_a089ad392827d2d53197b99c1caac9719}{ui}};}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{class_user}{User}}\ *\mbox{\hyperlink{class_app_window_ad3db5e35c698339e5c27701276550492}{m\_user}};}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{class_settings_window}{SettingsWindow}}\ *\mbox{\hyperlink{class_app_window_ab76fcbf5cd528b62f77c2abd6c076aa7}{m\_settingsWindow}};}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{class_sync_window}{SyncWindow}}\ *\mbox{\hyperlink{class_app_window_a8b610058f131c3c157671f28ed0315c6}{m\_syncWindow}};}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{class_event_window}{EventWindow}}\ *\mbox{\hyperlink{class_app_window_a1bfc97015de0ff24b51b9c56a0644372}{m\_eventWindow}};}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{class_to_do_list}{ToDoList}}\ *\mbox{\hyperlink{class_app_window_aee6dacd0d1c9507a32d4a4ec3a69e45c}{m\_toDoList}};}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{class_calendar}{Calendar}}\ *\mbox{\hyperlink{class_app_window_a5c8144bebd77aef9f2dc17117e1fbc23}{m\_calendar}};}
+\DoxyCodeLine{00081\ \ \ \ \ QDate\ \mbox{\hyperlink{class_app_window_a53f9742fa21e8a27168a7d060b4d087b}{m\_startDate}};}
+\DoxyCodeLine{00082\ \ \ \ \ QDate\ \mbox{\hyperlink{class_app_window_a92268c1d5a756275b237d809f0e6942b}{m\_endDate}};}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{class_notifications}{Notifications}}\ *\mbox{\hyperlink{class_app_window_a93844205a2802b16faca7d40b7f3dc3e}{m\_notifications}};}
+\DoxyCodeLine{00084\ \};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ APPWINDOW\_H}}
+
+\end{DoxyCode}

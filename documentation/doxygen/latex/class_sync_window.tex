@@ -1,0 +1,161 @@
+\doxysection{Sync\+Window Class Reference}
+\hypertarget{class_sync_window}{}\label{class_sync_window}\index{SyncWindow@{SyncWindow}}
+
+
+{\ttfamily \#include $<$syncwindow.\+h$>$}
+
+
+
+Inheritance diagram for Sync\+Window\+:
+% FIG 0
+
+
+Collaboration diagram for Sync\+Window\+:
+% FIG 1
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_sync_window_a99007b0cce8a32f0aef3cdc96052b6a7}{send\+Sync\+Request}} (QString username, QString friend\+Name, QString event\+Title, int duration, \mbox{\hyperlink{class_calendar}{Calendar}} calendar)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sync_window_a61cd65df430758547ba47df7cd880eb1}{Sync\+Window}} (QString username, QString friend\+Name, \mbox{\hyperlink{class_calendar}{Calendar}} calendar, QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_sync_window_ae309dc9aa7dd07d6114e73c7fb137352}{\texorpdfstring{$\sim$}{\string~}\+Sync\+Window}} ()
+\item 
+QString \mbox{\hyperlink{class_sync_window_a83b56347779faed7546be3c5b2d9974a}{get\+Entered\+Text}} () const
+\item 
+int \mbox{\hyperlink{class_sync_window_a765527a1530b3f13a10facfeddb0f551}{get\+Selected\+Number}} () const
+\item 
+void \mbox{\hyperlink{class_sync_window_a6da76816bc1f38f8509dbb1e41072eec}{change\+Color}} (QString color)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_sync_window_aa2efa2d132009b8e21e7a6051d560b15}{on\+Text\+Entered}} (const QString \&m\+\_\+text)
+\item 
+void \mbox{\hyperlink{class_sync_window_afcaf6d4a51635cece1300af6474b7809}{on\+Number\+Selected}} (int m\+\_\+index)
+\item 
+void \mbox{\hyperlink{class_sync_window_a16b6fed57591ec3187288d5f7702fb51}{on\+Sync\+Button\+Clicked}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Sync\+Window \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_sync_window_aa7c0865bbdb9cc87a234aea54eeb2e6a}{ui}}
+\item 
+QString \mbox{\hyperlink{class_sync_window_abad3c09cbc17ffb59c48f433321c2874}{m\+\_\+friend\+Name}}
+\item 
+QString \mbox{\hyperlink{class_sync_window_a81e1796867afce5457868cdb8de17565}{m\+\_\+username}}
+\item 
+QString \mbox{\hyperlink{class_sync_window_ab86e356c0f7e7cd5c6390a35fa86fb04}{m\+\_\+entered\+Text}}
+\item 
+\mbox{\hyperlink{class_calendar}{Calendar}} \mbox{\hyperlink{class_sync_window_a32210cb6f097f444cacca61fc8bafeb0}{m\+\_\+calendar}}
+\item 
+int \mbox{\hyperlink{class_sync_window_abda5832735dcb230ef18268bf8e516f4}{m\+\_\+selected\+Number}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_sync_window_a61cd65df430758547ba47df7cd880eb1}\label{class_sync_window_a61cd65df430758547ba47df7cd880eb1} 
+\index{SyncWindow@{SyncWindow}!SyncWindow@{SyncWindow}}
+\index{SyncWindow@{SyncWindow}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{SyncWindow()}{SyncWindow()}}
+{\footnotesize\ttfamily Sync\+Window\+::\+Sync\+Window (\begin{DoxyParamCaption}\item[{QString}]{username,  }\item[{QString}]{friend\+Name,  }\item[{\mbox{\hyperlink{class_calendar}{Calendar}}}]{calendar,  }\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\Hypertarget{class_sync_window_ae309dc9aa7dd07d6114e73c7fb137352}\label{class_sync_window_ae309dc9aa7dd07d6114e73c7fb137352} 
+\index{SyncWindow@{SyncWindow}!````~SyncWindow@{\texorpdfstring{$\sim$}{\string~}SyncWindow}}
+\index{````~SyncWindow@{\texorpdfstring{$\sim$}{\string~}SyncWindow}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SyncWindow()}{\string~SyncWindow()}}
+{\footnotesize\ttfamily Sync\+Window\+::\texorpdfstring{$\sim$}{\string~}\+Sync\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sync_window_a6da76816bc1f38f8509dbb1e41072eec}\label{class_sync_window_a6da76816bc1f38f8509dbb1e41072eec} 
+\index{SyncWindow@{SyncWindow}!changeColor@{changeColor}}
+\index{changeColor@{changeColor}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{changeColor()}{changeColor()}}
+{\footnotesize\ttfamily void Sync\+Window\+::change\+Color (\begin{DoxyParamCaption}\item[{QString}]{color }\end{DoxyParamCaption})}
+
+\Hypertarget{class_sync_window_a83b56347779faed7546be3c5b2d9974a}\label{class_sync_window_a83b56347779faed7546be3c5b2d9974a} 
+\index{SyncWindow@{SyncWindow}!getEnteredText@{getEnteredText}}
+\index{getEnteredText@{getEnteredText}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{getEnteredText()}{getEnteredText()}}
+{\footnotesize\ttfamily QString Sync\+Window\+::get\+Entered\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_sync_window_a765527a1530b3f13a10facfeddb0f551}\label{class_sync_window_a765527a1530b3f13a10facfeddb0f551} 
+\index{SyncWindow@{SyncWindow}!getSelectedNumber@{getSelectedNumber}}
+\index{getSelectedNumber@{getSelectedNumber}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{getSelectedNumber()}{getSelectedNumber()}}
+{\footnotesize\ttfamily int Sync\+Window\+::get\+Selected\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_sync_window_afcaf6d4a51635cece1300af6474b7809}\label{class_sync_window_afcaf6d4a51635cece1300af6474b7809} 
+\index{SyncWindow@{SyncWindow}!onNumberSelected@{onNumberSelected}}
+\index{onNumberSelected@{onNumberSelected}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{onNumberSelected}{onNumberSelected}}
+{\footnotesize\ttfamily void Sync\+Window\+::on\+Number\+Selected (\begin{DoxyParamCaption}\item[{int}]{m\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\Hypertarget{class_sync_window_a16b6fed57591ec3187288d5f7702fb51}\label{class_sync_window_a16b6fed57591ec3187288d5f7702fb51} 
+\index{SyncWindow@{SyncWindow}!onSyncButtonClicked@{onSyncButtonClicked}}
+\index{onSyncButtonClicked@{onSyncButtonClicked}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{onSyncButtonClicked}{onSyncButtonClicked}}
+{\footnotesize\ttfamily void Sync\+Window\+::on\+Sync\+Button\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\Hypertarget{class_sync_window_aa2efa2d132009b8e21e7a6051d560b15}\label{class_sync_window_aa2efa2d132009b8e21e7a6051d560b15} 
+\index{SyncWindow@{SyncWindow}!onTextEntered@{onTextEntered}}
+\index{onTextEntered@{onTextEntered}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{onTextEntered}{onTextEntered}}
+{\footnotesize\ttfamily void Sync\+Window\+::on\+Text\+Entered (\begin{DoxyParamCaption}\item[{const QString \&}]{m\+\_\+text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\Hypertarget{class_sync_window_a99007b0cce8a32f0aef3cdc96052b6a7}\label{class_sync_window_a99007b0cce8a32f0aef3cdc96052b6a7} 
+\index{SyncWindow@{SyncWindow}!sendSyncRequest@{sendSyncRequest}}
+\index{sendSyncRequest@{sendSyncRequest}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{sendSyncRequest}{sendSyncRequest}}
+{\footnotesize\ttfamily void Sync\+Window\+::send\+Sync\+Request (\begin{DoxyParamCaption}\item[{QString}]{username,  }\item[{QString}]{friend\+Name,  }\item[{QString}]{event\+Title,  }\item[{int}]{duration,  }\item[{\mbox{\hyperlink{class_calendar}{Calendar}}}]{calendar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_sync_window_a32210cb6f097f444cacca61fc8bafeb0}\label{class_sync_window_a32210cb6f097f444cacca61fc8bafeb0} 
+\index{SyncWindow@{SyncWindow}!m\_calendar@{m\_calendar}}
+\index{m\_calendar@{m\_calendar}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{m\_calendar}{m\_calendar}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_calendar}{Calendar}} Sync\+Window\+::m\+\_\+calendar\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_sync_window_ab86e356c0f7e7cd5c6390a35fa86fb04}\label{class_sync_window_ab86e356c0f7e7cd5c6390a35fa86fb04} 
+\index{SyncWindow@{SyncWindow}!m\_enteredText@{m\_enteredText}}
+\index{m\_enteredText@{m\_enteredText}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{m\_enteredText}{m\_enteredText}}
+{\footnotesize\ttfamily QString Sync\+Window\+::m\+\_\+entered\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_sync_window_abad3c09cbc17ffb59c48f433321c2874}\label{class_sync_window_abad3c09cbc17ffb59c48f433321c2874} 
+\index{SyncWindow@{SyncWindow}!m\_friendName@{m\_friendName}}
+\index{m\_friendName@{m\_friendName}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{m\_friendName}{m\_friendName}}
+{\footnotesize\ttfamily QString Sync\+Window\+::m\+\_\+friend\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_sync_window_abda5832735dcb230ef18268bf8e516f4}\label{class_sync_window_abda5832735dcb230ef18268bf8e516f4} 
+\index{SyncWindow@{SyncWindow}!m\_selectedNumber@{m\_selectedNumber}}
+\index{m\_selectedNumber@{m\_selectedNumber}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{m\_selectedNumber}{m\_selectedNumber}}
+{\footnotesize\ttfamily int Sync\+Window\+::m\+\_\+selected\+Number\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_sync_window_a81e1796867afce5457868cdb8de17565}\label{class_sync_window_a81e1796867afce5457868cdb8de17565} 
+\index{SyncWindow@{SyncWindow}!m\_username@{m\_username}}
+\index{m\_username@{m\_username}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{m\_username}{m\_username}}
+{\footnotesize\ttfamily QString Sync\+Window\+::m\+\_\+username\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_sync_window_aa7c0865bbdb9cc87a234aea54eeb2e6a}\label{class_sync_window_aa7c0865bbdb9cc87a234aea54eeb2e6a} 
+\index{SyncWindow@{SyncWindow}!ui@{ui}}
+\index{ui@{ui}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Sync\+Window\texorpdfstring{$\ast$}{*} Sync\+Window\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{syncwindow_8h}{syncwindow.\+h}}\item 
+src/\mbox{\hyperlink{syncwindow_8cpp}{syncwindow.\+cpp}}\end{DoxyCompactItemize}

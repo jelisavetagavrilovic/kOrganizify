@@ -1,0 +1,46 @@
+\doxysection{user.\+h}
+\hypertarget{user_8h_source}{}\label{user_8h_source}\index{src/user.h@{src/user.h}}
+\mbox{\hyperlink{user_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ USER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ USER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{calendar_8h}{calendar.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{client_8h}{client.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{saveload_8h}{saveload.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{settings_8h}{settings.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{to_do_list_8h}{toDoList.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QFile>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QJsonValue>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_user}{User}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_save_load}{SaveLoad}}\ \{}
+\DoxyCodeLine{00015\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_user_aaa3511c1b1ed9dd40eca9227ed384e48}{User}}(\textcolor{keyword}{const}\ QString\ \&username,\ \textcolor{keyword}{const}\ QString\ \&password);}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_user_aa6a068f18749b772677d82bae3a38893}{userExists}}(\textcolor{keyword}{const}\ QString\ \&username);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_aaaea7fc988583574b7ac73a598179df0}{loadData}}(\textcolor{keyword}{const}\ QString\ \&username);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_ab734f800b4d41dad12d4ff89d22f83de}{saveData}}(\textcolor{keyword}{const}\ QString\ \&username);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_ad34d1b634d63467f53740de78942b860}{fromJson}}(\textcolor{keyword}{const}\ QJsonObject\ \&jsonValue)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_a8c2ec731492402e5342ba15efe4f01dc}{setCalendar}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_calendar}{Calendar}}\ \&calendar);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_user_af1743d32d8985af67e4013b98f8f619a}{login}}(\textcolor{keyword}{const}\ QString\ \&password);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_user_a3a24d6d52ea6b594a5d89d8aa34d388a}{registerUser}}(\textcolor{keyword}{const}\ QString\ \&password);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_ade7eb5acf5097892168086ceed504ab3}{logout}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_client}{Client}}\ *\mbox{\hyperlink{class_user_a040a1a741154454027da8ba2d8119c3d}{m\_client}};}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_calendar}{Calendar}}\ \&\mbox{\hyperlink{class_user_a1b2e442048c1ba83fc38e1f88bdbc228}{getCalendar}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_to_do_list}{ToDoList}}\ \&\mbox{\hyperlink{class_user_a538eb0e60ca3501c77fbb137ec9fba8c}{getToDoList}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_settings}{Settings}}\ \&\mbox{\hyperlink{class_user_a0be60c7dd488ca7343b590790321c788}{getSettings}}();}
+\DoxyCodeLine{00029\ \ \ \ \ QString\ \mbox{\hyperlink{class_user_a1c9ee5527f563fb644e0ad6bbab79f41}{getUsername}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \ \ \ \ QJsonValue\ \mbox{\hyperlink{class_user_ab59f0101721cd374f249926d52d32fcf}{toJson}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ QString\ \mbox{\hyperlink{class_user_acd004ce9146e4fb2cc7cdf7a735109f6}{m\_username}};}
+\DoxyCodeLine{00034\ \ \ \ \ QString\ \mbox{\hyperlink{class_user_a7502274e591a05a33881c7ffaa8632c4}{m\_password}};}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_calendar}{Calendar}}\ \mbox{\hyperlink{class_user_a0ebb0234a497de25267225262e29310c}{m\_calendar}};}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_to_do_list}{ToDoList}}\ \mbox{\hyperlink{class_user_a27bceb6485a0c42958d819f766cd22e5}{m\_toDoList}};}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_settings}{Settings}}\ \mbox{\hyperlink{class_user_afac4acd019b4f3a8e0ec513784534046}{m\_settings}};}
+\DoxyCodeLine{00038\ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ USER\_H}}
+
+\end{DoxyCode}

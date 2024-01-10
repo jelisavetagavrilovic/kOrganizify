@@ -1,0 +1,153 @@
+.TH "Client" 3 "kOrganizify" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Client
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <client\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBreadFromServer\fP ()"
+.br
+.RI "\fBClient\fP can receive one of the following messages: "
+.ti -1c
+.RI "void \fBdisconnected\fP ()"
+.br
+.ti -1c
+.RI "void \fBsyncResponse\fP (bool response, QString username, QString friendName, int duration, \fBCalendar\fP cal={}) const"
+.br
+.ti -1c
+.RI "void \fBeventResponse\fP (bool response)"
+.br
+.ti -1c
+.RI "void \fBsyncRequest\fP (QString from, QString to, QString titleEvent, int duration, \fBCalendar\fP calendar)"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBnewUserLoggedIn\fP (const QString &username)"
+.br
+.ti -1c
+.RI "void \fBdisconnectedUser\fP (const QString &username)"
+.br
+.ti -1c
+.RI "void \fBshowSyncWindow\fP (QString from, QString eventTitle, int duration)"
+.br
+.ti -1c
+.RI "void \fBsyncRequestDenied\fP (QString friendName)"
+.br
+.ti -1c
+.RI "void \fBsyncSuccess\fP (QDateTime startTime, QDateTime endTime, QString eventTitle)"
+.br
+.ti -1c
+.RI "void \fBnewEventSync\fP (QString eventTitle, QString startTime)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBClient\fP (QString username, QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "void \fBlogoutHappened\fP (QString username)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBm_username\fP"
+.br
+.ti -1c
+.RI "QList< QString > \fBm_friends\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsendMessage\fP (QString message)"
+.br
+.ti -1c
+.RI "bool \fBmakeConnection\fP (QHostAddress::SpecialAddress address)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QTcpSocket * \fBm_socket\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Client::Client (QString username, QObject * parent = \fRnullptr\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void Client::disconnected ()\fR [slot]\fP"
+
+.SS "void Client::disconnectedUser (const QString & username)\fR [signal]\fP"
+
+.SS "void Client::eventResponse (bool response)\fR [slot]\fP"
+
+.SS "void Client::logoutHappened (QString username)"
+
+.SS "bool Client::makeConnection (QHostAddress::SpecialAddress address)\fR [private]\fP"
+
+.SS "void Client::newEventSync (QString eventTitle, QString startTime)\fR [signal]\fP"
+
+.SS "void Client::newUserLoggedIn (const QString & username)\fR [signal]\fP"
+
+.SS "void Client::readFromServer ()\fR [slot]\fP"
+
+.PP
+\fBClient\fP can receive one of the following messages: 
+.IP "1." 4
+new connection
+.IP "2." 4
+disconnected
+.IP "3." 4
+syncRequest
+.IP "4." 4
+rejectSync
+.IP "5." 4
+new sync event
+.IP "6." 4
+agreed sync 
+.PP
+
+.SS "void Client::sendMessage (QString message)\fR [private]\fP"
+
+.SS "void Client::showSyncWindow (QString from, QString eventTitle, int duration)\fR [signal]\fP"
+
+.SS "void Client::syncRequest (QString from, QString to, QString titleEvent, int duration, \fBCalendar\fP calendar)\fR [slot]\fP"
+
+.SS "void Client::syncRequestDenied (QString friendName)\fR [signal]\fP"
+
+.SS "void Client::syncResponse (bool response, QString username, QString friendName, int duration, \fBCalendar\fP cal = \fR{}\fP) const\fR [slot]\fP"
+
+.SS "void Client::syncSuccess (QDateTime startTime, QDateTime endTime, QString eventTitle)\fR [signal]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "QList<QString> Client::m_friends"
+
+.SS "QTcpSocket* Client::m_socket\fR [private]\fP"
+
+.SS "QString Client::m_username"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for kOrganizify from the source code\&.

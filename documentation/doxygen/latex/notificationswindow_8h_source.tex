@@ -1,0 +1,35 @@
+\doxysection{notificationswindow.\+h}
+\hypertarget{notificationswindow_8h_source}{}\label{notificationswindow_8h_source}\index{src/notificationswindow.h@{src/notificationswindow.h}}
+\mbox{\hyperlink{notificationswindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NOTIFICATIONSWINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NOTIFICATIONSWINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QDateTime>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QtMultimedia/QSoundEffect>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_notifications_window}{NotificationsWindow}};}
+\DoxyCodeLine{00012\ \}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_notifications_window}{NotificationsWindow}}\ :\ \textcolor{keyword}{public}\ QWidget\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_notifications_window_a01574d14fa4f46e9ba6793b055c133b5}{NotificationsWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_notifications_window_a52581134137a5af76756b72c271a6fc2}{\string~NotificationsWindow}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_notifications_window_a9c6acbf528b8977b7a69b24aed540996}{updateWindow}}(\textcolor{keyword}{const}\ QString\ \&name,\ \textcolor{keyword}{const}\ QString\ \&time,\ \textcolor{keyword}{const}\ QString\ \&location);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \ \ Ui::NotificationsWindow\ *\mbox{\hyperlink{class_notifications_window_a1721d03f258f4be80cfd15f92791544c}{ui}};}
+\DoxyCodeLine{00026\ \ \ \ \ QSoundEffect\ *\mbox{\hyperlink{class_notifications_window_a4cbe441a7978fe012d66c9ac6112300c}{m\_mediaPlayer}};}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NOTIFICATIONSWINDOW\_H}}
+
+\end{DoxyCode}

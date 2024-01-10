@@ -1,0 +1,113 @@
+.TH "SyncWindow" 3 "kOrganizify" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SyncWindow
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <syncwindow\&.h>\fP
+.PP
+Inherits QWidget\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBsendSyncRequest\fP (QString username, QString friendName, QString eventTitle, int duration, \fBCalendar\fP calendar)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSyncWindow\fP (QString username, QString friendName, \fBCalendar\fP calendar, QWidget *parent=nullptr)"
+.br
+.ti -1c
+.RI "\fB~SyncWindow\fP ()"
+.br
+.ti -1c
+.RI "QString \fBgetEnteredText\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetSelectedNumber\fP () const"
+.br
+.ti -1c
+.RI "void \fBchangeColor\fP (QString color)"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBonTextEntered\fP (const QString &m_text)"
+.br
+.ti -1c
+.RI "void \fBonNumberSelected\fP (int m_index)"
+.br
+.ti -1c
+.RI "void \fBonSyncButtonClicked\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "Ui::SyncWindow * \fBui\fP"
+.br
+.ti -1c
+.RI "QString \fBm_friendName\fP"
+.br
+.ti -1c
+.RI "QString \fBm_username\fP"
+.br
+.ti -1c
+.RI "QString \fBm_enteredText\fP"
+.br
+.ti -1c
+.RI "\fBCalendar\fP \fBm_calendar\fP"
+.br
+.ti -1c
+.RI "int \fBm_selectedNumber\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SyncWindow::SyncWindow (QString username, QString friendName, \fBCalendar\fP calendar, QWidget * parent = \fRnullptr\fP)\fR [explicit]\fP"
+
+.SS "SyncWindow::~SyncWindow ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void SyncWindow::changeColor (QString color)"
+
+.SS "QString SyncWindow::getEnteredText () const"
+
+.SS "int SyncWindow::getSelectedNumber () const"
+
+.SS "void SyncWindow::onNumberSelected (int m_index)\fR [private]\fP, \fR [slot]\fP"
+
+.SS "void SyncWindow::onSyncButtonClicked ()\fR [private]\fP, \fR [slot]\fP"
+
+.SS "void SyncWindow::onTextEntered (const QString & m_text)\fR [private]\fP, \fR [slot]\fP"
+
+.SS "void SyncWindow::sendSyncRequest (QString username, QString friendName, QString eventTitle, int duration, \fBCalendar\fP calendar)\fR [signal]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBCalendar\fP SyncWindow::m_calendar\fR [private]\fP"
+
+.SS "QString SyncWindow::m_enteredText\fR [private]\fP"
+
+.SS "QString SyncWindow::m_friendName\fR [private]\fP"
+
+.SS "int SyncWindow::m_selectedNumber\fR [private]\fP"
+
+.SS "QString SyncWindow::m_username\fR [private]\fP"
+
+.SS "Ui::SyncWindow* SyncWindow::ui\fR [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for kOrganizify from the source code\&.

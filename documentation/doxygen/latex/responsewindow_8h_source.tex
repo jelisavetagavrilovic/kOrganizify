@@ -1,0 +1,40 @@
+\doxysection{responsewindow.\+h}
+\hypertarget{responsewindow_8h_source}{}\label{responsewindow_8h_source}\index{src/responsewindow.h@{src/responsewindow.h}}
+\mbox{\hyperlink{responsewindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RESPONSEWINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RESPONSEWINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_response_window}{ResponseWindow}};}
+\DoxyCodeLine{00009\ \}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_response_window}{ResponseWindow}}\ :\ \textcolor{keyword}{public}\ QWidget\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_response_window_a76f883540129d03634ca59210c510d6e}{ResponseWindow}}(QString\ eventTitle,\ QString\ startTime,\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_response_window_abde8f8bf2c79e17a842d15fabb1d60f3}{\string~ResponseWindow}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_response_window_a4f6c26aa646277c2fddae950c690132e}{changeColor}}(QString\ color);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_response_window_a266bd09da7a23f80731d87ce37d22901}{onYesClicked}}();}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_response_window_a5a867aea5ac73df2c4b740e65d293b31}{onNoClicked}}();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ signals:}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_response_window_a055d01d87a92391f75aa3db7b44edb84}{sendResponse}}(\textcolor{keywordtype}{bool}\ answer);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_response_window_a948799374b117e64d858b4d8d62512a0}{setDate}}(QString\ foundDate);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_response_window_a00b875d75a593d4d0b2802139f634b11}{setTitle}}(QString\ title);}
+\DoxyCodeLine{00029\ \ \ \ \ QString\ \mbox{\hyperlink{class_response_window_a99a59ff59c9d7f914054cfe96f2c30ab}{getDate}}();}
+\DoxyCodeLine{00030\ \ \ \ \ Ui::ResponseWindow\ *\mbox{\hyperlink{class_response_window_af99e277d7dd87137791bdaef55887e11}{ui}};}
+\DoxyCodeLine{00031\ \ \ \ \ QString\ \mbox{\hyperlink{class_response_window_a461ad99d7fd802d3ec85491303bef14c}{m\_date}};}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RESPONSEWINDOW\_H}}
+
+\end{DoxyCode}

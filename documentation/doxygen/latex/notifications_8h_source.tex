@@ -1,0 +1,41 @@
+\doxysection{notifications.\+h}
+\hypertarget{notifications_8h_source}{}\label{notifications_8h_source}\index{src/notifications.h@{src/notifications.h}}
+\mbox{\hyperlink{notifications_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ notifications.h}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ NOTIFICATIONS\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ NOTIFICATIONS\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QDateTime>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QList>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QMessageBox>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{calendar_8h}{calendar.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{notificationswindow_8h}{notificationswindow.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_notifications}{Notifications}}\ :\ \textcolor{keyword}{public}\ QObject\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00016\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_notifications_a1cea69d4a08e6b91cfe7af9b16acb489}{Notifications}}(\mbox{\hyperlink{class_calendar}{Calendar}}\ *calendar);}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_notifications_af6b80705f17fbc04d89f8357796ad3a3}{\string~Notifications}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_notifications_a6a9a9cbc872f248108d0d18811bbd853}{checkEvents}}(\textcolor{keyword}{const}\ QList<Event>\ \&filteredEvents);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_notifications_a48def8b6db0eb7a064203adcda944dfb}{enabledNotifications}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_notifications_a83f8a9f8f1940305879b475d52ee4c44}{updatedEvents}}();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_notifications_ab3b796c1ca198f0660bbdd06bf77a564}{showEvent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_event}{Event}}\ \&event);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_calendar}{Calendar}}\ *\mbox{\hyperlink{class_notifications_a54aab968e9559f36f548912da0f92894}{m\_calendar}};}
+\DoxyCodeLine{00030\ \ \ \ \ QTimer\ *\mbox{\hyperlink{class_notifications_aa87dfdbe7e817cc855ff88b6a6baaca5}{m\_timer}};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_notifications_a854ec25db4d28f6bcf3c671bf8bf92ff}{m\_enabled}};}
+\DoxyCodeLine{00032\ \ \ \ \ QList<Event>\ \mbox{\hyperlink{class_notifications_a2925cdf17ad57a294d4336ddd3005790}{m\_filteredEvents}};}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NOTIFICATIONS\_H}}
+
+\end{DoxyCode}

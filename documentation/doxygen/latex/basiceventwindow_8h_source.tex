@@ -1,0 +1,59 @@
+\doxysection{basiceventwindow.\+h}
+\hypertarget{basiceventwindow_8h_source}{}\label{basiceventwindow_8h_source}\index{src/basiceventwindow.h@{src/basiceventwindow.h}}
+\mbox{\hyperlink{basiceventwindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BASICEVENTWINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BASICEVENTWINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{basicevent_8h}{basicevent.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{calendar_8h}{calendar.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{scheduler_8h}{scheduler.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QDate>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QMessageBox>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_basic_event_window}{BasicEventWindow}};}
+\DoxyCodeLine{00014\ \}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_basic_event_window}{BasicEventWindow}}\ :\ \textcolor{keyword}{public}\ QDialog\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_basic_event_window_a6f38785813d29d9b15a548f8e6acd076}{BasicEventWindow}}(\mbox{\hyperlink{class_calendar}{Calendar}}\ *calendar,\ QDate\ *startTime,\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_basic_event_window_a390ecc7cac3cc1c1ff9dd1c469f093fc}{\string~BasicEventWindow}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_basic_event_window_add317f736781e21aac3e1d6fdf7d4bff}{m\_currentIndex}};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_basic_event_window_a5bcf4f79a73703447512a8c69918616d}{m\_currentCalendarIndex}};}
+\DoxyCodeLine{00024\ \ \ \ \ QList<Calendar\ *>\ \mbox{\hyperlink{class_basic_event_window_a1c6e7555b864bd658b8e237348e60dd8}{m\_listOfCalendars}};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_basic_event_window_a6c9ea939a2fb7edf12c05662a1a0ce3f}{changeColor}}(QString\ color);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ signals:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_basic_event_window_aad9fc7bbd78688a03ed7b889ab01221e}{previousCalendarSignal}}(\mbox{\hyperlink{class_calendar}{Calendar}}\ *\mbox{\hyperlink{class_basic_event_window_a2050b98a5a5e9271630199eb315d05b1}{m\_calendar}});}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_basic_event_window_a5421689eca7e6ceb7bdafb80b0ac9427}{nextCalendarSignal}}(\mbox{\hyperlink{class_calendar}{Calendar}}\ *\mbox{\hyperlink{class_basic_event_window_a2050b98a5a5e9271630199eb315d05b1}{m\_calendar}});}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_basic_event_window_ac7975df9bfd5c6a1db37c353ec859610}{saveCalendar}}(\mbox{\hyperlink{class_calendar}{Calendar}}\ *\mbox{\hyperlink{class_basic_event_window_a2050b98a5a5e9271630199eb315d05b1}{m\_calendar}});}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_basic_event_window_a53cc2f7e5caf1af0cf4911dab4732f28}{addEvent}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ op);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_basic_event_window_a7003ab915bb9c49ff5f51797e34d5e03}{removeEvent}}();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_basic_event_window_a450e0bf18e8a5ccd6c64442b5bd9a549}{generate}}();}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_basic_event_window_af6ab882918a1d67d7df08198556554fe}{nextEvent}}();}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_basic_event_window_a442b422d15b55e74b68d543c8f93be53}{previousEvent}}();}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_basic_event_window_ab6185be3e48e5f81df9bd9804b3e6f9c}{updateUi}}();}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_basic_event_window_ae6e8c801ac6407ea1e0b5d7a42f62af1}{previousCalendar}}();}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_basic_event_window_a9920b9ec9db20ac74391568ff6efee0c}{nextCalendar}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ Ui::BasicEventWindow\ *\mbox{\hyperlink{class_basic_event_window_a29875cac8316e92ba0d62646863b8d3f}{ui}};}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_basic_event}{BasicEvent}}\ *\mbox{\hyperlink{class_basic_event_window_a04865153a34f07f7d0a5e6c8b701a94e}{m\_basicEvent}};}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_calendar}{Calendar}}\ *\mbox{\hyperlink{class_basic_event_window_a2050b98a5a5e9271630199eb315d05b1}{m\_calendar}};}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_calendar}{Calendar}}\ *\mbox{\hyperlink{class_basic_event_window_a7b2a92891384d976a8537d9878763f67}{m\_basicCalendar}};}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_scheduler}{Scheduler}}\ *\mbox{\hyperlink{class_basic_event_window_a79f4d09d0eb88dc379124625a801bc91}{m\_scheduler}};}
+\DoxyCodeLine{00048\ \ \ \ \ QDate\ *\mbox{\hyperlink{class_basic_event_window_a11591a02e611335ffacd5201b55b9cdd}{m\_startDate}};}
+\DoxyCodeLine{00049\ \ \ \ \ QList<Event>\ \mbox{\hyperlink{class_basic_event_window_aa5738128b49e6ca81af439c62b5cc254}{m\_cal}};}
+\DoxyCodeLine{00050\ \ \ \ \ QList<Event>\ \mbox{\hyperlink{class_basic_event_window_a40094d39aed31f65caa5a5ef8184477a}{m\_basicCal}};}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BASICEVENTWINDOW\_H}}
+
+\end{DoxyCode}

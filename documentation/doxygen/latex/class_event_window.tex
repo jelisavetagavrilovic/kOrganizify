@@ -1,0 +1,212 @@
+\doxysection{Event\+Window Class Reference}
+\hypertarget{class_event_window}{}\label{class_event_window}\index{EventWindow@{EventWindow}}
+
+
+{\ttfamily \#include $<$eventwindow.\+h$>$}
+
+
+
+Inheritance diagram for Event\+Window\+:
+% FIG 0
+
+
+Collaboration diagram for Event\+Window\+:
+% FIG 1
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_event_window_a961ae315d7871516977e1ecd6733c8ff}{save\+Button\+Clicked}} ()
+\item 
+void \mbox{\hyperlink{class_event_window_a08b8b9867385f60a452cfa5465ef1a81}{delete\+Button\+Clicked}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_event_window_a159081d30b8d40a7ccc15343b6aa2506}{Event\+Window}} (\mbox{\hyperlink{class_calendar}{Calendar}} \texorpdfstring{$\ast$}{*}calendar, QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_event_window_a27ce10ac845ca81cd7198b84a6b91f30}{\texorpdfstring{$\sim$}{\string~}\+Event\+Window}} ()
+\item 
+void \mbox{\hyperlink{class_event_window_a9ab826fedf58932170a14da132818f78}{set\+Start\+Date}} (const QDate\+Time \&date\+Time)
+\item 
+void \mbox{\hyperlink{class_event_window_a7adbe620c931f3bd9447345d2683484f}{set\+End\+Date}} (const QDate\+Time \&date\+Time)
+\item 
+void \mbox{\hyperlink{class_event_window_ad3fcf5aaa6493afe3325c8d2a10809f5}{set\+Title}} (const QString \&title)
+\item 
+void \mbox{\hyperlink{class_event_window_a86ae979796d54983b133e3d3a3fab292}{set\+Description}} (const QString \&description)
+\item 
+void \mbox{\hyperlink{class_event_window_aefe7a7273d3292c8954f3fb7ed204646}{set\+Location}} (const QString \&location)
+\item 
+void \mbox{\hyperlink{class_event_window_adf5b50d0fa438931deaf4c189bba8948}{set\+Priority}} (const \mbox{\hyperlink{event_8h_a2bdd47d7a383e60d517514db97940b3f}{Custom\+Event\+Priority}} \&priority)
+\item 
+void \mbox{\hyperlink{class_event_window_af91c90f526e5fa3d901e0251298d072d}{set\+Current\+Event}} (const \mbox{\hyperlink{class_event}{Event}} \&event)
+\item 
+\mbox{\hyperlink{class_event}{Event}} \mbox{\hyperlink{class_event_window_a1ffad9478790e0d8e57e26dc25ead33f}{get\+Current\+Event}} () const
+\item 
+bool \mbox{\hyperlink{class_event_window_a9922d0bb04925a17bce3e632b9940fab}{is\+Event\+Null}} () const
+\item 
+void \mbox{\hyperlink{class_event_window_a83ebd8cb011f5aec6b287f63158313cd}{change\+Color}} (QString color)
+\item 
+bool \mbox{\hyperlink{class_event_window_a19a15b2881ffc20a1125bfbab9971e02}{check\+Event\+Overlap}} (const \mbox{\hyperlink{class_event}{Event}} \&new\+Event)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_event_window_a2a7d1970123f4e0cbefdb40eed667466}{key\+Press\+Event}} (QKey\+Event \texorpdfstring{$\ast$}{*}event) override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_event_window_a55b2ac75e7843e2d1e12115295dbf5f4}{on\+Save\+Button\+Clicked}} ()
+\item 
+void \mbox{\hyperlink{class_event_window_af16255c1197591391725eb6fb60db546}{on\+Delete\+Button\+Clicked}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Event\+Window \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_event_window_a021feda6d7840540ee793bba38018347}{ui}}
+\item 
+\mbox{\hyperlink{class_calendar}{Calendar}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_event_window_a2b122b119a77094be55d471f7985170d}{m\+\_\+calendar}}
+\item 
+\mbox{\hyperlink{class_event}{Event}} \mbox{\hyperlink{class_event_window_aea40ac8838cd5f27250ea4e278fae87e}{m\+\_\+current\+Event}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_event_window_a159081d30b8d40a7ccc15343b6aa2506}\label{class_event_window_a159081d30b8d40a7ccc15343b6aa2506} 
+\index{EventWindow@{EventWindow}!EventWindow@{EventWindow}}
+\index{EventWindow@{EventWindow}!EventWindow@{EventWindow}}
+\doxysubsubsection{\texorpdfstring{EventWindow()}{EventWindow()}}
+{\footnotesize\ttfamily Event\+Window\+::\+Event\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_calendar}{Calendar}} \texorpdfstring{$\ast$}{*}}]{calendar,  }\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\Hypertarget{class_event_window_a27ce10ac845ca81cd7198b84a6b91f30}\label{class_event_window_a27ce10ac845ca81cd7198b84a6b91f30} 
+\index{EventWindow@{EventWindow}!````~EventWindow@{\texorpdfstring{$\sim$}{\string~}EventWindow}}
+\index{````~EventWindow@{\texorpdfstring{$\sim$}{\string~}EventWindow}!EventWindow@{EventWindow}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}EventWindow()}{\string~EventWindow()}}
+{\footnotesize\ttfamily Event\+Window\+::\texorpdfstring{$\sim$}{\string~}\+Event\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_event_window_a83ebd8cb011f5aec6b287f63158313cd}\label{class_event_window_a83ebd8cb011f5aec6b287f63158313cd} 
+\index{EventWindow@{EventWindow}!changeColor@{changeColor}}
+\index{changeColor@{changeColor}!EventWindow@{EventWindow}}
+\doxysubsubsection{\texorpdfstring{changeColor()}{changeColor()}}
+{\footnotesize\ttfamily void Event\+Window\+::change\+Color (\begin{DoxyParamCaption}\item[{QString}]{color }\end{DoxyParamCaption})}
+
+\Hypertarget{class_event_window_a19a15b2881ffc20a1125bfbab9971e02}\label{class_event_window_a19a15b2881ffc20a1125bfbab9971e02} 
+\index{EventWindow@{EventWindow}!checkEventOverlap@{checkEventOverlap}}
+\index{checkEventOverlap@{checkEventOverlap}!EventWindow@{EventWindow}}
+\doxysubsubsection{\texorpdfstring{checkEventOverlap()}{checkEventOverlap()}}
+{\footnotesize\ttfamily bool Event\+Window\+::check\+Event\+Overlap (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_event}{Event}} \&}]{new\+Event }\end{DoxyParamCaption})}
+
+\Hypertarget{class_event_window_a08b8b9867385f60a452cfa5465ef1a81}\label{class_event_window_a08b8b9867385f60a452cfa5465ef1a81} 
+\index{EventWindow@{EventWindow}!deleteButtonClicked@{deleteButtonClicked}}
+\index{deleteButtonClicked@{deleteButtonClicked}!EventWindow@{EventWindow}}
+\doxysubsubsection{\texorpdfstring{deleteButtonClicked}{deleteButtonClicked}}
+{\footnotesize\ttfamily void Event\+Window\+::delete\+Button\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_event_window_a1ffad9478790e0d8e57e26dc25ead33f}\label{class_event_window_a1ffad9478790e0d8e57e26dc25ead33f} 
+\index{EventWindow@{EventWindow}!getCurrentEvent@{getCurrentEvent}}
+\index{getCurrentEvent@{getCurrentEvent}!EventWindow@{EventWindow}}
+\doxysubsubsection{\texorpdfstring{getCurrentEvent()}{getCurrentEvent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_event}{Event}} Event\+Window\+::get\+Current\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_event_window_a9922d0bb04925a17bce3e632b9940fab}\label{class_event_window_a9922d0bb04925a17bce3e632b9940fab} 
+\index{EventWindow@{EventWindow}!isEventNull@{isEventNull}}
+\index{isEventNull@{isEventNull}!EventWindow@{EventWindow}}
+\doxysubsubsection{\texorpdfstring{isEventNull()}{isEventNull()}}
+{\footnotesize\ttfamily bool Event\+Window\+::is\+Event\+Null (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_event_window_a2a7d1970123f4e0cbefdb40eed667466}\label{class_event_window_a2a7d1970123f4e0cbefdb40eed667466} 
+\index{EventWindow@{EventWindow}!keyPressEvent@{keyPressEvent}}
+\index{keyPressEvent@{keyPressEvent}!EventWindow@{EventWindow}}
+\doxysubsubsection{\texorpdfstring{keyPressEvent()}{keyPressEvent()}}
+{\footnotesize\ttfamily void Event\+Window\+::key\+Press\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+\Hypertarget{class_event_window_af16255c1197591391725eb6fb60db546}\label{class_event_window_af16255c1197591391725eb6fb60db546} 
+\index{EventWindow@{EventWindow}!onDeleteButtonClicked@{onDeleteButtonClicked}}
+\index{onDeleteButtonClicked@{onDeleteButtonClicked}!EventWindow@{EventWindow}}
+\doxysubsubsection{\texorpdfstring{onDeleteButtonClicked}{onDeleteButtonClicked}}
+{\footnotesize\ttfamily void Event\+Window\+::on\+Delete\+Button\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\Hypertarget{class_event_window_a55b2ac75e7843e2d1e12115295dbf5f4}\label{class_event_window_a55b2ac75e7843e2d1e12115295dbf5f4} 
+\index{EventWindow@{EventWindow}!onSaveButtonClicked@{onSaveButtonClicked}}
+\index{onSaveButtonClicked@{onSaveButtonClicked}!EventWindow@{EventWindow}}
+\doxysubsubsection{\texorpdfstring{onSaveButtonClicked}{onSaveButtonClicked}}
+{\footnotesize\ttfamily void Event\+Window\+::on\+Save\+Button\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\Hypertarget{class_event_window_a961ae315d7871516977e1ecd6733c8ff}\label{class_event_window_a961ae315d7871516977e1ecd6733c8ff} 
+\index{EventWindow@{EventWindow}!saveButtonClicked@{saveButtonClicked}}
+\index{saveButtonClicked@{saveButtonClicked}!EventWindow@{EventWindow}}
+\doxysubsubsection{\texorpdfstring{saveButtonClicked}{saveButtonClicked}}
+{\footnotesize\ttfamily void Event\+Window\+::save\+Button\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_event_window_af91c90f526e5fa3d901e0251298d072d}\label{class_event_window_af91c90f526e5fa3d901e0251298d072d} 
+\index{EventWindow@{EventWindow}!setCurrentEvent@{setCurrentEvent}}
+\index{setCurrentEvent@{setCurrentEvent}!EventWindow@{EventWindow}}
+\doxysubsubsection{\texorpdfstring{setCurrentEvent()}{setCurrentEvent()}}
+{\footnotesize\ttfamily void Event\+Window\+::set\+Current\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_event}{Event}} \&}]{event }\end{DoxyParamCaption})}
+
+\Hypertarget{class_event_window_a86ae979796d54983b133e3d3a3fab292}\label{class_event_window_a86ae979796d54983b133e3d3a3fab292} 
+\index{EventWindow@{EventWindow}!setDescription@{setDescription}}
+\index{setDescription@{setDescription}!EventWindow@{EventWindow}}
+\doxysubsubsection{\texorpdfstring{setDescription()}{setDescription()}}
+{\footnotesize\ttfamily void Event\+Window\+::set\+Description (\begin{DoxyParamCaption}\item[{const QString \&}]{description }\end{DoxyParamCaption})}
+
+\Hypertarget{class_event_window_a7adbe620c931f3bd9447345d2683484f}\label{class_event_window_a7adbe620c931f3bd9447345d2683484f} 
+\index{EventWindow@{EventWindow}!setEndDate@{setEndDate}}
+\index{setEndDate@{setEndDate}!EventWindow@{EventWindow}}
+\doxysubsubsection{\texorpdfstring{setEndDate()}{setEndDate()}}
+{\footnotesize\ttfamily void Event\+Window\+::set\+End\+Date (\begin{DoxyParamCaption}\item[{const QDate\+Time \&}]{date\+Time }\end{DoxyParamCaption})}
+
+\Hypertarget{class_event_window_aefe7a7273d3292c8954f3fb7ed204646}\label{class_event_window_aefe7a7273d3292c8954f3fb7ed204646} 
+\index{EventWindow@{EventWindow}!setLocation@{setLocation}}
+\index{setLocation@{setLocation}!EventWindow@{EventWindow}}
+\doxysubsubsection{\texorpdfstring{setLocation()}{setLocation()}}
+{\footnotesize\ttfamily void Event\+Window\+::set\+Location (\begin{DoxyParamCaption}\item[{const QString \&}]{location }\end{DoxyParamCaption})}
+
+\Hypertarget{class_event_window_adf5b50d0fa438931deaf4c189bba8948}\label{class_event_window_adf5b50d0fa438931deaf4c189bba8948} 
+\index{EventWindow@{EventWindow}!setPriority@{setPriority}}
+\index{setPriority@{setPriority}!EventWindow@{EventWindow}}
+\doxysubsubsection{\texorpdfstring{setPriority()}{setPriority()}}
+{\footnotesize\ttfamily void Event\+Window\+::set\+Priority (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{event_8h_a2bdd47d7a383e60d517514db97940b3f}{Custom\+Event\+Priority}} \&}]{priority }\end{DoxyParamCaption})}
+
+\Hypertarget{class_event_window_a9ab826fedf58932170a14da132818f78}\label{class_event_window_a9ab826fedf58932170a14da132818f78} 
+\index{EventWindow@{EventWindow}!setStartDate@{setStartDate}}
+\index{setStartDate@{setStartDate}!EventWindow@{EventWindow}}
+\doxysubsubsection{\texorpdfstring{setStartDate()}{setStartDate()}}
+{\footnotesize\ttfamily void Event\+Window\+::set\+Start\+Date (\begin{DoxyParamCaption}\item[{const QDate\+Time \&}]{date\+Time }\end{DoxyParamCaption})}
+
+\Hypertarget{class_event_window_ad3fcf5aaa6493afe3325c8d2a10809f5}\label{class_event_window_ad3fcf5aaa6493afe3325c8d2a10809f5} 
+\index{EventWindow@{EventWindow}!setTitle@{setTitle}}
+\index{setTitle@{setTitle}!EventWindow@{EventWindow}}
+\doxysubsubsection{\texorpdfstring{setTitle()}{setTitle()}}
+{\footnotesize\ttfamily void Event\+Window\+::set\+Title (\begin{DoxyParamCaption}\item[{const QString \&}]{title }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_event_window_a2b122b119a77094be55d471f7985170d}\label{class_event_window_a2b122b119a77094be55d471f7985170d} 
+\index{EventWindow@{EventWindow}!m\_calendar@{m\_calendar}}
+\index{m\_calendar@{m\_calendar}!EventWindow@{EventWindow}}
+\doxysubsubsection{\texorpdfstring{m\_calendar}{m\_calendar}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_calendar}{Calendar}}\texorpdfstring{$\ast$}{*} Event\+Window\+::m\+\_\+calendar\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_event_window_aea40ac8838cd5f27250ea4e278fae87e}\label{class_event_window_aea40ac8838cd5f27250ea4e278fae87e} 
+\index{EventWindow@{EventWindow}!m\_currentEvent@{m\_currentEvent}}
+\index{m\_currentEvent@{m\_currentEvent}!EventWindow@{EventWindow}}
+\doxysubsubsection{\texorpdfstring{m\_currentEvent}{m\_currentEvent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_event}{Event}} Event\+Window\+::m\+\_\+current\+Event\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_event_window_a021feda6d7840540ee793bba38018347}\label{class_event_window_a021feda6d7840540ee793bba38018347} 
+\index{EventWindow@{EventWindow}!ui@{ui}}
+\index{ui@{ui}!EventWindow@{EventWindow}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Event\+Window\texorpdfstring{$\ast$}{*} Event\+Window\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{eventwindow_8h}{eventwindow.\+h}}\item 
+src/\mbox{\hyperlink{eventwindow_8cpp}{eventwindow.\+cpp}}\end{DoxyCompactItemize}

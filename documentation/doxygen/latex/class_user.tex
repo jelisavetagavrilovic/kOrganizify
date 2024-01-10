@@ -1,0 +1,222 @@
+\doxysection{User Class Reference}
+\hypertarget{class_user}{}\label{class_user}\index{User@{User}}
+
+
+{\ttfamily \#include $<$user.\+h$>$}
+
+
+
+Inheritance diagram for User\+:
+% FIG 0
+
+
+Collaboration diagram for User\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_user_aaa3511c1b1ed9dd40eca9227ed384e48}{User}} (const QString \&username, const QString \&password)
+\item 
+bool \mbox{\hyperlink{class_user_aa6a068f18749b772677d82bae3a38893}{user\+Exists}} (const QString \&username)
+\item 
+void \mbox{\hyperlink{class_user_aaaea7fc988583574b7ac73a598179df0}{load\+Data}} (const QString \&username)
+\item 
+void \mbox{\hyperlink{class_user_ab734f800b4d41dad12d4ff89d22f83de}{save\+Data}} (const QString \&username)
+\item 
+void \mbox{\hyperlink{class_user_ad34d1b634d63467f53740de78942b860}{from\+Json}} (const QJson\+Object \&json\+Value) override
+\item 
+void \mbox{\hyperlink{class_user_a8c2ec731492402e5342ba15efe4f01dc}{set\+Calendar}} (const \mbox{\hyperlink{class_calendar}{Calendar}} \&calendar)
+\item 
+bool \mbox{\hyperlink{class_user_af1743d32d8985af67e4013b98f8f619a}{login}} (const QString \&password)
+\item 
+bool \mbox{\hyperlink{class_user_a3a24d6d52ea6b594a5d89d8aa34d388a}{register\+User}} (const QString \&password)
+\item 
+void \mbox{\hyperlink{class_user_ade7eb5acf5097892168086ceed504ab3}{logout}} ()
+\item 
+\mbox{\hyperlink{class_calendar}{Calendar}} \& \mbox{\hyperlink{class_user_a1b2e442048c1ba83fc38e1f88bdbc228}{get\+Calendar}} ()
+\item 
+\mbox{\hyperlink{class_to_do_list}{To\+Do\+List}} \& \mbox{\hyperlink{class_user_a538eb0e60ca3501c77fbb137ec9fba8c}{get\+To\+Do\+List}} ()
+\item 
+\mbox{\hyperlink{class_settings}{Settings}} \& \mbox{\hyperlink{class_user_a0be60c7dd488ca7343b590790321c788}{get\+Settings}} ()
+\item 
+QString \mbox{\hyperlink{class_user_a1c9ee5527f563fb644e0ad6bbab79f41}{get\+Username}} () const
+\item 
+QJson\+Value \mbox{\hyperlink{class_user_ab59f0101721cd374f249926d52d32fcf}{to\+Json}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_save_load}{Save\+Load}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_save_load_ad12fe99dac1bc8755610ddfa11324757}{Save\+Load}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+QString \mbox{\hyperlink{class_save_load_adba074bd989113b14cd8f408099465fc}{get\+File\+Path}} (const QString \&username)
+\item 
+void \mbox{\hyperlink{class_save_load_a936276a111b56c683aa357b5b4c66392}{save\+Data}} (const QString \&username)
+\item 
+void \mbox{\hyperlink{class_save_load_aa65dfc33822e446af5d2a774fb4e4205}{load\+Data}} (const QString \&username)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_client}{Client}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_user_a040a1a741154454027da8ba2d8119c3d}{m\+\_\+client}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_save_load}{Save\+Load}}}
+\begin{DoxyCompactItemize}
+\item 
+QJson\+Object \mbox{\hyperlink{class_save_load_aa82a2fc9a27d60f33130649219ebe20a}{m\+\_\+json\+Object}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_user_acd004ce9146e4fb2cc7cdf7a735109f6}{m\+\_\+username}}
+\item 
+QString \mbox{\hyperlink{class_user_a7502274e591a05a33881c7ffaa8632c4}{m\+\_\+password}}
+\item 
+\mbox{\hyperlink{class_calendar}{Calendar}} \mbox{\hyperlink{class_user_a0ebb0234a497de25267225262e29310c}{m\+\_\+calendar}}
+\item 
+\mbox{\hyperlink{class_to_do_list}{To\+Do\+List}} \mbox{\hyperlink{class_user_a27bceb6485a0c42958d819f766cd22e5}{m\+\_\+to\+Do\+List}}
+\item 
+\mbox{\hyperlink{class_settings}{Settings}} \mbox{\hyperlink{class_user_afac4acd019b4f3a8e0ec513784534046}{m\+\_\+settings}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_user_aaa3511c1b1ed9dd40eca9227ed384e48}\label{class_user_aaa3511c1b1ed9dd40eca9227ed384e48} 
+\index{User@{User}!User@{User}}
+\index{User@{User}!User@{User}}
+\doxysubsubsection{\texorpdfstring{User()}{User()}}
+{\footnotesize\ttfamily User\+::\+User (\begin{DoxyParamCaption}\item[{const QString \&}]{username,  }\item[{const QString \&}]{password }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_user_ad34d1b634d63467f53740de78942b860}\label{class_user_ad34d1b634d63467f53740de78942b860} 
+\index{User@{User}!fromJson@{fromJson}}
+\index{fromJson@{fromJson}!User@{User}}
+\doxysubsubsection{\texorpdfstring{fromJson()}{fromJson()}}
+{\footnotesize\ttfamily void User\+::from\+Json (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_save_load_a05c9c7a31d4e909f05c1028da44f9deb}{Save\+Load}}.
+
+\Hypertarget{class_user_a1b2e442048c1ba83fc38e1f88bdbc228}\label{class_user_a1b2e442048c1ba83fc38e1f88bdbc228} 
+\index{User@{User}!getCalendar@{getCalendar}}
+\index{getCalendar@{getCalendar}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getCalendar()}{getCalendar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_calendar}{Calendar}} \& User\+::get\+Calendar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_user_a0be60c7dd488ca7343b590790321c788}\label{class_user_a0be60c7dd488ca7343b590790321c788} 
+\index{User@{User}!getSettings@{getSettings}}
+\index{getSettings@{getSettings}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getSettings()}{getSettings()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_settings}{Settings}} \& User\+::get\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_user_a538eb0e60ca3501c77fbb137ec9fba8c}\label{class_user_a538eb0e60ca3501c77fbb137ec9fba8c} 
+\index{User@{User}!getToDoList@{getToDoList}}
+\index{getToDoList@{getToDoList}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getToDoList()}{getToDoList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_to_do_list}{To\+Do\+List}} \& User\+::get\+To\+Do\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_user_a1c9ee5527f563fb644e0ad6bbab79f41}\label{class_user_a1c9ee5527f563fb644e0ad6bbab79f41} 
+\index{User@{User}!getUsername@{getUsername}}
+\index{getUsername@{getUsername}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getUsername()}{getUsername()}}
+{\footnotesize\ttfamily QString User\+::get\+Username (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_user_aaaea7fc988583574b7ac73a598179df0}\label{class_user_aaaea7fc988583574b7ac73a598179df0} 
+\index{User@{User}!loadData@{loadData}}
+\index{loadData@{loadData}!User@{User}}
+\doxysubsubsection{\texorpdfstring{loadData()}{loadData()}}
+{\footnotesize\ttfamily void User\+::load\+Data (\begin{DoxyParamCaption}\item[{const QString \&}]{username }\end{DoxyParamCaption})}
+
+\Hypertarget{class_user_af1743d32d8985af67e4013b98f8f619a}\label{class_user_af1743d32d8985af67e4013b98f8f619a} 
+\index{User@{User}!login@{login}}
+\index{login@{login}!User@{User}}
+\doxysubsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily bool User\+::login (\begin{DoxyParamCaption}\item[{const QString \&}]{password }\end{DoxyParamCaption})}
+
+\Hypertarget{class_user_ade7eb5acf5097892168086ceed504ab3}\label{class_user_ade7eb5acf5097892168086ceed504ab3} 
+\index{User@{User}!logout@{logout}}
+\index{logout@{logout}!User@{User}}
+\doxysubsubsection{\texorpdfstring{logout()}{logout()}}
+{\footnotesize\ttfamily void User\+::logout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_user_a3a24d6d52ea6b594a5d89d8aa34d388a}\label{class_user_a3a24d6d52ea6b594a5d89d8aa34d388a} 
+\index{User@{User}!registerUser@{registerUser}}
+\index{registerUser@{registerUser}!User@{User}}
+\doxysubsubsection{\texorpdfstring{registerUser()}{registerUser()}}
+{\footnotesize\ttfamily bool User\+::register\+User (\begin{DoxyParamCaption}\item[{const QString \&}]{password }\end{DoxyParamCaption})}
+
+\Hypertarget{class_user_ab734f800b4d41dad12d4ff89d22f83de}\label{class_user_ab734f800b4d41dad12d4ff89d22f83de} 
+\index{User@{User}!saveData@{saveData}}
+\index{saveData@{saveData}!User@{User}}
+\doxysubsubsection{\texorpdfstring{saveData()}{saveData()}}
+{\footnotesize\ttfamily void User\+::save\+Data (\begin{DoxyParamCaption}\item[{const QString \&}]{username }\end{DoxyParamCaption})}
+
+\Hypertarget{class_user_a8c2ec731492402e5342ba15efe4f01dc}\label{class_user_a8c2ec731492402e5342ba15efe4f01dc} 
+\index{User@{User}!setCalendar@{setCalendar}}
+\index{setCalendar@{setCalendar}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setCalendar()}{setCalendar()}}
+{\footnotesize\ttfamily void User\+::set\+Calendar (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_calendar}{Calendar}} \&}]{calendar }\end{DoxyParamCaption})}
+
+\Hypertarget{class_user_ab59f0101721cd374f249926d52d32fcf}\label{class_user_ab59f0101721cd374f249926d52d32fcf} 
+\index{User@{User}!toJson@{toJson}}
+\index{toJson@{toJson}!User@{User}}
+\doxysubsubsection{\texorpdfstring{toJson()}{toJson()}}
+{\footnotesize\ttfamily QJson\+Value User\+::to\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_save_load_ad40a777954df28028579624c19f2d37a}{Save\+Load}}.
+
+\Hypertarget{class_user_aa6a068f18749b772677d82bae3a38893}\label{class_user_aa6a068f18749b772677d82bae3a38893} 
+\index{User@{User}!userExists@{userExists}}
+\index{userExists@{userExists}!User@{User}}
+\doxysubsubsection{\texorpdfstring{userExists()}{userExists()}}
+{\footnotesize\ttfamily bool User\+::user\+Exists (\begin{DoxyParamCaption}\item[{const QString \&}]{username }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_user_a0ebb0234a497de25267225262e29310c}\label{class_user_a0ebb0234a497de25267225262e29310c} 
+\index{User@{User}!m\_calendar@{m\_calendar}}
+\index{m\_calendar@{m\_calendar}!User@{User}}
+\doxysubsubsection{\texorpdfstring{m\_calendar}{m\_calendar}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_calendar}{Calendar}} User\+::m\+\_\+calendar\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_user_a040a1a741154454027da8ba2d8119c3d}\label{class_user_a040a1a741154454027da8ba2d8119c3d} 
+\index{User@{User}!m\_client@{m\_client}}
+\index{m\_client@{m\_client}!User@{User}}
+\doxysubsubsection{\texorpdfstring{m\_client}{m\_client}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_client}{Client}}\texorpdfstring{$\ast$}{*} User\+::m\+\_\+client}
+
+\Hypertarget{class_user_a7502274e591a05a33881c7ffaa8632c4}\label{class_user_a7502274e591a05a33881c7ffaa8632c4} 
+\index{User@{User}!m\_password@{m\_password}}
+\index{m\_password@{m\_password}!User@{User}}
+\doxysubsubsection{\texorpdfstring{m\_password}{m\_password}}
+{\footnotesize\ttfamily QString User\+::m\+\_\+password\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_user_afac4acd019b4f3a8e0ec513784534046}\label{class_user_afac4acd019b4f3a8e0ec513784534046} 
+\index{User@{User}!m\_settings@{m\_settings}}
+\index{m\_settings@{m\_settings}!User@{User}}
+\doxysubsubsection{\texorpdfstring{m\_settings}{m\_settings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_settings}{Settings}} User\+::m\+\_\+settings\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_user_a27bceb6485a0c42958d819f766cd22e5}\label{class_user_a27bceb6485a0c42958d819f766cd22e5} 
+\index{User@{User}!m\_toDoList@{m\_toDoList}}
+\index{m\_toDoList@{m\_toDoList}!User@{User}}
+\doxysubsubsection{\texorpdfstring{m\_toDoList}{m\_toDoList}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_to_do_list}{To\+Do\+List}} User\+::m\+\_\+to\+Do\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_user_acd004ce9146e4fb2cc7cdf7a735109f6}\label{class_user_acd004ce9146e4fb2cc7cdf7a735109f6} 
+\index{User@{User}!m\_username@{m\_username}}
+\index{m\_username@{m\_username}!User@{User}}
+\doxysubsubsection{\texorpdfstring{m\_username}{m\_username}}
+{\footnotesize\ttfamily QString User\+::m\+\_\+username\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{user_8h}{user.\+h}}\item 
+src/\mbox{\hyperlink{user_8cpp}{user.\+cpp}}\end{DoxyCompactItemize}
