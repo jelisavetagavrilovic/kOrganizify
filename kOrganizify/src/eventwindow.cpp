@@ -107,7 +107,7 @@ void EventWindow::onSaveButtonClicked()
     CustomEventPriority selectedPriority = ui->cbPriority->currentData().value<CustomEventPriority>();
     newEvent.setPriority(selectedPriority);
 
-    if (!isEventNull() && !checkEventOverlap(newEvent)){
+    if (!isEventNull()){
         m_calendar->updateEvent(m_currentEvent, newEvent);
     } else if (checkEventOverlap(newEvent)) {
             QMessageBox::warning(this, "Error", "The new event overlaps with existing events.");
