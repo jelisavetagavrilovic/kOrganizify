@@ -1,0 +1,26 @@
+FROM ubuntu:latest
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update -y && \
+    apt-get upgrade -y && \
+    apt-get install -y \
+    qtcreator \
+    build-essential \
+    qtbase5-dev \
+    qt5-qmake \
+    qtmultimedia5-dev \
+    qt6-multimedia-dev && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+
+COPY . /kOrganizify
+WORKDIR /kOrganizify
+
+RUN mkdir build && \
+    cd build && \
+    cmake .. && \
+    make
+
+CMD ["./kOrganizify"]
