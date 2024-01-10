@@ -4,14 +4,15 @@
 #include <QEventLoop>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <utility>
 
 Client::Client(QString username, QObject *parent)
-    : QObject(parent), m_username(username) {
+    : QObject(parent), m_username(std::move(username)) {
   m_socket = new QTcpSocket(this);
   makeConnection(QHostAddress::LocalHost);
 }
 
-bool Client::makeConnection(QHostAddress::SpecialAddress address) {
+auto Client::makeConnection(QHostAddress::SpecialAddress address) -> bool {
   connect(m_socket, &QTcpSocket::readyRead, this, &Client::readFromServer);
   connect(m_socket, &QTcpSocket::disconnected, this, &Client::disconnected);
 

@@ -55,9 +55,9 @@ void EventWindow::setCurrentEvent(const Event &event) {
   m_currentEvent = event;
 }
 
-Event EventWindow::getCurrentEvent() const { return m_currentEvent; }
+auto EventWindow::getCurrentEvent() const -> Event { return m_currentEvent; }
 
-bool EventWindow::isEventNull() const {
+auto EventWindow::isEventNull() const -> bool {
   return m_currentEvent.getTitle().isEmpty() &&
          m_currentEvent.getDescription().isEmpty() &&
          m_currentEvent.getLocation().isEmpty() &&
@@ -102,7 +102,7 @@ void EventWindow::onSaveButtonClicked() {
   newEvent.setStartTime(startDateTime);
   newEvent.setEndTime(endDateTime);
 
-  CustomEventPriority selectedPriority =
+  auto selectedPriority =
       ui->cbPriority->currentData().value<CustomEventPriority>();
   newEvent.setPriority(selectedPriority);
 
@@ -139,7 +139,7 @@ void EventWindow::changeColor(QString color) {
   setStyleSheet(ultimateStyleSheet);
 }
 
-bool EventWindow::checkEventOverlap(const Event &newEvent) {
+auto EventWindow::checkEventOverlap(const Event &newEvent) -> bool {
   QList<Event> existingEvents = m_calendar->getEventsForWeek(
       newEvent.getStartTime().date(), newEvent.getEndTime().date().addDays(6));
 

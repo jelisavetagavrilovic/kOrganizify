@@ -27,7 +27,7 @@ void ResponseWindow::setDate(QString startTime) {
   ui->lblDate->setText(startTime);
 }
 
-QString ResponseWindow::getDate() { return m_date; }
+auto ResponseWindow::getDate() -> QString { return m_date; }
 
 void ResponseWindow::onYesClicked() {
   emit sendResponse(true);

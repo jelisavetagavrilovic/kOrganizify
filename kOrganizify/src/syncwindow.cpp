@@ -2,11 +2,12 @@
 #include "settingswindow.h"
 #include "ui_syncwindow.h"
 #include <QDebug>
+#include <utility>
 
 SyncWindow::SyncWindow(QString username, QString friendName, Calendar calendar,
                        QWidget *parent)
     : QWidget(parent), ui(new Ui::SyncWindow), m_selectedNumber(1),
-      m_username(username), m_friendName(friendName), m_calendar(calendar) {
+      m_username(std::move(username)), m_friendName(std::move(friendName)), m_calendar(calendar) {
   ui->setupUi(this);
   setWindowTitle("");
   setFixedSize(size());
@@ -46,9 +47,9 @@ void SyncWindow::onNumberSelected(int m_index) {
   m_selectedNumber = m_index + 1;
 }
 
-QString SyncWindow::getEnteredText() const { return m_enteredText; }
+auto SyncWindow::getEnteredText() const -> QString { return m_enteredText; }
 
-int SyncWindow::getSelectedNumber() const { return m_selectedNumber; }
+auto SyncWindow::getSelectedNumber() const -> int { return m_selectedNumber; }
 
 void SyncWindow::onSyncButtonClicked() {
   emit sendSyncRequest(m_username, m_friendName, getEnteredText(),

@@ -52,8 +52,7 @@ void Scheduler::generateSchedules(QList<Event> freeTime) {
   int randomIndex = rand() % allPermutations.size();
   QList<Event> permutation = allPermutations[randomIndex];
 
-  for (int j = 0; j < permutation.size(); ++j) {
-    Event event = permutation[j];
+  for (auto event : permutation) {
     m_scheduledCalendar->addEvent(event);
   }
 }
@@ -73,7 +72,7 @@ void Scheduler::generatePermutations(QList<Event> &events, int start, int end,
   }
 }
 
-QList<Event> Scheduler::findFreeTime(Calendar *cal1, int maxTimeInMinutes) {
+auto Scheduler::findFreeTime(Calendar *cal1, int maxTimeInMinutes) -> QList<Event> {
   QList<Event> freeTimeSlots;
   QList<Event> allEvents;
 
@@ -113,7 +112,7 @@ QList<Event> Scheduler::findFreeTime(Calendar *cal1, int maxTimeInMinutes) {
       QTime endTime = endHour.addSecs(-60 * maxTimeInMinutes);
 
       if (currentHour <= endTime) {
-        Event *newEvent = new Event();
+        auto *newEvent = new Event();
         newEvent->setStartTime(QDateTime(currentDate, currentHour));
         newEvent->setEndTime(
             QDateTime(currentDate, currentHour.addSecs(60 * maxTimeInMinutes)));
