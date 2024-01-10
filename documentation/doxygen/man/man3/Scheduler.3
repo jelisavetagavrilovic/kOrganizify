@@ -1,0 +1,102 @@
+.TH "Scheduler" 3 "Wed Jan 10 2024" "kOrganizify" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Scheduler
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <scheduler\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBScheduler\fP (\fBCalendar\fP *calendar, \fBCalendar\fP *basicCalendar, QDate *startDate)"
+.br
+.ti -1c
+.RI "\fB~Scheduler\fP ()"
+.br
+.ti -1c
+.RI "void \fBgenerateSchedule\fP (const QTime &startOfWorkday, const QTime &endOfWorkday)"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBgenerateSchedules\fP (QList< \fBEvent\fP > freeTime)"
+.br
+.ti -1c
+.RI "bool \fBnextPermutation\fP (QList< \fBEvent\fP > &events, int size)"
+.br
+.ti -1c
+.RI "void \fBgeneratePermutations\fP (QList< \fBEvent\fP > &events, int start, int end, int depth, QList< QList< \fBEvent\fP >> &allPermutations)"
+.br
+.ti -1c
+.RI "QList< \fBEvent\fP > \fBfindFreeTime\fP (\fBCalendar\fP *cal1, int maxTime)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBCalendar\fP * \fBm_calendar\fP"
+.br
+.ti -1c
+.RI "\fBCalendar\fP * \fBm_basicCalendar\fP"
+.br
+.ti -1c
+.RI "\fBCalendar\fP * \fBm_scheduledCalendar\fP"
+.br
+.ti -1c
+.RI "QList< \fBCalendar\fP * > \fBm_generatedSchedules\fP"
+.br
+.ti -1c
+.RI "QList< \fBEvent\fP > \fBm_freeTimeList\fP"
+.br
+.ti -1c
+.RI "QList< \fBBasicEvent\fP > \fBm_allEvents\fP"
+.br
+.ti -1c
+.RI "QDate * \fBm_startDate\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Scheduler::Scheduler (\fBCalendar\fP * calendar, \fBCalendar\fP * basicCalendar, QDate * startDate)"
+
+.SS "Scheduler::~Scheduler ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "auto Scheduler::findFreeTime (\fBCalendar\fP * cal1, int maxTime)\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void Scheduler::generatePermutations (QList< \fBEvent\fP > & events, int start, int end, int depth, QList< QList< \fBEvent\fP >> & allPermutations)\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void Scheduler::generateSchedule (const QTime & startOfWorkday, const QTime & endOfWorkday)"
+
+.SS "void Scheduler::generateSchedules (QList< \fBEvent\fP > freeTime)\fC [private]\fP, \fC [slot]\fP"
+
+.SS "bool Scheduler::nextPermutation (QList< \fBEvent\fP > & events, int size)\fC [private]\fP, \fC [slot]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "QList<\fBBasicEvent\fP> Scheduler::m_allEvents\fC [private]\fP"
+
+.SS "\fBCalendar\fP* Scheduler::m_basicCalendar\fC [private]\fP"
+
+.SS "\fBCalendar\fP* Scheduler::m_calendar\fC [private]\fP"
+
+.SS "QList<\fBEvent\fP> Scheduler::m_freeTimeList\fC [private]\fP"
+
+.SS "QList<\fBCalendar\fP*> Scheduler::m_generatedSchedules\fC [private]\fP"
+
+.SS "\fBCalendar\fP* Scheduler::m_scheduledCalendar\fC [private]\fP"
+
+.SS "QDate* Scheduler::m_startDate\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for kOrganizify from the source code\&.

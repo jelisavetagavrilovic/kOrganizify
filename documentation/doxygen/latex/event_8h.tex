@@ -1,0 +1,74 @@
+\hypertarget{event_8h}{}\doxysection{src/event.h File Reference}
+\label{event_8h}\index{src/event.h@{src/event.h}}
+{\ttfamily \#include $<$QString$>$}\newline
+{\ttfamily \#include $<$QDate\+Time$>$}\newline
+{\ttfamily \#include $<$QHash$>$}\newline
+{\ttfamily \#include $<$QObject$>$}\newline
+{\ttfamily \#include \char`\"{}basicevent.\+h\char`\"{}}\newline
+Include dependency graph for event.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classEvent}{Event}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{event_8h_a2bdd47d7a383e60d517514db97940b3f}{Custom\+Event\+Priority}} \{ \mbox{\hyperlink{event_8h_a2bdd47d7a383e60d517514db97940b3fa87a3879e5affa942ef45a702bb674989}{No\+Priority}}
+, \mbox{\hyperlink{event_8h_a2bdd47d7a383e60d517514db97940b3fa28d0edd045e05cf5af64e35ae0c4c6ef}{Low}}
+, \mbox{\hyperlink{event_8h_a2bdd47d7a383e60d517514db97940b3fa87f8a6ab85c9ced3702b4ea641ad4bb5}{Medium}}
+, \mbox{\hyperlink{event_8h_a2bdd47d7a383e60d517514db97940b3fa655d20c1ca69519ca647684edbb2db35}{High}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{event_8h_ac71a5afdf4cb1479c1d368e98c24fa4e}{custom\+Event\+Priority\+To\+String}} (\mbox{\hyperlink{event_8h_a2bdd47d7a383e60d517514db97940b3f}{Custom\+Event\+Priority}} priority)
+\item 
+\mbox{\hyperlink{event_8h_a2bdd47d7a383e60d517514db97940b3f}{Custom\+Event\+Priority}} \mbox{\hyperlink{event_8h_ab884f12f65b79ec04c5ecf2a45d63803}{custom\+Event\+Priority\+From\+String}} (const QString \&priority\+String)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{event_8h_a2bdd47d7a383e60d517514db97940b3f}\label{event_8h_a2bdd47d7a383e60d517514db97940b3f}} 
+\index{event.h@{event.h}!CustomEventPriority@{CustomEventPriority}}
+\index{CustomEventPriority@{CustomEventPriority}!event.h@{event.h}}
+\doxysubsubsection{\texorpdfstring{CustomEventPriority}{CustomEventPriority}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{event_8h_a2bdd47d7a383e60d517514db97940b3f}{Custom\+Event\+Priority}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NoPriority@{NoPriority}!event.h@{event.h}}\index{event.h@{event.h}!NoPriority@{NoPriority}}}\mbox{\Hypertarget{event_8h_a2bdd47d7a383e60d517514db97940b3fa87a3879e5affa942ef45a702bb674989}\label{event_8h_a2bdd47d7a383e60d517514db97940b3fa87a3879e5affa942ef45a702bb674989}} 
+No\+Priority&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Low@{Low}!event.h@{event.h}}\index{event.h@{event.h}!Low@{Low}}}\mbox{\Hypertarget{event_8h_a2bdd47d7a383e60d517514db97940b3fa28d0edd045e05cf5af64e35ae0c4c6ef}\label{event_8h_a2bdd47d7a383e60d517514db97940b3fa28d0edd045e05cf5af64e35ae0c4c6ef}} 
+Low&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Medium@{Medium}!event.h@{event.h}}\index{event.h@{event.h}!Medium@{Medium}}}\mbox{\Hypertarget{event_8h_a2bdd47d7a383e60d517514db97940b3fa87f8a6ab85c9ced3702b4ea641ad4bb5}\label{event_8h_a2bdd47d7a383e60d517514db97940b3fa87f8a6ab85c9ced3702b4ea641ad4bb5}} 
+Medium&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{High@{High}!event.h@{event.h}}\index{event.h@{event.h}!High@{High}}}\mbox{\Hypertarget{event_8h_a2bdd47d7a383e60d517514db97940b3fa655d20c1ca69519ca647684edbb2db35}\label{event_8h_a2bdd47d7a383e60d517514db97940b3fa655d20c1ca69519ca647684edbb2db35}} 
+High&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{event_8h_ab884f12f65b79ec04c5ecf2a45d63803}\label{event_8h_ab884f12f65b79ec04c5ecf2a45d63803}} 
+\index{event.h@{event.h}!customEventPriorityFromString@{customEventPriorityFromString}}
+\index{customEventPriorityFromString@{customEventPriorityFromString}!event.h@{event.h}}
+\doxysubsubsection{\texorpdfstring{customEventPriorityFromString()}{customEventPriorityFromString()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{event_8h_a2bdd47d7a383e60d517514db97940b3f}{Custom\+Event\+Priority}} custom\+Event\+Priority\+From\+String (\begin{DoxyParamCaption}\item[{const QString \&}]{priority\+String }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{event_8h_ac71a5afdf4cb1479c1d368e98c24fa4e}\label{event_8h_ac71a5afdf4cb1479c1d368e98c24fa4e}} 
+\index{event.h@{event.h}!customEventPriorityToString@{customEventPriorityToString}}
+\index{customEventPriorityToString@{customEventPriorityToString}!event.h@{event.h}}
+\doxysubsubsection{\texorpdfstring{customEventPriorityToString()}{customEventPriorityToString()}}
+{\footnotesize\ttfamily QString custom\+Event\+Priority\+To\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{event_8h_a2bdd47d7a383e60d517514db97940b3f}{Custom\+Event\+Priority}}}]{priority }\end{DoxyParamCaption})}
+

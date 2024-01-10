@@ -1,0 +1,161 @@
+\hypertarget{classSyncWindow}{}\doxysection{Sync\+Window Class Reference}
+\label{classSyncWindow}\index{SyncWindow@{SyncWindow}}
+
+
+{\ttfamily \#include $<$syncwindow.\+h$>$}
+
+
+
+Inheritance diagram for Sync\+Window\+:
+% FIG 0
+
+
+Collaboration diagram for Sync\+Window\+:
+% FIG 1
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSyncWindow_a99007b0cce8a32f0aef3cdc96052b6a7}{send\+Sync\+Request}} (QString username, QString friend\+Name, QString event\+Title, int duration, \mbox{\hyperlink{classCalendar}{Calendar}} calendar)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSyncWindow_a61cd65df430758547ba47df7cd880eb1}{Sync\+Window}} (QString username, QString friend\+Name, \mbox{\hyperlink{classCalendar}{Calendar}} calendar, QWidget $\ast$parent=nullptr)
+\item 
+\mbox{\hyperlink{classSyncWindow_ae309dc9aa7dd07d6114e73c7fb137352}{$\sim$\+Sync\+Window}} ()
+\item 
+QString \mbox{\hyperlink{classSyncWindow_a98c8cccb4e9839e7fe68aa42963a8548}{get\+Entered\+Text}} () const
+\item 
+int \mbox{\hyperlink{classSyncWindow_a9f04f19303a9d190ffd310cb4c8e7ad0}{get\+Selected\+Number}} () const
+\item 
+void \mbox{\hyperlink{classSyncWindow_a6da76816bc1f38f8509dbb1e41072eec}{change\+Color}} (QString color)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSyncWindow_aa2efa2d132009b8e21e7a6051d560b15}{on\+Text\+Entered}} (const QString \&m\+\_\+text)
+\item 
+void \mbox{\hyperlink{classSyncWindow_afcaf6d4a51635cece1300af6474b7809}{on\+Number\+Selected}} (int m\+\_\+index)
+\item 
+void \mbox{\hyperlink{classSyncWindow_a16b6fed57591ec3187288d5f7702fb51}{on\+Sync\+Button\+Clicked}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Sync\+Window $\ast$ \mbox{\hyperlink{classSyncWindow_aa7c0865bbdb9cc87a234aea54eeb2e6a}{ui}}
+\item 
+QString \mbox{\hyperlink{classSyncWindow_abad3c09cbc17ffb59c48f433321c2874}{m\+\_\+friend\+Name}}
+\item 
+QString \mbox{\hyperlink{classSyncWindow_a81e1796867afce5457868cdb8de17565}{m\+\_\+username}}
+\item 
+QString \mbox{\hyperlink{classSyncWindow_ab86e356c0f7e7cd5c6390a35fa86fb04}{m\+\_\+entered\+Text}}
+\item 
+\mbox{\hyperlink{classCalendar}{Calendar}} \mbox{\hyperlink{classSyncWindow_a32210cb6f097f444cacca61fc8bafeb0}{m\+\_\+calendar}}
+\item 
+int \mbox{\hyperlink{classSyncWindow_abda5832735dcb230ef18268bf8e516f4}{m\+\_\+selected\+Number}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSyncWindow_a61cd65df430758547ba47df7cd880eb1}\label{classSyncWindow_a61cd65df430758547ba47df7cd880eb1}} 
+\index{SyncWindow@{SyncWindow}!SyncWindow@{SyncWindow}}
+\index{SyncWindow@{SyncWindow}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{SyncWindow()}{SyncWindow()}}
+{\footnotesize\ttfamily Sync\+Window\+::\+Sync\+Window (\begin{DoxyParamCaption}\item[{QString}]{username,  }\item[{QString}]{friend\+Name,  }\item[{\mbox{\hyperlink{classCalendar}{Calendar}}}]{calendar,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classSyncWindow_ae309dc9aa7dd07d6114e73c7fb137352}\label{classSyncWindow_ae309dc9aa7dd07d6114e73c7fb137352}} 
+\index{SyncWindow@{SyncWindow}!````~SyncWindow@{$\sim$SyncWindow}}
+\index{````~SyncWindow@{$\sim$SyncWindow}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$SyncWindow()}{~SyncWindow()}}
+{\footnotesize\ttfamily Sync\+Window\+::$\sim$\+Sync\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSyncWindow_a6da76816bc1f38f8509dbb1e41072eec}\label{classSyncWindow_a6da76816bc1f38f8509dbb1e41072eec}} 
+\index{SyncWindow@{SyncWindow}!changeColor@{changeColor}}
+\index{changeColor@{changeColor}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{changeColor()}{changeColor()}}
+{\footnotesize\ttfamily void Sync\+Window\+::change\+Color (\begin{DoxyParamCaption}\item[{QString}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSyncWindow_a98c8cccb4e9839e7fe68aa42963a8548}\label{classSyncWindow_a98c8cccb4e9839e7fe68aa42963a8548}} 
+\index{SyncWindow@{SyncWindow}!getEnteredText@{getEnteredText}}
+\index{getEnteredText@{getEnteredText}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{getEnteredText()}{getEnteredText()}}
+{\footnotesize\ttfamily auto Sync\+Window\+::get\+Entered\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classSyncWindow_a9f04f19303a9d190ffd310cb4c8e7ad0}\label{classSyncWindow_a9f04f19303a9d190ffd310cb4c8e7ad0}} 
+\index{SyncWindow@{SyncWindow}!getSelectedNumber@{getSelectedNumber}}
+\index{getSelectedNumber@{getSelectedNumber}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{getSelectedNumber()}{getSelectedNumber()}}
+{\footnotesize\ttfamily auto Sync\+Window\+::get\+Selected\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classSyncWindow_afcaf6d4a51635cece1300af6474b7809}\label{classSyncWindow_afcaf6d4a51635cece1300af6474b7809}} 
+\index{SyncWindow@{SyncWindow}!onNumberSelected@{onNumberSelected}}
+\index{onNumberSelected@{onNumberSelected}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{onNumberSelected}{onNumberSelected}}
+{\footnotesize\ttfamily void Sync\+Window\+::on\+Number\+Selected (\begin{DoxyParamCaption}\item[{int}]{m\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classSyncWindow_a16b6fed57591ec3187288d5f7702fb51}\label{classSyncWindow_a16b6fed57591ec3187288d5f7702fb51}} 
+\index{SyncWindow@{SyncWindow}!onSyncButtonClicked@{onSyncButtonClicked}}
+\index{onSyncButtonClicked@{onSyncButtonClicked}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{onSyncButtonClicked}{onSyncButtonClicked}}
+{\footnotesize\ttfamily void Sync\+Window\+::on\+Sync\+Button\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classSyncWindow_aa2efa2d132009b8e21e7a6051d560b15}\label{classSyncWindow_aa2efa2d132009b8e21e7a6051d560b15}} 
+\index{SyncWindow@{SyncWindow}!onTextEntered@{onTextEntered}}
+\index{onTextEntered@{onTextEntered}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{onTextEntered}{onTextEntered}}
+{\footnotesize\ttfamily void Sync\+Window\+::on\+Text\+Entered (\begin{DoxyParamCaption}\item[{const QString \&}]{m\+\_\+text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classSyncWindow_a99007b0cce8a32f0aef3cdc96052b6a7}\label{classSyncWindow_a99007b0cce8a32f0aef3cdc96052b6a7}} 
+\index{SyncWindow@{SyncWindow}!sendSyncRequest@{sendSyncRequest}}
+\index{sendSyncRequest@{sendSyncRequest}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{sendSyncRequest}{sendSyncRequest}}
+{\footnotesize\ttfamily void Sync\+Window\+::send\+Sync\+Request (\begin{DoxyParamCaption}\item[{QString}]{username,  }\item[{QString}]{friend\+Name,  }\item[{QString}]{event\+Title,  }\item[{int}]{duration,  }\item[{\mbox{\hyperlink{classCalendar}{Calendar}}}]{calendar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSyncWindow_a32210cb6f097f444cacca61fc8bafeb0}\label{classSyncWindow_a32210cb6f097f444cacca61fc8bafeb0}} 
+\index{SyncWindow@{SyncWindow}!m\_calendar@{m\_calendar}}
+\index{m\_calendar@{m\_calendar}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{m\_calendar}{m\_calendar}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCalendar}{Calendar}} Sync\+Window\+::m\+\_\+calendar\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSyncWindow_ab86e356c0f7e7cd5c6390a35fa86fb04}\label{classSyncWindow_ab86e356c0f7e7cd5c6390a35fa86fb04}} 
+\index{SyncWindow@{SyncWindow}!m\_enteredText@{m\_enteredText}}
+\index{m\_enteredText@{m\_enteredText}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{m\_enteredText}{m\_enteredText}}
+{\footnotesize\ttfamily QString Sync\+Window\+::m\+\_\+entered\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSyncWindow_abad3c09cbc17ffb59c48f433321c2874}\label{classSyncWindow_abad3c09cbc17ffb59c48f433321c2874}} 
+\index{SyncWindow@{SyncWindow}!m\_friendName@{m\_friendName}}
+\index{m\_friendName@{m\_friendName}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{m\_friendName}{m\_friendName}}
+{\footnotesize\ttfamily QString Sync\+Window\+::m\+\_\+friend\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSyncWindow_abda5832735dcb230ef18268bf8e516f4}\label{classSyncWindow_abda5832735dcb230ef18268bf8e516f4}} 
+\index{SyncWindow@{SyncWindow}!m\_selectedNumber@{m\_selectedNumber}}
+\index{m\_selectedNumber@{m\_selectedNumber}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{m\_selectedNumber}{m\_selectedNumber}}
+{\footnotesize\ttfamily int Sync\+Window\+::m\+\_\+selected\+Number\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSyncWindow_a81e1796867afce5457868cdb8de17565}\label{classSyncWindow_a81e1796867afce5457868cdb8de17565}} 
+\index{SyncWindow@{SyncWindow}!m\_username@{m\_username}}
+\index{m\_username@{m\_username}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{m\_username}{m\_username}}
+{\footnotesize\ttfamily QString Sync\+Window\+::m\+\_\+username\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSyncWindow_aa7c0865bbdb9cc87a234aea54eeb2e6a}\label{classSyncWindow_aa7c0865bbdb9cc87a234aea54eeb2e6a}} 
+\index{SyncWindow@{SyncWindow}!ui@{ui}}
+\index{ui@{ui}!SyncWindow@{SyncWindow}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Sync\+Window$\ast$ Sync\+Window\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{syncwindow_8h}{syncwindow.\+h}}\item 
+src/\mbox{\hyperlink{syncwindow_8cpp}{syncwindow.\+cpp}}\end{DoxyCompactItemize}

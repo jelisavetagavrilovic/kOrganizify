@@ -1,0 +1,146 @@
+\hypertarget{classScheduler}{}\doxysection{Scheduler Class Reference}
+\label{classScheduler}\index{Scheduler@{Scheduler}}
+
+
+{\ttfamily \#include $<$scheduler.\+h$>$}
+
+
+
+Collaboration diagram for Scheduler\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classScheduler_a12261d866c7a48e7f3c9ee1a9892ba65}{Scheduler}} (\mbox{\hyperlink{classCalendar}{Calendar}} $\ast$calendar, \mbox{\hyperlink{classCalendar}{Calendar}} $\ast$basic\+Calendar, QDate $\ast$start\+Date)
+\item 
+\mbox{\hyperlink{classScheduler_afc8187779b46f64039d3ffa58f0dbe51}{$\sim$\+Scheduler}} ()
+\item 
+void \mbox{\hyperlink{classScheduler_acdfe5c49a2adbf28324da1a2afc93632}{generate\+Schedule}} (const QTime \&start\+Of\+Workday, const QTime \&end\+Of\+Workday)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classScheduler_a91702c7ab8b7ffeb97fa35db6122778f}{generate\+Schedules}} (QList$<$ \mbox{\hyperlink{classEvent}{Event}} $>$ free\+Time)
+\item 
+bool \mbox{\hyperlink{classScheduler_a2a00b5ee74fb6c43856dbeed5e04dace}{next\+Permutation}} (QList$<$ \mbox{\hyperlink{classEvent}{Event}} $>$ \&events, int size)
+\item 
+void \mbox{\hyperlink{classScheduler_af732798dcd3a909097f2ace66ec72c25}{generate\+Permutations}} (QList$<$ \mbox{\hyperlink{classEvent}{Event}} $>$ \&events, int start, int end, int depth, QList$<$ QList$<$ \mbox{\hyperlink{classEvent}{Event}} $>$$>$ \&all\+Permutations)
+\item 
+QList$<$ \mbox{\hyperlink{classEvent}{Event}} $>$ \mbox{\hyperlink{classScheduler_ad7267c06ed7eb6f625cd9d1b9f1450b5}{find\+Free\+Time}} (\mbox{\hyperlink{classCalendar}{Calendar}} $\ast$cal1, int max\+Time)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCalendar}{Calendar}} $\ast$ \mbox{\hyperlink{classScheduler_a816738c889f5e4ad78823b5b0d38c960}{m\+\_\+calendar}}
+\item 
+\mbox{\hyperlink{classCalendar}{Calendar}} $\ast$ \mbox{\hyperlink{classScheduler_ad2e258cc0b9d6a57658f10f17bd00d9b}{m\+\_\+basic\+Calendar}}
+\item 
+\mbox{\hyperlink{classCalendar}{Calendar}} $\ast$ \mbox{\hyperlink{classScheduler_a2250c3da87e07e2c830b389be07f5afa}{m\+\_\+scheduled\+Calendar}}
+\item 
+QList$<$ \mbox{\hyperlink{classCalendar}{Calendar}} $\ast$ $>$ \mbox{\hyperlink{classScheduler_ac505aab68fecd60a42027dd8ca783ae6}{m\+\_\+generated\+Schedules}}
+\item 
+QList$<$ \mbox{\hyperlink{classEvent}{Event}} $>$ \mbox{\hyperlink{classScheduler_a539cf602f3413cd2e9530c231ef6231a}{m\+\_\+free\+Time\+List}}
+\item 
+QList$<$ \mbox{\hyperlink{classBasicEvent}{Basic\+Event}} $>$ \mbox{\hyperlink{classScheduler_abf5df1998562f7d61688e89ec3361941}{m\+\_\+all\+Events}}
+\item 
+QDate $\ast$ \mbox{\hyperlink{classScheduler_a85affd523542442c67dabbe8f2c8cc85}{m\+\_\+start\+Date}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classScheduler_a12261d866c7a48e7f3c9ee1a9892ba65}\label{classScheduler_a12261d866c7a48e7f3c9ee1a9892ba65}} 
+\index{Scheduler@{Scheduler}!Scheduler@{Scheduler}}
+\index{Scheduler@{Scheduler}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{Scheduler()}{Scheduler()}}
+{\footnotesize\ttfamily Scheduler\+::\+Scheduler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCalendar}{Calendar}} $\ast$}]{calendar,  }\item[{\mbox{\hyperlink{classCalendar}{Calendar}} $\ast$}]{basic\+Calendar,  }\item[{QDate $\ast$}]{start\+Date }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classScheduler_afc8187779b46f64039d3ffa58f0dbe51}\label{classScheduler_afc8187779b46f64039d3ffa58f0dbe51}} 
+\index{Scheduler@{Scheduler}!````~Scheduler@{$\sim$Scheduler}}
+\index{````~Scheduler@{$\sim$Scheduler}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{$\sim$Scheduler()}{~Scheduler()}}
+{\footnotesize\ttfamily Scheduler\+::$\sim$\+Scheduler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classScheduler_ad7267c06ed7eb6f625cd9d1b9f1450b5}\label{classScheduler_ad7267c06ed7eb6f625cd9d1b9f1450b5}} 
+\index{Scheduler@{Scheduler}!findFreeTime@{findFreeTime}}
+\index{findFreeTime@{findFreeTime}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{findFreeTime}{findFreeTime}}
+{\footnotesize\ttfamily auto Scheduler\+::find\+Free\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCalendar}{Calendar}} $\ast$}]{cal1,  }\item[{int}]{max\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classScheduler_af732798dcd3a909097f2ace66ec72c25}\label{classScheduler_af732798dcd3a909097f2ace66ec72c25}} 
+\index{Scheduler@{Scheduler}!generatePermutations@{generatePermutations}}
+\index{generatePermutations@{generatePermutations}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{generatePermutations}{generatePermutations}}
+{\footnotesize\ttfamily void Scheduler\+::generate\+Permutations (\begin{DoxyParamCaption}\item[{QList$<$ \mbox{\hyperlink{classEvent}{Event}} $>$ \&}]{events,  }\item[{int}]{start,  }\item[{int}]{end,  }\item[{int}]{depth,  }\item[{QList$<$ QList$<$ \mbox{\hyperlink{classEvent}{Event}} $>$$>$ \&}]{all\+Permutations }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classScheduler_acdfe5c49a2adbf28324da1a2afc93632}\label{classScheduler_acdfe5c49a2adbf28324da1a2afc93632}} 
+\index{Scheduler@{Scheduler}!generateSchedule@{generateSchedule}}
+\index{generateSchedule@{generateSchedule}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{generateSchedule()}{generateSchedule()}}
+{\footnotesize\ttfamily void Scheduler\+::generate\+Schedule (\begin{DoxyParamCaption}\item[{const QTime \&}]{start\+Of\+Workday,  }\item[{const QTime \&}]{end\+Of\+Workday }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classScheduler_a91702c7ab8b7ffeb97fa35db6122778f}\label{classScheduler_a91702c7ab8b7ffeb97fa35db6122778f}} 
+\index{Scheduler@{Scheduler}!generateSchedules@{generateSchedules}}
+\index{generateSchedules@{generateSchedules}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{generateSchedules}{generateSchedules}}
+{\footnotesize\ttfamily void Scheduler\+::generate\+Schedules (\begin{DoxyParamCaption}\item[{QList$<$ \mbox{\hyperlink{classEvent}{Event}} $>$}]{free\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classScheduler_a2a00b5ee74fb6c43856dbeed5e04dace}\label{classScheduler_a2a00b5ee74fb6c43856dbeed5e04dace}} 
+\index{Scheduler@{Scheduler}!nextPermutation@{nextPermutation}}
+\index{nextPermutation@{nextPermutation}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{nextPermutation}{nextPermutation}}
+{\footnotesize\ttfamily bool Scheduler\+::next\+Permutation (\begin{DoxyParamCaption}\item[{QList$<$ \mbox{\hyperlink{classEvent}{Event}} $>$ \&}]{events,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classScheduler_abf5df1998562f7d61688e89ec3361941}\label{classScheduler_abf5df1998562f7d61688e89ec3361941}} 
+\index{Scheduler@{Scheduler}!m\_allEvents@{m\_allEvents}}
+\index{m\_allEvents@{m\_allEvents}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{m\_allEvents}{m\_allEvents}}
+{\footnotesize\ttfamily QList$<$\mbox{\hyperlink{classBasicEvent}{Basic\+Event}}$>$ Scheduler\+::m\+\_\+all\+Events\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classScheduler_ad2e258cc0b9d6a57658f10f17bd00d9b}\label{classScheduler_ad2e258cc0b9d6a57658f10f17bd00d9b}} 
+\index{Scheduler@{Scheduler}!m\_basicCalendar@{m\_basicCalendar}}
+\index{m\_basicCalendar@{m\_basicCalendar}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{m\_basicCalendar}{m\_basicCalendar}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCalendar}{Calendar}}$\ast$ Scheduler\+::m\+\_\+basic\+Calendar\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classScheduler_a816738c889f5e4ad78823b5b0d38c960}\label{classScheduler_a816738c889f5e4ad78823b5b0d38c960}} 
+\index{Scheduler@{Scheduler}!m\_calendar@{m\_calendar}}
+\index{m\_calendar@{m\_calendar}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{m\_calendar}{m\_calendar}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCalendar}{Calendar}}$\ast$ Scheduler\+::m\+\_\+calendar\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classScheduler_a539cf602f3413cd2e9530c231ef6231a}\label{classScheduler_a539cf602f3413cd2e9530c231ef6231a}} 
+\index{Scheduler@{Scheduler}!m\_freeTimeList@{m\_freeTimeList}}
+\index{m\_freeTimeList@{m\_freeTimeList}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{m\_freeTimeList}{m\_freeTimeList}}
+{\footnotesize\ttfamily QList$<$\mbox{\hyperlink{classEvent}{Event}}$>$ Scheduler\+::m\+\_\+free\+Time\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classScheduler_ac505aab68fecd60a42027dd8ca783ae6}\label{classScheduler_ac505aab68fecd60a42027dd8ca783ae6}} 
+\index{Scheduler@{Scheduler}!m\_generatedSchedules@{m\_generatedSchedules}}
+\index{m\_generatedSchedules@{m\_generatedSchedules}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{m\_generatedSchedules}{m\_generatedSchedules}}
+{\footnotesize\ttfamily QList$<$\mbox{\hyperlink{classCalendar}{Calendar}}$\ast$$>$ Scheduler\+::m\+\_\+generated\+Schedules\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classScheduler_a2250c3da87e07e2c830b389be07f5afa}\label{classScheduler_a2250c3da87e07e2c830b389be07f5afa}} 
+\index{Scheduler@{Scheduler}!m\_scheduledCalendar@{m\_scheduledCalendar}}
+\index{m\_scheduledCalendar@{m\_scheduledCalendar}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{m\_scheduledCalendar}{m\_scheduledCalendar}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCalendar}{Calendar}}$\ast$ Scheduler\+::m\+\_\+scheduled\+Calendar\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classScheduler_a85affd523542442c67dabbe8f2c8cc85}\label{classScheduler_a85affd523542442c67dabbe8f2c8cc85}} 
+\index{Scheduler@{Scheduler}!m\_startDate@{m\_startDate}}
+\index{m\_startDate@{m\_startDate}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{m\_startDate}{m\_startDate}}
+{\footnotesize\ttfamily QDate$\ast$ Scheduler\+::m\+\_\+start\+Date\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{scheduler_8h}{scheduler.\+h}}\item 
+src/\mbox{\hyperlink{scheduler_8cpp}{scheduler.\+cpp}}\end{DoxyCompactItemize}

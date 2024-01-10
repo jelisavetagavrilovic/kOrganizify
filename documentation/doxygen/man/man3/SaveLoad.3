@@ -1,0 +1,71 @@
+.TH "SaveLoad" 3 "Wed Jan 10 2024" "kOrganizify" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SaveLoad
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <saveload\&.h>\fP
+.PP
+Inherits QObject\&.
+.PP
+Inherited by \fBCalendar\fP, \fBSettings\fP, \fBToDoList\fP, and \fBUser\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSaveLoad\fP (QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "QString \fBgetFilePath\fP (const QString &username)"
+.br
+.ti -1c
+.RI "void \fBsaveData\fP (const QString &username)"
+.br
+.ti -1c
+.RI "void \fBloadData\fP (const QString &username)"
+.br
+.ti -1c
+.RI "virtual QJsonValue \fBtoJson\fP () const =0"
+.br
+.ti -1c
+.RI "virtual void \fBfromJson\fP (const QJsonObject &jsonObject)=0"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "QJsonObject \fBm_jsonObject\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SaveLoad::SaveLoad (QObject * parent = \fCnullptr\fP)\fC [explicit]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void SaveLoad::fromJson (const QJsonObject & jsonObject)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBUser\fP, \fBToDoList\fP, \fBSettings\fP, and \fBCalendar\fP\&.
+.SS "auto SaveLoad::getFilePath (const QString & username)"
+
+.SS "void SaveLoad::loadData (const QString & username)"
+
+.SS "void SaveLoad::saveData (const QString & username)"
+
+.SS "virtual QJsonValue SaveLoad::toJson () const\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBUser\fP, \fBToDoList\fP, \fBSettings\fP, and \fBCalendar\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QJsonObject SaveLoad::m_jsonObject"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for kOrganizify from the source code\&.

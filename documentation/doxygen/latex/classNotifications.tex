@@ -1,0 +1,121 @@
+\hypertarget{classNotifications}{}\doxysection{Notifications Class Reference}
+\label{classNotifications}\index{Notifications@{Notifications}}
+
+
+{\ttfamily \#include $<$notifications.\+h$>$}
+
+
+
+Inheritance diagram for Notifications\+:
+% FIG 0
+
+
+Collaboration diagram for Notifications\+:
+% FIG 1
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classNotifications_a48def8b6db0eb7a064203adcda944dfb}{enabled\+Notifications}} (const bool enabled)
+\item 
+void \mbox{\hyperlink{classNotifications_a83f8a9f8f1940305879b475d52ee4c44}{updated\+Events}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNotifications_a1cea69d4a08e6b91cfe7af9b16acb489}{Notifications}} (\mbox{\hyperlink{classCalendar}{Calendar}} $\ast$calendar)
+\item 
+\mbox{\hyperlink{classNotifications_af6b80705f17fbc04d89f8357796ad3a3}{$\sim$\+Notifications}} ()
+\item 
+void \mbox{\hyperlink{classNotifications_a6a9a9cbc872f248108d0d18811bbd853}{check\+Events}} (const QList$<$ \mbox{\hyperlink{classEvent}{Event}} $>$ \&filtered\+Events)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classNotifications_ab3b796c1ca198f0660bbdd06bf77a564}{show\+Event}} (const \mbox{\hyperlink{classEvent}{Event}} \&event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCalendar}{Calendar}} $\ast$ \mbox{\hyperlink{classNotifications_a54aab968e9559f36f548912da0f92894}{m\+\_\+calendar}}
+\item 
+QTimer $\ast$ \mbox{\hyperlink{classNotifications_aa87dfdbe7e817cc855ff88b6a6baaca5}{m\+\_\+timer}}
+\item 
+bool \mbox{\hyperlink{classNotifications_a854ec25db4d28f6bcf3c671bf8bf92ff}{m\+\_\+enabled}}
+\item 
+QList$<$ \mbox{\hyperlink{classEvent}{Event}} $>$ \mbox{\hyperlink{classNotifications_a2925cdf17ad57a294d4336ddd3005790}{m\+\_\+filtered\+Events}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNotifications_a1cea69d4a08e6b91cfe7af9b16acb489}\label{classNotifications_a1cea69d4a08e6b91cfe7af9b16acb489}} 
+\index{Notifications@{Notifications}!Notifications@{Notifications}}
+\index{Notifications@{Notifications}!Notifications@{Notifications}}
+\doxysubsubsection{\texorpdfstring{Notifications()}{Notifications()}}
+{\footnotesize\ttfamily Notifications\+::\+Notifications (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCalendar}{Calendar}} $\ast$}]{calendar }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classNotifications_af6b80705f17fbc04d89f8357796ad3a3}\label{classNotifications_af6b80705f17fbc04d89f8357796ad3a3}} 
+\index{Notifications@{Notifications}!````~Notifications@{$\sim$Notifications}}
+\index{````~Notifications@{$\sim$Notifications}!Notifications@{Notifications}}
+\doxysubsubsection{\texorpdfstring{$\sim$Notifications()}{~Notifications()}}
+{\footnotesize\ttfamily Notifications\+::$\sim$\+Notifications (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNotifications_a6a9a9cbc872f248108d0d18811bbd853}\label{classNotifications_a6a9a9cbc872f248108d0d18811bbd853}} 
+\index{Notifications@{Notifications}!checkEvents@{checkEvents}}
+\index{checkEvents@{checkEvents}!Notifications@{Notifications}}
+\doxysubsubsection{\texorpdfstring{checkEvents()}{checkEvents()}}
+{\footnotesize\ttfamily void Notifications\+::check\+Events (\begin{DoxyParamCaption}\item[{const QList$<$ \mbox{\hyperlink{classEvent}{Event}} $>$ \&}]{filtered\+Events }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classNotifications_a48def8b6db0eb7a064203adcda944dfb}\label{classNotifications_a48def8b6db0eb7a064203adcda944dfb}} 
+\index{Notifications@{Notifications}!enabledNotifications@{enabledNotifications}}
+\index{enabledNotifications@{enabledNotifications}!Notifications@{Notifications}}
+\doxysubsubsection{\texorpdfstring{enabledNotifications}{enabledNotifications}}
+{\footnotesize\ttfamily void Notifications\+::enabled\+Notifications (\begin{DoxyParamCaption}\item[{const bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classNotifications_ab3b796c1ca198f0660bbdd06bf77a564}\label{classNotifications_ab3b796c1ca198f0660bbdd06bf77a564}} 
+\index{Notifications@{Notifications}!showEvent@{showEvent}}
+\index{showEvent@{showEvent}!Notifications@{Notifications}}
+\doxysubsubsection{\texorpdfstring{showEvent}{showEvent}}
+{\footnotesize\ttfamily void Notifications\+::show\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEvent}{Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classNotifications_a83f8a9f8f1940305879b475d52ee4c44}\label{classNotifications_a83f8a9f8f1940305879b475d52ee4c44}} 
+\index{Notifications@{Notifications}!updatedEvents@{updatedEvents}}
+\index{updatedEvents@{updatedEvents}!Notifications@{Notifications}}
+\doxysubsubsection{\texorpdfstring{updatedEvents}{updatedEvents}}
+{\footnotesize\ttfamily void Notifications\+::updated\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classNotifications_a54aab968e9559f36f548912da0f92894}\label{classNotifications_a54aab968e9559f36f548912da0f92894}} 
+\index{Notifications@{Notifications}!m\_calendar@{m\_calendar}}
+\index{m\_calendar@{m\_calendar}!Notifications@{Notifications}}
+\doxysubsubsection{\texorpdfstring{m\_calendar}{m\_calendar}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCalendar}{Calendar}}$\ast$ Notifications\+::m\+\_\+calendar\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classNotifications_a854ec25db4d28f6bcf3c671bf8bf92ff}\label{classNotifications_a854ec25db4d28f6bcf3c671bf8bf92ff}} 
+\index{Notifications@{Notifications}!m\_enabled@{m\_enabled}}
+\index{m\_enabled@{m\_enabled}!Notifications@{Notifications}}
+\doxysubsubsection{\texorpdfstring{m\_enabled}{m\_enabled}}
+{\footnotesize\ttfamily bool Notifications\+::m\+\_\+enabled\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classNotifications_a2925cdf17ad57a294d4336ddd3005790}\label{classNotifications_a2925cdf17ad57a294d4336ddd3005790}} 
+\index{Notifications@{Notifications}!m\_filteredEvents@{m\_filteredEvents}}
+\index{m\_filteredEvents@{m\_filteredEvents}!Notifications@{Notifications}}
+\doxysubsubsection{\texorpdfstring{m\_filteredEvents}{m\_filteredEvents}}
+{\footnotesize\ttfamily QList$<$\mbox{\hyperlink{classEvent}{Event}}$>$ Notifications\+::m\+\_\+filtered\+Events\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classNotifications_aa87dfdbe7e817cc855ff88b6a6baaca5}\label{classNotifications_aa87dfdbe7e817cc855ff88b6a6baaca5}} 
+\index{Notifications@{Notifications}!m\_timer@{m\_timer}}
+\index{m\_timer@{m\_timer}!Notifications@{Notifications}}
+\doxysubsubsection{\texorpdfstring{m\_timer}{m\_timer}}
+{\footnotesize\ttfamily QTimer$\ast$ Notifications\+::m\+\_\+timer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{notifications_8h}{notifications.\+h}}\item 
+src/\mbox{\hyperlink{notifications_8cpp}{notifications.\+cpp}}\end{DoxyCompactItemize}

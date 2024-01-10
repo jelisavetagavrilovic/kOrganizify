@@ -1,0 +1,85 @@
+.TH "BasicEvent" 3 "Wed Jan 10 2024" "kOrganizify" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BasicEvent
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <basicevent\&.h>\fP
+.PP
+Inherited by \fBEvent\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBasicEvent\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~BasicEvent\fP ()=default"
+.br
+.ti -1c
+.RI "QString \fBgetTitle\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTitle\fP (const QString &title)"
+.br
+.ti -1c
+.RI "int \fBgetDuration\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDuration\fP (const int duration)"
+.br
+.ti -1c
+.RI "void \fBdeleteString\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisValidate\fP () const"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBBasicEvent\fP &other) const"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBm_title\fP"
+.br
+.ti -1c
+.RI "int \fBm_duration\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BasicEvent::BasicEvent ()\fC [default]\fP"
+
+.SS "virtual BasicEvent::~BasicEvent ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void BasicEvent::deleteString ()"
+
+.SS "auto BasicEvent::getDuration () const"
+
+.SS "auto BasicEvent::getTitle () const"
+
+.SS "auto BasicEvent::isValidate () const"
+
+.SS "auto BasicEvent::operator== (const \fBBasicEvent\fP & other) const"
+
+.SS "void BasicEvent::setDuration (const int duration)"
+
+.SS "void BasicEvent::setTitle (const QString & title)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "int BasicEvent::m_duration\fC [private]\fP"
+
+.SS "QString BasicEvent::m_title\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for kOrganizify from the source code\&.
