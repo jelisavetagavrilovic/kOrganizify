@@ -5,11 +5,10 @@
 #include <QJsonObject>
 #include <QJsonValue>
 
-class Settings : public SaveLoad
-{
+class Settings : public SaveLoad {
     Q_OBJECT
 
-public:
+  public:
     explicit Settings(QString color = "#A5A9A0", bool notifications = false);
 
     bool getNotifications() const;
@@ -23,7 +22,7 @@ public:
     QString getColor() const;
     QString backgroundPath();
 
-private:
+  private:
     QString m_color;
     QString m_backgroundPath;
     bool m_notifications;

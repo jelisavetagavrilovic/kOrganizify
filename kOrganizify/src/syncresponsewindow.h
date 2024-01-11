@@ -7,20 +7,19 @@ namespace Ui {
 class SyncResponseWindow;
 }
 
-class SyncResponseWindow : public QWidget
-{
+class SyncResponseWindow : public QWidget {
     Q_OBJECT
 
-public:
+  public:
     explicit SyncResponseWindow(QString friendName, QString title, int duration, QWidget *parent = nullptr);
     ~SyncResponseWindow();
     void changeColor(QString color);
 
-signals:
+  signals:
     void yesResponse(QString friendName, int duration);
     void noResponse(QString friendName);
 
-private:
+  private:
     QString m_friendName;
     void sendNo();
     void sendYes();

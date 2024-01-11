@@ -3,9 +3,8 @@
 
 #include <QString>
 
-class BasicEvent
-{
-public:
+class BasicEvent {
+  public:
     BasicEvent();
     virtual ~BasicEvent() = default;
 
@@ -20,7 +19,7 @@ public:
 
     bool operator==(const BasicEvent &other) const;
 
-private:
+  private:
     QString m_title;
     int m_duration;
 };

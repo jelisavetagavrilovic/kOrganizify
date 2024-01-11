@@ -1,14 +1,13 @@
-#include "mainwindow.h"
 #include "basiceventwindow.h"
+#include "mainwindow.h"
 
 #include <QApplication>
 
-auto main(int argc, char *argv[]) -> int
-{
-   QApplication a(argc, argv);
+auto main(int argc, char *argv[]) -> int {
+    QApplication a(argc, argv);
 
-   MainWindow w;
-   w.show();
+    MainWindow w;
+    w.show();
 
-   return a.exec();
+    return a.exec();
 }

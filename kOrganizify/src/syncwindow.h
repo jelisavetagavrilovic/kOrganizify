@@ -8,11 +8,10 @@ namespace Ui {
 class SyncWindow;
 }
 
-class SyncWindow : public QWidget
-{
+class SyncWindow : public QWidget {
     Q_OBJECT
 
-public:
+  public:
     explicit SyncWindow(QString username, QString friendName, Calendar calendar, QWidget *parent = nullptr);
     ~SyncWindow();
 
@@ -20,15 +19,15 @@ public:
     int getSelectedNumber() const;
     void changeColor(QString color);
 
-signals:
+  signals:
     void sendSyncRequest(QString username, QString friendName, QString eventTitle, int duration, Calendar calendar);
 
-private slots:
+  private slots:
     void onTextEntered(const QString &m_text);
     void onNumberSelected(int m_index);
     void onSyncButtonClicked();
 
-private:
+  private:
     Ui::SyncWindow *ui;
 
     QString m_friendName;

@@ -2,28 +2,27 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
-#include "user.h"
 #include "appwindow.h"
+#include "user.h"
+#include <QMainWindow>
 
 namespace Ui {
 class MainWindow;
 }
 
-class MainWindow : public QMainWindow
-{
+class MainWindow : public QMainWindow {
     Q_OBJECT
 
-public:
+  public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-private slots:
+  private slots:
     void loginUser();
     void registerUser();
     void appear();
 
-private:
+  private:
     Ui::MainWindow *ui;
     User *m_user;
 };

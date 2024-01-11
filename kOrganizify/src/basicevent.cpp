@@ -21,13 +21,9 @@ void BasicEvent::deleteString() {
 }
 
 auto BasicEvent::isValidate() const -> bool {
-    return (m_title != ""  &&  m_duration > 0);
+    return (m_title != "" && m_duration > 0);
 }
 
 auto BasicEvent::operator==(const BasicEvent &other) const -> bool {
-    return (
-        m_title == other.m_title &&
-        m_duration == other.m_duration
-        );
+    return (m_title == other.m_title && m_duration == other.m_duration);
 }
-

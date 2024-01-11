@@ -1,9 +1,7 @@
 #include "toDoList.h"
 #include "task.h"
 
-ToDoList::ToDoList(QObject *parent)
-    : m_tasks{}
-{}
+ToDoList::ToDoList(QObject *parent) : m_tasks{} {}
 
 
 void ToDoList::loadData(const QString &username) {
@@ -28,7 +26,7 @@ auto ToDoList::toJson() const -> QJsonValue {
     QJsonArray jsonArray;
     for (const Task &task : m_tasks) {
         QJsonObject jsonObject;
-        jsonObject["task"] = task.getName();
+        jsonObject["task"]      = task.getName();
         jsonObject["isChecked"] = task.getIsChecked();
         jsonArray.append(jsonObject);
     }
@@ -46,25 +44,25 @@ auto ToDoList::getTasks() -> QVector<Task> {
     return m_tasks;
 }
 
-void ToDoList::setTasks(const QVector<Task> &tasks){
+void ToDoList::setTasks(const QVector<Task> &tasks) {
     m_tasks = tasks;
 }
 
-void ToDoList::addTask(const Task task){
+void ToDoList::addTask(const Task task) {
     m_tasks.append(task);
 }
 
-void ToDoList::removeTask(const int index){
+void ToDoList::removeTask(const int index) {
     m_tasks.remove(index);
 }
 
-auto ToDoList::getTask(int index) const -> Task* {
-    return const_cast<Task*>(&m_tasks[index]);
+auto ToDoList::getTask(int index) const -> Task * {
+    return const_cast<Task *>(&m_tasks[index]);
 }
 
 auto ToDoList::toString() -> QString {
     QStringList taskNames;
-    for (Task& task : getTasks())
+    for (Task &task : getTasks())
         taskNames.append(task.getName());
 
     QString string = taskNames.join("\n");

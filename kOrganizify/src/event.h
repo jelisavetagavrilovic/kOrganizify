@@ -1,19 +1,14 @@
 #ifndef EVENT_H
 #define EVENT_H
 
-#include <QString>
 #include <QDateTime>
 #include <QHash>
 #include <QObject>
+#include <QString>
 
 #include "basicevent.h"
 
-enum class CustomEventPriority {
-    NoPriority,
-    Low,
-    Medium,
-    High
-};
+enum class CustomEventPriority { NoPriority, Low, Medium, High };
 
 QString customEventPriorityToString(CustomEventPriority priority);
 CustomEventPriority customEventPriorityFromString(const QString &priorityString);
@@ -21,7 +16,7 @@ CustomEventPriority customEventPriorityFromString(const QString &priorityString)
 
 class Event : public BasicEvent {
 
-public:
+  public:
     Event();
     Event(const BasicEvent &basicEvent);
 
@@ -32,7 +27,7 @@ public:
     void setTitle(const QString &title);
 
     int getDuration() const;
-    void  setDuration(const int duration);
+    void setDuration(const int duration);
     void setDuration();
 
     QDateTime getStartTime() const;
@@ -50,11 +45,11 @@ public:
     CustomEventPriority getPriority() const;
     void setPriority(CustomEventPriority priority);
 
-    bool overlapsWith(const Event& other) const;
+    bool overlapsWith(const Event &other) const;
 
     bool operator==(const Event &other) const;
 
-private:
+  private:
     QString m_title;
     QDateTime m_startTime;
     QDateTime m_endTime;
@@ -63,10 +58,7 @@ private:
     CustomEventPriority m_priority;
 
 
-friend uint qHash(const Event &event) {
-    return qHash(event.getTitle()) ^ qHash(event.getStartTime()) ^ qHash(event.getEndTime());
-}
-
+    friend uint qHash(const Event &event) { return qHash(event.getTitle()) ^ qHash(event.getStartTime()) ^ qHash(event.getEndTime()); }
 };
 
 #endif // EVENT_H

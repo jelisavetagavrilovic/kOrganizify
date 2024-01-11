@@ -2,13 +2,13 @@
 #define TASK_H
 #include <QString>
 
-class Task{
-private:
+class Task {
+  private:
     QString m_name;
     bool m_isChecked;
 
 
-public:
+  public:
     Task();
     Task(QString name);
     QString getName() const;

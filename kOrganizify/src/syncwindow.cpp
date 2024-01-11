@@ -4,14 +4,9 @@
 #include <QDebug>
 #include <utility>
 
-SyncWindow::SyncWindow(QString username, QString friendName, Calendar calendar, QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::SyncWindow),
-    m_selectedNumber(1),
-    m_username(std::move(username)),
-    m_friendName(std::move(friendName)),
-    m_calendar(calendar)
-{
+SyncWindow::SyncWindow(QString username, QString friendName, Calendar calendar, QWidget *parent)
+    : QWidget(parent), ui(new Ui::SyncWindow), m_selectedNumber(1), m_username(std::move(username)), m_friendName(std::move(friendName)),
+      m_calendar(calendar) {
     ui->setupUi(this);
     setWindowTitle("");
     setFixedSize(size());
@@ -25,41 +20,35 @@ SyncWindow::SyncWindow(QString username, QString friendName, Calendar calendar, 
     connect(ui->btnSync, &QPushButton::clicked, this, &SyncWindow::onSyncButtonClicked);
 }
 
-void SyncWindow::changeColor(QString color){
-    QString styleSheet = QString("background-color: %1; ").arg(color);
+void SyncWindow::changeColor(QString color) {
+    QString styleSheet    = QString("background-color: %1; ").arg(color);
     QString btnStyleSheet = QString("QPushButton{" + styleSheet + "border-radius: 10px; color:black;}");
     ui->btnSync->setStyleSheet(btnStyleSheet);
     ui->cbSelectHours->setStyleSheet(QString("QComboBox{color: black; border-radius:10px; background-color: %1; }").arg(color));
     ui->leNameInput->setStyleSheet(styleSheet + "color: black;");
 }
 
-SyncWindow::~SyncWindow()
-{
+SyncWindow::~SyncWindow() {
     delete ui;
 }
 
-void SyncWindow::onTextEntered(const QString &m_text)
-{
+void SyncWindow::onTextEntered(const QString &m_text) {
     m_enteredText = m_text;
 }
 
-void SyncWindow::onNumberSelected(int m_index)
-{
+void SyncWindow::onNumberSelected(int m_index) {
     m_selectedNumber = m_index + 1;
 }
 
-auto SyncWindow::getEnteredText() const -> QString
-{
+auto SyncWindow::getEnteredText() const -> QString {
     return m_enteredText;
 }
 
-auto SyncWindow::getSelectedNumber() const -> int
-{
+auto SyncWindow::getSelectedNumber() const -> int {
     return m_selectedNumber;
 }
 
-void SyncWindow::onSyncButtonClicked()
-{
+void SyncWindow::onSyncButtonClicked() {
     emit sendSyncRequest(m_username, m_friendName, getEnteredText(), getSelectedNumber(), m_calendar);
     close();
 }
