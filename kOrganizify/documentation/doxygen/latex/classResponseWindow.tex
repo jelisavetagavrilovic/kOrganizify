@@ -1,0 +1,132 @@
+\hypertarget{classResponseWindow}{}\doxysection{Response\+Window Class Reference}
+\label{classResponseWindow}\index{ResponseWindow@{ResponseWindow}}
+
+
+{\ttfamily \#include $<$responsewindow.\+h$>$}
+
+
+
+Inheritance diagram for Response\+Window\+:
+% FIG 0
+
+
+Collaboration diagram for Response\+Window\+:
+% FIG 1
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classResponseWindow_a266bd09da7a23f80731d87ce37d22901}{on\+Yes\+Clicked}} ()
+\item 
+void \mbox{\hyperlink{classResponseWindow_a5a867aea5ac73df2c4b740e65d293b31}{on\+No\+Clicked}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classResponseWindow_a055d01d87a92391f75aa3db7b44edb84}{send\+Response}} (bool answer)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classResponseWindow_a76f883540129d03634ca59210c510d6e}{Response\+Window}} (QString event\+Title, QString start\+Time, QWidget $\ast$parent=nullptr)
+\item 
+\mbox{\hyperlink{classResponseWindow_abde8f8bf2c79e17a842d15fabb1d60f3}{$\sim$\+Response\+Window}} ()
+\item 
+void \mbox{\hyperlink{classResponseWindow_a4f6c26aa646277c2fddae950c690132e}{change\+Color}} (QString color)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classResponseWindow_a948799374b117e64d858b4d8d62512a0}{set\+Date}} (QString found\+Date)
+\item 
+void \mbox{\hyperlink{classResponseWindow_a00b875d75a593d4d0b2802139f634b11}{set\+Title}} (QString title)
+\item 
+QString \mbox{\hyperlink{classResponseWindow_a2ba1e66492f7e23b42539799592ebb8f}{get\+Date}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Response\+Window $\ast$ \mbox{\hyperlink{classResponseWindow_af99e277d7dd87137791bdaef55887e11}{ui}}
+\item 
+QString \mbox{\hyperlink{classResponseWindow_a461ad99d7fd802d3ec85491303bef14c}{m\+\_\+date}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classResponseWindow_a76f883540129d03634ca59210c510d6e}\label{classResponseWindow_a76f883540129d03634ca59210c510d6e}} 
+\index{ResponseWindow@{ResponseWindow}!ResponseWindow@{ResponseWindow}}
+\index{ResponseWindow@{ResponseWindow}!ResponseWindow@{ResponseWindow}}
+\doxysubsubsection{\texorpdfstring{ResponseWindow()}{ResponseWindow()}}
+{\footnotesize\ttfamily Response\+Window\+::\+Response\+Window (\begin{DoxyParamCaption}\item[{QString}]{event\+Title,  }\item[{QString}]{start\+Time,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classResponseWindow_abde8f8bf2c79e17a842d15fabb1d60f3}\label{classResponseWindow_abde8f8bf2c79e17a842d15fabb1d60f3}} 
+\index{ResponseWindow@{ResponseWindow}!````~ResponseWindow@{$\sim$ResponseWindow}}
+\index{````~ResponseWindow@{$\sim$ResponseWindow}!ResponseWindow@{ResponseWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$ResponseWindow()}{~ResponseWindow()}}
+{\footnotesize\ttfamily Response\+Window\+::$\sim$\+Response\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classResponseWindow_a4f6c26aa646277c2fddae950c690132e}\label{classResponseWindow_a4f6c26aa646277c2fddae950c690132e}} 
+\index{ResponseWindow@{ResponseWindow}!changeColor@{changeColor}}
+\index{changeColor@{changeColor}!ResponseWindow@{ResponseWindow}}
+\doxysubsubsection{\texorpdfstring{changeColor()}{changeColor()}}
+{\footnotesize\ttfamily void Response\+Window\+::change\+Color (\begin{DoxyParamCaption}\item[{QString}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classResponseWindow_a2ba1e66492f7e23b42539799592ebb8f}\label{classResponseWindow_a2ba1e66492f7e23b42539799592ebb8f}} 
+\index{ResponseWindow@{ResponseWindow}!getDate@{getDate}}
+\index{getDate@{getDate}!ResponseWindow@{ResponseWindow}}
+\doxysubsubsection{\texorpdfstring{getDate()}{getDate()}}
+{\footnotesize\ttfamily auto Response\+Window\+::get\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classResponseWindow_a5a867aea5ac73df2c4b740e65d293b31}\label{classResponseWindow_a5a867aea5ac73df2c4b740e65d293b31}} 
+\index{ResponseWindow@{ResponseWindow}!onNoClicked@{onNoClicked}}
+\index{onNoClicked@{onNoClicked}!ResponseWindow@{ResponseWindow}}
+\doxysubsubsection{\texorpdfstring{onNoClicked}{onNoClicked}}
+{\footnotesize\ttfamily void Response\+Window\+::on\+No\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classResponseWindow_a266bd09da7a23f80731d87ce37d22901}\label{classResponseWindow_a266bd09da7a23f80731d87ce37d22901}} 
+\index{ResponseWindow@{ResponseWindow}!onYesClicked@{onYesClicked}}
+\index{onYesClicked@{onYesClicked}!ResponseWindow@{ResponseWindow}}
+\doxysubsubsection{\texorpdfstring{onYesClicked}{onYesClicked}}
+{\footnotesize\ttfamily void Response\+Window\+::on\+Yes\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classResponseWindow_a055d01d87a92391f75aa3db7b44edb84}\label{classResponseWindow_a055d01d87a92391f75aa3db7b44edb84}} 
+\index{ResponseWindow@{ResponseWindow}!sendResponse@{sendResponse}}
+\index{sendResponse@{sendResponse}!ResponseWindow@{ResponseWindow}}
+\doxysubsubsection{\texorpdfstring{sendResponse}{sendResponse}}
+{\footnotesize\ttfamily void Response\+Window\+::send\+Response (\begin{DoxyParamCaption}\item[{bool}]{answer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classResponseWindow_a948799374b117e64d858b4d8d62512a0}\label{classResponseWindow_a948799374b117e64d858b4d8d62512a0}} 
+\index{ResponseWindow@{ResponseWindow}!setDate@{setDate}}
+\index{setDate@{setDate}!ResponseWindow@{ResponseWindow}}
+\doxysubsubsection{\texorpdfstring{setDate()}{setDate()}}
+{\footnotesize\ttfamily void Response\+Window\+::set\+Date (\begin{DoxyParamCaption}\item[{QString}]{found\+Date }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classResponseWindow_a00b875d75a593d4d0b2802139f634b11}\label{classResponseWindow_a00b875d75a593d4d0b2802139f634b11}} 
+\index{ResponseWindow@{ResponseWindow}!setTitle@{setTitle}}
+\index{setTitle@{setTitle}!ResponseWindow@{ResponseWindow}}
+\doxysubsubsection{\texorpdfstring{setTitle()}{setTitle()}}
+{\footnotesize\ttfamily void Response\+Window\+::set\+Title (\begin{DoxyParamCaption}\item[{QString}]{title }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classResponseWindow_a461ad99d7fd802d3ec85491303bef14c}\label{classResponseWindow_a461ad99d7fd802d3ec85491303bef14c}} 
+\index{ResponseWindow@{ResponseWindow}!m\_date@{m\_date}}
+\index{m\_date@{m\_date}!ResponseWindow@{ResponseWindow}}
+\doxysubsubsection{\texorpdfstring{m\_date}{m\_date}}
+{\footnotesize\ttfamily QString Response\+Window\+::m\+\_\+date\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classResponseWindow_af99e277d7dd87137791bdaef55887e11}\label{classResponseWindow_af99e277d7dd87137791bdaef55887e11}} 
+\index{ResponseWindow@{ResponseWindow}!ui@{ui}}
+\index{ui@{ui}!ResponseWindow@{ResponseWindow}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Response\+Window$\ast$ Response\+Window\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{responsewindow_8h}{responsewindow.\+h}}\item 
+src/\mbox{\hyperlink{responsewindow_8cpp}{responsewindow.\+cpp}}\end{DoxyCompactItemize}

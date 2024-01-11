@@ -1,0 +1,95 @@
+.TH "ToDoList" 3 "Thu Jan 11 2024" "kOrganizify" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ToDoList
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <toDoList\&.h>\fP
+.PP
+Inherits \fBSaveLoad\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBToDoList\fP (QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "void \fBloadData\fP (const QString &username)"
+.br
+.ti -1c
+.RI "void \fBsaveData\fP (const QString &username)"
+.br
+.ti -1c
+.RI "void \fBfromJson\fP (const QJsonObject &jsonObject) override"
+.br
+.ti -1c
+.RI "void \fBsetTasks\fP (const QVector< \fBTask\fP > &tasks)"
+.br
+.ti -1c
+.RI "void \fBaddTask\fP (const \fBTask\fP task)"
+.br
+.ti -1c
+.RI "void \fBremoveTask\fP (const int index)"
+.br
+.ti -1c
+.RI "QVector< \fBTask\fP > \fBgetTasks\fP ()"
+.br
+.ti -1c
+.RI "\fBTask\fP * \fBgetTask\fP (int index) const"
+.br
+.ti -1c
+.RI "QString \fBtoString\fP ()"
+.br
+.ti -1c
+.RI "QJsonValue \fBtoJson\fP () const override"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QVector< \fBTask\fP > \fBm_tasks\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ToDoList::ToDoList (QObject * parent = \fCnullptr\fP)\fC [explicit]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void ToDoList::addTask (const \fBTask\fP task)"
+
+.SS "void ToDoList::fromJson (const QJsonObject & jsonObject)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBSaveLoad\fP\&.
+.SS "auto ToDoList::getTask (int index) const"
+
+.SS "auto ToDoList::getTasks ()"
+
+.SS "void ToDoList::loadData (const QString & username)"
+
+.SS "void ToDoList::removeTask (const int index)"
+
+.SS "void ToDoList::saveData (const QString & username)"
+
+.SS "void ToDoList::setTasks (const QVector< \fBTask\fP > & tasks)"
+
+.SS "auto ToDoList::toJson () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBSaveLoad\fP\&.
+.SS "auto ToDoList::toString ()"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "QVector<\fBTask\fP> ToDoList::m_tasks\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for kOrganizify from the source code\&.

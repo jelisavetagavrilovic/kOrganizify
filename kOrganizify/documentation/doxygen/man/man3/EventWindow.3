@@ -1,0 +1,147 @@
+.TH "EventWindow" 3 "Thu Jan 11 2024" "kOrganizify" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+EventWindow
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <eventwindow\&.h>\fP
+.PP
+Inherits QWidget\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBsaveButtonClicked\fP ()"
+.br
+.ti -1c
+.RI "void \fBdeleteButtonClicked\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEventWindow\fP (\fBCalendar\fP *calendar, QWidget *parent=nullptr)"
+.br
+.ti -1c
+.RI "\fB~EventWindow\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetStartDate\fP (const QDateTime &dateTime)"
+.br
+.ti -1c
+.RI "void \fBsetEndDate\fP (const QDateTime &dateTime)"
+.br
+.ti -1c
+.RI "void \fBsetTitle\fP (const QString &title)"
+.br
+.ti -1c
+.RI "void \fBsetDescription\fP (const QString &description)"
+.br
+.ti -1c
+.RI "void \fBsetLocation\fP (const QString &location)"
+.br
+.ti -1c
+.RI "void \fBsetPriority\fP (const \fBCustomEventPriority\fP &priority)"
+.br
+.ti -1c
+.RI "void \fBsetCurrentEvent\fP (const \fBEvent\fP &event)"
+.br
+.ti -1c
+.RI "\fBEvent\fP \fBgetCurrentEvent\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisEventNull\fP () const"
+.br
+.ti -1c
+.RI "void \fBchangeColor\fP (QString color)"
+.br
+.ti -1c
+.RI "bool \fBcheckEventOverlap\fP (const \fBEvent\fP &newEvent)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBkeyPressEvent\fP (QKeyEvent *event) override"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBonSaveButtonClicked\fP ()"
+.br
+.ti -1c
+.RI "void \fBonDeleteButtonClicked\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "Ui::EventWindow * \fBui\fP"
+.br
+.ti -1c
+.RI "\fBCalendar\fP * \fBm_calendar\fP"
+.br
+.ti -1c
+.RI "\fBEvent\fP \fBm_currentEvent\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "EventWindow::EventWindow (\fBCalendar\fP * calendar, QWidget * parent = \fCnullptr\fP)\fC [explicit]\fP"
+
+.SS "EventWindow::~EventWindow ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void EventWindow::changeColor (QString color)"
+
+.SS "auto EventWindow::checkEventOverlap (const \fBEvent\fP & newEvent)"
+
+.SS "void EventWindow::deleteButtonClicked ()\fC [signal]\fP"
+
+.SS "auto EventWindow::getCurrentEvent () const"
+
+.SS "auto EventWindow::isEventNull () const"
+
+.SS "void EventWindow::keyPressEvent (QKeyEvent * event)\fC [override]\fP, \fC [protected]\fP"
+
+.SS "void EventWindow::onDeleteButtonClicked ()\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void EventWindow::onSaveButtonClicked ()\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void EventWindow::saveButtonClicked ()\fC [signal]\fP"
+
+.SS "void EventWindow::setCurrentEvent (const \fBEvent\fP & event)"
+
+.SS "void EventWindow::setDescription (const QString & description)"
+
+.SS "void EventWindow::setEndDate (const QDateTime & dateTime)"
+
+.SS "void EventWindow::setLocation (const QString & location)"
+
+.SS "void EventWindow::setPriority (const \fBCustomEventPriority\fP & priority)"
+
+.SS "void EventWindow::setStartDate (const QDateTime & dateTime)"
+
+.SS "void EventWindow::setTitle (const QString & title)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBCalendar\fP* EventWindow::m_calendar\fC [private]\fP"
+
+.SS "\fBEvent\fP EventWindow::m_currentEvent\fC [private]\fP"
+
+.SS "Ui::EventWindow* EventWindow::ui\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for kOrganizify from the source code\&.
