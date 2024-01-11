@@ -24,7 +24,7 @@ void ToDoList::fromJson(const QJsonObject &jsonObject) {
     }
 }
 
-QJsonValue ToDoList::toJson() const {
+auto ToDoList::toJson() const -> QJsonValue {
     QJsonArray jsonArray;
     for (const Task &task : m_tasks) {
         QJsonObject jsonObject;
@@ -42,7 +42,7 @@ void ToDoList::saveData(const QString &username) {
     SaveLoad::saveData(username);
 }
 
-QVector<Task> ToDoList::getTasks() {
+auto ToDoList::getTasks() -> QVector<Task> {
     return m_tasks;
 }
 
@@ -58,11 +58,11 @@ void ToDoList::removeTask(const int index){
     m_tasks.remove(index);
 }
 
-Task* ToDoList::getTask(int index) const {
+auto ToDoList::getTask(int index) const -> Task* {
     return const_cast<Task*>(&m_tasks[index]);
 }
 
-QString ToDoList::toString() {
+auto ToDoList::toString() -> QString {
     QStringList taskNames;
     for (Task& task : getTasks())
         taskNames.append(task.getName());

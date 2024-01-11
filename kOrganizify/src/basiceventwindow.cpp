@@ -23,7 +23,7 @@ BasicEventWindow::BasicEventWindow(Calendar *calendar, QDate *startDate, QWidget
     connect(ui->btnNextCalendar, &QPushButton::clicked, this, &BasicEventWindow::nextCalendar);
 }
 
-bool BasicEventWindow::addEvent(const char op) {
+auto BasicEventWindow::addEvent(const char op) -> bool {
     if (m_currentIndex == m_basicCalendar->sizeBasic()) {
         QString title = ui->leTitle->text();
         QString durationString = ui->leDuration->text();
@@ -83,7 +83,7 @@ void BasicEventWindow::generate() {
         QTime startTime = ui->tePlanStartTime->time();
         QTime endTime = ui->tePlanEndTime->time();
 
-        Calendar* tmp = new Calendar(*m_calendar);
+        auto* tmp = new Calendar(*m_calendar);
         m_scheduler = new Scheduler(tmp, m_basicCalendar, m_startDate);
         m_scheduler->generateSchedule(startTime, endTime);
         m_listOfCalendars.append(tmp);

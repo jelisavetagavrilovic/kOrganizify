@@ -2,7 +2,7 @@
 
 Event::Event() : m_priority(CustomEventPriority::NoPriority) {}
 
-QString Event::getTitle() const {
+auto Event::getTitle() const -> QString {
     return BasicEvent::getTitle();
 }
 
@@ -10,7 +10,7 @@ void Event::setTitle(const QString &title) {
     BasicEvent::setTitle(title);
 }
 
-int Event::getDuration() const {
+auto Event::getDuration() const -> int {
     return BasicEvent::getDuration();
 }
 
@@ -26,7 +26,7 @@ void Event::setDuration() {
     BasicEvent::setDuration(duration);
 }
 
-QDateTime Event::getStartTime() const {
+auto Event::getStartTime() const -> QDateTime {
     return m_startTime;
 }
 
@@ -34,7 +34,7 @@ void Event::setStartTime(const QDateTime &startTime) {
     m_startTime = startTime;
 }
 
-QDateTime Event::getEndTime() const {
+auto Event::getEndTime() const -> QDateTime {
     return m_endTime;
 }
 
@@ -42,7 +42,7 @@ void Event::setEndTime(const QDateTime &endTime) {
     m_endTime = endTime;
 }
 
-QString Event::getDescription() const {
+auto Event::getDescription() const -> QString {
     return m_description;
 }
 
@@ -50,7 +50,7 @@ void Event::setDescription(const QString &description) {
     m_description = description;
 }
 
-QString Event::getLocation() const {
+auto Event::getLocation() const -> QString {
     return m_location;
 }
 
@@ -58,7 +58,7 @@ void Event::setLocation(const QString &location) {
     m_location = location;
 }
 
-CustomEventPriority Event::getPriority() const {
+auto Event::getPriority() const -> CustomEventPriority {
     return m_priority;
 }
 
@@ -66,7 +66,7 @@ void Event::setPriority(CustomEventPriority priority){
     m_priority = priority;
 }
 
-bool Event::operator==(const Event &other) const {
+auto Event::operator==(const Event &other) const -> bool {
     return (
         BasicEvent::getTitle() == BasicEvent::getTitle() &&
         m_startTime == other.m_startTime &&
@@ -76,7 +76,7 @@ bool Event::operator==(const Event &other) const {
         );
 }
 
-QString customEventPriorityToString(CustomEventPriority priority) {
+auto customEventPriorityToString(CustomEventPriority priority) -> QString {
     switch (priority) {
     case CustomEventPriority::NoPriority:
         return "No Priority";
@@ -91,7 +91,7 @@ QString customEventPriorityToString(CustomEventPriority priority) {
     }
 }
 
-bool Event::overlapsWith(const Event& other) const {
+auto Event::overlapsWith(const Event& other) const -> bool {
     return m_endTime > other.m_startTime && m_startTime < other.m_endTime;
 }
 
@@ -109,7 +109,7 @@ void Event::deleteString(QString &str) {
     }
 }
 
-CustomEventPriority customEventPriorityFromString(const QString &priorityString) {
+auto customEventPriorityFromString(const QString &priorityString) -> CustomEventPriority {
     if (priorityString == "No Priority") {
         return CustomEventPriority::NoPriority;
     } else if (priorityString == "Low") {

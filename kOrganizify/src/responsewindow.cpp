@@ -29,7 +29,7 @@ void ResponseWindow::setDate(QString startTime) {
     ui->lblDate->setText(startTime);
 }
 
-QString ResponseWindow::getDate() {
+auto ResponseWindow::getDate() -> QString {
     return m_date;
 }
 

@@ -47,7 +47,7 @@ void AppWindow::populateFriends(const QList<QString>& friends) {
     connect(ui->lwFriends, &QListWidget::itemClicked, this, &AppWindow::openSyncWindow);
 
     for (const QString& name : friends) {
-        QListWidgetItem* item = new QListWidgetItem(name);
+        auto* item = new QListWidgetItem(name);
         ui->lwFriends->addItem(item);
     }
 }
@@ -223,10 +223,10 @@ void AppWindow::addTask() {
 }
 
 void AppWindow::addTaskToListWidget(const Task &task) {
-    QListWidgetItem *item = new QListWidgetItem();
+    auto *item = new QListWidgetItem();
     ui->lwToDoList->addItem(item);
 
-    QCheckBox *checkBox = new QCheckBox(task.getName());
+    auto *checkBox = new QCheckBox(task.getName());
     ui->lwToDoList->setItemWidget(item, checkBox);
 
     QFont font{"Times New Roman", 12};
@@ -243,7 +243,7 @@ void AppWindow::addTaskToListWidget(const Task &task) {
 }
 
 void AppWindow::onCheckBoxStateChanged(int state) {
-    QCheckBox *checkBox = qobject_cast<QCheckBox*>(sender());
+    auto *checkBox = qobject_cast<QCheckBox*>(sender());
     if (checkBox) {
         int index = ui->lwToDoList->row(ui->lwToDoList->itemFromIndex(ui->lwToDoList->indexAt(checkBox->pos())));
         if (state == Qt::Checked) {
@@ -256,7 +256,7 @@ void AppWindow::onCheckBoxStateChanged(int state) {
     }
 }
 
-QString AppWindow::crossTask(const QString &taskName) {
+auto AppWindow::crossTask(const QString &taskName) -> QString {
     QString newTaskName = "";
     for (auto ch : taskName) {
         newTaskName.append(QChar(0x0336));
@@ -273,7 +273,7 @@ void AppWindow::clearFinishedTasks(){
         QWidget* widget = ui->lwToDoList->itemWidget(item);
 
         if (widget && widget->inherits("QCheckBox")) {
-            QCheckBox* checkBox = static_cast<QCheckBox*>(widget);
+            auto* checkBox = static_cast<QCheckBox*>(widget);
             if (checkBox->isChecked()) {
                 ui->lwToDoList->takeItem(i);
                 delete item;
@@ -330,7 +330,7 @@ void AppWindow::showWeeklyEvents(const QDate& selectedDate){
         if (!event.getLocation().isEmpty()) {
             title += QString("\nLocation: %1").arg(event.getLocation());
         }
-        QTableWidgetItem *item = new QTableWidgetItem();
+        auto *item = new QTableWidgetItem();
         item->setData(Qt::DisplayRole, title);
         item->setTextAlignment(Qt::AlignCenter);
         QFont font = item->font();
@@ -364,18 +364,18 @@ void AppWindow::showWeeklyEvents(const QDate& selectedDate){
     }
 }
 
-QColor AppWindow::getColorFromPriority(CustomEventPriority priority) {
+auto AppWindow::getColorFromPriority(CustomEventPriority priority) -> QColor {
     switch (priority) {
     case CustomEventPriority::NoPriority:
-        return QColor(247, 244, 248);
+        return {247, 244, 248};
     case CustomEventPriority::Low:
-        return QColor(209, 244, 164);
+        return {209, 244, 164};
     case CustomEventPriority::Medium:
-        return QColor(250, 226, 127);
+        return {250, 226, 127};
     case CustomEventPriority::High:
-        return QColor(207, 91, 87);
+        return {207, 91, 87};
     default:
-        return QColor(247, 244, 248);
+        return {247, 244, 248};
     }
 }
 
@@ -388,7 +388,7 @@ void AppWindow::logoutUser() {
 }
 
 void AppWindow::showSyncWindow(QString username, QString title, int duration) {
-    SyncResponseWindow* responseWindow = new SyncResponseWindow(username, title, duration);
+    auto* responseWindow = new SyncResponseWindow(username, title, duration);
     responseWindow->changeColor(m_settingsWindow->getColor());
     responseWindow->show();
     connect(responseWindow, &SyncResponseWindow::yesResponse, this, &AppWindow::sendYesResponse);
@@ -403,7 +403,7 @@ void AppWindow::smartPlan() {
     else {
         m_startDate = selectedDate.addDays(-selectedDate.dayOfWeek() + 1);
     }
-    BasicEventWindow *basicEventWindow = new BasicEventWindow(m_calendar, &m_startDate);
+    auto *basicEventWindow = new BasicEventWindow(m_calendar, &m_startDate);
     basicEventWindow->changeColor(m_settingsWindow->getColor());
     basicEventWindow->show();
 
@@ -432,12 +432,12 @@ void AppWindow::sendNoResponse(QString friendName) {
 }
 
 void AppWindow::syncDenied(QString friendName) {
-    SyncDeniedWindow *syncDeniedWindow = new SyncDeniedWindow(friendName);
+    auto *syncDeniedWindow = new SyncDeniedWindow(friendName);
     syncDeniedWindow->show();
 }
 
 void AppWindow::showResponseWindow(QString eventTitle, QString startTime) {
-    ResponseWindow *responseWindow = new ResponseWindow(eventTitle,startTime);
+    auto *responseWindow = new ResponseWindow(eventTitle,startTime);
     responseWindow->changeColor(m_settingsWindow->getColor());
     responseWindow->show();
     connect(responseWindow, &ResponseWindow::sendResponse, m_user->m_client, &Client::eventResponse);
