@@ -3,7 +3,8 @@
 #include "ui_appwindow.h"
 
 AppWindow::AppWindow(User *user, QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::AppWindow), m_user(user) {
+    : QMainWindow(parent), ui(new Ui::AppWindow), m_user(user)
+{
   ui->setupUi(this);
   setAttribute(Qt::WA_DeleteOnClose);
   setWindowTitle("kOrganizify");

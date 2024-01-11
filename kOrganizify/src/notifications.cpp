@@ -26,7 +26,7 @@ void Notifications::checkEvents(const QList<Event> &filteredEvents) {
 
   QDateTime currentDateTime = QDateTime::currentDateTime();
   for (const Event &event : filteredEvents) {
-    QDateTime eventDateTime = event.getStartTime();
+    // QDateTime eventDateTime = event.getStartTime();
     int secs = currentDateTime.secsTo(event.getStartTime());
     if (secs >= 29 * 60 && secs <= 30 * 60 && m_enabled)
       showEvent(event);

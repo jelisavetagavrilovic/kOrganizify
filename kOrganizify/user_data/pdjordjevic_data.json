@@ -193,12 +193,12 @@
             "title": "Slobodno vreme"
         },
         {
-            "description": "Veče uz muziku i razgovor",
-            "endTime": "2024-01-11T23:30:00",
-            "location": "Pab 'Craft Corner'",
-            "priority": "High",
-            "startTime": "2024-01-11T21:00:00",
-            "title": "Izlazak u pab"
+            "description": "",
+            "endTime": "2024-01-11T22:00:00",
+            "location": "",
+            "priority": "No Priority",
+            "startTime": "2024-01-11T21:28:00",
+            "title": "event"
         },
         {
             "description": "Proslava Srpske Nove godine sa prijateljima",
@@ -220,7 +220,7 @@
     "password": "pdjordjevic",
     "settings": {
         "color": "#ABD49A",
-        "notifications": false
+        "notifications": true
     },
     "tasks": [
         {
