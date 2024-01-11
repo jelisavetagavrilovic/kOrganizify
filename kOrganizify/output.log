@@ -1,0 +1,164 @@
+/home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/eventwindow.cpp:3:10: fatal error: 'ui_eventwindow.h' file not found
+#include "ui_eventwindow.h"
+         ^~~~~~~~~~~~~~~~~~
+1 error generated.
+Error while processing /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/eventwindow.cpp.
+/home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/syncdeniedwindow.cpp:2:10: fatal error: 'ui_syncdeniedwindow.h' file not found
+#include "ui_syncdeniedwindow.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+Error while processing /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/syncdeniedwindow.cpp.
+In file included from /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/user.h:8:
+/home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/client.h:27:25: error: incomplete type 'QHostAddress' named in nested name specifier
+    bool makeConnection(QHostAddress::SpecialAddress address);
+                        ^~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/qt5/QtNetwork/qabstractsocket.h:53:7: note: forward declaration of 'QHostAddress'
+class QHostAddress;
+      ^
+1 error generated.
+Error while processing /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/user.h.
+/home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/responsewindow.cpp:2:10: fatal error: 'ui_responsewindow.h' file not found
+#include "ui_responsewindow.h"
+         ^~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+Error while processing /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/responsewindow.cpp.
+In file included from /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/appwindow.h:12:
+In file included from /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/mainwindow.h:6:
+In file included from /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/user.h:8:
+/home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/client.h:27:25: error: incomplete type 'QHostAddress' named in nested name specifier
+    bool makeConnection(QHostAddress::SpecialAddress address);
+                        ^~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/qt5/QtNetwork/qabstractsocket.h:53:7: note: forward declaration of 'QHostAddress'
+class QHostAddress;
+      ^
+/home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/appwindow.h:25:10: fatal error: 'ui_settingswindow.h' file not found
+#include "ui_settingswindow.h"
+         ^~~~~~~~~~~~~~~~~~~~~
+2 errors generated.
+Error while processing /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/appwindow.h.
+/home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/notificationswindow.cpp:2:10: fatal error: 'ui_notificationswindow.h' file not found
+#include "ui_notificationswindow.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+Error while processing /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/notificationswindow.cpp.
+/home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/basiceventwindow.cpp:2:10: fatal error: 'ui_basiceventwindow.h' file not found
+#include "ui_basiceventwindow.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+Error while processing /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/basiceventwindow.cpp.
+In file included from /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/user.cpp:1:
+In file included from /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/user.h:8:
+/home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/client.h:27:25: error: incomplete type 'QHostAddress' named in nested name specifier
+    bool makeConnection(QHostAddress::SpecialAddress address);
+                        ^~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/qt5/QtNetwork/qabstractsocket.h:53:7: note: forward declaration of 'QHostAddress'
+class QHostAddress;
+      ^
+1 error generated.
+Error while processing /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/user.cpp.
+In file included from /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/mainwindow.h:6:
+In file included from /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/user.h:8:
+/home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/client.h:27:25: error: incomplete type 'QHostAddress' named in nested name specifier
+    bool makeConnection(QHostAddress::SpecialAddress address);
+                        ^~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/qt5/QtNetwork/qabstractsocket.h:53:7: note: forward declaration of 'QHostAddress'
+class QHostAddress;
+      ^
+In file included from /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/mainwindow.h:7:
+/home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/appwindow.h:25:10: fatal error: 'ui_settingswindow.h' file not found
+#include "ui_settingswindow.h"
+         ^~~~~~~~~~~~~~~~~~~~~
+2 errors generated.
+Error while processing /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/mainwindow.h.
+In file included from /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/main.cpp:1:
+In file included from /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/mainwindow.h:6:
+In file included from /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/user.h:8:
+/home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/client.h:27:25: error: incomplete type 'QHostAddress' named in nested name specifier
+    bool makeConnection(QHostAddress::SpecialAddress address);
+                        ^~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/qt5/QtNetwork/qabstractsocket.h:53:7: note: forward declaration of 'QHostAddress'
+class QHostAddress;
+      ^
+In file included from /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/main.cpp:1:
+In file included from /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/mainwindow.h:7:
+/home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/appwindow.h:25:10: fatal error: 'ui_settingswindow.h' file not found
+#include "ui_settingswindow.h"
+         ^~~~~~~~~~~~~~~~~~~~~
+2 errors generated.
+Error while processing /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/main.cpp.
+/home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/syncwindow.cpp:3:10: fatal error: 'ui_syncwindow.h' file not found
+#include "ui_syncwindow.h"
+         ^~~~~~~~~~~~~~~~~
+1 error generated.
+Error while processing /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/syncwindow.cpp.
+/home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/syncresponsewindow.cpp:2:10: fatal error: 'ui_syncresponsewindow.h' file not found
+#include "ui_syncresponsewindow.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+Error while processing /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/syncresponsewindow.cpp.
+In file included from /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/appwindow.cpp:1:
+In file included from /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/appwindow.h:12:
+In file included from /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/mainwindow.h:6:
+In file included from /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/user.h:8:
+/home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/client.h:27:25: error: incomplete type 'QHostAddress' named in nested name specifier
+    bool makeConnection(QHostAddress::SpecialAddress address);
+                        ^~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/qt5/QtNetwork/qabstractsocket.h:53:7: note: forward declaration of 'QHostAddress'
+class QHostAddress;
+      ^
+In file included from /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/appwindow.cpp:1:
+/home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/appwindow.h:25:10: fatal error: 'ui_settingswindow.h' file not found
+#include "ui_settingswindow.h"
+         ^~~~~~~~~~~~~~~~~~~~~
+2 errors generated.
+Error while processing /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/appwindow.cpp.
+/home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/settingswindow.cpp:2:10: fatal error: 'ui_settingswindow.h' file not found
+#include "ui_settingswindow.h"
+         ^~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+Error while processing /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/settingswindow.cpp.
+In file included from /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/client.cpp:1:
+/home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/client.h:27:25: error: incomplete type 'QHostAddress' named in nested name specifier
+    bool makeConnection(QHostAddress::SpecialAddress address);
+                        ^~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/qt5/QtNetwork/qabstractsocket.h:53:7: note: forward declaration of 'QHostAddress'
+class QHostAddress;
+      ^
+/home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/client.cpp:14:20: error: incomplete type 'QHostAddress' named in nested name specifier
+    makeConnection(QHostAddress::LocalHost);
+                   ^~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/qt5/QtNetwork/qabstractsocket.h:53:7: note: forward declaration of 'QHostAddress'
+class QHostAddress;
+      ^
+/home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/client.cpp:17:29: error: incomplete type 'QHostAddress' named in nested name specifier
+auto Client::makeConnection(QHostAddress::SpecialAddress address) -> bool {
+                            ^~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/qt5/QtNetwork/qabstractsocket.h:53:7: note: forward declaration of 'QHostAddress'
+class QHostAddress;
+      ^
+3 errors generated.
+Error while processing /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/client.cpp.
+In file included from /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/mainwindow.cpp:2:
+In file included from /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/mainwindow.h:6:
+In file included from /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/user.h:8:
+/home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/client.h:27:25: error: incomplete type 'QHostAddress' named in nested name specifier
+    bool makeConnection(QHostAddress::SpecialAddress address);
+                        ^~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/qt5/QtNetwork/qabstractsocket.h:53:7: note: forward declaration of 'QHostAddress'
+class QHostAddress;
+      ^
+In file included from /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/mainwindow.cpp:2:
+In file included from /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/mainwindow.h:7:
+/home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/appwindow.h:25:10: fatal error: 'ui_settingswindow.h' file not found
+#include "ui_settingswindow.h"
+         ^~~~~~~~~~~~~~~~~~~~~
+2 errors generated.
+Error while processing /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/mainwindow.cpp.
+/home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/client.h:27:25: error: incomplete type 'QHostAddress' named in nested name specifier
+    bool makeConnection(QHostAddress::SpecialAddress address);
+                        ^~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/qt5/QtNetwork/qabstractsocket.h:53:7: note: forward declaration of 'QHostAddress'
+class QHostAddress;
+      ^
+1 error generated.
+Error while processing /home/sara/Desktop/Projekat/kOrganizify/kOrganizify/src/client.h.
