@@ -1,0 +1,11 @@
+digraph "User"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{User\n|+ m_client\l- m_username\l- m_password\l- m_calendar\l- m_toDoList\l- m_settings\l|+ User()\l+ userExists()\l+ loadData()\l+ saveData()\l+ fromJson()\l+ setCalendar()\l+ login()\l+ registerUser()\l+ logout()\l+ getCalendar()\l+ getToDoList()\l+ getSettings()\l+ getUsername()\l+ toJson()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{SaveLoad\n|+ m_jsonObject\l|+ SaveLoad()\l+ getFilePath()\l+ saveData()\l+ loadData()\l+ toJson()\l+ fromJson()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSaveLoad.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{QObject\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}

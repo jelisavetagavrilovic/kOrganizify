@@ -1,0 +1,212 @@
+\hypertarget{classCalendar}{}\doxysection{Calendar Class Reference}
+\label{classCalendar}\index{Calendar@{Calendar}}
+
+
+{\ttfamily \#include $<$calendar.\+h$>$}
+
+
+
+Inheritance diagram for Calendar\+:
+% FIG 0
+
+
+Collaboration diagram for Calendar\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCalendar_a423ef27351bfa2309c6e2173bff61756}{Calendar}} ()
+\item 
+\mbox{\hyperlink{classCalendar_ae0ac7277596945194364be9c32f1baaf}{Calendar}} (const \mbox{\hyperlink{classCalendar}{Calendar}} \&other)
+\item 
+\mbox{\hyperlink{classCalendar}{Calendar}} \mbox{\hyperlink{classCalendar_a9581fb2a358f58a9eaf475abe1b9ea47}{operator=}} (const \mbox{\hyperlink{classCalendar}{Calendar}} \&other)
+\item 
+QList$<$ \mbox{\hyperlink{classEvent}{Event}} $>$ \mbox{\hyperlink{classCalendar_ab7e6fd60a7cd7816f0ffcd6b8e1d58b1}{get\+Events}} () const
+\item 
+QList$<$ \mbox{\hyperlink{classEvent}{Event}} $>$ \mbox{\hyperlink{classCalendar_a066588d0e60071ee3e315a9ef9cec331}{get\+Events\+For\+Week}} (const QDate \&start\+Date, const QDate \&end\+Date) const
+\item 
+\mbox{\hyperlink{classEvent}{Event}} \mbox{\hyperlink{classCalendar_a22de82e3af3c394660d5e2a50312d2fa}{get\+Event}} (const int index)
+\item 
+\mbox{\hyperlink{classBasicEvent}{Basic\+Event}} \mbox{\hyperlink{classCalendar_a6e72d75aa930f50135e2437894d0daf3}{get\+Basic\+Event}} (const int index)
+\item 
+QJson\+Value \mbox{\hyperlink{classCalendar_ac1dc71883179427b8ee037ab3064aa92}{to\+Json}} () const override
+\item 
+int \mbox{\hyperlink{classCalendar_a4629d74a4407255a8626dbbe253666a7}{size\+Basic}} ()
+\item 
+int \mbox{\hyperlink{classCalendar_a98a7c22a377d7cbdf06f063380728769}{size}} ()
+\item 
+bool \mbox{\hyperlink{classCalendar_ae778e2c86fd1ef26def6320241a7171b}{has\+Event\+At}} (const QDate\+Time \&date\+Time) const
+\item 
+void \mbox{\hyperlink{classCalendar_a0161fffee8f809b26033eeefe9d0ca5e}{load\+Data}} (const QString \&username)
+\item 
+void \mbox{\hyperlink{classCalendar_a665057ca229003cc68f7ee280da279c8}{save\+Data}} (const QString \&username)
+\item 
+void \mbox{\hyperlink{classCalendar_ad0a00d6b60c45f1d9002ddaaf60ec952}{clear}} ()
+\item 
+void \mbox{\hyperlink{classCalendar_a56d39dc36d9a26b20d75fdca54a1ad96}{print}} ()
+\item 
+void \mbox{\hyperlink{classCalendar_a56459b1986582fc6cad12663645f54aa}{from\+Json}} (const QJson\+Object \&json\+Object) override
+\item 
+void \mbox{\hyperlink{classCalendar_ac24deb520deb83ad256050972b744aef}{add\+Event}} (const \mbox{\hyperlink{classBasicEvent}{Basic\+Event}} \&basic\+Event)
+\item 
+void \mbox{\hyperlink{classCalendar_af419bd496077049d00a6550f20139bd1}{remove\+Event}} (const \mbox{\hyperlink{classBasicEvent}{Basic\+Event}} \&basic\+Event)
+\item 
+void \mbox{\hyperlink{classCalendar_ab964eae5a51678c5aceb326929cc6835}{update\+Event}} (const \mbox{\hyperlink{classEvent}{Event}} \&old\+Event, const \mbox{\hyperlink{classEvent}{Event}} \&new\+Event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QList$<$ \mbox{\hyperlink{classBasicEvent}{Basic\+Event}} $>$ \mbox{\hyperlink{classCalendar_a8bf3c9618d7063082c8b310af3cbefbc}{m\+\_\+basic\+Events}}
+\item 
+QList$<$ \mbox{\hyperlink{classEvent}{Event}} $>$ \mbox{\hyperlink{classCalendar_a5abc8f67b69f749fa28e6c54a92f339a}{m\+\_\+events}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCalendar_a423ef27351bfa2309c6e2173bff61756}\label{classCalendar_a423ef27351bfa2309c6e2173bff61756}} 
+\index{Calendar@{Calendar}!Calendar@{Calendar}}
+\index{Calendar@{Calendar}!Calendar@{Calendar}}
+\doxysubsubsection{\texorpdfstring{Calendar()}{Calendar()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Calendar\+::\+Calendar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCalendar_ae0ac7277596945194364be9c32f1baaf}\label{classCalendar_ae0ac7277596945194364be9c32f1baaf}} 
+\index{Calendar@{Calendar}!Calendar@{Calendar}}
+\index{Calendar@{Calendar}!Calendar@{Calendar}}
+\doxysubsubsection{\texorpdfstring{Calendar()}{Calendar()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Calendar\+::\+Calendar (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCalendar}{Calendar}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCalendar_ac24deb520deb83ad256050972b744aef}\label{classCalendar_ac24deb520deb83ad256050972b744aef}} 
+\index{Calendar@{Calendar}!addEvent@{addEvent}}
+\index{addEvent@{addEvent}!Calendar@{Calendar}}
+\doxysubsubsection{\texorpdfstring{addEvent()}{addEvent()}}
+{\footnotesize\ttfamily void Calendar\+::add\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classBasicEvent}{Basic\+Event}} \&}]{basic\+Event }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCalendar_ad0a00d6b60c45f1d9002ddaaf60ec952}\label{classCalendar_ad0a00d6b60c45f1d9002ddaaf60ec952}} 
+\index{Calendar@{Calendar}!clear@{clear}}
+\index{clear@{clear}!Calendar@{Calendar}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Calendar\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCalendar_a56459b1986582fc6cad12663645f54aa}\label{classCalendar_a56459b1986582fc6cad12663645f54aa}} 
+\index{Calendar@{Calendar}!fromJson@{fromJson}}
+\index{fromJson@{fromJson}!Calendar@{Calendar}}
+\doxysubsubsection{\texorpdfstring{fromJson()}{fromJson()}}
+{\footnotesize\ttfamily void Calendar\+::from\+Json (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classSaveLoad_a05c9c7a31d4e909f05c1028da44f9deb}{Save\+Load}}.
+
+\mbox{\Hypertarget{classCalendar_a6e72d75aa930f50135e2437894d0daf3}\label{classCalendar_a6e72d75aa930f50135e2437894d0daf3}} 
+\index{Calendar@{Calendar}!getBasicEvent@{getBasicEvent}}
+\index{getBasicEvent@{getBasicEvent}!Calendar@{Calendar}}
+\doxysubsubsection{\texorpdfstring{getBasicEvent()}{getBasicEvent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBasicEvent}{Basic\+Event}} Calendar\+::get\+Basic\+Event (\begin{DoxyParamCaption}\item[{const int}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCalendar_a22de82e3af3c394660d5e2a50312d2fa}\label{classCalendar_a22de82e3af3c394660d5e2a50312d2fa}} 
+\index{Calendar@{Calendar}!getEvent@{getEvent}}
+\index{getEvent@{getEvent}!Calendar@{Calendar}}
+\doxysubsubsection{\texorpdfstring{getEvent()}{getEvent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEvent}{Event}} Calendar\+::get\+Event (\begin{DoxyParamCaption}\item[{const int}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCalendar_ab7e6fd60a7cd7816f0ffcd6b8e1d58b1}\label{classCalendar_ab7e6fd60a7cd7816f0ffcd6b8e1d58b1}} 
+\index{Calendar@{Calendar}!getEvents@{getEvents}}
+\index{getEvents@{getEvents}!Calendar@{Calendar}}
+\doxysubsubsection{\texorpdfstring{getEvents()}{getEvents()}}
+{\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{classEvent}{Event}} $>$ Calendar\+::get\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classCalendar_a066588d0e60071ee3e315a9ef9cec331}\label{classCalendar_a066588d0e60071ee3e315a9ef9cec331}} 
+\index{Calendar@{Calendar}!getEventsForWeek@{getEventsForWeek}}
+\index{getEventsForWeek@{getEventsForWeek}!Calendar@{Calendar}}
+\doxysubsubsection{\texorpdfstring{getEventsForWeek()}{getEventsForWeek()}}
+{\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{classEvent}{Event}} $>$ Calendar\+::get\+Events\+For\+Week (\begin{DoxyParamCaption}\item[{const QDate \&}]{start\+Date,  }\item[{const QDate \&}]{end\+Date }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classCalendar_ae778e2c86fd1ef26def6320241a7171b}\label{classCalendar_ae778e2c86fd1ef26def6320241a7171b}} 
+\index{Calendar@{Calendar}!hasEventAt@{hasEventAt}}
+\index{hasEventAt@{hasEventAt}!Calendar@{Calendar}}
+\doxysubsubsection{\texorpdfstring{hasEventAt()}{hasEventAt()}}
+{\footnotesize\ttfamily bool Calendar\+::has\+Event\+At (\begin{DoxyParamCaption}\item[{const QDate\+Time \&}]{date\+Time }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classCalendar_a0161fffee8f809b26033eeefe9d0ca5e}\label{classCalendar_a0161fffee8f809b26033eeefe9d0ca5e}} 
+\index{Calendar@{Calendar}!loadData@{loadData}}
+\index{loadData@{loadData}!Calendar@{Calendar}}
+\doxysubsubsection{\texorpdfstring{loadData()}{loadData()}}
+{\footnotesize\ttfamily void Calendar\+::load\+Data (\begin{DoxyParamCaption}\item[{const QString \&}]{username }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCalendar_a9581fb2a358f58a9eaf475abe1b9ea47}\label{classCalendar_a9581fb2a358f58a9eaf475abe1b9ea47}} 
+\index{Calendar@{Calendar}!operator=@{operator=}}
+\index{operator=@{operator=}!Calendar@{Calendar}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCalendar}{Calendar}} Calendar\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCalendar}{Calendar}} \&}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCalendar_a56d39dc36d9a26b20d75fdca54a1ad96}\label{classCalendar_a56d39dc36d9a26b20d75fdca54a1ad96}} 
+\index{Calendar@{Calendar}!print@{print}}
+\index{print@{print}!Calendar@{Calendar}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Calendar\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCalendar_af419bd496077049d00a6550f20139bd1}\label{classCalendar_af419bd496077049d00a6550f20139bd1}} 
+\index{Calendar@{Calendar}!removeEvent@{removeEvent}}
+\index{removeEvent@{removeEvent}!Calendar@{Calendar}}
+\doxysubsubsection{\texorpdfstring{removeEvent()}{removeEvent()}}
+{\footnotesize\ttfamily void Calendar\+::remove\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classBasicEvent}{Basic\+Event}} \&}]{basic\+Event }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCalendar_a665057ca229003cc68f7ee280da279c8}\label{classCalendar_a665057ca229003cc68f7ee280da279c8}} 
+\index{Calendar@{Calendar}!saveData@{saveData}}
+\index{saveData@{saveData}!Calendar@{Calendar}}
+\doxysubsubsection{\texorpdfstring{saveData()}{saveData()}}
+{\footnotesize\ttfamily void Calendar\+::save\+Data (\begin{DoxyParamCaption}\item[{const QString \&}]{username }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCalendar_a98a7c22a377d7cbdf06f063380728769}\label{classCalendar_a98a7c22a377d7cbdf06f063380728769}} 
+\index{Calendar@{Calendar}!size@{size}}
+\index{size@{size}!Calendar@{Calendar}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily int Calendar\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCalendar_a4629d74a4407255a8626dbbe253666a7}\label{classCalendar_a4629d74a4407255a8626dbbe253666a7}} 
+\index{Calendar@{Calendar}!sizeBasic@{sizeBasic}}
+\index{sizeBasic@{sizeBasic}!Calendar@{Calendar}}
+\doxysubsubsection{\texorpdfstring{sizeBasic()}{sizeBasic()}}
+{\footnotesize\ttfamily int Calendar\+::size\+Basic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCalendar_ac1dc71883179427b8ee037ab3064aa92}\label{classCalendar_ac1dc71883179427b8ee037ab3064aa92}} 
+\index{Calendar@{Calendar}!toJson@{toJson}}
+\index{toJson@{toJson}!Calendar@{Calendar}}
+\doxysubsubsection{\texorpdfstring{toJson()}{toJson()}}
+{\footnotesize\ttfamily QJson\+Value Calendar\+::to\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classSaveLoad_ad40a777954df28028579624c19f2d37a}{Save\+Load}}.
+
+\mbox{\Hypertarget{classCalendar_ab964eae5a51678c5aceb326929cc6835}\label{classCalendar_ab964eae5a51678c5aceb326929cc6835}} 
+\index{Calendar@{Calendar}!updateEvent@{updateEvent}}
+\index{updateEvent@{updateEvent}!Calendar@{Calendar}}
+\doxysubsubsection{\texorpdfstring{updateEvent()}{updateEvent()}}
+{\footnotesize\ttfamily void Calendar\+::update\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEvent}{Event}} \&}]{old\+Event,  }\item[{const \mbox{\hyperlink{classEvent}{Event}} \&}]{new\+Event }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classCalendar_a8bf3c9618d7063082c8b310af3cbefbc}\label{classCalendar_a8bf3c9618d7063082c8b310af3cbefbc}} 
+\index{Calendar@{Calendar}!m\_basicEvents@{m\_basicEvents}}
+\index{m\_basicEvents@{m\_basicEvents}!Calendar@{Calendar}}
+\doxysubsubsection{\texorpdfstring{m\_basicEvents}{m\_basicEvents}}
+{\footnotesize\ttfamily QList$<$\mbox{\hyperlink{classBasicEvent}{Basic\+Event}}$>$ Calendar\+::m\+\_\+basic\+Events\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCalendar_a5abc8f67b69f749fa28e6c54a92f339a}\label{classCalendar_a5abc8f67b69f749fa28e6c54a92f339a}} 
+\index{Calendar@{Calendar}!m\_events@{m\_events}}
+\index{m\_events@{m\_events}!Calendar@{Calendar}}
+\doxysubsubsection{\texorpdfstring{m\_events}{m\_events}}
+{\footnotesize\ttfamily QList$<$\mbox{\hyperlink{classEvent}{Event}}$>$ Calendar\+::m\+\_\+events\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{calendar_8h}{calendar.\+h}}\item 
+src/\mbox{\hyperlink{calendar_8cpp}{calendar.\+cpp}}\end{DoxyCompactItemize}

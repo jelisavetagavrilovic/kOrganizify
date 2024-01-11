@@ -1,0 +1,138 @@
+.TH "User" 3 "Tue Jan 9 2024" "kOrganizify" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+User
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <user\&.h>\fP
+.PP
+Inherits \fBSaveLoad\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUser\fP (const QString &username, const QString &password)"
+.br
+.ti -1c
+.RI "bool \fBuserExists\fP (const QString &username)"
+.br
+.ti -1c
+.RI "void \fBloadData\fP (const QString &username)"
+.br
+.ti -1c
+.RI "void \fBsaveData\fP (const QString &username)"
+.br
+.ti -1c
+.RI "void \fBfromJson\fP (const QJsonObject &jsonValue) override"
+.br
+.ti -1c
+.RI "void \fBsetCalendar\fP (const \fBCalendar\fP &calendar)"
+.br
+.ti -1c
+.RI "bool \fBlogin\fP (const QString &password)"
+.br
+.ti -1c
+.RI "bool \fBregisterUser\fP (const QString &password)"
+.br
+.ti -1c
+.RI "void \fBlogout\fP ()"
+.br
+.ti -1c
+.RI "\fBCalendar\fP & \fBgetCalendar\fP ()"
+.br
+.ti -1c
+.RI "\fBToDoList\fP & \fBgetToDoList\fP ()"
+.br
+.ti -1c
+.RI "\fBSettings\fP & \fBgetSettings\fP ()"
+.br
+.ti -1c
+.RI "QString \fBgetUsername\fP () const"
+.br
+.ti -1c
+.RI "QJsonValue \fBtoJson\fP () const override"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBClient\fP * \fBm_client\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBm_username\fP"
+.br
+.ti -1c
+.RI "QString \fBm_password\fP"
+.br
+.ti -1c
+.RI "\fBCalendar\fP \fBm_calendar\fP"
+.br
+.ti -1c
+.RI "\fBToDoList\fP \fBm_toDoList\fP"
+.br
+.ti -1c
+.RI "\fBSettings\fP \fBm_settings\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "User::User (const QString & username, const QString & password)\fC [explicit]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void User::fromJson (const QJsonObject & jsonValue)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBSaveLoad\fP\&.
+.SS "\fBCalendar\fP & User::getCalendar ()"
+
+.SS "\fBSettings\fP & User::getSettings ()"
+
+.SS "\fBToDoList\fP & User::getToDoList ()"
+
+.SS "QString User::getUsername () const"
+
+.SS "void User::loadData (const QString & username)"
+
+.SS "bool User::login (const QString & password)"
+
+.SS "void User::logout ()"
+
+.SS "bool User::registerUser (const QString & password)"
+
+.SS "void User::saveData (const QString & username)"
+
+.SS "void User::setCalendar (const \fBCalendar\fP & calendar)"
+
+.SS "QJsonValue User::toJson () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBSaveLoad\fP\&.
+.SS "bool User::userExists (const QString & username)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBCalendar\fP User::m_calendar\fC [private]\fP"
+
+.SS "\fBClient\fP* User::m_client"
+
+.SS "QString User::m_password\fC [private]\fP"
+
+.SS "\fBSettings\fP User::m_settings\fC [private]\fP"
+
+.SS "\fBToDoList\fP User::m_toDoList\fC [private]\fP"
+
+.SS "QString User::m_username\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for kOrganizify from the source code\&.

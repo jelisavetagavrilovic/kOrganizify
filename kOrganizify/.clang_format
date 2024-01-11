@@ -1,0 +1,8 @@
+﻿BasedOnStyle: LLVM IndentWidth: 4
+TabWidth: 4
+AlignConsecutiveAssignments: true AlignEscapedNewlines: Left
+AllowShortBlocks OnASingleLine: true AllowShortCaseLabelsOnASingleLine: true AllowShortFunctionsOnASingleLine:
+Inline
+AllowShort LambdasOnASingleLine: All BreakBeforeBraces: Attach
+MaxEmptyLinesToKeep: 2
+ColumnLimit: 150

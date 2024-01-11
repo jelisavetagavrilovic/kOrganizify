@@ -1,0 +1,242 @@
+.TH "AppWindow" 3 "Tue Jan 9 2024" "kOrganizify" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AppWindow
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <appwindow\&.h>\fP
+.PP
+Inherits QMainWindow\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBhandleNewUserLoggedIn\fP (const QString &username)"
+.br
+.ti -1c
+.RI "void \fBhandleUserDisconnected\fP (const QString &username)"
+.br
+.ti -1c
+.RI "void \fBaddTaskToListWidget\fP (const \fBTask\fP &task)"
+.br
+.ti -1c
+.RI "void \fBshowWeeklyEvents\fP (const QDate &selectedDate)"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBexit\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAppWindow\fP (\fBUser\fP *user, QWidget *parent=nullptr)"
+.br
+.ti -1c
+.RI "\fB~AppWindow\fP ()"
+.br
+.ti -1c
+.RI "void \fBinitialize\fP ()"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBchangeButtonColor\fP (const QString &newColor)"
+.br
+.ti -1c
+.RI "void \fBopenEventWindowForCell\fP (int row, int column)"
+.br
+.ti -1c
+.RI "QColor \fBgetColorFromPriority\fP (\fBCustomEventPriority\fP priority)"
+.br
+.ti -1c
+.RI "void \fBenabledNotifications\fP (const bool enabled)"
+.br
+.ti -1c
+.RI "void \fBaddTask\fP ()"
+.br
+.ti -1c
+.RI "void \fBonCheckBoxStateChanged\fP (int state)"
+.br
+.ti -1c
+.RI "QString \fBcrossTask\fP (const QString &taskName)"
+.br
+.ti -1c
+.RI "void \fBopenSettings\fP ()"
+.br
+.ti -1c
+.RI "void \fBlogoutUser\fP ()"
+.br
+.ti -1c
+.RI "void \fBopenSyncWindow\fP (QListWidgetItem *item)"
+.br
+.ti -1c
+.RI "void \fBpopulateFriends\fP (const QList< QString > &friends)"
+.br
+.ti -1c
+.RI "void \fBsmartPlan\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdateTableForSelectedDate\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdateTableForSelectedDateCalendar\fP (\fBCalendar\fP *calendar)"
+.br
+.ti -1c
+.RI "void \fBclearFinishedTasks\fP ()"
+.br
+.ti -1c
+.RI "void \fBshowSyncWindow\fP (QString username, QString title, int duration)"
+.br
+.ti -1c
+.RI "void \fBsyncDenied\fP (QString friendName)"
+.br
+.ti -1c
+.RI "void \fBsendYesResponse\fP (QString friendName, int duration)"
+.br
+.ti -1c
+.RI "void \fBsendNoResponse\fP (QString friendName)"
+.br
+.ti -1c
+.RI "void \fBshowResponseWindow\fP (QString eventTitle, QString startTime)"
+.br
+.ti -1c
+.RI "void \fBagreedSync\fP (QDateTime startTime, QDateTime endTime, QString title)"
+.br
+.ti -1c
+.RI "void \fBupdatedEvents\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "Ui::AppWindow * \fBui\fP"
+.br
+.ti -1c
+.RI "\fBUser\fP * \fBm_user\fP"
+.br
+.ti -1c
+.RI "\fBSettingsWindow\fP * \fBm_settingsWindow\fP"
+.br
+.ti -1c
+.RI "\fBSyncWindow\fP * \fBm_syncWindow\fP"
+.br
+.ti -1c
+.RI "\fBEventWindow\fP * \fBm_eventWindow\fP"
+.br
+.ti -1c
+.RI "\fBToDoList\fP * \fBm_toDoList\fP"
+.br
+.ti -1c
+.RI "\fBCalendar\fP * \fBm_calendar\fP"
+.br
+.ti -1c
+.RI "QDate \fBm_startDate\fP"
+.br
+.ti -1c
+.RI "QDate \fBm_endDate\fP"
+.br
+.ti -1c
+.RI "\fBNotifications\fP * \fBm_notifications\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AppWindow::AppWindow (\fBUser\fP * user, QWidget * parent = \fCnullptr\fP)"
+
+.SS "AppWindow::~AppWindow ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void AppWindow::addTask ()\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void AppWindow::addTaskToListWidget (const \fBTask\fP & task)\fC [slot]\fP"
+
+.SS "void AppWindow::agreedSync (QDateTime startTime, QDateTime endTime, QString title)\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void AppWindow::changeButtonColor (const QString & newColor)\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void AppWindow::clearFinishedTasks ()\fC [private]\fP, \fC [slot]\fP"
+
+.SS "QString AppWindow::crossTask (const QString & taskName)\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void AppWindow::enabledNotifications (const bool enabled)\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void AppWindow::exit ()\fC [signal]\fP"
+
+.SS "QColor AppWindow::getColorFromPriority (\fBCustomEventPriority\fP priority)\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void AppWindow::handleNewUserLoggedIn (const QString & username)\fC [slot]\fP"
+
+.SS "void AppWindow::handleUserDisconnected (const QString & username)\fC [slot]\fP"
+
+.SS "void AppWindow::initialize ()"
+
+.SS "void AppWindow::logoutUser ()\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void AppWindow::onCheckBoxStateChanged (int state)\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void AppWindow::openEventWindowForCell (int row, int column)\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void AppWindow::openSettings ()\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void AppWindow::openSyncWindow (QListWidgetItem * item)\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void AppWindow::populateFriends (const QList< QString > & friends)\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void AppWindow::sendNoResponse (QString friendName)\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void AppWindow::sendYesResponse (QString friendName, int duration)\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void AppWindow::showResponseWindow (QString eventTitle, QString startTime)\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void AppWindow::showSyncWindow (QString username, QString title, int duration)\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void AppWindow::showWeeklyEvents (const QDate & selectedDate)\fC [slot]\fP"
+
+.SS "void AppWindow::smartPlan ()\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void AppWindow::syncDenied (QString friendName)\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void AppWindow::updatedEvents ()\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void AppWindow::updateTableForSelectedDate ()\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void AppWindow::updateTableForSelectedDateCalendar (\fBCalendar\fP * calendar)\fC [private]\fP, \fC [slot]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBCalendar\fP* AppWindow::m_calendar\fC [private]\fP"
+
+.SS "QDate AppWindow::m_endDate\fC [private]\fP"
+
+.SS "\fBEventWindow\fP* AppWindow::m_eventWindow\fC [private]\fP"
+
+.SS "\fBNotifications\fP* AppWindow::m_notifications\fC [private]\fP"
+
+.SS "\fBSettingsWindow\fP* AppWindow::m_settingsWindow\fC [private]\fP"
+
+.SS "QDate AppWindow::m_startDate\fC [private]\fP"
+
+.SS "\fBSyncWindow\fP* AppWindow::m_syncWindow\fC [private]\fP"
+
+.SS "\fBToDoList\fP* AppWindow::m_toDoList\fC [private]\fP"
+
+.SS "\fBUser\fP* AppWindow::m_user\fC [private]\fP"
+
+.SS "Ui::AppWindow* AppWindow::ui\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for kOrganizify from the source code\&.

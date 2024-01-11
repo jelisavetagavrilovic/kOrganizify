@@ -1,0 +1,265 @@
+\hypertarget{classEvent}{}\doxysection{Event Class Reference}
+\label{classEvent}\index{Event@{Event}}
+
+
+{\ttfamily \#include $<$event.\+h$>$}
+
+
+
+Inheritance diagram for Event\+:
+% FIG 0
+
+
+Collaboration diagram for Event\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEvent_a5a40dd4708297f7031e29b39e039ae10}{Event}} ()
+\item 
+\mbox{\hyperlink{classEvent_a79dc046e00575c4daeaa082b7e979d85}{Event}} (const \mbox{\hyperlink{classBasicEvent}{Basic\+Event}} \&basic\+Event)
+\item 
+void \mbox{\hyperlink{classEvent_a0862af1471604bf30a4f50a5e028637a}{clear}} ()
+\item 
+void \mbox{\hyperlink{classEvent_a97b79c82e67c3dec9407bc04bfcef0ae}{delete\+String}} (QString \&str)
+\item 
+QString \mbox{\hyperlink{classEvent_a6f749b39efd056b54ebf35470b95a4e7}{get\+Title}} () const
+\item 
+void \mbox{\hyperlink{classEvent_a544585f2b3794d914ad4bb7ac41132cc}{set\+Title}} (const QString \&title)
+\item 
+int \mbox{\hyperlink{classEvent_ad2efc87f704852534575017d596ccd83}{get\+Duration}} () const
+\item 
+void \mbox{\hyperlink{classEvent_abd90aa0132f9cbd5b0b34db1c6c657da}{set\+Duration}} (const int duration)
+\item 
+void \mbox{\hyperlink{classEvent_a0cdc9d14da28200fcabe6cf0f4d66525}{set\+Duration}} ()
+\item 
+QDate\+Time \mbox{\hyperlink{classEvent_a0b8fba9497afb53ffe412b04fc208cd5}{get\+Start\+Time}} () const
+\item 
+void \mbox{\hyperlink{classEvent_a6492797aba65d23833da543d67c6db56}{set\+Start\+Time}} (const QDate\+Time \&start\+Time)
+\item 
+QDate\+Time \mbox{\hyperlink{classEvent_a5ef97a3bedf8af9e78b4d15c6eef450a}{get\+End\+Time}} () const
+\item 
+void \mbox{\hyperlink{classEvent_a150ad5ba47dd52ee5eea2532e4fd5527}{set\+End\+Time}} (const QDate\+Time \&end\+Time)
+\item 
+QString \mbox{\hyperlink{classEvent_a465db87d6ca9c578db843e9568133429}{get\+Description}} () const
+\item 
+void \mbox{\hyperlink{classEvent_acabf326b1bee0e4d08af60c66535dffe}{set\+Description}} (const QString \&description)
+\item 
+QString \mbox{\hyperlink{classEvent_a524612c15098e19730be3ab5fe9aaf09}{get\+Location}} () const
+\item 
+void \mbox{\hyperlink{classEvent_ac838f7cb584ae8d005c5686988eb331f}{set\+Location}} (const QString \&location)
+\item 
+\mbox{\hyperlink{event_8h_a2bdd47d7a383e60d517514db97940b3f}{Custom\+Event\+Priority}} \mbox{\hyperlink{classEvent_ad5f3bc0775fea11aba21ebb68af8c5d2}{get\+Priority}} () const
+\item 
+void \mbox{\hyperlink{classEvent_a5a5023fc024cc3396338f61c687f55e1}{set\+Priority}} (\mbox{\hyperlink{event_8h_a2bdd47d7a383e60d517514db97940b3f}{Custom\+Event\+Priority}} priority)
+\item 
+bool \mbox{\hyperlink{classEvent_a932675de4b6a9dc5b6f78a98c023e1d5}{overlaps\+With}} (const \mbox{\hyperlink{classEvent}{Event}} \&other) const
+\item 
+bool \mbox{\hyperlink{classEvent_a82c0c3bf9125bf3e59104171242930ae}{operator==}} (const \mbox{\hyperlink{classEvent}{Event}} \&other) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{classEvent_a89b09f358a4362a4d26306993369590d}{m\+\_\+title}}
+\item 
+QDate\+Time \mbox{\hyperlink{classEvent_ad8068f6fa17590c5baf077ec47086889}{m\+\_\+start\+Time}}
+\item 
+QDate\+Time \mbox{\hyperlink{classEvent_aef191bd92d77ef594e94fa25f8ee0914}{m\+\_\+end\+Time}}
+\item 
+QString \mbox{\hyperlink{classEvent_a5a88e7d3a31615aeea17f2ea7064e3d7}{m\+\_\+description}}
+\item 
+QString \mbox{\hyperlink{classEvent_ac46ce4422b90252b9eeeed66d730da14}{m\+\_\+location}}
+\item 
+\mbox{\hyperlink{event_8h_a2bdd47d7a383e60d517514db97940b3f}{Custom\+Event\+Priority}} \mbox{\hyperlink{classEvent_af1fff63881ffc03a34ddf9a514116b95}{m\+\_\+priority}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+uint \mbox{\hyperlink{classEvent_a384f24d9d1a90f6b7ab9b50d3f08650f}{q\+Hash}} (const \mbox{\hyperlink{classEvent}{Event}} \&event)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEvent_a5a40dd4708297f7031e29b39e039ae10}\label{classEvent_a5a40dd4708297f7031e29b39e039ae10}} 
+\index{Event@{Event}!Event@{Event}}
+\index{Event@{Event}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{Event()}{Event()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Event\+::\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEvent_a79dc046e00575c4daeaa082b7e979d85}\label{classEvent_a79dc046e00575c4daeaa082b7e979d85}} 
+\index{Event@{Event}!Event@{Event}}
+\index{Event@{Event}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{Event()}{Event()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Event\+::\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classBasicEvent}{Basic\+Event}} \&}]{basic\+Event }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEvent_a0862af1471604bf30a4f50a5e028637a}\label{classEvent_a0862af1471604bf30a4f50a5e028637a}} 
+\index{Event@{Event}!clear@{clear}}
+\index{clear@{clear}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Event\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEvent_a97b79c82e67c3dec9407bc04bfcef0ae}\label{classEvent_a97b79c82e67c3dec9407bc04bfcef0ae}} 
+\index{Event@{Event}!deleteString@{deleteString}}
+\index{deleteString@{deleteString}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{deleteString()}{deleteString()}}
+{\footnotesize\ttfamily void Event\+::delete\+String (\begin{DoxyParamCaption}\item[{QString \&}]{str }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEvent_a465db87d6ca9c578db843e9568133429}\label{classEvent_a465db87d6ca9c578db843e9568133429}} 
+\index{Event@{Event}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily QString Event\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classEvent_ad2efc87f704852534575017d596ccd83}\label{classEvent_ad2efc87f704852534575017d596ccd83}} 
+\index{Event@{Event}!getDuration@{getDuration}}
+\index{getDuration@{getDuration}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{getDuration()}{getDuration()}}
+{\footnotesize\ttfamily int Event\+::get\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classEvent_a5ef97a3bedf8af9e78b4d15c6eef450a}\label{classEvent_a5ef97a3bedf8af9e78b4d15c6eef450a}} 
+\index{Event@{Event}!getEndTime@{getEndTime}}
+\index{getEndTime@{getEndTime}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{getEndTime()}{getEndTime()}}
+{\footnotesize\ttfamily QDate\+Time Event\+::get\+End\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classEvent_a524612c15098e19730be3ab5fe9aaf09}\label{classEvent_a524612c15098e19730be3ab5fe9aaf09}} 
+\index{Event@{Event}!getLocation@{getLocation}}
+\index{getLocation@{getLocation}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{getLocation()}{getLocation()}}
+{\footnotesize\ttfamily QString Event\+::get\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classEvent_ad5f3bc0775fea11aba21ebb68af8c5d2}\label{classEvent_ad5f3bc0775fea11aba21ebb68af8c5d2}} 
+\index{Event@{Event}!getPriority@{getPriority}}
+\index{getPriority@{getPriority}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{getPriority()}{getPriority()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{event_8h_a2bdd47d7a383e60d517514db97940b3f}{Custom\+Event\+Priority}} Event\+::get\+Priority (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classEvent_a0b8fba9497afb53ffe412b04fc208cd5}\label{classEvent_a0b8fba9497afb53ffe412b04fc208cd5}} 
+\index{Event@{Event}!getStartTime@{getStartTime}}
+\index{getStartTime@{getStartTime}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{getStartTime()}{getStartTime()}}
+{\footnotesize\ttfamily QDate\+Time Event\+::get\+Start\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classEvent_a6f749b39efd056b54ebf35470b95a4e7}\label{classEvent_a6f749b39efd056b54ebf35470b95a4e7}} 
+\index{Event@{Event}!getTitle@{getTitle}}
+\index{getTitle@{getTitle}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{getTitle()}{getTitle()}}
+{\footnotesize\ttfamily QString Event\+::get\+Title (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classEvent_a82c0c3bf9125bf3e59104171242930ae}\label{classEvent_a82c0c3bf9125bf3e59104171242930ae}} 
+\index{Event@{Event}!operator==@{operator==}}
+\index{operator==@{operator==}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Event\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEvent}{Event}} \&}]{other }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classEvent_a932675de4b6a9dc5b6f78a98c023e1d5}\label{classEvent_a932675de4b6a9dc5b6f78a98c023e1d5}} 
+\index{Event@{Event}!overlapsWith@{overlapsWith}}
+\index{overlapsWith@{overlapsWith}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{overlapsWith()}{overlapsWith()}}
+{\footnotesize\ttfamily bool Event\+::overlaps\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEvent}{Event}} \&}]{other }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classEvent_acabf326b1bee0e4d08af60c66535dffe}\label{classEvent_acabf326b1bee0e4d08af60c66535dffe}} 
+\index{Event@{Event}!setDescription@{setDescription}}
+\index{setDescription@{setDescription}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{setDescription()}{setDescription()}}
+{\footnotesize\ttfamily void Event\+::set\+Description (\begin{DoxyParamCaption}\item[{const QString \&}]{description }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEvent_a0cdc9d14da28200fcabe6cf0f4d66525}\label{classEvent_a0cdc9d14da28200fcabe6cf0f4d66525}} 
+\index{Event@{Event}!setDuration@{setDuration}}
+\index{setDuration@{setDuration}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{setDuration()}{setDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+::set\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEvent_abd90aa0132f9cbd5b0b34db1c6c657da}\label{classEvent_abd90aa0132f9cbd5b0b34db1c6c657da}} 
+\index{Event@{Event}!setDuration@{setDuration}}
+\index{setDuration@{setDuration}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{setDuration()}{setDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+::set\+Duration (\begin{DoxyParamCaption}\item[{const int}]{duration }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEvent_a150ad5ba47dd52ee5eea2532e4fd5527}\label{classEvent_a150ad5ba47dd52ee5eea2532e4fd5527}} 
+\index{Event@{Event}!setEndTime@{setEndTime}}
+\index{setEndTime@{setEndTime}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{setEndTime()}{setEndTime()}}
+{\footnotesize\ttfamily void Event\+::set\+End\+Time (\begin{DoxyParamCaption}\item[{const QDate\+Time \&}]{end\+Time }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEvent_ac838f7cb584ae8d005c5686988eb331f}\label{classEvent_ac838f7cb584ae8d005c5686988eb331f}} 
+\index{Event@{Event}!setLocation@{setLocation}}
+\index{setLocation@{setLocation}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{setLocation()}{setLocation()}}
+{\footnotesize\ttfamily void Event\+::set\+Location (\begin{DoxyParamCaption}\item[{const QString \&}]{location }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEvent_a5a5023fc024cc3396338f61c687f55e1}\label{classEvent_a5a5023fc024cc3396338f61c687f55e1}} 
+\index{Event@{Event}!setPriority@{setPriority}}
+\index{setPriority@{setPriority}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{setPriority()}{setPriority()}}
+{\footnotesize\ttfamily void Event\+::set\+Priority (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{event_8h_a2bdd47d7a383e60d517514db97940b3f}{Custom\+Event\+Priority}}}]{priority }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEvent_a6492797aba65d23833da543d67c6db56}\label{classEvent_a6492797aba65d23833da543d67c6db56}} 
+\index{Event@{Event}!setStartTime@{setStartTime}}
+\index{setStartTime@{setStartTime}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{setStartTime()}{setStartTime()}}
+{\footnotesize\ttfamily void Event\+::set\+Start\+Time (\begin{DoxyParamCaption}\item[{const QDate\+Time \&}]{start\+Time }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEvent_a544585f2b3794d914ad4bb7ac41132cc}\label{classEvent_a544585f2b3794d914ad4bb7ac41132cc}} 
+\index{Event@{Event}!setTitle@{setTitle}}
+\index{setTitle@{setTitle}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{setTitle()}{setTitle()}}
+{\footnotesize\ttfamily void Event\+::set\+Title (\begin{DoxyParamCaption}\item[{const QString \&}]{title }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classEvent_a384f24d9d1a90f6b7ab9b50d3f08650f}\label{classEvent_a384f24d9d1a90f6b7ab9b50d3f08650f}} 
+\index{Event@{Event}!qHash@{qHash}}
+\index{qHash@{qHash}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{qHash}{qHash}}
+{\footnotesize\ttfamily uint q\+Hash (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEvent}{Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classEvent_a5a88e7d3a31615aeea17f2ea7064e3d7}\label{classEvent_a5a88e7d3a31615aeea17f2ea7064e3d7}} 
+\index{Event@{Event}!m\_description@{m\_description}}
+\index{m\_description@{m\_description}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{m\_description}{m\_description}}
+{\footnotesize\ttfamily QString Event\+::m\+\_\+description\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classEvent_aef191bd92d77ef594e94fa25f8ee0914}\label{classEvent_aef191bd92d77ef594e94fa25f8ee0914}} 
+\index{Event@{Event}!m\_endTime@{m\_endTime}}
+\index{m\_endTime@{m\_endTime}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{m\_endTime}{m\_endTime}}
+{\footnotesize\ttfamily QDate\+Time Event\+::m\+\_\+end\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classEvent_ac46ce4422b90252b9eeeed66d730da14}\label{classEvent_ac46ce4422b90252b9eeeed66d730da14}} 
+\index{Event@{Event}!m\_location@{m\_location}}
+\index{m\_location@{m\_location}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{m\_location}{m\_location}}
+{\footnotesize\ttfamily QString Event\+::m\+\_\+location\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classEvent_af1fff63881ffc03a34ddf9a514116b95}\label{classEvent_af1fff63881ffc03a34ddf9a514116b95}} 
+\index{Event@{Event}!m\_priority@{m\_priority}}
+\index{m\_priority@{m\_priority}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{m\_priority}{m\_priority}}
+{\footnotesize\ttfamily \mbox{\hyperlink{event_8h_a2bdd47d7a383e60d517514db97940b3f}{Custom\+Event\+Priority}} Event\+::m\+\_\+priority\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classEvent_ad8068f6fa17590c5baf077ec47086889}\label{classEvent_ad8068f6fa17590c5baf077ec47086889}} 
+\index{Event@{Event}!m\_startTime@{m\_startTime}}
+\index{m\_startTime@{m\_startTime}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{m\_startTime}{m\_startTime}}
+{\footnotesize\ttfamily QDate\+Time Event\+::m\+\_\+start\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classEvent_a89b09f358a4362a4d26306993369590d}\label{classEvent_a89b09f358a4362a4d26306993369590d}} 
+\index{Event@{Event}!m\_title@{m\_title}}
+\index{m\_title@{m\_title}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{m\_title}{m\_title}}
+{\footnotesize\ttfamily QString Event\+::m\+\_\+title\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{event_8h}{event.\+h}}\item 
+src/\mbox{\hyperlink{event_8cpp}{event.\+cpp}}\end{DoxyCompactItemize}

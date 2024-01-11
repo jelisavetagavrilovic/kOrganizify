@@ -1,0 +1,588 @@
+Enabled checks:
+    clang-analyzer-apiModeling.StdCLibraryFunctions
+    clang-analyzer-apiModeling.TrustNonnull
+    clang-analyzer-apiModeling.google.GTest
+    clang-analyzer-apiModeling.llvm.CastValue
+    clang-analyzer-apiModeling.llvm.ReturnValue
+    clang-analyzer-core.CallAndMessage
+    clang-analyzer-core.CallAndMessageModeling
+    clang-analyzer-core.DivideZero
+    clang-analyzer-core.DynamicTypePropagation
+    clang-analyzer-core.NonNullParamChecker
+    clang-analyzer-core.NonnilStringConstants
+    clang-analyzer-core.NullDereference
+    clang-analyzer-core.StackAddrEscapeBase
+    clang-analyzer-core.StackAddressEscape
+    clang-analyzer-core.UndefinedBinaryOperatorResult
+    clang-analyzer-core.VLASize
+    clang-analyzer-core.builtin.BuiltinFunctions
+    clang-analyzer-core.builtin.NoReturnFunctions
+    clang-analyzer-core.uninitialized.ArraySubscript
+    clang-analyzer-core.uninitialized.Assign
+    clang-analyzer-core.uninitialized.Branch
+    clang-analyzer-core.uninitialized.CapturedBlockVariable
+    clang-analyzer-core.uninitialized.UndefReturn
+    clang-analyzer-cplusplus.InnerPointer
+    clang-analyzer-cplusplus.Move
+    clang-analyzer-cplusplus.NewDelete
+    clang-analyzer-cplusplus.NewDeleteLeaks
+    clang-analyzer-cplusplus.PlacementNew
+    clang-analyzer-cplusplus.PureVirtualCall
+    clang-analyzer-cplusplus.SelfAssignment
+    clang-analyzer-cplusplus.SmartPtrModeling
+    clang-analyzer-cplusplus.StringChecker
+    clang-analyzer-cplusplus.VirtualCallModeling
+    clang-analyzer-deadcode.DeadStores
+    clang-analyzer-fuchsia.HandleChecker
+    clang-analyzer-nullability.NullPassedToNonnull
+    clang-analyzer-nullability.NullReturnedFromNonnull
+    clang-analyzer-nullability.NullabilityBase
+    clang-analyzer-nullability.NullableDereferenced
+    clang-analyzer-nullability.NullablePassedToNonnull
+    clang-analyzer-nullability.NullableReturnedFromNonnull
+    clang-analyzer-optin.cplusplus.UninitializedObject
+    clang-analyzer-optin.cplusplus.VirtualCall
+    clang-analyzer-optin.mpi.MPI-Checker
+    clang-analyzer-optin.osx.OSObjectCStyleCast
+    clang-analyzer-optin.osx.cocoa.localizability.EmptyLocalizationContextChecker
+    clang-analyzer-optin.osx.cocoa.localizability.NonLocalizedStringChecker
+    clang-analyzer-optin.performance.GCDAntipattern
+    clang-analyzer-optin.performance.Padding
+    clang-analyzer-optin.portability.UnixAPI
+    clang-analyzer-osx.API
+    clang-analyzer-osx.MIG
+    clang-analyzer-osx.NSOrCFErrorDerefChecker
+    clang-analyzer-osx.NumberObjectConversion
+    clang-analyzer-osx.OSObjectRetainCount
+    clang-analyzer-osx.ObjCProperty
+    clang-analyzer-osx.SecKeychainAPI
+    clang-analyzer-osx.cocoa.AtSync
+    clang-analyzer-osx.cocoa.AutoreleaseWrite
+    clang-analyzer-osx.cocoa.ClassRelease
+    clang-analyzer-osx.cocoa.Dealloc
+    clang-analyzer-osx.cocoa.IncompatibleMethodTypes
+    clang-analyzer-osx.cocoa.Loops
+    clang-analyzer-osx.cocoa.MissingSuperCall
+    clang-analyzer-osx.cocoa.NSAutoreleasePool
+    clang-analyzer-osx.cocoa.NSError
+    clang-analyzer-osx.cocoa.NilArg
+    clang-analyzer-osx.cocoa.NonNilReturnValue
+    clang-analyzer-osx.cocoa.ObjCGenerics
+    clang-analyzer-osx.cocoa.RetainCount
+    clang-analyzer-osx.cocoa.RetainCountBase
+    clang-analyzer-osx.cocoa.RunLoopAutoreleaseLeak
+    clang-analyzer-osx.cocoa.SelfInit
+    clang-analyzer-osx.cocoa.SuperDealloc
+    clang-analyzer-osx.cocoa.UnusedIvars
+    clang-analyzer-osx.cocoa.VariadicMethodTypes
+    clang-analyzer-osx.coreFoundation.CFError
+    clang-analyzer-osx.coreFoundation.CFNumber
+    clang-analyzer-osx.coreFoundation.CFRetainRelease
+    clang-analyzer-osx.coreFoundation.containers.OutOfBounds
+    clang-analyzer-osx.coreFoundation.containers.PointerSizedValues
+    clang-analyzer-security.FloatLoopCounter
+    clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling
+    clang-analyzer-security.insecureAPI.SecuritySyntaxChecker
+    clang-analyzer-security.insecureAPI.UncheckedReturn
+    clang-analyzer-security.insecureAPI.bcmp
+    clang-analyzer-security.insecureAPI.bcopy
+    clang-analyzer-security.insecureAPI.bzero
+    clang-analyzer-security.insecureAPI.decodeValueOfObjCType
+    clang-analyzer-security.insecureAPI.getpw
+    clang-analyzer-security.insecureAPI.gets
+    clang-analyzer-security.insecureAPI.mkstemp
+    clang-analyzer-security.insecureAPI.mktemp
+    clang-analyzer-security.insecureAPI.rand
+    clang-analyzer-security.insecureAPI.strcpy
+    clang-analyzer-security.insecureAPI.vfork
+    clang-analyzer-unix.API
+    clang-analyzer-unix.DynamicMemoryModeling
+    clang-analyzer-unix.Malloc
+    clang-analyzer-unix.MallocSizeof
+    clang-analyzer-unix.MismatchedDeallocator
+    clang-analyzer-unix.Vfork
+    clang-analyzer-unix.cstring.BadSizeArg
+    clang-analyzer-unix.cstring.CStringModeling
+    clang-analyzer-unix.cstring.NullArg
+    clang-analyzer-valist.CopyToSelf
+    clang-analyzer-valist.Uninitialized
+    clang-analyzer-valist.Unterminated
+    clang-analyzer-valist.ValistBase
+    clang-analyzer-webkit.NoUncountedMemberChecker
+    clang-analyzer-webkit.RefCntblBaseVirtualDtor
+    clang-analyzer-webkit.UncountedLambdaCapturesChecker
+    modernize-avoid-bind
+    modernize-avoid-c-arrays
+    modernize-concat-nested-namespaces
+    modernize-deprecated-headers
+    modernize-deprecated-ios-base-aliases
+    modernize-loop-convert
+    modernize-make-shared
+    modernize-make-unique
+    modernize-pass-by-value
+    modernize-raw-string-literal
+    modernize-redundant-void-arg
+    modernize-replace-auto-ptr
+    modernize-replace-disallow-copy-and-assign-macro
+    modernize-replace-random-shuffle
+    modernize-return-braced-init-list
+    modernize-shrink-to-fit
+    modernize-unary-static-assert
+    modernize-use-auto
+    modernize-use-bool-literals
+    modernize-use-default-member-init
+    modernize-use-emplace
+    modernize-use-equals-default
+    modernize-use-equals-delete
+    modernize-use-nodiscard
+    modernize-use-noexcept
+    modernize-use-nullptr
+    modernize-use-override
+    modernize-use-trailing-return-type
+    modernize-use-transparent-functors
+    modernize-use-uncaught-exceptions
+    modernize-use-using
+
+clang-tidy-14 --use-color -checks=modernize-* -p=/home/markopaunovic/kOrganizify/kOrganizify/build /home/markopaunovic/kOrganizify/kOrganizify/src/settings.cpp
+[1m/home/markopaunovic/kOrganizify/kOrganizify/src/settings.cpp:21:22: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QJsonValue Settings::toJson() const {
+[0;1;32m~~~~~~~~~~           ^
+[0m[0;32mauto                                -> QJsonValue
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/settings.cpp:26:10: [0m[0;1;35mwarning: [0m[1mavoid repeating the return type from the declaration; use a braced initializer list instead [modernize-return-braced-init-list][0m
+  return QJsonValue(jsonObject);
+[0;1;32m         ^
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/settings.cpp:34:19: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QString Settings::getColor() const { return m_color; }
+[0;1;32m~~~~~~~           ^
+[0m[0;32mauto                               -> QString
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/settings.cpp:38:19: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QString Settings::backgroundPath() { return m_backgroundPath; }
+[0;1;32m~~~~~~~           ^
+[0m[0;32mauto                               -> QString
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/settings.cpp:44:16: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+bool Settings::getNotifications() const { return m_notifications; }
+[0;1;32m~~~~           ^
+[0m[0;32mauto                                    -> bool
+[0m[1m/usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h:45:12: [0m[0;1;31merror: [0m[1m'type_traits' file not found [clang-diagnostic-error][0m
+#  include <type_traits>
+[0;1;32m           ^~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/markopaunovic/kOrganizify/kOrganizify/build /home/markopaunovic/kOrganizify/kOrganizify/src/syncdeniedwindow.cpp
+[1m/usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h:45:12: [0m[0;1;31merror: [0m[1m'type_traits' file not found [clang-diagnostic-error][0m
+#  include <type_traits>
+[0;1;32m           ^~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/markopaunovic/kOrganizify/kOrganizify/build /home/markopaunovic/kOrganizify/kOrganizify/src/user.cpp
+[1m/home/markopaunovic/kOrganizify/kOrganizify/src/user.cpp:6:12: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+bool User::userExists(const QString &username) {
+[0;1;32m~~~~       ^
+[0m[0;32mauto                                           -> bool
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/user.cpp:19:18: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QJsonValue User::toJson() const {
+[0;1;32m~~~~~~~~~~       ^
+[0m[0;32mauto                            -> QJsonValue
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/user.cpp:27:10: [0m[0;1;35mwarning: [0m[1mavoid repeating the return type from the declaration; use a braced initializer list instead [modernize-return-braced-init-list][0m
+  return QJsonValue(jsonObject);
+[0;1;32m         ^
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/user.cpp:36:12: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+bool User::login(const QString &password) {
+[0;1;32m~~~~       ^
+[0m[0;32mauto                                      -> bool
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/user.cpp:51:12: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+bool User::registerUser(const QString &password) {
+[0;1;32m~~~~       ^
+[0m[0;32mauto                                             -> bool
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/user.cpp:67:17: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+Calendar &User::getCalendar() { return m_calendar; }
+[0;1;32m~~~~~~~~~~      ^
+[0m[0;32mauto                          -> Calendar &
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/user.cpp:69:15: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QString User::getUsername() const { return m_username; }
+[0;1;32m~~~~~~~       ^
+[0m[0;32mauto                              -> QString
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/user.cpp:71:17: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+ToDoList &User::getToDoList() { return m_toDoList; }
+[0;1;32m~~~~~~~~~~      ^
+[0m[0;32mauto                          -> ToDoList &
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/user.cpp:73:17: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+Settings &User::getSettings() { return m_settings; }
+[0;1;32m~~~~~~~~~~      ^
+[0m[0;32mauto                          -> Settings &
+[0m[1m/usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h:45:12: [0m[0;1;31merror: [0m[1m'type_traits' file not found [clang-diagnostic-error][0m
+#  include <type_traits>
+[0;1;32m           ^~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/markopaunovic/kOrganizify/kOrganizify/build /home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/EWIEGA46WW/qrc_resources.cpp
+[0;1;31merror: [0m[1mno input files [clang-diagnostic-error][0m
+[0;1;31merror: [0m[1mno such file or directory: '/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/EWIEGA46WW/qrc_resources.cpp' [clang-diagnostic-error][0m
+[0;1;31merror: [0m[1munable to handle compilation, expected exactly one compiler job in '' [clang-diagnostic-error][0m
+clang-tidy-14 --use-color -checks=modernize-* -p=/home/markopaunovic/kOrganizify/kOrganizify/build /home/markopaunovic/kOrganizify/kOrganizify/src/syncwindow.cpp
+[1m/home/markopaunovic/kOrganizify/kOrganizify/src/syncwindow.cpp:49:21: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QString SyncWindow::getEnteredText() const { return m_enteredText; }
+[0;1;32m~~~~~~~             ^
+[0m[0;32mauto                                       -> QString
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/syncwindow.cpp:51:17: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+int SyncWindow::getSelectedNumber() const { return m_selectedNumber; }
+[0;1;32m~~~             ^
+[0m[0;32mauto                                      -> int
+[0m[1m/usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h:45:12: [0m[0;1;31merror: [0m[1m'type_traits' file not found [clang-diagnostic-error][0m
+#  include <type_traits>
+[0;1;32m           ^~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/markopaunovic/kOrganizify/kOrganizify/build /home/markopaunovic/kOrganizify/kOrganizify/src/settingswindow.cpp
+[1m/home/markopaunovic/kOrganizify/kOrganizify/src/settingswindow.cpp:63:25: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QString SettingsWindow::getBackgroundPath() {
+[0;1;32m~~~~~~~                 ^
+[0m[0;32mauto                                        -> QString
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/settingswindow.cpp:67:25: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QString SettingsWindow::textToColor(QString text) {
+[0;1;32m~~~~~~~                 ^
+[0m[0;32mauto                                              -> QString
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/settingswindow.cpp:71:25: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QString SettingsWindow::textToPath(QString text) {
+[0;1;32m~~~~~~~                 ^
+[0m[0;32mauto                                             -> QString
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/settingswindow.cpp:93:25: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QString SettingsWindow::colorToPath(QString color) {
+[0;1;32m~~~~~~~                 ^
+[0m[0;32mauto                                               -> QString
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/settingswindow.cpp:97:25: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QString SettingsWindow::colorToText(QString color) {
+[0;1;32m~~~~~~~                 ^
+[0m[0;32mauto                                               -> QString
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/settingswindow.cpp:111:25: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QString SettingsWindow::getColor() { return m_settings->getColor(); }
+[0;1;32m~~~~~~~                 ^
+[0m[0;32mauto                               -> QString
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/settingswindow.cpp:114:17: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+SettingsWindow::getColorNameFromValue(const QMap<QString, QString> &colorMap,
+[0;1;32m                ^
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/settingswindow.cpp:128:22: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+bool SettingsWindow::getNotifications() const {
+[0;1;32m~~~~                 ^
+[0m[0;32mauto                                          -> bool
+[0m[1m/usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h:45:12: [0m[0;1;31merror: [0m[1m'type_traits' file not found [clang-diagnostic-error][0m
+#  include <type_traits>
+[0;1;32m           ^~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/markopaunovic/kOrganizify/kOrganizify/build /home/markopaunovic/kOrganizify/kOrganizify/src/notifications.cpp
+[1m/home/markopaunovic/kOrganizify/kOrganizify/src/notifications.cpp:37:3: [0m[0;1;35mwarning: [0m[1muse auto when initializing with new to avoid duplicating the type name [modernize-use-auto][0m
+  NotificationsWindow *notif = new NotificationsWindow(nullptr);
+[0;1;32m  ^~~~~~~~~~~~~~~~~~~
+[0m[0;32m  auto
+[0m[1m/usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h:45:12: [0m[0;1;31merror: [0m[1m'type_traits' file not found [clang-diagnostic-error][0m
+#  include <type_traits>
+[0;1;32m           ^~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/markopaunovic/kOrganizify/kOrganizify/build /home/markopaunovic/kOrganizify/kOrganizify/src/eventwindow.cpp
+[1m/home/markopaunovic/kOrganizify/kOrganizify/src/eventwindow.cpp:58:20: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+Event EventWindow::getCurrentEvent() const { return m_currentEvent; }
+[0;1;32m~~~~~              ^
+[0m[0;32mauto                                       -> Event
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/eventwindow.cpp:60:19: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+bool EventWindow::isEventNull() const {
+[0;1;32m~~~~              ^
+[0m[0;32mauto                                  -> bool
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/eventwindow.cpp:131:3: [0m[0;1;35mwarning: [0m[1muse auto when initializing with a cast to avoid duplicating the type name [modernize-use-auto][0m
+  QString ewStyleSheet =
+[0;1;32m  ^~~~~~~
+[0m[0;32m  auto
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/eventwindow.cpp:142:19: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+bool EventWindow::checkEventOverlap(const Event &newEvent) {
+[0;1;32m~~~~              ^
+[0m[0;32mauto                                                       -> bool
+[0m[1m/usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h:45:12: [0m[0;1;31merror: [0m[1m'type_traits' file not found [clang-diagnostic-error][0m
+#  include <type_traits>
+[0;1;32m           ^~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/markopaunovic/kOrganizify/kOrganizify/build /home/markopaunovic/kOrganizify/kOrganizify/src/mainwindow.cpp
+[1m/home/markopaunovic/kOrganizify/kOrganizify/src/mainwindow.cpp:37:5: [0m[0;1;35mwarning: [0m[1muse auto when initializing with new to avoid duplicating the type name [modernize-use-auto][0m
+    AppWindow *appWindow = new AppWindow(m_user);
+[0;1;32m    ^~~~~~~~~
+[0m[0;32m    auto
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/mainwindow.cpp:68:5: [0m[0;1;35mwarning: [0m[1muse auto when initializing with new to avoid duplicating the type name [modernize-use-auto][0m
+    AppWindow *appWindow = new AppWindow(m_user);
+[0;1;32m    ^~~~~~~~~
+[0m[0;32m    auto
+[0m[1m/usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h:45:12: [0m[0;1;31merror: [0m[1m'type_traits' file not found [clang-diagnostic-error][0m
+#  include <type_traits>
+[0;1;32m           ^~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/markopaunovic/kOrganizify/kOrganizify/build /home/markopaunovic/kOrganizify/kOrganizify/src/scheduler.cpp
+[1m/home/markopaunovic/kOrganizify/kOrganizify/src/scheduler.cpp:76:25: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QList<Event> Scheduler::findFreeTime(Calendar *cal1, int maxTimeInMinutes) {
+[0;1;32m~~~~~~~~~~~~            ^
+[0m[0;32mauto                                                                       -> QList<Event>
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/scheduler.cpp:116:9: [0m[0;1;35mwarning: [0m[1muse auto when initializing with new to avoid duplicating the type name [modernize-use-auto][0m
+        Event *newEvent = new Event();
+[0;1;32m        ^~~~~
+[0m[0;32m        auto
+[0m[1m/usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h:45:12: [0m[0;1;31merror: [0m[1m'type_traits' file not found [clang-diagnostic-error][0m
+#  include <type_traits>
+[0;1;32m           ^~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/markopaunovic/kOrganizify/kOrganizify/build /home/markopaunovic/kOrganizify/kOrganizify/src/basicevent.cpp
+[1m/home/markopaunovic/kOrganizify/kOrganizify/src/basicevent.cpp:3:13: [0m[0;1;35mwarning: [0m[1muse '= default' to define a trivial default constructor [modernize-use-equals-default][0m
+BasicEvent::BasicEvent() {}
+[0;1;32m            ^            ~~
+[0m[0;32m                         = default;
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/basicevent.cpp:5:21: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QString BasicEvent::getTitle() const { return m_title; }
+[0;1;32m~~~~~~~             ^
+[0m[0;32mauto                                 -> QString
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/basicevent.cpp:8:17: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+int BasicEvent::getDuration() const { return m_duration; }
+[0;1;32m~~~             ^
+[0m[0;32mauto                                -> int
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/basicevent.cpp:13:18: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+bool BasicEvent::isValidate() const {
+[0;1;32m~~~~             ^
+[0m[0;32mauto                                -> bool
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/basicevent.cpp:17:18: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+bool BasicEvent::operator==(const BasicEvent &other) const {
+[0;1;32m~~~~             ^
+[0m[0;32mauto                                                       -> bool
+[0m[1m/usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h:45:12: [0m[0;1;31merror: [0m[1m'type_traits' file not found [clang-diagnostic-error][0m
+#  include <type_traits>
+[0;1;32m           ^~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/markopaunovic/kOrganizify/kOrganizify/build /home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/mocs_compilation.cpp
+[0;1;31merror: [0m[1mno input files [clang-diagnostic-error][0m
+[0;1;31merror: [0m[1mno such file or directory: '/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/mocs_compilation.cpp' [clang-diagnostic-error][0m
+[0;1;31merror: [0m[1munable to handle compilation, expected exactly one compiler job in '' [clang-diagnostic-error][0m
+clang-tidy-14 --use-color -checks=modernize-* -p=/home/markopaunovic/kOrganizify/kOrganizify/build /home/markopaunovic/kOrganizify/kOrganizify/src/responsewindow.cpp
+[1m/home/markopaunovic/kOrganizify/kOrganizify/src/responsewindow.cpp:30:25: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QString ResponseWindow::getDate() { return m_date; }
+[0;1;32m~~~~~~~                 ^
+[0m[0;32mauto                              -> QString
+[0m[1m/usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h:45:12: [0m[0;1;31merror: [0m[1m'type_traits' file not found [clang-diagnostic-error][0m
+#  include <type_traits>
+[0;1;32m           ^~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/markopaunovic/kOrganizify/kOrganizify/build /home/markopaunovic/kOrganizify/kOrganizify/src/basiceventwindow.cpp
+[1m/home/markopaunovic/kOrganizify/kOrganizify/src/basiceventwindow.cpp:29:24: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+bool BasicEventWindow::addEvent(const char op) {
+[0;1;32m~~~~                   ^
+[0m[0;32mauto                                           -> bool
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/basiceventwindow.cpp:93:5: [0m[0;1;35mwarning: [0m[1muse auto when initializing with new to avoid duplicating the type name [modernize-use-auto][0m
+    Calendar *tmp = new Calendar(*m_calendar);
+[0;1;32m    ^~~~~~~~
+[0m[0;32m    auto
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/basiceventwindow.cpp:154:3: [0m[0;1;35mwarning: [0m[1muse auto when initializing with a cast to avoid duplicating the type name [modernize-use-auto][0m
+  QString ewStyleSheet =
+[0;1;32m  ^~~~~~~
+[0m[0;32m  auto
+[0m[1m/usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h:45:12: [0m[0;1;31merror: [0m[1m'type_traits' file not found [clang-diagnostic-error][0m
+#  include <type_traits>
+[0;1;32m           ^~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/markopaunovic/kOrganizify/kOrganizify/build /home/markopaunovic/kOrganizify/kOrganizify/src/calendar.cpp
+[1m/home/markopaunovic/kOrganizify/kOrganizify/src/calendar.cpp:3:11: [0m[0;1;35mwarning: [0m[1muse '= default' to define a trivial default constructor [modernize-use-equals-default][0m
+Calendar::Calendar() {}
+[0;1;32m          ^          ~~
+[0m[0;32m                     = default;
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/calendar.cpp:12:22: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QJsonValue Calendar::toJson() const {
+[0;1;32m~~~~~~~~~~           ^
+[0m[0;32mauto                                -> QJsonValue
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/calendar.cpp:26:10: [0m[0;1;35mwarning: [0m[1mavoid repeating the return type from the declaration; use a braced initializer list instead [modernize-return-braced-init-list][0m
+  return QJsonValue(jsonArray);
+[0;1;32m         ^
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/calendar.cpp:54:9: [0m[0;1;35mwarning: [0m[1muse auto when initializing with a cast to avoid duplicating the type name [modernize-use-auto][0m
+  const Event *eventPtr = dynamic_cast<const Event *>(&basicEvent);
+[0;1;32m        ^~~~~
+[0m[0;32m        auto
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/calendar.cpp:80:9: [0m[0;1;35mwarning: [0m[1muse auto when initializing with a cast to avoid duplicating the type name [modernize-use-auto][0m
+  const Event *eventPtr = dynamic_cast<const Event *>(&basicEvent);
+[0;1;32m        ^~~~~
+[0m[0;32m        auto
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/calendar.cpp:99:24: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QList<Event> Calendar::getEvents() const { return m_events; }
+[0;1;32m~~~~~~~~~~~~           ^
+[0m[0;32mauto                                     -> QList<Event>
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/calendar.cpp:101:22: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+BasicEvent Calendar::getBasicEvent(const int index) {
+[0;1;32m~~~~~~~~~~           ^
+[0m[0;32mauto                                                -> BasicEvent
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/calendar.cpp:105:17: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+Event Calendar::getEvent(const int index) { return m_events[index]; }
+[0;1;32m~~~~~           ^
+[0m[0;32mauto                                      -> Event
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/calendar.cpp:107:15: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+int Calendar::sizeBasic() { return m_basicEvents.size(); }
+[0;1;32m~~~           ^
+[0m[0;32mauto                      -> int
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/calendar.cpp:109:15: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+int Calendar::size() { return m_events.size(); }
+[0;1;32m~~~           ^
+[0m[0;32mauto                 -> int
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/calendar.cpp:111:24: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QList<Event> Calendar::getEventsForWeek(const QDate &startDate,
+[0;1;32m~~~~~~~~~~~~           ^
+[0m[0;32mauto
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/calendar.cpp:125:16: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+bool Calendar::hasEventAt(const QDateTime &dateTime) const {
+[0;1;32m~~~~           ^
+[0m[0;32mauto                                                       -> bool
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/calendar.cpp:141:20: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+Calendar Calendar::operator=(const Calendar &other) {
+[0;1;32m~~~~~~~~           ^
+[0m[0;32mauto                                                -> Calendar
+[0m[1m/usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h:45:12: [0m[0;1;31merror: [0m[1m'type_traits' file not found [clang-diagnostic-error][0m
+#  include <type_traits>
+[0;1;32m           ^~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/markopaunovic/kOrganizify/kOrganizify/build /home/markopaunovic/kOrganizify/kOrganizify/src/saveload.cpp
+[1m/home/markopaunovic/kOrganizify/kOrganizify/src/saveload.cpp:11:19: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QString SaveLoad::getFilePath(const QString &username) {
+[0;1;32m~~~~~~~           ^
+[0m[0;32mauto                                                   -> QString
+[0m[1m/usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h:45:12: [0m[0;1;31merror: [0m[1m'type_traits' file not found [clang-diagnostic-error][0m
+#  include <type_traits>
+[0;1;32m           ^~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/markopaunovic/kOrganizify/kOrganizify/build /home/markopaunovic/kOrganizify/kOrganizify/src/event.cpp
+[1m/home/markopaunovic/kOrganizify/kOrganizify/src/event.cpp:5:16: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QString Event::getTitle() const { return BasicEvent::getTitle(); }
+[0;1;32m~~~~~~~        ^
+[0m[0;32mauto                            -> QString
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/event.cpp:9:12: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+int Event::getDuration() const { return BasicEvent::getDuration(); }
+[0;1;32m~~~        ^
+[0m[0;32mauto                           -> int
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/event.cpp:24:18: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QDateTime Event::getStartTime() const { return m_startTime; }
+[0;1;32m~~~~~~~~~        ^
+[0m[0;32mauto                                  -> QDateTime
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/event.cpp:30:18: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QDateTime Event::getEndTime() const { return m_endTime; }
+[0;1;32m~~~~~~~~~        ^
+[0m[0;32mauto                                -> QDateTime
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/event.cpp:34:16: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QString Event::getDescription() const { return m_description; }
+[0;1;32m~~~~~~~        ^
+[0m[0;32mauto                                  -> QString
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/event.cpp:40:16: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QString Event::getLocation() const { return m_location; }
+[0;1;32m~~~~~~~        ^
+[0m[0;32mauto                               -> QString
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/event.cpp:44:28: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+CustomEventPriority Event::getPriority() const { return m_priority; }
+[0;1;32m~~~~~~~~~~~~~~~~~~~        ^
+[0m[0;32mauto                                           -> CustomEventPriority
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/event.cpp:48:13: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+bool Event::operator==(const Event &other) const {
+[0;1;32m~~~~        ^
+[0m[0;32mauto                                             -> bool
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/event.cpp:55:9: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QString customEventPriorityToString(CustomEventPriority priority) {
+[0;1;32m~~~~~~~ ^
+[0m[0;32mauto                                                              -> QString
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/event.cpp:70:13: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+bool Event::overlapsWith(const Event &other) const {
+[0;1;32m~~~~        ^
+[0m[0;32mauto                                               -> bool
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/event.cpp:88:1: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+customEventPriorityFromString(const QString &priorityString) {
+[0;1;32m^
+[0m[0;32m                                                             -> CustomEventPriority
+[0m[1m/usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h:45:12: [0m[0;1;31merror: [0m[1m'type_traits' file not found [clang-diagnostic-error][0m
+#  include <type_traits>
+[0;1;32m           ^~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/markopaunovic/kOrganizify/kOrganizify/build /home/markopaunovic/kOrganizify/kOrganizify/src/main.cpp
+[1m/home/markopaunovic/kOrganizify/kOrganizify/src/main.cpp:6:5: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+int main(int argc, char *argv[]) {
+[0;1;32m~~~ ^
+[0m[0;32mauto                             -> int
+[0m[1m/usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h:45:12: [0m[0;1;31merror: [0m[1m'type_traits' file not found [clang-diagnostic-error][0m
+#  include <type_traits>
+[0;1;32m           ^~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/markopaunovic/kOrganizify/kOrganizify/build /home/markopaunovic/kOrganizify/kOrganizify/src/task.cpp
+[1m/usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h:45:12: [0m[0;1;31merror: [0m[1m'type_traits' file not found [clang-diagnostic-error][0m
+#  include <type_traits>
+[0;1;32m           ^~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/markopaunovic/kOrganizify/kOrganizify/build /home/markopaunovic/kOrganizify/kOrganizify/src/client.cpp
+[1m/home/markopaunovic/kOrganizify/kOrganizify/src/client.cpp:14:14: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+bool Client::makeConnection(QHostAddress::SpecialAddress address) {
+[0;1;32m~~~~         ^
+[0m[0;32mauto                                                              -> bool
+[0m[1m/usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h:45:12: [0m[0;1;31merror: [0m[1m'type_traits' file not found [clang-diagnostic-error][0m
+#  include <type_traits>
+[0;1;32m           ^~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/markopaunovic/kOrganizify/kOrganizify/build /home/markopaunovic/kOrganizify/kOrganizify/src/syncresponsewindow.cpp
+[1m/usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h:45:12: [0m[0;1;31merror: [0m[1m'type_traits' file not found [clang-diagnostic-error][0m
+#  include <type_traits>
+[0;1;32m           ^~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/markopaunovic/kOrganizify/kOrganizify/build /home/markopaunovic/kOrganizify/kOrganizify/src/notificationswindow.cpp
+[1m/usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h:45:12: [0m[0;1;31merror: [0m[1m'type_traits' file not found [clang-diagnostic-error][0m
+#  include <type_traits>
+[0;1;32m           ^~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/markopaunovic/kOrganizify/kOrganizify/build /home/markopaunovic/kOrganizify/kOrganizify/src/toDoList.cpp
+[1m/home/markopaunovic/kOrganizify/kOrganizify/src/toDoList.cpp:24:22: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QJsonValue ToDoList::toJson() const {
+[0;1;32m~~~~~~~~~~           ^
+[0m[0;32mauto                                -> QJsonValue
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/toDoList.cpp:33:10: [0m[0;1;35mwarning: [0m[1mavoid repeating the return type from the declaration; use a braced initializer list instead [modernize-return-braced-init-list][0m
+  return QJsonValue(jsonArray);
+[0;1;32m         ^
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/toDoList.cpp:41:25: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QVector<Task> ToDoList::getTasks() { return m_tasks; }
+[0;1;32m                        ^
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/toDoList.cpp:49:17: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+Task *ToDoList::getTask(int index) const {
+[0;1;32m~~~~~~          ^
+[0m[0;32mauto                                     -> Task *
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/toDoList.cpp:53:19: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QString ToDoList::toString() {
+[0;1;32m~~~~~~~           ^
+[0m[0;32mauto                         -> QString
+[0m[1m/usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h:45:12: [0m[0;1;31merror: [0m[1m'type_traits' file not found [clang-diagnostic-error][0m
+#  include <type_traits>
+[0;1;32m           ^~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/markopaunovic/kOrganizify/kOrganizify/build /home/markopaunovic/kOrganizify/kOrganizify/src/appwindow.cpp
+[1m/home/markopaunovic/kOrganizify/kOrganizify/src/appwindow.cpp:262:3: [0m[0;1;35mwarning: [0m[1muse auto when initializing with new to avoid duplicating the type name [modernize-use-auto][0m
+  QListWidgetItem *item = new QListWidgetItem();
+[0;1;32m  ^~~~~~~~~~~~~~~
+[0m[0;32m  auto
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/appwindow.cpp:265:3: [0m[0;1;35mwarning: [0m[1muse auto when initializing with new to avoid duplicating the type name [modernize-use-auto][0m
+  QCheckBox *checkBox = new QCheckBox(task.getName());
+[0;1;32m  ^~~~~~~~~
+[0m[0;32m  auto
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/appwindow.cpp:297:20: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QString AppWindow::crossTask(const QString &taskName) {
+[0;1;32m~~~~~~~            ^
+[0m[0;32mauto                                                  -> QString
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/appwindow.cpp:314:7: [0m[0;1;35mwarning: [0m[1muse auto when initializing with a cast to avoid duplicating the type name [modernize-use-auto][0m
+      QCheckBox *checkBox = static_cast<QCheckBox *>(widget);
+[0;1;32m      ^~~~~~~~~
+[0m[0;32m      auto
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/appwindow.cpp:410:19: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QColor AppWindow::getColorFromPriority(CustomEventPriority priority) {
+[0;1;32m~~~~~~            ^
+[0m[0;32mauto                                                                 -> QColor
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/appwindow.cpp:413:12: [0m[0;1;35mwarning: [0m[1mavoid repeating the return type from the declaration; use a braced initializer list instead [modernize-return-braced-init-list][0m
+    return QColor(247, 244, 248);
+[0;1;32m           ^~~~~~~             ~
+[0m[0;32m           {                   }
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/appwindow.cpp:415:12: [0m[0;1;35mwarning: [0m[1mavoid repeating the return type from the declaration; use a braced initializer list instead [modernize-return-braced-init-list][0m
+    return QColor(209, 244, 164);
+[0;1;32m           ^~~~~~~             ~
+[0m[0;32m           {                   }
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/appwindow.cpp:417:12: [0m[0;1;35mwarning: [0m[1mavoid repeating the return type from the declaration; use a braced initializer list instead [modernize-return-braced-init-list][0m
+    return QColor(250, 226, 127);
+[0;1;32m           ^~~~~~~             ~
+[0m[0;32m           {                   }
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/appwindow.cpp:419:12: [0m[0;1;35mwarning: [0m[1mavoid repeating the return type from the declaration; use a braced initializer list instead [modernize-return-braced-init-list][0m
+    return QColor(207, 91, 87);
+[0;1;32m           ^~~~~~~           ~
+[0m[0;32m           {                 }
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/appwindow.cpp:421:12: [0m[0;1;35mwarning: [0m[1mavoid repeating the return type from the declaration; use a braced initializer list instead [modernize-return-braced-init-list][0m
+    return QColor(247, 244, 248);
+[0;1;32m           ^~~~~~~             ~
+[0m[0;32m           {                   }
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/appwindow.cpp:434:3: [0m[0;1;35mwarning: [0m[1muse auto when initializing with new to avoid duplicating the type name [modernize-use-auto][0m
+  SyncResponseWindow *responseWindow =
+[0;1;32m  ^~~~~~~~~~~~~~~~~~
+[0m[0;32m  auto
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/appwindow.cpp:451:3: [0m[0;1;35mwarning: [0m[1muse auto when initializing with new to avoid duplicating the type name [modernize-use-auto][0m
+  BasicEventWindow *basicEventWindow =
+[0;1;32m  ^~~~~~~~~~~~~~~~
+[0m[0;32m  auto
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/appwindow.cpp:484:3: [0m[0;1;35mwarning: [0m[1muse auto when initializing with new to avoid duplicating the type name [modernize-use-auto][0m
+  SyncDeniedWindow *syncDeniedWindow = new SyncDeniedWindow(friendName);
+[0;1;32m  ^~~~~~~~~~~~~~~~
+[0m[0;32m  auto
+[0m[1m/home/markopaunovic/kOrganizify/kOrganizify/src/appwindow.cpp:489:3: [0m[0;1;35mwarning: [0m[1muse auto when initializing with new to avoid duplicating the type name [modernize-use-auto][0m
+  ResponseWindow *responseWindow = new ResponseWindow(eventTitle, startTime);
+[0;1;32m  ^~~~~~~~~~~~~~
+[0m[0;32m  auto
+[0m[1m/usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h:45:12: [0m[0;1;31merror: [0m[1m'type_traits' file not found [clang-diagnostic-error][0m
+#  include <type_traits>
+[0;1;32m           ^~~~~~~~~~~~~
+[0m

@@ -1,0 +1,140 @@
+.TH "Calendar" 3 "Tue Jan 9 2024" "kOrganizify" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Calendar
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <calendar\&.h>\fP
+.PP
+Inherits \fBSaveLoad\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCalendar\fP ()"
+.br
+.ti -1c
+.RI "\fBCalendar\fP (const \fBCalendar\fP &other)"
+.br
+.ti -1c
+.RI "\fBCalendar\fP \fBoperator=\fP (const \fBCalendar\fP &other)"
+.br
+.ti -1c
+.RI "QList< \fBEvent\fP > \fBgetEvents\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBEvent\fP > \fBgetEventsForWeek\fP (const QDate &startDate, const QDate &endDate) const"
+.br
+.ti -1c
+.RI "\fBEvent\fP \fBgetEvent\fP (const int index)"
+.br
+.ti -1c
+.RI "\fBBasicEvent\fP \fBgetBasicEvent\fP (const int index)"
+.br
+.ti -1c
+.RI "QJsonValue \fBtoJson\fP () const override"
+.br
+.ti -1c
+.RI "int \fBsizeBasic\fP ()"
+.br
+.ti -1c
+.RI "int \fBsize\fP ()"
+.br
+.ti -1c
+.RI "bool \fBhasEventAt\fP (const QDateTime &dateTime) const"
+.br
+.ti -1c
+.RI "void \fBloadData\fP (const QString &username)"
+.br
+.ti -1c
+.RI "void \fBsaveData\fP (const QString &username)"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "void \fBprint\fP ()"
+.br
+.ti -1c
+.RI "void \fBfromJson\fP (const QJsonObject &jsonObject) override"
+.br
+.ti -1c
+.RI "void \fBaddEvent\fP (const \fBBasicEvent\fP &basicEvent)"
+.br
+.ti -1c
+.RI "void \fBremoveEvent\fP (const \fBBasicEvent\fP &basicEvent)"
+.br
+.ti -1c
+.RI "void \fBupdateEvent\fP (const \fBEvent\fP &oldEvent, const \fBEvent\fP &newEvent)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QList< \fBBasicEvent\fP > \fBm_basicEvents\fP"
+.br
+.ti -1c
+.RI "QList< \fBEvent\fP > \fBm_events\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Calendar::Calendar ()"
+
+.SS "Calendar::Calendar (const \fBCalendar\fP & other)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void Calendar::addEvent (const \fBBasicEvent\fP & basicEvent)"
+
+.SS "void Calendar::clear ()"
+
+.SS "void Calendar::fromJson (const QJsonObject & jsonObject)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBSaveLoad\fP\&.
+.SS "\fBBasicEvent\fP Calendar::getBasicEvent (const int index)"
+
+.SS "\fBEvent\fP Calendar::getEvent (const int index)"
+
+.SS "QList< \fBEvent\fP > Calendar::getEvents () const"
+
+.SS "QList< \fBEvent\fP > Calendar::getEventsForWeek (const QDate & startDate, const QDate & endDate) const"
+
+.SS "bool Calendar::hasEventAt (const QDateTime & dateTime) const"
+
+.SS "void Calendar::loadData (const QString & username)"
+
+.SS "\fBCalendar\fP Calendar::operator= (const \fBCalendar\fP & other)"
+
+.SS "void Calendar::print ()"
+
+.SS "void Calendar::removeEvent (const \fBBasicEvent\fP & basicEvent)"
+
+.SS "void Calendar::saveData (const QString & username)"
+
+.SS "int Calendar::size ()"
+
+.SS "int Calendar::sizeBasic ()"
+
+.SS "QJsonValue Calendar::toJson () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBSaveLoad\fP\&.
+.SS "void Calendar::updateEvent (const \fBEvent\fP & oldEvent, const \fBEvent\fP & newEvent)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "QList<\fBBasicEvent\fP> Calendar::m_basicEvents\fC [private]\fP"
+
+.SS "QList<\fBEvent\fP> Calendar::m_events\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for kOrganizify from the source code\&.

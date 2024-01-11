@@ -1,33 +1,19 @@
 #include "basicevent.h"
 
-BasicEvent::BasicEvent() {}
+BasicEvent::BasicEvent() = default;
 
-QString BasicEvent::getTitle() const {
-    return m_title;
-}
-void BasicEvent::setTitle(const QString &title) {
-    m_title = title;
-}
+auto BasicEvent::getTitle() const -> QString { return m_title; }
+void BasicEvent::setTitle(const QString &title) { m_title = title; }
 
-int BasicEvent::getDuration() const {
-    return m_duration;
-}
-void BasicEvent::setDuration(const int duration) {
-    m_duration = duration;
+auto BasicEvent::getDuration() const -> int { return m_duration; }
+void BasicEvent::setDuration(const int duration) { m_duration = duration; }
+
+void BasicEvent::deleteString() { m_title.clear(); }
+
+auto BasicEvent::isValidate() const -> bool {
+  return (m_title != "" && m_duration > 0);
 }
 
-void BasicEvent::deleteString() {
-    m_title.clear();
+auto BasicEvent::operator==(const BasicEvent &other) const -> bool {
+  return (m_title == other.m_title && m_duration == other.m_duration);
 }
-
-bool BasicEvent::isValidate() const {
-    return (m_title != ""  &&  m_duration > 0);
-}
-
-bool BasicEvent::operator==(const BasicEvent &other) const {
-    return (
-        m_title == other.m_title &&
-        m_duration == other.m_duration
-        );
-}
-

@@ -1,0 +1,364 @@
+\hypertarget{classAppWindow}{}\doxysection{App\+Window Class Reference}
+\label{classAppWindow}\index{AppWindow@{AppWindow}}
+
+
+{\ttfamily \#include $<$appwindow.\+h$>$}
+
+
+
+Inheritance diagram for App\+Window\+:
+% FIG 0
+
+
+Collaboration diagram for App\+Window\+:
+% FIG 1
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAppWindow_a65f284dfe540bc151b6078e73aac5917}{handle\+New\+User\+Logged\+In}} (const QString \&username)
+\item 
+void \mbox{\hyperlink{classAppWindow_a5dbb519aee9ce81aa52b49de644ce0c5}{handle\+User\+Disconnected}} (const QString \&username)
+\item 
+void \mbox{\hyperlink{classAppWindow_ac7cf7615340c66699e90402f233d327e}{add\+Task\+To\+List\+Widget}} (const \mbox{\hyperlink{classTask}{Task}} \&task)
+\item 
+void \mbox{\hyperlink{classAppWindow_aed01176d54475651371fba785928eaee}{show\+Weekly\+Events}} (const QDate \&selected\+Date)
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAppWindow_aaf8b7a2008177fb6c0c23d1a673655b1}{exit}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAppWindow_a17a6dc5f553d4daf9c58d5b862a0ce9e}{App\+Window}} (\mbox{\hyperlink{classUser}{User}} $\ast$user, QWidget $\ast$parent=nullptr)
+\item 
+\mbox{\hyperlink{classAppWindow_aabb56a1ba5d2f3254eeaa4d0f24da0cb}{$\sim$\+App\+Window}} ()
+\item 
+void \mbox{\hyperlink{classAppWindow_aa990f332de10cc5864f055958a51afbe}{initialize}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAppWindow_a69ba6bf71357289bf2be432eb5e984e6}{change\+Button\+Color}} (const QString \&new\+Color)
+\item 
+void \mbox{\hyperlink{classAppWindow_aaac40fcb1cd7aa038c7896da0c8d974b}{open\+Event\+Window\+For\+Cell}} (int row, int column)
+\item 
+QColor \mbox{\hyperlink{classAppWindow_a2677b4d1b8c9dd5ac55f6f6423e1904a}{get\+Color\+From\+Priority}} (\mbox{\hyperlink{event_8h_a2bdd47d7a383e60d517514db97940b3f}{Custom\+Event\+Priority}} priority)
+\item 
+void \mbox{\hyperlink{classAppWindow_a741b688c484dd340a26a0d0512369d98}{enabled\+Notifications}} (const bool enabled)
+\item 
+void \mbox{\hyperlink{classAppWindow_ad1c2d836c5002dd8e9a475b8ff8a293b}{add\+Task}} ()
+\item 
+void \mbox{\hyperlink{classAppWindow_a03635a2056a0b96b8b9af6b8d5a5900c}{on\+Check\+Box\+State\+Changed}} (int state)
+\item 
+QString \mbox{\hyperlink{classAppWindow_ab8158e59f6533510199f717839a0ee04}{cross\+Task}} (const QString \&task\+Name)
+\item 
+void \mbox{\hyperlink{classAppWindow_ad6a9fc903dfe960ad20e3e54035e7545}{open\+Settings}} ()
+\item 
+void \mbox{\hyperlink{classAppWindow_a44c863ee8d85e18a27458ec265a2d2f8}{logout\+User}} ()
+\item 
+void \mbox{\hyperlink{classAppWindow_abd45fad855674a0ac1252eaa29a2c0c5}{open\+Sync\+Window}} (QList\+Widget\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classAppWindow_ab4b894c867b5740590cfd1e2095dd442}{populate\+Friends}} (const QList$<$ QString $>$ \&friends)
+\item 
+void \mbox{\hyperlink{classAppWindow_a48096e12907869be03bc02916c2abca2}{smart\+Plan}} ()
+\item 
+void \mbox{\hyperlink{classAppWindow_a4ce265c6de966bf3be442379a5d445ed}{update\+Table\+For\+Selected\+Date}} ()
+\item 
+void \mbox{\hyperlink{classAppWindow_a9eada093353d0be0a611a49aea2b7a51}{update\+Table\+For\+Selected\+Date\+Calendar}} (\mbox{\hyperlink{classCalendar}{Calendar}} $\ast$calendar)
+\item 
+void \mbox{\hyperlink{classAppWindow_a4b43822e08669be69dc45edfb645a909}{clear\+Finished\+Tasks}} ()
+\item 
+void \mbox{\hyperlink{classAppWindow_a0e92877b4f4a4eb900bd375e7780d28e}{show\+Sync\+Window}} (QString username, QString title, int duration)
+\item 
+void \mbox{\hyperlink{classAppWindow_ac5447608c126faca793d29adb8c2195d}{sync\+Denied}} (QString friend\+Name)
+\item 
+void \mbox{\hyperlink{classAppWindow_aeb1cd5fcf3712f75e039f68787536268}{send\+Yes\+Response}} (QString friend\+Name, int duration)
+\item 
+void \mbox{\hyperlink{classAppWindow_af04a36a22769ed4d5587479864a86ef7}{send\+No\+Response}} (QString friend\+Name)
+\item 
+void \mbox{\hyperlink{classAppWindow_af66bac09e2a409ddc22fa6a965eb7bce}{show\+Response\+Window}} (QString event\+Title, QString start\+Time)
+\item 
+void \mbox{\hyperlink{classAppWindow_afd0efe8085d66e08cd05db8232a9fdfe}{agreed\+Sync}} (QDate\+Time start\+Time, QDate\+Time end\+Time, QString title)
+\item 
+void \mbox{\hyperlink{classAppWindow_aba9d4b1dda0c29591377a0ad7c3ab309}{updated\+Events}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+App\+Window $\ast$ \mbox{\hyperlink{classAppWindow_a089ad392827d2d53197b99c1caac9719}{ui}}
+\item 
+\mbox{\hyperlink{classUser}{User}} $\ast$ \mbox{\hyperlink{classAppWindow_ad3db5e35c698339e5c27701276550492}{m\+\_\+user}}
+\item 
+\mbox{\hyperlink{classSettingsWindow}{Settings\+Window}} $\ast$ \mbox{\hyperlink{classAppWindow_ab76fcbf5cd528b62f77c2abd6c076aa7}{m\+\_\+settings\+Window}}
+\item 
+\mbox{\hyperlink{classSyncWindow}{Sync\+Window}} $\ast$ \mbox{\hyperlink{classAppWindow_a8b610058f131c3c157671f28ed0315c6}{m\+\_\+sync\+Window}}
+\item 
+\mbox{\hyperlink{classEventWindow}{Event\+Window}} $\ast$ \mbox{\hyperlink{classAppWindow_a1bfc97015de0ff24b51b9c56a0644372}{m\+\_\+event\+Window}}
+\item 
+\mbox{\hyperlink{classToDoList}{To\+Do\+List}} $\ast$ \mbox{\hyperlink{classAppWindow_aee6dacd0d1c9507a32d4a4ec3a69e45c}{m\+\_\+to\+Do\+List}}
+\item 
+\mbox{\hyperlink{classCalendar}{Calendar}} $\ast$ \mbox{\hyperlink{classAppWindow_a5c8144bebd77aef9f2dc17117e1fbc23}{m\+\_\+calendar}}
+\item 
+QDate \mbox{\hyperlink{classAppWindow_a53f9742fa21e8a27168a7d060b4d087b}{m\+\_\+start\+Date}}
+\item 
+QDate \mbox{\hyperlink{classAppWindow_a92268c1d5a756275b237d809f0e6942b}{m\+\_\+end\+Date}}
+\item 
+\mbox{\hyperlink{classNotifications}{Notifications}} $\ast$ \mbox{\hyperlink{classAppWindow_a93844205a2802b16faca7d40b7f3dc3e}{m\+\_\+notifications}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAppWindow_a17a6dc5f553d4daf9c58d5b862a0ce9e}\label{classAppWindow_a17a6dc5f553d4daf9c58d5b862a0ce9e}} 
+\index{AppWindow@{AppWindow}!AppWindow@{AppWindow}}
+\index{AppWindow@{AppWindow}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{AppWindow()}{AppWindow()}}
+{\footnotesize\ttfamily App\+Window\+::\+App\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUser}{User}} $\ast$}]{user,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classAppWindow_aabb56a1ba5d2f3254eeaa4d0f24da0cb}\label{classAppWindow_aabb56a1ba5d2f3254eeaa4d0f24da0cb}} 
+\index{AppWindow@{AppWindow}!````~AppWindow@{$\sim$AppWindow}}
+\index{````~AppWindow@{$\sim$AppWindow}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$AppWindow()}{~AppWindow()}}
+{\footnotesize\ttfamily App\+Window\+::$\sim$\+App\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAppWindow_ad1c2d836c5002dd8e9a475b8ff8a293b}\label{classAppWindow_ad1c2d836c5002dd8e9a475b8ff8a293b}} 
+\index{AppWindow@{AppWindow}!addTask@{addTask}}
+\index{addTask@{addTask}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{addTask}{addTask}}
+{\footnotesize\ttfamily void App\+Window\+::add\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAppWindow_ac7cf7615340c66699e90402f233d327e}\label{classAppWindow_ac7cf7615340c66699e90402f233d327e}} 
+\index{AppWindow@{AppWindow}!addTaskToListWidget@{addTaskToListWidget}}
+\index{addTaskToListWidget@{addTaskToListWidget}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{addTaskToListWidget}{addTaskToListWidget}}
+{\footnotesize\ttfamily void App\+Window\+::add\+Task\+To\+List\+Widget (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTask}{Task}} \&}]{task }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAppWindow_afd0efe8085d66e08cd05db8232a9fdfe}\label{classAppWindow_afd0efe8085d66e08cd05db8232a9fdfe}} 
+\index{AppWindow@{AppWindow}!agreedSync@{agreedSync}}
+\index{agreedSync@{agreedSync}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{agreedSync}{agreedSync}}
+{\footnotesize\ttfamily void App\+Window\+::agreed\+Sync (\begin{DoxyParamCaption}\item[{QDate\+Time}]{start\+Time,  }\item[{QDate\+Time}]{end\+Time,  }\item[{QString}]{title }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAppWindow_a69ba6bf71357289bf2be432eb5e984e6}\label{classAppWindow_a69ba6bf71357289bf2be432eb5e984e6}} 
+\index{AppWindow@{AppWindow}!changeButtonColor@{changeButtonColor}}
+\index{changeButtonColor@{changeButtonColor}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{changeButtonColor}{changeButtonColor}}
+{\footnotesize\ttfamily void App\+Window\+::change\+Button\+Color (\begin{DoxyParamCaption}\item[{const QString \&}]{new\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAppWindow_a4b43822e08669be69dc45edfb645a909}\label{classAppWindow_a4b43822e08669be69dc45edfb645a909}} 
+\index{AppWindow@{AppWindow}!clearFinishedTasks@{clearFinishedTasks}}
+\index{clearFinishedTasks@{clearFinishedTasks}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{clearFinishedTasks}{clearFinishedTasks}}
+{\footnotesize\ttfamily void App\+Window\+::clear\+Finished\+Tasks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAppWindow_ab8158e59f6533510199f717839a0ee04}\label{classAppWindow_ab8158e59f6533510199f717839a0ee04}} 
+\index{AppWindow@{AppWindow}!crossTask@{crossTask}}
+\index{crossTask@{crossTask}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{crossTask}{crossTask}}
+{\footnotesize\ttfamily QString App\+Window\+::cross\+Task (\begin{DoxyParamCaption}\item[{const QString \&}]{task\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAppWindow_a741b688c484dd340a26a0d0512369d98}\label{classAppWindow_a741b688c484dd340a26a0d0512369d98}} 
+\index{AppWindow@{AppWindow}!enabledNotifications@{enabledNotifications}}
+\index{enabledNotifications@{enabledNotifications}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{enabledNotifications}{enabledNotifications}}
+{\footnotesize\ttfamily void App\+Window\+::enabled\+Notifications (\begin{DoxyParamCaption}\item[{const bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAppWindow_aaf8b7a2008177fb6c0c23d1a673655b1}\label{classAppWindow_aaf8b7a2008177fb6c0c23d1a673655b1}} 
+\index{AppWindow@{AppWindow}!exit@{exit}}
+\index{exit@{exit}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{exit}{exit}}
+{\footnotesize\ttfamily void App\+Window\+::exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classAppWindow_a2677b4d1b8c9dd5ac55f6f6423e1904a}\label{classAppWindow_a2677b4d1b8c9dd5ac55f6f6423e1904a}} 
+\index{AppWindow@{AppWindow}!getColorFromPriority@{getColorFromPriority}}
+\index{getColorFromPriority@{getColorFromPriority}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{getColorFromPriority}{getColorFromPriority}}
+{\footnotesize\ttfamily QColor App\+Window\+::get\+Color\+From\+Priority (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{event_8h_a2bdd47d7a383e60d517514db97940b3f}{Custom\+Event\+Priority}}}]{priority }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAppWindow_a65f284dfe540bc151b6078e73aac5917}\label{classAppWindow_a65f284dfe540bc151b6078e73aac5917}} 
+\index{AppWindow@{AppWindow}!handleNewUserLoggedIn@{handleNewUserLoggedIn}}
+\index{handleNewUserLoggedIn@{handleNewUserLoggedIn}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{handleNewUserLoggedIn}{handleNewUserLoggedIn}}
+{\footnotesize\ttfamily void App\+Window\+::handle\+New\+User\+Logged\+In (\begin{DoxyParamCaption}\item[{const QString \&}]{username }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAppWindow_a5dbb519aee9ce81aa52b49de644ce0c5}\label{classAppWindow_a5dbb519aee9ce81aa52b49de644ce0c5}} 
+\index{AppWindow@{AppWindow}!handleUserDisconnected@{handleUserDisconnected}}
+\index{handleUserDisconnected@{handleUserDisconnected}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{handleUserDisconnected}{handleUserDisconnected}}
+{\footnotesize\ttfamily void App\+Window\+::handle\+User\+Disconnected (\begin{DoxyParamCaption}\item[{const QString \&}]{username }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAppWindow_aa990f332de10cc5864f055958a51afbe}\label{classAppWindow_aa990f332de10cc5864f055958a51afbe}} 
+\index{AppWindow@{AppWindow}!initialize@{initialize}}
+\index{initialize@{initialize}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void App\+Window\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classAppWindow_a44c863ee8d85e18a27458ec265a2d2f8}\label{classAppWindow_a44c863ee8d85e18a27458ec265a2d2f8}} 
+\index{AppWindow@{AppWindow}!logoutUser@{logoutUser}}
+\index{logoutUser@{logoutUser}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{logoutUser}{logoutUser}}
+{\footnotesize\ttfamily void App\+Window\+::logout\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAppWindow_a03635a2056a0b96b8b9af6b8d5a5900c}\label{classAppWindow_a03635a2056a0b96b8b9af6b8d5a5900c}} 
+\index{AppWindow@{AppWindow}!onCheckBoxStateChanged@{onCheckBoxStateChanged}}
+\index{onCheckBoxStateChanged@{onCheckBoxStateChanged}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{onCheckBoxStateChanged}{onCheckBoxStateChanged}}
+{\footnotesize\ttfamily void App\+Window\+::on\+Check\+Box\+State\+Changed (\begin{DoxyParamCaption}\item[{int}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAppWindow_aaac40fcb1cd7aa038c7896da0c8d974b}\label{classAppWindow_aaac40fcb1cd7aa038c7896da0c8d974b}} 
+\index{AppWindow@{AppWindow}!openEventWindowForCell@{openEventWindowForCell}}
+\index{openEventWindowForCell@{openEventWindowForCell}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{openEventWindowForCell}{openEventWindowForCell}}
+{\footnotesize\ttfamily void App\+Window\+::open\+Event\+Window\+For\+Cell (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAppWindow_ad6a9fc903dfe960ad20e3e54035e7545}\label{classAppWindow_ad6a9fc903dfe960ad20e3e54035e7545}} 
+\index{AppWindow@{AppWindow}!openSettings@{openSettings}}
+\index{openSettings@{openSettings}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{openSettings}{openSettings}}
+{\footnotesize\ttfamily void App\+Window\+::open\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAppWindow_abd45fad855674a0ac1252eaa29a2c0c5}\label{classAppWindow_abd45fad855674a0ac1252eaa29a2c0c5}} 
+\index{AppWindow@{AppWindow}!openSyncWindow@{openSyncWindow}}
+\index{openSyncWindow@{openSyncWindow}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{openSyncWindow}{openSyncWindow}}
+{\footnotesize\ttfamily void App\+Window\+::open\+Sync\+Window (\begin{DoxyParamCaption}\item[{QList\+Widget\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAppWindow_ab4b894c867b5740590cfd1e2095dd442}\label{classAppWindow_ab4b894c867b5740590cfd1e2095dd442}} 
+\index{AppWindow@{AppWindow}!populateFriends@{populateFriends}}
+\index{populateFriends@{populateFriends}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{populateFriends}{populateFriends}}
+{\footnotesize\ttfamily void App\+Window\+::populate\+Friends (\begin{DoxyParamCaption}\item[{const QList$<$ QString $>$ \&}]{friends }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAppWindow_af04a36a22769ed4d5587479864a86ef7}\label{classAppWindow_af04a36a22769ed4d5587479864a86ef7}} 
+\index{AppWindow@{AppWindow}!sendNoResponse@{sendNoResponse}}
+\index{sendNoResponse@{sendNoResponse}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{sendNoResponse}{sendNoResponse}}
+{\footnotesize\ttfamily void App\+Window\+::send\+No\+Response (\begin{DoxyParamCaption}\item[{QString}]{friend\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAppWindow_aeb1cd5fcf3712f75e039f68787536268}\label{classAppWindow_aeb1cd5fcf3712f75e039f68787536268}} 
+\index{AppWindow@{AppWindow}!sendYesResponse@{sendYesResponse}}
+\index{sendYesResponse@{sendYesResponse}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{sendYesResponse}{sendYesResponse}}
+{\footnotesize\ttfamily void App\+Window\+::send\+Yes\+Response (\begin{DoxyParamCaption}\item[{QString}]{friend\+Name,  }\item[{int}]{duration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAppWindow_af66bac09e2a409ddc22fa6a965eb7bce}\label{classAppWindow_af66bac09e2a409ddc22fa6a965eb7bce}} 
+\index{AppWindow@{AppWindow}!showResponseWindow@{showResponseWindow}}
+\index{showResponseWindow@{showResponseWindow}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{showResponseWindow}{showResponseWindow}}
+{\footnotesize\ttfamily void App\+Window\+::show\+Response\+Window (\begin{DoxyParamCaption}\item[{QString}]{event\+Title,  }\item[{QString}]{start\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAppWindow_a0e92877b4f4a4eb900bd375e7780d28e}\label{classAppWindow_a0e92877b4f4a4eb900bd375e7780d28e}} 
+\index{AppWindow@{AppWindow}!showSyncWindow@{showSyncWindow}}
+\index{showSyncWindow@{showSyncWindow}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{showSyncWindow}{showSyncWindow}}
+{\footnotesize\ttfamily void App\+Window\+::show\+Sync\+Window (\begin{DoxyParamCaption}\item[{QString}]{username,  }\item[{QString}]{title,  }\item[{int}]{duration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAppWindow_aed01176d54475651371fba785928eaee}\label{classAppWindow_aed01176d54475651371fba785928eaee}} 
+\index{AppWindow@{AppWindow}!showWeeklyEvents@{showWeeklyEvents}}
+\index{showWeeklyEvents@{showWeeklyEvents}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{showWeeklyEvents}{showWeeklyEvents}}
+{\footnotesize\ttfamily void App\+Window\+::show\+Weekly\+Events (\begin{DoxyParamCaption}\item[{const QDate \&}]{selected\+Date }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAppWindow_a48096e12907869be03bc02916c2abca2}\label{classAppWindow_a48096e12907869be03bc02916c2abca2}} 
+\index{AppWindow@{AppWindow}!smartPlan@{smartPlan}}
+\index{smartPlan@{smartPlan}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{smartPlan}{smartPlan}}
+{\footnotesize\ttfamily void App\+Window\+::smart\+Plan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAppWindow_ac5447608c126faca793d29adb8c2195d}\label{classAppWindow_ac5447608c126faca793d29adb8c2195d}} 
+\index{AppWindow@{AppWindow}!syncDenied@{syncDenied}}
+\index{syncDenied@{syncDenied}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{syncDenied}{syncDenied}}
+{\footnotesize\ttfamily void App\+Window\+::sync\+Denied (\begin{DoxyParamCaption}\item[{QString}]{friend\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAppWindow_aba9d4b1dda0c29591377a0ad7c3ab309}\label{classAppWindow_aba9d4b1dda0c29591377a0ad7c3ab309}} 
+\index{AppWindow@{AppWindow}!updatedEvents@{updatedEvents}}
+\index{updatedEvents@{updatedEvents}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{updatedEvents}{updatedEvents}}
+{\footnotesize\ttfamily void App\+Window\+::updated\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAppWindow_a4ce265c6de966bf3be442379a5d445ed}\label{classAppWindow_a4ce265c6de966bf3be442379a5d445ed}} 
+\index{AppWindow@{AppWindow}!updateTableForSelectedDate@{updateTableForSelectedDate}}
+\index{updateTableForSelectedDate@{updateTableForSelectedDate}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{updateTableForSelectedDate}{updateTableForSelectedDate}}
+{\footnotesize\ttfamily void App\+Window\+::update\+Table\+For\+Selected\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAppWindow_a9eada093353d0be0a611a49aea2b7a51}\label{classAppWindow_a9eada093353d0be0a611a49aea2b7a51}} 
+\index{AppWindow@{AppWindow}!updateTableForSelectedDateCalendar@{updateTableForSelectedDateCalendar}}
+\index{updateTableForSelectedDateCalendar@{updateTableForSelectedDateCalendar}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{updateTableForSelectedDateCalendar}{updateTableForSelectedDateCalendar}}
+{\footnotesize\ttfamily void App\+Window\+::update\+Table\+For\+Selected\+Date\+Calendar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCalendar}{Calendar}} $\ast$}]{calendar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classAppWindow_a5c8144bebd77aef9f2dc17117e1fbc23}\label{classAppWindow_a5c8144bebd77aef9f2dc17117e1fbc23}} 
+\index{AppWindow@{AppWindow}!m\_calendar@{m\_calendar}}
+\index{m\_calendar@{m\_calendar}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{m\_calendar}{m\_calendar}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCalendar}{Calendar}}$\ast$ App\+Window\+::m\+\_\+calendar\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAppWindow_a92268c1d5a756275b237d809f0e6942b}\label{classAppWindow_a92268c1d5a756275b237d809f0e6942b}} 
+\index{AppWindow@{AppWindow}!m\_endDate@{m\_endDate}}
+\index{m\_endDate@{m\_endDate}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{m\_endDate}{m\_endDate}}
+{\footnotesize\ttfamily QDate App\+Window\+::m\+\_\+end\+Date\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAppWindow_a1bfc97015de0ff24b51b9c56a0644372}\label{classAppWindow_a1bfc97015de0ff24b51b9c56a0644372}} 
+\index{AppWindow@{AppWindow}!m\_eventWindow@{m\_eventWindow}}
+\index{m\_eventWindow@{m\_eventWindow}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{m\_eventWindow}{m\_eventWindow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEventWindow}{Event\+Window}}$\ast$ App\+Window\+::m\+\_\+event\+Window\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAppWindow_a93844205a2802b16faca7d40b7f3dc3e}\label{classAppWindow_a93844205a2802b16faca7d40b7f3dc3e}} 
+\index{AppWindow@{AppWindow}!m\_notifications@{m\_notifications}}
+\index{m\_notifications@{m\_notifications}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{m\_notifications}{m\_notifications}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNotifications}{Notifications}}$\ast$ App\+Window\+::m\+\_\+notifications\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAppWindow_ab76fcbf5cd528b62f77c2abd6c076aa7}\label{classAppWindow_ab76fcbf5cd528b62f77c2abd6c076aa7}} 
+\index{AppWindow@{AppWindow}!m\_settingsWindow@{m\_settingsWindow}}
+\index{m\_settingsWindow@{m\_settingsWindow}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{m\_settingsWindow}{m\_settingsWindow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSettingsWindow}{Settings\+Window}}$\ast$ App\+Window\+::m\+\_\+settings\+Window\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAppWindow_a53f9742fa21e8a27168a7d060b4d087b}\label{classAppWindow_a53f9742fa21e8a27168a7d060b4d087b}} 
+\index{AppWindow@{AppWindow}!m\_startDate@{m\_startDate}}
+\index{m\_startDate@{m\_startDate}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{m\_startDate}{m\_startDate}}
+{\footnotesize\ttfamily QDate App\+Window\+::m\+\_\+start\+Date\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAppWindow_a8b610058f131c3c157671f28ed0315c6}\label{classAppWindow_a8b610058f131c3c157671f28ed0315c6}} 
+\index{AppWindow@{AppWindow}!m\_syncWindow@{m\_syncWindow}}
+\index{m\_syncWindow@{m\_syncWindow}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{m\_syncWindow}{m\_syncWindow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSyncWindow}{Sync\+Window}}$\ast$ App\+Window\+::m\+\_\+sync\+Window\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAppWindow_aee6dacd0d1c9507a32d4a4ec3a69e45c}\label{classAppWindow_aee6dacd0d1c9507a32d4a4ec3a69e45c}} 
+\index{AppWindow@{AppWindow}!m\_toDoList@{m\_toDoList}}
+\index{m\_toDoList@{m\_toDoList}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{m\_toDoList}{m\_toDoList}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classToDoList}{To\+Do\+List}}$\ast$ App\+Window\+::m\+\_\+to\+Do\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAppWindow_ad3db5e35c698339e5c27701276550492}\label{classAppWindow_ad3db5e35c698339e5c27701276550492}} 
+\index{AppWindow@{AppWindow}!m\_user@{m\_user}}
+\index{m\_user@{m\_user}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{m\_user}{m\_user}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUser}{User}}$\ast$ App\+Window\+::m\+\_\+user\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAppWindow_a089ad392827d2d53197b99c1caac9719}\label{classAppWindow_a089ad392827d2d53197b99c1caac9719}} 
+\index{AppWindow@{AppWindow}!ui@{ui}}
+\index{ui@{ui}!AppWindow@{AppWindow}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+App\+Window$\ast$ App\+Window\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{appwindow_8h}{appwindow.\+h}}\item 
+src/\mbox{\hyperlink{appwindow_8cpp}{appwindow.\+cpp}}\end{DoxyCompactItemize}

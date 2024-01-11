@@ -1,0 +1,244 @@
+\hypertarget{classBasicEventWindow}{}\doxysection{Basic\+Event\+Window Class Reference}
+\label{classBasicEventWindow}\index{BasicEventWindow@{BasicEventWindow}}
+
+
+{\ttfamily \#include $<$basiceventwindow.\+h$>$}
+
+
+
+Inheritance diagram for Basic\+Event\+Window\+:
+% FIG 0
+
+
+Collaboration diagram for Basic\+Event\+Window\+:
+% FIG 1
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classBasicEventWindow_aad9fc7bbd78688a03ed7b889ab01221e}{previous\+Calendar\+Signal}} (\mbox{\hyperlink{classCalendar}{Calendar}} $\ast$\mbox{\hyperlink{classBasicEventWindow_a2050b98a5a5e9271630199eb315d05b1}{m\+\_\+calendar}})
+\item 
+void \mbox{\hyperlink{classBasicEventWindow_a5421689eca7e6ceb7bdafb80b0ac9427}{next\+Calendar\+Signal}} (\mbox{\hyperlink{classCalendar}{Calendar}} $\ast$\mbox{\hyperlink{classBasicEventWindow_a2050b98a5a5e9271630199eb315d05b1}{m\+\_\+calendar}})
+\item 
+void \mbox{\hyperlink{classBasicEventWindow_ac7975df9bfd5c6a1db37c353ec859610}{save\+Calendar}} (\mbox{\hyperlink{classCalendar}{Calendar}} $\ast$\mbox{\hyperlink{classBasicEventWindow_a2050b98a5a5e9271630199eb315d05b1}{m\+\_\+calendar}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBasicEventWindow_a6f38785813d29d9b15a548f8e6acd076}{Basic\+Event\+Window}} (\mbox{\hyperlink{classCalendar}{Calendar}} $\ast$calendar, QDate $\ast$start\+Time, QWidget $\ast$parent=nullptr)
+\item 
+\mbox{\hyperlink{classBasicEventWindow_a390ecc7cac3cc1c1ff9dd1c469f093fc}{$\sim$\+Basic\+Event\+Window}} ()
+\item 
+void \mbox{\hyperlink{classBasicEventWindow_a6c9ea939a2fb7edf12c05662a1a0ce3f}{change\+Color}} (QString color)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classBasicEventWindow_add317f736781e21aac3e1d6fdf7d4bff}{m\+\_\+current\+Index}}
+\item 
+int \mbox{\hyperlink{classBasicEventWindow_a5bcf4f79a73703447512a8c69918616d}{m\+\_\+current\+Calendar\+Index}}
+\item 
+QList$<$ \mbox{\hyperlink{classCalendar}{Calendar}} $\ast$ $>$ \mbox{\hyperlink{classBasicEventWindow_a93c5ba3483e11dbd47bb13b45d8ea2be}{m\+\_\+list\+Of\+Calendars}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classBasicEventWindow_a53cc2f7e5caf1af0cf4911dab4732f28}{add\+Event}} (const char op)
+\item 
+void \mbox{\hyperlink{classBasicEventWindow_a7003ab915bb9c49ff5f51797e34d5e03}{remove\+Event}} ()
+\item 
+void \mbox{\hyperlink{classBasicEventWindow_a450e0bf18e8a5ccd6c64442b5bd9a549}{generate}} ()
+\item 
+void \mbox{\hyperlink{classBasicEventWindow_af6ab882918a1d67d7df08198556554fe}{next\+Event}} ()
+\item 
+void \mbox{\hyperlink{classBasicEventWindow_a442b422d15b55e74b68d543c8f93be53}{previous\+Event}} ()
+\item 
+void \mbox{\hyperlink{classBasicEventWindow_ab6185be3e48e5f81df9bd9804b3e6f9c}{update\+Ui}} ()
+\item 
+void \mbox{\hyperlink{classBasicEventWindow_ae6e8c801ac6407ea1e0b5d7a42f62af1}{previous\+Calendar}} ()
+\item 
+void \mbox{\hyperlink{classBasicEventWindow_a9920b9ec9db20ac74391568ff6efee0c}{next\+Calendar}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Basic\+Event\+Window $\ast$ \mbox{\hyperlink{classBasicEventWindow_a29875cac8316e92ba0d62646863b8d3f}{ui}}
+\item 
+\mbox{\hyperlink{classBasicEvent}{Basic\+Event}} $\ast$ \mbox{\hyperlink{classBasicEventWindow_a04865153a34f07f7d0a5e6c8b701a94e}{m\+\_\+basic\+Event}}
+\item 
+\mbox{\hyperlink{classCalendar}{Calendar}} $\ast$ \mbox{\hyperlink{classBasicEventWindow_a2050b98a5a5e9271630199eb315d05b1}{m\+\_\+calendar}}
+\item 
+\mbox{\hyperlink{classCalendar}{Calendar}} $\ast$ \mbox{\hyperlink{classBasicEventWindow_a7b2a92891384d976a8537d9878763f67}{m\+\_\+basic\+Calendar}}
+\item 
+\mbox{\hyperlink{classScheduler}{Scheduler}} $\ast$ \mbox{\hyperlink{classBasicEventWindow_a79f4d09d0eb88dc379124625a801bc91}{m\+\_\+scheduler}}
+\item 
+QDate $\ast$ \mbox{\hyperlink{classBasicEventWindow_a11591a02e611335ffacd5201b55b9cdd}{m\+\_\+start\+Date}}
+\item 
+QList$<$ \mbox{\hyperlink{classEvent}{Event}} $>$ \mbox{\hyperlink{classBasicEventWindow_aa5738128b49e6ca81af439c62b5cc254}{m\+\_\+cal}}
+\item 
+QList$<$ \mbox{\hyperlink{classEvent}{Event}} $>$ \mbox{\hyperlink{classBasicEventWindow_a40094d39aed31f65caa5a5ef8184477a}{m\+\_\+basic\+Cal}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBasicEventWindow_a6f38785813d29d9b15a548f8e6acd076}\label{classBasicEventWindow_a6f38785813d29d9b15a548f8e6acd076}} 
+\index{BasicEventWindow@{BasicEventWindow}!BasicEventWindow@{BasicEventWindow}}
+\index{BasicEventWindow@{BasicEventWindow}!BasicEventWindow@{BasicEventWindow}}
+\doxysubsubsection{\texorpdfstring{BasicEventWindow()}{BasicEventWindow()}}
+{\footnotesize\ttfamily Basic\+Event\+Window\+::\+Basic\+Event\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCalendar}{Calendar}} $\ast$}]{calendar,  }\item[{QDate $\ast$}]{start\+Time,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classBasicEventWindow_a390ecc7cac3cc1c1ff9dd1c469f093fc}\label{classBasicEventWindow_a390ecc7cac3cc1c1ff9dd1c469f093fc}} 
+\index{BasicEventWindow@{BasicEventWindow}!````~BasicEventWindow@{$\sim$BasicEventWindow}}
+\index{````~BasicEventWindow@{$\sim$BasicEventWindow}!BasicEventWindow@{BasicEventWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$BasicEventWindow()}{~BasicEventWindow()}}
+{\footnotesize\ttfamily Basic\+Event\+Window\+::$\sim$\+Basic\+Event\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBasicEventWindow_a53cc2f7e5caf1af0cf4911dab4732f28}\label{classBasicEventWindow_a53cc2f7e5caf1af0cf4911dab4732f28}} 
+\index{BasicEventWindow@{BasicEventWindow}!addEvent@{addEvent}}
+\index{addEvent@{addEvent}!BasicEventWindow@{BasicEventWindow}}
+\doxysubsubsection{\texorpdfstring{addEvent}{addEvent}}
+{\footnotesize\ttfamily bool Basic\+Event\+Window\+::add\+Event (\begin{DoxyParamCaption}\item[{const char}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classBasicEventWindow_a6c9ea939a2fb7edf12c05662a1a0ce3f}\label{classBasicEventWindow_a6c9ea939a2fb7edf12c05662a1a0ce3f}} 
+\index{BasicEventWindow@{BasicEventWindow}!changeColor@{changeColor}}
+\index{changeColor@{changeColor}!BasicEventWindow@{BasicEventWindow}}
+\doxysubsubsection{\texorpdfstring{changeColor()}{changeColor()}}
+{\footnotesize\ttfamily void Basic\+Event\+Window\+::change\+Color (\begin{DoxyParamCaption}\item[{QString}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classBasicEventWindow_a450e0bf18e8a5ccd6c64442b5bd9a549}\label{classBasicEventWindow_a450e0bf18e8a5ccd6c64442b5bd9a549}} 
+\index{BasicEventWindow@{BasicEventWindow}!generate@{generate}}
+\index{generate@{generate}!BasicEventWindow@{BasicEventWindow}}
+\doxysubsubsection{\texorpdfstring{generate}{generate}}
+{\footnotesize\ttfamily void Basic\+Event\+Window\+::generate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classBasicEventWindow_a9920b9ec9db20ac74391568ff6efee0c}\label{classBasicEventWindow_a9920b9ec9db20ac74391568ff6efee0c}} 
+\index{BasicEventWindow@{BasicEventWindow}!nextCalendar@{nextCalendar}}
+\index{nextCalendar@{nextCalendar}!BasicEventWindow@{BasicEventWindow}}
+\doxysubsubsection{\texorpdfstring{nextCalendar}{nextCalendar}}
+{\footnotesize\ttfamily void Basic\+Event\+Window\+::next\+Calendar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classBasicEventWindow_a5421689eca7e6ceb7bdafb80b0ac9427}\label{classBasicEventWindow_a5421689eca7e6ceb7bdafb80b0ac9427}} 
+\index{BasicEventWindow@{BasicEventWindow}!nextCalendarSignal@{nextCalendarSignal}}
+\index{nextCalendarSignal@{nextCalendarSignal}!BasicEventWindow@{BasicEventWindow}}
+\doxysubsubsection{\texorpdfstring{nextCalendarSignal}{nextCalendarSignal}}
+{\footnotesize\ttfamily void Basic\+Event\+Window\+::next\+Calendar\+Signal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCalendar}{Calendar}} $\ast$}]{m\+\_\+calendar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classBasicEventWindow_af6ab882918a1d67d7df08198556554fe}\label{classBasicEventWindow_af6ab882918a1d67d7df08198556554fe}} 
+\index{BasicEventWindow@{BasicEventWindow}!nextEvent@{nextEvent}}
+\index{nextEvent@{nextEvent}!BasicEventWindow@{BasicEventWindow}}
+\doxysubsubsection{\texorpdfstring{nextEvent}{nextEvent}}
+{\footnotesize\ttfamily void Basic\+Event\+Window\+::next\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classBasicEventWindow_ae6e8c801ac6407ea1e0b5d7a42f62af1}\label{classBasicEventWindow_ae6e8c801ac6407ea1e0b5d7a42f62af1}} 
+\index{BasicEventWindow@{BasicEventWindow}!previousCalendar@{previousCalendar}}
+\index{previousCalendar@{previousCalendar}!BasicEventWindow@{BasicEventWindow}}
+\doxysubsubsection{\texorpdfstring{previousCalendar}{previousCalendar}}
+{\footnotesize\ttfamily void Basic\+Event\+Window\+::previous\+Calendar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classBasicEventWindow_aad9fc7bbd78688a03ed7b889ab01221e}\label{classBasicEventWindow_aad9fc7bbd78688a03ed7b889ab01221e}} 
+\index{BasicEventWindow@{BasicEventWindow}!previousCalendarSignal@{previousCalendarSignal}}
+\index{previousCalendarSignal@{previousCalendarSignal}!BasicEventWindow@{BasicEventWindow}}
+\doxysubsubsection{\texorpdfstring{previousCalendarSignal}{previousCalendarSignal}}
+{\footnotesize\ttfamily void Basic\+Event\+Window\+::previous\+Calendar\+Signal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCalendar}{Calendar}} $\ast$}]{m\+\_\+calendar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classBasicEventWindow_a442b422d15b55e74b68d543c8f93be53}\label{classBasicEventWindow_a442b422d15b55e74b68d543c8f93be53}} 
+\index{BasicEventWindow@{BasicEventWindow}!previousEvent@{previousEvent}}
+\index{previousEvent@{previousEvent}!BasicEventWindow@{BasicEventWindow}}
+\doxysubsubsection{\texorpdfstring{previousEvent}{previousEvent}}
+{\footnotesize\ttfamily void Basic\+Event\+Window\+::previous\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classBasicEventWindow_a7003ab915bb9c49ff5f51797e34d5e03}\label{classBasicEventWindow_a7003ab915bb9c49ff5f51797e34d5e03}} 
+\index{BasicEventWindow@{BasicEventWindow}!removeEvent@{removeEvent}}
+\index{removeEvent@{removeEvent}!BasicEventWindow@{BasicEventWindow}}
+\doxysubsubsection{\texorpdfstring{removeEvent}{removeEvent}}
+{\footnotesize\ttfamily void Basic\+Event\+Window\+::remove\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classBasicEventWindow_ac7975df9bfd5c6a1db37c353ec859610}\label{classBasicEventWindow_ac7975df9bfd5c6a1db37c353ec859610}} 
+\index{BasicEventWindow@{BasicEventWindow}!saveCalendar@{saveCalendar}}
+\index{saveCalendar@{saveCalendar}!BasicEventWindow@{BasicEventWindow}}
+\doxysubsubsection{\texorpdfstring{saveCalendar}{saveCalendar}}
+{\footnotesize\ttfamily void Basic\+Event\+Window\+::save\+Calendar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCalendar}{Calendar}} $\ast$}]{m\+\_\+calendar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classBasicEventWindow_ab6185be3e48e5f81df9bd9804b3e6f9c}\label{classBasicEventWindow_ab6185be3e48e5f81df9bd9804b3e6f9c}} 
+\index{BasicEventWindow@{BasicEventWindow}!updateUi@{updateUi}}
+\index{updateUi@{updateUi}!BasicEventWindow@{BasicEventWindow}}
+\doxysubsubsection{\texorpdfstring{updateUi}{updateUi}}
+{\footnotesize\ttfamily void Basic\+Event\+Window\+::update\+Ui (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classBasicEventWindow_a40094d39aed31f65caa5a5ef8184477a}\label{classBasicEventWindow_a40094d39aed31f65caa5a5ef8184477a}} 
+\index{BasicEventWindow@{BasicEventWindow}!m\_basicCal@{m\_basicCal}}
+\index{m\_basicCal@{m\_basicCal}!BasicEventWindow@{BasicEventWindow}}
+\doxysubsubsection{\texorpdfstring{m\_basicCal}{m\_basicCal}}
+{\footnotesize\ttfamily QList$<$\mbox{\hyperlink{classEvent}{Event}}$>$ Basic\+Event\+Window\+::m\+\_\+basic\+Cal\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classBasicEventWindow_a7b2a92891384d976a8537d9878763f67}\label{classBasicEventWindow_a7b2a92891384d976a8537d9878763f67}} 
+\index{BasicEventWindow@{BasicEventWindow}!m\_basicCalendar@{m\_basicCalendar}}
+\index{m\_basicCalendar@{m\_basicCalendar}!BasicEventWindow@{BasicEventWindow}}
+\doxysubsubsection{\texorpdfstring{m\_basicCalendar}{m\_basicCalendar}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCalendar}{Calendar}}$\ast$ Basic\+Event\+Window\+::m\+\_\+basic\+Calendar\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classBasicEventWindow_a04865153a34f07f7d0a5e6c8b701a94e}\label{classBasicEventWindow_a04865153a34f07f7d0a5e6c8b701a94e}} 
+\index{BasicEventWindow@{BasicEventWindow}!m\_basicEvent@{m\_basicEvent}}
+\index{m\_basicEvent@{m\_basicEvent}!BasicEventWindow@{BasicEventWindow}}
+\doxysubsubsection{\texorpdfstring{m\_basicEvent}{m\_basicEvent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBasicEvent}{Basic\+Event}}$\ast$ Basic\+Event\+Window\+::m\+\_\+basic\+Event\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classBasicEventWindow_aa5738128b49e6ca81af439c62b5cc254}\label{classBasicEventWindow_aa5738128b49e6ca81af439c62b5cc254}} 
+\index{BasicEventWindow@{BasicEventWindow}!m\_cal@{m\_cal}}
+\index{m\_cal@{m\_cal}!BasicEventWindow@{BasicEventWindow}}
+\doxysubsubsection{\texorpdfstring{m\_cal}{m\_cal}}
+{\footnotesize\ttfamily QList$<$\mbox{\hyperlink{classEvent}{Event}}$>$ Basic\+Event\+Window\+::m\+\_\+cal\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classBasicEventWindow_a2050b98a5a5e9271630199eb315d05b1}\label{classBasicEventWindow_a2050b98a5a5e9271630199eb315d05b1}} 
+\index{BasicEventWindow@{BasicEventWindow}!m\_calendar@{m\_calendar}}
+\index{m\_calendar@{m\_calendar}!BasicEventWindow@{BasicEventWindow}}
+\doxysubsubsection{\texorpdfstring{m\_calendar}{m\_calendar}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCalendar}{Calendar}}$\ast$ Basic\+Event\+Window\+::m\+\_\+calendar\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classBasicEventWindow_a5bcf4f79a73703447512a8c69918616d}\label{classBasicEventWindow_a5bcf4f79a73703447512a8c69918616d}} 
+\index{BasicEventWindow@{BasicEventWindow}!m\_currentCalendarIndex@{m\_currentCalendarIndex}}
+\index{m\_currentCalendarIndex@{m\_currentCalendarIndex}!BasicEventWindow@{BasicEventWindow}}
+\doxysubsubsection{\texorpdfstring{m\_currentCalendarIndex}{m\_currentCalendarIndex}}
+{\footnotesize\ttfamily int Basic\+Event\+Window\+::m\+\_\+current\+Calendar\+Index}
+
+\mbox{\Hypertarget{classBasicEventWindow_add317f736781e21aac3e1d6fdf7d4bff}\label{classBasicEventWindow_add317f736781e21aac3e1d6fdf7d4bff}} 
+\index{BasicEventWindow@{BasicEventWindow}!m\_currentIndex@{m\_currentIndex}}
+\index{m\_currentIndex@{m\_currentIndex}!BasicEventWindow@{BasicEventWindow}}
+\doxysubsubsection{\texorpdfstring{m\_currentIndex}{m\_currentIndex}}
+{\footnotesize\ttfamily int Basic\+Event\+Window\+::m\+\_\+current\+Index}
+
+\mbox{\Hypertarget{classBasicEventWindow_a93c5ba3483e11dbd47bb13b45d8ea2be}\label{classBasicEventWindow_a93c5ba3483e11dbd47bb13b45d8ea2be}} 
+\index{BasicEventWindow@{BasicEventWindow}!m\_listOfCalendars@{m\_listOfCalendars}}
+\index{m\_listOfCalendars@{m\_listOfCalendars}!BasicEventWindow@{BasicEventWindow}}
+\doxysubsubsection{\texorpdfstring{m\_listOfCalendars}{m\_listOfCalendars}}
+{\footnotesize\ttfamily QList$<$\mbox{\hyperlink{classCalendar}{Calendar}}$\ast$$>$ Basic\+Event\+Window\+::m\+\_\+list\+Of\+Calendars}
+
+\mbox{\Hypertarget{classBasicEventWindow_a79f4d09d0eb88dc379124625a801bc91}\label{classBasicEventWindow_a79f4d09d0eb88dc379124625a801bc91}} 
+\index{BasicEventWindow@{BasicEventWindow}!m\_scheduler@{m\_scheduler}}
+\index{m\_scheduler@{m\_scheduler}!BasicEventWindow@{BasicEventWindow}}
+\doxysubsubsection{\texorpdfstring{m\_scheduler}{m\_scheduler}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classScheduler}{Scheduler}}$\ast$ Basic\+Event\+Window\+::m\+\_\+scheduler\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classBasicEventWindow_a11591a02e611335ffacd5201b55b9cdd}\label{classBasicEventWindow_a11591a02e611335ffacd5201b55b9cdd}} 
+\index{BasicEventWindow@{BasicEventWindow}!m\_startDate@{m\_startDate}}
+\index{m\_startDate@{m\_startDate}!BasicEventWindow@{BasicEventWindow}}
+\doxysubsubsection{\texorpdfstring{m\_startDate}{m\_startDate}}
+{\footnotesize\ttfamily QDate$\ast$ Basic\+Event\+Window\+::m\+\_\+start\+Date\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classBasicEventWindow_a29875cac8316e92ba0d62646863b8d3f}\label{classBasicEventWindow_a29875cac8316e92ba0d62646863b8d3f}} 
+\index{BasicEventWindow@{BasicEventWindow}!ui@{ui}}
+\index{ui@{ui}!BasicEventWindow@{BasicEventWindow}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Basic\+Event\+Window$\ast$ Basic\+Event\+Window\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{basiceventwindow_8h}{basiceventwindow.\+h}}\item 
+src/\mbox{\hyperlink{basiceventwindow_8cpp}{basiceventwindow.\+cpp}}\end{DoxyCompactItemize}

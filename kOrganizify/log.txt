@@ -1,0 +1,271 @@
+Enabled checks:
+    clang-analyzer-apiModeling.StdCLibraryFunctions
+    clang-analyzer-apiModeling.TrustNonnull
+    clang-analyzer-apiModeling.google.GTest
+    clang-analyzer-apiModeling.llvm.CastValue
+    clang-analyzer-apiModeling.llvm.ReturnValue
+    clang-analyzer-core.CallAndMessage
+    clang-analyzer-core.CallAndMessageModeling
+    clang-analyzer-core.DivideZero
+    clang-analyzer-core.DynamicTypePropagation
+    clang-analyzer-core.NonNullParamChecker
+    clang-analyzer-core.NonnilStringConstants
+    clang-analyzer-core.NullDereference
+    clang-analyzer-core.StackAddrEscapeBase
+    clang-analyzer-core.StackAddressEscape
+    clang-analyzer-core.UndefinedBinaryOperatorResult
+    clang-analyzer-core.VLASize
+    clang-analyzer-core.builtin.BuiltinFunctions
+    clang-analyzer-core.builtin.NoReturnFunctions
+    clang-analyzer-core.uninitialized.ArraySubscript
+    clang-analyzer-core.uninitialized.Assign
+    clang-analyzer-core.uninitialized.Branch
+    clang-analyzer-core.uninitialized.CapturedBlockVariable
+    clang-analyzer-core.uninitialized.UndefReturn
+    clang-analyzer-cplusplus.InnerPointer
+    clang-analyzer-cplusplus.Move
+    clang-analyzer-cplusplus.NewDelete
+    clang-analyzer-cplusplus.NewDeleteLeaks
+    clang-analyzer-cplusplus.PlacementNew
+    clang-analyzer-cplusplus.PureVirtualCall
+    clang-analyzer-cplusplus.SelfAssignment
+    clang-analyzer-cplusplus.SmartPtrModeling
+    clang-analyzer-cplusplus.StringChecker
+    clang-analyzer-cplusplus.VirtualCallModeling
+    clang-analyzer-deadcode.DeadStores
+    clang-analyzer-fuchsia.HandleChecker
+    clang-analyzer-nullability.NullPassedToNonnull
+    clang-analyzer-nullability.NullReturnedFromNonnull
+    clang-analyzer-nullability.NullabilityBase
+    clang-analyzer-nullability.NullableDereferenced
+    clang-analyzer-nullability.NullablePassedToNonnull
+    clang-analyzer-nullability.NullableReturnedFromNonnull
+    clang-analyzer-optin.cplusplus.UninitializedObject
+    clang-analyzer-optin.cplusplus.VirtualCall
+    clang-analyzer-optin.mpi.MPI-Checker
+    clang-analyzer-optin.osx.OSObjectCStyleCast
+    clang-analyzer-optin.osx.cocoa.localizability.EmptyLocalizationContextChecker
+    clang-analyzer-optin.osx.cocoa.localizability.NonLocalizedStringChecker
+    clang-analyzer-optin.performance.GCDAntipattern
+    clang-analyzer-optin.performance.Padding
+    clang-analyzer-optin.portability.UnixAPI
+    clang-analyzer-osx.API
+    clang-analyzer-osx.MIG
+    clang-analyzer-osx.NSOrCFErrorDerefChecker
+    clang-analyzer-osx.NumberObjectConversion
+    clang-analyzer-osx.OSObjectRetainCount
+    clang-analyzer-osx.ObjCProperty
+    clang-analyzer-osx.SecKeychainAPI
+    clang-analyzer-osx.cocoa.AtSync
+    clang-analyzer-osx.cocoa.AutoreleaseWrite
+    clang-analyzer-osx.cocoa.ClassRelease
+    clang-analyzer-osx.cocoa.Dealloc
+    clang-analyzer-osx.cocoa.IncompatibleMethodTypes
+    clang-analyzer-osx.cocoa.Loops
+    clang-analyzer-osx.cocoa.MissingSuperCall
+    clang-analyzer-osx.cocoa.NSAutoreleasePool
+    clang-analyzer-osx.cocoa.NSError
+    clang-analyzer-osx.cocoa.NilArg
+    clang-analyzer-osx.cocoa.NonNilReturnValue
+    clang-analyzer-osx.cocoa.ObjCGenerics
+    clang-analyzer-osx.cocoa.RetainCount
+    clang-analyzer-osx.cocoa.RetainCountBase
+    clang-analyzer-osx.cocoa.RunLoopAutoreleaseLeak
+    clang-analyzer-osx.cocoa.SelfInit
+    clang-analyzer-osx.cocoa.SuperDealloc
+    clang-analyzer-osx.cocoa.UnusedIvars
+    clang-analyzer-osx.cocoa.VariadicMethodTypes
+    clang-analyzer-osx.coreFoundation.CFError
+    clang-analyzer-osx.coreFoundation.CFNumber
+    clang-analyzer-osx.coreFoundation.CFRetainRelease
+    clang-analyzer-osx.coreFoundation.containers.OutOfBounds
+    clang-analyzer-osx.coreFoundation.containers.PointerSizedValues
+    clang-analyzer-security.FloatLoopCounter
+    clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling
+    clang-analyzer-security.insecureAPI.SecuritySyntaxChecker
+    clang-analyzer-security.insecureAPI.UncheckedReturn
+    clang-analyzer-security.insecureAPI.bcmp
+    clang-analyzer-security.insecureAPI.bcopy
+    clang-analyzer-security.insecureAPI.bzero
+    clang-analyzer-security.insecureAPI.decodeValueOfObjCType
+    clang-analyzer-security.insecureAPI.getpw
+    clang-analyzer-security.insecureAPI.gets
+    clang-analyzer-security.insecureAPI.mkstemp
+    clang-analyzer-security.insecureAPI.mktemp
+    clang-analyzer-security.insecureAPI.rand
+    clang-analyzer-security.insecureAPI.strcpy
+    clang-analyzer-security.insecureAPI.vfork
+    clang-analyzer-unix.API
+    clang-analyzer-unix.DynamicMemoryModeling
+    clang-analyzer-unix.Malloc
+    clang-analyzer-unix.MallocSizeof
+    clang-analyzer-unix.MismatchedDeallocator
+    clang-analyzer-unix.Vfork
+    clang-analyzer-unix.cstring.BadSizeArg
+    clang-analyzer-unix.cstring.CStringModeling
+    clang-analyzer-unix.cstring.NullArg
+    clang-analyzer-valist.CopyToSelf
+    clang-analyzer-valist.Uninitialized
+    clang-analyzer-valist.Unterminated
+    clang-analyzer-valist.ValistBase
+    clang-analyzer-webkit.NoUncountedMemberChecker
+    clang-analyzer-webkit.RefCntblBaseVirtualDtor
+    clang-analyzer-webkit.UncountedLambdaCapturesChecker
+    modernize-avoid-bind
+    modernize-avoid-c-arrays
+    modernize-concat-nested-namespaces
+    modernize-deprecated-headers
+    modernize-deprecated-ios-base-aliases
+    modernize-loop-convert
+    modernize-make-shared
+    modernize-make-unique
+    modernize-pass-by-value
+    modernize-raw-string-literal
+    modernize-redundant-void-arg
+    modernize-replace-auto-ptr
+    modernize-replace-disallow-copy-and-assign-macro
+    modernize-replace-random-shuffle
+    modernize-return-braced-init-list
+    modernize-shrink-to-fit
+    modernize-unary-static-assert
+    modernize-use-auto
+    modernize-use-bool-literals
+    modernize-use-default-member-init
+    modernize-use-emplace
+    modernize-use-equals-default
+    modernize-use-equals-delete
+    modernize-use-nodiscard
+    modernize-use-noexcept
+    modernize-use-nullptr
+    modernize-use-override
+    modernize-use-trailing-return-type
+    modernize-use-transparent-functors
+    modernize-use-uncaught-exceptions
+    modernize-use-using
+
+clang-tidy-14 --use-color -checks=modernize-* -p=/home/marko/Desktop/kOrganizify/kOrganizify/build /home/marko/Desktop/kOrganizify/kOrganizify/build/kOrganizify_autogen/EWIEGA46WW/qrc_resources.cpp
+[0;1;31merror: [0m[1mno input files [clang-diagnostic-error][0m
+[0;1;31merror: [0m[1mno such file or directory: '/home/marko/Desktop/kOrganizify/kOrganizify/build/kOrganizify_autogen/EWIEGA46WW/qrc_resources.cpp' [clang-diagnostic-error][0m
+[0;1;31merror: [0m[1munable to handle compilation, expected exactly one compiler job in '' [clang-diagnostic-error][0m
+clang-tidy-14 --use-color -checks=modernize-* -p=/home/marko/Desktop/kOrganizify/kOrganizify/build /home/marko/Desktop/kOrganizify/kOrganizify/src/task.cpp
+[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/task.cpp:6:7: [0m[0;1;35mwarning: [0m[1muse '= default' to define a trivial default constructor [modernize-use-equals-default][0m
+Task::Task() {}
+[0;1;32m      ^      ~~
+[0m[0;32m             = default;
+[0m[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/task.cpp:8:12: [0m[0;1;35mwarning: [0m[1mpass by value and use std::move [modernize-pass-by-value][0m
+Task::Task(QString name)
+[0;1;32m           ^
+[0m[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/task.cpp:17:15: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QString Task::getName() const{
+[0;1;32m~~~~~~~       ^
+[0m[0;32mauto                          -> QString
+[0m[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/task.cpp:21:12: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+bool Task::getIsChecked() const{
+[0;1;32m~~~~       ^
+[0m[0;32mauto                            -> bool
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/marko/Desktop/kOrganizify/kOrganizify/build /home/marko/Desktop/kOrganizify/kOrganizify/src/syncresponsewindow.cpp
+[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/syncresponsewindow.cpp:2:10: [0m[0;1;31merror: [0m[1m'ui_syncresponsewindow.h' file not found [clang-diagnostic-error][0m
+#include "ui_syncresponsewindow.h"
+[0;1;32m         ^~~~~~~~~~~~~~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/marko/Desktop/kOrganizify/kOrganizify/build /home/marko/Desktop/kOrganizify/kOrganizify/src/syncdeniedwindow.cpp
+[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/syncdeniedwindow.cpp:2:10: [0m[0;1;31merror: [0m[1m'ui_syncdeniedwindow.h' file not found [clang-diagnostic-error][0m
+#include "ui_syncdeniedwindow.h"
+[0;1;32m         ^~~~~~~~~~~~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/marko/Desktop/kOrganizify/kOrganizify/build /home/marko/Desktop/kOrganizify/kOrganizify/src/toDoList.cpp
+[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/toDoList.cpp:37:12: [0m[0;1;35mwarning: [0m[1mavoid repeating the return type from the declaration; use a braced initializer list instead [modernize-return-braced-init-list][0m
+    return QJsonValue(jsonArray);
+[0;1;32m           ^
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/marko/Desktop/kOrganizify/kOrganizify/build /home/marko/Desktop/kOrganizify/kOrganizify/src/syncwindow.cpp
+[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/syncwindow.cpp:3:10: [0m[0;1;31merror: [0m[1m'ui_syncwindow.h' file not found [clang-diagnostic-error][0m
+#include "ui_syncwindow.h"
+[0;1;32m         ^~~~~~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/marko/Desktop/kOrganizify/kOrganizify/build /home/marko/Desktop/kOrganizify/kOrganizify/src/basiceventwindow.cpp
+[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/basiceventwindow.cpp:2:10: [0m[0;1;31merror: [0m[1m'ui_basiceventwindow.h' file not found [clang-diagnostic-error][0m
+#include "ui_basiceventwindow.h"
+[0;1;32m         ^~~~~~~~~~~~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/marko/Desktop/kOrganizify/kOrganizify/build /home/marko/Desktop/kOrganizify/kOrganizify/src/calendar.cpp
+[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/calendar.cpp:30:12: [0m[0;1;35mwarning: [0m[1mavoid repeating the return type from the declaration; use a braced initializer list instead [modernize-return-braced-init-list][0m
+    return QJsonValue(jsonArray);
+[0;1;32m           ^
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/marko/Desktop/kOrganizify/kOrganizify/build /home/marko/Desktop/kOrganizify/kOrganizify/src/settingswindow.cpp
+[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/settingswindow.cpp:2:10: [0m[0;1;31merror: [0m[1m'ui_settingswindow.h' file not found [clang-diagnostic-error][0m
+#include "ui_settingswindow.h"
+[0;1;32m         ^~~~~~~~~~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/marko/Desktop/kOrganizify/kOrganizify/build /home/marko/Desktop/kOrganizify/kOrganizify/src/user.cpp
+[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/user.cpp:8:12: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+bool User::userExists(const QString &username) {
+[0;1;32m~~~~       ^
+[0m[0;32mauto                                           -> bool
+[0m[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/user.cpp:21:18: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QJsonValue User::toJson() const {
+[0;1;32m~~~~~~~~~~       ^
+[0m[0;32mauto                            -> QJsonValue
+[0m[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/user.cpp:29:12: [0m[0;1;35mwarning: [0m[1mavoid repeating the return type from the declaration; use a braced initializer list instead [modernize-return-braced-init-list][0m
+    return QJsonValue(jsonObject);
+[0;1;32m           ^
+[0m[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/user.cpp:38:12: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+bool User::login(const QString &password) {
+[0;1;32m~~~~       ^
+[0m[0;32mauto                                      -> bool
+[0m[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/user.cpp:53:12: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+bool User::registerUser(const QString &password) {
+[0;1;32m~~~~       ^
+[0m[0;32mauto                                             -> bool
+[0m[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/user.cpp:69:17: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+Calendar& User::getCalendar() {
+[0;1;32m~~~~~~~~~       ^
+[0m[0;32mauto                          -> Calendar&
+[0m[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/user.cpp:73:15: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QString User::getUsername() const {
+[0;1;32m~~~~~~~       ^
+[0m[0;32mauto                              -> QString
+[0m[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/user.cpp:77:17: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+ToDoList& User::getToDoList() {
+[0;1;32m~~~~~~~~~       ^
+[0m[0;32mauto                          -> ToDoList&
+[0m[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/user.cpp:81:17: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+Settings& User::getSettings() {
+[0;1;32m~~~~~~~~~       ^
+[0m[0;32mauto                          -> Settings&
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/marko/Desktop/kOrganizify/kOrganizify/build /home/marko/Desktop/kOrganizify/kOrganizify/build/kOrganizify_autogen/mocs_compilation.cpp
+[0;1;31merror: [0m[1mno input files [clang-diagnostic-error][0m
+[0;1;31merror: [0m[1mno such file or directory: '/home/marko/Desktop/kOrganizify/kOrganizify/build/kOrganizify_autogen/mocs_compilation.cpp' [clang-diagnostic-error][0m
+[0;1;31merror: [0m[1munable to handle compilation, expected exactly one compiler job in '' [clang-diagnostic-error][0m
+clang-tidy-14 --use-color -checks=modernize-* -p=/home/marko/Desktop/kOrganizify/kOrganizify/build /home/marko/Desktop/kOrganizify/kOrganizify/src/saveload.cpp
+[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/saveload.cpp:13:19: [0m[0;1;35mwarning: [0m[1muse a trailing return type for this function [modernize-use-trailing-return-type][0m
+QString SaveLoad::getFilePath(const QString &username) {
+[0;1;32m~~~~~~~           ^
+[0m[0;32mauto                                                   -> QString
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/marko/Desktop/kOrganizify/kOrganizify/build /home/marko/Desktop/kOrganizify/kOrganizify/src/notifications.cpp
+clang-tidy-14 --use-color -checks=modernize-* -p=/home/marko/Desktop/kOrganizify/kOrganizify/build /home/marko/Desktop/kOrganizify/kOrganizify/src/appwindow.cpp
+[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/appwindow.h:25:10: [0m[0;1;31merror: [0m[1m'ui_settingswindow.h' file not found [clang-diagnostic-error][0m
+#include "ui_settingswindow.h"
+[0;1;32m         ^~~~~~~~~~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/marko/Desktop/kOrganizify/kOrganizify/build /home/marko/Desktop/kOrganizify/kOrganizify/src/basicevent.cpp
+clang-tidy-14 --use-color -checks=modernize-* -p=/home/marko/Desktop/kOrganizify/kOrganizify/build /home/marko/Desktop/kOrganizify/kOrganizify/src/notificationswindow.cpp
+[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/notificationswindow.cpp:2:10: [0m[0;1;31merror: [0m[1m'ui_notificationswindow.h' file not found [clang-diagnostic-error][0m
+#include "ui_notificationswindow.h"
+[0;1;32m         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/marko/Desktop/kOrganizify/kOrganizify/build /home/marko/Desktop/kOrganizify/kOrganizify/src/event.cpp
+clang-tidy-14 --use-color -checks=modernize-* -p=/home/marko/Desktop/kOrganizify/kOrganizify/build /home/marko/Desktop/kOrganizify/kOrganizify/src/client.cpp
+clang-tidy-14 --use-color -checks=modernize-* -p=/home/marko/Desktop/kOrganizify/kOrganizify/build /home/marko/Desktop/kOrganizify/kOrganizify/src/responsewindow.cpp
+[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/responsewindow.cpp:2:10: [0m[0;1;31merror: [0m[1m'ui_responsewindow.h' file not found [clang-diagnostic-error][0m
+#include "ui_responsewindow.h"
+[0;1;32m         ^~~~~~~~~~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/marko/Desktop/kOrganizify/kOrganizify/build /home/marko/Desktop/kOrganizify/kOrganizify/src/settings.cpp
+[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/settings.cpp:26:12: [0m[0;1;35mwarning: [0m[1mavoid repeating the return type from the declaration; use a braced initializer list instead [modernize-return-braced-init-list][0m
+    return QJsonValue(jsonObject);
+[0;1;32m           ^
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/marko/Desktop/kOrganizify/kOrganizify/build /home/marko/Desktop/kOrganizify/kOrganizify/src/eventwindow.cpp
+[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/eventwindow.cpp:3:10: [0m[0;1;31merror: [0m[1m'ui_eventwindow.h' file not found [clang-diagnostic-error][0m
+#include "ui_eventwindow.h"
+[0;1;32m         ^~~~~~~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/marko/Desktop/kOrganizify/kOrganizify/build /home/marko/Desktop/kOrganizify/kOrganizify/src/mainwindow.cpp
+[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/appwindow.h:25:10: [0m[0;1;31merror: [0m[1m'ui_settingswindow.h' file not found [clang-diagnostic-error][0m
+#include "ui_settingswindow.h"
+[0;1;32m         ^~~~~~~~~~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/marko/Desktop/kOrganizify/kOrganizify/build /home/marko/Desktop/kOrganizify/kOrganizify/src/main.cpp
+[1m/home/marko/Desktop/kOrganizify/kOrganizify/src/appwindow.h:25:10: [0m[0;1;31merror: [0m[1m'ui_settingswindow.h' file not found [clang-diagnostic-error][0m
+#include "ui_settingswindow.h"
+[0;1;32m         ^~~~~~~~~~~~~~~~~~~~~
+[0mclang-tidy-14 --use-color -checks=modernize-* -p=/home/marko/Desktop/kOrganizify/kOrganizify/build /home/marko/Desktop/kOrganizify/kOrganizify/src/scheduler.cpp

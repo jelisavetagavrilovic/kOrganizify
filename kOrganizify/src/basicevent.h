@@ -3,26 +3,25 @@
 
 #include <QString>
 
-class BasicEvent
-{
+class BasicEvent {
 public:
-    BasicEvent();
-    virtual ~BasicEvent() = default;
+  BasicEvent();
+  virtual ~BasicEvent() = default;
 
-    QString getTitle() const;
-    void setTitle(const QString &title);
+  QString getTitle() const;
+  void setTitle(const QString &title);
 
-    int getDuration() const;
-    void setDuration(const int duration);
-    void deleteString();
+  int getDuration() const;
+  void setDuration(const int duration);
+  void deleteString();
 
-    bool isValidate() const;
+  bool isValidate() const;
 
-    bool operator==(const BasicEvent &other) const;
+  bool operator==(const BasicEvent &other) const;
 
 private:
-    QString m_title;
-    int m_duration;
+  QString m_title;
+  int m_duration;
 };
 
 #endif // BASICEVENT_H

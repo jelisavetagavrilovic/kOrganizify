@@ -1,0 +1,140 @@
+\hypertarget{classToDoList}{}\doxysection{To\+Do\+List Class Reference}
+\label{classToDoList}\index{ToDoList@{ToDoList}}
+
+
+{\ttfamily \#include $<$to\+Do\+List.\+h$>$}
+
+
+
+Inheritance diagram for To\+Do\+List\+:
+% FIG 0
+
+
+Collaboration diagram for To\+Do\+List\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classToDoList_a7df3147d31ecbcc7f3d04327f139eb67}{To\+Do\+List}} (QObject $\ast$parent=nullptr)
+\item 
+void \mbox{\hyperlink{classToDoList_a1a5f69198a89870fc8509756a7a2dcce}{load\+Data}} (const QString \&username)
+\item 
+void \mbox{\hyperlink{classToDoList_a36167c6d1a9df6cd7d1a4dfc3d975c6e}{save\+Data}} (const QString \&username)
+\item 
+void \mbox{\hyperlink{classToDoList_ae49f7eabe503ff96c96ceedcf26338e5}{from\+Json}} (const QJson\+Object \&json\+Object) override
+\item 
+void \mbox{\hyperlink{classToDoList_ae4c45bf864d39526981f6f20408d79b7}{set\+Tasks}} (const QVector$<$ \mbox{\hyperlink{classTask}{Task}} $>$ \&tasks)
+\item 
+void \mbox{\hyperlink{classToDoList_af18fea444843d43e084e5ad6320e96e5}{add\+Task}} (const \mbox{\hyperlink{classTask}{Task}} task)
+\item 
+void \mbox{\hyperlink{classToDoList_a006d29c890ecad070a6e1dd435855fde}{remove\+Task}} (const int index)
+\item 
+QVector$<$ \mbox{\hyperlink{classTask}{Task}} $>$ \mbox{\hyperlink{classToDoList_a3cf93f973f0b6f78c085ef997b5dd4ee}{get\+Tasks}} ()
+\item 
+\mbox{\hyperlink{classTask}{Task}} $\ast$ \mbox{\hyperlink{classToDoList_a80df754a4a2e6851ae9fbecc4932386c}{get\+Task}} (int index) const
+\item 
+QString \mbox{\hyperlink{classToDoList_ae3c406157a4ac31c8587f68e991bf33a}{to\+String}} ()
+\item 
+QJson\+Value \mbox{\hyperlink{classToDoList_a8fc5d4103ca891f45010a86959bc511d}{to\+Json}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QVector$<$ \mbox{\hyperlink{classTask}{Task}} $>$ \mbox{\hyperlink{classToDoList_a1a9501d258e3514e9c3960f9af319937}{m\+\_\+tasks}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classToDoList_a7df3147d31ecbcc7f3d04327f139eb67}\label{classToDoList_a7df3147d31ecbcc7f3d04327f139eb67}} 
+\index{ToDoList@{ToDoList}!ToDoList@{ToDoList}}
+\index{ToDoList@{ToDoList}!ToDoList@{ToDoList}}
+\doxysubsubsection{\texorpdfstring{ToDoList()}{ToDoList()}}
+{\footnotesize\ttfamily To\+Do\+List\+::\+To\+Do\+List (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classToDoList_af18fea444843d43e084e5ad6320e96e5}\label{classToDoList_af18fea444843d43e084e5ad6320e96e5}} 
+\index{ToDoList@{ToDoList}!addTask@{addTask}}
+\index{addTask@{addTask}!ToDoList@{ToDoList}}
+\doxysubsubsection{\texorpdfstring{addTask()}{addTask()}}
+{\footnotesize\ttfamily void To\+Do\+List\+::add\+Task (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTask}{Task}}}]{task }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classToDoList_ae49f7eabe503ff96c96ceedcf26338e5}\label{classToDoList_ae49f7eabe503ff96c96ceedcf26338e5}} 
+\index{ToDoList@{ToDoList}!fromJson@{fromJson}}
+\index{fromJson@{fromJson}!ToDoList@{ToDoList}}
+\doxysubsubsection{\texorpdfstring{fromJson()}{fromJson()}}
+{\footnotesize\ttfamily void To\+Do\+List\+::from\+Json (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classSaveLoad_a05c9c7a31d4e909f05c1028da44f9deb}{Save\+Load}}.
+
+\mbox{\Hypertarget{classToDoList_a80df754a4a2e6851ae9fbecc4932386c}\label{classToDoList_a80df754a4a2e6851ae9fbecc4932386c}} 
+\index{ToDoList@{ToDoList}!getTask@{getTask}}
+\index{getTask@{getTask}!ToDoList@{ToDoList}}
+\doxysubsubsection{\texorpdfstring{getTask()}{getTask()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTask}{Task}} $\ast$ To\+Do\+List\+::get\+Task (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classToDoList_a3cf93f973f0b6f78c085ef997b5dd4ee}\label{classToDoList_a3cf93f973f0b6f78c085ef997b5dd4ee}} 
+\index{ToDoList@{ToDoList}!getTasks@{getTasks}}
+\index{getTasks@{getTasks}!ToDoList@{ToDoList}}
+\doxysubsubsection{\texorpdfstring{getTasks()}{getTasks()}}
+{\footnotesize\ttfamily QVector$<$ \mbox{\hyperlink{classTask}{Task}} $>$ To\+Do\+List\+::get\+Tasks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classToDoList_a1a5f69198a89870fc8509756a7a2dcce}\label{classToDoList_a1a5f69198a89870fc8509756a7a2dcce}} 
+\index{ToDoList@{ToDoList}!loadData@{loadData}}
+\index{loadData@{loadData}!ToDoList@{ToDoList}}
+\doxysubsubsection{\texorpdfstring{loadData()}{loadData()}}
+{\footnotesize\ttfamily void To\+Do\+List\+::load\+Data (\begin{DoxyParamCaption}\item[{const QString \&}]{username }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classToDoList_a006d29c890ecad070a6e1dd435855fde}\label{classToDoList_a006d29c890ecad070a6e1dd435855fde}} 
+\index{ToDoList@{ToDoList}!removeTask@{removeTask}}
+\index{removeTask@{removeTask}!ToDoList@{ToDoList}}
+\doxysubsubsection{\texorpdfstring{removeTask()}{removeTask()}}
+{\footnotesize\ttfamily void To\+Do\+List\+::remove\+Task (\begin{DoxyParamCaption}\item[{const int}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classToDoList_a36167c6d1a9df6cd7d1a4dfc3d975c6e}\label{classToDoList_a36167c6d1a9df6cd7d1a4dfc3d975c6e}} 
+\index{ToDoList@{ToDoList}!saveData@{saveData}}
+\index{saveData@{saveData}!ToDoList@{ToDoList}}
+\doxysubsubsection{\texorpdfstring{saveData()}{saveData()}}
+{\footnotesize\ttfamily void To\+Do\+List\+::save\+Data (\begin{DoxyParamCaption}\item[{const QString \&}]{username }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classToDoList_ae4c45bf864d39526981f6f20408d79b7}\label{classToDoList_ae4c45bf864d39526981f6f20408d79b7}} 
+\index{ToDoList@{ToDoList}!setTasks@{setTasks}}
+\index{setTasks@{setTasks}!ToDoList@{ToDoList}}
+\doxysubsubsection{\texorpdfstring{setTasks()}{setTasks()}}
+{\footnotesize\ttfamily void To\+Do\+List\+::set\+Tasks (\begin{DoxyParamCaption}\item[{const QVector$<$ \mbox{\hyperlink{classTask}{Task}} $>$ \&}]{tasks }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classToDoList_a8fc5d4103ca891f45010a86959bc511d}\label{classToDoList_a8fc5d4103ca891f45010a86959bc511d}} 
+\index{ToDoList@{ToDoList}!toJson@{toJson}}
+\index{toJson@{toJson}!ToDoList@{ToDoList}}
+\doxysubsubsection{\texorpdfstring{toJson()}{toJson()}}
+{\footnotesize\ttfamily QJson\+Value To\+Do\+List\+::to\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classSaveLoad_ad40a777954df28028579624c19f2d37a}{Save\+Load}}.
+
+\mbox{\Hypertarget{classToDoList_ae3c406157a4ac31c8587f68e991bf33a}\label{classToDoList_ae3c406157a4ac31c8587f68e991bf33a}} 
+\index{ToDoList@{ToDoList}!toString@{toString}}
+\index{toString@{toString}!ToDoList@{ToDoList}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily QString To\+Do\+List\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classToDoList_a1a9501d258e3514e9c3960f9af319937}\label{classToDoList_a1a9501d258e3514e9c3960f9af319937}} 
+\index{ToDoList@{ToDoList}!m\_tasks@{m\_tasks}}
+\index{m\_tasks@{m\_tasks}!ToDoList@{ToDoList}}
+\doxysubsubsection{\texorpdfstring{m\_tasks}{m\_tasks}}
+{\footnotesize\ttfamily QVector$<$\mbox{\hyperlink{classTask}{Task}}$>$ To\+Do\+List\+::m\+\_\+tasks\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{toDoList_8h}{to\+Do\+List.\+h}}\item 
+src/\mbox{\hyperlink{toDoList_8cpp}{to\+Do\+List.\+cpp}}\end{DoxyCompactItemize}

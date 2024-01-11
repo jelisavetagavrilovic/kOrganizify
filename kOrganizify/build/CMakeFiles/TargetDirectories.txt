@@ -1,0 +1,8 @@
+/home/markopaunovic/kOrganizify/kOrganizify/build/CMakeFiles/kOrganizify.dir
+/home/markopaunovic/kOrganizify/kOrganizify/build/CMakeFiles/edit_cache.dir
+/home/markopaunovic/kOrganizify/kOrganizify/build/CMakeFiles/rebuild_cache.dir
+/home/markopaunovic/kOrganizify/kOrganizify/build/CMakeFiles/list_install_components.dir
+/home/markopaunovic/kOrganizify/kOrganizify/build/CMakeFiles/install.dir
+/home/markopaunovic/kOrganizify/kOrganizify/build/CMakeFiles/install/local.dir
+/home/markopaunovic/kOrganizify/kOrganizify/build/CMakeFiles/install/strip.dir
+/home/markopaunovic/kOrganizify/kOrganizify/build/CMakeFiles/kOrganizify_autogen.dir

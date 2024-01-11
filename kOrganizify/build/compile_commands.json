@@ -1,0 +1,122 @@
+[
+{
+  "directory": "/home/markopaunovic/kOrganizify/kOrganizify/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimedia -fPIC -std=gnu++17 -o CMakeFiles/kOrganizify.dir/kOrganizify_autogen/mocs_compilation.cpp.o -c /home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/mocs_compilation.cpp",
+  "file": "/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/mocs_compilation.cpp"
+},
+{
+  "directory": "/home/markopaunovic/kOrganizify/kOrganizify/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimedia -fPIC -std=gnu++17 -o CMakeFiles/kOrganizify.dir/src/appwindow.cpp.o -c /home/markopaunovic/kOrganizify/kOrganizify/src/appwindow.cpp",
+  "file": "/home/markopaunovic/kOrganizify/kOrganizify/src/appwindow.cpp"
+},
+{
+  "directory": "/home/markopaunovic/kOrganizify/kOrganizify/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimedia -fPIC -std=gnu++17 -o CMakeFiles/kOrganizify.dir/src/basicevent.cpp.o -c /home/markopaunovic/kOrganizify/kOrganizify/src/basicevent.cpp",
+  "file": "/home/markopaunovic/kOrganizify/kOrganizify/src/basicevent.cpp"
+},
+{
+  "directory": "/home/markopaunovic/kOrganizify/kOrganizify/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimedia -fPIC -std=gnu++17 -o CMakeFiles/kOrganizify.dir/src/basiceventwindow.cpp.o -c /home/markopaunovic/kOrganizify/kOrganizify/src/basiceventwindow.cpp",
+  "file": "/home/markopaunovic/kOrganizify/kOrganizify/src/basiceventwindow.cpp"
+},
+{
+  "directory": "/home/markopaunovic/kOrganizify/kOrganizify/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimedia -fPIC -std=gnu++17 -o CMakeFiles/kOrganizify.dir/src/calendar.cpp.o -c /home/markopaunovic/kOrganizify/kOrganizify/src/calendar.cpp",
+  "file": "/home/markopaunovic/kOrganizify/kOrganizify/src/calendar.cpp"
+},
+{
+  "directory": "/home/markopaunovic/kOrganizify/kOrganizify/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimedia -fPIC -std=gnu++17 -o CMakeFiles/kOrganizify.dir/src/client.cpp.o -c /home/markopaunovic/kOrganizify/kOrganizify/src/client.cpp",
+  "file": "/home/markopaunovic/kOrganizify/kOrganizify/src/client.cpp"
+},
+{
+  "directory": "/home/markopaunovic/kOrganizify/kOrganizify/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimedia -fPIC -std=gnu++17 -o CMakeFiles/kOrganizify.dir/src/event.cpp.o -c /home/markopaunovic/kOrganizify/kOrganizify/src/event.cpp",
+  "file": "/home/markopaunovic/kOrganizify/kOrganizify/src/event.cpp"
+},
+{
+  "directory": "/home/markopaunovic/kOrganizify/kOrganizify/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimedia -fPIC -std=gnu++17 -o CMakeFiles/kOrganizify.dir/src/eventwindow.cpp.o -c /home/markopaunovic/kOrganizify/kOrganizify/src/eventwindow.cpp",
+  "file": "/home/markopaunovic/kOrganizify/kOrganizify/src/eventwindow.cpp"
+},
+{
+  "directory": "/home/markopaunovic/kOrganizify/kOrganizify/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimedia -fPIC -std=gnu++17 -o CMakeFiles/kOrganizify.dir/src/main.cpp.o -c /home/markopaunovic/kOrganizify/kOrganizify/src/main.cpp",
+  "file": "/home/markopaunovic/kOrganizify/kOrganizify/src/main.cpp"
+},
+{
+  "directory": "/home/markopaunovic/kOrganizify/kOrganizify/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimedia -fPIC -std=gnu++17 -o CMakeFiles/kOrganizify.dir/src/mainwindow.cpp.o -c /home/markopaunovic/kOrganizify/kOrganizify/src/mainwindow.cpp",
+  "file": "/home/markopaunovic/kOrganizify/kOrganizify/src/mainwindow.cpp"
+},
+{
+  "directory": "/home/markopaunovic/kOrganizify/kOrganizify/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimedia -fPIC -std=gnu++17 -o CMakeFiles/kOrganizify.dir/src/responsewindow.cpp.o -c /home/markopaunovic/kOrganizify/kOrganizify/src/responsewindow.cpp",
+  "file": "/home/markopaunovic/kOrganizify/kOrganizify/src/responsewindow.cpp"
+},
+{
+  "directory": "/home/markopaunovic/kOrganizify/kOrganizify/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimedia -fPIC -std=gnu++17 -o CMakeFiles/kOrganizify.dir/src/notifications.cpp.o -c /home/markopaunovic/kOrganizify/kOrganizify/src/notifications.cpp",
+  "file": "/home/markopaunovic/kOrganizify/kOrganizify/src/notifications.cpp"
+},
+{
+  "directory": "/home/markopaunovic/kOrganizify/kOrganizify/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimedia -fPIC -std=gnu++17 -o CMakeFiles/kOrganizify.dir/src/notificationswindow.cpp.o -c /home/markopaunovic/kOrganizify/kOrganizify/src/notificationswindow.cpp",
+  "file": "/home/markopaunovic/kOrganizify/kOrganizify/src/notificationswindow.cpp"
+},
+{
+  "directory": "/home/markopaunovic/kOrganizify/kOrganizify/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimedia -fPIC -std=gnu++17 -o CMakeFiles/kOrganizify.dir/src/saveload.cpp.o -c /home/markopaunovic/kOrganizify/kOrganizify/src/saveload.cpp",
+  "file": "/home/markopaunovic/kOrganizify/kOrganizify/src/saveload.cpp"
+},
+{
+  "directory": "/home/markopaunovic/kOrganizify/kOrganizify/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimedia -fPIC -std=gnu++17 -o CMakeFiles/kOrganizify.dir/src/scheduler.cpp.o -c /home/markopaunovic/kOrganizify/kOrganizify/src/scheduler.cpp",
+  "file": "/home/markopaunovic/kOrganizify/kOrganizify/src/scheduler.cpp"
+},
+{
+  "directory": "/home/markopaunovic/kOrganizify/kOrganizify/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimedia -fPIC -std=gnu++17 -o CMakeFiles/kOrganizify.dir/src/settings.cpp.o -c /home/markopaunovic/kOrganizify/kOrganizify/src/settings.cpp",
+  "file": "/home/markopaunovic/kOrganizify/kOrganizify/src/settings.cpp"
+},
+{
+  "directory": "/home/markopaunovic/kOrganizify/kOrganizify/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimedia -fPIC -std=gnu++17 -o CMakeFiles/kOrganizify.dir/src/settingswindow.cpp.o -c /home/markopaunovic/kOrganizify/kOrganizify/src/settingswindow.cpp",
+  "file": "/home/markopaunovic/kOrganizify/kOrganizify/src/settingswindow.cpp"
+},
+{
+  "directory": "/home/markopaunovic/kOrganizify/kOrganizify/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimedia -fPIC -std=gnu++17 -o CMakeFiles/kOrganizify.dir/src/syncdeniedwindow.cpp.o -c /home/markopaunovic/kOrganizify/kOrganizify/src/syncdeniedwindow.cpp",
+  "file": "/home/markopaunovic/kOrganizify/kOrganizify/src/syncdeniedwindow.cpp"
+},
+{
+  "directory": "/home/markopaunovic/kOrganizify/kOrganizify/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimedia -fPIC -std=gnu++17 -o CMakeFiles/kOrganizify.dir/src/syncresponsewindow.cpp.o -c /home/markopaunovic/kOrganizify/kOrganizify/src/syncresponsewindow.cpp",
+  "file": "/home/markopaunovic/kOrganizify/kOrganizify/src/syncresponsewindow.cpp"
+},
+{
+  "directory": "/home/markopaunovic/kOrganizify/kOrganizify/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimedia -fPIC -std=gnu++17 -o CMakeFiles/kOrganizify.dir/src/syncwindow.cpp.o -c /home/markopaunovic/kOrganizify/kOrganizify/src/syncwindow.cpp",
+  "file": "/home/markopaunovic/kOrganizify/kOrganizify/src/syncwindow.cpp"
+},
+{
+  "directory": "/home/markopaunovic/kOrganizify/kOrganizify/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimedia -fPIC -std=gnu++17 -o CMakeFiles/kOrganizify.dir/src/task.cpp.o -c /home/markopaunovic/kOrganizify/kOrganizify/src/task.cpp",
+  "file": "/home/markopaunovic/kOrganizify/kOrganizify/src/task.cpp"
+},
+{
+  "directory": "/home/markopaunovic/kOrganizify/kOrganizify/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimedia -fPIC -std=gnu++17 -o CMakeFiles/kOrganizify.dir/src/toDoList.cpp.o -c /home/markopaunovic/kOrganizify/kOrganizify/src/toDoList.cpp",
+  "file": "/home/markopaunovic/kOrganizify/kOrganizify/src/toDoList.cpp"
+},
+{
+  "directory": "/home/markopaunovic/kOrganizify/kOrganizify/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimedia -fPIC -std=gnu++17 -o CMakeFiles/kOrganizify.dir/src/user.cpp.o -c /home/markopaunovic/kOrganizify/kOrganizify/src/user.cpp",
+  "file": "/home/markopaunovic/kOrganizify/kOrganizify/src/user.cpp"
+},
+{
+  "directory": "/home/markopaunovic/kOrganizify/kOrganizify/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimedia -fPIC -std=gnu++17 -o CMakeFiles/kOrganizify.dir/kOrganizify_autogen/EWIEGA46WW/qrc_resources.cpp.o -c /home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/EWIEGA46WW/qrc_resources.cpp",
+  "file": "/home/markopaunovic/kOrganizify/kOrganizify/build/kOrganizify_autogen/EWIEGA46WW/qrc_resources.cpp"
+}
+]
