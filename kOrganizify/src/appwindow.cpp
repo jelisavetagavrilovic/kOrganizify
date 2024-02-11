@@ -466,7 +466,7 @@ AppWindow::~AppWindow() {
   delete m_user;
   m_user = nullptr;
   delete m_eventWindow;
-
+  delete m_notifications;
   delete ui;
 }
 
