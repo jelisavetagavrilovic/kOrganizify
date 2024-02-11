@@ -465,7 +465,6 @@ AppWindow::~AppWindow() {
   m_user->logout();
   delete m_user;
   m_user = nullptr;
-  delete m_notifications;
   delete m_eventWindow;
 
   delete ui;
