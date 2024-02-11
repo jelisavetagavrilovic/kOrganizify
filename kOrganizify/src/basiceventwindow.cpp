@@ -54,7 +54,7 @@ void BasicEventWindow::nextEvent() {
 
 void BasicEventWindow::removeEvent() {
     if (m_currentIndex >= 0 && m_currentIndex < m_basicCalendar->sizeBasic()) {
-        m_basicCalendar->removeEvent(*m_basicEvent);
+        m_basicCalendar->removeEvent(m_basicCalendar->getBasicEvent(m_currentIndex));
         m_currentIndex = std::max(0, m_currentIndex - 1);
         updateUi();
         if (m_currentIndex == 0)
