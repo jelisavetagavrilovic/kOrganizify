@@ -113,7 +113,6 @@ void Client::syncResponse(bool response, QString username, QString friendName, i
 
         QJsonDocument doc;
         doc.setArray(jsonArray);
-        QString dataToString(doc.toJson());
 
         QJsonObject newClientMessage;
         newClientMessage.insert("title", "acceptSync");

@@ -25,7 +25,7 @@ SettingsWindow::SettingsWindow(Settings *settings, QWidget *parent)
     ui->cbxDropTheme->setCurrentText(colorToText(getColor()));
 
     connect(ui->cbNotifications, &QCheckBox::stateChanged, this, &SettingsWindow::updateNotificationIcon);
-    connect(ui->cbxDropTheme, QOverload<const QString &>::of(&QComboBox::currentTextChanged), [=](const QString &text){
+    connect(ui->cbxDropTheme, QOverload<const QString &>::of(&QComboBox::currentTextChanged), this, [=](const QString &text){
         QString color = textToColor(text);
 
         QString path = colorToPath(color);
