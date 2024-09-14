@@ -13,7 +13,7 @@ Client::Client(QString username, QObject* parent)
     makeConnection(QHostAddress::LocalHost);
 }
 
-bool Client::makeConnection(QHostAddress::SpecialAddress address) {
+auto Client::makeConnection(QHostAddress::SpecialAddress address) -> bool {
     connect(m_socket, &QTcpSocket::readyRead, this, &Client::readFromServer);
     connect(m_socket, &QTcpSocket::disconnected, this, &Client::disconnected);
 

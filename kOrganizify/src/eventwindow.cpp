@@ -54,13 +54,13 @@ void EventWindow::setCurrentEvent(const Event &event){
     m_currentEvent = event;
 }
 
-Event EventWindow::getCurrentEvent() const {
+auto EventWindow::getCurrentEvent() const -> Event {
     return m_currentEvent;
 }
 
 
 
-bool EventWindow::isEventNull() const {
+auto EventWindow::isEventNull() const -> bool {
     return m_currentEvent.getTitle().isEmpty()
            && m_currentEvent.getDescription().isEmpty()
            && m_currentEvent.getLocation().isEmpty()
@@ -129,7 +129,7 @@ void EventWindow::changeColor(QString color)
     QString teStyleSheet = QString("QTextEdit{" + styleSheet + "}");
     QString dateEditStyleSheet = QString("QDateEdit{" + styleSheet + "}");
     QString timeEditStyleSheet = QString("QTimeEdit{" + styleSheet + "}");
-    QString ewStyleSheet = QString("QWidget{color: black; background-color: #F7F4F8;}");
+    auto ewStyleSheet = QString("QWidget{color: black; background-color: #F7F4F8;}");
     QString cbStyleSheet = QString("QComboBox{" + styleSheet + "}");
 
     QString ultimateStyleSheet = ewStyleSheet + btnStyleSheet + leStyleSheet + teStyleSheet + dateEditStyleSheet + timeEditStyleSheet + cbStyleSheet;
@@ -137,7 +137,7 @@ void EventWindow::changeColor(QString color)
     setStyleSheet(ultimateStyleSheet);
 }
 
-bool EventWindow::checkEventOverlap(const Event &newEvent) {
+auto EventWindow::checkEventOverlap(const Event &newEvent) -> bool {
     QList<Event> existingEvents = m_calendar->getEventsForWeek(newEvent.getStartTime().date(), newEvent.getEndTime().date().addDays(6));
 
     for (const Event &existingEvent : existingEvents) {

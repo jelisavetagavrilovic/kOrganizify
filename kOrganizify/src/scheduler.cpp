@@ -70,7 +70,7 @@ void Scheduler::generatePermutations(QList<Event>& events, int start, int end, i
     }
 }
 
-QList<Event> Scheduler::findFreeTime(Calendar *cal1, int maxTimeInMinutes) {
+auto Scheduler::findFreeTime(Calendar *cal1, int maxTimeInMinutes) -> QList<Event> {
     QList<Event> freeTimeSlots;
     QList<Event> allEvents;
 
@@ -102,7 +102,7 @@ QList<Event> Scheduler::findFreeTime(Calendar *cal1, int maxTimeInMinutes) {
            QTime endTime = endHour.addSecs(-60 * maxTimeInMinutes);
 
            if (currentHour <= endTime) {
-               Event* newEvent = new Event();
+               auto* newEvent = new Event();
                newEvent->setStartTime(QDateTime(currentDate, currentHour));
                newEvent->setEndTime(QDateTime(currentDate, currentHour.addSecs(60 * maxTimeInMinutes)));
 

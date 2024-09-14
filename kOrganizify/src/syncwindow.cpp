@@ -47,12 +47,12 @@ void SyncWindow::onNumberSelected(int m_index)
     m_selectedNumber = m_index + 1;
 }
 
-QString SyncWindow::getEnteredText() const
+auto SyncWindow::getEnteredText() const -> QString
 {
     return m_enteredText;
 }
 
-int SyncWindow::getSelectedNumber() const
+auto SyncWindow::getSelectedNumber() const -> int
 {
     return m_selectedNumber;
 }

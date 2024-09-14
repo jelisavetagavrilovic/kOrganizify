@@ -18,7 +18,7 @@ void Settings::fromJson(const QJsonObject &jsonObject) {
     m_notifications = jsonObjectSettings["notifications"].toBool();
 }
 
-QJsonValue Settings::toJson() const {
+auto Settings::toJson() const -> QJsonValue {
     QJsonObject jsonObject;
     jsonObject["color"] = m_color;
     jsonObject["notifications"] = m_notifications;
@@ -32,7 +32,7 @@ void Settings::saveData(const QString &username) {
 }
 
 
-QString Settings::getColor() const {
+auto Settings::getColor() const -> QString {
     return m_color;
 }
 
@@ -40,7 +40,7 @@ void Settings::setColor(QString color) {
     m_color = color;
 }
 
-QString Settings::backgroundPath()
+auto Settings::backgroundPath() -> QString
 {
     return m_backgroundPath;
 }
@@ -50,7 +50,7 @@ void Settings::setBackgroundPath(QString backgroundPath)
     m_backgroundPath = backgroundPath;
 }
 
-bool Settings::getNotifications() const {
+auto Settings::getNotifications() const -> bool {
     return m_notifications;
 }
 
