@@ -7,16 +7,15 @@ namespace Ui {
 class SyncDeniedWindow;
 }
 
-class SyncDeniedWindow : public QWidget
-{
-    Q_OBJECT
+class SyncDeniedWindow : public QWidget {
+  Q_OBJECT
 
 public:
-    explicit SyncDeniedWindow(QString friendName, QWidget *parent = nullptr);
-    ~SyncDeniedWindow();
+  explicit SyncDeniedWindow(QString friendName, QWidget *parent = nullptr);
+  ~SyncDeniedWindow();
 
 private:
-    Ui::SyncDeniedWindow *ui;
+  Ui::SyncDeniedWindow *ui;
 };
 
 #endif // SYNCDENIEDWINDOW_H

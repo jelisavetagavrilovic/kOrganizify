@@ -8,28 +8,28 @@ namespace Ui {
 class ResponseWindow;
 }
 
-class ResponseWindow : public QWidget
-{
-    Q_OBJECT
+class ResponseWindow : public QWidget {
+  Q_OBJECT
 
 public:
-    explicit ResponseWindow(QString eventTitle, QString startTime, QWidget *parent = nullptr);
-    ~ResponseWindow();
-    void changeColor(QString color);
+  explicit ResponseWindow(QString eventTitle, QString startTime,
+                          QWidget *parent = nullptr);
+  ~ResponseWindow();
+  void changeColor(QString color);
 
 public slots:
-    void onYesClicked();
-    void onNoClicked();
+  void onYesClicked();
+  void onNoClicked();
 
 signals:
-    void sendResponse(bool answer);
+  void sendResponse(bool answer);
 
 private:
-    void setDate(QString foundDate);
-    void setTitle(QString title);
-    QString getDate();
-    Ui::ResponseWindow *ui;
-    QString m_date;
+  void setDate(QString foundDate);
+  void setTitle(QString title);
+  QString getDate();
+  Ui::ResponseWindow *ui;
+  QString m_date;
 };
 
 #endif // RESPONSEWINDOW_H
