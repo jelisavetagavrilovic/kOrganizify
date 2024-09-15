@@ -282,8 +282,10 @@ void AppWindow::addTaskToListWidget(const Task &task) {
 void AppWindow::onCheckBoxStateChanged(int state) {
   QCheckBox *checkBox = qobject_cast<QCheckBox *>(sender());
   if (checkBox) {
-    int index = ui->lwToDoList->row(ui->lwToDoList->itemFromIndex(
-        ui->lwToDoList->indexAt(checkBox->pos())));
+    // int index = ui->lwToDoList->row(ui->lwToDoList->itemFromIndex(
+    //     ui->lwToDoList->indexAt(checkBox->pos())));
+    int index = ui->lwToDoList->row(ui->lwToDoList->itemAt(checkBox->pos()));
+
     if (state == Qt::Checked) {
       m_toDoList->getTask(index)->setIsChecked(true);
       checkBox->setText(crossTask(m_toDoList->getTask(index)->getName()));

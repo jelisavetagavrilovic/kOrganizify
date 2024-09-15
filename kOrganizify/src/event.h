@@ -5,10 +5,15 @@
 #include <QHash>
 #include <QObject>
 #include <QString>
+#include <QMetaType>
 
 #include "basicevent.h"
 
 enum class CustomEventPriority { NoPriority, Low, Medium, High };
+
+
+Q_DECLARE_METATYPE(CustomEventPriority)
+
 
 QString customEventPriorityToString(CustomEventPriority priority);
 CustomEventPriority

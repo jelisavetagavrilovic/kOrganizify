@@ -4,6 +4,7 @@
 #include "calendar.h"
 #include <QObject>
 #include <QTcpSocket>
+#include <QHostAddress>
 
 class Client : public QObject {
   Q_OBJECT
