@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.5)
 
 project(kOrganizify VERSION 0.1 LANGUAGES CXX)
 
+option(USE_MULTIMEDIA ON)
+
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -11,7 +13,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Network)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Network)
-find_package(Qt${QT_VERSION_MAJOR}Multimedia REQUIRED)
+if(USE_MULTIMEDIA)
+    find_package(Qt${QT_VERSION_MAJOR}Multimedia REQUIRED)
+endif()
 
 set(PROJECT_SOURCES
         src/appwindow.cpp
@@ -109,12 +113,20 @@ else()
     endif()
 endif()
 
-target_link_libraries(kOrganizify
-    PRIVATE
-    Qt${QT_VERSION_MAJOR}::Widgets
-    Qt${QT_VERSION_MAJOR}::Network
-    Qt${QT_VERSION_MAJOR}::Multimedia
-)
+if(USE_MULTIMEDIA)
+    target_link_libraries(kOrganizify
+        PRIVATE
+        Qt${QT_VERSION_MAJOR}::Widgets
+        Qt${QT_VERSION_MAJOR}::Network
+        Qt${QT_VERSION_MAJOR}::Multimedia
+    )
+else()
+    target_link_libraries(kOrganizify
+        PRIVATE
+        Qt${QT_VERSION_MAJOR}::Widgets
+        Qt${QT_VERSION_MAJOR}::Network
+    )
+endif()
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

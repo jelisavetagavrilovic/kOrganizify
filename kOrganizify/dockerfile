@@ -1,0 +1,25 @@
+FROM ubuntu:latest
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update -y
+RUN apt-get install qtcreator -y
+RUN apt-get install build-essential -y
+RUN apt install qtbase5-dev qt5-qmake -y
+RUN apt-get install qtmultimedia5-dev -y
+RUN apt-get install libqt5network5 -y
+RUN apt-get install cmake -y
+RUN apt-get install wget -y
+RUN apt-get install libgl1-mesa-dev -y
+RUN apt-get install libxkbcommon-x11-dev -y
+
+COPY . /home/markopaunovic/kOrganizify2
+WORKDIR /home/markopaunovic/kOrganizify2
+
+RUN mkdir docker_build
+WORKDIR /home/markopaunovic/kOrganizify2/docker_build
+RUN cmake .. || cat CMakeFiles/CMakeError.log
+RUN make -j10
+
+CMD ["./kOrganizify"]
+

@@ -1,14 +1,16 @@
-#include "mainwindow.h"
 #include "basiceventwindow.h"
+#include "mainwindow.h"
 
 #include <QApplication>
 
-int main(int argc, char *argv[])
-{
-   QApplication a(argc, argv);
+auto main(int argc, char *argv[]) -> int {
+  QApplication a(argc, argv);
 
-   MainWindow w;
-   w.show();
+  // Registracija CustomEventPriority za korišćenje u QVariant
+  qRegisterMetaType<CustomEventPriority>("CustomEventPriority");
 
-   return a.exec();
+  MainWindow w;
+  w.show();
+
+  return a.exec();
 }
